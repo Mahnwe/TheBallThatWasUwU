@@ -42,7 +42,7 @@ position = Vector2(341, -38)
 scale = Vector2(0.600001, 1)
 
 [node name="Ability" parent="." instance=ExtResource("7_pr54i")]
-position = Vector2(464, -11)
+position = Vector2(469, -14)
 scale = Vector2(0.52, 0.56)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
