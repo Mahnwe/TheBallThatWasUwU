@@ -72,19 +72,21 @@ scale = Vector2(0.599999, 0.6)
 
 [node name="platform3" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(297, 304)
+scale = Vector2(0.68, 1)
 
 [node name="Spike2" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(701, 326)
+position = Vector2(524, 329)
 rotation = 1.55115
 scale = Vector2(0.4, 0.4)
 
 [node name="Wall" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(1087, -165)
+position = Vector2(870, -167)
 rotation = 1.5708
 scale = Vector2(1.725, 1.725)
 
 [node name="platform4" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(96, 63)
+scale = Vector2(0.72, 1)
 
 [node name="Spike3" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(1857, 915)
@@ -110,15 +112,15 @@ scale = Vector2(0.639999, 1)
 
 [node name="platform8" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(277, -200)
-scale = Vector2(1.01204, 1)
+scale = Vector2(0.852041, 1)
 
 [node name="Spike4" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(985, -115)
+position = Vector2(768, -117)
 rotation = 1.5708
 scale = Vector2(0.435347, 1.11816)
 
 [node name="Spike5" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(918, -103)
+position = Vector2(701, -105)
 scale = Vector2(0.422071, 0.6)
 
 [node name="Wall3" parent="." instance=ExtResource("10_8ng8k")]
