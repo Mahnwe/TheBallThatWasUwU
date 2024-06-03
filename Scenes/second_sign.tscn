@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bubik6iv0acc1"]
+
+[ext_resource type="Texture2D" uid="uid://b8doi7lkw4gub" path="res://Arts/SpritesSigns/DoubleSpriteSigns-removebg-preview.png" id="1_axw3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mudo"]
+size = Vector2(401, 482)
+
+[node name="SecondSign" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_axw3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_8mudo")
+disabled = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -139.0
+offset_top = -193.0
+offset_right = -69.0
+offset_bottom = -170.0
+scale = Vector2(3.52, 1.52)
+text = "Easy way"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -142.0
+offset_top = -84.0
+offset_right = -68.0
+offset_bottom = -61.0
+scale = Vector2(3.44, 1.44)
+text = "Hard way"

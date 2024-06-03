@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw6qi4cdcr5sk"]
+
+[ext_resource type="Texture2D" uid="uid://hjd7s2uvujhn" path="res://Arts/SpritesSigns/SpriteTripleSprite-removebg-preview.png" id="1_1bk0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se2qg"]
+size = Vector2(397, 563)
+
+[node name="StartSign" type="StaticBody2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1bk0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_se2qg")
+disabled = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -136.0
+offset_top = -258.0
+offset_right = -96.0
+offset_bottom = -235.0
+scale = Vector2(3.56, 1.4)
+text = "Easy way"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -129.0
+offset_top = -148.0
+offset_right = -89.0
+offset_bottom = -125.0
+scale = Vector2(3.32, 1.32)
+text = "Hard way"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -136.0
+offset_top = -40.0
+offset_right = -21.0
+offset_bottom = -17.0
+scale = Vector2(3.36, 1.32)
+text = "Dead way"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5pqy18mxsyby"]
+
+[ext_resource type="PackedScene" uid="uid://b2k7febsvejjl" path="res://Scenes/vbox_timer_label.tscn" id="1_jxowl"]
+[ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="2_cqnvk"]
+
+[node name="UI" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -183.0
+offset_top = -330.0
+offset_right = -119.0
+offset_bottom = -307.0
+scale = Vector2(3.44719, 2.82724)
+text = "00:00:00"
+script = ExtResource("2_cqnvk")
+
+[node name="VboxTimerLabel" parent="." instance=ExtResource("1_jxowl")]
+z_index = 1
+layout_mode = 1
+offset_left = 1366.0
+offset_top = -390.0
+offset_right = 1633.0
+offset_bottom = -106.0
+scale = Vector2(1.10709, 0.870471)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://csgwqsc62crjo"]
+
+[ext_resource type="Script" path="res://Scripts/start_area.gd" id="1_my26t"]
+[ext_resource type="Texture2D" uid="uid://7wm52wqww65y" path="res://Arts/SpriteStart-removebg-preview.png" id="2_70lhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4srfq"]
+size = Vector2(264, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi60b"]
+size = Vector2(288, 189)
+
+[node name="StartArea" type="StaticBody2D"]
+script = ExtResource("1_my26t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -2.00001)
+scale = Vector2(0.648148, 0.521277)
+texture = ExtResource("2_70lhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_4srfq")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -1.5)
+shape = SubResource("RectangleShape2D_mi60b")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

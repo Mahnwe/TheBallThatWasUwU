@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://7qfwpggjf11t"]
+
+[ext_resource type="Texture2D" uid="uid://tbp173n78fvi" path="res://Arts/SpritesMemoryCard/SpriteMemoryCard.png" id="1_7yss3"]
+[ext_resource type="Script" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elg4p"]
+size = Vector2(154, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2iqv"]
+size = Vector2(159, 218)
+
+[node name="SavePoint" type="StaticBody2D" groups=["save_point_group"]]
+position = Vector2(554, 301)
+script = ExtResource("1_mpj8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-75.5, -77)
+scale = Vector2(0.401596, 0.462555)
+texture = ExtResource("1_7yss3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-75, -76)
+shape = SubResource("RectangleShape2D_elg4p")
+disabled = true
+
+[node name="SaveArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveArea"]
+position = Vector2(-74.5, -76)
+shape = SubResource("RectangleShape2D_c2iqv")
+
+[node name="SavedLabel" type="Label" parent="."]
+offset_left = -270.0
+offset_top = -226.0
+offset_right = -230.0
+offset_bottom = -203.0
+scale = Vector2(2.92, 1.28)
+
+[connection signal="body_entered" from="SaveArea" to="." method="_on_save_area_body_entered"]

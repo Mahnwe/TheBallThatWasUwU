@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://i4jemvk3v54m"]
+
+[ext_resource type="Texture2D" uid="uid://dmmixb0c26f0w" path="res://Arts/SpriteAbility-removebg-preview.png" id="1_m13po"]
+[ext_resource type="Script" path="res://Scripts/ability.gd" id="1_vfgwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eu1f"]
+size = Vector2(92, 266)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84xg5"]
+size = Vector2(104, 281)
+
+[node name="Ability" type="StaticBody2D"]
+script = ExtResource("1_vfgwr")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -172.0
+offset_top = -280.0
+offset_right = -23.0
+offset_bottom = -205.0
+scale = Vector2(2.4, 1.24)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -43)
+scale = Vector2(0.555066, 0.5)
+texture = ExtResource("1_m13po")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -41)
+shape = SubResource("RectangleShape2D_4eu1f")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(164, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-162, -18.5)
+shape = SubResource("RectangleShape2D_84xg5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

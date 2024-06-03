@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bbctegcfntwoe"]
+
+[node name="Pause" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 696.0
+offset_top = 181.0
+offset_right = 736.0
+offset_bottom = 221.0
+scale = Vector2(12.46, 5.88)
+
+[node name="Label" type="Label" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 701.0
+offset_top = 226.0
+offset_right = 764.0
+offset_bottom = 254.0
+scale = Vector2(7.8, 4.8)
+theme_override_colors/font_color = Color(0.725349, 0, 0.0495564, 1)
+theme_override_font_sizes/font_size = 20
+text = "PAUSE"
+
+[node name="Label2" type="Label" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 277.0
+offset_top = 800.0
+offset_right = 409.0
+offset_bottom = 901.0
+scale = Vector2(2.92302, 1.95431)
+text = "Return to menu
+
+             Ctrl
+     Select/Back/-"
+
+[node name="ColorRect" type="ColorRect" parent="Label2"]
+z_index = -1
+layout_mode = 0
+offset_left = -12.9449
+offset_top = -4.60521
+offset_right = 27.0551
+offset_bottom = 35.3948
+scale = Vector2(3.95883, 2.78068)
+color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 1269.0
+offset_top = 800.0
+offset_right = 1446.0
+offset_bottom = 901.0
+scale = Vector2(2.88, 1.92)
+text = "          Continue
+
+       Start/Menu/+
+              Tab/ ^
+"
+
+[node name="ColorRect" type="ColorRect" parent="Label3"]
+z_index = -1
+layout_mode = 0
+offset_left = -11.8056
+offset_top = -5.43478
+offset_right = 28.1944
+offset_bottom = 34.5652
+scale = Vector2(4.90278, 2.86957)
+color = Color(0, 0, 0, 1)

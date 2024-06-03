@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo7nw1yq804xk"]
+
+[ext_resource type="Script" path="res://Scripts/SpikeNode.gd" id="1_3ktyq"]
+[ext_resource type="Texture2D" uid="uid://w3bje26qbe3s" path="res://Arts/SpritesSpike/SpriteSpike-removebg-preview.png" id="1_pctg2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1o7nn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qotw6"]
+radius = 51.0
+height = 236.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bks7e"]
+radius = 55.0
+height = 240.0
+
+[node name="Spike" type="StaticBody2D" groups=["spike_group"]]
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_1o7nn")
+script = ExtResource("1_3ktyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, 138)
+shape = SubResource("CapsuleShape2D_qotw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(77, 136)
+scale = Vector2(0.490066, 0.494424)
+texture = ExtResource("1_pctg2")
+
+[node name="SpikeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeArea"]
+position = Vector2(79, 138)
+shape = SubResource("CapsuleShape2D_bks7e")
+
+[connection signal="body_entered" from="SpikeArea" to="." method="_on_spike_area_body_entered"]

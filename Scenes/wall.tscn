@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://doy0e7jnl2886"]
+
+[ext_resource type="Texture2D" uid="uid://cb5501jkudevi" path="res://Arts/SpritesPlatform/SpritePlatform-removebg-preview.png" id="1_8wbtk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qdqgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehky3"]
+size = Vector2(303, 20)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(167.25, 59.75)
+scale = Vector2(335.5, 120.5)
+mesh = SubResource("QuadMesh_qdqgg")
+texture = ExtResource("1_8wbtk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(167.5, 66)
+shape = SubResource("RectangleShape2D_ehky3")
