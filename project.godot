@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="PlatformTest2D"
+config/name="TheBallThatWasUwU"
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
