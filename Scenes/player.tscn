@@ -121,7 +121,7 @@ height = 542.291
 visibility_layer = 2
 position = Vector2(-212, -231)
 floor_constant_speed = true
-floor_snap_length = 10.4
+floor_snap_length = 7.1
 script = ExtResource("1_24gvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]

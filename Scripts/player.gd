@@ -20,6 +20,7 @@ var number_of_jumps
 
 func _physics_process(_delta):
 	check_if_player_is_on_floor()
+	check_if_player_is_not_on_floor()
 	check_if_player_is_on_wall()
 	check_for_player_movement_and_animation()
 	_dash()
@@ -41,18 +42,24 @@ func _dash():
 			move_and_slide()
 			$AnimatedSprite2D.play()
 	
-func colliding_left_wall():
-	return $RaycastLeft.is_colliding()
-
-func collinding_right_wall():
-	return $RaycastRight.is_colliding()
 	
-func check_if_player_is_on_floor():
-		# Gravity
+func check_if_player_is_not_on_floor():
 	if !is_on_floor():
 		if Input.is_action_just_pressed("jump") and can_double_jump and number_of_jumps < 1:
 			velocity.y = -jump_force
 			number_of_jumps += 1
+			if velocity.x < 0:
+				$AnimatedSprite2D.animation = "jump"
+				$AnimatedSprite2D.flip_h = true
+				$AnimatedSprite2D.play()
+			if velocity.x > 0:
+				$AnimatedSprite2D.animation = "jump"
+				$AnimatedSprite2D.flip_h = false
+				$AnimatedSprite2D.play()
+			if velocity.x == 0:
+				$AnimatedSprite2D.animation = "jump"
+				$AnimatedSprite2D.flip_h = false
+				$AnimatedSprite2D.play()
 		velocity.y += gravity
 		await $AnimatedSprite2D.animation_finished
 		if velocity.x < 0:
@@ -65,7 +72,8 @@ func check_if_player_is_on_floor():
 			$AnimatedSprite2D.play()
 		if velocity.y > VELOCITY_Y_MAX:
 			velocity.y = VELOCITY_Y_MAX
-
+	
+func check_if_player_is_on_floor():
 	if is_on_floor():
 		number_of_jumps = 0
 		can_dash = true
@@ -97,19 +105,19 @@ func check_if_player_is_on_floor():
 func check_if_player_is_on_wall():
 		# Wall-jump
 	if is_on_wall():
-		number_of_jumps = 0
+		number_of_jumps = -1
 		var wall_normal = get_wall_normal()
 		can_dash = true
 		check_animation_if_on_wall()
 		if Input.is_action_pressed("jump"):
 			number_of_jumps += 1
-			if Input.is_action_just_pressed("move_left") and wall_normal == Vector2.LEFT :
+			if Input.is_action_pressed("move_left") and wall_normal == Vector2.LEFT :
 				velocity.x = speed * wall_normal.x
 				velocity.y = -jump_force
 				$AnimatedSprite2D.animation = "jump"
 				$AnimatedSprite2D.flip_h = true
 				$AnimatedSprite2D.play()
-			if Input.is_action_just_pressed("move_right") and wall_normal == Vector2.RIGHT :
+			if Input.is_action_pressed("move_right") and wall_normal == Vector2.RIGHT :
 				velocity.x = speed * wall_normal.x
 				velocity.y = -jump_force
 				$AnimatedSprite2D.animation = "jump"
@@ -141,3 +149,9 @@ func check_animation_if_on_wall():
 		can_dash = true
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = false
+		
+func colliding_left_wall():
+	return $RaycastLeft.is_colliding()
+
+func collinding_right_wall():
+	return $RaycastRight.is_colliding()
