@@ -47,6 +47,7 @@ func _process(_delta):
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x
 		$Player.position.y = save_position_y
+		reset_patrols_progress()
 		$Player.set_physics_process(true)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 		
@@ -139,7 +140,14 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.get_child(1).animation = "stay"
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	reset_patrols_progress()
 	enable_patrol_groups()
+	
+func reset_patrols_progress():
+	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+			member.get_parent().progress = 0
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.get_parent().progress = 0
 
 func disable_patrol_groups():
 	for member in get_tree().get_nodes_in_group("spike_on_patrol"):

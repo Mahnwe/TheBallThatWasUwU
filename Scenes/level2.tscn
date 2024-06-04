@@ -283,6 +283,7 @@ rotates = false
 position = Vector2(34.2162, -21.6623)
 rotation = 1.5708
 scale = Vector2(0.278296, 0.230752)
+speed = 350
 
 [node name="SpikeVerticalPatrol2" type="Path2D" parent="."]
 position = Vector2(-516, 2)
@@ -296,7 +297,8 @@ rotates = false
 [node name="Spike" parent="SpikeVerticalPatrol2/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p1dv8")]
 position = Vector2(34.2162, -21.6623)
 rotation = 1.5708
-scale = Vector2(0.278296, 0.230752)
+scale = Vector2(0.27829, 0.231815)
+speed = 350
 
 [node name="PlatformPatrol4" type="Path2D" parent="."]
 curve = SubResource("Curve2D_6oxiu")
@@ -575,7 +577,7 @@ position = Vector2(-3010, 80)
 rotation = 3.14159
 rotates = false
 
-[node name="Spike" parent="SpikePatrol10/PathFollow2D" instance=ExtResource("7_p1dv8")]
+[node name="Spike" parent="SpikePatrol10/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p1dv8")]
 position = Vector2(-16, -28)
 scale = Vector2(0.28, 0.200001)
 
