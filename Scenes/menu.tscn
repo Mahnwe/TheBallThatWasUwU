@@ -27,41 +27,50 @@ text = "The ball that was
 
 [node name="Level1Button" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 857.0
-offset_top = 568.0
-offset_right = 933.0
-offset_bottom = 599.0
+offset_left = 482.0
+offset_top = 599.0
+offset_right = 558.0
+offset_bottom = 635.0
 scale = Vector2(2.60997, 2.06604)
-focus_neighbor_top = NodePath("../Level3Button")
+focus_neighbor_left = NodePath("../Level4Button")
+focus_neighbor_top = NodePath("../Level4Button")
+focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
-focus_previous = NodePath("../Level3Button")
+focus_previous = NodePath("../Level4Button")
+theme_override_font_sizes/font_size = 20
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 855.0
-offset_top = 739.0
-offset_right = 931.0
-offset_bottom = 770.0
-scale = Vector2(2.702, 2.007)
+offset_left = 846.0
+offset_top = 599.0
+offset_right = 922.0
+offset_bottom = 635.0
+scale = Vector2(2.6, 2.007)
+focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level3Button")
 focus_previous = NodePath("../Level1Button")
+theme_override_font_sizes/font_size = 20
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 862.0
-offset_top = 893.0
-offset_right = 938.0
-offset_bottom = 924.0
+offset_left = 1197.0
+offset_top = 599.0
+offset_right = 1273.0
+offset_bottom = 635.0
 scale = Vector2(2.686, 2.006)
+focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../Level2Button")
-focus_neighbor_bottom = NodePath("../Level1Button")
-focus_next = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../Level4Button")
+focus_neighbor_bottom = NodePath("../Level4Button")
+focus_next = NodePath("../Level4Button")
 focus_previous = NodePath("../Level2Button")
+theme_override_font_sizes/font_size = 20
 text = "Level 3"
 
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
@@ -72,9 +81,26 @@ position = Vector2(937, 392)
 scale = Vector2(0.19, 0.184238)
 texture = ExtResource("4_xglq7")
 
+[node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 809.0
+offset_right = 1284.0
+offset_bottom = 845.0
+scale = Vector2(2.6, 2)
+focus_neighbor_left = NodePath("../Level3Button")
+focus_neighbor_top = NodePath("../Level3Button")
+focus_neighbor_right = NodePath("../Level1Button")
+focus_neighbor_bottom = NodePath("../Level1Button")
+focus_next = NodePath("../Level1Button")
+focus_previous = NodePath("../Level3Button")
+theme_override_font_sizes/font_size = 20
+text = "Level 4"
+
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="gui_input" from="Level2Button" to="." method="_on_level_2_button_gui_input"]
 [connection signal="pressed" from="Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="gui_input" from="Level3Button" to="." method="_on_level_3_button_gui_input"]
 [connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="gui_input" from="Level4Button" to="." method="_on_level_4_button_gui_input"]
