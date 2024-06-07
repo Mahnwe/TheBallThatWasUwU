@@ -151,8 +151,8 @@ func handle_commands_panel():
 			
 func disable_bush_anim():
 	for member in get_tree().get_nodes_in_group("bushes"):
-			member.get_child(1).stop()
+			member.get_child(0).stop()
 			
 func enable_bush_anim():
 	for member in get_tree().get_nodes_in_group("bushes"):
-			member.get_child(1).play()
+			member.get_child(0).play()

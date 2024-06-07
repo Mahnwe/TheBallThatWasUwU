@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1vwrl21i4kan"]
+[gd_scene load_steps=7 format=3 uid="uid://c1vwrl21i4kan"]
 
 [ext_resource type="Texture2D" uid="uid://c6d8i6vui2yqq" path="res://Arts/BushSprite/BushSprite2-removebg-preview.png" id="1_4vilc"]
 [ext_resource type="Texture2D" uid="uid://ciesgyrc2tj8k" path="res://Arts/BushSprite/BushSprite1-removebg-preview.png" id="2_6aaft"]
@@ -18,8 +18,6 @@ func _ready():
 func _process(_delta):
 	pass
 "
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rsmab"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_spupv"]
 animations = [{
@@ -43,10 +41,6 @@ animations = [{
 
 [node name="Bush" type="Node2D" groups=["bushes"]]
 script = SubResource("GDScript_wrb77")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_rsmab")
-disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 3.8147e-06)
