@@ -29,6 +29,7 @@ position = Vector2(-1.5, -2)
 shape = SubResource("RectangleShape2D_exy7e")
 
 [node name="FinishLabelNextLevel" type="Label" parent="."]
+visible = false
 z_index = 1
 offset_left = 262.0
 offset_top = 274.0
@@ -42,6 +43,7 @@ text = "Move to next level
   Top Right Trigger"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = 261.0
 offset_top = 273.0
 offset_right = 301.0
@@ -49,6 +51,7 @@ offset_bottom = 313.0
 scale = Vector2(21.5847, 4.65847)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = -1015.0
 offset_top = 265.0
 offset_right = -975.0
@@ -56,6 +59,7 @@ offset_bottom = 305.0
 scale = Vector2(18.36, 5.16)
 
 [node name="FinishLabelMenu" type="Label" parent="."]
+visible = false
 z_index = 1
 offset_left = -1016.0
 offset_top = 265.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=14 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="2_6xvap"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_3dyia"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="10_8ng8k"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_r8tlj"]
+[ext_resource type="PackedScene" uid="uid://c1vwrl21i4kan" path="res://Scenes/bush.tscn" id="13_libvp"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -59,7 +60,7 @@ position = Vector2(38, 372)
 scale = Vector2(0.240006, 0.32)
 
 [node name="SavePoint" parent="." instance=ExtResource("9_3dyia")]
-position = Vector2(435, -759)
+position = Vector2(437, -641)
 scale = Vector2(0.579818, 0.616465)
 
 [node name="platform2" parent="." instance=ExtResource("7_v154u")]
@@ -111,7 +112,7 @@ position = Vector2(-236, 352)
 scale = Vector2(0.639999, 1)
 
 [node name="platform8" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(277, -200)
+position = Vector2(272, -200)
 scale = Vector2(0.852041, 1)
 
 [node name="Spike4" parent="." instance=ExtResource("6_mp22g")]
@@ -126,10 +127,10 @@ scale = Vector2(0.422071, 0.6)
 [node name="Wall3" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-1, 263)
 rotation = -1.5708
-scale = Vector2(3.12, 1.72)
+scale = Vector2(2.72, 1.72)
 
 [node name="Wall4" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(405, -253)
+position = Vector2(392, -238)
 rotation = 1.5708
 scale = Vector2(0.600001, 1.56)
 
@@ -139,38 +140,38 @@ rotation = -1.60125
 scale = Vector2(0.234579, 0.207198)
 
 [node name="Spike7" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(279, -277)
+position = Vector2(266, -262)
 scale = Vector2(0.288368, 0.185376)
 
 [node name="platform9" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(63, -821)
-scale = Vector2(0.879998, 1)
+position = Vector2(64, -703)
+scale = Vector2(0.839998, 1)
 
 [node name="Wall5" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(992, -1088)
+position = Vector2(950, -1088)
 rotation = 1.5708
 scale = Vector2(3.04, 1.88)
 
 [node name="Wall6" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(549, -361)
+position = Vector2(525, -318)
 rotation = -1.5708
-scale = Vector2(1.2, 1.88)
+scale = Vector2(0.920001, 1.87116)
 
 [node name="Spike8" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(803, -472)
+position = Vector2(761, -472)
 rotation = -1.58013
 scale = Vector2(0.239631, 0.319999)
 
 [node name="Spike9" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(751, -966)
+position = Vector2(709, -966)
 rotation = -1.55728
 scale = Vector2(0.521064, 0.51673)
 
 [node name="platform10" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(253, -1145)
+position = Vector2(164, -1145)
 
 [node name="platform11" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(628, -444)
+position = Vector2(584, -444)
 scale = Vector2(0.319999, 2.92)
 
 [node name="platform12" parent="." instance=ExtResource("7_v154u")]
@@ -220,18 +221,13 @@ position = Vector2(-36, 217)
 rotation = -3.11517
 scale = Vector2(0.211275, 0.327061)
 
-[node name="Spike14" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(113, -620)
-rotation = 3.10516
-scale = Vector2(0.277032, 0.361376)
-
 [node name="Spike15" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-37, -493)
 rotation = 3.157
 scale = Vector2(0.23688, 0.235283)
 
 [node name="Spike16" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(111, -218)
+position = Vector2(113, -207)
 rotation = 3.07088
 scale = Vector2(0.248274, 0.23393)
 
@@ -241,9 +237,9 @@ rotation = 3.11883
 scale = Vector2(0.230768, 0.285546)
 
 [node name="Spike18" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-30, -85)
+position = Vector2(-29, -53)
 rotation = 3.0914
-scale = Vector2(0.280001, 0.28)
+scale = Vector2(0.280001, 0.361906)
 
 [node name="Spike19" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(110, -415)
@@ -427,7 +423,7 @@ position = Vector2(-2707, 366)
 scale = Vector2(0.24, 1)
 
 [node name="platform29" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(311, -378)
+position = Vector2(298, -378)
 scale = Vector2(0.240001, 2.32)
 
 [node name="Spike36" parent="." instance=ExtResource("6_mp22g")]
@@ -435,13 +431,49 @@ position = Vector2(-1869, 494)
 scale = Vector2(0.280002, 0.2)
 
 [node name="Spike37" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(647, -783)
+position = Vector2(624, -646)
 scale = Vector2(0.320001, 0.220453)
 
 [node name="Finish" parent="." instance=ExtResource("11_r8tlj")]
 z_index = 1
 position = Vector2(-1673, 389)
 scale = Vector2(0.479996, 0.56)
+
+[node name="Bush" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(-1456, 426)
+
+[node name="Bush2" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(-807, 476)
+
+[node name="Bush3" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(713, 355)
+
+[node name="Bush4" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(528, -151)
+
+[node name="Bush" parent="Bush4" instance=ExtResource("13_libvp")]
+position = Vector2(-35, 3)
+
+[node name="Bush2" parent="Bush4" instance=ExtResource("13_libvp")]
+position = Vector2(30, 1)
+
+[node name="Bush5" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(194, -652)
+
+[node name="Bush" parent="Bush5" instance=ExtResource("13_libvp")]
+position = Vector2(16, 0)
+
+[node name="Bush6" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(-650, -697)
+
+[node name="Bush7" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(-1092, 133)
+
+[node name="Bush" parent="Bush7" instance=ExtResource("13_libvp")]
+position = Vector2(-25, 0)
+
+[node name="Bush8" parent="." instance=ExtResource("13_libvp")]
+position = Vector2(-2628, 417)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
@@ -459,7 +491,6 @@ scale = Vector2(0.479996, 0.56)
 [connection signal="spike_hit" from="Spike11" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike12" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike13" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Spike14" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike15" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike16" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike17" to="." method="_on_spike_spike_hit"]
