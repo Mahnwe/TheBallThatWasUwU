@@ -156,3 +156,15 @@ func disable_bush_anim():
 func enable_bush_anim():
 	for member in get_tree().get_nodes_in_group("bushes"):
 			member.get_child(0).play()
+
+
+func _on_game_area_player_exited_game_area():
+	display_dead_sprite_and_pause_timer_until_respawn()
+	disable_bush_anim()
+	await get_tree().create_timer(0.5).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
+		enable_bush_anim()
+		
