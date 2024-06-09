@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmmixb0c26f0w"
-path="res://.godot/imported/SpriteAbility-removebg-preview.png-344a93f9d9d4b5a7f50f2c7f1978e8d2.ctex"
+uid="uid://cjkf4m1cvdm2v"
+path="res://.godot/imported/SpriteFinish.png-004b4dbcc785bb67d83904de5b13f471.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpriteAbility-removebg-preview.png"
-dest_files=["res://.godot/imported/SpriteAbility-removebg-preview.png-344a93f9d9d4b5a7f50f2c7f1978e8d2.ctex"]
+source_file="res://Arts/FinishLaneSprite/SpriteFinish.png"
+dest_files=["res://.godot/imported/SpriteFinish.png-004b4dbcc785bb67d83904de5b13f471.ctex"]
 
 [params]
 

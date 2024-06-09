@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7wm52wqww65y"
-path="res://.godot/imported/SpriteStart-removebg-preview.png-4ace2d281a7966325115d39896620e78.ctex"
+path="res://.godot/imported/SpriteStart-removebg-preview.png-db74a3632338a545c86652143b4569f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpriteStart-removebg-preview.png"
-dest_files=["res://.godot/imported/SpriteStart-removebg-preview.png-4ace2d281a7966325115d39896620e78.ctex"]
+source_file="res://Arts/StartLaneSprite/SpriteStart-removebg-preview.png"
+dest_files=["res://.godot/imported/SpriteStart-removebg-preview.png-db74a3632338a545c86652143b4569f5.ctex"]
 
 [params]
 
