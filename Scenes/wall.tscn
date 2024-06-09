@@ -8,6 +8,7 @@
 size = Vector2(303, 20)
 
 [node name="Wall" type="StaticBody2D"]
+z_index = 1
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(167.25, 59.75)

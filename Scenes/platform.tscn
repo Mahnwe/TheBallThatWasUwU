@@ -11,6 +11,7 @@
 size = Vector2(655, 32)
 
 [node name="platform" type="AnimatableBody2D"]
+z_index = 1
 position = Vector2(-362, -95)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_rsijb")

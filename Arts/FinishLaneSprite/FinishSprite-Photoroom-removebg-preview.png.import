@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci4rdudvafjgo"
-path="res://.godot/imported/SpriteFinish-removebg-preview.png-2b4d8beee72a217dc1f1b5c9420493d5.ctex"
+uid="uid://sa1yhgwcbfj0"
+path="res://.godot/imported/FinishSprite-Photoroom-removebg-preview.png-efc8e0e8dcfa54c16db42562783b8ba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/FinishLaneSprite/SpriteFinish-removebg-preview.png"
-dest_files=["res://.godot/imported/SpriteFinish-removebg-preview.png-2b4d8beee72a217dc1f1b5c9420493d5.ctex"]
+source_file="res://Arts/FinishLaneSprite/FinishSprite-Photoroom-removebg-preview.png"
+dest_files=["res://.godot/imported/FinishSprite-Photoroom-removebg-preview.png-efc8e0e8dcfa54c16db42562783b8ba7.ctex"]
 
 [params]
 

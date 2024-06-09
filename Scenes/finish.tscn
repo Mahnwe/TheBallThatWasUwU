@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dss5xj26b0dfl"]
 
-[ext_resource type="Texture2D" uid="uid://ci4rdudvafjgo" path="res://Arts/FinishLaneSprite/SpriteFinish-removebg-preview.png" id="1_dp0du"]
 [ext_resource type="Script" path="res://Scripts/finish.gd" id="1_srp80"]
+[ext_resource type="Texture2D" uid="uid://sa1yhgwcbfj0" path="res://Arts/FinishLaneSprite/FinishSprite-Photoroom-removebg-preview.png" id="2_51c3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gw35"]
 size = Vector2(351, 239)
@@ -13,9 +13,19 @@ size = Vector2(369, 242)
 script = ExtResource("1_srp80")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.999992, -1)
-scale = Vector2(0.693878, 0.668044)
-texture = ExtResource("1_dp0du")
+position = Vector2(-3, -1.99999)
+scale = Vector2(0.589858, 0.574822)
+texture = ExtResource("2_51c3p")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -227.173
+offset_top = -210.5
+offset_right = 30.8266
+offset_bottom = -100.5
+scale = Vector2(1.74594, 1.48711)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "FINISH"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, -1.5)

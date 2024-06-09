@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7m1u8g8dtb3e"
-path="res://.godot/imported/SpriteStart.png-7d293139c1c7f52c91b054c67dde65e6.ctex"
+uid="uid://d0w256plxmfq0"
+path="res://.godot/imported/FinishSprite.png-ac984c1b3960081c36ac012f787e0d7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/StartLaneSprite/SpriteStart.png"
-dest_files=["res://.godot/imported/SpriteStart.png-7d293139c1c7f52c91b054c67dde65e6.ctex"]
+source_file="res://Arts/FinishLaneSprite/FinishSprite.png"
+dest_files=["res://.godot/imported/FinishSprite.png-ac984c1b3960081c36ac012f787e0d7f.ctex"]
 
 [params]
 

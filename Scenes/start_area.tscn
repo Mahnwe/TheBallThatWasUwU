@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csgwqsc62crjo"]
 
 [ext_resource type="Script" path="res://Scripts/start_area.gd" id="1_my26t"]
-[ext_resource type="Texture2D" uid="uid://7wm52wqww65y" path="res://Arts/SpriteStart-removebg-preview.png" id="2_70lhk"]
+[ext_resource type="Texture2D" uid="uid://billn103ew6nh" path="res://Arts/StartLaneSprite/StartSprite-Photoroom.png" id="2_nwjmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4srfq"]
 size = Vector2(264, 174)
@@ -13,9 +13,19 @@ size = Vector2(288, 189)
 script = ExtResource("1_my26t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -2.00001)
-scale = Vector2(0.648148, 0.521277)
-texture = ExtResource("2_70lhk")
+position = Vector2(1.5, 3.5)
+scale = Vector2(0.303204, 0.287338)
+texture = ExtResource("2_nwjmj")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -314.97
+offset_top = -294.079
+offset_right = -210.97
+offset_bottom = -239.079
+scale = Vector2(6.10958, 4.2991)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "START"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 3)

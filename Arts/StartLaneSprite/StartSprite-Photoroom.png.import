@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7wm52wqww65y"
-path="res://.godot/imported/SpriteStart-removebg-preview.png-db74a3632338a545c86652143b4569f5.ctex"
+uid="uid://billn103ew6nh"
+path="res://.godot/imported/StartSprite-Photoroom.png-4ea2dff8fd47aee3830b5966beb63a12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/StartLaneSprite/SpriteStart-removebg-preview.png"
-dest_files=["res://.godot/imported/SpriteStart-removebg-preview.png-db74a3632338a545c86652143b4569f5.ctex"]
+source_file="res://Arts/StartLaneSprite/StartSprite-Photoroom.png"
+dest_files=["res://.godot/imported/StartSprite-Photoroom.png-4ea2dff8fd47aee3830b5966beb63a12.ctex"]
 
 [params]
 

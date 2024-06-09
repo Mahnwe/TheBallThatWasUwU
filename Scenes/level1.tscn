@@ -20,12 +20,12 @@
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
 
+[node name="Tree3" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(-1253, 371)
+
 [node name="StartArea" parent="." instance=ExtResource("2_es0mk")]
 position = Vector2(-1358, 384)
 scale = Vector2(0.679995, 0.8)
-
-[node name="Tree3" parent="." instance=ExtResource("14_shu8y")]
-position = Vector2(-1253, 371)
 
 [node name="Player" parent="." instance=ExtResource("3_vhjlp")]
 z_index = 2
@@ -47,6 +47,9 @@ offset_left = -733.259
 offset_top = -671.561
 offset_right = 1186.74
 offset_bottom = 408.439
+
+[node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
+position = Vector2(-1148, 424)
 
 [node name="StartSign" parent="." instance=ExtResource("5_vflxv")]
 position = Vector2(-1129, 365)
@@ -493,9 +496,6 @@ scale = Vector2(0.960005, 0.88)
 
 [node name="Bush8" parent="." instance=ExtResource("13_libvp")]
 position = Vector2(-2619, 418)
-
-[node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
-position = Vector2(-1148, 424)
 
 [node name="Tree6" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(246, 323)
