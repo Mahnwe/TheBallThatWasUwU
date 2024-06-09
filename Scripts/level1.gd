@@ -20,6 +20,8 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Tree4.get_child(0).flip_h = true
+	$Tree5.get_child(0).flip_h = true
 	queue.is_level_1 = true
 	queue.is_level_2 = false
 	queue.is_level_3 = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=17 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="2_6xvap"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vwrl21i4kan" path="res://Scenes/bush.tscn" id="13_libvp"]
 [ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="14_ec3q2"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="14_mptbk"]
+[ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="14_shu8y"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -22,6 +23,9 @@ script = ExtResource("1_viwub")
 [node name="StartArea" parent="." instance=ExtResource("2_es0mk")]
 position = Vector2(-1358, 384)
 scale = Vector2(0.679995, 0.8)
+
+[node name="Tree3" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(-1253, 371)
 
 [node name="Player" parent="." instance=ExtResource("3_vhjlp")]
 z_index = 2
@@ -450,6 +454,9 @@ position = Vector2(-807, 476)
 [node name="Bush3" parent="." instance=ExtResource("13_libvp")]
 position = Vector2(713, 355)
 
+[node name="Tree" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(521, -206)
+
 [node name="Bush4" parent="." instance=ExtResource("13_libvp")]
 position = Vector2(528, -151)
 
@@ -468,6 +475,9 @@ position = Vector2(16, 0)
 [node name="Bush6" parent="." instance=ExtResource("13_libvp")]
 position = Vector2(-650, -697)
 
+[node name="Tree2" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(-1198, 76)
+
 [node name="Rock4" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1153, 129)
 
@@ -477,20 +487,32 @@ position = Vector2(-1092, 133)
 [node name="Bush" parent="Bush7" instance=ExtResource("13_libvp")]
 position = Vector2(-25, 0)
 
+[node name="Tree4" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(-2605, 371)
+scale = Vector2(0.960005, 0.88)
+
 [node name="Bush8" parent="." instance=ExtResource("13_libvp")]
-position = Vector2(-2628, 417)
+position = Vector2(-2619, 418)
 
 [node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1148, 424)
 
+[node name="Tree6" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(246, 323)
+scale = Vector2(0.679996, 0.719999)
+
 [node name="Rock2" parent="." instance=ExtResource("14_mptbk")]
-position = Vector2(198, 372)
+position = Vector2(294, 374)
 
 [node name="Rock3" parent="." instance=ExtResource("14_mptbk")]
 position = Vector2(441, -207)
 
 [node name="Rock5" parent="." instance=ExtResource("14_mptbk")]
-position = Vector2(-2053, 340)
+position = Vector2(-2637, 441)
+scale = Vector2(0.72, 0.759999)
+
+[node name="Tree5" parent="." instance=ExtResource("14_shu8y")]
+position = Vector2(500, -707)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]

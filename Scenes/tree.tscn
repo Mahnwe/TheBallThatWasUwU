@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://be8h04flewf2h"]
+
+[ext_resource type="Texture2D" uid="uid://diuxpteq52k3u" path="res://Arts/TreeSprite/TreeSprite1-removebg-preview.png" id="1_j775l"]
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -27)
+scale = Vector2(0.367076, 0.445098)
+texture = ExtResource("1_j775l")

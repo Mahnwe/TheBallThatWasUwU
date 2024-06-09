@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dss5xj26b0dfl"]
 
-[ext_resource type="Texture2D" uid="uid://ci4rdudvafjgo" path="res://Arts/SpriteFinish-removebg-preview.png" id="1_dp0du"]
+[ext_resource type="Texture2D" uid="uid://ci4rdudvafjgo" path="res://Arts/FinishLaneSprite/SpriteFinish-removebg-preview.png" id="1_dp0du"]
 [ext_resource type="Script" path="res://Scripts/finish.gd" id="1_srp80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gw35"]
