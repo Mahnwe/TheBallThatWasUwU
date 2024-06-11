@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=9 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
+[ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="3_x4hsc"]
+[ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="4_pwi5b"]
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="4_xglq7"]
+[ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="5_ok2nw"]
+[ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
+[ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -14,7 +19,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ltdc4")
 
+[node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(673, 637)
+scale = Vector2(0.254949, 1)
+
+[node name="platform3" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(1035, 639)
+scale = Vector2(0.24, 1)
+
 [node name="MenuTitle" type="Label" parent="."]
+z_index = 2
 layout_mode = 0
 offset_left = 570.0
 offset_top = 139.0
@@ -26,11 +40,12 @@ text = "The ball that was
    fast and UwU"
 
 [node name="Level1Button" type="Button" parent="." groups=["MenuButtons"]]
+z_index = 2
 layout_mode = 0
-offset_left = 482.0
-offset_top = 599.0
-offset_right = 558.0
-offset_bottom = 635.0
+offset_left = 484.0
+offset_top = 691.0
+offset_right = 560.0
+offset_bottom = 727.0
 scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../Level4Button")
 focus_neighbor_top = NodePath("../Level4Button")
@@ -38,15 +53,17 @@ focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
 focus_previous = NodePath("../Level4Button")
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="." groups=["MenuButtons"]]
+z_index = 2
 layout_mode = 0
-offset_left = 846.0
-offset_top = 599.0
-offset_right = 922.0
-offset_bottom = 635.0
+offset_left = 848.0
+offset_top = 691.0
+offset_right = 924.0
+offset_bottom = 727.0
 scale = Vector2(2.6, 2.007)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
@@ -58,11 +75,12 @@ theme_override_font_sizes/font_size = 20
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="." groups=["MenuButtons"]]
+z_index = 2
 layout_mode = 0
-offset_left = 1197.0
-offset_top = 599.0
-offset_right = 1273.0
-offset_bottom = 635.0
+offset_left = 1199.0
+offset_top = 691.0
+offset_right = 1275.0
+offset_bottom = 727.0
 scale = Vector2(2.686, 2.006)
 focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../Level2Button")
@@ -74,19 +92,32 @@ theme_override_font_sizes/font_size = 20
 text = "Level 3"
 
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(583, 358)
+position = Vector2(583, 472.125)
+
+[node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
+position = Vector2(214, -67)
+
+[node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
+position = Vector2(171, 66.875)
+
+[node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
+position = Vector2(529, 50.875)
+
+[node name="Tree" parent="." instance=ExtResource("6_ilarj")]
+position = Vector2(1186, 473)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(937, 392)
-scale = Vector2(0.19, 0.184238)
+position = Vector2(945.375, 517.125)
+scale = Vector2(0.152778, 0.138309)
 texture = ExtResource("4_xglq7")
 
 [node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
+z_index = 2
 layout_mode = 0
-offset_left = 1208.0
-offset_top = 809.0
-offset_right = 1284.0
-offset_bottom = 845.0
+offset_left = 1210.0
+offset_top = 901.0
+offset_right = 1286.0
+offset_bottom = 937.0
 scale = Vector2(2.6, 2)
 focus_neighbor_left = NodePath("../Level3Button")
 focus_neighbor_top = NodePath("../Level3Button")
@@ -96,6 +127,11 @@ focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../Level3Button")
 theme_override_font_sizes/font_size = 20
 text = "Level 4"
+
+[node name="Wall" parent="." instance=ExtResource("8_ar47r")]
+position = Vector2(1406, 758)
+rotation = 1.5708
+scale = Vector2(0.44, 1.44)
 
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
