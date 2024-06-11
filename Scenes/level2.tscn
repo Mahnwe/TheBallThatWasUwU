@@ -149,9 +149,9 @@ position = Vector2(-36, 429)
 scale = Vector2(0.599999, 1)
 
 [node name="Wall2" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(674, 151)
+position = Vector2(670, 151)
 rotation = 1.5708
-scale = Vector2(1.84, 1.76)
+scale = Vector2(1.88, 1.68)
 
 [node name="SpikePatrol1" type="Path2D" parent="."]
 position = Vector2(1080, 838)

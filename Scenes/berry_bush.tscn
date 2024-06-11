@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://e0nrigj8kq3x"]
+
+[ext_resource type="Texture2D" uid="uid://bitt2jd4cilmg" path="res://Arts/BushSprite/BerryBushSprite-removebg-preview.png" id="1_bvoqf"]
+
+[node name="BerryBush" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.140805, 0.153909)
+texture = ExtResource("1_bvoqf")

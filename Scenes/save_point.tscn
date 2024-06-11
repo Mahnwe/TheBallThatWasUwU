@@ -30,6 +30,7 @@ position = Vector2(-74.5, -76)
 shape = SubResource("RectangleShape2D_c2iqv")
 
 [node name="SavedLabel" type="Label" parent="."]
+z_index = 2
 offset_left = -270.0
 offset_top = -226.0
 offset_right = -230.0

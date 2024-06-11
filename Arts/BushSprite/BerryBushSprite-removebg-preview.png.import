@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciesgyrc2tj8k"
-path="res://.godot/imported/BushSprite1-removebg-preview.png-cfec1a173bc2331e6722c09370bc98d1.ctex"
+uid="uid://bitt2jd4cilmg"
+path="res://.godot/imported/BerryBushSprite-removebg-preview.png-15b16351ce17a4d8fdfaf654d1b866b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/BushSprite/BushSprite1-removebg-preview.png"
-dest_files=["res://.godot/imported/BushSprite1-removebg-preview.png-cfec1a173bc2331e6722c09370bc98d1.ctex"]
+source_file="res://Arts/BushSprite/BerryBushSprite-removebg-preview.png"
+dest_files=["res://.godot/imported/BerryBushSprite-removebg-preview.png-15b16351ce17a4d8fdfaf654d1b866b3.ctex"]
 
 [params]
 

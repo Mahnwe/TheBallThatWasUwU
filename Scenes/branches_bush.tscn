@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd6m23uhhgmfy"]
+
+[ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="1_ychnd"]
+
+[node name="BranchesBush" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999998, 0)
+scale = Vector2(0.122172, 0.141361)
+texture = ExtResource("1_ychnd")

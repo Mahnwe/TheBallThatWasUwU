@@ -33,7 +33,6 @@ func _ready():
 	$Player.have_dash_ability = false
 	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-	enable_bush_anim()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	handle_commands_panel()
@@ -82,13 +81,11 @@ func handle_pause():
 			
 func _on_spike_spike_hit():
 	display_dead_sprite_and_pause_timer_until_respawn()
-	disable_bush_anim()
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
-		enable_bush_anim()
 		
 func restart_scene():
 	get_tree().reload_current_scene()
@@ -149,22 +146,16 @@ func handle_commands_panel():
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 			is_commands_panel_open = false
 			
-func disable_bush_anim():
-	for member in get_tree().get_nodes_in_group("bushes"):
-			member.get_child(0).stop()
-			
-func enable_bush_anim():
-	for member in get_tree().get_nodes_in_group("bushes"):
-			member.get_child(0).play()
 
 
 func _on_game_area_player_exited_game_area():
-	display_dead_sprite_and_pause_timer_until_respawn()
-	disable_bush_anim()
+	$Player.set_physics_process(false)
+	$Player.get_child(1).animation = "dead"
+	$Player.get_child(5).text = "Out of game zone !"
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	await get_tree().create_timer(0.5).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
-		enable_bush_anim()
 		
