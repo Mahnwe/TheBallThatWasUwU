@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://be8h04flewf2h"]
+[gd_scene load_steps=3 format=3 uid="uid://be8h04flewf2h"]
 
+[ext_resource type="Script" path="res://Scripts/tree.gd" id="1_6b2fq"]
 [ext_resource type="Texture2D" uid="uid://diuxpteq52k3u" path="res://Arts/TreeSprite/TreeSprite1-removebg-preview.png" id="1_j775l"]
 
 [node name="Tree" type="Node2D"]
+script = ExtResource("1_6b2fq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5, -27)

@@ -28,7 +28,8 @@ position = Vector2(-924, -50)
 scale = Vector2(6, 5.84)
 
 [node name="Tree3" parent="." instance=ExtResource("14_shu8y")]
-position = Vector2(-1253, 371)
+position = Vector2(-1260, 371)
+flip_value = 1
 
 [node name="StartArea" parent="." instance=ExtResource("2_es0mk")]
 position = Vector2(-1358, 384)
@@ -58,6 +59,7 @@ offset_bottom = 408.439
 [node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1148, 424)
 rotation = -0.790385
+flip_value = 1
 
 [node name="StartSign" parent="." instance=ExtResource("5_vflxv")]
 position = Vector2(-1129, 365)
@@ -125,7 +127,7 @@ position = Vector2(-613, 404)
 scale = Vector2(0.32, 1)
 
 [node name="platform7" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-236, 352)
+position = Vector2(-267, 350)
 scale = Vector2(0.639999, 1)
 
 [node name="platform8" parent="." instance=ExtResource("7_v154u")]
@@ -289,8 +291,8 @@ position = Vector2(-2179, -50)
 scale = Vector2(0.479997, 0.36)
 
 [node name="platform18" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-2795, -521)
-scale = Vector2(2.57297, 1)
+position = Vector2(-2793, -540)
+scale = Vector2(2.57297, 1.24)
 
 [node name="Wall10" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-2787, 655)
@@ -471,22 +473,28 @@ rotation = 0.690769
 
 [node name="Tree2" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(-1198, 76)
+flip_value = 1
 
 [node name="Rock4" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1153, 129)
+flip_value = 1
 
 [node name="BranchesBush" parent="." instance=ExtResource("18_ebilh")]
 position = Vector2(-1117, 135)
+flip_value = 1
 
 [node name="BranchesBush" parent="BranchesBush" instance=ExtResource("18_ebilh")]
 position = Vector2(34, 1)
+flip_value = 1
 
 [node name="BigTree" parent="." instance=ExtResource("16_d1jsb")]
 position = Vector2(-2566, 321)
 scale = Vector2(0.960005, 0.88)
+flip_value = 1
 
 [node name="BranchesBush" parent="BigTree" instance=ExtResource("18_ebilh")]
 position = Vector2(-31.2498, 117.045)
+flip_value = 1
 
 [node name="Tree6" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(246, 323)
@@ -502,18 +510,22 @@ rotation = -0.596495
 [node name="Rock5" parent="." instance=ExtResource("14_mptbk")]
 position = Vector2(-2637, 441)
 scale = Vector2(0.72, 0.759999)
+flip_value = 1
 
 [node name="BigTree2" parent="." instance=ExtResource("16_d1jsb")]
 position = Vector2(488, -767)
 
 [node name="BerryBush" parent="." instance=ExtResource("19_8uqwt")]
 position = Vector2(-1463, 433)
+flip_value = 1
 
 [node name="BranchesBush2" parent="." instance=ExtResource("18_ebilh")]
 position = Vector2(-805, 475)
+flip_value = 1
 
 [node name="BerryBush3" parent="." instance=ExtResource("19_8uqwt")]
 position = Vector2(-627, -689)
+flip_value = 1
 
 [node name="BranchesBush3" parent="." instance=ExtResource("18_ebilh")]
 position = Vector2(166, -651)

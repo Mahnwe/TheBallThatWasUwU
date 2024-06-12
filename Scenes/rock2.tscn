@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bha08grmcxwnd"]
+[gd_scene load_steps=3 format=3 uid="uid://bha08grmcxwnd"]
 
 [ext_resource type="Texture2D" uid="uid://beamrmvigjq5p" path="res://Arts/RockSprite/RockSprite2-removebg-preview.png" id="1_nnhi5"]
+[ext_resource type="Script" path="res://Scripts/rock2.gd" id="1_wgequ"]
 
 [node name="Rock2" type="Node2D"]
+script = ExtResource("1_wgequ")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -6)

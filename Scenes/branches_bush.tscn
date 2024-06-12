@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd6m23uhhgmfy"]
+[gd_scene load_steps=3 format=3 uid="uid://dd6m23uhhgmfy"]
 
+[ext_resource type="Script" path="res://Scripts/branches_bush.gd" id="1_5402i"]
 [ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="1_ychnd"]
 
 [node name="BranchesBush" type="Node2D"]
+script = ExtResource("1_5402i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.999998, 0)

@@ -19,13 +19,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ltdc4")
 
+[node name="platform" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(583, 472.125)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+position = Vector2(368, 47.875)
+scale = Vector2(0.152778, 0.138309)
+texture = ExtResource("4_xglq7")
+
+[node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
+position = Vector2(214, -65.125)
+
+[node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
+position = Vector2(171, 66.875)
+
+[node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
+position = Vector2(529, 50.875)
+
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(672, 627)
-scale = Vector2(0.254949, 1)
+position = Vector2(672, 656)
+scale = Vector2(0.254949, 0.68)
 
 [node name="platform3" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1034, 629)
-scale = Vector2(0.24, 1)
+position = Vector2(1034, 653)
+scale = Vector2(0.24, 0.72)
 
 [node name="MenuTitle" type="Label" parent="."]
 z_index = 2
@@ -91,25 +108,8 @@ focus_previous = NodePath("../Level2Button")
 theme_override_font_sizes/font_size = 20
 text = "Level 3"
 
-[node name="platform" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(583, 472.125)
-
-[node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
-position = Vector2(214, -65.125)
-
-[node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
-position = Vector2(171, 66.875)
-
-[node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
-position = Vector2(529, 50.875)
-
 [node name="Tree" parent="." instance=ExtResource("6_ilarj")]
 position = Vector2(1186, 473)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(945.375, 517.125)
-scale = Vector2(0.152778, 0.138309)
-texture = ExtResource("4_xglq7")
 
 [node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
