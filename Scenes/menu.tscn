@@ -20,11 +20,11 @@ grow_vertical = 2
 script = ExtResource("1_ltdc4")
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(673, 637)
+position = Vector2(672, 627)
 scale = Vector2(0.254949, 1)
 
 [node name="platform3" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1035, 639)
+position = Vector2(1034, 629)
 scale = Vector2(0.24, 1)
 
 [node name="MenuTitle" type="Label" parent="."]
@@ -95,7 +95,7 @@ text = "Level 3"
 position = Vector2(583, 472.125)
 
 [node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
-position = Vector2(214, -67)
+position = Vector2(214, -65.125)
 
 [node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
 position = Vector2(171, 66.875)

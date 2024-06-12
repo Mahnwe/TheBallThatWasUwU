@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cee65aqjudu3j"
-path="res://.godot/imported/SpritePlatform.png-ee63ef0913fb8ac553a95a15993dd9c8.ctex"
+uid="uid://cd3vwi8udg40u"
+path="res://.godot/imported/GrassPlatform.png-af93b937a0bcba5d03f8acd3169011aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesPlatform/SpritePlatform.png"
-dest_files=["res://.godot/imported/SpritePlatform.png-ee63ef0913fb8ac553a95a15993dd9c8.ctex"]
+source_file="res://Arts/SpritesPlatform/GrassPlatform.png"
+dest_files=["res://.godot/imported/GrassPlatform.png-af93b937a0bcba5d03f8acd3169011aa.ctex"]
 
 [params]
 

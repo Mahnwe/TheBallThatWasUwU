@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=29 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
+[ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_ja3c0"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="3_fn0ld"]
 [ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="4_22uak"]
@@ -111,6 +112,10 @@ point_count = 7
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_f151f")
 
+[node name="GameArea" parent="." instance=ExtResource("2_3pu7n")]
+position = Vector2(-2112, 427)
+scale = Vector2(8.84, 3.8)
+
 [node name="StartArea" parent="." instance=ExtResource("5_dhyc2")]
 position = Vector2(142, 660)
 scale = Vector2(0.626667, 0.8)
@@ -220,7 +225,7 @@ position = Vector2(306, 471)
 scale = Vector2(0.345136, 0.386221)
 
 [node name="platform3" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-1077, 469)
+position = Vector2(-1079, 469)
 scale = Vector2(0.479161, 1.24)
 
 [node name="Wall3" parent="." instance=ExtResource("6_llnkw")]
@@ -229,7 +234,7 @@ rotation = -1.5708
 scale = Vector2(1.56, 2.36)
 
 [node name="platform4" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-1492, 324)
+position = Vector2(-1490, 324)
 scale = Vector2(0.4, 1.44)
 
 [node name="Wall4" parent="." instance=ExtResource("6_llnkw")]
@@ -242,7 +247,7 @@ position = Vector2(-870, 546)
 scale = Vector2(0.599999, 0.559999)
 
 [node name="platform5" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-1478, 962)
+position = Vector2(-1492, 962)
 scale = Vector2(0.70427, 1)
 
 [node name="Wall5" parent="." instance=ExtResource("6_llnkw")]
@@ -342,11 +347,11 @@ rotation = 1.5708
 scale = Vector2(0.46707, 0.39999)
 
 [node name="platform8" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-2265, 746)
-scale = Vector2(0.11999, 2.96)
+position = Vector2(-2276, 813)
+scale = Vector2(0.11999, 2.04)
 
 [node name="platform7" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-2894, 882)
+position = Vector2(-2894, 879)
 scale = Vector2(1.03053, 1)
 
 [node name="SpikePatrol4" type="Path2D" parent="."]
@@ -428,15 +433,15 @@ rotation = 1.5708
 scale = Vector2(1.47067, 3.09534)
 
 [node name="platform11" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-3276, -136)
-scale = Vector2(0.399995, 2.92)
+position = Vector2(-3268, -134)
+scale = Vector2(0.399995, 2.76)
 
 [node name="SavePoint2" parent="." instance=ExtResource("10_bv661")]
 position = Vector2(-2689, 940)
 scale = Vector2(0.559995, 0.560002)
 
 [node name="Wall9" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(-3639, 273)
+position = Vector2(-3639, 266)
 rotation = -1.5708
 scale = Vector2(1.44, 2.28)
 
@@ -518,7 +523,7 @@ position = Vector2(-4865, 314)
 scale = Vector2(1.50622, 1)
 
 [node name="platform16" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-4555, 167)
+position = Vector2(-4555, 149)
 
 [node name="platform18" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-3895, -18)
@@ -535,11 +540,11 @@ rotation = 1.5708
 scale = Vector2(0.32, 1.52001)
 
 [node name="platform17" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-4883, 108)
+position = Vector2(-4878, 108)
 scale = Vector2(0.56001, 1)
 
 [node name="Wall16" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(-4908, 436)
+position = Vector2(-4892, 436)
 rotation = -1.5708
 scale = Vector2(0.699144, 1.28)
 
@@ -585,6 +590,10 @@ scale = Vector2(0.28, 0.200001)
 z_index = 1
 position = Vector2(-4693, 321)
 scale = Vector2(0.480018, 0.6)
+
+[node name="platform19" parent="." instance=ExtResource("2_ja3c0")]
+position = Vector2(-3563, -292)
+scale = Vector2(1.72, 1)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="spike_hit" from="SpikePatrol1/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]

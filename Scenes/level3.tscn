@@ -41,7 +41,7 @@ offset_bottom = -540.724
 
 [node name="platform2" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(337, -81)
-scale = Vector2(0.960001, 1)
+scale = Vector2(1, 1)
 
 [node name="Ability" parent="." instance=ExtResource("7_pr54i")]
 position = Vector2(490, -57)

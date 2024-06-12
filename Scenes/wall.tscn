@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://doy0e7jnl2886"]
 
-[ext_resource type="Texture2D" uid="uid://cb5501jkudevi" path="res://Arts/SpritesPlatform/SpritePlatform-removebg-preview.png" id="1_8wbtk"]
+[ext_resource type="Texture2D" uid="uid://jg2dls04c4f7" path="res://Arts/SpritesPlatform/GrassPlatform-removebg-preview.png" id="1_flumq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qdqgg"]
 
@@ -11,10 +11,10 @@ size = Vector2(303, 20)
 z_index = 1
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(167.25, 59.75)
-scale = Vector2(335.5, 120.5)
+position = Vector2(168, 68)
+scale = Vector2(312, 26)
 mesh = SubResource("QuadMesh_qdqgg")
-texture = ExtResource("1_8wbtk")
+texture = ExtResource("1_flumq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(167.5, 66)

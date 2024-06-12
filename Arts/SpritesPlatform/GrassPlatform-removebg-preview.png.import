@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb5501jkudevi"
-path="res://.godot/imported/SpritePlatform-removebg-preview.png-b0bfceac0e6d78ab740675d813809490.ctex"
+uid="uid://jg2dls04c4f7"
+path="res://.godot/imported/GrassPlatform-removebg-preview.png-9d54fa302f7cb0e44696ba21ca14d30d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesPlatform/SpritePlatform-removebg-preview.png"
-dest_files=["res://.godot/imported/SpritePlatform-removebg-preview.png-b0bfceac0e6d78ab740675d813809490.ctex"]
+source_file="res://Arts/SpritesPlatform/GrassPlatform-removebg-preview.png"
+dest_files=["res://.godot/imported/GrassPlatform-removebg-preview.png-9d54fa302f7cb0e44696ba21ca14d30d.ctex"]
 
 [params]
 

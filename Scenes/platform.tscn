@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwvnkbkl3fw0d"]
 
 [ext_resource type="Script" path="res://Scripts/platform.gd" id="1_0i6cx"]
-[ext_resource type="Texture2D" uid="uid://cb5501jkudevi" path="res://Arts/SpritesPlatform/SpritePlatform-removebg-preview.png" id="1_tqln8"]
+[ext_resource type="Texture2D" uid="uid://jg2dls04c4f7" path="res://Arts/SpritesPlatform/GrassPlatform-removebg-preview.png" id="2_svcx6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rsijb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_bho6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tnx2"]
-size = Vector2(655, 32)
+size = Vector2(638, 51)
 
 [node name="platform" type="AnimatableBody2D"]
 z_index = 1
@@ -18,12 +18,12 @@ physics_material_override = SubResource("PhysicsMaterial_rsijb")
 script = ExtResource("1_0i6cx")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(363.25, 104.25)
+position = Vector2(359.75, 100.429)
 rotation = -3.14159
-scale = Vector2(727.5, 209.5)
+scale = Vector2(655.5, 66.8554)
 mesh = SubResource("QuadMesh_bho6h")
-texture = ExtResource("1_tqln8")
+texture = ExtResource("2_svcx6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(362.5, 94)
+position = Vector2(359.5, 105.001)
 shape = SubResource("RectangleShape2D_1tnx2")
