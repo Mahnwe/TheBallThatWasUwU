@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnsivgw0rvthf"
-path="res://.godot/imported/SpriteTripleSprite.png-31aa4e1050e0701f02579d68ead4a608.ctex"
+uid="uid://dykfivl8b1kj8"
+path="res://.godot/imported/RealSpriteSign-removebg-preview.png-eef5289ee3e883b9c24076037bf851d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesSigns/SpriteTripleSprite.png"
-dest_files=["res://.godot/imported/SpriteTripleSprite.png-31aa4e1050e0701f02579d68ead4a608.ctex"]
+source_file="res://Arts/SpritesSigns/RealSpriteSign-removebg-preview.png"
+dest_files=["res://.godot/imported/RealSpriteSign-removebg-preview.png-eef5289ee3e883b9c24076037bf851d5.ctex"]
 
 [params]
 

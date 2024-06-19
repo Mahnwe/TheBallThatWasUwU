@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8doi7lkw4gub"
-path="res://.godot/imported/DoubleSpriteSigns-removebg-preview.png-d64be9c53185ca917c935688787c570c.ctex"
+uid="uid://bi1gmdn5kysaw"
+path="res://.godot/imported/SpriteArrowSign.png-d0d87789cbd0bc76805bb0cf4034fcd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesSigns/DoubleSpriteSigns-removebg-preview.png"
-dest_files=["res://.godot/imported/DoubleSpriteSigns-removebg-preview.png-d64be9c53185ca917c935688787c570c.ctex"]
+source_file="res://Arts/SpritesSigns/SpriteArrowSign.png"
+dest_files=["res://.godot/imported/SpriteArrowSign.png-d0d87789cbd0bc76805bb0cf4034fcd5.ctex"]
 
 [params]
 
