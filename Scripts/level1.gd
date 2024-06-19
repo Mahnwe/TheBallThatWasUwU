@@ -33,6 +33,7 @@ func _ready():
 	$Player.have_dash_ability = false
 	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	set_up_signs()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	handle_commands_panel()
@@ -159,3 +160,17 @@ func _on_game_area_player_exited_game_area():
 	else:
 		put_player_to_save_position_and_unpause_timer()
 		
+
+func set_up_signs():
+	_on_triple_sign_set_up_sign_label()
+	_on_triple_sign_2_set_up_sign_label()
+
+func _on_triple_sign_set_up_sign_label():
+	$TripleSign.get_child(1).text = "Easy way"
+	$TripleSign.get_child(2).text = "Hard way"
+	$TripleSign.get_child(3).text = "Dead way"
+
+
+func _on_triple_sign_2_set_up_sign_label():
+	$TripleSign2.get_child(2).text = "Hard way"
+	$TripleSign2.get_child(3).text = "Easy way"

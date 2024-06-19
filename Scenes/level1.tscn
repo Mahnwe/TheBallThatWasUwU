@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="2_es0mk"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="3_vhjlp"]
 [ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="4_gyqah"]
-[ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/StartSign.tscn" id="5_vflxv"]
+[ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="5_vflxv"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="6_mp22g"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="7_v154u"]
-[ext_resource type="PackedScene" uid="uid://bubik6iv0acc1" path="res://Scenes/second_sign.tscn" id="8_dvngs"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_3dyia"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="10_8ng8k"]
+[ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="10_8nv0h"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_r8tlj"]
 [ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="14_ec3q2"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="14_mptbk"]
@@ -62,9 +62,27 @@ position = Vector2(-1148, 424)
 rotation = -0.790385
 flip_value = 1
 
-[node name="StartSign" parent="." instance=ExtResource("5_vflxv")]
+[node name="TripleSign" parent="." instance=ExtResource("5_vflxv")]
 position = Vector2(-1129, 365)
 scale = Vector2(0.400002, 0.4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign"]
+position = Vector2(172.499, -212.5)
+rotation = 1.5708
+scale = Vector2(0.0812904, 0.118572)
+texture = ExtResource("10_8nv0h")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TripleSign"]
+position = Vector2(174.999, -110)
+rotation = 1.5708
+scale = Vector2(0.0848147, 0.107286)
+texture = ExtResource("10_8nv0h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="TripleSign"]
+position = Vector2(179.999, -7.50001)
+rotation = 3.14159
+scale = Vector2(0.0888956, 0.106178)
+texture = ExtResource("10_8nv0h")
 
 [node name="Spike" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-514, 442)
@@ -74,10 +92,20 @@ scale = Vector2(0.292135, 0.278765)
 position = Vector2(-1566, 382)
 scale = Vector2(0.75735, 0.922252)
 
-[node name="SecondSign" parent="." instance=ExtResource("8_dvngs")]
-z_index = -1
-position = Vector2(38, 372)
+[node name="TripleSign2" parent="." instance=ExtResource("5_vflxv")]
+position = Vector2(35, 354)
 scale = Vector2(0.240006, 0.32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign2"]
+position = Vector2(174.996, -106.25)
+scale = Vector2(0.109697, 0.108792)
+texture = ExtResource("10_8nv0h")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TripleSign2"]
+position = Vector2(179.162, -9.37502)
+rotation = 1.5708
+scale = Vector2(0.0851646, 0.112497)
+texture = ExtResource("10_8nv0h")
 
 [node name="SavePoint" parent="." instance=ExtResource("9_3dyia")]
 position = Vector2(437, -643)
@@ -575,7 +603,9 @@ scale = Vector2(0.160002, 1)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="set_up_sign_label" from="TripleSign" to="." method="_on_triple_sign_set_up_sign_label"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
