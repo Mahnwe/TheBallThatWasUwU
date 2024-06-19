@@ -315,7 +315,7 @@ rotates = false
 
 [node name="platform" parent="PlatformPatrol4/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_ja3c0")]
 position = Vector2(-71.2556, -95.5596)
-scale = Vector2(0.164717, 1)
+scale = Vector2(0.204712, 1)
 sync_to_physics = false
 
 [node name="PlatformPatrol5" type="Path2D" parent="."]
@@ -328,9 +328,9 @@ rotation = -3.11457
 rotates = false
 
 [node name="platform" parent="PlatformPatrol5/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_ja3c0")]
-position = Vector2(61.4641, 90.3724)
+position = Vector2(73.46, 90.048)
 rotation = 3.10339
-scale = Vector2(0.161841, 1)
+scale = Vector2(0.200947, 1)
 sync_to_physics = false
 speed = 200
 
@@ -490,9 +490,9 @@ rotation = -0.0315685
 rotates = false
 
 [node name="platform" parent="PlatformPatrol6/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_ja3c0")]
-position = Vector2(-34.9826, -96.1521)
+position = Vector2(-49.9751, -96.6255)
 rotation = 0.0315683
-scale = Vector2(0.120005, 1)
+scale = Vector2(0.16001, 1)
 sync_to_physics = false
 
 [node name="Wall13" parent="." instance=ExtResource("6_llnkw")]
