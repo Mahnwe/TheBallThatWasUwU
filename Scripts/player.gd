@@ -9,7 +9,7 @@ var gravity = 30
 #@export
 var jump_force = 660
 
-const VELOCITY_Y_MAX = 800
+const VELOCITY_Y_MAX = 600
 const dash_speed = 1200
 
 var can_dash

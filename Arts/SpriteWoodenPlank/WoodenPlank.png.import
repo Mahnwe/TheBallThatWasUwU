@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tbp173n78fvi"
-path="res://.godot/imported/SpriteMemoryCard.png-1414566c5fe9924d5619b3f02592fdad.ctex"
+uid="uid://cp3s0quke7khc"
+path="res://.godot/imported/WoodenPlank.png-63e2f8727bdb796b8f209170e93e2521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpriteMemoryCard.png"
-dest_files=["res://.godot/imported/SpriteMemoryCard.png-1414566c5fe9924d5619b3f02592fdad.ctex"]
+source_file="res://Arts/SpriteWoodenPlank/WoodenPlank.png"
+dest_files=["res://.godot/imported/WoodenPlank.png-63e2f8727bdb796b8f209170e93e2521.ctex"]
 
 [params]
 

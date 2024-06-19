@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://7qfwpggjf11t"]
 
-[ext_resource type="Texture2D" uid="uid://tbp173n78fvi" path="res://Arts/SpritesMemoryCard/SpriteMemoryCard.png" id="1_7yss3"]
 [ext_resource type="Script" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
+[ext_resource type="Texture2D" uid="uid://bo382jwr13x5w" path="res://Arts/SpritesMemoryCard/SpritePositionMemoryCard-removebg-preview.png" id="2_sqixw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elg4p"]
 size = Vector2(154, 212)
@@ -16,7 +16,7 @@ script = ExtResource("1_mpj8v")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-75.5, -77)
 scale = Vector2(0.401596, 0.462555)
-texture = ExtResource("1_7yss3")
+texture = ExtResource("2_sqixw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-75, -76)

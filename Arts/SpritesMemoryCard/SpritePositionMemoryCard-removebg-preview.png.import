@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tbp173n78fvi"
-path="res://.godot/imported/SpriteMemoryCard.png-677180b76e6ff3d7ed69559570d518e4.ctex"
+uid="uid://bo382jwr13x5w"
+path="res://.godot/imported/SpritePositionMemoryCard-removebg-preview.png-4cf2f676c602b063e0395a97567f5abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesMemoryCard/SpriteMemoryCard.png"
-dest_files=["res://.godot/imported/SpriteMemoryCard.png-677180b76e6ff3d7ed69559570d518e4.ctex"]
+source_file="res://Arts/SpritesMemoryCard/SpritePositionMemoryCard-removebg-preview.png"
+dest_files=["res://.godot/imported/SpritePositionMemoryCard-removebg-preview.png-4cf2f676c602b063e0395a97567f5abd.ctex"]
 
 [params]
 
