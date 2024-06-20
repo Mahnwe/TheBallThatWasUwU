@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp0mu2e8kcon"]
+[gd_scene load_steps=37 format=3 uid="uid://cp0mu2e8kcon"]
 
 [ext_resource type="Script" path="res://Scripts/commands_ui.gd" id="1_in6he"]
+[ext_resource type="Texture2D" uid="uid://cea44i1yw26q1" path="res://Arts/KeyboardControls/Qkey-removebg-preview.png" id="2_apncb"]
+[ext_resource type="Texture2D" uid="uid://bnnl3n15x2t5l" path="res://Arts/KeyboardControls/Dkey-removebg-preview.png" id="3_uafni"]
+[ext_resource type="Texture2D" uid="uid://c32h8q26o4uyd" path="res://Arts/KeyboardControls/Zkey-removebg-preview.png" id="4_04nmc"]
+[ext_resource type="Texture2D" uid="uid://d3shxj7lijtfx" path="res://Arts/KeyboardControls/Spacekey-removebg-preview.png" id="5_gv5bw"]
+[ext_resource type="Texture2D" uid="uid://bc1x1232loy37" path="res://Arts/KeyboardControls/Ekey-removebg-preview.png" id="6_1sqgb"]
+[ext_resource type="Texture2D" uid="uid://bxs4smkm3bogo" path="res://Arts/KeyboardControls/Rkey-removebg-preview.png" id="7_nffs6"]
+[ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="8_2xnq0"]
+[ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="9_x7xfw"]
+[ext_resource type="Texture2D" uid="uid://pmg43xtn6xiy" path="res://Arts/KeyboardControls/Xkey-removebg-preview.png" id="10_lfldb"]
+[ext_resource type="Texture2D" uid="uid://bsoyl6jusm3ys" path="res://Arts/KeyboardControls/Kkey-removebg-preview.png" id="11_4pkt2"]
+[ext_resource type="Texture2D" uid="uid://cuv8n5in56pkk" path="res://Arts/KeyboardControls/Mkey-removebg-preview.png" id="12_sunxo"]
+[ext_resource type="Texture2D" uid="uid://cfp3osmdvn2ak" path="res://Arts/KeyboardControls/Okey-removebg-preview.png" id="13_l6bwp"]
+[ext_resource type="Texture2D" uid="uid://cbmvxyponfcue" path="res://Arts/KeyboardControls/Ikey-removebg-preview.png" id="14_qa38p"]
+[ext_resource type="Texture2D" uid="uid://bkt8unwo1idff" path="res://Arts/KeyboardControls/Ukey-removebg-preview.png" id="15_q0fr3"]
+[ext_resource type="Texture2D" uid="uid://b2y8j40kibhyg" path="res://Arts/KeyboardControls/Jkey-removebg-preview.png" id="16_2cbhg"]
+[ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="17_15w8q"]
+[ext_resource type="Texture2D" uid="uid://b42xivpe6f75y" path="res://Arts/KeyboardControls/Semicolonkey-removebg-preview.png" id="18_s7klp"]
+[ext_resource type="Texture2D" uid="uid://doeotn4rjw8v4" path="res://Arts/ControllerControls/LeftJoystick-removebg-preview.png" id="19_jgwf3"]
+[ext_resource type="Texture2D" uid="uid://c11woyc7aa1j7" path="res://Arts/ControllerControls/Cross-removebg-preview.png" id="20_lg78q"]
+[ext_resource type="Texture2D" uid="uid://c3uy8htjo7x7b" path="res://Arts/ControllerControls/AButton-removebg-preview.png" id="21_iurxd"]
+[ext_resource type="Texture2D" uid="uid://batnsbas4oa8u" path="res://Arts/ControllerControls/BSwitch-removebg-preview.png" id="22_5so20"]
+[ext_resource type="Texture2D" uid="uid://cgijxlad10f54" path="res://Arts/ControllerControls/CircleButton-removebg-preview.png" id="23_7oxx0"]
+[ext_resource type="Texture2D" uid="uid://cx83hytcg66vq" path="res://Arts/ControllerControls/BButton-removebg-preview.png" id="24_4woxk"]
+[ext_resource type="Texture2D" uid="uid://57v35ecv1pcw" path="res://Arts/ControllerControls/ASwitch-removebg-preview.png" id="25_khoyl"]
+[ext_resource type="Texture2D" uid="uid://cnrsquqhx3ucx" path="res://Arts/ControllerControls/TriangleButton-removebg-preview.png" id="26_7pc8d"]
+[ext_resource type="Texture2D" uid="uid://b5tjyqi8gqrau" path="res://Arts/ControllerControls/YButton-removebg-preview.png" id="27_s0mdr"]
+[ext_resource type="Texture2D" uid="uid://d2ivef5yrurvd" path="res://Arts/ControllerControls/XSwitch-removebg-preview.png" id="28_f6ipp"]
+[ext_resource type="Texture2D" uid="uid://bbdesxaqu1x6o" path="res://Arts/ControllerControls/RightTrigger-removebg-preview.png" id="29_yo4yd"]
+[ext_resource type="Texture2D" uid="uid://d4uppifddsjc" path="res://Arts/ControllerControls/RightTriggerSwitch-removebg-preview.png" id="30_ajr3c"]
+[ext_resource type="Texture2D" uid="uid://cnakslo431wlm" path="res://Arts/ControllerControls/Start-removebg-preview.png" id="31_p8u0t"]
+[ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="32_k81pc"]
+[ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="33_cep7v"]
+[ext_resource type="Texture2D" uid="uid://d2tdp336bis5j" path="res://Arts/ControllerControls/Square-removebg-preview.png" id="34_k6euw"]
+[ext_resource type="Texture2D" uid="uid://cmof2sbw6pjjp" path="res://Arts/ControllerControls/XButton-removebg-preview.png" id="35_dq218"]
+[ext_resource type="Texture2D" uid="uid://b2x3glmt64vks" path="res://Arts/ControllerControls/YSwitch-removebg-preview.png" id="36_jtqtl"]
 
 [node name="CommandsUI" type="Control"]
 z_index = 2
@@ -23,68 +58,48 @@ theme_override_font_sizes/font_size = 20
 text = "    Righty
     (ZQSD)"
 
-[node name="MovementK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 115.0
-offset_right = 82.0
-offset_bottom = 143.0
-theme_override_font_sizes/font_size = 20
-text = "QD"
+[node name="MovementK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(28, 123)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("2_apncb")
 
-[node name="JumpK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 187.0
-offset_right = 101.0
-offset_bottom = 215.0
-theme_override_font_sizes/font_size = 20
-text = "Z/SPACE"
+[node name="Sprite2D" type="Sprite2D" parent="Keyboard1/MovementK1"]
+position = Vector2(233.684, 0)
+texture = ExtResource("3_uafni")
 
-[node name="RestartSaveK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 275.0
-offset_right = 79.0
-offset_bottom = 303.0
-theme_override_font_sizes/font_size = 20
-text = "E"
+[node name="JumpK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(-1, 195)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("4_04nmc")
 
-[node name="RestartLevelK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 355.0
-offset_right = 78.0
-offset_bottom = 383.0
-theme_override_font_sizes/font_size = 20
-text = "R"
+[node name="Sprite2D" type="Sprite2D" parent="Keyboard1/JumpK1"]
+position = Vector2(426.474, 0)
+texture = ExtResource("5_gv5bw")
 
-[node name="NextLevelK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 439.0
-offset_right = 81.0
-offset_bottom = 467.0
-theme_override_font_sizes/font_size = 20
-text = "F"
+[node name="RestartSaveK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(49, 290)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("6_1sqgb")
 
-[node name="MenuK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 530.0
-offset_right = 72.0
-offset_bottom = 558.0
-theme_override_font_sizes/font_size = 20
-text = "TAB"
+[node name="RestartLevelK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(50, 372)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("7_nffs6")
 
-[node name="DashK1" type="Label" parent="Keyboard1"]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 604.0
-offset_right = 77.0
-offset_bottom = 632.0
-theme_override_font_sizes/font_size = 20
-text = "X"
+[node name="NextLevelK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(48, 453)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("8_2xnq0")
+
+[node name="MenuK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(47, 539)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("9_x7xfw")
+
+[node name="DashK1" type="Sprite2D" parent="Keyboard1"]
+position = Vector2(47, 622)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("10_lfldb")
 
 [node name="Keyboard2" type="Label" parent="."]
 z_index = 2
@@ -97,68 +112,48 @@ theme_override_font_sizes/font_size = 20
 text = "    Lefty
    (OKLM)"
 
-[node name="MovementK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 114.0
-offset_right = 67.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 20
-text = "KM"
+[node name="MovementK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(29, 121)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("11_4pkt2")
 
-[node name="JumpK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 182.0
-offset_right = 91.0
-offset_bottom = 210.0
-theme_override_font_sizes/font_size = 20
-text = "O/SPACE"
+[node name="Sprite2D" type="Sprite2D" parent="Keyboard2/MovementK2"]
+position = Vector2(239.526, 0)
+texture = ExtResource("12_sunxo")
 
-[node name="RestartSaveK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 269.0
-offset_right = 87.0
-offset_bottom = 297.0
-theme_override_font_sizes/font_size = 20
-text = "I"
+[node name="JumpK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(0, 195)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("13_l6bwp")
 
-[node name="RestartLevelK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 353.0
-offset_right = 82.0
-offset_bottom = 381.0
-theme_override_font_sizes/font_size = 20
-text = "U"
+[node name="Sprite2D" type="Sprite2D" parent="Keyboard2/JumpK2"]
+position = Vector2(438.158, 0)
+texture = ExtResource("5_gv5bw")
 
-[node name="NextLevelK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 436.0
-offset_right = 90.0
-offset_bottom = 464.0
-theme_override_font_sizes/font_size = 20
-text = "J"
+[node name="RestartSaveK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(50, 288)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("14_qa38p")
 
-[node name="MenuK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 524.0
-offset_right = 85.0
-offset_bottom = 552.0
-theme_override_font_sizes/font_size = 20
-text = "^"
+[node name="RestartLevelK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(49, 371)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("15_q0fr3")
 
-[node name="DashK2" type="Label" parent="Keyboard2"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 604.0
-offset_right = 92.0
-offset_bottom = 632.0
-theme_override_font_sizes/font_size = 20
-text = "Comma"
+[node name="NextLevelK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(49, 455)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("16_2cbhg")
+
+[node name="MenuK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(48, 540)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("17_15w8q")
+
+[node name="DashK2" type="Sprite2D" parent="Keyboard2"]
+position = Vector2(48, 622)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("18_s7klp")
 
 [node name="Controller" type="Label" parent="."]
 z_index = 2
@@ -172,68 +167,89 @@ theme_override_font_sizes/font_size = 20
 text = "        Controller
 PS/XBOX/NINTENDO"
 
-[node name="MovementsC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 29.0268
-offset_top = 103.093
-offset_right = 146.027
-offset_bottom = 131.093
-theme_override_font_sizes/font_size = 20
-text = "Left Joystick"
+[node name="MovementsC" type="Sprite2D" parent="Controller"]
+position = Vector2(88.4848, 111.856)
+scale = Vector2(0.242022, 0.240701)
+texture = ExtResource("19_jgwf3")
 
-[node name="JumpC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 35.5813
-offset_top = 176.289
-offset_right = 130.581
-offset_bottom = 204.289
-theme_override_font_sizes/font_size = 20
-text = "Cross/A/B"
+[node name="JumpC" type="Sprite2D" parent="Controller"]
+position = Vector2(37.4539, 188.66)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("20_lg78q")
 
-[node name="RestartSaveC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 41.1993
-offset_top = 261.856
-offset_right = 137.199
-offset_bottom = 289.856
-theme_override_font_sizes/font_size = 20
-text = "Circle/B/A"
+[node name="Sprite2D" type="Sprite2D" parent="Controller/JumpC"]
+position = Vector2(295.393, -8.15137e-05)
+texture = ExtResource("21_iurxd")
 
-[node name="RestartLevelC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 36.5177
-offset_top = 349.485
-offset_right = 154.518
-offset_bottom = 377.485
-theme_override_font_sizes/font_size = 20
-text = "Triangle/Y/X"
+[node name="Sprite2D2" type="Sprite2D" parent="Controller/JumpC"]
+position = Vector2(603.563, 5.34193)
+scale = Vector2(1.90387, 2.17465)
+texture = ExtResource("22_5so20")
 
-[node name="NextLevelC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 20.5996
-offset_top = 440.206
-offset_right = 185.6
-offset_bottom = 468.206
-theme_override_font_sizes/font_size = 20
-text = "Top Right Trigger"
+[node name="RestartSaveC" type="Sprite2D" parent="Controller"]
+position = Vector2(33.7085, 286.598)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("23_7oxx0")
 
-[node name="MenuC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 40.2629
-offset_top = 523.711
-offset_right = 261.262
-offset_bottom = 551.711
-theme_override_font_sizes/font_size = 20
-text = "Start/Menu/+"
+[node name="Sprite2D" type="Sprite2D" parent="Controller/RestartSaveC"]
+position = Vector2(311.804, 0)
+texture = ExtResource("24_4woxk")
 
-[node name="DashC" type="Label" parent="Controller"]
-layout_mode = 0
-offset_left = 43.072
-offset_top = 606.186
-offset_right = 208.072
-offset_bottom = 634.186
-theme_override_font_sizes/font_size = 20
-text = "Square/X/Y"
+[node name="Sprite2D2" type="Sprite2D" parent="Controller/RestartSaveC"]
+position = Vector2(639.854, 2.67098)
+scale = Vector2(1.90147, 1.86019)
+texture = ExtResource("25_khoyl")
+
+[node name="RestartLevelC" type="Sprite2D" parent="Controller"]
+position = Vector2(30.8995, 373.196)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("26_7pc8d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controller/RestartLevelC"]
+position = Vector2(333.685, 0)
+texture = ExtResource("27_s0mdr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Controller/RestartLevelC"]
+position = Vector2(650.06, -5.34198)
+scale = Vector2(1.95228, 2.25446)
+texture = ExtResource("28_f6ipp")
+
+[node name="NextLevelC" type="Sprite2D" parent="Controller"]
+position = Vector2(58.9899, 458.763)
+scale = Vector2(0.304857, 0.250913)
+texture = ExtResource("29_yo4yd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controller/NextLevelC"]
+position = Vector2(282.571, 0)
+texture = ExtResource("30_ajr3c")
+
+[node name="MenuC" type="Sprite2D" parent="Controller"]
+position = Vector2(30.8995, 546.392)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("31_p8u0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controller/MenuC"]
+position = Vector2(333.685, 0)
+texture = ExtResource("32_k81pc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Controller/MenuC"]
+position = Vector2(650.958, 2.67098)
+scale = Vector2(1.97126, 2.03283)
+texture = ExtResource("33_cep7v")
+
+[node name="DashC" type="Sprite2D" parent="Controller"]
+position = Vector2(29.9631, 634.021)
+scale = Vector2(0.171171, 0.192982)
+texture = ExtResource("34_k6euw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controller/DashC"]
+position = Vector2(339.155, 0)
+texture = ExtResource("35_dq218")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Controller/DashC"]
+position = Vector2(667.369, -5.34205)
+scale = Vector2(1.92471, 2.09689)
+texture = ExtResource("36_jtqtl")
 
 [node name="Movements" type="Label" parent="."]
 layout_mode = 2
@@ -305,4 +321,4 @@ custom_minimum_size = Vector2(1200, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+color = Color(0.219501, 0.219501, 0.219501, 1)

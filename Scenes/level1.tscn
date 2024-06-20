@@ -601,6 +601,14 @@ scale = Vector2(0.279995, 0.632257)
 position = Vector2(-952, -795)
 scale = Vector2(0.160002, 1)
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -2785.0
+offset_top = -1107.0
+offset_right = 925.0
+offset_bottom = 1022.0
+color = Color(0.10748, 0.10748, 0.10748, 1)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="set_up_sign_label" from="TripleSign" to="." method="_on_triple_sign_set_up_sign_label"]

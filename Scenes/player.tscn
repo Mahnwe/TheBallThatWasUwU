@@ -1,15 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=22 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="2_g0yss"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
+[ext_resource type="Texture2D" uid="uid://cwaisf542byb4" path="res://Arts/ControllerControls/LeftButton-removebg-preview.png" id="3_uwjuy"]
 [ext_resource type="Texture2D" uid="uid://diefribiugm3m" path="res://Arts/SpritesPersoBall/UwUSpriteBallDead-removebg-preview.png" id="4_02vbv"]
 [ext_resource type="Texture2D" uid="uid://c2005s45nfh52" path="res://Arts/SpritePersoDash/SpritePersoDash2-removebg-preview.png" id="4_157te"]
 [ext_resource type="Texture2D" uid="uid://cqp3ll46bo27n" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight-removebg-preview.png" id="4_bp6ha"]
 [ext_resource type="Texture2D" uid="uid://dnugkqa4d7tfa" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight1.5-removebg-preview.png" id="4_je60a"]
 [ext_resource type="Texture2D" uid="uid://bklk682klvor3" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight2-removebg-preview.png" id="4_lx36c"]
+[ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="4_t2j0q"]
 [ext_resource type="Texture2D" uid="uid://b3h7mq0abcqhm" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight3-removebg-preview.png" id="5_1nd78"]
 [ext_resource type="Texture2D" uid="uid://heukqqvjk1t7" path="res://Arts/SpritePersoDash/SpritePersoDash3-removebg-preview.png" id="5_q6oje"]
+[ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="5_w2qmr"]
 [ext_resource type="Texture2D" uid="uid://c2ftocachgsg2" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight2.5-removebg-preview.png" id="6_7yqso"]
 [ext_resource type="Texture2D" uid="uid://c4ukjf7cupgrp" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight4-removebg-preview.png" id="6_raa1c"]
 [ext_resource type="Texture2D" uid="uid://dgyamti7exbgx" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim1-removebg-preview.png" id="7_ibe2s"]
@@ -138,13 +141,28 @@ offset_right = 315.0
 offset_bottom = 441.0
 
 [node name="Commands" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = 1625.0
-offset_top = 915.0
-offset_right = 1854.0
-offset_bottom = 964.0
+offset_left = 1559.0
+offset_top = 873.0
+offset_right = 1845.0
+offset_bottom = 922.0
 scale = Vector2(1.05147, 2.14183)
-text = "Open/Close Commands panel
-          C/TopLeftTrigger/,"
+theme_override_font_sizes/font_size = 20
+text = "Open/Close Commands panel"
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(59.9163, 60.6957)
+scale = Vector2(0.231413, 0.192982)
+texture = ExtResource("3_uwjuy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D"]
+position = Vector2(400.778, 0)
+scale = Vector2(1.49553, 1)
+texture = ExtResource("4_t2j0q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D"]
+position = Vector2(758.243, 4.83873)
+scale = Vector2(1, 0.643679)
+texture = ExtResource("5_w2qmr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
