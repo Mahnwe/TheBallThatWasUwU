@@ -1,4 +1,14 @@
-[gd_scene format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=10 format=3 uid="uid://bbctegcfntwoe"]
+
+[ext_resource type="Texture2D" uid="uid://5nh3reihbr46" path="res://Arts/KeyboardControls/CtrlKey-removebg-preview.png" id="1_xaoi5"]
+[ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="2_g1xuu"]
+[ext_resource type="Texture2D" uid="uid://dd5gsplolw7pp" path="res://Arts/ControllerControls/ShareXbox-removebg-preview.png" id="3_xjpr8"]
+[ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="4_6cx23"]
+[ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="5_d1asp"]
+[ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="6_3gj4a"]
+[ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="7_he205"]
+[ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="8_rgm4r"]
+[ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="9_set0a"]
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -12,10 +22,10 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 layout_mode = 0
-offset_left = 696.0
+offset_left = 651.0
 offset_top = 181.0
-offset_right = 736.0
-offset_bottom = 221.0
+offset_right = 699.0
+offset_bottom = 224.0
 scale = Vector2(12.46, 5.88)
 
 [node name="Label" type="Label" parent="."]
@@ -34,45 +44,79 @@ text = "PAUSE"
 z_index = 5
 layout_mode = 0
 offset_left = 277.0
-offset_top = 800.0
+offset_top = 757.0
 offset_right = 409.0
-offset_bottom = 901.0
+offset_bottom = 858.0
 scale = Vector2(2.92302, 1.95431)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Return to menu
+text = "Return to menu"
 
-             Ctrl
-     Select/Back/-"
+[node name="Sprite2D" type="Sprite2D" parent="Label2"]
+position = Vector2(68.0803, 66.008)
+scale = Vector2(0.116414, 0.140313)
+texture = ExtResource("1_xaoi5")
 
-[node name="ColorRect" type="ColorRect" parent="Label2"]
+[node name="ColorRect2" type="ColorRect" parent="Label2"]
 z_index = -1
 layout_mode = 0
-offset_left = -12.9449
-offset_top = -4.60521
-offset_right = 27.0551
-offset_bottom = 35.3948
+offset_left = -23.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 59.0
 scale = Vector2(3.95883, 2.78068)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label2"]
+position = Vector2(13.0002, 134.063)
+scale = Vector2(0.349739, 0.440286)
+texture = ExtResource("2_g1xuu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Label2/Sprite2D2"]
+position = Vector2(156.002, -0.407177)
+texture = ExtResource("3_xjpr8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label2/Sprite2D2"]
+position = Vector2(303.514, 2.62105)
+texture = ExtResource("4_6cx23")
 
 [node name="Label3" type="Label" parent="."]
 z_index = 5
 layout_mode = 0
 offset_left = 1269.0
-offset_top = 800.0
+offset_top = 749.0
 offset_right = 1446.0
-offset_bottom = 901.0
+offset_bottom = 850.0
 scale = Vector2(2.88, 1.92)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "          Continue
+text = "          Continue"
 
-       Start/Menu/+
-              Tab/ ^
-"
-
-[node name="ColorRect" type="ColorRect" parent="Label3"]
+[node name="ColorRect2" type="ColorRect" parent="Label3"]
 z_index = -1
-layout_mode = 0
-offset_left = -11.8056
-offset_top = -5.43478
-offset_right = 28.1944
-offset_bottom = 34.5652
+offset_left = -15.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 60.0
 scale = Vector2(4.90278, 2.86957)
+
+[node name="Sprite2D" type="Sprite2D" parent="Label3"]
+position = Vector2(49.6528, 65.625)
+scale = Vector2(0.190916, 0.302083)
+texture = ExtResource("5_d1asp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Label3/Sprite2D"]
+position = Vector2(412.936, -2.17391)
+scale = Vector2(0.81588, 0.81726)
+texture = ExtResource("6_3gj4a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label3"]
+position = Vector2(40.9722, 139.063)
+scale = Vector2(0.333912, 0.521004)
+texture = ExtResource("7_he205")
+
+[node name="Sprite2D" type="Sprite2D" parent="Label3/Sprite2D2"]
+position = Vector2(145.18, 4.16473)
+scale = Vector2(0.466761, 0.50914)
+texture = ExtResource("8_rgm4r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label3/Sprite2D2"]
+position = Vector2(273.346, 4.16475)
+texture = ExtResource("9_set0a")
