@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwaisf542byb4"
-path="res://.godot/imported/LeftButton-removebg-preview.png-8903370e5a03b5a4f1c242f8cd19fd5a.ctex"
+uid="uid://5nh3reihbr46"
+path="res://.godot/imported/CtrlKey-removebg-preview.png-43336a1d4b0c8e7b97b04229509a1afd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/ControllerControls/LeftButton-removebg-preview.png"
-dest_files=["res://.godot/imported/LeftButton-removebg-preview.png-8903370e5a03b5a4f1c242f8cd19fd5a.ctex"]
+source_file="res://Arts/KeyboardControls/CtrlKey-removebg-preview.png"
+dest_files=["res://.godot/imported/CtrlKey-removebg-preview.png-43336a1d4b0c8e7b97b04229509a1afd.ctex"]
 
 [params]
 
