@@ -67,17 +67,27 @@ func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
-		if !is_paused and Input.is_action_just_pressed("pause"):
+		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.show()
+			disable_patrol_groups()
 			$Player.set_physics_process(false)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			disable_patrol_groups()
 			is_paused = true
-		elif is_paused and Input.is_action_just_pressed("pause"):
+		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+			$Player/Pause.show()
+			disable_patrol_groups()
+			$Player.set_physics_process(false)
+			is_paused = true
+		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.hide()
+			enable_patrol_groups()
 			$Player.set_physics_process(true)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+			is_paused = false
+		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+			$Player/Pause.hide()
 			enable_patrol_groups()
+			$Player.set_physics_process(true)
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
@@ -94,17 +104,28 @@ func handle_commands_panel():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
-		if !is_commands_panel_open and Input.is_action_just_pressed("open_commands"):
+		if !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
 			$Player/CommandsUI.show()
 			disable_patrol_groups()
 			$Player.set_physics_process(false)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 			is_commands_panel_open = true
-		elif is_commands_panel_open and Input.is_action_just_pressed("open_commands"):
+		elif !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
+			$Player/CommandsUI.show()
+			disable_patrol_groups()
+			$Player.set_physics_process(false)
+			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+			is_commands_panel_open = true
+		elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
 			$Player/CommandsUI.hide()
 			enable_patrol_groups()
 			$Player.set_physics_process(true)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+			is_commands_panel_open = false
+		elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
+			$Player/CommandsUI.hide()
+			enable_patrol_groups()
+			$Player.set_physics_process(true)
 			is_commands_panel_open = false
 		elif is_commands_panel_open and Input.is_action_just_pressed("close_commands"):
 			$Player/CommandsUI.hide()
