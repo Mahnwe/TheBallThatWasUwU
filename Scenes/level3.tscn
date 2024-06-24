@@ -13,15 +13,15 @@
 script = ExtResource("1_1urae")
 
 [node name="platform" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(-235, 33)
+position = Vector2(-697, 1263)
 scale = Vector2(0.720001, 1)
 
 [node name="StartArea" parent="." instance=ExtResource("3_e4wth")]
-position = Vector2(0, 38)
+position = Vector2(-462, 1268)
 scale = Vector2(0.627, 0.8)
 
 [node name="Player" parent="." instance=ExtResource("4_p835d")]
-position = Vector2(-153, -18)
+position = Vector2(-615, 1212)
 scale = Vector2(0.717, 0.442)
 
 [node name="CommandsUI" parent="Player" instance=ExtResource("5_6cw6y")]
@@ -40,39 +40,86 @@ offset_right = -758.717
 offset_bottom = -540.724
 
 [node name="platform2" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(337, -81)
+position = Vector2(-125, 1149)
 
 [node name="Ability" parent="." instance=ExtResource("7_pr54i")]
-position = Vector2(490, -57)
+position = Vector2(28, 1173)
 scale = Vector2(0.52, 0.56)
 
 [node name="Wall2" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(-292, 128)
+position = Vector2(-754, 1358)
 rotation = -1.5708
 scale = Vector2(1, 1.44)
 
 [node name="platform3" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(-234, -275)
+position = Vector2(-696, 955)
 scale = Vector2(0.6, 1)
 
 [node name="platform4" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(101, -245)
+position = Vector2(-361, 985)
 rotation = -0.63375
 scale = Vector2(0.447402, 1)
 
 [node name="platform5" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(373, -443)
+position = Vector2(-89, 787)
 scale = Vector2(0.519999, 1)
 
 [node name="Wall3" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(634, -307)
+position = Vector2(172, 923)
 rotation = -1.5708
 scale = Vector2(1.68, 1.52)
 
 [node name="Wall" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(1111, -613)
+position = Vector2(649, 617)
 rotation = 1.5708
 scale = Vector2(1.92, 1.56)
+
+[node name="platform6" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(249, 298)
+scale = Vector2(0.199998, 0.8)
+
+[node name="platform7" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(473, 555)
+scale = Vector2(1.56, 1.04)
+
+[node name="Wall4" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(802, -184)
+rotation = 1.5708
+scale = Vector2(1.76, 1.8)
+
+[node name="Wall5" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(256, 433)
+rotation = -1.5708
+scale = Vector2(1.84, 1.8)
+
+[node name="platform8" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1056, 459)
+rotation = 3.14159
+scale = Vector2(0.56, 1.05133)
+
+[node name="Wall6" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(901, 387)
+rotation = -1.5708
+scale = Vector2(1.72, 1.92)
+
+[node name="Wall7" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(1487, -180)
+rotation = 1.5708
+scale = Vector2(1.72, 2.04)
+
+[node name="Wall8" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(1679, 345)
+rotation = 1.5708
+scale = Vector2(1.08, 2)
+
+[node name="platform9" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(637, -227)
+scale = Vector2(0.614158, 0.84)
+
+[node name="platform10" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1593, 444)
+rotation = 3.14159
+scale = Vector2(0.370283, 0.919999)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
