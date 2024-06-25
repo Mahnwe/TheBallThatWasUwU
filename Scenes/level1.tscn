@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=22 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_ebilh"]
 [ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="19_8uqwt"]
 [ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="20_fheu7"]
+[ext_resource type="Texture2D" uid="uid://cd0atekan6dh1" path="res://Arts/BackgroundSprite/BackgroundSprite2.png" id="21_qylvv"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -602,12 +603,19 @@ position = Vector2(-952, -795)
 scale = Vector2(0.160002, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -20
 offset_left = -2785.0
 offset_top = -1107.0
 offset_right = 925.0
 offset_bottom = 1022.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(-923.5, -60)
+scale = Vector2(2.87911, 2.8913)
+texture = ExtResource("21_qylvv")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
