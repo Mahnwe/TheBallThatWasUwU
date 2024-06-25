@@ -43,10 +43,10 @@ text = "PAUSE"
 [node name="Label2" type="Label" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 277.0
-offset_top = 757.0
-offset_right = 409.0
-offset_bottom = 858.0
+offset_left = 265.0
+offset_top = 828.0
+offset_right = 397.0
+offset_bottom = 929.0
 scale = Vector2(2.92302, 1.95431)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Return to menu"
@@ -81,16 +81,17 @@ texture = ExtResource("4_6cx23")
 [node name="Label3" type="Label" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 1269.0
-offset_top = 749.0
-offset_right = 1446.0
-offset_bottom = 850.0
+offset_left = 1257.0
+offset_top = 820.0
+offset_right = 1434.0
+offset_bottom = 921.0
 scale = Vector2(2.88, 1.92)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "          Continue"
 
 [node name="ColorRect2" type="ColorRect" parent="Label3"]
 z_index = -1
+layout_mode = 0
 offset_left = -15.0
 offset_top = -4.0
 offset_right = 26.0
