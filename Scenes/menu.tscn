@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=10 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="5_ok2nw"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
+[ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="9_ch5om"]
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -65,7 +66,7 @@ offset_right = 560.0
 offset_bottom = 727.0
 scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../Level4Button")
-focus_neighbor_top = NodePath("../Level4Button")
+focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
@@ -133,6 +134,27 @@ position = Vector2(1406, 758)
 rotation = 1.5708
 scale = Vector2(0.44, 1.44)
 
+[node name="QuitButton" type="Button" parent="." groups=["MenuButtons"]]
+layout_mode = 0
+offset_left = 1762.0
+offset_top = 38.0
+offset_right = 2777.0
+offset_bottom = 753.0
+scale = Vector2(0.12, 0.16)
+focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_bottom = NodePath("../Level1Button")
+icon = ExtResource("9_ch5om")
+
+[node name="QuitLabel" type="Label" parent="QuitButton"]
+layout_mode = 0
+offset_left = 58.3343
+offset_top = 743.75
+offset_right = 171.334
+offset_bottom = 771.75
+scale = Vector2(8.49967, 4.83334)
+theme_override_font_sizes/font_size = 20
+text = "Quit game"
+
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="gui_input" from="Level2Button" to="." method="_on_level_2_button_gui_input"]
@@ -140,3 +162,6 @@ scale = Vector2(0.44, 1.44)
 [connection signal="gui_input" from="Level3Button" to="." method="_on_level_3_button_gui_input"]
 [connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]
 [connection signal="gui_input" from="Level4Button" to="." method="_on_level_4_button_gui_input"]
+[connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
+[connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
