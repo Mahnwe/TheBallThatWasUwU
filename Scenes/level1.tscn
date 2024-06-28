@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=21 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_ebilh"]
 [ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="19_8uqwt"]
 [ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="20_fheu7"]
-[ext_resource type="Texture2D" uid="uid://cd0atekan6dh1" path="res://Arts/BackgroundSprite/BackgroundSprite2.png" id="21_qylvv"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -193,8 +192,8 @@ position = Vector2(266, -262)
 scale = Vector2(0.288368, 0.185376)
 
 [node name="platform9" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(64, -703)
-scale = Vector2(0.839998, 1)
+position = Vector2(61, -703)
+scale = Vector2(0.879998, 1)
 
 [node name="Wall5" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(950, -1088)
@@ -480,7 +479,7 @@ position = Vector2(-1869, 494)
 scale = Vector2(0.280002, 0.2)
 
 [node name="Spike37" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(624, -646)
+position = Vector2(639, -632)
 scale = Vector2(0.320001, 0.220453)
 
 [node name="Finish" parent="." instance=ExtResource("11_r8tlj")]
@@ -570,52 +569,79 @@ rotation = -0.745309
 [node name="BranchesBush4" parent="." instance=ExtResource("18_ebilh")]
 position = Vector2(703, 355)
 
-[node name="WoodenPlank" parent="." instance=ExtResource("20_fheu7")]
-position = Vector2(-1144, -311)
-rotation = -0.841258
-scale = Vector2(0.24, 0.8)
+[node name="WoodenPlank7" parent="." instance=ExtResource("20_fheu7")]
+position = Vector2(-1133, -370)
+rotation = 1.5708
+scale = Vector2(0.16, 0.44)
+
+[node name="WoodenPlank6" parent="WoodenPlank7" instance=ExtResource("20_fheu7")]
+position = Vector2(356.25, -170.455)
+rotation = -1.5708
+scale = Vector2(0.363636, 2.75)
+
+[node name="WoodenPlank" parent="WoodenPlank7" instance=ExtResource("20_fheu7")]
+position = Vector2(368.75, 25)
+rotation = -2.82725
+scale = Vector2(0.783977, 3.59772)
+skew = 0.870174
+
+[node name="WoodenPlank6" parent="." instance=ExtResource("20_fheu7")]
+position = Vector2(563, -566)
+rotation = 1.5708
+scale = Vector2(0.133782, 0.344161)
+
+[node name="WoodenPlank" parent="WoodenPlank6" instance=ExtResource("20_fheu7")]
+position = Vector2(254.146, -168.526)
+rotation = -1.5708
+scale = Vector2(0.388718, 2.57256)
+
+[node name="WoodenPlank2" parent="WoodenPlank6" instance=ExtResource("20_fheu7")]
+position = Vector2(313.945, 20.3391)
+rotation = -2.87217
+scale = Vector2(1.09865, 3.08001)
+skew = 0.800685
 
 [node name="WoodenPlank2" parent="." instance=ExtResource("20_fheu7")]
-position = Vector2(556, -524)
-rotation = -0.953135
-scale = Vector2(0.248452, 0.624161)
-
-[node name="WoodenPlank3" parent="." instance=ExtResource("20_fheu7")]
-position = Vector2(-2559, -278)
-rotation = 0.76162
-scale = Vector2(0.28, 1)
-
-[node name="WoodenPlank4" parent="." instance=ExtResource("20_fheu7")]
-position = Vector2(-1783, 160)
+position = Vector2(-2572, -372)
 rotation = 1.5708
-scale = Vector2(0.279999, 1)
+scale = Vector2(0.24, 0.64)
 
-[node name="WoodenPlank" parent="WoodenPlank4" instance=ExtResource("20_fheu7")]
-position = Vector2(4.20248e-06, 376)
-scale = Vector2(1, 1.24)
+[node name="WoodenPlank" parent="WoodenPlank2" instance=ExtResource("20_fheu7")]
+position = Vector2(325, 117.188)
+rotation = -1.5708
+scale = Vector2(0.375, 2.66667)
+
+[node name="WoodenPlank3" parent="WoodenPlank2" instance=ExtResource("20_fheu7")]
+position = Vector2(391.667, -20.3125)
+rotation = -0.374693
+scale = Vector2(0.865133, 3.20248)
+skew = -0.852695
 
 [node name="WoodenPlank5" parent="." instance=ExtResource("20_fheu7")]
 position = Vector2(-1935, 70)
 scale = Vector2(0.279995, 0.632257)
+
+[node name="WoodenPlank" parent="WoodenPlank5" instance=ExtResource("20_fheu7")]
+position = Vector2(-771.442, 142.347)
+rotation = 1.5708
+scale = Vector2(0.442856, 4.42865)
+
+[node name="WoodenPlank4" parent="WoodenPlank5" instance=ExtResource("20_fheu7")]
+position = Vector2(571.439, 142.347)
+rotation = 1.5708
+scale = Vector2(0.442856, 3.57149)
 
 [node name="platform30" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(-952, -795)
 scale = Vector2(0.160002, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 z_index = -20
 offset_left = -2785.0
 offset_top = -1107.0
 offset_right = 925.0
 offset_bottom = 1022.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -20
-position = Vector2(-923.5, -60)
-scale = Vector2(2.87911, 2.8913)
-texture = ExtResource("21_qylvv")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
