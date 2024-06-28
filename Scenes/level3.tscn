@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=11 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_gdtbw"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_oxgjf"]
 [ext_resource type="PackedScene" uid="uid://i4jemvk3v54m" path="res://Scenes/ability.tscn" id="7_pr54i"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_tnmog"]
+[ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_0l5s7"]
+[ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="10_w0su0"]
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_1urae")
@@ -21,6 +23,7 @@ position = Vector2(-462, 1268)
 scale = Vector2(0.627, 0.8)
 
 [node name="Player" parent="." instance=ExtResource("4_p835d")]
+z_index = 2
 position = Vector2(-615, 1212)
 scale = Vector2(0.717, 0.442)
 
@@ -70,16 +73,16 @@ rotation = -1.5708
 scale = Vector2(1.68, 1.52)
 
 [node name="Wall" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(649, 617)
+position = Vector2(654, 574)
 rotation = 1.5708
-scale = Vector2(1.92, 1.56)
+scale = Vector2(2.2, 1.76)
 
 [node name="platform6" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(249, 298)
 scale = Vector2(0.199998, 0.8)
 
 [node name="platform7" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(473, 555)
+position = Vector2(461, 501)
 scale = Vector2(1.56, 1.04)
 
 [node name="Wall4" parent="." instance=ExtResource("8_tnmog")]
@@ -108,7 +111,7 @@ rotation = 1.5708
 scale = Vector2(1.72, 2.04)
 
 [node name="Wall8" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(1679, 345)
+position = Vector2(1658, 345)
 rotation = 1.5708
 scale = Vector2(1.08, 2)
 
@@ -117,9 +120,33 @@ position = Vector2(637, -227)
 scale = Vector2(0.614158, 0.84)
 
 [node name="platform10" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(1593, 444)
+position = Vector2(1558, 444)
 rotation = 3.14159
-scale = Vector2(0.370283, 0.919999)
+scale = Vector2(0.317411, 0.919999)
+
+[node name="SavePoint" parent="." instance=ExtResource("9_0l5s7")]
+position = Vector2(913, -181)
+scale = Vector2(0.639902, 0.634647)
+
+[node name="Spike" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(316, 362)
+rotation = 0.767408
+scale = Vector2(0.337579, 0.36)
+
+[node name="Spike2" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(487, 786)
+scale = Vector2(0.320001, 0.32)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -1305.0
+offset_top = -354.0
+offset_right = 2405.0
+offset_bottom = 1775.0
+color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
+[connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
+[connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]

@@ -144,3 +144,41 @@ func _on_start_area_player_exited_start_area():
 func _on_ability_player_entered():
 	$Player.can_double_jump = true
 	$Ability.get_child(0).text = "         You can \n double jump now !"
+
+
+func _on_save_point_player_entered():
+	save_position_x = $Player.position.x
+	save_position_y = $Player.position.y
+	print(save_position_x)
+	print(save_position_y)
+
+
+func _on_spike_spike_hit():
+	disable_patrol_groups()
+	display_dead_sprite_and_pause_timer_until_respawn()
+	await get_tree().create_timer(1.0).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
+		
+func display_dead_sprite_and_pause_timer_until_respawn():
+	$Player.set_physics_process(false)
+	$Player.get_child(1).animation = "dead"
+	$Player.get_child(5).text = "OH NO !"
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	
+func put_player_to_save_position_and_unpause_timer():
+	$Player.set_physics_process(true)
+	$Player.get_child(5).text = ""
+	$Player.get_child(1).animation = "stay"
+	$Player.position = Vector2(save_position_x,save_position_y)
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	reset_patrols_progress()
+	enable_patrol_groups()
+	
+func reset_patrols_progress():
+	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+			member.get_parent().progress = 0
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.get_parent().progress = 0
