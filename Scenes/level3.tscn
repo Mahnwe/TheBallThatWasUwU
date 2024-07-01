@@ -139,11 +139,27 @@ scale = Vector2(0.320001, 0.32)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -1305.0
-offset_top = -354.0
-offset_right = 2405.0
-offset_bottom = 1775.0
+offset_left = -1885.0
+offset_top = -4732.0
+offset_right = 4188.0
+offset_bottom = 2946.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[node name="platform11" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(-55, -737)
+scale = Vector2(1.36, 1.22581)
+
+[node name="platform12" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(249, -228)
+scale = Vector2(0.2, 0.84)
+
+[node name="platform13" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1333, -228)
+scale = Vector2(0.2, 0.84)
+
+[node name="platform14" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(809, -737)
+scale = Vector2(1.36, 1.22581)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
