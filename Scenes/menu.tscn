@@ -142,17 +142,19 @@ offset_right = 2777.0
 offset_bottom = 753.0
 scale = Vector2(0.12, 0.16)
 focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
 icon = ExtResource("9_ch5om")
 
 [node name="QuitLabel" type="Label" parent="QuitButton"]
 layout_mode = 0
-offset_left = 58.3343
+offset_left = -25.0001
 offset_top = 743.75
-offset_right = 171.334
-offset_bottom = 771.75
+offset_right = 102.0
+offset_bottom = 778.75
 scale = Vector2(8.49967, 4.83334)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "Quit game"
 
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
@@ -164,4 +166,5 @@ text = "Quit game"
 [connection signal="gui_input" from="Level4Button" to="." method="_on_level_4_button_gui_input"]
 [connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
 [connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
+[connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

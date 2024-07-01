@@ -55,7 +55,10 @@ func _on_level_3_button_pressed():
 func _on_level_1_button_gui_input(event):
 	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_up"):
+			accept_event()
+			$QuitButton.grab_focus() 
+		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level4Button.grab_focus()
 		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
@@ -95,6 +98,16 @@ func _on_level_4_button_gui_input(event):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level1Button.grab_focus()
 
+func _on_quit_button_gui_input(event):
+	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+		is_controller_focused = true
+		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level1Button.grab_focus()
+		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level1Button.grab_focus()
+
 
 func _on_quit_button_pressed():
 	get_tree().quit()
@@ -106,3 +119,4 @@ func _on_quit_button_focus_entered():
 
 func _on_quit_button_focus_exited():
 	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#FFFFFF"))
+
