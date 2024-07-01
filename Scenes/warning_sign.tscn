@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://6evsxx3ik4ta"]
+
+[ext_resource type="Texture2D" uid="uid://bms6xs6eedl8g" path="res://Arts/WarningSignSprite/WarningSign-removebg-preview.png" id="1_81kt7"]
+
+[node name="WarningSign" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.096699, 0.109704)
+texture = ExtResource("1_81kt7")

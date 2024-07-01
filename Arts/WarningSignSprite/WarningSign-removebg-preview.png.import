@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3gew4kdxbquw"
-path="res://.godot/imported/BackgroundSprite.png-ff5a06c41d05a128b0d79ef1b0896b82.ctex"
+uid="uid://bms6xs6eedl8g"
+path="res://.godot/imported/WarningSign-removebg-preview.png-2b4e44e28ad366ded1fabad7a28aba9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/BackgroundSprite/BackgroundSprite.png"
-dest_files=["res://.godot/imported/BackgroundSprite.png-ff5a06c41d05a128b0d79ef1b0896b82.ctex"]
+source_file="res://Arts/WarningSignSprite/WarningSign-removebg-preview.png"
+dest_files=["res://.godot/imported/WarningSign-removebg-preview.png-2b4e44e28ad366ded1fabad7a28aba9f.ctex"]
 
 [params]
 
