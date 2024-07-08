@@ -123,8 +123,7 @@ height = 542.291
 [node name="Player" type="CharacterBody2D"]
 visibility_layer = 2
 position = Vector2(-212, -231)
-floor_constant_speed = true
-floor_snap_length = 7.1
+floor_snap_length = 7.7
 script = ExtResource("1_24gvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -180,13 +179,13 @@ shape = SubResource("CapsuleShape2D_6hpdm")
 [node name="RaycastRight" type="RayCast2D" parent="."]
 position = Vector2(212, 231)
 rotation = -1.5708
-scale = Vector2(13.277, 1.201)
+scale = Vector2(8, 1)
 target_position = Vector2(0, 30)
 
 [node name="RaycastLeft" type="RayCast2D" parent="."]
 position = Vector2(212, 231)
 rotation = 1.5708
-scale = Vector2(13.12, 1.201)
+scale = Vector2(8, 1)
 target_position = Vector2(0, 30)
 
 [node name="DeadLabel" type="Label" parent="."]

@@ -111,13 +111,13 @@ func check_if_player_is_on_wall():
 		check_animation_if_on_wall()
 		if Input.is_action_pressed("jump"):
 			number_of_jumps += 1
-			if Input.is_action_pressed("move_left") and wall_normal == Vector2.LEFT :
+			if Input.is_action_just_pressed("move_left") and wall_normal == Vector2.LEFT :
 				velocity.x = speed * wall_normal.x
 				velocity.y = -jump_force
 				$AnimatedSprite2D.animation = "jump"
 				$AnimatedSprite2D.flip_h = true
 				$AnimatedSprite2D.play()
-			if Input.is_action_pressed("move_right") and wall_normal == Vector2.RIGHT :
+			if Input.is_action_just_pressed("move_right") and wall_normal == Vector2.RIGHT :
 				velocity.x = speed * wall_normal.x
 				velocity.y = -jump_force
 				$AnimatedSprite2D.animation = "jump"
