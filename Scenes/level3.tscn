@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=12 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_gdtbw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_tnmog"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_0l5s7"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="10_w0su0"]
+[ext_resource type="PackedScene" uid="uid://b3tiqo6vtui7s" path="res://Scenes/wheel.tscn" id="11_pxyd4"]
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_1urae")
@@ -149,6 +150,15 @@ color = Color(0.10748, 0.10748, 0.10748, 1)
 position = Vector2(-55, -737)
 scale = Vector2(1.36, 1.22581)
 
+[node name="platform14" parent="platform11" instance=ExtResource("2_gdtbw")]
+position = Vector2(635.294, 0)
+
+[node name="platform" parent="platform11" instance=ExtResource("2_gdtbw")]
+position = Vector2(-470.588, -160.71)
+
+[node name="platform2" parent="platform11" instance=ExtResource("2_gdtbw")]
+position = Vector2(1107.35, -161.526)
+
 [node name="platform12" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(249, -228)
 scale = Vector2(0.2, 0.84)
@@ -157,9 +167,79 @@ scale = Vector2(0.2, 0.84)
 position = Vector2(1333, -228)
 scale = Vector2(0.2, 0.84)
 
-[node name="platform14" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(809, -737)
+[node name="platform15" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(-681, -19)
+
+[node name="platform16" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1709, -20)
+
+[node name="Wall9" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(-1119, -2.83151e-12)
+rotation = -1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall10" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(2872, -762)
+rotation = 1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall11" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(-433, -854)
+rotation = 1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall12" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(-1078, -928)
+rotation = -1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall13" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(2174, -90)
+rotation = -1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall14" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(2830, -1697)
+rotation = 1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wheel" parent="." instance=ExtResource("11_pxyd4")]
+position = Vector2(-409, -1442)
+scale = Vector2(4.08, 3.67743)
+degrees_per_second = 360
+
+[node name="Wheel2" parent="." instance=ExtResource("11_pxyd4")]
+position = Vector2(82, -1439)
+scale = Vector2(4.08, 3.67743)
+degrees_per_second = 360
+
+[node name="platform17" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(-639, -1397)
 scale = Vector2(1.36, 1.22581)
+
+[node name="Wheel3" parent="." instance=ExtResource("11_pxyd4")]
+position = Vector2(1631, -1442)
+scale = Vector2(4.08, 3.67743)
+degrees_per_second = -360
+
+[node name="Wheel4" parent="." instance=ExtResource("11_pxyd4")]
+position = Vector2(2122, -1439)
+scale = Vector2(4.08, 3.67743)
+degrees_per_second = -360
+
+[node name="platform19" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1401, -1397)
+scale = Vector2(1.36, 1.22581)
+
+[node name="Wall15" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(1655, -1324)
+rotation = 1.5708
+scale = Vector2(2.2, 2.72)
+
+[node name="Wall16" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(83, -590)
+rotation = -1.5708
+scale = Vector2(2.2, 2.72)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
