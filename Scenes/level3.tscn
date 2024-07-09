@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=17 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_gdtbw"]
@@ -10,7 +10,37 @@
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_tnmog"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_0l5s7"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="10_w0su0"]
-[ext_resource type="PackedScene" uid="uid://b3tiqo6vtui7s" path="res://Scenes/wheel.tscn" id="11_pxyd4"]
+[ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_lhdat"]
+
+[sub_resource type="Curve2D" id="Curve2D_ea2f8"]
+_data = {
+"points": PackedVector2Array(79.37, -7.937, -79.37, 7.937, -471, -1680, 4.7622, -180.964, -4.7622, 180.964, -608, -1505, 0, 0, 0, 0, -509, -1353, 4.7622, 117.468, -4.7622, -117.468, -382, -1502, 0, 0, 0, 0, -471, -1680)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_am5r0"]
+_data = {
+"points": PackedVector2Array(-97.515, 2.37841, 97.515, -2.37841, -78, -1643, 4.75683, 123.678, -4.75683, -123.678, 60, -1831, 99.8934, 0, -99.8934, 0, -64, -2004, 9.51366, -109.407, -9.51366, 109.407, -192, -1842, -66.5956, -2.37841, 66.5956, 2.37841, -78, -1643)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_2r2mc"]
+_data = {
+"points": PackedVector2Array(-148, -14, 148, 14, 2114, -1734, 0, 0, 0, 0, 2264, -1578, 136, -10, -136, 10, 2156, -1397, -4, 64, 4, -64, 2003, -1590, -108, -6, 108, 6, 2114, -1734)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_5xej6"]
+_data = {
+"points": PackedVector2Array(89.135, 10.0908, -89.135, -10.0908, 1746, -1640, 1.68179, 112.68, -1.68179, -112.68, 1626, -1798, -77.3625, -3.36359, 77.3625, 3.36359, 1687, -1955, 0, -142.952, 0, 142.952, 1823, -1806, 0, 0, 0, 0, 1746, -1640)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_5ndjq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 145, -2480, 0, 0, 0, 0, 143, -2325, 0, 0, 0, 0, 141, -2170, 0, 0, 0, 0, 145, -2480)
+}
+point_count = 4
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_1urae")
@@ -46,6 +76,9 @@ offset_bottom = -540.724
 [node name="platform2" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(-125, 1149)
 
+[node name="platform14" parent="platform2" instance=ExtResource("2_gdtbw")]
+position = Vector2(613, 0)
+
 [node name="Ability" parent="." instance=ExtResource("7_pr54i")]
 position = Vector2(28, 1173)
 scale = Vector2(0.52, 0.56)
@@ -68,23 +101,27 @@ scale = Vector2(0.447402, 1)
 position = Vector2(-89, 787)
 scale = Vector2(0.519999, 1)
 
+[node name="platform7" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(246, 501)
+scale = Vector2(0.76, 0.92)
+
+[node name="platform14" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(967, 501)
+scale = Vector2(0.84, 0.92)
+
 [node name="Wall3" parent="." instance=ExtResource("8_tnmog")]
 position = Vector2(172, 923)
 rotation = -1.5708
 scale = Vector2(1.68, 1.52)
 
 [node name="Wall" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(654, 574)
+position = Vector2(1128, 556)
 rotation = 1.5708
 scale = Vector2(2.2, 1.76)
 
 [node name="platform6" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(249, 298)
 scale = Vector2(0.199998, 0.8)
-
-[node name="platform7" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(461, 501)
-scale = Vector2(1.56, 1.04)
 
 [node name="Wall4" parent="." instance=ExtResource("8_tnmog")]
 position = Vector2(802, -184)
@@ -135,15 +172,15 @@ rotation = 0.767408
 scale = Vector2(0.337579, 0.36)
 
 [node name="Spike2" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(487, 786)
+position = Vector2(961, 768)
 scale = Vector2(0.320001, 0.32)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -1885.0
-offset_top = -4732.0
-offset_right = 4188.0
-offset_bottom = 2946.0
+offset_left = -1887.0
+offset_top = -4758.0
+offset_right = 4186.0
+offset_bottom = 2920.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="platform11" parent="." instance=ExtResource("2_gdtbw")]
@@ -188,11 +225,6 @@ position = Vector2(-433, -854)
 rotation = 1.5708
 scale = Vector2(2.28, 2.8)
 
-[node name="Wall12" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(-1078, -928)
-rotation = -1.5708
-scale = Vector2(2.28, 2.8)
-
 [node name="Wall13" parent="." instance=ExtResource("8_tnmog")]
 position = Vector2(2174, -90)
 rotation = -1.5708
@@ -203,29 +235,9 @@ position = Vector2(2830, -1697)
 rotation = 1.5708
 scale = Vector2(2.28, 2.8)
 
-[node name="Wheel" parent="." instance=ExtResource("11_pxyd4")]
-position = Vector2(-409, -1442)
-scale = Vector2(4.08, 3.67743)
-degrees_per_second = 360
-
-[node name="Wheel2" parent="." instance=ExtResource("11_pxyd4")]
-position = Vector2(82, -1439)
-scale = Vector2(4.08, 3.67743)
-degrees_per_second = 360
-
 [node name="platform17" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(-639, -1397)
 scale = Vector2(1.36, 1.22581)
-
-[node name="Wheel3" parent="." instance=ExtResource("11_pxyd4")]
-position = Vector2(1631, -1442)
-scale = Vector2(4.08, 3.67743)
-degrees_per_second = -360
-
-[node name="Wheel4" parent="." instance=ExtResource("11_pxyd4")]
-position = Vector2(2122, -1439)
-scale = Vector2(4.08, 3.67743)
-degrees_per_second = -360
 
 [node name="platform19" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(1401, -1397)
@@ -241,8 +253,185 @@ position = Vector2(83, -590)
 rotation = -1.5708
 scale = Vector2(2.2, 2.72)
 
+[node name="Wall17" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(641, 1132)
+rotation = -1.5708
+scale = Vector2(1.72, 1.76)
+
+[node name="Spike3" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(521, 1110)
+rotation = 1.5708
+
+[node name="Wall18" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(75, -1199)
+rotation = -1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall19" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(1661, -1961)
+rotation = 1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="PlatformPatrol1" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ea2f8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol1"]
+position = Vector2(-471, -1680)
+rotation = 3.04192
+rotates = false
+
+[node name="platform" parent="PlatformPatrol1/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_gdtbw")]
+position = Vector2(71.0457, 73.4337)
+rotation = -3.03408
+scale = Vector2(0.200024, 0.68001)
+sync_to_physics = false
+
+[node name="PlatformPatrol2" type="Path2D" parent="."]
+position = Vector2(-42, 30)
+curve = SubResource("Curve2D_am5r0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol2"]
+position = Vector2(-78, -1643)
+rotation = -0.0243854
+rotates = false
+
+[node name="platform" parent="PlatformPatrol2/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_gdtbw")]
+position = Vector2(-73.8073, -90.8266)
+rotation = 0.0288234
+scale = Vector2(0.241492, 0.823122)
+sync_to_physics = false
+speed = 200
+
+[node name="PlatformPatrol3" type="Path2D" parent="."]
+position = Vector2(75, 16)
+curve = SubResource("Curve2D_2r2mc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol3"]
+position = Vector2(2114, -1734)
+rotation = 0.0943139
+rotates = false
+
+[node name="platform" parent="PlatformPatrol3/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_gdtbw")]
+position = Vector2(-87.0305, -81.1647)
+rotation = -0.086953
+scale = Vector2(0.234248, 0.878037)
+sync_to_physics = false
+
+[node name="PlatformPatrol4" type="Path2D" parent="."]
+position = Vector2(82, -31)
+curve = SubResource("Curve2D_5xej6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol4"]
+position = Vector2(1746, -1640)
+rotation = -3.02887
+rotates = false
+
+[node name="platform" parent="PlatformPatrol4/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_gdtbw")]
+position = Vector2(103.546, 87.9102)
+rotation = 3.03349
+scale = Vector2(0.239639, 0.880005)
+sync_to_physics = false
+speed = 200
+
+[node name="Wall20" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(-1088, -937)
+rotation = -1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="platform18" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(203, -2030)
+scale = Vector2(0.72, 1.08)
+
+[node name="platform20" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1016, -2028)
+scale = Vector2(0.72, 1.08)
+
+[node name="Wall12" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(574, -2413)
+rotation = 1.5708
+scale = Vector2(1.64, 2.24)
+
+[node name="Wall21" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(1160, -1859)
+rotation = -1.5708
+scale = Vector2(1.64, 2.24)
+
+[node name="platform21" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(401, -2474)
+scale = Vector2(0.199999, 1.08)
+
+[node name="platform22" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(1186, -2478)
+scale = Vector2(0.2, 1.08)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5ndjq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(145, -2480)
+rotation = 1.5837
+rotates = false
+
+[node name="platform" parent="Path2D/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_gdtbw")]
+position = Vector2(-76.3098, 53.9891)
+rotation = -1.5708
+scale = Vector2(0.15904, 0.758989)
+sync_to_physics = false
+
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(1424, 9)
+curve = SubResource("Curve2D_5ndjq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(145, -2480)
+rotation = 1.5837
+rotates = false
+
+[node name="platform" parent="Path2D2/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("2_gdtbw")]
+position = Vector2(-76.3098, 53.9891)
+rotation = -1.5708
+scale = Vector2(0.15904, 0.758989)
+sync_to_physics = false
+
+[node name="platform23" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(659, -2471)
+scale = Vector2(0.560001, 1)
+
+[node name="SavePoint2" parent="." instance=ExtResource("9_0l5s7")]
+position = Vector2(910, -2414)
+scale = Vector2(0.639902, 0.634647)
+
+[node name="platform24" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(495, -1757)
+
+[node name="Wall22" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(746, -1706)
+rotation = 1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="Wall23" parent="." instance=ExtResource("8_tnmog")]
+position = Vector2(963, -940)
+rotation = -1.5708
+scale = Vector2(2.28, 2.8)
+
+[node name="platform25" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(648, -1071)
+scale = Vector2(0.56, 3.28)
+
+[node name="platform26" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(716, -1313)
+scale = Vector2(0.359999, 1)
+
+[node name="Finish" parent="." instance=ExtResource("11_lhdat")]
+z_index = 1
+position = Vector2(849, -1314)
+scale = Vector2(0.64, 0.68)
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
+[connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
+[connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]

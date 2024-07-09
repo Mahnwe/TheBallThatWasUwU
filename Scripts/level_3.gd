@@ -4,13 +4,13 @@ var is_commands_panel_open
 var is_paused
 
 var start_position_x = -615
-var start_position_y = -1212
+var start_position_y = 1212
 
 var save_position_x = -615
-var save_position_y = -1212
+var save_position_y = 1212
 
-var finish_position_x = -4842
-var finish_position_y = 245
+var finish_position_x = 690
+var finish_position_y = -1357
 
 var config = ConfigFile.new()
 # Load data from a file.
@@ -39,6 +39,7 @@ func _ready():
 func _process(_delta):
 	handle_commands_panel()
 	handle_pause()
+	handle_player_actions_when_level_finished()
 		
 	if Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
 		restart_scene()
@@ -54,6 +55,12 @@ func _process(_delta):
 		restart_scene()
 		save_position_x = start_position_x
 		save_position_y = start_position_y
+		
+func handle_player_actions_when_level_finished():
+	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
+		get_tree().change_scene_to_file("res://Scenes/level4.tscn")
+	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 		
 func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
@@ -182,3 +189,18 @@ func reset_patrols_progress():
 			member.get_parent().progress = 0
 	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
 			member.get_parent().progress = 0
+
+
+func _on_finish_player_entered():
+	$Player.position.x = finish_position_x
+	$Player.position.y = finish_position_y
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
+	queue.saveData()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
+	config.set_value("levels", "is_level_three_finished", true)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
+	print($Player.position.x)
+	print($Player.position.y)
+	$Player.get_child(1).animation = "stay"
+	$Player.set_physics_process(false)
