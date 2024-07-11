@@ -195,3 +195,4 @@ offset_top = 131.0
 offset_right = 204.0
 offset_bottom = 154.0
 scale = Vector2(1.46086, 1.32)
+theme_override_colors/font_color = Color(0, 0, 0, 1)

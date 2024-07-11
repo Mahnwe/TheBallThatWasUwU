@@ -139,13 +139,13 @@ func check_for_player_movement_and_animation():
 	
 			
 func check_animation_if_on_wall():
-	if collinding_right_wall():
-		velocity.y = gravity+35
+	if collinding_right_wall() and Input.is_action_pressed("move_right"):
+		velocity.y = gravity+32
 		can_dash = true
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = true
-	if colliding_left_wall():
-		velocity.y = gravity+35
+	if colliding_left_wall() and Input.is_action_pressed("move_left"):
+		velocity.y = gravity+32
 		can_dash = true
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = false
