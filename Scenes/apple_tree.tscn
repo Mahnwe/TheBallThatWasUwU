@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://be1l83abc4nq8"]
+
+[ext_resource type="Texture2D" uid="uid://bpu30l1hfsrod" path="res://Arts/TreeSprite/TreeSprite3-removebg-preview.png" id="1_6bamn"]
+
+[node name="AppleTree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.296117, 0.386364)
+texture = ExtResource("1_6bamn")

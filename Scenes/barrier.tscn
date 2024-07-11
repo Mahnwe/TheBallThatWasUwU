@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctsres127vwfw"]
+
+[ext_resource type="Texture2D" uid="uid://fri20t7wv3x3" path="res://Arts/BarrierSprite/BarrierSprite-removebg-preview.png" id="1_66j0a"]
+
+[node name="Barrier" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.107029, 0.125628)
+texture = ExtResource("1_66j0a")
