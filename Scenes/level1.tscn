@@ -32,7 +32,6 @@ scale = Vector2(6, 5.84)
 
 [node name="Tree3" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(-1260, 371)
-flip_value = 1
 
 [node name="StartArea" parent="." instance=ExtResource("2_es0mk")]
 position = Vector2(-1358, 384)
@@ -367,7 +366,7 @@ position = Vector2(-1605, 581)
 scale = Vector2(0.16, 1)
 
 [node name="Wall14" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(-1563, 925)
+position = Vector2(-1547, 925)
 rotation = -1.5708
 scale = Vector2(0.6, 1)
 
@@ -448,7 +447,7 @@ rotation = 1.5708
 scale = Vector2(0.36, 0.280005)
 
 [node name="Spike33" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-1519, 698)
+position = Vector2(-1504, 698)
 scale = Vector2(0.244993, 0.196331)
 
 [node name="Spike34" parent="." instance=ExtResource("6_mp22g")]
