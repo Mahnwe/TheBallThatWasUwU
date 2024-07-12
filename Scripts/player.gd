@@ -9,8 +9,6 @@ var gravity = 30
 
 #@export
 var jump_force = -660
-var wall_jump_force_to_right = Vector2(speed, jump_force)
-var wall_jump_force_to_left = Vector2(-speed, jump_force)
 
 const VELOCITY_Y_MAX = 600
 const dash_speed = 1200
@@ -22,10 +20,10 @@ var can_double_jump
 var number_of_jumps
 
 func _physics_process(_delta):
+	check_for_player_movement()
 	check_if_player_is_on_floor()
 	check_if_player_is_not_on_floor()
 	check_if_player_is_on_wall()
-	check_for_player_movement()
 	_dash()
 	
 func _dash():
@@ -111,20 +109,29 @@ func check_if_player_is_on_floor():
 			
 func check_if_player_is_on_wall():
 		# Wall-jump
-	if is_on_wall() and Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+	if is_on_wall():
 		check_animation_if_on_wall()
-		if collinding_right_wall() and Input.is_action_pressed("jump"):
-				velocity = wall_jump_force_to_left
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = true
-				$AnimatedSprite2D.play()
-				await $AnimatedSprite2D.animation_finished
-		if colliding_left_wall() and Input.is_action_pressed("jump"):
-				velocity = wall_jump_force_to_right
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = false
-				$AnimatedSprite2D.play()
-				await $AnimatedSprite2D.animation_finished
+		var wall_normal = get_wall_normal()
+		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
+			var wall_jump_force_to_left = Vector2(speed * 2 *  wall_normal.x, jump_force)
+			velocity = wall_jump_force_to_left
+			#velocity.x += speed * 2 * wall_normal.x * 2
+			#velocity.y = jump_force
+			move_and_slide()
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play()
+			await $AnimatedSprite2D.animation_finished
+		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
+			var wall_jump_force_to_right = Vector2(speed * 2 * wall_normal.x, jump_force)
+			velocity = wall_jump_force_to_right
+			#velocity.x += speed * 2 * wall_normal.x * 2
+			#velocity.y = jump_force
+			move_and_slide()
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play()
+			await $AnimatedSprite2D.animation_finished
 			
 func check_for_player_movement():
 	# Horizontal movements
