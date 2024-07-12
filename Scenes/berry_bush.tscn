@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://e0nrigj8kq3x"]
 
 [ext_resource type="Texture2D" uid="uid://bitt2jd4cilmg" path="res://Arts/BushSprite/BerryBushSprite-removebg-preview.png" id="1_bvoqf"]
-[ext_resource type="Script" path="res://Scripts/berry_bush.gd" id="1_vmhye"]
+[ext_resource type="Script" path="res://Scripts/branches_bush.gd" id="1_j21sd"]
 
 [node name="BerryBush" type="Node2D"]
-script = ExtResource("1_vmhye")
+script = ExtResource("1_j21sd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.90735e-06, 0)
