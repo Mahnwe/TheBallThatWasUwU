@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=39 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -12,6 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://i4jemvk3v54m" path="res://Scenes/ability.tscn" id="9_of3vt"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="10_bv661"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_bscno"]
+[ext_resource type="PackedScene" uid="uid://be1l83abc4nq8" path="res://Scenes/apple_tree.tscn" id="13_f34ya"]
+[ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="14_238nh"]
+[ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="15_88g44"]
+[ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="16_3v757"]
+[ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="17_negab"]
+[ext_resource type="PackedScene" uid="uid://ctsres127vwfw" path="res://Scenes/barrier.tscn" id="18_sb2qm"]
+[ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="19_bxjdq"]
+[ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="20_4t8ex"]
+[ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="21_euypa"]
+[ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="22_yvjp8"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -152,6 +162,15 @@ scale = Vector2(0.72, 1.56)
 [node name="platform2" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-36, 429)
 scale = Vector2(0.599999, 1)
+
+[node name="Wall18" parent="." instance=ExtResource("6_llnkw")]
+position = Vector2(681, -115)
+rotation = 1.5708
+scale = Vector2(1, 1.86584)
+
+[node name="platform22" parent="." instance=ExtResource("2_ja3c0")]
+position = Vector2(358, -166)
+scale = Vector2(0.32, 0.72)
 
 [node name="Wall2" parent="." instance=ExtResource("6_llnkw")]
 position = Vector2(670, 151)
@@ -350,6 +369,10 @@ scale = Vector2(0.46707, 0.39999)
 position = Vector2(-2276, 813)
 scale = Vector2(0.11999, 2.04)
 
+[node name="platform20" parent="." instance=ExtResource("2_ja3c0")]
+position = Vector2(-2452, 781)
+scale = Vector2(0.12, 1.48)
+
 [node name="platform7" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-2894, 879)
 scale = Vector2(1.03053, 1)
@@ -465,7 +488,7 @@ position = Vector2(-3752, 317)
 [node name="Wall10" parent="." instance=ExtResource("6_llnkw")]
 position = Vector2(-2943, 167)
 rotation = 1.5708
-scale = Vector2(0.759999, 1.72)
+scale = Vector2(0.879999, 1.72)
 
 [node name="Wall11" parent="." instance=ExtResource("6_llnkw")]
 position = Vector2(-3111, 650)
@@ -595,6 +618,10 @@ scale = Vector2(0.480018, 0.6)
 position = Vector2(-3563, -292)
 scale = Vector2(1.72, 1)
 
+[node name="platform21" parent="." instance=ExtResource("2_ja3c0")]
+position = Vector2(-2652, 648)
+scale = Vector2(0.200005, 0.778904)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
 offset_left = -4966.0
@@ -603,6 +630,76 @@ offset_right = -1256.0
 offset_bottom = 1635.0
 scale = Vector2(1.56, 0.84)
 color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[node name="AppleTree" parent="." instance=ExtResource("13_f34ya")]
+position = Vector2(-3642, 286)
+scale = Vector2(1.2, 1.2)
+
+[node name="Rock3" parent="." instance=ExtResource("14_238nh")]
+position = Vector2(-1359, 994)
+rotation = 0.265133
+scale = Vector2(0.8, 0.8)
+
+[node name="BranchesBush" parent="Rock3" instance=ExtResource("15_88g44")]
+position = Vector2(77.5001, 8.74769)
+rotation = -0.232646
+scale = Vector2(1.2, 1.2)
+
+[node name="BigTree" parent="." instance=ExtResource("16_3v757")]
+position = Vector2(328, 637)
+scale = Vector2(0.7, 0.7)
+
+[node name="BerryBush" parent="BigTree" instance=ExtResource("17_negab")]
+position = Vector2(-41.4286, 121.428)
+scale = Vector2(1, 1)
+
+[node name="Barrier" parent="BigTree" instance=ExtResource("18_sb2qm")]
+position = Vector2(-87.1429, 118.571)
+
+[node name="Barrier" parent="BigTree/Barrier" instance=ExtResource("18_sb2qm")]
+position = Vector2(50, 0)
+
+[node name="Barrier2" parent="BigTree/Barrier" instance=ExtResource("18_sb2qm")]
+position = Vector2(98.5714, 0)
+
+[node name="Barrier3" parent="BigTree/Barrier" instance=ExtResource("18_sb2qm")]
+position = Vector2(145.714, 0)
+
+[node name="Rock1" parent="." instance=ExtResource("19_bxjdq")]
+position = Vector2(-838, 561)
+
+[node name="Tree" parent="Rock1" instance=ExtResource("20_4t8ex")]
+position = Vector2(-163, -77)
+
+[node name="Rock2" parent="." instance=ExtResource("21_euypa")]
+position = Vector2(-3702, 572)
+flip_value = 1
+
+[node name="WoodenPlank" parent="." instance=ExtResource("22_yvjp8")]
+position = Vector2(-3459, -96)
+scale = Vector2(0.2, 0.4)
+
+[node name="WoodenPlank2" parent="WoodenPlank" instance=ExtResource("22_yvjp8")]
+position = Vector2(310, -157.5)
+rotation = 1.5708
+scale = Vector2(0.5, 2)
+
+[node name="WoodenPlank3" parent="WoodenPlank" instance=ExtResource("22_yvjp8")]
+position = Vector2(340, -2.50082)
+rotation = 0.448705
+scale = Vector2(0.799477, 3.08941)
+skew = 0.643158
+
+[node name="BerryBush" parent="." instance=ExtResource("17_negab")]
+position = Vector2(-3594, 378)
+scale = Vector2(1.115, 1.115)
+
+[node name="BranchesBush" parent="." instance=ExtResource("15_88g44")]
+position = Vector2(234, 485)
+
+[node name="BigTree2" parent="." instance=ExtResource("16_3v757")]
+position = Vector2(-2140, 874)
+scale = Vector2(1.2, 1.2)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="spike_hit" from="SpikePatrol1/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]

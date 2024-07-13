@@ -208,4 +208,3 @@ func _on_finish_player_entered():
 	print($Player.position.y)
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
-
