@@ -427,6 +427,22 @@ z_index = 1
 position = Vector2(849, -1314)
 scale = Vector2(0.64, 0.68)
 
+[node name="Spike5" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(1094, 60)
+rotation = 1.5708
+scale = Vector2(0.440001, 0.32)
+
+[node name="Spike" parent="Spike5" instance=ExtResource("10_w0su0")]
+position = Vector2(-1.07748e-05, -884.374)
+
+[node name="Spike4" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(453, 60)
+rotation = 1.5708
+scale = Vector2(0.440001, 0.32)
+
+[node name="Spike" parent="Spike4" instance=ExtResource("10_w0su0")]
+position = Vector2(-2.4836e-05, -781.249)
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
@@ -435,3 +451,7 @@ scale = Vector2(0.64, 0.68)
 [connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="spike_hit" from="Spike5" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike5/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike4/Spike" to="." method="_on_spike_spike_hit"]
