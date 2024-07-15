@@ -651,7 +651,6 @@ scale = Vector2(0.7, 0.7)
 
 [node name="BerryBush" parent="BigTree" instance=ExtResource("17_negab")]
 position = Vector2(-41.4286, 121.428)
-scale = Vector2(1, 1)
 
 [node name="Barrier" parent="BigTree" instance=ExtResource("18_sb2qm")]
 position = Vector2(-87.1429, 118.571)

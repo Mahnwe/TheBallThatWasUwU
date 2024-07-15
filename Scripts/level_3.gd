@@ -204,3 +204,14 @@ func _on_finish_player_entered():
 	print($Player.position.y)
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
+
+
+func _on_cannon_player_dead_by_cannon_ball():
+	disable_patrol_groups()
+	display_dead_sprite_and_pause_timer_until_respawn()
+	await get_tree().create_timer(1.0).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
+		

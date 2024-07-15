@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://0vsghibpq11b"]
+
+[ext_resource type="Texture2D" uid="uid://cdlxs6rpwff0m" path="res://Arts/CanonSprite/CanonBallSprite-removebg-preview.png" id="1_62hxd"]
+[ext_resource type="Script" path="res://Scripts/cannon_ball.gd" id="1_se441"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o56lr"]
+radius = 202.076
+
+[node name="CannonBall" type="Node2D"]
+script = ExtResource("1_se441")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0697421, 0.0773143)
+texture = ExtResource("1_62hxd")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+scale = Vector2(1.31, 0.965)
+shape = SubResource("CircleShape2D_o56lr")
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
