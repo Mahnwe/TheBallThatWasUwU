@@ -9,7 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if is_ball_going_left and !is_ball_explode:
 		self.position.x -= 10
 	if !is_ball_going_left and !is_ball_explode:
@@ -17,6 +17,8 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
+	if body.name == "Player":
+		body.set_physics_process(false)
 	set_process(false)
 	$Sprite2D.texture = load("res://Arts/CanonSprite/ExplosionSprite-removebg-preview.png")
 	await get_tree().create_timer(0.25).timeout

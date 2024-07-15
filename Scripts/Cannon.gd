@@ -15,7 +15,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if cannon_ball_inst.is_ball_explode == true:
 		on_cannon_ball_exploding()
 		shoot_cannon_ball()
