@@ -700,6 +700,7 @@ position = Vector2(234, 485)
 position = Vector2(-2140, 874)
 scale = Vector2(1.2, 1.2)
 
+[connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="spike_hit" from="SpikePatrol1/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
