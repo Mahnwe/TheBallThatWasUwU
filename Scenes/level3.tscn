@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=21 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
+[ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_gdtbw"]
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="3_e4wth"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="4_p835d"]
@@ -57,6 +58,10 @@ point_count = 8
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_1urae")
+
+[node name="GameArea" parent="." instance=ExtResource("2_es6jk")]
+position = Vector2(907, -605)
+scale = Vector2(6.20182, -12.0748)
 
 [node name="platform" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(-697, 1263)
@@ -178,6 +183,11 @@ scale = Vector2(0.317411, 0.919999)
 [node name="SavePoint" parent="." instance=ExtResource("9_0l5s7")]
 position = Vector2(913, -181)
 scale = Vector2(0.639902, 0.634647)
+
+[node name="Spike6" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(1545, 408)
+rotation = 2.44921
+scale = Vector2(0.337579, 0.36)
 
 [node name="Spike" parent="." instance=ExtResource("10_w0su0")]
 position = Vector2(316, 362)
@@ -441,12 +451,15 @@ position = Vector2(849, -1314)
 scale = Vector2(0.64, 0.68)
 
 [node name="Spike5" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(1094, 60)
+position = Vector2(1094, 266)
 rotation = 1.5708
 scale = Vector2(0.440001, 0.32)
 
 [node name="Spike" parent="Spike5" instance=ExtResource("10_w0su0")]
-position = Vector2(-1.07748e-05, -884.374)
+position = Vector2(-472.728, -884.372)
+
+[node name="Spike2" parent="Spike5" instance=ExtResource("10_w0su0")]
+position = Vector2(-854.543, 0.00425349)
 
 [node name="Spike4" parent="." instance=ExtResource("10_w0su0")]
 position = Vector2(453, 60)
@@ -454,51 +467,56 @@ rotation = 1.5708
 scale = Vector2(0.440001, 0.32)
 
 [node name="Spike" parent="Spike4" instance=ExtResource("10_w0su0")]
-position = Vector2(-2.4836e-05, -781.249)
+position = Vector2(468.179, -781.252)
 
-[node name="Path2D3" type="Path2D" parent="."]
+[node name="Spike2" parent="Spike4" instance=ExtResource("10_w0su0")]
+position = Vector2(-390.91, -790.623)
+
+[node name="SpikeOnPatrol1" type="Path2D" parent="."]
 curve = SubResource("Curve2D_y10y8")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+[node name="PathFollow2D" type="PathFollow2D" parent="SpikeOnPatrol1"]
 position = Vector2(-29, 49)
 rotation = 3.14159
 
-[node name="Spike" parent="Path2D3/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("10_w0su0")]
+[node name="Spike" parent="SpikeOnPatrol1/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("10_w0su0")]
 position = Vector2(-24, -31)
 scale = Vector2(0.4, 0.279999)
 
-[node name="Path2D4" type="Path2D" parent="."]
+[node name="SpikeOnPatrol2" type="Path2D" parent="."]
 curve = SubResource("Curve2D_0m3nc")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+[node name="PathFollow2D" type="PathFollow2D" parent="SpikeOnPatrol2"]
 position = Vector2(1774, 48)
 rotation = -0.0294033
 
-[node name="Spike" parent="Path2D4/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("10_w0su0")]
+[node name="Spike" parent="SpikeOnPatrol2/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("10_w0su0")]
 position = Vector2(-28.6641, -45.8625)
 scale = Vector2(0.4, 0.279999)
 
 [node name="Cannon" parent="." instance=ExtResource("12_dyw7h")]
-position = Vector2(1578, -885)
+position = Vector2(1703, -885)
 flip_value = 1
 
 [node name="Cannon2" parent="." instance=ExtResource("12_dyw7h")]
-position = Vector2(155, -883)
+position = Vector2(25, -883)
 is_going_left = true
 
 [node name="Wall24" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(-1092, -731)
-rotation = -1.25957
-scale = Vector2(1, 1.73115)
+position = Vector2(-1072, -712)
+rotation = -1.44839
+scale = Vector2(1, 1.97912)
 
 [node name="Wall25" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(2786, -1022)
-rotation = 1.33915
+position = Vector2(2792, -1034)
+rotation = 1.44699
 scale = Vector2(1, 2.2)
 
+[connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
+[connection signal="spike_hit" from="Spike6" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
@@ -506,9 +524,11 @@ scale = Vector2(1, 2.2)
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="spike_hit" from="Spike5" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike5/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike5/Spike2" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike4/Spike" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Path2D3/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Path2D4/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike4/Spike2" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="SpikeOnPatrol1/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="SpikeOnPatrol2/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="player_dead_by_cannon_ball" from="Cannon" to="." method="_on_cannon_player_dead_by_cannon_ball"]
 [connection signal="player_dead_by_cannon_ball" from="Cannon2" to="." method="_on_cannon_player_dead_by_cannon_ball"]

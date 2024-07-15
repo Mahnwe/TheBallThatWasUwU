@@ -215,3 +215,15 @@ func _on_cannon_player_dead_by_cannon_ball():
 	else:
 		put_player_to_save_position_and_unpause_timer()
 		
+
+
+func _on_game_area_player_exited_game_area():
+	$Player.set_physics_process(false)
+	$Player.get_child(1).animation = "dead"
+	$Player.get_child(5).text = "Out of game zone !"
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	await get_tree().create_timer(0.5).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
