@@ -162,17 +162,19 @@ func _on_save_point_player_entered():
 
 func _on_spike_spike_hit():
 	disable_patrol_groups()
-	display_dead_sprite_and_pause_timer_until_respawn()
+	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
 		
-func display_dead_sprite_and_pause_timer_until_respawn():
+func display_dead_sprite_and_pause_timer_until_respawn(message):
 	$Player.set_physics_process(false)
+	$Player.velocity.x = 0
+	$Player.velocity.y = 0
 	$Player.get_child(1).animation = "dead"
-	$Player.get_child(5).text = "OH NO !"
+	$Player.get_child(5).text = message
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	
 func put_player_to_save_position_and_unpause_timer():
@@ -208,7 +210,7 @@ func _on_finish_player_entered():
 
 func _on_cannon_player_dead_by_cannon_ball():
 	disable_patrol_groups()
-	display_dead_sprite_and_pause_timer_until_respawn()
+	display_dead_sprite_and_pause_timer_until_respawn("BOOM !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
@@ -218,10 +220,7 @@ func _on_cannon_player_dead_by_cannon_ball():
 
 
 func _on_game_area_player_exited_game_area():
-	$Player.set_physics_process(false)
-	$Player.get_child(1).animation = "dead"
-	$Player.get_child(5).text = "Out of game zone !"
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	display_dead_sprite_and_pause_timer_until_respawn("Out of game zone !")
 	await get_tree().create_timer(0.5).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
