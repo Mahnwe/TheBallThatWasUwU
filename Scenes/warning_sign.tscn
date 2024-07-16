@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://6evsxx3ik4ta"]
+[gd_scene load_steps=3 format=3 uid="uid://6evsxx3ik4ta"]
 
+[ext_resource type="Script" path="res://Scripts/warning_sign.gd" id="1_0cxxk"]
 [ext_resource type="Texture2D" uid="uid://bms6xs6eedl8g" path="res://Arts/WarningSignSprite/WarningSign-removebg-preview.png" id="1_81kt7"]
 
 [node name="WarningSign" type="Node2D"]
+script = ExtResource("1_0cxxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.096699, 0.109704)
