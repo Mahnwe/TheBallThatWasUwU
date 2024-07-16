@@ -6,6 +6,7 @@ var cannon_ball_inst
 var cannon_ball_has_touch_player
 signal player_dead_by_cannon_ball
 @export var flip_value = 0
+@export var ball_speed = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,7 @@ func _process(_delta):
 func shoot_cannon_ball():
 	cannon_ball_inst = cannon_ball.instantiate()
 	add_child(cannon_ball_inst)
+	cannon_ball_inst.ball_speed = ball_speed
 	cannon_ball_inst.cannon_ball_touch_object.connect(on_cannon_ball_exploding)
 	print("ball is created")
 	if is_going_left:

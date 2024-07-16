@@ -3,6 +3,7 @@ signal cannon_ball_touch_object
 var is_ball_explode
 var is_ball_going_left
 var has_touch_player
+var ball_speed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_ball_explode = false
@@ -11,9 +12,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if is_ball_going_left and !is_ball_explode:
-		self.position.x -= 10
+		self.position.x -= ball_speed
 	if !is_ball_going_left and !is_ball_explode:
-		self.position.x += 10
+		self.position.x += ball_speed
 
 
 func _on_area_2d_body_entered(body):
