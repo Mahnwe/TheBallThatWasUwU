@@ -115,9 +115,6 @@ func check_if_player_is_on_wall():
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
 			var wall_jump_force_to_left = Vector2(speed * 2 *  wall_normal.x, jump_force)
 			velocity = wall_jump_force_to_left
-			#velocity.x += speed * 2 * wall_normal.x * 2
-			#velocity.y = jump_force
-			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play()
@@ -125,9 +122,6 @@ func check_if_player_is_on_wall():
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
 			var wall_jump_force_to_right = Vector2(speed * 2 * wall_normal.x, jump_force)
 			velocity = wall_jump_force_to_right
-			#velocity.x += speed * 2 * wall_normal.x * 2
-			#velocity.y = jump_force
-			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play()
