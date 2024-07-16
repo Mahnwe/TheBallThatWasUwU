@@ -729,6 +729,13 @@ rotates = false
 position = Vector2(-26.149, -96.5206)
 scale = Vector2(0.3413, 0.43348)
 
+[node name="platform32" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(454, -796)
+scale = Vector2(0.319999, 1.2)
+
+[node name="platform" parent="platform32" instance=ExtResource("2_gdtbw")]
+position = Vector2(1750, 0.833331)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
