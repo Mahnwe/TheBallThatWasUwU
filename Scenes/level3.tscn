@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=37 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -14,6 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_lhdat"]
 [ext_resource type="PackedScene" uid="uid://dirhjvk3xk4re" path="res://Scenes/cannon.tscn" id="12_dyw7h"]
 [ext_resource type="PackedScene" uid="uid://6evsxx3ik4ta" path="res://Scenes/warning_sign.tscn" id="14_l6k82"]
+[ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="15_s7kks"]
+[ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="16_dht4o"]
+[ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="17_tta53"]
+[ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_icw0h"]
+[ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="19_4iku6"]
+[ext_resource type="PackedScene" uid="uid://ctsres127vwfw" path="res://Scenes/barrier.tscn" id="20_ctgch"]
+[ext_resource type="PackedScene" uid="uid://be1l83abc4nq8" path="res://Scenes/apple_tree.tscn" id="21_wx5k2"]
+[ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="22_v2cqt"]
+[ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="23_0m520"]
 
 [sub_resource type="Curve2D" id="Curve2D_ea2f8"]
 _data = {
@@ -735,6 +744,112 @@ scale = Vector2(0.319999, 1.2)
 
 [node name="platform" parent="platform32" instance=ExtResource("2_gdtbw")]
 position = Vector2(1750, 0.833331)
+
+[node name="Rock3" parent="." instance=ExtResource("15_s7kks")]
+position = Vector2(920, 1171)
+
+[node name="BerryBush" parent="Rock3" instance=ExtResource("17_tta53")]
+position = Vector2(51, 39)
+
+[node name="BigTree" parent="." instance=ExtResource("16_dht4o")]
+position = Vector2(779, -301)
+
+[node name="BerryBush" parent="BigTree" instance=ExtResource("17_tta53")]
+position = Vector2(168, 121)
+
+[node name="BranchesBush" parent="." instance=ExtResource("18_icw0h")]
+position = Vector2(-517, -869)
+scale = Vector2(1.26733, 1.28)
+
+[node name="BranchesBush" parent="BranchesBush" instance=ExtResource("18_icw0h")]
+position = Vector2(2187.27, 0)
+flip_value = 1
+
+[node name="BranchesBush2" parent="BranchesBush" instance=ExtResource("18_icw0h")]
+position = Vector2(31.5624, 0)
+flip_value = 1
+
+[node name="BranchesBush3" parent="BranchesBush" instance=ExtResource("18_icw0h")]
+position = Vector2(2148.61, 3.90625)
+
+[node name="Tree" parent="." instance=ExtResource("19_4iku6")]
+position = Vector2(637, 1139)
+scale = Vector2(1.12, 1.12)
+
+[node name="Barrier" parent="." instance=ExtResource("20_ctgch")]
+position = Vector2(-346, 1318)
+
+[node name="Barrier" parent="Barrier" instance=ExtResource("20_ctgch")]
+position = Vector2(-230, 0)
+
+[node name="Barrier2" parent="Barrier" instance=ExtResource("20_ctgch")]
+position = Vector2(-279, 0)
+
+[node name="Barrier3" parent="Barrier" instance=ExtResource("20_ctgch")]
+position = Vector2(49, 0)
+
+[node name="Barrier4" parent="Barrier" instance=ExtResource("20_ctgch")]
+position = Vector2(98, 0)
+
+[node name="AppleTree" parent="." instance=ExtResource("21_wx5k2")]
+position = Vector2(870, -1771)
+
+[node name="Rock1" parent="AppleTree" instance=ExtResource("22_v2cqt")]
+position = Vector2(-47, 88)
+scale = Vector2(0.76, 0.88)
+
+[node name="BranchesBush2" parent="." instance=ExtResource("18_icw0h")]
+position = Vector2(509, 539)
+scale = Vector2(1.52, 1.4)
+flip_value = 1
+
+[node name="BranchesBush" parent="BranchesBush2" instance=ExtResource("18_icw0h")]
+position = Vector2(480.262, -4.35965e-05)
+
+[node name="Tree2" parent="." instance=ExtResource("19_4iku6")]
+position = Vector2(166, -1383)
+
+[node name="Tree" parent="Tree2" instance=ExtResource("19_4iku6")]
+position = Vector2(1385, 0)
+flip_value = 1
+
+[node name="Barrier2" parent="." instance=ExtResource("20_ctgch")]
+position = Vector2(260, -1968)
+
+[node name="Barrier" parent="Barrier2" instance=ExtResource("20_ctgch")]
+position = Vector2(49, 0)
+
+[node name="Barrier2" parent="Barrier2" instance=ExtResource("20_ctgch")]
+position = Vector2(98, 0)
+
+[node name="Barrier3" parent="Barrier2" instance=ExtResource("20_ctgch")]
+z_index = -1
+position = Vector2(147, 0)
+
+[node name="Barrier3" parent="." instance=ExtResource("20_ctgch")]
+position = Vector2(1476, -1968)
+rotation = 3.14159
+
+[node name="Barrier" parent="Barrier3" instance=ExtResource("20_ctgch")]
+position = Vector2(49, 0)
+
+[node name="Barrier2" parent="Barrier3" instance=ExtResource("20_ctgch")]
+position = Vector2(98, 0)
+
+[node name="Barrier3" parent="Barrier3" instance=ExtResource("20_ctgch")]
+z_index = -1
+position = Vector2(147, 0)
+
+[node name="BigTree2" parent="." instance=ExtResource("16_dht4o")]
+position = Vector2(929, -2534)
+flip_value = 1
+
+[node name="Rock2" parent="." instance=ExtResource("23_0m520")]
+position = Vector2(640, -727)
+
+[node name="Rock2" parent="Rock2" instance=ExtResource("23_0m520")]
+position = Vector2(425, 0)
+flip_value = 1
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
