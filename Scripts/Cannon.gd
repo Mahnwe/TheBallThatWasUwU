@@ -27,7 +27,6 @@ func shoot_cannon_ball():
 	add_child(cannon_ball_inst)
 	cannon_ball_inst.ball_speed = ball_speed
 	cannon_ball_inst.cannon_ball_touch_object.connect(on_cannon_ball_exploding)
-	print("ball is created")
 	if is_going_left:
 		cannon_ball_inst.position.x = -61
 		cannon_ball_inst.position.y = -18
@@ -45,7 +44,6 @@ func on_cannon_ball_exploding():
 	if cannon_ball_inst.has_touch_player == false:
 		cannon_ball_has_touch_player = false
 	remove_cannon_ball()
-	print("ball explode")
 	
 func remove_cannon_ball():
 	self.remove_child(cannon_ball_inst)
