@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckh3u5c14ylpi"]
+
+[ext_resource type="Script" path="res://Scripts/LanternPole.gd" id="1_yycmn"]
+[ext_resource type="Texture2D" uid="uid://cbw7vw6npq0u4" path="res://Arts/LanternPoleSprite/LanterPole-removebg-preview.png" id="2_gv163"]
+
+[node name="LanternPole" type="Node2D"]
+script = ExtResource("1_yycmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.491776)
+texture = ExtResource("2_gv163")
