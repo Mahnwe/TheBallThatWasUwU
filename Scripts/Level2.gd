@@ -29,14 +29,14 @@ func _ready():
 	$Player/Pause.hide()
 	is_commands_panel_open = false
 	is_paused = false
-	$Player/CommandsUI.player_have_dash = false
+	$Player/Pause.get_child(3).player_have_dash = false
 	$Player.have_dash_ability = false
 	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	handle_commands_panel()
+	#handle_commands_panel()
 	handle_pause()
 	handle_player_actions_when_level_finished()
 		
@@ -69,23 +69,27 @@ func handle_pause():
 	else:
 		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.show()
+			$Player.get_child(0).get_child(0).get_child(1).hide()
 			disable_patrol_groups()
 			$Player.set_physics_process(false)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 			is_paused = true
 		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.show()
+			$Player.get_child(0).get_child(0).get_child(1).hide()
 			disable_patrol_groups()
 			$Player.set_physics_process(false)
 			is_paused = true
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.hide()
+			$Player.get_child(0).get_child(0).get_child(1).show()
 			enable_patrol_groups()
 			$Player.set_physics_process(true)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.hide()
+			$Player.get_child(0).get_child(0).get_child(1).show()
 			enable_patrol_groups()
 			$Player.set_physics_process(true)
 			is_paused = false
@@ -100,39 +104,39 @@ func restart_scene():
 	else:
 		pass
 	
-func handle_commands_panel():
-	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
-		pass
-	else:
-		if !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
-			$Player/CommandsUI.show()
-			disable_patrol_groups()
-			$Player.set_physics_process(false)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			is_commands_panel_open = true
-		elif !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
-			$Player/CommandsUI.show()
-			disable_patrol_groups()
-			$Player.set_physics_process(false)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			is_commands_panel_open = true
-		elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
-			$Player/CommandsUI.hide()
-			enable_patrol_groups()
-			$Player.set_physics_process(true)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-			is_commands_panel_open = false
-		elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
-			$Player/CommandsUI.hide()
-			enable_patrol_groups()
-			$Player.set_physics_process(true)
-			is_commands_panel_open = false
-		elif is_commands_panel_open and Input.is_action_just_pressed("close_commands"):
-			$Player/CommandsUI.hide()
-			enable_patrol_groups()
-			$Player.set_physics_process(true)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-			is_commands_panel_open = false
+#func handle_commands_panel():
+	#if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
+		#pass
+	#else:
+		#if !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
+			#$Player/CommandsUI.show()
+			#disable_patrol_groups()
+			#$Player.set_physics_process(false)
+			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+			#is_commands_panel_open = true
+		#elif !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
+			#$Player/CommandsUI.show()
+			#disable_patrol_groups()
+			#$Player.set_physics_process(false)
+			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+			#is_commands_panel_open = true
+		#elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
+			#$Player/CommandsUI.hide()
+			#enable_patrol_groups()
+			#$Player.set_physics_process(true)
+			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+			#is_commands_panel_open = false
+		#elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
+			#$Player/CommandsUI.hide()
+			#enable_patrol_groups()
+			#$Player.set_physics_process(true)
+			#is_commands_panel_open = false
+		#elif is_commands_panel_open and Input.is_action_just_pressed("close_commands"):
+			#$Player/CommandsUI.hide()
+			#enable_patrol_groups()
+			#$Player.set_physics_process(true)
+			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+			#is_commands_panel_open = false
 
 
 
@@ -185,7 +189,7 @@ func enable_patrol_groups():
 			member.set_process(true)
 
 func _on_ability_player_entered():
-	$Player/CommandsUI.player_have_dash = true
+	$Player/Pause.get_child(3).player_have_dash = true
 	$Player.have_dash_ability = true
 	$Ability.get_child(0).text = "You can dash now !\n        X/Comma\n        Square/X/Y"
 
