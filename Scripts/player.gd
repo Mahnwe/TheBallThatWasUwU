@@ -19,7 +19,7 @@ var have_dash_ability
 var can_double_jump
 var number_of_jumps
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	check_for_player_movement()
 	check_if_player_is_on_floor()
 	check_if_player_is_not_on_floor()
@@ -113,15 +113,17 @@ func check_if_player_is_on_wall():
 		check_animation_if_on_wall()
 		var wall_normal = get_wall_normal()
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
-			var wall_jump_force_to_left = Vector2(speed * 2 *  wall_normal.x, jump_force)
+			var wall_jump_force_to_left = Vector2(speed * 2.5 * wall_normal.x, jump_force)
 			velocity = wall_jump_force_to_left
+			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play()
 			await $AnimatedSprite2D.animation_finished
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
-			var wall_jump_force_to_right = Vector2(speed * 2 * wall_normal.x, jump_force)
+			var wall_jump_force_to_right = Vector2(speed * 2.5 *  wall_normal.x, jump_force)
 			velocity = wall_jump_force_to_right
+			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play()
@@ -136,15 +138,15 @@ func check_for_player_movement():
 	
 			
 func check_animation_if_on_wall():
-	if collinding_right_wall() and Input.is_action_pressed("move_right"):
+	if collinding_right_wall():
 		number_of_jumps = 0
-		velocity.y = gravity+32
+		velocity.y = gravity+75
 		can_dash = true
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = true
-	if colliding_left_wall() and Input.is_action_pressed("move_left"):
+	if colliding_left_wall():
 		number_of_jumps = 0
-		velocity.y = gravity+32
+		velocity.y = gravity+75
 		can_dash = true
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = false
