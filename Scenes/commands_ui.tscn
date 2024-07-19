@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ivef5yrurvd" path="res://Arts/ControllerControls/XSwitch-removebg-preview.png" id="28_f6ipp"]
 [ext_resource type="Texture2D" uid="uid://bbdesxaqu1x6o" path="res://Arts/ControllerControls/RightTrigger-removebg-preview.png" id="29_yo4yd"]
 [ext_resource type="Texture2D" uid="uid://d4uppifddsjc" path="res://Arts/ControllerControls/RightTriggerSwitch-removebg-preview.png" id="30_ajr3c"]
-[ext_resource type="Texture2D" uid="uid://cnakslo431wlm" path="res://Arts/ControllerControls/Start-removebg-preview.png" id="31_p8u0t"]
+[ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="31_pbdu2"]
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="32_k81pc"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="33_cep7v"]
 [ext_resource type="Texture2D" uid="uid://d2tdp336bis5j" path="res://Arts/ControllerControls/Square-removebg-preview.png" id="34_k6euw"]
@@ -225,17 +225,18 @@ texture = ExtResource("30_ajr3c")
 
 [node name="MenuC" type="Sprite2D" parent="Controller"]
 position = Vector2(30.8995, 546.392)
-scale = Vector2(0.171171, 0.192982)
-texture = ExtResource("31_p8u0t")
-
-[node name="Sprite2D" type="Sprite2D" parent="Controller/MenuC"]
-position = Vector2(333.685, 0)
-texture = ExtResource("32_k81pc")
+scale = Vector2(0.320987, 0.35793)
+texture = ExtResource("31_pbdu2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Controller/MenuC"]
-position = Vector2(650.958, 2.67098)
-scale = Vector2(1.97126, 2.03283)
+position = Vector2(347.133, 1.44031)
+scale = Vector2(1.0512, 1.09602)
 texture = ExtResource("33_cep7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controller/MenuC"]
+position = Vector2(177.943, 0.000244141)
+scale = Vector2(0.533265, 0.539161)
+texture = ExtResource("32_k81pc")
 
 [node name="DashC" type="Sprite2D" parent="Controller"]
 position = Vector2(29.9631, 634.021)
