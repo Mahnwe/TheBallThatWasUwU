@@ -84,6 +84,7 @@ texture = ExtResource("4_6cx23")
 
 [node name="Label3" type="Label" parent="."]
 z_index = 5
+layout_mode = 0
 offset_left = 1274.0
 offset_top = 1153.0
 offset_right = 1451.0
