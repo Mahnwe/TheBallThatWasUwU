@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=11 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
 [ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="9_ch5om"]
+[ext_resource type="PackedScene" uid="uid://u2l2p1akcs6s" path="res://Scenes/demo.tscn" id="10_snf4e"]
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -113,6 +114,7 @@ text = "Level 3"
 position = Vector2(1186, 473)
 
 [node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
+visible = false
 z_index = 2
 layout_mode = 0
 offset_left = 1210.0
@@ -130,6 +132,7 @@ theme_override_font_sizes/font_size = 20
 text = "Level 4"
 
 [node name="Wall" parent="." instance=ExtResource("8_ar47r")]
+visible = false
 position = Vector2(1406, 758)
 rotation = 1.5708
 scale = Vector2(0.44, 1.44)
@@ -156,6 +159,13 @@ offset_bottom = 778.75
 scale = Vector2(8.49967, 4.83334)
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
+
+[node name="Demo" parent="." instance=ExtResource("10_snf4e")]
+layout_mode = 1
+offset_left = 871.0
+offset_top = 267.0
+offset_right = 1021.0
+offset_bottom = 336.0
 
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]

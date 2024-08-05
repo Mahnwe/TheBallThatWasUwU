@@ -19,7 +19,7 @@ var have_dash_ability
 var can_double_jump
 var number_of_jumps
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	check_for_player_movement()
 	check_if_player_is_on_floor()
 	check_if_player_is_not_on_floor()
