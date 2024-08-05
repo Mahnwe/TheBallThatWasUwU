@@ -704,6 +704,7 @@ position = Vector2(-2140, 874)
 scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = -20
 position = Vector2(-419.853, 732.498)
 scale = Vector2(4.72676, 2.38181)
@@ -716,6 +717,7 @@ scale = Vector2(1, 0.778229)
 texture = ExtResource("24_w34bd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 z_index = -20
 position = Vector2(-2761.8, 730.748)
 scale = Vector2(4.79999, 2.38686)
@@ -729,6 +731,7 @@ texture = ExtResource("24_w34bd")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
 z_index = -20
 position = Vector2(-4878, 733)
 scale = Vector2(4.72676, 2.38181)
