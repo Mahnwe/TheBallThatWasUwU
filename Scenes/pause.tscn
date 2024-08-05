@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bbctegcfntwoe"]
 
-[ext_resource type="Texture2D" uid="uid://5nh3reihbr46" path="res://Arts/KeyboardControls/CtrlKey-removebg-preview.png" id="1_xaoi5"]
+[ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
 [ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="2_g1xuu"]
 [ext_resource type="Texture2D" uid="uid://dd5gsplolw7pp" path="res://Arts/ControllerControls/ShareXbox-removebg-preview.png" id="3_xjpr8"]
 [ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="4_6cx23"]
@@ -56,8 +56,8 @@ text = "Return to menu"
 
 [node name="Sprite2D" type="Sprite2D" parent="Label2"]
 position = Vector2(79.698, 66.008)
-scale = Vector2(0.116414, 0.140313)
-texture = ExtResource("1_xaoi5")
+scale = Vector2(0.0815609, 0.124147)
+texture = ExtResource("1_t2voc")
 
 [node name="ColorRect2" type="ColorRect" parent="Label2"]
 z_index = -1
