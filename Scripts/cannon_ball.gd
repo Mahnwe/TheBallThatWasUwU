@@ -29,4 +29,3 @@ func _on_area_2d_body_entered(body):
 	else:
 		has_touch_player = false
 	cannon_ball_touch_object.emit()
-

@@ -47,4 +47,3 @@ func on_cannon_ball_exploding():
 	
 func remove_cannon_ball():
 	self.remove_child(cannon_ball_inst)
-
