@@ -1,9 +1,13 @@
 extends StaticBody2D
 
 signal player_entered
+@export var sprite_id = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if sprite_id == 0:
+		$Sprite2D.texture = load("res://Arts/AbilitySprite/DashAbilitySprite-removebg-preview.png")
+	elif sprite_id == 1:
+		$Sprite2D.texture = load("res://Arts/AbilitySprite/DoubleJumpAbilitySprite-removebg-preview.png")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +19,7 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		player_entered.emit()
 		$Label.show()
+		$Label2.hide()
 		for n in 8:
 			$Sprite2D.hide()
 			await get_tree().create_timer(0.2).timeout;

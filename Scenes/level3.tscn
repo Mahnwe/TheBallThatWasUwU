@@ -146,6 +146,7 @@ position = Vector2(613, 0)
 [node name="Ability" parent="." instance=ExtResource("7_pr54i")]
 position = Vector2(28, 1173)
 scale = Vector2(0.52, 0.56)
+sprite_id = 1
 
 [node name="Wall2" parent="." instance=ExtResource("8_tnmog")]
 position = Vector2(-754, 1358)
