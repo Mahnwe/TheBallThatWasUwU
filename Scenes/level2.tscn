@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=42 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="22_yvjp8"]
 [ext_resource type="Texture2D" uid="uid://dy816tof24l76" path="res://Arts/BackgroundSprite/BackgroundLVL2Sprite-removebg-preview.png" id="23_b45am"]
 [ext_resource type="Texture2D" uid="uid://bwxd85ux41v40" path="res://Arts/BackgroundSprite/SkyBackgroundLVL2-removebg-preview.png" id="24_w34bd"]
+[ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="25_vxvct"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -741,6 +742,20 @@ texture = ExtResource("23_b45am")
 z_index = -1
 position = Vector2(0, -299.352)
 texture = ExtResource("24_w34bd")
+
+[node name="LanternPole" parent="." instance=ExtResource("25_vxvct")]
+position = Vector2(-793, 513)
+scale = Vector2(0.439998, 0.400001)
+flip_value = 1
+
+[node name="LanternPole2" parent="." instance=ExtResource("25_vxvct")]
+position = Vector2(-2059, 984)
+scale = Vector2(0.439998, 0.400001)
+
+[node name="LanternPole3" parent="." instance=ExtResource("25_vxvct")]
+position = Vector2(-3720, 354)
+scale = Vector2(0.439998, 0.400001)
+flip_value = 1
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
