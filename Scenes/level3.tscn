@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=38 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://be1l83abc4nq8" path="res://Scenes/apple_tree.tscn" id="21_wx5k2"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="22_v2cqt"]
 [ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="23_0m520"]
+[ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="24_ctwib"]
 
 [sub_resource type="Curve2D" id="Curve2D_ea2f8"]
 _data = {
@@ -106,6 +107,7 @@ point_count = 8
 script = ExtResource("1_1urae")
 
 [node name="GameArea" parent="." instance=ExtResource("2_es6jk")]
+z_index = -1
 position = Vector2(907, -605)
 scale = Vector2(6.20182, -12.0748)
 
@@ -850,6 +852,25 @@ position = Vector2(640, -727)
 
 [node name="Rock2" parent="Rock2" instance=ExtResource("23_0m520")]
 position = Vector2(425, 0)
+flip_value = 1
+
+[node name="LanternPole" parent="." instance=ExtResource("24_ctwib")]
+z_index = -1
+position = Vector2(711, 1177)
+scale = Vector2(0.603387, 0.542475)
+
+[node name="LanternPole2" parent="." instance=ExtResource("24_ctwib")]
+position = Vector2(701, -210)
+scale = Vector2(0.603387, 0.542475)
+flip_value = 1
+
+[node name="LanternPole3" parent="." instance=ExtResource("24_ctwib")]
+position = Vector2(882, -959)
+scale = Vector2(0.603387, 0.542475)
+
+[node name="LanternPole4" parent="." instance=ExtResource("24_ctwib")]
+position = Vector2(817, -959)
+scale = Vector2(0.603387, 0.542475)
 flip_value = 1
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
