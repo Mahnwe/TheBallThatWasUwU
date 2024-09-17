@@ -2,7 +2,6 @@ extends Node2D
 
 var is_commands_panel_open
 var is_paused
-var is_camera_dezoom
 
 var start_position_x = -615
 var start_position_y = 1212
@@ -30,7 +29,6 @@ func _ready():
 	$Player/Pause.hide()
 	is_commands_panel_open = false
 	is_paused = false
-	is_camera_dezoom = 0
 	$Player/Pause.get_child(3).player_have_dash = true
 	$Player.have_dash_ability = true
 	$Player.can_double_jump = false
@@ -39,8 +37,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	#handle_commands_panel()
-	handle_cam_dezoom()
 	handle_pause()
 	handle_player_actions_when_level_finished()
 		
@@ -59,16 +55,6 @@ func _process(_delta):
 		save_position_x = start_position_x
 		save_position_y = start_position_y
 		
-func handle_cam_dezoom():
-	if Input.is_action_just_pressed("menu_when_finish") and !is_commands_panel_open and is_camera_dezoom == 0:
-		$Player.get_child(0).zoom = Vector2(1.0, 1.0)
-		is_camera_dezoom = 1
-	elif Input.is_action_just_pressed("menu_when_finish") and !is_commands_panel_open and is_camera_dezoom == 1:
-		$Player.get_child(0).zoom = Vector2(0.7, 0.7)
-		is_camera_dezoom = 2
-	elif Input.is_action_just_pressed("menu_when_finish") and !is_commands_panel_open and is_camera_dezoom == 2:
-		$Player.get_child(0).zoom = Vector2(1.4, 1.4)
-		is_camera_dezoom = 0
 		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
@@ -110,39 +96,6 @@ func handle_pause():
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 			
-#func handle_commands_panel():
-	#if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
-		#pass
-	#else:
-		#if !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
-			#$Player/CommandsUI.show()
-			#disable_patrol_groups()
-			#$Player.set_physics_process(false)
-			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			#is_commands_panel_open = true
-		#elif !is_commands_panel_open and !is_paused and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
-			#$Player/CommandsUI.show()
-			#disable_patrol_groups()
-			#$Player.set_physics_process(false)
-			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			#is_commands_panel_open = true
-		#elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x != start_position_x:
-			#$Player/CommandsUI.hide()
-			#enable_patrol_groups()
-			#$Player.set_physics_process(true)
-			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-			#is_commands_panel_open = false
-		#elif is_commands_panel_open and Input.is_action_just_pressed("open_commands") and $Player.position.x == start_position_x:
-			#$Player/CommandsUI.hide()
-			#enable_patrol_groups()
-			#$Player.set_physics_process(true)
-			#is_commands_panel_open = false
-		#elif is_commands_panel_open and Input.is_action_just_pressed("close_commands"):
-			#$Player/CommandsUI.hide()
-			#enable_patrol_groups()
-			#$Player.set_physics_process(true)
-			#$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-			#is_commands_panel_open = false
 			
 func restart_scene():
 	if !is_commands_panel_open:

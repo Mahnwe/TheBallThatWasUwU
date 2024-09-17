@@ -15,9 +15,13 @@ const dash_speed = 1200
 
 var can_dash
 var have_dash_ability
+var is_camera_dezoom
 
 var can_double_jump
 var number_of_jumps
+
+func _ready():
+	is_camera_dezoom = 0
 
 func _physics_process(_delta):
 	check_for_player_movement()
@@ -25,6 +29,17 @@ func _physics_process(_delta):
 	check_if_player_is_not_on_floor()
 	check_if_player_is_on_wall()
 	_dash()
+	
+#func handle_cam_dezoom():
+	if Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 0:
+		$Camera2D.zoom = Vector2(1.0, 1.0)
+		is_camera_dezoom = 1
+	elif Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 1:
+		$Camera2D.zoom = Vector2(0.7, 0.7)
+		is_camera_dezoom = 2
+	elif Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 2:
+		$Camera2D.zoom = Vector2(1.4, 1.4)
+		is_camera_dezoom = 0
 	
 func _dash():
 	if can_dash and have_dash_ability:
