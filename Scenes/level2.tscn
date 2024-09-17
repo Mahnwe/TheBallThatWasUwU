@@ -571,18 +571,18 @@ rotation = -1.5708
 scale = Vector2(0.68, 1.6)
 
 [node name="Wall15" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(-4412, 174)
-rotation = 1.5708
+position = Vector2(-4604, 285)
+rotation = 4.70276
 scale = Vector2(0.32, 1.52001)
 
 [node name="platform17" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-4878, 108)
+position = Vector2(-4861, 99)
 scale = Vector2(0.56001, 1)
 
 [node name="Wall16" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(-4892, 436)
+position = Vector2(-4940, 435)
 rotation = -1.5708
-scale = Vector2(0.699144, 1.28)
+scale = Vector2(0.699144, 1.84001)
 
 [node name="SpikePatrol8" type="Path2D" parent="."]
 curve = SubResource("Curve2D_0plqa")
