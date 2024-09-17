@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 signal player_entered
-signal player_exited
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
