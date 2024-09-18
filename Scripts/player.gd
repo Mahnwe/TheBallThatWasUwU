@@ -24,13 +24,14 @@ func _ready():
 	is_camera_dezoom = 0
 
 func _physics_process(_delta):
+	handle_cam_dezoom()
 	check_for_player_movement()
 	check_if_player_is_on_floor()
 	check_if_player_is_not_on_floor()
 	check_if_player_is_on_wall()
 	_dash()
 	
-#func handle_cam_dezoom():
+func handle_cam_dezoom():
 	if Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 0:
 		$Camera2D.zoom = Vector2(1.0, 1.0)
 		is_camera_dezoom = 1
@@ -106,7 +107,7 @@ func check_if_player_is_on_floor():
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = false
 				$AnimatedSprite2D.play()
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_force
 			number_of_jumps += 1
 			if velocity.x < 0:

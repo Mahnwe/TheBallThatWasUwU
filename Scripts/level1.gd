@@ -69,23 +69,27 @@ func handle_pause():
 		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
+			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 			is_paused = true
 		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
+			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
 			is_paused = true
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
+			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
+			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
@@ -165,3 +169,4 @@ func _on_triple_sign_set_up_sign_label():
 func _on_triple_sign_2_set_up_sign_label():
 	$TripleSign2.get_child(2).text = "Hard way"
 	$TripleSign2.get_child(3).text = "Easy way"
+	
