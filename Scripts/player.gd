@@ -27,6 +27,7 @@ func _physics_process(_delta):
 	handle_cam_dezoom()
 	check_for_player_movement()
 	check_if_player_is_on_floor()
+	player_press_jump_on_floor()
 	check_if_player_is_not_on_floor()
 	check_if_player_is_on_wall()
 	_dash()
@@ -107,21 +108,29 @@ func check_if_player_is_on_floor():
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = false
 				$AnimatedSprite2D.play()
-		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_force
-			number_of_jumps += 1
-			if velocity.x < 0:
-					$AnimatedSprite2D.animation = "jump"
-					$AnimatedSprite2D.flip_h = true
-					$AnimatedSprite2D.play()
-			if velocity.x > 0:
-					$AnimatedSprite2D.animation = "jump"
-					$AnimatedSprite2D.flip_h = false
-					$AnimatedSprite2D.play()
-			if velocity.x == 0:
-					$AnimatedSprite2D.animation = "jump"
-					$AnimatedSprite2D.flip_h = false
-					$AnimatedSprite2D.play()
+
+						
+func player_press_jump_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_force
+		number_of_jumps += 1
+		if velocity.x < 0:
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play()
+		if velocity.x > 0:
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play()
+		if velocity.x == 0:
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play()
+		
+func _input(event):
+	if event.is_action_released("jump"):
+		if velocity.y < 0.0:
+			velocity.y *= 0.7
 			
 func check_if_player_is_on_wall():
 		# Wall-jump
