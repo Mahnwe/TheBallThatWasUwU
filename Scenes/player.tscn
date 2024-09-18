@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=27 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="2_g0yss"]
@@ -16,10 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://c2ftocachgsg2" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight2.5-removebg-preview.png" id="6_7yqso"]
 [ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="6_fuqpw"]
 [ext_resource type="Texture2D" uid="uid://c4ukjf7cupgrp" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight4-removebg-preview.png" id="6_raa1c"]
+[ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="7_dfmc8"]
 [ext_resource type="Texture2D" uid="uid://dgyamti7exbgx" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim1-removebg-preview.png" id="7_ibe2s"]
 [ext_resource type="Texture2D" uid="uid://c02jp5as34re7" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim2-removebg-preview.png" id="8_2w5lh"]
 [ext_resource type="Texture2D" uid="uid://ccr0ebhq2hc4s" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight3.5-removebg-preview.png" id="8_m4wx8"]
+[ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="8_qqab7"]
+[ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="9_234gs"]
 [ext_resource type="Texture2D" uid="uid://bsnvgiu0qijy5" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight4.5-removebg-preview.png" id="10_67dii"]
+[ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="10_nhsbj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
 animations = [{
@@ -143,32 +147,61 @@ offset_bottom = 441.0
 
 [node name="Commands" type="Label" parent="Camera2D/CanvasLayer"]
 offset_left = 1559.0
-offset_top = 873.0
+offset_top = 867.0
 offset_right = 1845.0
-offset_bottom = 922.0
+offset_bottom = 916.0
 scale = Vector2(1.05147, 2.14183)
 theme_override_font_sizes/font_size = 20
 text = "             Pause/Controls"
 
 [node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(150.266, 61.6296)
+position = Vector2(208.945, 46.4237)
 scale = Vector2(0.453958, 0.25495)
 texture = ExtResource("3_ytwi2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(74.1818, 60.6958)
+position = Vector2(141.42, 45.9567)
 scale = Vector2(0.453958, 0.25495)
 texture = ExtResource("4_5dwnd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(-11.4126, 61.1626)
+position = Vector2(59.6298, 46.4237)
 scale = Vector2(0.30179, 0.142896)
 texture = ExtResource("5_dqha1")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(244.42, 60.2289)
+position = Vector2(191.826, 82.3742)
 scale = Vector2(0.229824, 0.126494)
 texture = ExtResource("6_fuqpw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(78.6508, 82.3742)
+scale = Vector2(0.201098, 0.0848941)
+texture = ExtResource("7_dfmc8")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer"]
+offset_left = 18.0
+offset_top = 893.0
+offset_right = 58.0
+offset_bottom = 916.0
+scale = Vector2(1.05147, 2.14183)
+theme_override_font_sizes/font_size = 20
+text = "              Camera Zoom"
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
+position = Vector2(38.042, 56.4938)
+scale = Vector2(0.35796, 0.181379)
+texture = ExtResource("8_qqab7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
+position = Vector2(137.902, 56.9606)
+scale = Vector2(0.224154, 0.116636)
+texture = ExtResource("9_234gs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
+position = Vector2(239.664, 58.8282)
+scale = Vector2(0.550434, 0.493424)
+texture = ExtResource("10_nhsbj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
