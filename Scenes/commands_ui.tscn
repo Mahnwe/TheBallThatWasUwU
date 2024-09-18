@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bxs4smkm3bogo" path="res://Arts/KeyboardControls/Rkey-removebg-preview.png" id="7_nffs6"]
 [ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="8_2xnq0"]
 [ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="9_x7xfw"]
-[ext_resource type="Texture2D" uid="uid://pmg43xtn6xiy" path="res://Arts/KeyboardControls/Xkey-removebg-preview.png" id="10_lfldb"]
+[ext_resource type="Texture2D" uid="uid://cefh5qaqxkh1u" path="res://Arts/KeyboardControls/LitlleShiftKey-removebg-preview.png" id="10_rd156"]
 [ext_resource type="Texture2D" uid="uid://bsoyl6jusm3ys" path="res://Arts/KeyboardControls/Kkey-removebg-preview.png" id="11_4pkt2"]
 [ext_resource type="Texture2D" uid="uid://cuv8n5in56pkk" path="res://Arts/KeyboardControls/Mkey-removebg-preview.png" id="12_sunxo"]
 [ext_resource type="Texture2D" uid="uid://cfp3osmdvn2ak" path="res://Arts/KeyboardControls/Okey-removebg-preview.png" id="13_l6bwp"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bkt8unwo1idff" path="res://Arts/KeyboardControls/Ukey-removebg-preview.png" id="15_q0fr3"]
 [ext_resource type="Texture2D" uid="uid://b2y8j40kibhyg" path="res://Arts/KeyboardControls/Jkey-removebg-preview.png" id="16_2cbhg"]
 [ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="17_15w8q"]
-[ext_resource type="Texture2D" uid="uid://b42xivpe6f75y" path="res://Arts/KeyboardControls/Semicolonkey-removebg-preview.png" id="18_s7klp"]
+[ext_resource type="Texture2D" uid="uid://d0h05ptr4vtyo" path="res://Arts/KeyboardControls/Shift_key.svg-removebg-preview.png" id="18_0xvtq"]
 [ext_resource type="Texture2D" uid="uid://doeotn4rjw8v4" path="res://Arts/ControllerControls/LeftJoystick-removebg-preview.png" id="19_jgwf3"]
 [ext_resource type="Texture2D" uid="uid://c11woyc7aa1j7" path="res://Arts/ControllerControls/Cross-removebg-preview.png" id="20_lg78q"]
 [ext_resource type="Texture2D" uid="uid://c3uy8htjo7x7b" path="res://Arts/ControllerControls/AButton-removebg-preview.png" id="21_iurxd"]
@@ -97,9 +97,9 @@ scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("9_x7xfw")
 
 [node name="DashK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(47, 622)
-scale = Vector2(0.171171, 0.192982)
-texture = ExtResource("10_lfldb")
+position = Vector2(48, 620)
+scale = Vector2(0.225806, 0.231829)
+texture = ExtResource("10_rd156")
 
 [node name="Keyboard2" type="Label" parent="."]
 z_index = 2
@@ -151,9 +151,9 @@ scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("17_15w8q")
 
 [node name="DashK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(48, 622)
-scale = Vector2(0.171171, 0.192982)
-texture = ExtResource("18_s7klp")
+position = Vector2(47, 620)
+scale = Vector2(0.106836, 0.114542)
+texture = ExtResource("18_0xvtq")
 
 [node name="Controller" type="Label" parent="."]
 z_index = 2
