@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=12 format=3 uid="uid://bbctegcfntwoe"]
 
+[ext_resource type="Script" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
 [ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="2_g1xuu"]
 [ext_resource type="Texture2D" uid="uid://dd5gsplolw7pp" path="res://Arts/ControllerControls/ShareXbox-removebg-preview.png" id="3_xjpr8"]
@@ -19,6 +20,87 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_03lrq")
+
+[node name="ReturnLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ReturnLayer"]
+offset_left = 1380.0
+offset_top = 257.0
+offset_right = 1420.0
+offset_bottom = 304.0
+scale = Vector2(12.1928, 7.48612)
+color = Color(0.0923971, 0.0923971, 0.092397, 1)
+
+[node name="ReturnToMenu" type="Button" parent="ReturnLayer" groups=["pause_buttons"]]
+offset_left = 1379.0
+offset_top = 254.0
+offset_right = 1692.0
+offset_bottom = 317.0
+scale = Vector2(1.56, 1.72)
+theme_override_font_sizes/font_size = 40
+text = "Return to menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/ReturnToMenu"]
+position = Vector2(144.872, 100.581)
+scale = Vector2(0.123545, 0.123736)
+texture = ExtResource("1_t2voc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer/ReturnToMenu"]
+position = Vector2(62.8205, 174.419)
+scale = Vector2(0.529769, 0.438829)
+texture = ExtResource("2_g1xuu")
+
+[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/Sprite2D2"]
+position = Vector2(156.002, -0.407177)
+texture = ExtResource("3_xjpr8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/Sprite2D2"]
+position = Vector2(303.514, 2.62105)
+texture = ExtResource("4_6cx23")
+
+[node name="ContinueLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ContinueLayer"]
+offset_left = 1383.0
+offset_top = 701.0
+offset_right = 1423.0
+offset_bottom = 741.0
+scale = Vector2(12.1928, 7.48612)
+color = Color(0.0923971, 0.0923971, 0.092397, 1)
+
+[node name="Continue" type="Button" parent="ContinueLayer" groups=["pause_buttons"]]
+offset_left = 1464.0
+offset_top = 702.0
+offset_right = 1648.0
+offset_bottom = 765.0
+scale = Vector2(1.56, 1.72)
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue"]
+position = Vector2(46.1538, 86.0465)
+scale = Vector2(0.26355, 0.277828)
+texture = ExtResource("5_d1asp")
+
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D"]
+position = Vector2(412.936, -2.17391)
+scale = Vector2(0.81588, 0.81726)
+texture = ExtResource("6_3gj4a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue"]
+position = Vector2(30.7693, 148.837)
+scale = Vector2(0.454515, 0.432836)
+texture = ExtResource("7_he205")
+
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D2"]
+position = Vector2(145.18, 4.16473)
+scale = Vector2(0.466761, 0.50914)
+texture = ExtResource("8_rgm4r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D2"]
+position = Vector2(273.346, 4.16475)
+texture = ExtResource("9_set0a")
 
 [node name="Label" type="Label" parent="."]
 z_index = 5
@@ -42,94 +124,11 @@ offset_bottom = 0.732559
 scale = Vector2(28.6963, 10.8095)
 color = Color(0.219501, 0.219501, 0.219501, 1)
 
-[node name="Label2" type="Label" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 1288.0
-offset_top = 549.0
-offset_right = 1441.0
-offset_bottom = 650.0
-scale = Vector2(3.44302, 2.47431)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Return to menu"
-
-[node name="Sprite2D" type="Sprite2D" parent="Label2"]
-position = Vector2(79.698, 66.008)
-scale = Vector2(0.0815609, 0.124147)
-texture = ExtResource("1_t2voc")
-
-[node name="ColorRect2" type="ColorRect" parent="Label2"]
-z_index = -1
-layout_mode = 0
-offset_left = -11.3823
-offset_top = -3.99995
-offset_right = 33.6177
-offset_bottom = 59.0
-scale = Vector2(3.95883, 2.78068)
-color = Color(0.219501, 0.219501, 0.219501, 1)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Label2"]
-position = Vector2(24.6179, 134.063)
-scale = Vector2(0.349739, 0.440286)
-texture = ExtResource("2_g1xuu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Label2/Sprite2D2"]
-position = Vector2(156.002, -0.407177)
-texture = ExtResource("3_xjpr8")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Label2/Sprite2D2"]
-position = Vector2(303.514, 2.62105)
-texture = ExtResource("4_6cx23")
-
-[node name="Label3" type="Label" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 1274.0
-offset_top = 1153.0
-offset_right = 1451.0
-offset_bottom = 1254.0
-scale = Vector2(3.28, 2.28)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "        Continue"
-
-[node name="ColorRect2" type="ColorRect" parent="Label3"]
-z_index = -1
-layout_mode = 0
-offset_left = -6.0
-offset_top = -4.0
-offset_right = 32.0
-offset_bottom = 60.0
-scale = Vector2(4.90278, 2.86957)
-color = Color(0.219501, 0.219501, 0.219501, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Label3"]
-position = Vector2(49.6528, 65.625)
-scale = Vector2(0.190916, 0.302083)
-texture = ExtResource("5_d1asp")
-
-[node name="Sprite2D" type="Sprite2D" parent="Label3/Sprite2D"]
-position = Vector2(412.936, -2.17391)
-scale = Vector2(0.81588, 0.81726)
-texture = ExtResource("6_3gj4a")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Label3"]
-position = Vector2(40.9722, 139.063)
-scale = Vector2(0.333912, 0.521004)
-texture = ExtResource("7_he205")
-
-[node name="Sprite2D" type="Sprite2D" parent="Label3/Sprite2D2"]
-position = Vector2(145.18, 4.16473)
-scale = Vector2(0.466761, 0.50914)
-texture = ExtResource("8_rgm4r")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Label3/Sprite2D2"]
-position = Vector2(273.346, 4.16475)
-texture = ExtResource("9_set0a")
-
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]
 offset_top = 381.0
 offset_right = 1200.0
 offset_bottom = 1101.0
-scale = Vector2(1, 1.8)
+scale = Vector2(1.08, 1.8)
+
+[connection signal="pressed" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="pressed" from="ContinueLayer/Continue" to="." method="_on_continue_pressed"]
