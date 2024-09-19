@@ -706,6 +706,7 @@ scale = Vector2(1.51427, 1.6)
 
 [node name="WarningSign" parent="WarningSign3" instance=ExtResource("14_l6k82")]
 position = Vector2(385.665, -1.25)
+flip_value = 1
 
 [node name="WarningSign" parent="." instance=ExtResource("14_l6k82")]
 position = Vector2(329, -1758)

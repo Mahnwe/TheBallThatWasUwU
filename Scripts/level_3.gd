@@ -186,7 +186,7 @@ func _on_finish_player_entered():
 func _on_cannon_player_dead_by_cannon_ball():
 	disable_patrol_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("BOOM !")
-	await get_tree().create_timer(1.0).timeout;
+	await get_tree().create_timer(0.5).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
 	else:

@@ -19,6 +19,7 @@ func _ready():
 func _process(_delta):
 	if cannon_ball_inst.is_ball_explode == true:
 		on_cannon_ball_exploding()
+		remove_cannon_ball()
 		shoot_cannon_ball()
 	
 	
@@ -43,7 +44,7 @@ func on_cannon_ball_exploding():
 		player_dead_by_cannon_ball.emit()
 	if cannon_ball_inst.has_touch_player == false:
 		cannon_ball_has_touch_player = false
-	remove_cannon_ball()
 	
 func remove_cannon_ball():
 	self.remove_child(cannon_ball_inst)
+	cannon_ball_inst.queue_free()
