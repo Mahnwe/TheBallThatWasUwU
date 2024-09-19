@@ -26,8 +26,9 @@ func _ready():
 	queue.load()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.get_child(3).player_have_dash = false
-	$Player/CommandsUI.hide()
 	$Player/Pause.hide()
+	$Player/Pause.get_child(0).hide()
+	$Player/Pause.get_child(1).hide()
 	is_commands_panel_open = false
 	is_paused = false
 	$Player.have_dash_ability = false
@@ -68,6 +69,8 @@ func handle_pause():
 	else:
 		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.show()
+			$Player/Pause.get_child(0).show()
+			$Player/Pause.get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
@@ -75,12 +78,16 @@ func handle_pause():
 			is_paused = true
 		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.show()
+			$Player/Pause.get_child(0).show()
+			$Player/Pause.get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
 			is_paused = true
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.hide()
+			$Player/Pause.get_child(0).hide()
+			$Player/Pause.get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
@@ -88,6 +95,8 @@ func handle_pause():
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.hide()
+			$Player/Pause.get_child(0).hide()
+			$Player/Pause.get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
@@ -170,3 +179,23 @@ func _on_triple_sign_2_set_up_sign_label():
 	$TripleSign2.get_child(2).text = "Hard way"
 	$TripleSign2.get_child(3).text = "Easy way"
 	
+
+
+func _on_pause_continue_is_clicked():
+	if $Player.position.x != start_position_x:
+		$Player/Pause.hide()
+		$Player/Pause.get_child(0).hide()
+		$Player/Pause.get_child(1).hide()
+		$Player.get_child(0).get_child(0).get_child(1).show()
+		$Player.get_child(0).get_child(0).get_child(2).show()
+		$Player.set_physics_process(true)
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+		is_paused = false
+	elif $Player.position.x == start_position_x:
+		$Player/Pause.hide()
+		$Player/Pause.get_child(0).hide()
+		$Player/Pause.get_child(1).hide()
+		$Player.get_child(0).get_child(0).get_child(1).show()
+		$Player.get_child(0).get_child(0).get_child(2).show()
+		$Player.set_physics_process(true)
+		is_paused = false

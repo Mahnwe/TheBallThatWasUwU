@@ -1,11 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=37 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_gdtbw"]
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="3_e4wth"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="4_p835d"]
-[ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="5_6cw6y"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_oxgjf"]
 [ext_resource type="PackedScene" uid="uid://i4jemvk3v54m" path="res://Scenes/ability.tscn" id="7_pr54i"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_tnmog"]
@@ -123,14 +122,6 @@ scale = Vector2(0.627, 0.8)
 z_index = 2
 position = Vector2(-615, 1212)
 scale = Vector2(0.717, 0.442)
-
-[node name="CommandsUI" parent="Player" instance=ExtResource("5_6cw6y")]
-visible = false
-offset_left = -556.485
-offset_top = -468.326
-offset_right = 643.515
-offset_bottom = 251.674
-scale = Vector2(1.27894, 1.81448)
 
 [node name="Pause" parent="Player" instance=ExtResource("6_oxgjf")]
 visible = false
@@ -876,6 +867,7 @@ flip_value = 1
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
 [connection signal="spike_hit" from="Spike6" to="." method="_on_spike_spike_hit"]

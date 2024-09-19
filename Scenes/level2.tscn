@@ -1,10 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=41 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="2_ja3c0"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="3_fn0ld"]
-[ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="4_22uak"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="5_35jiw"]
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="5_dhyc2"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="6_llnkw"]
@@ -147,14 +146,6 @@ scale = Vector2(0.626667, 0.8)
 z_index = 2
 position = Vector2(-11, 610)
 scale = Vector2(0.717, 0.442)
-
-[node name="CommandsUI" parent="Player" instance=ExtResource("4_22uak")]
-visible = false
-offset_left = -464.435
-offset_top = -583.71
-offset_right = 735.565
-offset_bottom = 136.29
-scale = Vector2(1.16736, 2.08597)
 
 [node name="Pause" parent="Player" instance=ExtResource("5_35jiw")]
 visible = false
@@ -759,6 +750,7 @@ flip_value = 1
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="SpikePatrol1/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]

@@ -25,8 +25,9 @@ func _ready():
 	queue.is_level_3 = false
 	queue.load()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
-	$Player/CommandsUI.hide()
 	$Player/Pause.hide()
+	$Player/Pause.get_child(0).hide()
+	$Player/Pause.get_child(1).hide()
 	is_commands_panel_open = false
 	is_paused = false
 	$Player/Pause.get_child(3).player_have_dash = false
@@ -68,6 +69,8 @@ func handle_pause():
 	else:
 		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.show()
+			$Player/Pause.get_child(0).show()
+			$Player/Pause.get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			disable_patrol_groups()
@@ -76,6 +79,8 @@ func handle_pause():
 			is_paused = true
 		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.show()
+			$Player/Pause.get_child(0).show()
+			$Player/Pause.get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			disable_patrol_groups()
@@ -83,6 +88,8 @@ func handle_pause():
 			is_paused = true
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			$Player/Pause.hide()
+			$Player/Pause.get_child(0).hide()
+			$Player/Pause.get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -91,6 +98,8 @@ func handle_pause():
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			$Player/Pause.hide()
+			$Player/Pause.get_child(0).hide()
+			$Player/Pause.get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -191,3 +200,25 @@ func _on_game_area_player_exited_game_area():
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
+
+
+func _on_pause_continue_is_clicked():
+	if $Player.position.x != start_position_x:
+		$Player/Pause.hide()
+		$Player/Pause.get_child(0).hide()
+		$Player/Pause.get_child(1).hide()
+		$Player.get_child(0).get_child(0).get_child(1).show()
+		$Player.get_child(0).get_child(0).get_child(2).show()
+		enable_patrol_groups()
+		$Player.set_physics_process(true)
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+		is_paused = false
+	elif $Player.position.x == start_position_x:
+		$Player/Pause.hide()
+		$Player/Pause.get_child(0).hide()
+		$Player/Pause.get_child(1).hide()
+		$Player.get_child(0).get_child(0).get_child(1).show()
+		$Player.get_child(0).get_child(0).get_child(2).show()
+		enable_patrol_groups()
+		$Player.set_physics_process(true)
+		is_paused = false

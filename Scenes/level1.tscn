@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=22 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="2_6xvap"]
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="2_es0mk"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="3_vhjlp"]
-[ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="4_gyqah"]
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="5_vflxv"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="6_mp22g"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="7_v154u"]
@@ -41,14 +40,6 @@ scale = Vector2(0.679995, 0.8)
 z_index = 2
 position = Vector2(-1512, 327)
 scale = Vector2(0.717345, 0.442253)
-
-[node name="CommandsUI" parent="Player" instance=ExtResource("4_gyqah")]
-visible = false
-offset_left = -588.28
-offset_top = -517.803
-offset_right = 611.72
-offset_bottom = 202.197
-scale = Vector2(1.33256, 1.90446)
 
 [node name="Pause" parent="Player" instance=ExtResource("2_6xvap")]
 visible = false
@@ -657,6 +648,7 @@ position = Vector2(-995, -804)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="set_up_sign_label" from="TripleSign" to="." method="_on_triple_sign_set_up_sign_label"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]
