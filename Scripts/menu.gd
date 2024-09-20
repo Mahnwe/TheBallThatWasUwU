@@ -119,3 +119,19 @@ func _on_quit_button_focus_entered():
 
 func _on_quit_button_focus_exited():
 	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#FFFFFF"))
+
+
+func _on_level_1_button_mouse_exited():
+	$Level1Button.release_focus()
+
+
+func _on_level_2_button_mouse_exited():
+	$Level2Button.release_focus()
+
+
+func _on_level_3_button_mouse_exited():
+	$Level3Button.release_focus()
+
+
+func _on_level_4_button_mouse_exited():
+	$Level4Button.release_focus()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=12 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="4_xglq7"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="5_ok2nw"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
+[ext_resource type="Texture2D" uid="uid://oyny4a5maq08" path="res://Arts/BackgroundSprite/BackgroundButton.png" id="7_272km"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
 [ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="9_ch5om"]
+[ext_resource type="Texture2D" uid="uid://u2luvsnkt20j" path="res://Arts/BackgroundSprite/NewBackgroundSprite.png" id="10_7awvj"]
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -28,14 +30,14 @@ position = Vector2(368, 47.875)
 scale = Vector2(0.152778, 0.138309)
 texture = ExtResource("4_xglq7")
 
-[node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
-position = Vector2(214, -65.125)
+[node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
+position = Vector2(528, 54.875)
 
 [node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
-position = Vector2(171, 66.875)
+position = Vector2(272, 67.875)
 
-[node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
-position = Vector2(529, 50.875)
+[node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
+position = Vector2(214, -65.125)
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(672, 656)
@@ -48,14 +50,16 @@ scale = Vector2(0.24, 0.72)
 [node name="MenuTitle" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 570.0
-offset_top = 139.0
-offset_right = 702.0
-offset_bottom = 214.0
-scale = Vector2(5.87999, 2.2)
+offset_left = 646.0
+offset_top = 92.0
+offset_right = 1263.0
+offset_bottom = 261.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-text = "The ball that was
-   fast and UwU"
+theme_override_colors/font_shadow_color = Color(0.00551701, 0.00573812, 0.00551702, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "The ball that was fast 
+           and UwU"
 
 [node name="Level1Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -71,9 +75,15 @@ focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
 focus_previous = NodePath("../Level4Button")
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 1"
+
+[node name="Sprite2D" type="Sprite2D" parent="Level1Button"]
+z_index = -1
+position = Vector2(37.9315, 17.9087)
+scale = Vector2(0.151, 0.23)
+texture = ExtResource("7_272km")
 
 [node name="Level2Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -92,6 +102,12 @@ focus_previous = NodePath("../Level1Button")
 theme_override_font_sizes/font_size = 20
 text = "Level 2"
 
+[node name="Sprite2D" type="Sprite2D" parent="Level2Button"]
+z_index = -1
+position = Vector2(37.9315, 17.9087)
+scale = Vector2(0.151, 0.23)
+texture = ExtResource("7_272km")
+
 [node name="Level3Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
@@ -108,6 +124,12 @@ focus_next = NodePath("../Level4Button")
 focus_previous = NodePath("../Level2Button")
 theme_override_font_sizes/font_size = 20
 text = "Level 3"
+
+[node name="Sprite2D" type="Sprite2D" parent="Level3Button"]
+z_index = -1
+position = Vector2(37.9315, 17.9087)
+scale = Vector2(0.151, 0.23)
+texture = ExtResource("7_272km")
 
 [node name="Tree" parent="." instance=ExtResource("6_ilarj")]
 position = Vector2(1186, 473)
@@ -128,6 +150,12 @@ focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../Level3Button")
 theme_override_font_sizes/font_size = 20
 text = "Level 4"
+
+[node name="Sprite2D" type="Sprite2D" parent="Level4Button"]
+z_index = -1
+position = Vector2(37.9315, 17.9087)
+scale = Vector2(0.151, 0.23)
+texture = ExtResource("7_272km")
 
 [node name="Wall" parent="." instance=ExtResource("8_ar47r")]
 position = Vector2(1406, 758)
@@ -157,13 +185,23 @@ scale = Vector2(8.49967, 4.83334)
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(962, 550)
+scale = Vector2(1.49029, 1.52889)
+texture = ExtResource("10_7awvj")
+
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
+[connection signal="mouse_exited" from="Level1Button" to="." method="_on_level_1_button_mouse_exited"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="gui_input" from="Level2Button" to="." method="_on_level_2_button_gui_input"]
+[connection signal="mouse_exited" from="Level2Button" to="." method="_on_level_2_button_mouse_exited"]
 [connection signal="pressed" from="Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="gui_input" from="Level3Button" to="." method="_on_level_3_button_gui_input"]
+[connection signal="mouse_exited" from="Level3Button" to="." method="_on_level_3_button_mouse_exited"]
 [connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]
 [connection signal="gui_input" from="Level4Button" to="." method="_on_level_4_button_gui_input"]
+[connection signal="mouse_exited" from="Level4Button" to="." method="_on_level_4_button_mouse_exited"]
 [connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
 [connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
