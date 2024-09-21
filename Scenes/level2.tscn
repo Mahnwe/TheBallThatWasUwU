@@ -164,7 +164,7 @@ rotation = -1.5708
 scale = Vector2(0.72, 1.56)
 
 [node name="platform2" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-36, 429)
+position = Vector2(-33, 439)
 scale = Vector2(0.599999, 1)
 
 [node name="Wall18" parent="." instance=ExtResource("6_llnkw")]
@@ -177,7 +177,7 @@ position = Vector2(358, -166)
 scale = Vector2(0.32, 0.72)
 
 [node name="Wall2" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(670, 151)
+position = Vector2(664, 151)
 rotation = 1.5708
 scale = Vector2(1.88, 1.68)
 
@@ -244,7 +244,7 @@ sync_to_physics = false
 speed = 200
 
 [node name="Ability" parent="." instance=ExtResource("9_of3vt")]
-position = Vector2(306, 471)
+position = Vector2(309, 475)
 scale = Vector2(0.345136, 0.386221)
 
 [node name="platform3" parent="." instance=ExtResource("2_ja3c0")]
@@ -252,12 +252,12 @@ position = Vector2(-1079, 469)
 scale = Vector2(0.479161, 1.24)
 
 [node name="Wall3" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(-1394, 938)
+position = Vector2(-1394, 944)
 rotation = -1.5708
 scale = Vector2(1.56, 2.36)
 
 [node name="platform4" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-1490, 324)
+position = Vector2(-1490, 331)
 scale = Vector2(0.4, 1.44)
 
 [node name="Wall4" parent="." instance=ExtResource("6_llnkw")]
@@ -340,6 +340,7 @@ rotates = false
 position = Vector2(-71.2556, -95.5596)
 scale = Vector2(0.204712, 1)
 sync_to_physics = false
+speed = 200
 
 [node name="PlatformPatrol5" type="Path2D" parent="."]
 position = Vector2(5, 47)
@@ -355,7 +356,7 @@ position = Vector2(73.46, 90.048)
 rotation = 3.10339
 scale = Vector2(0.200947, 1)
 sync_to_physics = false
-speed = 200
+speed = 220
 
 [node name="SpikePatrol3" type="Path2D" parent="."]
 curve = SubResource("Curve2D_m4oxn")
@@ -602,6 +603,8 @@ rotation = 1.5708
 scale = Vector2(0.403848, 0.162754)
 
 [node name="SpikePatrol10" type="Path2D" parent="."]
+position = Vector2(9, -8)
+rotation = -0.00349906
 curve = SubResource("Curve2D_3vnur")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="SpikePatrol10"]
@@ -612,6 +615,7 @@ rotates = false
 [node name="Spike" parent="SpikePatrol10/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p1dv8")]
 position = Vector2(-16, -28)
 scale = Vector2(0.28, 0.200001)
+speed = 220
 
 [node name="Finish" parent="." instance=ExtResource("11_bscno")]
 z_index = 1
@@ -689,7 +693,7 @@ position = Vector2(-3594, 378)
 scale = Vector2(1.115, 1.115)
 
 [node name="BranchesBush" parent="." instance=ExtResource("15_88g44")]
-position = Vector2(234, 485)
+position = Vector2(237, 493)
 
 [node name="BigTree2" parent="." instance=ExtResource("16_3v757")]
 position = Vector2(-2140, 874)
