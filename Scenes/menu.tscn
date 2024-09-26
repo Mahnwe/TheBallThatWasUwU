@@ -46,7 +46,7 @@ text = "The ball that was fast
 position = Vector2(581, 512)
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
-position = Vector2(368, 47.875)
+position = Vector2(412, 48)
 scale = Vector2(0.152778, 0.138309)
 texture = ExtResource("4_xglq7")
 

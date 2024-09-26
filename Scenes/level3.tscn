@@ -696,7 +696,7 @@ position = Vector2(581, -2362)
 scale = Vector2(1.51427, 1.6)
 
 [node name="WarningSign" parent="WarningSign3" instance=ExtResource("14_l6k82")]
-position = Vector2(385.665, -1.25)
+position = Vector2(377.079, -1.25)
 flip_value = 1
 
 [node name="WarningSign" parent="." instance=ExtResource("14_l6k82")]
@@ -841,10 +841,10 @@ flip_value = 1
 
 [node name="Rock2" parent="." instance=ExtResource("23_0m520")]
 position = Vector2(640, -727)
+flip_value = 1
 
 [node name="Rock2" parent="Rock2" instance=ExtResource("23_0m520")]
 position = Vector2(425, 0)
-flip_value = 1
 
 [node name="LanternPole" parent="." instance=ExtResource("24_ctwib")]
 z_index = -1
@@ -864,6 +864,31 @@ scale = Vector2(0.603387, 0.542475)
 position = Vector2(817, -959)
 scale = Vector2(0.603387, 0.542475)
 flip_value = 1
+
+[node name="BranchesBush3" parent="." instance=ExtResource("18_icw0h")]
+position = Vector2(450, -662)
+flip_value = 1
+
+[node name="BranchesBush4" parent="." instance=ExtResource("18_icw0h")]
+position = Vector2(1248, -661)
+
+[node name="BerryBush" parent="." instance=ExtResource("17_tta53")]
+position = Vector2(263, -1965)
+
+[node name="BerryBush" parent="BerryBush" instance=ExtResource("17_tta53")]
+position = Vector2(50, 0)
+
+[node name="BerryBush2" parent="BerryBush" instance=ExtResource("17_tta53")]
+position = Vector2(105, -1)
+
+[node name="BerryBush2" parent="." instance=ExtResource("17_tta53")]
+position = Vector2(1471, -1965)
+
+[node name="BerryBush" parent="BerryBush2" instance=ExtResource("17_tta53")]
+position = Vector2(-59, 0)
+
+[node name="BerryBush2" parent="BerryBush2" instance=ExtResource("17_tta53")]
+position = Vector2(-111, 0)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

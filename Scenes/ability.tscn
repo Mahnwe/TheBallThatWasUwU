@@ -12,13 +12,13 @@ size = Vector2(104, 281)
 script = ExtResource("1_vfgwr")
 
 [node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -172.0
-offset_top = -280.0
-offset_right = -23.0
-offset_bottom = -205.0
+offset_left = -304.0
+offset_top = -312.0
+offset_right = -155.0
+offset_bottom = -237.0
 scale = Vector2(2.4, 1.24)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, -43)

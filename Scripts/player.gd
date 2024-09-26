@@ -8,7 +8,7 @@ var wall_pushback = 600
 var gravity = 30
 
 #@export
-var jump_force = -660
+var jump_force = -680
 
 const VELOCITY_Y_MAX = 600
 const dash_speed = 1200
