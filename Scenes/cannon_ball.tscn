@@ -7,6 +7,7 @@
 radius = 202.076
 
 [node name="CannonBall" type="Node2D"]
+z_index = 2
 script = ExtResource("1_se441")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

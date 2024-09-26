@@ -614,10 +614,10 @@ position = Vector2(-28.8878, -57.5717)
 scale = Vector2(0.599999, 0.378516)
 
 [node name="Spike9" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(144, -1812)
+position = Vector2(146, -1481)
 
 [node name="Spike10" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(1432, -1812)
+position = Vector2(1434, -1481)
 
 [node name="Spike11" parent="." instance=ExtResource("10_w0su0")]
 position = Vector2(348, -2357)
@@ -802,10 +802,10 @@ flip_value = 1
 position = Vector2(480.262, -4.35965e-05)
 
 [node name="Tree2" parent="." instance=ExtResource("19_4iku6")]
-position = Vector2(166, -1383)
+position = Vector2(-432, -921)
 
 [node name="Tree" parent="Tree2" instance=ExtResource("19_4iku6")]
-position = Vector2(1385, 0)
+position = Vector2(2569, 0)
 flip_value = 1
 
 [node name="Barrier2" parent="." instance=ExtResource("20_ctgch")]
