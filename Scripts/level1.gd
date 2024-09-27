@@ -21,8 +21,8 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.is_level_1 = true
-	queue.is_level_2 = false
-	queue.is_level_3 = false
+	queue.is_level_2 = true
+	queue.is_level_3 = true
 	queue.load()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.get_child(3).player_have_dash = false

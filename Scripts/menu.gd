@@ -53,7 +53,7 @@ func _on_level_3_button_pressed():
 
 
 func _on_level_1_button_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $Level1Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up"):
 			accept_event()
@@ -67,7 +67,7 @@ func _on_level_1_button_gui_input(event):
 
 
 func _on_level_2_button_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $Level2Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
@@ -78,7 +78,7 @@ func _on_level_2_button_gui_input(event):
 
 
 func _on_level_3_button_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $Level3Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
@@ -89,7 +89,7 @@ func _on_level_3_button_gui_input(event):
 
 
 func _on_level_4_button_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $Level4Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
@@ -99,7 +99,7 @@ func _on_level_4_button_gui_input(event):
 			$Level1Button.grab_focus()
 
 func _on_quit_button_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $QuitButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
@@ -123,15 +123,19 @@ func _on_quit_button_focus_exited():
 
 func _on_level_1_button_mouse_exited():
 	$Level1Button.release_focus()
+	is_controller_focused = false
 
 
 func _on_level_2_button_mouse_exited():
 	$Level2Button.release_focus()
+	is_controller_focused = false
 
 
 func _on_level_3_button_mouse_exited():
 	$Level3Button.release_focus()
+	is_controller_focused = false
 
 
 func _on_level_4_button_mouse_exited():
 	$Level4Button.release_focus()
+	is_controller_focused = false
