@@ -164,21 +164,17 @@ func check_for_player_movement():
 			
 func check_animation_if_on_wall():
 	if collinding_right_wall():
-		velocity.y = 0
 		number_of_jumps = 0
 		can_dash = true
+		velocity.y = gravity+65
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = true
-		if Input.is_action_pressed("move_right"):
-			velocity.y = gravity+65
 	if colliding_left_wall():
-		velocity.y = 0
 		number_of_jumps = 0
 		can_dash = true
+		velocity.y = gravity+65
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = false
-		if Input.is_action_pressed("move_left"):
-			velocity.y = gravity+65
 			
 func colliding_left_wall():
 	return $RaycastLeft.is_colliding()
