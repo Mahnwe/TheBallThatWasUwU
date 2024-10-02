@@ -200,6 +200,8 @@ func _on_cannon_player_dead_by_cannon_ball():
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.set_process(true)
 		
 
 

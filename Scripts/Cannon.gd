@@ -42,7 +42,6 @@ func on_cannon_ball_exploding():
 		cannon_ball_has_touch_player = true
 		set_process(false)
 		player_dead_by_cannon_ball.emit()
-		set_process(true)
 	if cannon_ball_inst.has_touch_player == false:
 		cannon_ball_has_touch_player = false
 	
