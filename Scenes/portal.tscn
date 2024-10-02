@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://choon04ib41uv"]
+
+[ext_resource type="Texture2D" uid="uid://bfn3gd5w23kvv" path="res://Arts/PortalSprite/PortalSprite-removebg-preview.png" id="1_an2m4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pogcr"]
+radius = 30.0
+height = 106.0
+
+[node name="Portal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 6.28)
+scale = Vector2(0.21694, 0.219745)
+texture = ExtResource("1_an2m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_pogcr")
