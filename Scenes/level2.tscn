@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=42 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://i4jemvk3v54m" path="res://Scenes/ability.tscn" id="9_of3vt"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="10_bv661"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_bscno"]
+[ext_resource type="PackedScene" uid="uid://c28uq36uhol4" path="res://Scenes/grass_wall.tscn" id="12_05u76"]
 [ext_resource type="PackedScene" uid="uid://be1l83abc4nq8" path="res://Scenes/apple_tree.tscn" id="13_f34ya"]
 [ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="14_238nh"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="15_88g44"]
@@ -553,9 +554,9 @@ scale = Vector2(1.50622, 1)
 [node name="platform16" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-4555, 149)
 
-[node name="platform18" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-3895, -18)
-scale = Vector2(0.560005, 1)
+[node name="GrassWall2" parent="." instance=ExtResource("12_05u76")]
+position = Vector2(-3683, 80)
+scale = Vector2(0.600015, 0.4)
 
 [node name="Wall17" parent="." instance=ExtResource("6_llnkw")]
 position = Vector2(-3965, 275)
@@ -622,9 +623,10 @@ z_index = 1
 position = Vector2(-4693, 321)
 scale = Vector2(0.480018, 0.6)
 
-[node name="platform19" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-3563, -292)
-scale = Vector2(1.72, 1)
+[node name="GrassWall" parent="." instance=ExtResource("12_05u76")]
+position = Vector2(-2950, -198)
+rotation = 3.14159
+scale = Vector2(1.8, 0.68)
 
 [node name="platform21" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-2652, 648)
@@ -751,6 +753,25 @@ scale = Vector2(0.439998, 0.400001)
 position = Vector2(-3720, 354)
 scale = Vector2(0.439998, 0.400001)
 flip_value = 1
+
+[node name="WoodenPlank4" parent="." instance=ExtResource("22_yvjp8")]
+position = Vector2(-2961, 302)
+rotation = -0.806888
+scale = Vector2(0.28, 0.856792)
+
+[node name="WoodenPlank5" parent="." instance=ExtResource("22_yvjp8")]
+position = Vector2(-2730, 310)
+rotation = 0.828069
+scale = Vector2(0.32001, 0.737226)
+
+[node name="WoodenPlank3" parent="." instance=ExtResource("22_yvjp8")]
+position = Vector2(-2843, 317)
+scale = Vector2(0.319995, 0.56)
+
+[node name="WoodenPlank2" parent="." instance=ExtResource("22_yvjp8")]
+position = Vector2(-2840, 409)
+rotation = 1.5708
+scale = Vector2(0.24, 1.28)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

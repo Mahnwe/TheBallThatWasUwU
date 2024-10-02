@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=38 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_tnmog"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_0l5s7"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="10_w0su0"]
+[ext_resource type="PackedScene" uid="uid://c28uq36uhol4" path="res://Scenes/grass_wall.tscn" id="11_2euqt"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_lhdat"]
 [ext_resource type="PackedScene" uid="uid://dirhjvk3xk4re" path="res://Scenes/cannon.tscn" id="12_dyw7h"]
 [ext_resource type="PackedScene" uid="uid://6evsxx3ik4ta" path="res://Scenes/warning_sign.tscn" id="14_l6k82"]
@@ -475,6 +476,7 @@ position = Vector2(-76.3098, 53.9891)
 rotation = -1.5708
 scale = Vector2(0.15904, 0.758989)
 sync_to_physics = false
+speed = 200
 
 [node name="platform23" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(659, -2471)
@@ -498,8 +500,15 @@ rotation = -1.5708
 scale = Vector2(2.28, 2.8)
 
 [node name="platform25" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(648, -1071)
+position = Vector2(648, -565)
 scale = Vector2(0.56, 3.28)
+
+[node name="GrassWall" parent="." instance=ExtResource("11_2euqt")]
+position = Vector2(893, -741)
+scale = Vector2(0.44, 1.36)
+
+[node name="GrassWall" parent="GrassWall" instance=ExtResource("11_2euqt")]
+position = Vector2(-197.727, 0)
 
 [node name="platform26" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(716, -1313)
@@ -797,7 +806,7 @@ position = Vector2(49, 0)
 position = Vector2(98, 0)
 
 [node name="AppleTree" parent="." instance=ExtResource("21_wx5k2")]
-position = Vector2(870, -1771)
+position = Vector2(970, -2481)
 
 [node name="Rock1" parent="AppleTree" instance=ExtResource("22_v2cqt")]
 position = Vector2(-47, 88)
@@ -846,7 +855,8 @@ z_index = -1
 position = Vector2(147, 0)
 
 [node name="BigTree2" parent="." instance=ExtResource("16_dht4o")]
-position = Vector2(929, -2534)
+position = Vector2(854, -1869)
+scale = Vector2(1.48, 1.36)
 flip_value = 1
 
 [node name="Rock2" parent="." instance=ExtResource("23_0m520")]
@@ -932,13 +942,16 @@ rotation = 2.12521
 [node name="platform" parent="platform34" instance=ExtResource("2_gdtbw")]
 position = Vector2(-634.622, -1.06665)
 
-[node name="platform2" parent="platform34" instance=ExtResource("2_gdtbw")]
-position = Vector2(-860.24, -521.203)
-rotation = 0.998929
+[node name="GrassWall" parent="platform34" instance=ExtResource("11_2euqt")]
+position = Vector2(-821.025, -317.305)
+rotation = 1.01229
+scale = Vector2(1.6433, 0.761782)
 
-[node name="platform3" parent="platform34" instance=ExtResource("2_gdtbw")]
-position = Vector2(-1201.9, -1048.29)
-rotation = 0.996173
+[node name="GrassWall" parent="platform34/GrassWall" instance=ExtResource("11_2euqt")]
+position = Vector2(-461.271, -0.133246)
+
+[node name="GrassWall2" parent="platform34/GrassWall" instance=ExtResource("11_2euqt")]
+position = Vector2(-747.892, -0.0376668)
 
 [node name="Spike15" parent="." instance=ExtResource("10_w0su0")]
 position = Vector2(-1051, 255)

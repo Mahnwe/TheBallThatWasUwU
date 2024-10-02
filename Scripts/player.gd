@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 #@export
 var speed = 300
-var wall_pushback = 600
+var wall_pushback = 700
 
 #@export
 var gravity = 30
 
 #@export
-var jump_force = -680
+var jump_force = -670
 
 const VELOCITY_Y_MAX = 600
 const dash_speed = 1200
@@ -26,11 +26,16 @@ func _ready():
 func _physics_process(_delta):
 	handle_cam_dezoom()
 	check_for_player_movement()
-	check_if_player_is_on_floor()
-	player_press_jump_on_floor()
-	check_if_player_is_not_on_floor()
-	check_if_player_is_on_wall()
-	_dash()
+	if is_on_floor():
+		check_if_player_is_on_floor()
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		player_press_jump_on_floor()
+	if !is_on_floor():
+		check_if_player_is_not_on_floor()
+	if is_on_wall():
+		check_if_player_is_on_wall()
+	if Input.is_action_just_pressed("dash"):
+		_dash()
 	
 func handle_cam_dezoom():
 	if Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 0:
@@ -138,16 +143,14 @@ func check_if_player_is_on_wall():
 		check_animation_if_on_wall()
 		var wall_normal = get_wall_normal()
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
-			velocity.x = wall_pushback * wall_normal.x
-			velocity.y = jump_force
+			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play()
 			await $AnimatedSprite2D.animation_finished
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
-			velocity.x = wall_pushback * wall_normal.x
-			velocity.y = jump_force
+			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = false
