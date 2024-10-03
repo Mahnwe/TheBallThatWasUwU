@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbw0bo2bhp0uc"]
+
+[ext_resource type="Texture2D" uid="uid://cc6jlhfa0nswy" path="res://Arts/SpritesPlatform/RockWall-removebg-preview.png" id="1_hfwpe"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qdqgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehky3"]
+size = Vector2(317, 49)
+
+[node name="Wall" type="StaticBody2D"]
+z_index = 1
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(171.5, 81)
+scale = Vector2(325, 52)
+mesh = SubResource("QuadMesh_qdqgg")
+texture = ExtResource("1_hfwpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(171.5, 80.5)
+shape = SubResource("RectangleShape2D_ehky3")

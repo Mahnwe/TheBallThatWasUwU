@@ -8,6 +8,7 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 var is_level_one_finished = config.get_value("levels","is_level_one_finished")
 var is_level_two_finished = config.get_value("levels","is_level_two_finished")
 var is_level_three_finished = config.get_value("levels","is_level_three_finished")
+var is_level_four_finished = config.get_value("levels","is_level_four_finished")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Level1Button.grab_focus()
@@ -20,6 +21,10 @@ func _ready():
 		$Level3Button.focus_mode = FOCUS_NONE
 	else:
 		$Level3Button.focus_mode = FOCUS_ALL
+	if !is_level_three_finished:
+		$Level4Button.focus_mode = FOCUS_NONE
+	else:
+		$Level4Button.focus_mode = FOCUS_ALL
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,6 +55,9 @@ func _on_level_2_button_pressed():
 
 func _on_level_3_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/level3.tscn")
+	
+func _on_level_4_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/level4.tscn")
 
 
 func _on_level_1_button_gui_input(event):

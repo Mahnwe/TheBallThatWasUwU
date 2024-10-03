@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmjeaxwj54rxk"]
+
+[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_ymfcf"]
+[ext_resource type="Texture2D" uid="uid://b83xed8nal2re" path="res://Arts/SpritesPlatform/RockPlatform-removebg-preview.png" id="2_dv7ob"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rsijb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bho6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tnx2"]
+size = Vector2(638, 88)
+
+[node name="platform" type="AnimatableBody2D"]
+z_index = 1
+position = Vector2(-362, -95)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_rsijb")
+script = ExtResource("1_ymfcf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(359.75, 114.699)
+rotation = -3.14159
+scale = Vector2(655.5, 95.3964)
+mesh = SubResource("QuadMesh_bho6h")
+texture = ExtResource("2_dv7ob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(359.5, 116)
+shape = SubResource("RectangleShape2D_1tnx2")
