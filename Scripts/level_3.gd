@@ -23,6 +23,7 @@ func _ready():
 	queue.is_level_1 = true
 	queue.is_level_2 = true
 	queue.is_level_3 = true
+	queue.is_level_4 = true
 	queue.load()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()

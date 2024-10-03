@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://dd7p5q35wxgff"]
+
+[ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
+[ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
+[ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="3_cxj1m"]
+[ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="4_3b0rq"]
+[ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="5_j2588"]
+[ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="6_sti7m"]
+[ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="7_p558y"]
+[ext_resource type="PackedScene" uid="uid://choon04ib41uv" path="res://Scenes/portal.tscn" id="8_cv4mv"]
+[ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="9_ujhmm"]
+[ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="10_1n5pj"]
+
+[node name="level4" type="Node2D"]
+script = ExtResource("1_aw8g7")
+
+[node name="StartArea" parent="." instance=ExtResource("5_j2588")]
+position = Vector2(-2916, -1496)
+scale = Vector2(0.679995, 0.8)
+
+[node name="Player" parent="." instance=ExtResource("2_wulbk")]
+position = Vector2(-3065, -1551)
+scale = Vector2(0.717345, 0.442253)
+
+[node name="Pause" parent="Player" instance=ExtResource("3_cxj1m")]
+offset_left = -692.833
+offset_top = -669.3
+offset_right = -692.833
+offset_bottom = -669.3
+
+[node name="platform" parent="." instance=ExtResource("4_3b0rq")]
+position = Vector2(-3166, -1505)
+
+[node name="platform2" parent="." instance=ExtResource("4_3b0rq")]
+position = Vector2(-2205, -1504)
+scale = Vector2(0.360002, 1)
+
+[node name="Wall" parent="." instance=ExtResource("6_sti7m")]
+position = Vector2(-1699, -2143)
+rotation = 1.5708
+scale = Vector2(2.4176, 3.53284)
+
+[node name="Spike" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-2077, -2130)
+
+[node name="Wall2" parent="." instance=ExtResource("6_sti7m")]
+position = Vector2(-3365, -1336)
+rotation = -1.5708
+scale = Vector2(2.4176, 3.53284)
+
+[node name="Spike2" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-3147, -2127)
+
+[node name="Portal1" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-2005, -1481)
+
+[node name="platform3" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2697, -1198)
+
+[node name="Wall3" parent="." instance=ExtResource("10_1n5pj")]
+position = Vector2(-2520, -1406)
+rotation = 1.5708
+scale = Vector2(1.11895, 1.59873)
+
+[node name="Portal2" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-2572, -1195)
+
+[connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
+[connection signal="body_entered" from="Portal1" to="." method="_on_portal_1_body_entered"]
+[connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]

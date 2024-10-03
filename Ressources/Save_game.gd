@@ -9,6 +9,7 @@ class_name SaveGame
 @export var is_level_1 = false
 @export var is_level_2 = false
 @export var is_level_3 = false
+@export var is_level_4 = false
 
 func sort_ascending(player_timer):
 	if player_timer < file_data[4] && player_timer > file_data[3]:

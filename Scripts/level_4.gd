@@ -3,20 +3,20 @@ extends Node2D
 var is_commands_panel_open
 var is_paused
 
-var start_position_x = -11
-var start_position_y = 610
+var start_position_x = -3065
+var start_position_y = -1551
 
-var save_position_x = -11
-var save_position_y = 610
+var save_position_x = -3065
+var save_position_y = -1551
 
-var finish_position_x = -4842
-var finish_position_y = 270
-
-var config = ConfigFile.new()
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
+var finish_position_x = -1827
+var finish_position_y = 324
 
 var queue = preload("res://Ressources/Save_game.gd").new()
+var config = ConfigFile.new()
+
+# Load data from a file.
+var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,16 +26,16 @@ func _ready():
 	queue.is_level_4 = true
 	queue.load()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
+	$Player/Pause.get_child(3).player_have_dash = true
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
 	is_commands_panel_open = false
 	is_paused = false
-	$Player/Pause.get_child(3).player_have_dash = false
-	$Player.have_dash_ability = false
-	$Player.can_double_jump = false
+	$Player.have_dash_ability = true
+	$Player.can_double_jump = true
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	handle_pause()
@@ -48,7 +48,6 @@ func _process(_delta):
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x
 		$Player.position.y = save_position_y
-		reset_patrols_progress()
 		$Player.set_physics_process(true)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 		
@@ -57,12 +56,12 @@ func _process(_delta):
 		save_position_x = start_position_x
 		save_position_y = start_position_y
 		
+		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
-		get_tree().change_scene_to_file("res://Scenes/level3.tscn")
+		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-	
 	
 func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
@@ -74,7 +73,6 @@ func handle_pause():
 			$Player/Pause.get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
-			disable_patrol_groups()
 			$Player.set_physics_process(false)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 			is_paused = true
@@ -84,7 +82,6 @@ func handle_pause():
 			$Player/Pause.get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
-			disable_patrol_groups()
 			$Player.set_physics_process(false)
 			is_paused = true
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
@@ -93,7 +90,6 @@ func handle_pause():
 			$Player/Pause.get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
-			enable_patrol_groups()
 			$Player.set_physics_process(true)
 			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 			is_paused = false
@@ -103,27 +99,14 @@ func handle_pause():
 			$Player/Pause.get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
-			enable_patrol_groups()
 			$Player.set_physics_process(true)
 			is_paused = false
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-	
-	
-func restart_scene():
-	if !is_commands_panel_open:
-		get_tree().reload_current_scene()
-	else:
-		pass
-
-
-func _on_start_area_player_exited_start_area():
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-
-
+			
+			
 func _on_spike_spike_hit():
-	disable_patrol_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -131,6 +114,32 @@ func _on_spike_spike_hit():
 	else:
 		put_player_to_save_position_and_unpause_timer()
 		
+func restart_scene():
+	get_tree().reload_current_scene()
+	
+	
+func _on_save_point_player_entered():
+	save_position_x = $Player.position.x
+	save_position_y = $Player.position.y
+	print(save_position_x)
+	print(save_position_y)
+	
+func _on_finish_player_entered():
+	$Player.position.x = finish_position_x
+	$Player.position.y = finish_position_y
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
+	queue.saveData()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
+	config.set_value("levels", "is_level_four_finished", true)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
+	$Player.get_child(1).animation = "stay"
+	$Player.set_physics_process(false)
+
+
+func _on_start_area_player_exited_start_area():
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+
 func display_dead_sprite_and_pause_timer_until_respawn(message):
 	$Player.set_physics_process(false)
 	$Player.velocity.x = 0
@@ -145,53 +154,6 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.get_child(1).animation = "stay"
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-	reset_patrols_progress()
-	enable_patrol_groups()
-	
-func reset_patrols_progress():
-	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
-			member.get_parent().progress = 0
-	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-			member.get_parent().progress = 0
-
-func disable_patrol_groups():
-	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
-			member.set_process(false)
-	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-			member.set_process(false)
-		
-func enable_patrol_groups():
-	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
-			member.set_process(true)
-	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-			member.set_process(true)
-
-func _on_ability_player_entered():
-	$Player/Pause.get_child(3).player_have_dash = true
-	$Player.have_dash_ability = true
-	$Ability.get_child(0).text = "You can dash now !\n        X/Comma\n        Square/X/Y"
-
-
-func _on_save_point_player_entered():
-	save_position_x = $Player.position.x
-	save_position_y = $Player.position.y
-	print(save_position_x)
-	print(save_position_y)
-
-
-func _on_finish_player_entered():
-	$Player.position.x = finish_position_x
-	$Player.position.y = finish_position_y
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
-	queue.saveData()
-	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
-	config.set_value("levels", "is_level_two_finished", true)
-	config.save("res://Ressources/PropertieFile/properties.cfg")
-	print($Player.position.x)
-	print($Player.position.y)
-	$Player.get_child(1).animation = "stay"
-	$Player.set_physics_process(false)
 
 
 func _on_game_area_player_exited_game_area():
@@ -201,7 +163,7 @@ func _on_game_area_player_exited_game_area():
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
-
+	
 
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
@@ -210,7 +172,6 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.get_child(1).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.get_child(0).get_child(0).get_child(2).show()
-		enable_patrol_groups()
 		$Player.set_physics_process(true)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 		is_paused = false
@@ -220,6 +181,16 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.get_child(1).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.get_child(0).get_child(0).get_child(2).show()
-		enable_patrol_groups()
 		$Player.set_physics_process(true)
 		is_paused = false
+
+
+func _on_portal_1_body_entered(body):
+	if body.name != "platform2":
+		body.position.x = ($Portal2.position.x - 100)
+		body.position.y = ($Portal2.position.y - 50)
+
+
+func _on_portal_2_body_entered(body):
+	body.position.x = ($Portal1.position.x - 200)
+	body.position.y = ($Portal1.position.y - 50)
