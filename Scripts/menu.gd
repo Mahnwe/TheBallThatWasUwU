@@ -12,6 +12,7 @@ var is_level_four_finished = config.get_value("levels","is_level_four_finished")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Level1Button.grab_focus()
+	$MenuMusic.play()
 	
 	if !is_level_one_finished:
 		$Level2Button.focus_mode = FOCUS_NONE
@@ -123,6 +124,7 @@ func _on_quit_button_pressed():
 
 func _on_quit_button_focus_entered():
 	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#FF0000"))
+	$ButtonSound.play()
 
 
 func _on_quit_button_focus_exited():
@@ -147,3 +149,11 @@ func _on_level_3_button_mouse_exited():
 func _on_level_4_button_mouse_exited():
 	$Level4Button.release_focus()
 	is_controller_focused = false
+
+
+func _on_menu_music_finished():
+	$MenuMusic.play()
+
+
+func _on_button_focus_entered():
+	$ButtonSound.play()

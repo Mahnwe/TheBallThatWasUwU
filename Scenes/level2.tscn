@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=43 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dy816tof24l76" path="res://Arts/BackgroundSprite/BackgroundLVL2Sprite-removebg-preview.png" id="23_b45am"]
 [ext_resource type="Texture2D" uid="uid://bwxd85ux41v40" path="res://Arts/BackgroundSprite/SkyBackgroundLVL2-removebg-preview.png" id="24_w34bd"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="25_vxvct"]
+[ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="26_vfmhc"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -772,6 +773,9 @@ scale = Vector2(0.319995, 0.56)
 position = Vector2(-2840, 409)
 rotation = 1.5708
 scale = Vector2(0.24, 1.28)
+
+[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_vfmhc")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

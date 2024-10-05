@@ -72,6 +72,8 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			#$Level1Music.stream_paused = true
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			disable_patrol_groups()
@@ -82,6 +84,8 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			#$Level1Music.stream_paused = true
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			disable_patrol_groups()
@@ -91,6 +95,8 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
+			#$Level1Music.stream_paused = false
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -101,6 +107,8 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
+			#$Level1Music.stream_paused = false
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()

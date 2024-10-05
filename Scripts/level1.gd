@@ -36,6 +36,7 @@ func _ready():
 	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	set_up_signs()
+	$Level1Music.play()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -72,6 +73,8 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			$Level1Music.stream_paused = true
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
@@ -81,6 +84,8 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			$Level1Music.stream_paused = true
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
@@ -89,6 +94,8 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
+			$Level1Music.stream_paused = false
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
@@ -98,6 +105,8 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
+			$Level1Music.stream_paused = false
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
@@ -200,3 +209,21 @@ func _on_pause_continue_is_clicked():
 		$Player.get_child(0).get_child(0).get_child(2).show()
 		$Player.set_physics_process(true)
 		is_paused = false
+
+
+func _on_trigger_dead_way_music_body_entered(body):
+	if body.name == "Player" and $DeadWayMusic.playing == false:
+		$Level1Music.stop()
+		$DeadWayMusic.play()
+
+
+func _on_level_1_music_finished():
+	$Level1Music.play()
+
+
+func _on_dead_way_music_finished():
+	$DeadWayMusic.play()
+
+
+func _on_pause_music_finished():
+	$PauseMusic.play()

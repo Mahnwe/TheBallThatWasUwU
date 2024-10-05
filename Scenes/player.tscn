@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=28 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="2_g0yss"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="9_234gs"]
 [ext_resource type="Texture2D" uid="uid://bsnvgiu0qijy5" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight4.5-removebg-preview.png" id="10_67dii"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="10_nhsbj"]
+[ext_resource type="AudioStream" uid="uid://cu47fvabu26sp" path="res://Sound/Effects/JumpSound.mp3" id="25_wcpjr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
 animations = [{
@@ -237,3 +238,6 @@ offset_right = 204.0
 offset_bottom = 154.0
 scale = Vector2(1.46086, 1.32)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_wcpjr")

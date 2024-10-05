@@ -69,6 +69,7 @@ func _dash():
 func check_if_player_is_not_on_floor():
 	if !is_on_floor():
 		if Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps < 1:
+			$JumpSound.play()
 			velocity.y = jump_force
 			number_of_jumps += 1
 			if velocity.x < 0:
@@ -84,6 +85,7 @@ func check_if_player_is_not_on_floor():
 				$AnimatedSprite2D.flip_h = false
 				$AnimatedSprite2D.play()
 		if Input.is_action_just_pressed("jump") and can_double_jump and number_of_jumps <= 1:
+			$JumpSound.play()
 			velocity.y = jump_force
 			number_of_jumps += 1
 			if velocity.x < 0:
@@ -132,6 +134,7 @@ func check_if_player_is_on_floor():
 						
 func player_press_jump_on_floor():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$JumpSound.play()
 		velocity.y = jump_force
 		number_of_jumps += 1
 		if velocity.x < 0:
@@ -158,6 +161,7 @@ func check_if_player_is_on_wall():
 		check_animation_if_on_wall()
 		var wall_normal = get_wall_normal()
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
+			$JumpSound.play()
 			number_of_jumps += 1
 			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
@@ -166,6 +170,7 @@ func check_if_player_is_on_wall():
 			$AnimatedSprite2D.play()
 			await $AnimatedSprite2D.animation_finished
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
+			$JumpSound.play()
 			number_of_jumps += 1
 			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
