@@ -23,6 +23,11 @@ window/size/mode=3
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 
+[global_group]
+
+music_group=""
+sound_effect_group=""
+
 [input]
 
 ui_accept={

@@ -80,7 +80,7 @@ offset_top = 730.875
 offset_right = 558.0
 offset_bottom = 766.875
 scale = Vector2(2.60997, 2.06604)
-focus_neighbor_left = NodePath("../Level4Button")
+focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
@@ -105,7 +105,7 @@ offset_right = 922.0
 offset_bottom = 766.875
 scale = Vector2(2.6, 2.007)
 focus_neighbor_left = NodePath("../Level1Button")
-focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level3Button")
@@ -128,7 +128,7 @@ offset_right = 1273.0
 offset_bottom = 766.875
 scale = Vector2(2.686, 2.006)
 focus_neighbor_left = NodePath("../Level2Button")
-focus_neighbor_top = NodePath("../Level2Button")
+focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level4Button")
 focus_neighbor_bottom = NodePath("../Level4Button")
 focus_next = NodePath("../Level4Button")
@@ -193,11 +193,66 @@ scale = Vector2(8.49967, 4.83334)
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
 
-[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("12_m2qtk")
 
-[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+[node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("13_owrtn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 69.0
+offset_right = 380.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Volume adjustement"
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 58.0
+offset_right = 203.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Musics"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 148.0
+offset_right = 241.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Sound effect"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 173.0
+offset_right = 327.0
+offset_bottom = 208.0
+focus_neighbor_top = NodePath("../EffectSlider")
+focus_neighbor_bottom = NodePath("../EffectSlider")
+focus_next = NodePath("../EffectSlider")
+max_value = 5.0
+
+[node name="EffectSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 258.0
+offset_right = 329.0
+offset_bottom = 293.0
+focus_neighbor_left = NodePath("../MusicSlider")
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_right = NodePath("../Level1Button")
+focus_neighbor_bottom = NodePath("../Level1Button")
+focus_next = NodePath("../Level1Button")
+focus_previous = NodePath("../MusicSlider")
+max_value = 5.0
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
@@ -220,3 +275,5 @@ stream = ExtResource("13_owrtn")
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="finished" from="MenuMusic" to="." method="_on_menu_music_finished"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="EffectSlider" to="." method="_on_effect_slider_value_changed"]
