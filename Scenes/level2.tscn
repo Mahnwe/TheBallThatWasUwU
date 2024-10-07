@@ -774,7 +774,7 @@ position = Vector2(-2840, 409)
 rotation = 1.5708
 scale = Vector2(0.24, 1.28)
 
-[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+[node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("26_vfmhc")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

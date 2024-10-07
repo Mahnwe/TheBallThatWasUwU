@@ -25,6 +25,7 @@ func _ready():
 	queue.is_level_3 = true
 	queue.is_level_4 = false
 	queue.load()
+	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -72,6 +73,7 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			disable_patrol_groups()
@@ -82,6 +84,7 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			disable_patrol_groups()
@@ -91,6 +94,7 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -101,6 +105,7 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -235,3 +240,9 @@ func _on_pause_continue_is_clicked():
 		enable_patrol_groups()
 		$Player.set_physics_process(true)
 		is_paused = false
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("music_group"):
+		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = config.get_value("effectVolume","effectVolumeSet")

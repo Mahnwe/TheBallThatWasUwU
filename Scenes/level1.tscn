@@ -663,10 +663,10 @@ position = Vector2(536, -1039)
 rotation = 3.14159
 scale = Vector2(0.982834, 0.44)
 
-[node name="Level1Music" type="AudioStreamPlayer" parent="."]
+[node name="Level1Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("23_c437v")
 
-[node name="DeadWayMusic" type="AudioStreamPlayer" parent="."]
+[node name="DeadWayMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("24_yla18")
 
 [node name="TriggerDeadWayMusic" type="Area2D" parent="."]
@@ -679,7 +679,7 @@ shape = SubResource("RectangleShape2D_dphvp")
 position = Vector2(-1175, 722.5)
 shape = SubResource("RectangleShape2D_kffpy")
 
-[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+[node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("25_wl8uo")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

@@ -25,6 +25,7 @@ func _ready():
 	queue.is_level_3 = false
 	queue.is_level_4 = false
 	queue.load()
+	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -72,7 +73,6 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
-			#$Level1Music.stream_paused = true
 			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
@@ -84,7 +84,6 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
-			#$Level1Music.stream_paused = true
 			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
@@ -96,7 +95,6 @@ func handle_pause():
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
 			$PauseMusic.stop()
-			#$Level1Music.stream_paused = false
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -108,7 +106,6 @@ func handle_pause():
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
 			$PauseMusic.stop()
-			#$Level1Music.stream_paused = false
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			enable_patrol_groups()
@@ -177,7 +174,7 @@ func enable_patrol_groups():
 func _on_ability_player_entered():
 	$Player/Pause.get_child(3).player_have_dash = true
 	$Player.have_dash_ability = true
-	$Ability.get_child(0).text = "You can dash now !\n        X/Comma\n        Square/X/Y"
+	$Ability.get_child(0).text = "You can dash now !\n             Shift\n       Square/X/Y"
 
 
 func _on_save_point_player_entered():
@@ -231,3 +228,9 @@ func _on_pause_continue_is_clicked():
 		enable_patrol_groups()
 		$Player.set_physics_process(true)
 		is_paused = false
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("music_group"):
+		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = config.get_value("effectVolume","effectVolumeSet")

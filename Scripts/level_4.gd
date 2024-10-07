@@ -25,6 +25,7 @@ func _ready():
 	queue.is_level_3 = false
 	queue.is_level_4 = true
 	queue.load()
+	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.get_child(3).player_have_dash = true
 	$Player/Pause.hide()
@@ -71,6 +72,7 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
@@ -80,6 +82,7 @@ func handle_pause():
 			$Player/Pause.show()
 			$Player/Pause.get_child(0).show()
 			$Player/Pause.get_child(1).show()
+			$PauseMusic.play()
 			$Player.get_child(0).get_child(0).get_child(1).hide()
 			$Player.get_child(0).get_child(0).get_child(2).hide()
 			$Player.set_physics_process(false)
@@ -88,6 +91,7 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
@@ -97,6 +101,7 @@ func handle_pause():
 			$Player/Pause.hide()
 			$Player/Pause.get_child(0).hide()
 			$Player/Pause.get_child(1).hide()
+			$PauseMusic.stop()
 			$Player.get_child(0).get_child(0).get_child(1).show()
 			$Player.get_child(0).get_child(0).get_child(2).show()
 			$Player.set_physics_process(true)
@@ -183,6 +188,12 @@ func _on_pause_continue_is_clicked():
 		$Player.get_child(0).get_child(0).get_child(2).show()
 		$Player.set_physics_process(true)
 		is_paused = false
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("music_group"):
+		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 
 
 func _on_portal_1_body_entered(body):

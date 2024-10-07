@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=13 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="8_rgm4r"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="9_set0a"]
 [ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="10_3eqxx"]
+[ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="12_r111m"]
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -142,7 +143,12 @@ offset_right = 1200.0
 offset_bottom = 1101.0
 scale = Vector2(1.08, 1.8)
 
+[node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("12_r111m")
+
+[connection signal="focus_entered" from="ReturnLayer/ReturnToMenu" to="." method="_on_button_focus_entered"]
 [connection signal="mouse_exited" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_mouse_exited"]
 [connection signal="pressed" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="focus_entered" from="ContinueLayer/Continue" to="." method="_on_button_focus_entered"]
 [connection signal="mouse_exited" from="ContinueLayer/Continue" to="." method="_on_continue_mouse_exited"]
 [connection signal="pressed" from="ContinueLayer/Continue" to="." method="_on_continue_pressed"]

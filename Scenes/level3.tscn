@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=39 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="22_v2cqt"]
 [ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="23_0m520"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="24_ctwib"]
+[ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="25_kcefb"]
 
 [sub_resource type="Curve2D" id="Curve2D_ea2f8"]
 _data = {
@@ -966,6 +967,9 @@ scale = Vector2(1.15995, 1.69939)
 [node name="Spike" parent="Spike16" instance=ExtResource("10_w0su0")]
 position = Vector2(48.2311, 353.071)
 rotation = -1.58919
+
+[node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
+stream = ExtResource("25_kcefb")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

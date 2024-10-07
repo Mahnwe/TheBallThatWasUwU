@@ -3,13 +3,20 @@ extends Control
 var is_controller_focused = false
 signal continue_is_clicked
 
+var config = ConfigFile.new()
+
+# Load data from a file.
+var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_controller_focused = false
+	set_volume()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
 	if !is_controller_focused and Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
 		$ContinueLayer/Continue.grab_focus()
 	for member in get_tree().get_nodes_in_group("pause_buttons"):
@@ -61,3 +68,14 @@ func _on_return_to_menu_mouse_exited():
 
 func _on_continue_mouse_exited():
 	$ContinueLayer/Continue.release_focus()
+
+
+func _on_button_focus_entered():
+	if self.visible == true:
+		$ButtonSound.play()
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("music_group"):
+		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
