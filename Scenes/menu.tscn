@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=16 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
@@ -13,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://u2luvsnkt20j" path="res://Arts/BackgroundSprite/NewBackgroundSprite.png" id="10_7awvj"]
 [ext_resource type="AudioStream" uid="uid://bf3f1t5hsvtmq" path="res://Sound/Musics/MenuMusic.mp3" id="12_m2qtk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="13_owrtn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuf5"]
+texture = SubResource("CanvasTexture_qbksh")
+modulate_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -199,59 +205,53 @@ stream = ExtResource("12_m2qtk")
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("13_owrtn")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 69.0
-offset_right = 380.0
-offset_bottom = 118.0
+offset_left = 147.0
+offset_top = 102.0
+offset_right = 246.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
-text = "Volume adjustement"
-
-[node name="Label2" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 58.0
-offset_right = 203.0
-offset_bottom = 93.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Musics"
-
-[node name="Label" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 89.0
-offset_top = 148.0
-offset_right = 241.0
-offset_bottom = 183.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "Sound effect"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 173.0
-offset_right = 327.0
-offset_bottom = 208.0
+offset_left = 74.0
+offset_top = 145.0
+offset_right = 324.0
+offset_bottom = 180.0
+scale = Vector2(1, 1.44)
 focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../EffectSlider")
 focus_next = NodePath("../EffectSlider")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 max_value = 5.0
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 193.0
+offset_right = 298.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sound effect"
 
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 79.0
-offset_top = 258.0
-offset_right = 329.0
-offset_bottom = 293.0
+offset_left = 78.0
+offset_top = 232.0
+offset_right = 328.0
+offset_bottom = 267.0
+scale = Vector2(1, 1.44)
 focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../MusicSlider")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
 focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../MusicSlider")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 max_value = 5.0
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
@@ -275,5 +275,7 @@ max_value = 5.0
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="finished" from="MenuMusic" to="." method="_on_menu_music_finished"]
+[connection signal="mouse_exited" from="MusicSlider" to="." method="_on_music_slider_mouse_exited"]
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="mouse_exited" from="EffectSlider" to="." method="_on_effect_slider_mouse_exited"]
 [connection signal="value_changed" from="EffectSlider" to="." method="_on_effect_slider_value_changed"]

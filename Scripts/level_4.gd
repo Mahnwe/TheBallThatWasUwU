@@ -69,43 +69,13 @@ func handle_pause():
 		pass
 	else:
 		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
-			$Player/Pause.show()
-			$Player/Pause.get_child(0).show()
-			$Player/Pause.get_child(1).show()
-			$PauseMusic.play()
-			$Player.get_child(0).get_child(0).get_child(1).hide()
-			$Player.get_child(0).get_child(0).get_child(2).hide()
-			$Player.set_physics_process(false)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			is_paused = true
+			toggle_pause()
 		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
-			$Player/Pause.show()
-			$Player/Pause.get_child(0).show()
-			$Player/Pause.get_child(1).show()
-			$PauseMusic.play()
-			$Player.get_child(0).get_child(0).get_child(1).hide()
-			$Player.get_child(0).get_child(0).get_child(2).hide()
-			$Player.set_physics_process(false)
-			is_paused = true
+			toggle_pause()
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
-			$Player/Pause.hide()
-			$Player/Pause.get_child(0).hide()
-			$Player/Pause.get_child(1).hide()
-			$PauseMusic.stop()
-			$Player.get_child(0).get_child(0).get_child(1).show()
-			$Player.get_child(0).get_child(0).get_child(2).show()
-			$Player.set_physics_process(true)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-			is_paused = false
+			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
-			$Player/Pause.hide()
-			$Player/Pause.get_child(0).hide()
-			$Player/Pause.get_child(1).hide()
-			$PauseMusic.stop()
-			$Player.get_child(0).get_child(0).get_child(1).show()
-			$Player.get_child(0).get_child(0).get_child(2).show()
-			$Player.set_physics_process(true)
-			is_paused = false
+			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
@@ -172,14 +142,7 @@ func _on_game_area_player_exited_game_area():
 
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
-		$Player/Pause.hide()
-		$Player/Pause.get_child(0).hide()
-		$Player/Pause.get_child(1).hide()
-		$Player.get_child(0).get_child(0).get_child(1).show()
-		$Player.get_child(0).get_child(0).get_child(2).show()
-		$Player.set_physics_process(true)
-		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-		is_paused = false
+		untoggle_pause()
 	elif $Player.position.x == start_position_x:
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
@@ -205,3 +168,25 @@ func _on_portal_1_body_entered(body):
 func _on_portal_2_body_entered(body):
 	body.position.x = ($Portal1.position.x - 200)
 	body.position.y = ($Portal1.position.y - 50)
+	
+func toggle_pause():
+	$Player/Pause.show()
+	$Player/Pause.get_child(0).show()
+	$Player/Pause.get_child(1).show()
+	$PauseMusic.play()
+	$Player.get_child(0).get_child(0).get_child(1).hide()
+	$Player.get_child(0).get_child(0).get_child(2).hide()
+	$Player.set_physics_process(false)
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	is_paused = true
+	
+func untoggle_pause():
+	$Player/Pause.hide()
+	$Player/Pause.get_child(0).hide()
+	$Player/Pause.get_child(1).hide()
+	$PauseMusic.stop()
+	$Player.get_child(0).get_child(0).get_child(1).show()
+	$Player.get_child(0).get_child(0).get_child(2).show()
+	$Player.set_physics_process(true)
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	is_paused = false

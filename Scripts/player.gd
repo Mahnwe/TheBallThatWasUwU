@@ -19,6 +19,8 @@ var is_camera_dezoom
 
 var can_double_jump
 var number_of_jumps
+var jump_buffer
+var player_try_buffer_jump
 
 func _ready():
 	is_camera_dezoom = 0
@@ -28,14 +30,16 @@ func _physics_process(_delta):
 	check_for_player_movement()
 	if is_on_floor():
 		check_if_player_is_on_floor()
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		player_press_jump_on_floor()
 	if !is_on_floor():
 		check_if_player_is_not_on_floor()
 	if is_on_wall():
 		check_if_player_is_on_wall()
 	if Input.is_action_just_pressed("dash"):
 		_dash()
+	if !is_on_floor() and Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps >= 1:
+		player_try_buffer_jump = true
+		get_tree().create_timer(0.1).timeout.connect(_on_jump_buffer_timer_timeout)
+		
 	
 func handle_cam_dezoom():
 	if Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 0:
@@ -47,6 +51,23 @@ func handle_cam_dezoom():
 	elif Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 2:
 		$Camera2D.zoom = Vector2(1.4, 1.4)
 		is_camera_dezoom = 0
+		
+func jump():
+		$JumpSound.play()
+		velocity.y = jump_force
+		number_of_jumps += 1
+		if velocity.x < 0:
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play()
+		if velocity.x > 0:
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play()
+		if velocity.x == 0:
+			$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play()
 	
 func _dash():
 	if can_dash and have_dash_ability:
@@ -69,37 +90,9 @@ func _dash():
 func check_if_player_is_not_on_floor():
 	if !is_on_floor():
 		if Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps < 1:
-			$JumpSound.play()
-			velocity.y = jump_force
-			number_of_jumps += 1
-			if velocity.x < 0:
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = true
-				$AnimatedSprite2D.play()
-			if velocity.x > 0:
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = false
-				$AnimatedSprite2D.play()
-			if velocity.x == 0:
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = false
-				$AnimatedSprite2D.play()
+			jump()
 		if Input.is_action_just_pressed("jump") and can_double_jump and number_of_jumps <= 1:
-			$JumpSound.play()
-			velocity.y = jump_force
-			number_of_jumps += 1
-			if velocity.x < 0:
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = true
-				$AnimatedSprite2D.play()
-			if velocity.x > 0:
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = false
-				$AnimatedSprite2D.play()
-			if velocity.x == 0:
-				$AnimatedSprite2D.animation = "jump"
-				$AnimatedSprite2D.flip_h = false
-				$AnimatedSprite2D.play()
+			jump()
 		velocity.y += gravity
 		await $AnimatedSprite2D.animation_finished
 		if velocity.x < 0:
@@ -130,25 +123,8 @@ func check_if_player_is_on_floor():
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = false
 				$AnimatedSprite2D.play()
-
-						
-func player_press_jump_on_floor():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		$JumpSound.play()
-		velocity.y = jump_force
-		number_of_jumps += 1
-		if velocity.x < 0:
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play()
-		if velocity.x > 0:
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play()
-		if velocity.x == 0:
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play()
+	if is_on_floor() and Input.is_action_pressed("jump") or Input.is_action_just_pressed("jump") or Input.is_action_pressed("jump"):
+		jump()
 		
 func _input(event):
 	if event.is_action_released("jump"):
@@ -206,3 +182,14 @@ func colliding_left_wall():
 
 func collinding_right_wall():
 	return $RaycastRight.is_colliding()
+	
+	
+func _on_jump_buffer_timer_timeout():
+	if is_on_floor() and player_try_buffer_jump:
+		can_dash = true
+		number_of_jumps = 0
+		jump()
+		player_try_buffer_jump = false
+	if !is_on_floor() and player_try_buffer_jump:
+		pass
+		

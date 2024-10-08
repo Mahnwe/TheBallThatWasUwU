@@ -71,47 +71,13 @@ func handle_pause():
 		pass
 	else:
 		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
-			$Player/Pause.show()
-			$Player/Pause.get_child(0).show()
-			$Player/Pause.get_child(1).show()
-			$Level1Music.stream_paused = true
-			$PauseMusic.play()
-			$Player.get_child(0).get_child(0).get_child(1).hide()
-			$Player.get_child(0).get_child(0).get_child(2).hide()
-			$Player.set_physics_process(false)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-			is_paused = true
+			toggle_pause()
 		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
-			$Player/Pause.show()
-			$Player/Pause.get_child(0).show()
-			$Player/Pause.get_child(1).show()
-			$Level1Music.stream_paused = true
-			$PauseMusic.play()
-			$Player.get_child(0).get_child(0).get_child(1).hide()
-			$Player.get_child(0).get_child(0).get_child(2).hide()
-			$Player.set_physics_process(false)
-			is_paused = true
+			toggle_pause()
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
-			$Player/Pause.hide()
-			$Player/Pause.get_child(0).hide()
-			$Player/Pause.get_child(1).hide()
-			$PauseMusic.stop()
-			$Level1Music.stream_paused = false
-			$Player.get_child(0).get_child(0).get_child(1).show()
-			$Player.get_child(0).get_child(0).get_child(2).show()
-			$Player.set_physics_process(true)
-			$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-			is_paused = false
+			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
-			$Player/Pause.hide()
-			$Player/Pause.get_child(0).hide()
-			$Player/Pause.get_child(1).hide()
-			$PauseMusic.stop()
-			$Level1Music.stream_paused = false
-			$Player.get_child(0).get_child(0).get_child(1).show()
-			$Player.get_child(0).get_child(0).get_child(2).show()
-			$Player.set_physics_process(true)
-			is_paused = false
+			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
@@ -194,14 +160,7 @@ func _on_triple_sign_2_set_up_sign_label():
 
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
-		$Player/Pause.hide()
-		$Player/Pause.get_child(0).hide()
-		$Player/Pause.get_child(1).hide()
-		$Player.get_child(0).get_child(0).get_child(1).show()
-		$Player.get_child(0).get_child(0).get_child(2).show()
-		$Player.set_physics_process(true)
-		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-		is_paused = false
+		untoggle_pause()
 	elif $Player.position.x == start_position_x:
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
@@ -234,3 +193,27 @@ func set_volume():
 		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
 		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		
+func toggle_pause():
+	$Player/Pause.show()
+	$Player/Pause.get_child(0).show()
+	$Player/Pause.get_child(1).show()
+	$Level1Music.stream_paused = true
+	$PauseMusic.play()
+	$Player.get_child(0).get_child(0).get_child(1).hide()
+	$Player.get_child(0).get_child(0).get_child(2).hide()
+	$Player.set_physics_process(false)
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	is_paused = true
+	
+func untoggle_pause():
+	$Player/Pause.hide()
+	$Player/Pause.get_child(0).hide()
+	$Player/Pause.get_child(1).hide()
+	$PauseMusic.stop()
+	$Level1Music.stream_paused = false
+	$Player.get_child(0).get_child(0).get_child(1).show()
+	$Player.get_child(0).get_child(0).get_child(2).show()
+	$Player.set_physics_process(true)
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	is_paused = false
