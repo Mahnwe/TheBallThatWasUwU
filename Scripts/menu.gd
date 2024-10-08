@@ -76,7 +76,7 @@ func _on_level_1_button_gui_input(event):
 			$QuitButton.grab_focus() 
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$Level4Button.grab_focus()
+			$EffectSlider.grab_focus()
 		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level2Button.grab_focus()
@@ -167,6 +167,15 @@ func _on_level_3_button_mouse_exited():
 
 func _on_level_4_button_mouse_exited():
 	$Level4Button.release_focus()
+	is_controller_focused = false
+	
+func _on_music_slider_mouse_exited():
+	$MusicSlider.release_focus()
+	is_controller_focused = false
+
+
+func _on_effect_slider_mouse_exited():
+	$EffectSlider.release_focus()
 	is_controller_focused = false
 
 
