@@ -20,7 +20,7 @@ func _on_area_2d_body_entered(body):
 		player_entered.emit()
 		$Label.show()
 		$Label2.hide()
-		for n in 8:
+		for n in 6:
 			$Sprite2D.hide()
 			await get_tree().create_timer(0.2).timeout;
 			$Sprite2D.show()

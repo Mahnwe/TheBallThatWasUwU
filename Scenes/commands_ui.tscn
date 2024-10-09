@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cp0mu2e8kcon"]
+[gd_scene load_steps=38 format=3 uid="uid://cp0mu2e8kcon"]
 
 [ext_resource type="Script" path="res://Scripts/commands_ui.gd" id="1_in6he"]
 [ext_resource type="Texture2D" uid="uid://cea44i1yw26q1" path="res://Arts/KeyboardControls/Qkey-removebg-preview.png" id="2_apncb"]
@@ -28,9 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://cnrsquqhx3ucx" path="res://Arts/ControllerControls/TriangleButton-removebg-preview.png" id="26_7pc8d"]
 [ext_resource type="Texture2D" uid="uid://b5tjyqi8gqrau" path="res://Arts/ControllerControls/YButton-removebg-preview.png" id="27_s0mdr"]
 [ext_resource type="Texture2D" uid="uid://d2ivef5yrurvd" path="res://Arts/ControllerControls/XSwitch-removebg-preview.png" id="28_f6ipp"]
-[ext_resource type="Texture2D" uid="uid://bbdesxaqu1x6o" path="res://Arts/ControllerControls/RightTrigger-removebg-preview.png" id="29_yo4yd"]
+[ext_resource type="Texture2D" uid="uid://dktn1xtecq0uo" path="res://Arts/ControllerControls/RightButton-Photoroom.png" id="29_l4x4m"]
 [ext_resource type="Texture2D" uid="uid://d4uppifddsjc" path="res://Arts/ControllerControls/RightTriggerSwitch-removebg-preview.png" id="30_ajr3c"]
 [ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="31_pbdu2"]
+[ext_resource type="Texture2D" uid="uid://bydkn62u3q4p1" path="res://Arts/ControllerControls/RightButtonPS5-removebg-preview.png" id="31_xtjni"]
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="32_k81pc"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="33_cep7v"]
 [ext_resource type="Texture2D" uid="uid://d2tdp336bis5j" path="res://Arts/ControllerControls/Square-removebg-preview.png" id="34_k6euw"]
@@ -215,13 +216,20 @@ scale = Vector2(1.95228, 2.25446)
 texture = ExtResource("28_f6ipp")
 
 [node name="NextLevelC" type="Sprite2D" parent="Controller"]
-position = Vector2(58.9899, 458.763)
-scale = Vector2(0.304857, 0.250913)
-texture = ExtResource("29_yo4yd")
+z_index = 5
+position = Vector2(90.8257, 460.825)
+scale = Vector2(0.608597, 0.702079)
+texture = ExtResource("29_l4x4m")
 
 [node name="Sprite2D" type="Sprite2D" parent="Controller/NextLevelC"]
-position = Vector2(282.571, 0)
+position = Vector2(107.698, 1.46837)
+scale = Vector2(0.443, 0.463111)
 texture = ExtResource("30_ajr3c")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Controller/NextLevelC"]
+position = Vector2(-118.467, -4.99487e-05)
+scale = Vector2(0.765747, 0.755372)
+texture = ExtResource("31_xtjni")
 
 [node name="MenuC" type="Sprite2D" parent="Controller"]
 position = Vector2(30.8995, 546.392)

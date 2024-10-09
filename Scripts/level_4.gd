@@ -1,6 +1,5 @@
 extends Node2D
 
-var is_commands_panel_open
 var is_paused
 
 var start_position_x = -3065
@@ -27,11 +26,11 @@ func _ready():
 	queue.load()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
-	$Player/Pause.get_child(3).player_have_dash = true
+	$Player/Pause.get_child(4).player_have_dash = true
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
-	is_commands_panel_open = false
+	$Player/Pause.get_child(2).hide()
 	is_paused = false
 	$Player.have_dash_ability = true
 	$Player.can_double_jump = true
@@ -39,12 +38,14 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if is_paused:
+		$Player/Pause.is_paused = true
 	handle_pause()
 	handle_player_actions_when_level_finished()
 		
-	if Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
+	if Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
-	if Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
+	if Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		$Player.set_physics_process(false)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x
@@ -52,7 +53,7 @@ func _process(_delta):
 		$Player.set_physics_process(true)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 		
-	if Input.is_action_just_pressed("restart_level") and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
+	if Input.is_action_just_pressed("restart_level") and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
 		save_position_x = start_position_x
 		save_position_y = start_position_y
@@ -68,13 +69,13 @@ func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
-		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
+		if !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			toggle_pause()
-		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+		elif !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			toggle_pause()
-		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
+		elif is_paused and $Player/Pause.is_commands_display == false and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			untoggle_pause()
-		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+		elif is_paused and $Player/Pause.is_commands_display == false and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
@@ -147,6 +148,7 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
 		$Player/Pause.get_child(1).hide()
+		$Player/Pause.get_child(2).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.get_child(0).get_child(0).get_child(2).show()
 		$Player.set_physics_process(true)
@@ -161,18 +163,21 @@ func set_volume():
 
 func _on_portal_1_body_entered(body):
 	if body.name != "platform2":
-		body.position.x = ($Portal2.position.x - 100)
+		await get_tree().create_timer(0.3).timeout
+		body.position.x = ($Portal2.position.x - 150)
 		body.position.y = ($Portal2.position.y - 50)
 
 
 func _on_portal_2_body_entered(body):
-	body.position.x = ($Portal1.position.x - 200)
+	await get_tree().create_timer(0.3).timeout
+	body.position.x = ($Portal1.position.x - 250)
 	body.position.y = ($Portal1.position.y - 50)
 	
 func toggle_pause():
 	$Player/Pause.show()
 	$Player/Pause.get_child(0).show()
 	$Player/Pause.get_child(1).show()
+	$Player/Pause.get_child(2).show()
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.get_child(0).get_child(0).get_child(2).hide()
@@ -184,6 +189,7 @@ func untoggle_pause():
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
+	$Player/Pause.get_child(2).hide()
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	$Player.get_child(0).get_child(0).get_child(2).show()

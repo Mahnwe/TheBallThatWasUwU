@@ -1,6 +1,5 @@
 extends Node2D
 
-var is_commands_panel_open
 var is_paused
 
 var start_position_x = -11
@@ -30,21 +29,23 @@ func _ready():
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
-	is_commands_panel_open = false
+	$Player/Pause.get_child(2).hide()
 	is_paused = false
-	$Player/Pause.get_child(3).player_have_dash = false
+	$Player/Pause.get_child(4).player_have_dash = false
 	$Player.have_dash_ability = false
 	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if is_paused:
+		$Player/Pause.is_paused = true
 	handle_pause()
 	handle_player_actions_when_level_finished()
 		
-	if Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
+	if Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
-	if Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
+	if Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		$Player.set_physics_process(false)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x
@@ -53,7 +54,7 @@ func _process(_delta):
 		$Player.set_physics_process(true)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 		
-	if Input.is_action_just_pressed("restart_level") and $Player.position.x != finish_position_x and !is_commands_panel_open and !is_paused:
+	if Input.is_action_just_pressed("restart_level") and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
 		save_position_x = start_position_x
 		save_position_y = start_position_y
@@ -69,13 +70,13 @@ func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
-		if !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
+		if !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			toggle_pause()
-		elif !is_paused and !is_commands_panel_open and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+		elif !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			toggle_pause()
-		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
+		elif is_paused and $Player/Pause.is_commands_display == false and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			untoggle_pause()
-		elif is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+		elif is_paused and $Player/Pause.is_commands_display == false and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
@@ -83,10 +84,7 @@ func handle_pause():
 	
 	
 func restart_scene():
-	if !is_commands_panel_open:
-		get_tree().reload_current_scene()
-	else:
-		pass
+	get_tree().reload_current_scene()
 
 
 func _on_start_area_player_exited_start_area():
@@ -138,7 +136,7 @@ func enable_patrol_groups():
 			member.set_process(true)
 
 func _on_ability_player_entered():
-	$Player/Pause.get_child(3).player_have_dash = true
+	$Player/Pause.get_child(4).player_have_dash = true
 	$Player.have_dash_ability = true
 	$Ability.get_child(0).text = "You can dash now !\n             Shift\n       Square/X/Y"
 
@@ -181,6 +179,7 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
 		$Player/Pause.get_child(1).hide()
+		$Player/Pause.get_child(2).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.get_child(0).get_child(0).get_child(2).show()
 		enable_patrol_groups()
@@ -197,6 +196,7 @@ func toggle_pause():
 	$Player/Pause.show()
 	$Player/Pause.get_child(0).show()
 	$Player/Pause.get_child(1).show()
+	$Player/Pause.get_child(2).show()
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.get_child(0).get_child(0).get_child(2).hide()
@@ -209,6 +209,7 @@ func untoggle_pause():
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
+	$Player/Pause.get_child(2).hide()
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	$Player.get_child(0).get_child(0).get_child(2).show()
