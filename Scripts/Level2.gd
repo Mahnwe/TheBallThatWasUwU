@@ -35,6 +35,7 @@ func _ready():
 	$Player.have_dash_ability = false
 	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	$Level2Music.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -197,6 +198,7 @@ func toggle_pause():
 	$Player/Pause.get_child(0).show()
 	$Player/Pause.get_child(1).show()
 	$Player/Pause.get_child(2).show()
+	$Level2Music.stream_paused = true
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.get_child(0).get_child(0).get_child(2).hide()
@@ -211,9 +213,14 @@ func untoggle_pause():
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
 	$PauseMusic.stop()
+	$Level2Music.stream_paused = false
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	$Player.get_child(0).get_child(0).get_child(2).show()
 	enable_patrol_groups()
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
+
+
+func _on_pause_music_finished():
+	$PauseMusic.play()

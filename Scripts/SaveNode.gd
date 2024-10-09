@@ -13,6 +13,7 @@ func _process(_delta):
 
 func _on_save_area_body_entered(body):
 	if body.name == "Player":
+		$SaveSound.play()
 		player_entered.emit()
 		$SavedLabel.text = "POSITION SAVED"
 		await get_tree().create_timer(2).timeout

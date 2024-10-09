@@ -17,6 +17,7 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
+		$AbilitySound.play()
 		player_entered.emit()
 		$Label.show()
 		$Label2.hide()
@@ -25,4 +26,4 @@ func _on_area_2d_body_entered(body):
 			await get_tree().create_timer(0.2).timeout;
 			$Sprite2D.show()
 			await get_tree().create_timer(0.2).timeout;
-		self.hide()
+		queue_free()

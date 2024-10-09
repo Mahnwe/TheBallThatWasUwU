@@ -53,24 +53,30 @@ func handle_cam_dezoom():
 		is_camera_dezoom = 0
 		
 func jump():
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	if random.randf() >= 0.50:
 		$JumpSound.play()
-		velocity.y = jump_force
-		number_of_jumps += 1
-		if velocity.x < 0:
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play()
-		if velocity.x > 0:
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play()
-		if velocity.x == 0:
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play()
+	else:
+		$JumpSound2.play()
+	velocity.y = jump_force
+	number_of_jumps += 1
+	if velocity.x < 0:
+		$AnimatedSprite2D.animation = "jump"
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play()
+	if velocity.x > 0:
+		$AnimatedSprite2D.animation = "jump"
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play()
+	if velocity.x == 0:
+		$AnimatedSprite2D.animation = "jump"
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play()
 	
 func _dash():
 	if can_dash and have_dash_ability:
+		$DashSound.play()
 		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = false

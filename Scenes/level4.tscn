@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=13 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="9_ujhmm"]
 [ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="10_1n5pj"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="11_6dpcl"]
+[ext_resource type="AudioStream" uid="uid://06ksrea8xsdh" path="res://Sound/Effects/TELEPORT.mp3" id="12_qxyrk"]
 
 [node name="level4" type="Node2D"]
 script = ExtResource("1_aw8g7")
@@ -70,9 +71,13 @@ position = Vector2(-2572, -1195)
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("11_6dpcl")
 
+[node name="PortalSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("12_qxyrk")
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
 [connection signal="body_entered" from="Portal1" to="." method="_on_portal_1_body_entered"]
 [connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]
+[connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]

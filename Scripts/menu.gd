@@ -178,11 +178,6 @@ func _on_effect_slider_mouse_exited():
 	$EffectSlider.release_focus()
 	is_controller_focused = false
 
-
-func _on_menu_music_finished():
-	$MenuMusic.play()
-
-
 func _on_button_focus_entered():
 	$ButtonSound.play()
 

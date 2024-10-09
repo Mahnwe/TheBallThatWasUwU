@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://i4jemvk3v54m"]
+[gd_scene load_steps=5 format=3 uid="uid://i4jemvk3v54m"]
 
 [ext_resource type="Script" path="res://Scripts/ability.gd" id="1_vfgwr"]
+[ext_resource type="AudioStream" uid="uid://dojptb2rgjdfi" path="res://Sound/Effects/ABILITY.wav" id="2_q1yff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4eu1f"]
 size = Vector2(92, 266)
@@ -44,5 +45,8 @@ offset_bottom = -124.0
 theme_override_font_sizes/font_size = 40
 text = "   NEW
 ABILITY"
+
+[node name="AbilitySound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("2_q1yff")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

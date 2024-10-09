@@ -1017,3 +1017,4 @@ stream = ExtResource("25_kcefb")
 [connection signal="spike_hit" from="Spike15/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike16" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike16/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]

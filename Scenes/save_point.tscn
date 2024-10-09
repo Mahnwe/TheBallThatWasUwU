@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://7qfwpggjf11t"]
+[gd_scene load_steps=6 format=3 uid="uid://7qfwpggjf11t"]
 
 [ext_resource type="Script" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
 [ext_resource type="Texture2D" uid="uid://bo382jwr13x5w" path="res://Arts/SpritesMemoryCard/SpritePositionMemoryCard-removebg-preview.png" id="2_sqixw"]
+[ext_resource type="AudioStream" uid="uid://bgou8b4pket55" path="res://Sound/Effects/SAVE.mp3" id="3_ogtmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elg4p"]
 size = Vector2(154, 212)
@@ -36,5 +37,8 @@ offset_top = -226.0
 offset_right = -230.0
 offset_bottom = -203.0
 scale = Vector2(2.92, 1.28)
+
+[node name="SaveSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("3_ogtmp")
 
 [connection signal="body_entered" from="SaveArea" to="." method="_on_save_area_body_entered"]

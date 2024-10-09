@@ -179,14 +179,6 @@ func _on_trigger_dead_way_music_body_entered(body):
 		$DeadWayMusic.play()
 
 
-func _on_level_1_music_finished():
-	$Level1Music.play()
-
-
-func _on_dead_way_music_finished():
-	$DeadWayMusic.play()
-
-
 func _on_pause_music_finished():
 	$PauseMusic.play()
 	
@@ -202,6 +194,7 @@ func toggle_pause():
 	$Player/Pause.get_child(1).show()
 	$Player/Pause.get_child(2).show()
 	$Level1Music.stream_paused = true
+	$DeadWayMusic.stream_paused = true
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.get_child(0).get_child(0).get_child(2).hide()
@@ -216,8 +209,15 @@ func untoggle_pause():
 	$Player/Pause.get_child(2).hide()
 	$PauseMusic.stop()
 	$Level1Music.stream_paused = false
+	$DeadWayMusic.stream_paused = false
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	$Player.get_child(0).get_child(0).get_child(2).show()
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
+
+
+func _on_trigger_level_music_body_entered(body):
+	if body.name == "Player" and $DeadWayMusic.playing == true:
+		$DeadWayMusic.stop()
+		$Level1Music.play()

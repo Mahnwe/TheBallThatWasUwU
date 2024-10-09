@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=44 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bwxd85ux41v40" path="res://Arts/BackgroundSprite/SkyBackgroundLVL2-removebg-preview.png" id="24_w34bd"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="25_vxvct"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="26_vfmhc"]
+[ext_resource type="AudioStream" uid="uid://g23as811441j" path="res://Sound/Musics/Project Manawe_LEVEL 2.mp3" id="27_w3haq"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -199,7 +200,7 @@ rotation = 1.5708
 scale = Vector2(0.839013, 0.200062)
 
 [node name="PlatformPatrol1" type="Path2D" parent="."]
-position = Vector2(2, -17)
+position = Vector2(-59, -17)
 curve = SubResource("Curve2D_rtn75")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol1"]
@@ -214,7 +215,7 @@ scale = Vector2(0.20145, 1)
 sync_to_physics = false
 
 [node name="PlatformPatrol2" type="Path2D" parent="."]
-position = Vector2(-206, 506)
+position = Vector2(-254, 488)
 rotation = 3.14159
 curve = SubResource("Curve2D_rtn75")
 
@@ -230,7 +231,7 @@ scale = Vector2(0.20145, 1)
 sync_to_physics = false
 
 [node name="PlatformPatrol3" type="Path2D" parent="."]
-position = Vector2(-621, -7)
+position = Vector2(-644, -21)
 curve = SubResource("Curve2D_rtn75")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol3"]
@@ -331,6 +332,7 @@ scale = Vector2(0.27829, 0.231815)
 speed = 350
 
 [node name="PlatformPatrol4" type="Path2D" parent="."]
+position = Vector2(0, -55)
 curve = SubResource("Curve2D_6oxiu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol4"]
@@ -345,7 +347,7 @@ sync_to_physics = false
 speed = 200
 
 [node name="PlatformPatrol5" type="Path2D" parent="."]
-position = Vector2(5, 47)
+position = Vector2(5, -8)
 curve = SubResource("Curve2D_nbd83")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PlatformPatrol5"]
@@ -777,6 +779,10 @@ scale = Vector2(0.24, 1.28)
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("26_vfmhc")
 
+[node name="Level2Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
+stream = ExtResource("27_w3haq")
+parameters/looping = true
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -801,3 +807,4 @@ stream = ExtResource("26_vfmhc")
 [connection signal="spike_hit" from="SpikePatrol9/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="SpikePatrol10/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]

@@ -229,3 +229,7 @@ func untoggle_pause():
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
+
+
+func _on_pause_music_finished():
+	$PauseMusic.play()

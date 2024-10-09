@@ -163,12 +163,14 @@ func set_volume():
 
 func _on_portal_1_body_entered(body):
 	if body.name != "platform2":
+		$PortalSound.play()
 		await get_tree().create_timer(0.3).timeout
-		body.position.x = ($Portal2.position.x - 150)
+		body.position.x = ($Portal2.position.x - 75)
 		body.position.y = ($Portal2.position.y - 50)
 
 
 func _on_portal_2_body_entered(body):
+	$PortalSound.play()
 	await get_tree().create_timer(0.3).timeout
 	body.position.x = ($Portal1.position.x - 250)
 	body.position.y = ($Portal1.position.y - 50)
@@ -196,3 +198,7 @@ func untoggle_pause():
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
+
+
+func _on_pause_music_finished():
+	$PauseMusic.play()

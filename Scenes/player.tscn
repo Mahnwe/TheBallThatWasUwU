@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=30 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="2_g0yss"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://bsnvgiu0qijy5" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight4.5-removebg-preview.png" id="10_67dii"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="10_nhsbj"]
 [ext_resource type="AudioStream" uid="uid://cu47fvabu26sp" path="res://Sound/Effects/JumpSound.mp3" id="25_wcpjr"]
+[ext_resource type="AudioStream" uid="uid://b4w82e2ntorl" path="res://Sound/Effects/JUMP.mp3" id="26_kudgl"]
+[ext_resource type="AudioStream" uid="uid://bcn815ajnley0" path="res://Sound/Effects/DASH.mp3" id="27_qyjky"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
 animations = [{
@@ -241,3 +243,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("25_wcpjr")
+
+[node name="JumpSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("26_kudgl")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("27_qyjky")
