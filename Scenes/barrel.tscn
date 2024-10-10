@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ndx4cg0d8fn8"]
+
+[ext_resource type="Texture2D" uid="uid://dbqr1l1u3ljqi" path="res://Arts/BarrelSprite/BarrelSprite-removebg-preview.png" id="1_wc1ar"]
+
+[node name="Barrel" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.157162, 0.116725)
+texture = ExtResource("1_wc1ar")
