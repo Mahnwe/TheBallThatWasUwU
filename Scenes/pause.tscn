@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="12_nirwk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="12_r111m"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
-[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Material/blur.tres" id="16_w6h82"]
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
 
 [node name="Pause" type="Control"]
 z_index = 5
