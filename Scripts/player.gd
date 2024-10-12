@@ -11,7 +11,7 @@ var gravity = 30
 var jump_force = -670
 
 const VELOCITY_Y_MAX = 600
-const dash_speed = 1200
+const dash_speed = 1500
 
 var can_dash
 var have_dash_ability

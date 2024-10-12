@@ -314,7 +314,6 @@ rotates = false
 position = Vector2(34.2162, -21.6623)
 rotation = 1.5708
 scale = Vector2(0.278296, 0.230752)
-speed = 350
 
 [node name="SpikeVerticalPatrol2" type="Path2D" parent="."]
 position = Vector2(-516, 2)

@@ -35,14 +35,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
-	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if member.has_focus:
-			is_controller_focused = true
-		else:
-			is_controller_focused = false
-			
 	wait_for_focus()
-	
 	if Input.is_action_just_pressed("quit_game"):
 		get_tree().quit()
 		
@@ -220,23 +213,23 @@ func _on_effect_slider_value_changed(value):
 			for member in get_tree().get_nodes_in_group("sound_effect_group"):
 				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 		1.0:
-			config.set_value("effectVolume","effectVolumeSet", -20)
+			config.set_value("effectVolume","effectVolumeSet", -40)
 			for member in get_tree().get_nodes_in_group("sound_effect_group"):
 				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 		2.0:
-			config.set_value("effectVolume","effectVolumeSet", -15)
+			config.set_value("effectVolume","effectVolumeSet", -30)
 			for member in get_tree().get_nodes_in_group("sound_effect_group"):
 				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 		3.0:
-			config.set_value("effectVolume","effectVolumeSet", -10)
+			config.set_value("effectVolume","effectVolumeSet", -20)
 			for member in get_tree().get_nodes_in_group("sound_effect_group"):
 				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 		4.0:
-			config.set_value("effectVolume","effectVolumeSet", -5)
+			config.set_value("effectVolume","effectVolumeSet", -10)
 			for member in get_tree().get_nodes_in_group("sound_effect_group"):
 				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 		5.0:
-			config.set_value("effectVolume","effectVolumeSet", 0)
+			config.set_value("effectVolume","effectVolumeSet", -5)
 			for member in get_tree().get_nodes_in_group("sound_effect_group"):
 				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 	config.save("res://Ressources/PropertieFile/properties.cfg")
