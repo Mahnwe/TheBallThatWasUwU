@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=42 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="25_kcefb"]
 [ext_resource type="PackedScene" uid="uid://b6k3vbroiylq0" path="res://Scenes/palm.tscn" id="27_lrvx7"]
 [ext_resource type="PackedScene" uid="uid://ndx4cg0d8fn8" path="res://Scenes/barrel.tscn" id="28_gq5he"]
+[ext_resource type="Texture2D" uid="uid://csqonqdu7jcj6" path="res://Arts/WaterSprite/WaterSprite-removebg-preview.png" id="28_odqcv"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -244,10 +245,10 @@ scale = Vector2(0.320001, 0.32)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -1315.0
-offset_top = -3158.0
-offset_right = 2848.0
-offset_bottom = 1455.0
+offset_left = -1308.0
+offset_top = -3157.0
+offset_right = 2855.0
+offset_bottom = 1456.0
 color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="SandPlatform" parent="." instance=ExtResource("11_62yl8")]
@@ -599,7 +600,7 @@ flip_value = 1
 ball_speed = 5
 
 [node name="platform27" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(775, -1037)
+position = Vector2(782, -1036)
 scale = Vector2(0.2, 1.72)
 
 [node name="platform28" parent="." instance=ExtResource("2_gdtbw")]
@@ -764,11 +765,11 @@ scale = Vector2(0.603387, 0.542475)
 flip_value = 1
 
 [node name="LanternPole3" parent="." instance=ExtResource("24_ctwib")]
-position = Vector2(882, -959)
+position = Vector2(889, -958)
 scale = Vector2(0.603387, 0.542475)
 
 [node name="LanternPole4" parent="." instance=ExtResource("24_ctwib")]
-position = Vector2(817, -959)
+position = Vector2(824, -958)
 scale = Vector2(0.603387, 0.542475)
 flip_value = 1
 
@@ -887,15 +888,15 @@ position = Vector2(-62, 0)
 position = Vector2(-34, -62)
 
 [node name="SandPlatform3" parent="." instance=ExtResource("11_62yl8")]
-position = Vector2(845, -720)
+position = Vector2(852, -719)
 scale = Vector2(0.697359, 0.919999)
 
 [node name="SandPlatform4" parent="." instance=ExtResource("11_62yl8")]
-position = Vector2(533, -658)
+position = Vector2(540, -657)
 scale = Vector2(0.480001, 0.36)
 
 [node name="SandPlatform5" parent="." instance=ExtResource("11_62yl8")]
-position = Vector2(1158, -658)
+position = Vector2(1165, -657)
 scale = Vector2(0.480001, 0.36)
 
 [node name="SandPlatform6" parent="." instance=ExtResource("11_62yl8")]
@@ -977,18 +978,28 @@ sync_to_physics = false
 speed = 200
 
 [node name="Palm2" parent="." instance=ExtResource("27_lrvx7")]
-position = Vector2(525, -741)
+position = Vector2(532, -740)
 scale = Vector2(0.4, 0.399999)
 
 [node name="Barrel2" parent="." instance=ExtResource("28_gq5he")]
-position = Vector2(626, -731)
+position = Vector2(633, -730)
 
 [node name="Barrel" parent="Barrel2" instance=ExtResource("28_gq5he")]
 position = Vector2(440, 0)
 
 [node name="Palm3" parent="." instance=ExtResource("27_lrvx7")]
-position = Vector2(1175, -741)
+position = Vector2(1182, -740)
 scale = Vector2(0.4, 0.399999)
+
+[node name="WaterSprite" type="Sprite2D" parent="."]
+position = Vector2(348, -624)
+scale = Vector2(0.25048, 0.284969)
+texture = ExtResource("28_odqcv")
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterSprite"]
+position = Vector2(4064.2, 0)
+scale = Vector2(1.35968, 1)
+texture = ExtResource("28_odqcv")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=45 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="25_vxvct"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="26_vfmhc"]
 [ext_resource type="AudioStream" uid="uid://g23as811441j" path="res://Sound/Musics/Project Manawe_LEVEL 2.mp3" id="27_w3haq"]
+[ext_resource type="Texture2D" uid="uid://csqonqdu7jcj6" path="res://Arts/WaterSprite/WaterSprite-removebg-preview.png" id="28_shmba"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -554,14 +555,14 @@ position = Vector2(-4865, 314)
 scale = Vector2(1.50622, 1)
 
 [node name="platform16" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-4555, 149)
+position = Vector2(-4548, 149)
 
 [node name="GrassWall2" parent="." instance=ExtResource("12_05u76")]
 position = Vector2(-3683, 80)
 scale = Vector2(0.600015, 0.4)
 
 [node name="Wall17" parent="." instance=ExtResource("6_llnkw")]
-position = Vector2(-3965, 275)
+position = Vector2(-3965, 290)
 rotation = -1.5708
 scale = Vector2(0.68, 1.6)
 
@@ -571,7 +572,7 @@ rotation = 4.70276
 scale = Vector2(0.32, 1.52001)
 
 [node name="platform17" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-4861, 99)
+position = Vector2(-4861, 82)
 scale = Vector2(0.56001, 1)
 
 [node name="Wall16" parent="." instance=ExtResource("6_llnkw")]
@@ -781,6 +782,20 @@ stream = ExtResource("26_vfmhc")
 [node name="Level2Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("27_w3haq")
 parameters/looping = true
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(-4359.5, 219.75)
+scale = Vector2(0.550864, 0.243215)
+texture = ExtResource("28_shmba")
+
+[node name="Sprite2D" type="Sprite2D" parent="Water"]
+position = Vector2(476.524, 1.0279)
+texture = ExtResource("28_shmba")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Water"]
+position = Vector2(668.949, 1.0279)
+scale = Vector2(0.865853, 1)
+texture = ExtResource("28_shmba")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

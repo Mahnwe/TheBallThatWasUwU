@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=30 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://6xooaq2m07s0" path="res://Sound/Musics/Level1Music.mp3" id="23_c437v"]
 [ext_resource type="AudioStream" uid="uid://crdwni6w5i6a8" path="res://Sound/Musics/Level1DeadWayMusic.mp3" id="24_yla18"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="25_wl8uo"]
+[ext_resource type="Texture2D" uid="uid://csqonqdu7jcj6" path="res://Arts/WaterSprite/WaterSprite-removebg-preview.png" id="26_d12tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -495,10 +496,10 @@ position = Vector2(-1673, 389)
 scale = Vector2(0.479996, 0.56)
 
 [node name="Tree" parent="." instance=ExtResource("14_shu8y")]
-position = Vector2(521, -206)
+position = Vector2(392, -272)
 
 [node name="BerryBush2" parent="." instance=ExtResource("19_8uqwt")]
-position = Vector2(524, -143)
+position = Vector2(751, -234)
 
 [node name="BerryBush" parent="BerryBush2" instance=ExtResource("19_8uqwt")]
 position = Vector2(-33, 10)
@@ -699,6 +700,11 @@ texture = ExtResource("21_ocefe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerLevelMusic"]
 position = Vector2(-944.5, 579.5)
 shape = SubResource("RectangleShape2D_bt6b5")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(531.813, -133)
+scale = Vector2(0.292466, 0.26357)
+texture = ExtResource("26_d12tp")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
