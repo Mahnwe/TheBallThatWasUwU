@@ -28,11 +28,6 @@ func _process(_delta):
 		close_command_panel()
 	if !is_controller_focused and Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
 		$ContinueLayer/Continue.grab_focus()
-	for member in get_tree().get_nodes_in_group("pause_buttons"):
-		if member.has_focus:
-			is_controller_focused = true
-		else:
-			is_controller_focused = false
 	wait_for_focus()
 	
 func wait_for_focus():
@@ -43,7 +38,10 @@ func wait_for_focus():
 
 
 func _on_return_to_menu_pressed():
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	if !is_commands_display:
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	else:
+		pass
 
 
 func _on_continue_pressed():

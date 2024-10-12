@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=17 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="12_nirwk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="12_r111m"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Material/blur.tres" id="16_w6h82"]
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -46,6 +47,8 @@ focus_neighbor_left = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_top = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_right = NodePath("../../CommandLayer/Command")
 focus_neighbor_bottom = NodePath("../../CommandLayer/Command")
+focus_next = NodePath("../../CommandLayer/Command")
+focus_previous = NodePath("../../ContinueLayer/Continue")
 theme_override_font_sizes/font_size = 25
 text = "Return to menu"
 
@@ -87,6 +90,8 @@ focus_neighbor_left = NodePath("../../CommandLayer/Command")
 focus_neighbor_top = NodePath("../../CommandLayer/Command")
 focus_neighbor_right = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_bottom = NodePath("../../ReturnLayer/ReturnToMenu")
+focus_next = NodePath("../../ReturnLayer/ReturnToMenu")
+focus_previous = NodePath("../../CommandLayer/Command")
 theme_override_font_sizes/font_size = 25
 text = "Continue"
 
@@ -134,6 +139,8 @@ focus_neighbor_left = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_top = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
+focus_next = NodePath("../../ContinueLayer/Continue")
+focus_previous = NodePath("../../ReturnLayer/ReturnToMenu")
 theme_override_font_sizes/font_size = 25
 text = "Commands"
 
@@ -184,6 +191,19 @@ scale = Vector2(1.4, 1.88)
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("12_r111m")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = ExtResource("16_w6h82")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2915.0
+offset_top = -1060.0
+offset_right = 3089.0
+offset_bottom = 2766.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="focus_entered" from="ReturnLayer/ReturnToMenu" to="." method="_on_button_focus_entered"]
 [connection signal="mouse_exited" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_mouse_exited"]
