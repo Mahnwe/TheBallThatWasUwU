@@ -60,12 +60,12 @@ func _process(_delta):
 		save_position_x = start_position_x
 		save_position_y = start_position_y
 		
-		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
 		get_tree().change_scene_to_file("res://Scenes/level2.tscn")
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
 	
 func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
@@ -83,6 +83,9 @@ func handle_pause():
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 			
+func restart_scene():
+	get_tree().reload_current_scene()
+	
 			
 func _on_spike_spike_hit():
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
@@ -91,9 +94,6 @@ func _on_spike_spike_hit():
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
-		
-func restart_scene():
-	get_tree().reload_current_scene()
 	
 	
 func _on_save_point_player_entered():
@@ -221,3 +221,8 @@ func _on_trigger_level_music_body_entered(body):
 	if body.name == "Player" and $DeadWayMusic.playing == true:
 		$DeadWayMusic.stop()
 		$Level1Music.play()
+
+
+func _on_finish_next_level_pressed():
+	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
+		get_tree().change_scene_to_file("res://Scenes/level2.tscn")

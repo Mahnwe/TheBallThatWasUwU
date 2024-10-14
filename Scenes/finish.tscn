@@ -1,16 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dss5xj26b0dfl"]
+[gd_scene load_steps=6 format=3 uid="uid://dss5xj26b0dfl"]
 
 [ext_resource type="Script" path="res://Scripts/finish.gd" id="1_srp80"]
 [ext_resource type="Texture2D" uid="uid://sa1yhgwcbfj0" path="res://Arts/FinishLaneSprite/FinishSprite-Photoroom-removebg-preview.png" id="2_51c3p"]
-[ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="3_kkdwr"]
-[ext_resource type="Texture2D" uid="uid://b2y8j40kibhyg" path="res://Arts/KeyboardControls/Jkey-removebg-preview.png" id="4_gfmcm"]
-[ext_resource type="Texture2D" uid="uid://dktn1xtecq0uo" path="res://Arts/ControllerControls/RightButton-Photoroom.png" id="5_51bqo"]
-[ext_resource type="Texture2D" uid="uid://bydkn62u3q4p1" path="res://Arts/ControllerControls/RightButtonPS5-removebg-preview.png" id="6_r8ae1"]
-[ext_resource type="Texture2D" uid="uid://c4vdd0l6wp1fn" path="res://Arts/ControllerControls/RightButtonSwitch-removebg-preview.png" id="7_e7f6o"]
-[ext_resource type="Texture2D" uid="uid://5nh3reihbr46" path="res://Arts/KeyboardControls/CtrlKey-removebg-preview.png" id="8_e5lgr"]
-[ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="9_fhdq5"]
-[ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="10_pyoar"]
-[ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="11_5nl03"]
+[ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="3_6546a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gw35"]
 size = Vector2(351, 239)
@@ -47,88 +39,6 @@ disabled = true
 position = Vector2(-1.5, -2)
 shape = SubResource("RectangleShape2D_exy7e")
 
-[node name="FinishLabelNextLevel" type="Label" parent="."]
-visible = false
-z_index = 1
-offset_left = 270.0
-offset_top = 113.0
-offset_right = 447.0
-offset_bottom = 203.0
-scale = Vector2(4.80579, 2.08)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Move to next level"
-
-[node name="Sprite2D" type="Sprite2D" parent="FinishLabelNextLevel"]
-position = Vector2(60.76, 56.25)
-scale = Vector2(0.102139, 0.216413)
-texture = ExtResource("3_kkdwr")
-
-[node name="Sprite2D" type="Sprite2D" parent="FinishLabelNextLevel/Sprite2D"]
-position = Vector2(334.109, 0)
-texture = ExtResource("4_gfmcm")
-
-[node name="Sprite2D2" type="Sprite2D" parent="FinishLabelNextLevel"]
-position = Vector2(37.2467, 116.827)
-scale = Vector2(0.395391, 0.979302)
-texture = ExtResource("5_51bqo")
-
-[node name="Sprite2D" type="Sprite2D" parent="FinishLabelNextLevel/Sprite2D2"]
-position = Vector2(100.518, 0.490944)
-scale = Vector2(0.743998, 0.784597)
-texture = ExtResource("6_r8ae1")
-
-[node name="Sprite2D2" type="Sprite2D" parent="FinishLabelNextLevel/Sprite2D2"]
-position = Vector2(215.771, 0)
-texture = ExtResource("7_e7f6o")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = 269.0
-offset_top = 112.0
-offset_right = 309.0
-offset_bottom = 177.0
-scale = Vector2(21.5847, 4.65847)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-offset_left = -1007.0
-offset_top = 104.0
-offset_right = -967.0
-offset_bottom = 163.0
-scale = Vector2(18.36, 5.16)
-
-[node name="FinishLabelMenu" type="Label" parent="."]
-visible = false
-z_index = 1
-offset_left = -1008.0
-offset_top = 104.0
-offset_right = -855.0
-offset_bottom = 194.0
-scale = Vector2(4.8, 2.24)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Return to menu
-"
-
-[node name="Sprite2D" type="Sprite2D" parent="FinishLabelMenu"]
-position = Vector2(68.3333, 52.6786)
-scale = Vector2(0.0494642, 0.0892298)
-texture = ExtResource("8_e5lgr")
-
-[node name="Sprite2D2" type="Sprite2D" parent="FinishLabelMenu"]
-position = Vector2(32.8854, 106.29)
-scale = Vector2(0.285056, 0.405204)
-texture = ExtResource("9_fhdq5")
-
-[node name="Sprite2D" type="Sprite2D" parent="FinishLabelMenu/Sprite2D2"]
-position = Vector2(119.969, -0.0991861)
-texture = ExtResource("10_pyoar")
-
-[node name="Sprite2D2" type="Sprite2D" parent="FinishLabelMenu/Sprite2D2"]
-position = Vector2(242.752, -0.0991861)
-texture = ExtResource("11_5nl03")
-
 [node name="WellDoneLabel" type="Label" parent="."]
 offset_left = -225.0
 offset_top = -227.0
@@ -138,4 +48,7 @@ scale = Vector2(4.12, 1.72)
 theme_override_font_sizes/font_size = 20
 text = "Well Done !"
 
+[node name="FinishUI" parent="." instance=ExtResource("3_6546a")]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="next_level_pressed" from="FinishUI" to="." method="_on_finish_ui_next_level_pressed"]

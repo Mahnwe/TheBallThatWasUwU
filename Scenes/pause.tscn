@@ -206,9 +206,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="focus_entered" from="ReturnLayer/ReturnToMenu" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_gui_input"]
 [connection signal="mouse_exited" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_mouse_exited"]
 [connection signal="pressed" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
 [connection signal="focus_entered" from="ContinueLayer/Continue" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="ContinueLayer/Continue" to="." method="_on_continue_gui_input"]
 [connection signal="mouse_exited" from="ContinueLayer/Continue" to="." method="_on_continue_mouse_exited"]
 [connection signal="pressed" from="ContinueLayer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="focus_entered" from="CommandLayer/Command" to="." method="_on_button_focus_entered"]

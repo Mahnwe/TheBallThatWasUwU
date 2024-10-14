@@ -52,35 +52,44 @@ func _on_continue_pressed():
 
 
 func _on_return_to_menu_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $ReturnLayer/ReturnToMenu.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_left"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$ContinueLayer/Continue.grab_focus()
+		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$ContinueLayer/Continue.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
-			accept_event()
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
 			$CommandLayer/Command.grab_focus()
 
 func _on_continue_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $ContinueLayer/Continue.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_left"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$CommandLayer/Command.grab_focus()
+		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$CommandLayer/Command.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
-			accept_event()
-			$ReturnLayer/ReturnToMenu.grab_focus()  
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$ReturnLayer/ReturnToMenu.grab_focus() 
 			
 			
 func _on_command_gui_input(event):
-	if has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $CommandLayer/Command.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_left"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$ReturnLayer/ReturnToMenu.grab_focus()
+		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$ReturnLayer/ReturnToMenu.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
-			accept_event()
-			$ContinueLayer/Continue.grab_focus()  
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$ContinueLayer/Continue.grab_focus()
 
 
 func _on_return_to_menu_mouse_exited():
@@ -98,7 +107,6 @@ func _on_command_mouse_exited():
 
 func _on_button_focus_entered():
 	if self.visible == true:
-		is_controller_focused = true
 		$ButtonSound.play()
 		
 func set_volume():
