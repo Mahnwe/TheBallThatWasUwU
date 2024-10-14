@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm8fwg0ov3mqe"
-path="res://.godot/imported/SpriteSpike.png-4a36989c28099659ccc72575dac0e0f2.ctex"
+uid="uid://dppm116nblrv2"
+path="res://.godot/imported/Dev-Lurk.png-127816eb6753c881bcda3cfc812d18bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesSpike/SpriteSpike.png"
-dest_files=["res://.godot/imported/SpriteSpike.png-4a36989c28099659ccc72575dac0e0f2.ctex"]
+source_file="res://Arts/DevSprite/Dev-Lurk.png"
+dest_files=["res://.godot/imported/Dev-Lurk.png-127816eb6753c881bcda3cfc812d18bd.ctex"]
 
 [params]
 

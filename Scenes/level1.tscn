@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://6xooaq2m07s0" path="res://Sound/Musics/Level1Music.mp3" id="23_c437v"]
 [ext_resource type="AudioStream" uid="uid://crdwni6w5i6a8" path="res://Sound/Musics/Level1DeadWayMusic.mp3" id="24_yla18"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="25_wl8uo"]
-[ext_resource type="Texture2D" uid="uid://csqonqdu7jcj6" path="res://Arts/WaterSprite/WaterSprite-removebg-preview.png" id="26_d12tp"]
+[ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="26_0uo4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -146,7 +146,7 @@ scale = Vector2(0.72, 1)
 [node name="Spike3" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(1503, 987)
 rotation = 1.5708
-scale = Vector2(0.925257, 12.0947)
+scale = Vector2(0.925257, 9.5347)
 
 [node name="Wall2" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-1664, 500)
@@ -268,8 +268,7 @@ rotation = -3.12819
 scale = Vector2(0.239996, 0.224071)
 
 [node name="Spike13" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-36, 217)
-rotation = -3.11517
+position = Vector2(-62, 112)
 scale = Vector2(0.211275, 0.327061)
 
 [node name="Spike15" parent="." instance=ExtResource("6_mp22g")]
@@ -283,8 +282,7 @@ rotation = 3.07088
 scale = Vector2(0.248274, 0.23393)
 
 [node name="Spike17" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(111, 89)
-rotation = 3.11883
+position = Vector2(68, 5)
 scale = Vector2(0.230768, 0.285546)
 
 [node name="Spike18" parent="." instance=ExtResource("6_mp22g")]
@@ -347,7 +345,7 @@ scale = Vector2(0.400001, 0.359999)
 [node name="Spike24" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-3446, 1150)
 rotation = -1.5708
-scale = Vector2(1, 11.08)
+scale = Vector2(1, 9.6)
 
 [node name="Wall11" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-1074, 895)
@@ -701,10 +699,9 @@ texture = ExtResource("21_ocefe")
 position = Vector2(-944.5, 579.5)
 shape = SubResource("RectangleShape2D_bt6b5")
 
-[node name="Water" type="Sprite2D" parent="."]
-position = Vector2(531.813, -133)
-scale = Vector2(0.292466, 0.26357)
-texture = ExtResource("26_d12tp")
+[node name="Water" parent="." instance=ExtResource("26_0uo4e")]
+position = Vector2(533, -133)
+scale = Vector2(0.297265, 0.26905)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
@@ -749,6 +746,7 @@ texture = ExtResource("26_d12tp")
 [connection signal="spike_hit" from="Spike35" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike36" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike37" to="." method="_on_spike_spike_hit"]
+[connection signal="next_level_pressed" from="Finish" to="." method="_on_finish_next_level_pressed"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="body_entered" from="TriggerDeadWayMusic" to="." method="_on_trigger_dead_way_music_body_entered"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]

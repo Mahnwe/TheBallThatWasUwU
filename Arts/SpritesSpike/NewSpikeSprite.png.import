@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w3bje26qbe3s"
-path="res://.godot/imported/SpriteSpike-removebg-preview.png-2f8ea0964ccf5f84edf20a74a7a49711.ctex"
+uid="uid://wy84wnmmvo2w"
+path="res://.godot/imported/NewSpikeSprite.png-24b64d3664b919467364c723bc9d50af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/SpritesSpike/SpriteSpike-removebg-preview.png"
-dest_files=["res://.godot/imported/SpriteSpike-removebg-preview.png-2f8ea0964ccf5f84edf20a74a7a49711.ctex"]
+source_file="res://Arts/SpritesSpike/NewSpikeSprite.png"
+dest_files=["res://.godot/imported/NewSpikeSprite.png-24b64d3664b919467364c723bc9d50af.ctex"]
 
 [params]
 

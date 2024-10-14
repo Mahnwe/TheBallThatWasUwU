@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=17 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://u2luvsnkt20j" path="res://Arts/BackgroundSprite/NewBackgroundSprite.png" id="10_7awvj"]
 [ext_resource type="AudioStream" uid="uid://bf3f1t5hsvtmq" path="res://Sound/Musics/MenuMusic.mp3" id="12_m2qtk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="13_owrtn"]
+[ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="14_45jmy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
@@ -254,6 +255,30 @@ focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../MusicSlider")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 max_value = 5.0
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(1571, 437)
+scale = Vector2(0.6875, 0.633929)
+texture = ExtResource("14_45jmy")
+
+[node name="Label" type="Label" parent="Logo"]
+offset_left = -132.364
+offset_top = -85.1831
+offset_right = 252.636
+offset_bottom = -16.1831
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Manawé Games"
+
+[node name="ControllerAdvice" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 950.0
+offset_right = 469.0
+offset_bottom = 985.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "This game is easier with a controller"
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
