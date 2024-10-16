@@ -113,6 +113,11 @@ func _on_finish_player_entered():
 	config.save("res://Ressources/PropertieFile/properties.cfg")
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
+	await get_tree().create_timer(1).timeout
+	$Finish/FinishUI.get_child(1).show()
+	$Finish/FinishUI.get_child(2).show()
+	$Finish/FinishUI.get_child(3).show()
+	$Finish/FinishUI.is_UI_showing = true
 
 
 func _on_start_area_player_exited_start_area():

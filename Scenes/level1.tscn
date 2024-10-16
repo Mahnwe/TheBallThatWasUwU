@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=31 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="14_mptbk"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="14_shu8y"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="16_d1jsb"]
+[ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="16_k2ysy"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_ebilh"]
 [ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="19_8uqwt"]
 [ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="20_fheu7"]
@@ -493,6 +494,9 @@ z_index = 1
 position = Vector2(-1673, 389)
 scale = Vector2(0.479996, 0.56)
 
+[node name="FinishUI" parent="Finish" instance=ExtResource("16_k2ysy")]
+visible = false
+
 [node name="Tree" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(392, -272)
 
@@ -746,8 +750,8 @@ scale = Vector2(0.297265, 0.26905)
 [connection signal="spike_hit" from="Spike35" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike36" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike37" to="." method="_on_spike_spike_hit"]
-[connection signal="next_level_pressed" from="Finish" to="." method="_on_finish_next_level_pressed"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_next_level_pressed"]
 [connection signal="body_entered" from="TriggerDeadWayMusic" to="." method="_on_trigger_dead_way_music_body_entered"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="body_entered" from="TriggerLevelMusic" to="." method="_on_trigger_level_music_body_entered"]

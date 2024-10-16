@@ -162,6 +162,11 @@ func _on_finish_player_entered():
 	print($Player.position.y)
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
+	await get_tree().create_timer(1).timeout
+	$Finish/FinishUI.get_child(1).show()
+	$Finish/FinishUI.get_child(2).show()
+	$Finish/FinishUI.get_child(3).show()
+	$Finish/FinishUI.is_UI_showing = true
 
 
 func _on_game_area_player_exited_game_area():

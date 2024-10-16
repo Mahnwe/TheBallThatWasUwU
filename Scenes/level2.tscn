@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=46 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="10_bv661"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_bscno"]
 [ext_resource type="PackedScene" uid="uid://c28uq36uhol4" path="res://Scenes/grass_wall.tscn" id="12_05u76"]
+[ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="13_6rccf"]
 [ext_resource type="PackedScene" uid="uid://be1l83abc4nq8" path="res://Scenes/apple_tree.tscn" id="13_f34ya"]
 [ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="14_238nh"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="15_88g44"]
@@ -623,8 +624,11 @@ speed = 220
 
 [node name="Finish" parent="." instance=ExtResource("11_bscno")]
 z_index = 1
-position = Vector2(-4693, 321)
-scale = Vector2(0.480018, 0.6)
+position = Vector2(-4693, 329)
+scale = Vector2(0.479996, 0.56)
+
+[node name="FinishUI" parent="Finish" instance=ExtResource("13_6rccf")]
+visible = false
 
 [node name="GrassWall" parent="." instance=ExtResource("12_05u76")]
 position = Vector2(-2950, -198)
@@ -820,6 +824,6 @@ texture = ExtResource("28_shmba")
 [connection signal="spike_hit" from="SpikePatrol8/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="SpikePatrol9/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="SpikePatrol10/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
-[connection signal="next_level_pressed" from="Finish" to="." method="_on_finish_next_level_pressed"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_next_level_pressed"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
