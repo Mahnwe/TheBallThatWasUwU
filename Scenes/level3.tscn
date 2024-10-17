@@ -244,14 +244,6 @@ scale = Vector2(0.337579, 0.36)
 position = Vector2(961, 768)
 scale = Vector2(0.320001, 0.32)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -20
-offset_left = -1308.0
-offset_top = -3157.0
-offset_right = 2855.0
-offset_bottom = 1456.0
-color = Color(0.10748, 0.10748, 0.10748, 1)
-
 [node name="SandPlatform" parent="." instance=ExtResource("11_62yl8")]
 position = Vector2(1939, -779)
 scale = Vector2(1.64, 0.52)
@@ -982,6 +974,14 @@ position = Vector2(-713.989, -59.2969)
 scale = Vector2(0.858259, 0.786251)
 sync_to_physics = false
 speed = 225
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -1308.0
+offset_top = -3157.0
+offset_right = 2855.0
+offset_bottom = 1456.0
+color = Color(0.632084, 0.88015, 0.962591, 1)
 
 [node name="Palm2" parent="." instance=ExtResource("27_lrvx7")]
 position = Vector2(532, -740)

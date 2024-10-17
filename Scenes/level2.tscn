@@ -130,14 +130,13 @@ point_count = 7
 script = ExtResource("1_f151f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 z_index = -25
 offset_left = -4979.0
 offset_top = -337.0
 offset_right = -1310.0
 offset_bottom = 1498.0
 scale = Vector2(1.56, 0.84)
-color = Color(0.10748, 0.10748, 0.10748, 1)
+color = Color(0.632084, 0.88015, 0.962591, 1)
 
 [node name="GameArea" parent="." instance=ExtResource("2_3pu7n")]
 position = Vector2(-2112, 427)

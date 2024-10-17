@@ -42,7 +42,7 @@ script = ExtResource("1_viwub")
 
 [node name="GameArea" parent="." instance=ExtResource("2_3iif7")]
 position = Vector2(-924, -50)
-scale = Vector2(6, 5.84)
+scale = Vector2(6, 6.72)
 
 [node name="Tree3" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(-1260, 371)
@@ -143,11 +143,6 @@ scale = Vector2(1.725, 1.725)
 [node name="platform4" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(96, 63)
 scale = Vector2(0.72, 1)
-
-[node name="Spike3" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(1503, 987)
-rotation = 1.5708
-scale = Vector2(0.925257, 9.5347)
 
 [node name="Wall2" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-1664, 500)
@@ -342,11 +337,6 @@ scale = Vector2(0.12, 1)
 [node name="Spike23" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-2434, 98)
 scale = Vector2(0.400001, 0.359999)
-
-[node name="Spike24" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-3446, 1150)
-rotation = -1.5708
-scale = Vector2(1, 9.6)
 
 [node name="Wall11" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-1074, 895)
@@ -646,13 +636,12 @@ position = Vector2(-952, -795)
 scale = Vector2(0.160002, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 z_index = -20
 offset_left = -2785.0
 offset_top = -1107.0
 offset_right = 925.0
 offset_bottom = 1022.0
-color = Color(0.10748, 0.10748, 0.10748, 1)
+color = Color(0.632084, 0.88015, 0.962591, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
@@ -716,7 +705,6 @@ scale = Vector2(0.297265, 0.26905)
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike5" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike6" to="." method="_on_spike_spike_hit"]
@@ -736,7 +724,6 @@ scale = Vector2(0.297265, 0.26905)
 [connection signal="spike_hit" from="Spike21" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike22" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike23" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Spike24" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike25" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike26" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike27" to="." method="_on_spike_spike_hit"]
