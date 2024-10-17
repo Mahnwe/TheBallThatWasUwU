@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="12_qmenm"]
 
 [node name="FinishUI" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,100 +23,95 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8cftm")
 
-[node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
-stream = ExtResource("11_p5o4v")
-
-[node name="NextLayer" type="CanvasLayer" parent="."]
-
-[node name="FinishNextLevelButton" type="Button" parent="NextLayer" groups=["finish_button"]]
-z_index = 1
-offset_left = 1167.0
-offset_top = 496.0
-offset_right = 1352.0
-offset_bottom = 563.0
+[node name="FinishNextLevelButton" type="Button" parent="." groups=["finish_button"]]
+z_index = 5
+offset_left = 345.0
+offset_top = 130.0
+offset_right = 530.0
+offset_bottom = 197.0
 scale = Vector2(3.80579, 2.08)
-focus_neighbor_left = NodePath("../../MenuLayer/FinishMenuButton")
-focus_neighbor_top = NodePath("../../MenuLayer/FinishMenuButton")
-focus_neighbor_right = NodePath("../../MenuLayer/FinishMenuButton")
-focus_neighbor_bottom = NodePath("../../MenuLayer/FinishMenuButton")
-focus_next = NodePath("../../MenuLayer/FinishMenuButton")
-focus_previous = NodePath("../../MenuLayer/FinishMenuButton")
+focus_neighbor_left = NodePath("../FinishMenuButton")
+focus_neighbor_top = NodePath("../FinishMenuButton")
+focus_neighbor_right = NodePath("../FinishMenuButton")
+focus_neighbor_bottom = NodePath("../FinishMenuButton")
+focus_next = NodePath("../FinishMenuButton")
+focus_previous = NodePath("../FinishMenuButton")
 theme_override_font_sizes/font_size = 20
 text = "Move to next level"
 
-[node name="Sprite2D" type="Sprite2D" parent="NextLayer/FinishNextLevelButton"]
+[node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton"]
 position = Vector2(67.0025, 79.3269)
 scale = Vector2(0.102139, 0.216413)
 texture = ExtResource("2_fgywl")
 
-[node name="Sprite2D" type="Sprite2D" parent="NextLayer/FinishNextLevelButton/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D"]
 position = Vector2(334.109, 0)
 texture = ExtResource("3_yfqki")
 
-[node name="Sprite2D2" type="Sprite2D" parent="NextLayer/FinishNextLevelButton"]
+[node name="Sprite2D2" type="Sprite2D" parent="FinishNextLevelButton"]
 position = Vector2(43.073, 140.385)
 scale = Vector2(0.395391, 0.979302)
 texture = ExtResource("4_6ltl3")
 
-[node name="Sprite2D" type="Sprite2D" parent="NextLayer/FinishNextLevelButton/Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D2"]
 position = Vector2(100.518, 0.490944)
 scale = Vector2(0.743998, 0.784597)
 texture = ExtResource("5_nugpk")
 
-[node name="Sprite2D2" type="Sprite2D" parent="NextLayer/FinishNextLevelButton/Sprite2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D2"]
 position = Vector2(215.771, 0)
 texture = ExtResource("6_uhy2h")
 
-[node name="ColorRect" type="ColorRect" parent="NextLayer"]
-offset_left = 1166.0
-offset_top = 493.0
-offset_right = 1206.0
-offset_bottom = 571.0
-scale = Vector2(17.6247, 4.65847)
+[node name="ColorRect" type="ColorRect" parent="FinishNextLevelButton/Sprite2D2"]
+z_index = -1
+offset_left = -110.0
+offset_top = -145.0
+offset_right = -72.0
+offset_bottom = -67.0
+scale = Vector2(12.4412, 2.40019)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
-[node name="MenuLayer" type="CanvasLayer" parent="."]
-
-[node name="FinishMenuButton" type="Button" parent="MenuLayer" groups=["finish_button"]]
+[node name="FinishMenuButton" type="Button" parent="." groups=["finish_button"]]
 z_index = 5
-offset_left = 58.0
-offset_top = 496.0
-offset_right = 219.0
-offset_bottom = 556.0
+offset_left = -997.0
+offset_top = 135.0
+offset_right = -836.0
+offset_bottom = 195.0
 scale = Vector2(3.96, 2.24)
-focus_neighbor_left = NodePath("../../NextLayer/FinishNextLevelButton")
-focus_neighbor_top = NodePath("../../NextLayer/FinishNextLevelButton")
-focus_neighbor_right = NodePath("../../NextLayer/FinishNextLevelButton")
-focus_neighbor_bottom = NodePath("../../NextLayer/FinishNextLevelButton")
-focus_next = NodePath("../../NextLayer/FinishNextLevelButton")
-focus_previous = NodePath("../../NextLayer/FinishNextLevelButton")
+focus_neighbor_left = NodePath("../FinishNextLevelButton")
+focus_neighbor_top = NodePath("../FinishNextLevelButton")
+focus_neighbor_right = NodePath("../FinishNextLevelButton")
+focus_neighbor_bottom = NodePath("../FinishNextLevelButton")
+focus_next = NodePath("../FinishNextLevelButton")
+focus_previous = NodePath("../FinishNextLevelButton")
 theme_override_font_sizes/font_size = 20
 text = "Return to menu
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="MenuLayer/FinishMenuButton"]
+[node name="Sprite2D" type="Sprite2D" parent="FinishMenuButton"]
 position = Vector2(75.2174, 74.1071)
 scale = Vector2(0.0494642, 0.0892298)
 texture = ExtResource("7_m8y2d")
 
-[node name="Sprite2D2" type="Sprite2D" parent="MenuLayer/FinishMenuButton"]
+[node name="Sprite2D2" type="Sprite2D" parent="FinishMenuButton"]
 position = Vector2(40.8696, 132.143)
 scale = Vector2(0.285056, 0.405204)
 texture = ExtResource("8_iicse")
 
-[node name="Sprite2D" type="Sprite2D" parent="MenuLayer/FinishMenuButton/Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="FinishMenuButton/Sprite2D2"]
 position = Vector2(119.969, -0.0991861)
 texture = ExtResource("9_j43j2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="MenuLayer/FinishMenuButton/Sprite2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="FinishMenuButton/Sprite2D2"]
 position = Vector2(242.752, -0.0991861)
 texture = ExtResource("10_a00tp")
 
-[node name="ColorRect2" type="ColorRect" parent="MenuLayer"]
-offset_left = 59.0
-offset_top = 493.0
-offset_right = 99.0
-offset_bottom = 563.0
+[node name="ColorRect2" type="ColorRect" parent="FinishMenuButton/Sprite2D2/Sprite2D2"]
+z_index = -1
+offset_left = -385.0
+offset_top = -329.0
+offset_right = -349.0
+offset_bottom = -249.0
 scale = Vector2(15.96, 5.16)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
@@ -132,13 +128,14 @@ offset_bottom = 2766.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="focus_entered" from="NextLayer/FinishNextLevelButton" to="." method="_on_button_focus_entered"]
-[connection signal="focus_exited" from="NextLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_focus_exited"]
-[connection signal="gui_input" from="NextLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]
-[connection signal="mouse_exited" from="NextLayer/FinishNextLevelButton" to="." method="_on_next_level_mouse_exited"]
-[connection signal="pressed" from="NextLayer/FinishNextLevelButton" to="." method="_on_next_level_pressed"]
-[connection signal="focus_entered" from="MenuLayer/FinishMenuButton" to="." method="_on_button_focus_entered"]
-[connection signal="focus_exited" from="MenuLayer/FinishMenuButton" to="." method="_on_finish_menu_button_focus_exited"]
-[connection signal="gui_input" from="MenuLayer/FinishMenuButton" to="." method="_on_finish_menu_button_gui_input"]
-[connection signal="mouse_exited" from="MenuLayer/FinishMenuButton" to="." method="_on_menu_mouse_exited"]
-[connection signal="pressed" from="MenuLayer/FinishMenuButton" to="." method="_on_menu_pressed"]
+[node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("11_p5o4v")
+
+[connection signal="focus_entered" from="FinishNextLevelButton" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]
+[connection signal="mouse_exited" from="FinishNextLevelButton" to="." method="_on_next_level_mouse_exited"]
+[connection signal="pressed" from="FinishNextLevelButton" to="." method="_on_next_level_pressed"]
+[connection signal="focus_entered" from="FinishMenuButton" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="FinishMenuButton" to="." method="_on_finish_menu_button_gui_input"]
+[connection signal="mouse_exited" from="FinishMenuButton" to="." method="_on_menu_mouse_exited"]
+[connection signal="pressed" from="FinishMenuButton" to="." method="_on_menu_pressed"]
