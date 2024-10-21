@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=16 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="10_1n5pj"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="11_6dpcl"]
 [ext_resource type="AudioStream" uid="uid://06ksrea8xsdh" path="res://Sound/Effects/TELEPORT.mp3" id="12_qxyrk"]
+[ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="14_d3ynf"]
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="14_dax5u"]
+[ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="15_0fl21"]
 
 [node name="level4" type="Node2D"]
 script = ExtResource("1_aw8g7")
@@ -65,7 +67,8 @@ position = Vector2(-3147, -2127)
 position = Vector2(-2238, -1497)
 
 [node name="platform3" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2697, -1198)
+position = Vector2(-2697, -1181)
+scale = Vector2(0.759995, 0.84)
 
 [node name="Wall3" parent="." instance=ExtResource("10_1n5pj")]
 position = Vector2(-2520, -1406)
@@ -82,12 +85,34 @@ stream = ExtResource("11_6dpcl")
 stream = ExtResource("12_qxyrk")
 
 [node name="platform4" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2179, -1121)
-scale = Vector2(0.6, 1)
+position = Vector2(-2268, -1133)
+scale = Vector2(0.56, 0.8)
 
 [node name="Water" parent="." instance=ExtResource("14_dax5u")]
 position = Vector2(-2283, -1378)
 scale = Vector2(1.34783, 0.207724)
+
+[node name="platform6" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-1681, -1268)
+scale = Vector2(0.320002, 0.48)
+
+[node name="platform7" parent="platform6" instance=ExtResource("9_ujhmm")]
+position = Vector2(3.12402, 616.667)
+
+[node name="TripleSign" parent="." instance=ExtResource("14_d3ynf")]
+position = Vector2(-1981, -1188)
+scale = Vector2(0.400002, 0.4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign"]
+position = Vector2(170.83, -106.25)
+scale = Vector2(0.109697, 0.108792)
+texture = ExtResource("15_0fl21")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TripleSign"]
+position = Vector2(170.83, -6.25)
+rotation = 3.14159
+scale = Vector2(0.109697, 0.108792)
+texture = ExtResource("15_0fl21")
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -96,3 +121,4 @@ scale = Vector2(1.34783, 0.207724)
 [connection signal="body_entered" from="Portal1" to="." method="_on_portal_1_body_entered"]
 [connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
+[connection signal="set_up_sign_label" from="TripleSign" to="." method="_on_triple_sign_set_up_sign_label"]

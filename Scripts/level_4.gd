@@ -35,6 +35,7 @@ func _ready():
 	$Player.have_dash_ability = true
 	$Player.can_double_jump = true
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	_on_triple_sign_set_up_sign_label()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -168,14 +169,14 @@ func set_volume():
 func _on_portal_1_body_entered(body):
 	if body.name != "platform2":
 		$PortalSound.play()
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.2).timeout
 		body.position.x = ($Portal2.position.x - 75)
 		body.position.y = ($Portal2.position.y - 50)
 
 
 func _on_portal_2_body_entered(body):
 	$PortalSound.play()
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.2).timeout
 	body.position.x = ($Portal1.position.x - 250)
 	body.position.y = ($Portal1.position.y - 50)
 	
@@ -206,3 +207,8 @@ func untoggle_pause():
 
 func _on_pause_music_finished():
 	$PauseMusic.play()
+
+
+func _on_triple_sign_set_up_sign_label():
+	$TripleSign.get_child(2).text = "Hard way"
+	$TripleSign.get_child(3).text = "Easy way"
