@@ -38,7 +38,7 @@ func _on_next_level_pressed():
 
 
 func _on_button_focus_entered():
-	if $ButtonSound.is_playing == false:
+	if $ButtonSound.finished:
 		$ButtonSound.play()
 
 

@@ -143,7 +143,7 @@ position = Vector2(-2112, 427)
 scale = Vector2(8.84, 3.8)
 
 [node name="StartArea" parent="." instance=ExtResource("5_dhyc2")]
-position = Vector2(142, 660)
+position = Vector2(142, 665)
 scale = Vector2(0.626667, 0.8)
 
 [node name="Player" parent="." instance=ExtResource("3_fn0ld")]
@@ -627,7 +627,6 @@ position = Vector2(-4693, 329)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("13_6rccf")]
-visible = false
 
 [node name="GrassWall" parent="." instance=ExtResource("12_05u76")]
 position = Vector2(-2950, -198)

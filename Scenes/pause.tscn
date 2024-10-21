@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=19 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="12_nirwk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="12_r111m"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
+[ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="16_n0g5q"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
 
 [node name="Pause" type="Control"]
@@ -208,12 +209,21 @@ scale = Vector2(28.6963, 10.8095)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]
-z_index = 5
-offset_left = 64.0
-offset_top = 289.0
-offset_right = 1264.0
-offset_bottom = 1009.0
-scale = Vector2(1.4, 1.88)
+z_index = 20
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 1933.0
+offset_bottom = 1096.0
+scale = Vector2(1.56, 2.36)
+
+[node name="CloseButton" type="Button" parent="CommandsUI"]
+layout_mode = 0
+offset_left = 1.87476
+offset_top = 4.23729
+offset_right = 1016.87
+offset_bottom = 719.237
+scale = Vector2(0.094359, 0.109153)
+icon = ExtResource("16_n0g5q")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("12_r111m")
@@ -243,3 +253,6 @@ grow_vertical = 2
 [connection signal="gui_input" from="CommandLayer/Command" to="." method="_on_command_gui_input"]
 [connection signal="mouse_exited" from="CommandLayer/Command" to="." method="_on_command_mouse_exited"]
 [connection signal="pressed" from="CommandLayer/Command" to="." method="_on_command_pressed"]
+[connection signal="gui_input" from="CommandsUI/CloseButton" to="." method="_on_close_button_gui_input"]
+[connection signal="mouse_entered" from="CommandsUI/CloseButton" to="." method="_on_close_button_mouse_entered"]
+[connection signal="pressed" from="CommandsUI/CloseButton" to="." method="_on_close_button_pressed"]

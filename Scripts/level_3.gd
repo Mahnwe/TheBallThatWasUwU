@@ -70,6 +70,10 @@ func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
+		if is_paused and $Player/Pause.is_commands_display == true:
+			$Player.get_child(0).get_child(0).get_child(0).hide()
+		elif is_paused and $Player/Pause.is_commands_display == false:
+			$Player.get_child(0).get_child(0).get_child(0).show()
 		if !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			toggle_pause()
 		elif !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
@@ -161,9 +165,9 @@ func _on_finish_player_entered():
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
 	await get_tree().create_timer(1).timeout
+	$Finish/FinishUI.get_child(0).show()
 	$Finish/FinishUI.get_child(1).show()
 	$Finish/FinishUI.get_child(2).show()
-	$Finish/FinishUI.get_child(3).show()
 	$Finish/FinishUI.is_UI_showing = true
 
 

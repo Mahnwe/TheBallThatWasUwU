@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl7gj22hnfxog"]
+[gd_scene load_steps=14 format=3 uid="uid://cl7gj22hnfxog"]
 
 [ext_resource type="Script" path="res://Scripts/finish_ui.gd" id="1_8cftm"]
 [ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="2_fgywl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bydkn62u3q4p1" path="res://Arts/ControllerControls/RightButtonPS5-removebg-preview.png" id="5_nugpk"]
 [ext_resource type="Texture2D" uid="uid://c4vdd0l6wp1fn" path="res://Arts/ControllerControls/RightButtonSwitch-removebg-preview.png" id="6_uhy2h"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="7_m8y2d"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="7_qv8jw"]
 [ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="8_iicse"]
 [ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="9_j43j2"]
 [ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="10_a00tp"]
@@ -25,23 +26,28 @@ script = ExtResource("1_8cftm")
 
 [node name="FinishNextLevelButton" type="Button" parent="." groups=["finish_button"]]
 z_index = 5
+layout_mode = 0
 offset_left = 345.0
-offset_top = 130.0
+offset_top = 274.0
 offset_right = 530.0
-offset_bottom = 197.0
+offset_bottom = 341.0
 scale = Vector2(3.80579, 2.08)
 focus_neighbor_left = NodePath("../FinishMenuButton")
 focus_neighbor_top = NodePath("../FinishMenuButton")
 focus_neighbor_right = NodePath("../FinishMenuButton")
 focus_neighbor_bottom = NodePath("../FinishMenuButton")
-focus_next = NodePath("../FinishMenuButton")
-focus_previous = NodePath("../FinishMenuButton")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Move to next level"
+flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton"]
-position = Vector2(67.0025, 79.3269)
-scale = Vector2(0.102139, 0.216413)
+position = Vector2(27.3268, 343.269)
+scale = Vector2(0.0811181, 0.177951)
 texture = ExtResource("2_fgywl")
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D"]
@@ -49,8 +55,8 @@ position = Vector2(334.109, 0)
 texture = ExtResource("3_yfqki")
 
 [node name="Sprite2D2" type="Sprite2D" parent="FinishNextLevelButton"]
-position = Vector2(43.073, 140.385)
-scale = Vector2(0.395391, 0.979302)
+position = Vector2(90.9141, 347.115)
+scale = Vector2(0.300798, 0.767762)
 texture = ExtResource("4_6ltl3")
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D2"]
@@ -62,39 +68,41 @@ texture = ExtResource("5_nugpk")
 position = Vector2(215.771, 0)
 texture = ExtResource("6_uhy2h")
 
-[node name="ColorRect" type="ColorRect" parent="FinishNextLevelButton/Sprite2D2"]
+[node name="Sprite2D3" type="Sprite2D" parent="FinishNextLevelButton"]
 z_index = -1
-offset_left = -110.0
-offset_top = -145.0
-offset_right = -72.0
-offset_bottom = -67.0
-scale = Vector2(12.4412, 2.40019)
-color = Color(0.0923971, 0.0923971, 0.092397, 1)
+position = Vector2(90.3886, 38.9423)
+scale = Vector2(1.49133, 2.82465)
+texture = ExtResource("7_qv8jw")
 
 [node name="FinishMenuButton" type="Button" parent="." groups=["finish_button"]]
 z_index = 5
+layout_mode = 0
 offset_left = -997.0
-offset_top = 135.0
+offset_top = 276.0
 offset_right = -836.0
-offset_bottom = 195.0
+offset_bottom = 336.0
 scale = Vector2(3.96, 2.24)
 focus_neighbor_left = NodePath("../FinishNextLevelButton")
 focus_neighbor_top = NodePath("../FinishNextLevelButton")
 focus_neighbor_right = NodePath("../FinishNextLevelButton")
 focus_neighbor_bottom = NodePath("../FinishNextLevelButton")
-focus_next = NodePath("../FinishNextLevelButton")
-focus_previous = NodePath("../FinishNextLevelButton")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Return to menu
 "
+flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishMenuButton"]
-position = Vector2(75.2174, 74.1071)
-scale = Vector2(0.0494642, 0.0892298)
+position = Vector2(42.6768, 317.411)
+scale = Vector2(0.0393632, 0.0713727)
 texture = ExtResource("7_m8y2d")
 
 [node name="Sprite2D2" type="Sprite2D" parent="FinishMenuButton"]
-position = Vector2(40.8696, 132.143)
+position = Vector2(74.7475, 314.732)
 scale = Vector2(0.285056, 0.405204)
 texture = ExtResource("8_iicse")
 
@@ -106,14 +114,11 @@ texture = ExtResource("9_j43j2")
 position = Vector2(242.752, -0.0991861)
 texture = ExtResource("10_a00tp")
 
-[node name="ColorRect2" type="ColorRect" parent="FinishMenuButton/Sprite2D2/Sprite2D2"]
+[node name="Sprite2D3" type="Sprite2D" parent="FinishMenuButton"]
 z_index = -1
-offset_left = -385.0
-offset_top = -329.0
-offset_right = -349.0
-offset_bottom = -249.0
-scale = Vector2(15.96, 5.16)
-color = Color(0.0923971, 0.0923971, 0.092397, 1)
+position = Vector2(78.0303, 35.2679)
+scale = Vector2(1.38039, 2.49315)
+texture = ExtResource("7_qv8jw")
 
 [node name="Blur" type="ColorRect" parent="."]
 material = ExtResource("12_qmenm")
@@ -121,10 +126,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2915.0
-offset_top = -1060.0
-offset_right = 3089.0
-offset_bottom = 2766.0
+offset_left = -2884.0
+offset_top = -1032.0
+offset_right = 3120.0
+offset_bottom = 2794.0
 grow_horizontal = 2
 grow_vertical = 2
 

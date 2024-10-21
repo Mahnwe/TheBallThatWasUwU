@@ -69,6 +69,10 @@ func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
+		if is_paused and $Player/Pause.is_commands_display == true:
+			$Player.get_child(0).get_child(0).get_child(0).hide()
+		elif is_paused and $Player/Pause.is_commands_display == false:
+			$Player.get_child(0).get_child(0).get_child(0).show()
 		if !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
 			toggle_pause()
 		elif !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:

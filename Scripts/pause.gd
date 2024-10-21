@@ -26,7 +26,7 @@ func _process(_delta):
 			open_commands_panel()
 	if is_commands_display and Input.is_action_just_pressed("restart_save"):
 		close_command_panel()
-	if !is_controller_focused and Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
+	if !is_controller_focused and !is_commands_display and Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
 		$ContinueLayer/Continue.grab_focus()
 	wait_for_focus()
 	
@@ -57,10 +57,10 @@ func _on_return_to_menu_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ContinueLayer/Continue.grab_focus()
-		if event.is_action_pressed("ui_up"):
+		elif event.is_action_pressed("ui_up"):
 			accept_event()
 			$ContinueLayer/Continue.grab_focus()
-		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$CommandLayer/Command.grab_focus()
 
@@ -70,10 +70,10 @@ func _on_continue_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$CommandLayer/Command.grab_focus()
-		if event.is_action_pressed("ui_up"):
+		elif event.is_action_pressed("ui_up"):
 			accept_event()
 			$CommandLayer/Command.grab_focus()
-		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ReturnLayer/ReturnToMenu.grab_focus() 
 			
@@ -84,10 +84,10 @@ func _on_command_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ReturnLayer/ReturnToMenu.grab_focus()
-		if event.is_action_pressed("ui_up"):
+		elif event.is_action_pressed("ui_up"):
 			accept_event()
 			$ReturnLayer/ReturnToMenu.grab_focus()
-		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ContinueLayer/Continue.grab_focus()
 
@@ -125,7 +125,6 @@ func close_command_panel():
 	$ContinueLayer.visible = true
 	$CommandLayer.visible = true
 	$CommandsUI.hide()
-	print("pouet")
 	is_commands_display = false
 	
 func open_commands_panel():
@@ -133,6 +132,30 @@ func open_commands_panel():
 	$ContinueLayer.visible = false
 	$CommandLayer.visible = false
 	$CommandsUI.show()
-	print("pouet")
+	$CommandsUI/CloseButton.grab_focus()
 	is_commands_display = true
 	
+
+
+func _on_close_button_pressed():
+	if $CommandsUI.visible == true:
+		close_command_panel()
+		$CommandsUI/CloseButton.release_focus()
+
+
+func _on_close_button_gui_input(event):
+	if $CommandsUI/CloseButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+		is_controller_focused = true
+		if event.is_action_pressed("ui_left"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$CommandsUI/CloseButton.grab_focus()
+		elif event.is_action_pressed("ui_up"):
+			accept_event()
+			$CommandsUI/CloseButton.grab_focus()
+		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$CommandsUI/CloseButton.grab_focus() 
+
+
+func _on_close_button_mouse_entered():
+	$CommandsUI/CloseButton.grab_focus() 
