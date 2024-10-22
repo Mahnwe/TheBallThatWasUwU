@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bo7nw1yq804xk"]
 
 [ext_resource type="Script" path="res://Scripts/SpikeNode.gd" id="1_3ktyq"]
-[ext_resource type="Texture2D" uid="uid://bal74hmuc6h4p" path="res://Arts/SpritesSpike/NewSpikeSprite-removebg-preview.png" id="2_v43hj"]
+[ext_resource type="Texture2D" uid="uid://d3ona87nnbpfo" path="res://Arts/SpritesSpike/SpikeSprite.png" id="2_8tc88"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1o7nn"]
 
@@ -24,9 +24,9 @@ shape = SubResource("CapsuleShape2D_qotw6")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(78, 138.5)
-scale = Vector2(0.337662, 0.397218)
-texture = ExtResource("2_v43hj")
+position = Vector2(78, 138)
+scale = Vector2(1.11111, 1.41351)
+texture = ExtResource("2_8tc88")
 
 [node name="SpikeArea" type="Area2D" parent="."]
 
