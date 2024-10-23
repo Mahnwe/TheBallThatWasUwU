@@ -640,7 +640,7 @@ offset_left = -2785.0
 offset_top = -1107.0
 offset_right = 925.0
 offset_bottom = 1022.0
-color = Color(0.632084, 0.88015, 0.962591, 1)
+color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false

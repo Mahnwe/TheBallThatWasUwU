@@ -136,7 +136,7 @@ offset_top = -337.0
 offset_right = -1310.0
 offset_bottom = 1498.0
 scale = Vector2(1.56, 0.84)
-color = Color(0.632084, 0.88015, 0.962591, 1)
+color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="GameArea" parent="." instance=ExtResource("2_3pu7n")]
 position = Vector2(-2112, 427)

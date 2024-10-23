@@ -980,7 +980,7 @@ offset_left = -1308.0
 offset_top = -3157.0
 offset_right = 2855.0
 offset_bottom = 1456.0
-color = Color(0.632084, 0.88015, 0.962591, 1)
+color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="Palm2" parent="." instance=ExtResource("27_lrvx7")]
 position = Vector2(532, -740)
