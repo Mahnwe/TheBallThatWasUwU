@@ -140,7 +140,7 @@ func _on_quit_button_focus_entered():
 
 
 func _on_quit_button_focus_exited():
-	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#FFFFFF"))
+	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#000000"))
 
 
 func _on_level_1_button_mouse_exited():

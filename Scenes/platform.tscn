@@ -8,7 +8,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_bho6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tnx2"]
-size = Vector2(638, 51)
+size = Vector2(635, 49.501)
 
 [node name="platform" type="AnimatableBody2D"]
 z_index = 1
@@ -25,5 +25,5 @@ mesh = SubResource("QuadMesh_bho6h")
 texture = ExtResource("2_svcx6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(359.5, 105.001)
+position = Vector2(360.5, 105.751)
 shape = SubResource("RectangleShape2D_1tnx2")

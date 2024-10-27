@@ -1,6 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
+[ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="3_x4hsc"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="4_pwi5b"]
@@ -9,8 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
 [ext_resource type="Texture2D" uid="uid://oyny4a5maq08" path="res://Arts/BackgroundSprite/BackgroundButton.png" id="7_272km"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
-[ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="9_ch5om"]
-[ext_resource type="Texture2D" uid="uid://u2luvsnkt20j" path="res://Arts/BackgroundSprite/NewBackgroundSprite.png" id="10_7awvj"]
+[ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="11_p1e1o"]
 [ext_resource type="AudioStream" uid="uid://bf3f1t5hsvtmq" path="res://Sound/Musics/MenuMusic.mp3" id="12_m2qtk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="13_owrtn"]
 [ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="14_45jmy"]
@@ -34,8 +34,7 @@ script = ExtResource("1_ltdc4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -5
 position = Vector2(962, 550)
-scale = Vector2(1.49029, 1.52889)
-texture = ExtResource("10_7awvj")
+texture = ExtResource("2_p71ma")
 
 [node name="MenuTitle" type="Label" parent="."]
 z_index = 2
@@ -179,16 +178,16 @@ scale = Vector2(0.44, 1.44)
 
 [node name="QuitButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 1762.0
-offset_top = 38.0
-offset_right = 2777.0
-offset_bottom = 753.0
+offset_left = 1717.0
+offset_top = 48.0
+offset_right = 2732.0
+offset_bottom = 763.0
 scale = Vector2(0.12, 0.16)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
-icon = ExtResource("9_ch5om")
+flat = true
 
 [node name="QuitLabel" type="Label" parent="QuitButton"]
 layout_mode = 0
@@ -197,8 +196,14 @@ offset_top = 743.75
 offset_right = 102.0
 offset_bottom = 778.75
 scale = Vector2(8.49967, 4.83334)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
+
+[node name="Sprite2D2" type="Sprite2D" parent="QuitButton"]
+position = Vector2(525, 359.375)
+scale = Vector2(5.66667, 3.96875)
+texture = ExtResource("11_p1e1o")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("12_m2qtk")
@@ -209,20 +214,20 @@ stream = ExtResource("13_owrtn")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 102.0
-offset_right = 246.0
-offset_bottom = 144.0
+offset_left = 131.0
+offset_top = 58.0
+offset_right = 230.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Musics"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 145.0
-offset_right = 324.0
-offset_bottom = 180.0
+offset_left = 58.0
+offset_top = 101.0
+offset_right = 308.0
+offset_bottom = 136.0
 scale = Vector2(1, 1.44)
 focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../EffectSlider")
@@ -232,20 +237,20 @@ max_value = 5.0
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 116.0
-offset_top = 193.0
-offset_right = 298.0
-offset_bottom = 235.0
+offset_left = 100.0
+offset_top = 149.0
+offset_right = 282.0
+offset_bottom = 191.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Sound effect"
 
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 232.0
-offset_right = 328.0
-offset_bottom = 267.0
+offset_left = 62.0
+offset_top = 188.0
+offset_right = 312.0
+offset_bottom = 223.0
 scale = Vector2(1, 1.44)
 focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../MusicSlider")
@@ -257,7 +262,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(1571, 437)
+position = Vector2(1769, 590)
 scale = Vector2(0.6875, 0.633929)
 texture = ExtResource("14_45jmy")
 
