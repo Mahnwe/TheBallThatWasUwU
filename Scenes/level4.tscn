@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=24 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -17,6 +17,26 @@
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="15_0fl21"]
 [ext_resource type="Texture2D" uid="uid://b7oslcfdthymg" path="res://Arts/RailsSprite/RailSprite.png" id="16_60pe7"]
 [ext_resource type="Texture2D" uid="uid://dkafg7yg0dgtt" path="res://Arts/RailsSprite/CartSprite.png" id="17_nr1d8"]
+[ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="18_rc5ql"]
+[ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="19_mmpto"]
+
+[sub_resource type="Curve2D" id="Curve2D_wok5w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3177, 467, 0, 0, 0, 0, -3181, 273, 0, 0, 0, 0, -3185, 5, 0, 0, 0, 0, -3185, -271, 0, 0, 0, 0, -3187, -432, 0, 0, 0, 0, -3177, 467)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu2q4"]
+size = Vector2(551.346, 96.8837)
+
+[sub_resource type="Curve2D" id="Curve2D_thaxq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5644, -1101, 0, 0, 0, 0, -5312, -1104, 0, 0, 0, 0, -5011, -1108, 0, 0, 0, 0, -4731, -1107, 0, 0, 0, 0, -5644, -1101)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he6x8"]
+size = Vector2(542.845, 106.212)
 
 [node name="level4" type="Node2D"]
 script = ExtResource("1_aw8g7")
@@ -132,6 +152,186 @@ texture = ExtResource("17_nr1d8")
 position = Vector2(339.315, 204.082)
 texture = ExtResource("16_60pe7")
 
+[node name="HardPortal" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-1559, -1300)
+
+[node name="EasyPortal" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-1564, -1006)
+
+[node name="platform8" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-1061, -1548)
+rotation = 1.56051
+scale = Vector2(1.36121, 1.56)
+
+[node name="platform7" parent="platform8" instance=ExtResource("4_3b0rq")]
+position = Vector2(-115.02, 595.794)
+rotation = -1.55901
+scale = Vector2(0.641036, 1.14602)
+skew = -0.00281227
+
+[node name="platform9" parent="platform8" instance=ExtResource("9_ujhmm")]
+position = Vector2(486.722, 592.22)
+rotation = -1.55901
+scale = Vector2(0.641036, 1.14602)
+skew = -0.00281227
+
+[node name="platform10" parent="platform8" instance=ExtResource("9_ujhmm")]
+position = Vector2(377.749, 488.031)
+rotation = 0.0089742
+scale = Vector2(0.411392, 0.641036)
+skew = 0.00281227
+
+[node name="platform7" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2484, -788)
+scale = Vector2(0.840007, 1)
+
+[node name="platform9" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4644, 254)
+rotation = 1.5708
+
+[node name="platform10" parent="platform9" instance=ExtResource("9_ujhmm")]
+position = Vector2(722, -386)
+rotation = 3.14159
+
+[node name="platform11" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-5101, 1361)
+scale = Vector2(0.439995, 0.799999)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-1278, 806)
+curve = SubResource("Curve2D_wok5w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-3177, 467)
+rotation = -1.59141
+rotates = false
+
+[node name="HardRockMovingPlatform" parent="Path2D/PathFollow2D" instance=ExtResource("9_ujhmm")]
+position = Vector2(89.8366, -88.1667)
+rotation = 1.5708
+scale = Vector2(0.255908, 0.763641)
+sync_to_physics = false
+
+[node name="HardPlatformTrigger" type="Area2D" parent="Path2D/PathFollow2D/HardRockMovingPlatform"]
+
+[node name="Area2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/HardRockMovingPlatform/HardPlatformTrigger"]
+position = Vector2(358.563, 46.9703)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_iu2q4")
+
+[node name="HardPortal2" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-5031, 1355)
+
+[node name="platform12" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4150, -124)
+scale = Vector2(1.68, 1)
+
+[node name="platform13" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-3096, -175)
+rotation = 3.14159
+scale = Vector2(1.56, 1)
+
+[node name="platform14" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4239, 285)
+rotation = -1.31841
+scale = Vector2(0.460603, 1)
+
+[node name="platform15" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-3070, 69)
+rotation = -1.5708
+scale = Vector2(0.88, 0.8)
+
+[node name="platform16" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2900, -450)
+rotation = 3.14159
+scale = Vector2(1.55558, 1)
+
+[node name="platform17" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4068, -1305)
+rotation = 1.5708
+scale = Vector2(1.56, 1.16)
+
+[node name="platform18" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-6154, -1323)
+scale = Vector2(0.516973, 0.888948)
+
+[node name="EasyPortal2" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-6072, -1324)
+
+[node name="platform19" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-5727, -1206)
+rotation = 1.5708
+scale = Vector2(0.479999, 1)
+
+[node name="platform20" parent="platform19" instance=ExtResource("9_ujhmm")]
+position = Vector2(414.584, 176)
+rotation = -1.5708
+scale = Vector2(1.89438, 3.27301)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_thaxq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(-5644, -1101)
+rotation = -0.0090359
+rotates = false
+
+[node name="EasyRockPlatform" parent="Path2D2/PathFollow2D" instance=ExtResource("9_ujhmm")]
+position = Vector2(-98.3182, -75.8914)
+scale = Vector2(0.280029, 0.640374)
+sync_to_physics = false
+
+[node name="EasyPlatformTrigger" type="Area2D" parent="Path2D2/PathFollow2D/EasyRockPlatform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D2/PathFollow2D/EasyRockPlatform/EasyPlatformTrigger"]
+position = Vector2(363.492, 31.1365)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_he6x8")
+
+[node name="platform20" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4378, -1323)
+scale = Vector2(0.48, 0.919999)
+
+[node name="platform21" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4111, -976)
+rotation = -1.5708
+scale = Vector2(0.920004, 0.8)
+
+[node name="platform22" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4246, -1847)
+rotation = 1.5708
+scale = Vector2(0.599998, 0.76)
+
+[node name="platform23" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-3332, -1045)
+rotation = -1.5708
+scale = Vector2(1.24, 1)
+
+[node name="platform24" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4409, -1983)
+scale = Vector2(1.72, 1)
+
+[node name="platform25" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4013, -1550)
+scale = Vector2(0.714259, 0.906913)
+
+[node name="platform26" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-3848, -1310)
+scale = Vector2(0.88, 1)
+
+[node name="platform27" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4089, -1083)
+
+[node name="platform10" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2822, -673)
+scale = Vector2(0.329639, 0.667853)
+
+[node name="Finish" parent="." instance=ExtResource("18_rc5ql")]
+position = Vector2(-2224, -774)
+scale = Vector2(0.479996, 0.56)
+
+[node name="FinishUI" parent="Finish" instance=ExtResource("19_mmpto")]
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
@@ -140,3 +340,9 @@ texture = ExtResource("16_60pe7")
 [connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="set_up_sign_label" from="TripleSign" to="." method="_on_triple_sign_set_up_sign_label"]
+[connection signal="body_entered" from="HardPortal" to="." method="_on_hard_portal_entered"]
+[connection signal="body_entered" from="EasyPortal" to="." method="_on_easy_portal_body_entered"]
+[connection signal="body_entered" from="Path2D/PathFollow2D/HardRockMovingPlatform/HardPlatformTrigger" to="." method="_on_hard_platform_trigger_body_entered"]
+[connection signal="body_entered" from="Path2D2/PathFollow2D/EasyRockPlatform/EasyPlatformTrigger" to="." method="_on_easy_platform_trigger_body_entered"]
+[connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]

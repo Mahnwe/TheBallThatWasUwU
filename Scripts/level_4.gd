@@ -8,8 +8,8 @@ var start_position_y = -1551
 var save_position_x = -3065
 var save_position_y = -1551
 
-var finish_position_x = -1827
-var finish_position_y = 324
+var finish_position_x = -2378
+var finish_position_y = -840
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 var config = ConfigFile.new()
@@ -36,6 +36,8 @@ func _ready():
 	$Player.can_double_jump = true
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	_on_triple_sign_set_up_sign_label()
+	$Path2D/PathFollow2D/HardRockMovingPlatform.set_process(false)
+	$Path2D2/PathFollow2D/EasyRockPlatform.set_process(false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -116,6 +118,11 @@ func _on_finish_player_entered():
 	config.save("res://Ressources/PropertieFile/properties.cfg")
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
+	await get_tree().create_timer(1).timeout
+	$Finish/FinishUI.get_child(0).show()
+	$Finish/FinishUI.get_child(1).show()
+	$Finish/FinishUI.get_child(2).show()
+	$Finish/FinishUI.is_UI_showing = true
 
 
 func _on_start_area_player_exited_start_area():
@@ -167,7 +174,7 @@ func set_volume():
 
 
 func _on_portal_1_body_entered(body):
-	if body.name != "platform2":
+	if body.name == "Player":
 		$PortalSound.play()
 		await get_tree().create_timer(0.2).timeout
 		body.position.x = ($Portal2.position.x - 75)
@@ -175,10 +182,11 @@ func _on_portal_1_body_entered(body):
 
 
 func _on_portal_2_body_entered(body):
-	$PortalSound.play()
-	await get_tree().create_timer(0.2).timeout
-	body.position.x = ($Portal1.position.x - 250)
-	body.position.y = ($Portal1.position.y - 50)
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($Portal1.position.x - 250)
+		body.position.y = ($Portal1.position.y - 50)
 	
 func toggle_pause():
 	$Player/Pause.show()
@@ -212,3 +220,33 @@ func _on_pause_music_finished():
 func _on_triple_sign_set_up_sign_label():
 	$TripleSign.get_child(2).text = "Hard way"
 	$TripleSign.get_child(3).text = "Easy way"
+
+
+func _on_hard_portal_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($HardPortal2.position.x - 75)
+		body.position.y = ($HardPortal2.position.y - 50)
+
+
+func _on_hard_platform_trigger_body_entered(body):
+	if body.name == "Player":
+		$Path2D/PathFollow2D/HardRockMovingPlatform.set_process(true)
+
+
+func _on_easy_portal_body_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($EasyPortal2.position.x - 75)
+		body.position.y = ($EasyPortal2.position.y - 50)
+
+
+func _on_easy_platform_trigger_body_entered(body):
+	if body.name == "Player":
+		$Path2D2/PathFollow2D/EasyRockPlatform.set_process(true)
+
+
+func _on_finish_ui_next_level_pressed():
+	pass # Replace with function body.

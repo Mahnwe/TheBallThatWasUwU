@@ -72,3 +72,12 @@ func load():
 			var file = FileAccess.open("Ressources/timer_rank_data_level3.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
+	elif is_level_4:
+		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level4.json")
+		if check_if_file_empty.is_empty():
+			saveData()
+			return
+		else:
+			var file = FileAccess.open("Ressources/timer_rank_data_level4.json", FileAccess.READ)
+			var data = JSON.parse_string(file.get_as_text())
+			file_data = data
