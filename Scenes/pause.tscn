@@ -217,6 +217,7 @@ offset_bottom = 1096.0
 scale = Vector2(1.56, 2.36)
 
 [node name="CloseButton" type="Button" parent="CommandsUI"]
+z_index = 20
 layout_mode = 0
 offset_left = 1.87476
 offset_top = 4.23729

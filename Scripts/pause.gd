@@ -13,6 +13,7 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	focus_pause_buttons()
 	$CommandsUI.hide()
 	is_controller_focused = false
 	set_volume()
@@ -21,10 +22,13 @@ func _ready():
 func _process(_delta):
 	if is_paused and Input.is_action_just_pressed("close_commands"):
 		if is_commands_display:
+			focus_pause_buttons()
 			close_command_panel()
 		elif !is_commands_display:
+			focus_close_command_button()
 			open_commands_panel()
 	if is_commands_display and Input.is_action_just_pressed("restart_save"):
+		focus_pause_buttons()
 		close_command_panel()
 	if !is_controller_focused and !is_commands_display and Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
 		$ContinueLayer/Continue.grab_focus()
@@ -118,6 +122,7 @@ func set_volume():
 
 func _on_command_pressed():
 	if !is_commands_display:
+		focus_close_command_button()
 		open_commands_panel()
 		
 func close_command_panel():
@@ -139,6 +144,7 @@ func open_commands_panel():
 
 func _on_close_button_pressed():
 	if $CommandsUI.visible == true:
+		focus_pause_buttons()
 		close_command_panel()
 		$CommandsUI/CloseButton.release_focus()
 
@@ -159,3 +165,15 @@ func _on_close_button_gui_input(event):
 
 func _on_close_button_mouse_entered():
 	$CommandsUI/CloseButton.grab_focus() 
+	
+func focus_pause_buttons():
+	$ReturnLayer/ReturnToMenu.focus_mode = FOCUS_ALL
+	$ContinueLayer/Continue.focus_mode = FOCUS_ALL
+	$CommandLayer/Command.focus_mode = FOCUS_ALL
+	$CommandsUI/CloseButton.focus_mode = FOCUS_NONE
+	
+func focus_close_command_button():
+	$ReturnLayer/ReturnToMenu.focus_mode = FOCUS_NONE
+	$ContinueLayer/Continue.focus_mode = FOCUS_NONE
+	$CommandLayer/Command.focus_mode = FOCUS_NONE
+	$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
