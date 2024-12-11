@@ -15,7 +15,6 @@ const dash_speed = 1500
 
 var can_dash
 var have_dash_ability
-var is_camera_dezoom
 
 var can_double_jump
 var number_of_jumps
@@ -23,10 +22,9 @@ var jump_buffer
 var player_try_buffer_jump
 
 func _ready():
-	is_camera_dezoom = 0
+	pass
 
 func _physics_process(_delta):
-	handle_cam_dezoom()
 	check_for_player_movement()
 	if is_on_floor():
 		check_if_player_is_on_floor()
@@ -40,17 +38,6 @@ func _physics_process(_delta):
 		player_try_buffer_jump = true
 		get_tree().create_timer(0.1).timeout.connect(_on_jump_buffer_timer_timeout)
 		
-	
-func handle_cam_dezoom():
-	if Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 0:
-		$Camera2D.zoom = Vector2(1.0, 1.0)
-		is_camera_dezoom = 1
-	elif Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 1:
-		$Camera2D.zoom = Vector2(0.7, 0.7)
-		is_camera_dezoom = 2
-	elif Input.is_action_just_pressed("camera_dezoom") and is_camera_dezoom == 2:
-		$Camera2D.zoom = Vector2(1.4, 1.4)
-		is_camera_dezoom = 0
 		
 func jump():
 	var random = RandomNumberGenerator.new()
@@ -145,7 +132,7 @@ func check_if_player_is_on_wall():
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
+			velocity += Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = true
@@ -154,7 +141,7 @@ func check_if_player_is_on_wall():
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
+			velocity += Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = false

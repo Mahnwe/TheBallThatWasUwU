@@ -1,0 +1,251 @@
+[gd_scene load_steps=30 format=3 uid="uid://c26rjdt07ubrq"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
+[ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="2_g0yss"]
+[ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
+[ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="3_ytwi2"]
+[ext_resource type="Texture2D" uid="uid://diefribiugm3m" path="res://Arts/SpritesPersoBall/UwUSpriteBallDead-removebg-preview.png" id="4_02vbv"]
+[ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="4_5dwnd"]
+[ext_resource type="Texture2D" uid="uid://c2005s45nfh52" path="res://Arts/SpritePersoDash/SpritePersoDash2-removebg-preview.png" id="4_157te"]
+[ext_resource type="Texture2D" uid="uid://cqp3ll46bo27n" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight-removebg-preview.png" id="4_bp6ha"]
+[ext_resource type="Texture2D" uid="uid://dnugkqa4d7tfa" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight1.5-removebg-preview.png" id="4_je60a"]
+[ext_resource type="Texture2D" uid="uid://bklk682klvor3" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight2-removebg-preview.png" id="4_lx36c"]
+[ext_resource type="Texture2D" uid="uid://b3h7mq0abcqhm" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight3-removebg-preview.png" id="5_1nd78"]
+[ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="5_dqha1"]
+[ext_resource type="Texture2D" uid="uid://heukqqvjk1t7" path="res://Arts/SpritePersoDash/SpritePersoDash3-removebg-preview.png" id="5_q6oje"]
+[ext_resource type="Texture2D" uid="uid://c2ftocachgsg2" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight2.5-removebg-preview.png" id="6_7yqso"]
+[ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="6_fuqpw"]
+[ext_resource type="Texture2D" uid="uid://c4ukjf7cupgrp" path="res://Arts/SpritesPersoBall/UwUSpriteBallRight4-removebg-preview.png" id="6_raa1c"]
+[ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="7_dfmc8"]
+[ext_resource type="Texture2D" uid="uid://dgyamti7exbgx" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim1-removebg-preview.png" id="7_ibe2s"]
+[ext_resource type="Texture2D" uid="uid://c02jp5as34re7" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim2-removebg-preview.png" id="8_2w5lh"]
+[ext_resource type="Texture2D" uid="uid://ccr0ebhq2hc4s" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight3.5-removebg-preview.png" id="8_m4wx8"]
+[ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="8_qqab7"]
+[ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="9_234gs"]
+[ext_resource type="Texture2D" uid="uid://bsnvgiu0qijy5" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight4.5-removebg-preview.png" id="10_67dii"]
+[ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="10_nhsbj"]
+[ext_resource type="AudioStream" uid="uid://cu47fvabu26sp" path="res://Sound/Effects/JumpSound.mp3" id="25_wcpjr"]
+[ext_resource type="AudioStream" uid="uid://b4w82e2ntorl" path="res://Sound/Effects/JUMP.mp3" id="26_kudgl"]
+[ext_resource type="AudioStream" uid="uid://bcn815ajnley0" path="res://Sound/Effects/DASH.mp3" id="27_qyjky"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bp6ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_157te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q6oje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_157te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bp6ha")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_02vbv")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bp6ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ibe2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2w5lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ibe2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bp6ha")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g0yss")
+}],
+"loop": true,
+"name": &"stay",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bp6ha")
+}],
+"loop": false,
+"name": &"stay_in_air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bp6ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_je60a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lx36c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7yqso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1nd78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m4wx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_raa1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_67dii")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hpdm"]
+radius = 271.145
+height = 542.291
+
+[node name="Player" type="CharacterBody2D"]
+visibility_layer = 2
+position = Vector2(-212, -231)
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_snap_length = 4.5
+script = ExtResource("1_24gvc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(214, 189)
+zoom = Vector2(1.4, 1.4)
+position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="UI" parent="Camera2D/CanvasLayer" instance=ExtResource("2_rhkkp")]
+offset_left = 315.0
+offset_top = 441.0
+offset_right = 315.0
+offset_bottom = 441.0
+
+[node name="Commands" type="Label" parent="Camera2D/CanvasLayer"]
+offset_left = 1559.0
+offset_top = 867.0
+offset_right = 1845.0
+offset_bottom = 916.0
+scale = Vector2(1.05147, 2.14183)
+theme_override_font_sizes/font_size = 20
+text = "             Pause/Controls"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(208.945, 46.4237)
+scale = Vector2(0.453958, 0.25495)
+texture = ExtResource("3_ytwi2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(141.42, 45.9567)
+scale = Vector2(0.453958, 0.25495)
+texture = ExtResource("4_5dwnd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(59.6298, 46.4237)
+scale = Vector2(0.30179, 0.142896)
+texture = ExtResource("5_dqha1")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(191.826, 82.3742)
+scale = Vector2(0.229824, 0.126494)
+texture = ExtResource("6_fuqpw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+position = Vector2(78.6508, 82.3742)
+scale = Vector2(0.201098, 0.0848941)
+texture = ExtResource("7_dfmc8")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer"]
+offset_left = 18.0
+offset_top = 893.0
+offset_right = 58.0
+offset_bottom = 916.0
+scale = Vector2(1.05147, 2.14183)
+theme_override_font_sizes/font_size = 20
+text = "              Camera Zoom"
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
+position = Vector2(38.042, 56.4938)
+scale = Vector2(0.35796, 0.181379)
+texture = ExtResource("8_qqab7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
+position = Vector2(137.902, 56.9606)
+scale = Vector2(0.224154, 0.116636)
+texture = ExtResource("9_234gs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
+position = Vector2(239.664, 58.8282)
+scale = Vector2(0.550434, 0.493424)
+texture = ExtResource("10_nhsbj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(212, 230.5)
+scale = Vector2(0.119734, 0.217842)
+sprite_frames = SubResource("SpriteFrames_b2da6")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(212, 231)
+scale = Vector2(0.0974576, 0.188091)
+shape = SubResource("CapsuleShape2D_6hpdm")
+
+[node name="RaycastRight" type="RayCast2D" parent="."]
+position = Vector2(212, 231)
+rotation = -1.5708
+scale = Vector2(7.63999, 1.18)
+target_position = Vector2(0, 30)
+
+[node name="RaycastLeft" type="RayCast2D" parent="."]
+position = Vector2(212, 231)
+rotation = 1.5708
+scale = Vector2(7.63999, 1.18)
+target_position = Vector2(0, 30)
+
+[node name="DeadLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 164.0
+offset_top = 131.0
+offset_right = 204.0
+offset_bottom = 154.0
+scale = Vector2(1.46086, 1.32)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("25_wcpjr")
+
+[node name="JumpSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("26_kudgl")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("27_qyjky")
