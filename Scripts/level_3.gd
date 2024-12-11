@@ -39,14 +39,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if is_paused:
-		$Player/Pause.is_paused = true
-	handle_pause()
-	handle_player_actions_when_level_finished()
-		
-	if Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
+	
+	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
-	if Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
+	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		$Player.set_physics_process(false)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x
@@ -58,6 +54,12 @@ func _process(_delta):
 		restart_scene()
 		save_position_x = start_position_x
 		save_position_y = start_position_y
+		
+	if is_paused:
+		$Player/Pause.is_paused = true
+		is_paused = true
+	handle_pause()
+	handle_player_actions_when_level_finished()
 		
 		
 func handle_player_actions_when_level_finished():
@@ -78,9 +80,9 @@ func handle_pause():
 			toggle_pause()
 		elif !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
 			toggle_pause()
-		elif is_paused and $Player/Pause.is_commands_display == false and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
+		elif is_paused and $Player/Pause.is_commands_display == false and $Player.position.x != start_position_x and Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("restart_save"):
 			untoggle_pause()
-		elif is_paused and $Player/Pause.is_commands_display == false and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
+		elif is_paused and $Player/Pause.is_commands_display == false and $Player.position.x == start_position_x and Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("restart_save"):
 			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
