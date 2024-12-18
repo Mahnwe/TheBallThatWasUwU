@@ -26,14 +26,11 @@ func _ready():
 	queue.load()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
-	$Player/Pause.get_child(4).player_have_dash = false
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
 	is_paused = false
-	$Player.have_dash_ability = false
-	$Player.can_double_jump = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	set_up_signs()
 	$Level1Music.play()
@@ -105,8 +102,6 @@ func _on_spike_spike_hit():
 func _on_save_point_player_entered():
 	save_position_x = $Player.position.x
 	save_position_y = $Player.position.y
-	print(save_position_x)
-	print(save_position_y)
 	
 func _on_finish_player_entered():
 	$Player.position.x = finish_position_x

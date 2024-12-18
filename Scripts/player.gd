@@ -21,8 +21,18 @@ var number_of_jumps
 var jump_buffer
 var player_try_buffer_jump
 
+var config = ConfigFile.new()
+# Load data from a file.
+var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
+
 func _ready():
-	pass
+	can_dash = false
+	can_double_jump = false
+	if(config.get_value("levels", "is_level_two_finished")):
+		can_dash = true
+		have_dash_ability = true
+	if(config.get_value("levels", "is_level_three_finished")):
+		can_double_jump = true
 
 func _physics_process(_delta):
 	check_for_player_movement()

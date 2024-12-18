@@ -6,10 +6,6 @@ var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
-var is_level_one_finished = config.get_value("levels","is_level_one_finished")
-var is_level_two_finished = config.get_value("levels","is_level_two_finished")
-var is_level_three_finished = config.get_value("levels","is_level_three_finished")
-var is_level_four_finished = config.get_value("levels","is_level_four_finished")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
@@ -17,19 +13,6 @@ func _ready():
 	set_volume()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
-	
-	if !is_level_one_finished:
-		$Level2Button.focus_mode = FOCUS_NONE
-	else:
-		$Level2Button.focus_mode = FOCUS_ALL
-	if !is_level_two_finished:
-		$Level3Button.focus_mode = FOCUS_NONE
-	else:
-		$Level3Button.focus_mode = FOCUS_ALL
-	if !is_level_three_finished:
-		$Level4Button.focus_mode = FOCUS_NONE
-	else:
-		$Level4Button.focus_mode = FOCUS_ALL
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
