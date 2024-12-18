@@ -159,7 +159,6 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.get_child(1).hide()
 		$Player/Pause.get_child(2).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
-		$Player.get_child(0).get_child(0).get_child(2).show()
 		$Player.set_physics_process(true)
 		is_paused = false
 		
@@ -192,7 +191,6 @@ func toggle_pause():
 	$Player/Pause.get_child(2).show()
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
-	$Player.get_child(0).get_child(0).get_child(2).hide()
 	$Player.set_physics_process(false)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
@@ -204,7 +202,6 @@ func untoggle_pause():
 	$Player/Pause.get_child(2).hide()
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
-	$Player.get_child(0).get_child(0).get_child(2).show()
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false

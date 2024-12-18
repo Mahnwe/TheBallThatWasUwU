@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=27 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="2_g0yss"]
@@ -20,10 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dgyamti7exbgx" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim1-removebg-preview.png" id="7_ibe2s"]
 [ext_resource type="Texture2D" uid="uid://c02jp5as34re7" path="res://Arts/SpriteCharacterJump/SpriteJumpAnim2-removebg-preview.png" id="8_2w5lh"]
 [ext_resource type="Texture2D" uid="uid://ccr0ebhq2hc4s" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight3.5-removebg-preview.png" id="8_m4wx8"]
-[ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="8_qqab7"]
-[ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="9_234gs"]
 [ext_resource type="Texture2D" uid="uid://bsnvgiu0qijy5" path="res://Arts/NewAnimSpriteBall/UwUSpriteBallRight4.5-removebg-preview.png" id="10_67dii"]
-[ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="10_nhsbj"]
 [ext_resource type="AudioStream" uid="uid://cu47fvabu26sp" path="res://Sound/Effects/JumpSound.mp3" id="25_wcpjr"]
 [ext_resource type="AudioStream" uid="uid://b4w82e2ntorl" path="res://Sound/Effects/JUMP.mp3" id="26_kudgl"]
 [ext_resource type="AudioStream" uid="uid://bcn815ajnley0" path="res://Sound/Effects/DASH.mp3" id="27_qyjky"]
@@ -182,30 +179,6 @@ texture = ExtResource("6_fuqpw")
 position = Vector2(78.6508, 82.3742)
 scale = Vector2(0.201098, 0.0848941)
 texture = ExtResource("7_dfmc8")
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = 18.0
-offset_top = 893.0
-offset_right = 58.0
-offset_bottom = 916.0
-scale = Vector2(1.05147, 2.14183)
-theme_override_font_sizes/font_size = 20
-text = "              Camera Zoom"
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
-position = Vector2(38.042, 56.4938)
-scale = Vector2(0.35796, 0.181379)
-texture = ExtResource("8_qqab7")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
-position = Vector2(137.902, 56.9606)
-scale = Vector2(0.224154, 0.116636)
-texture = ExtResource("9_234gs")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Label"]
-position = Vector2(239.664, 58.8282)
-scale = Vector2(0.550434, 0.493424)
-texture = ExtResource("10_nhsbj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
