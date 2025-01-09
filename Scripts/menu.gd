@@ -21,6 +21,12 @@ func _process(_delta):
 	wait_for_focus()
 	if Input.is_action_just_pressed("quit_game"):
 		get_tree().quit()
+	for member in get_tree().get_nodes_in_group("MenuButtons"):
+		if(member.has_focus()):
+			member.get_child(1).show()
+	for member in get_tree().get_nodes_in_group("MenuButtons"):
+		if(!member.has_focus() and member.name != "QuitButton"):
+			member.get_child(1).hide()
 		
 func wait_for_focus():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
