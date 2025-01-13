@@ -96,10 +96,11 @@ func disable_patrol_groups():
 			member.set_process(false)
 		
 func enable_patrol_groups():
-	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
-			member.set_process(true)
-	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-			member.set_process(true)
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+				member.set_process(true)
+		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+				member.set_process(true)
 			
 func _on_start_area_player_exited_start_area():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
