@@ -476,7 +476,7 @@ position = Vector2(-1869, 494)
 scale = Vector2(0.280002, 0.2)
 
 [node name="Spike37" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(639, -632)
+position = Vector2(639, -616)
 scale = Vector2(0.320001, 0.220453)
 
 [node name="Finish" parent="." instance=ExtResource("11_r8tlj")]

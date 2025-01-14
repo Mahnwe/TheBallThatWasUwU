@@ -8,13 +8,14 @@ var wall_pushback = 700
 var gravity = 30
 
 #@export
-var jump_force = -670
+var jump_force = -700
 
 const VELOCITY_Y_MAX = 600
-const dash_speed = 1500
+const dash_speed = 2000
 
 var can_dash
 var have_dash_ability
+var dash_timer = Timer.new()
 
 var can_double_jump
 var number_of_jumps
@@ -28,6 +29,8 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 func _ready():
 	can_dash = false
 	can_double_jump = false
+	dash_timer.one_shot = true
+	self.add_child(dash_timer)
 	if(config.get_value("levels", "is_level_two_finished")):
 		can_dash = true
 		have_dash_ability = true
@@ -72,7 +75,7 @@ func jump():
 		$AnimatedSprite2D.play()
 	
 func _dash():
-	if can_dash and have_dash_ability:
+	if can_dash and have_dash_ability and dash_timer.time_left == 0:
 		$DashSound.play()
 		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
@@ -81,6 +84,7 @@ func _dash():
 			can_dash = false
 			move_and_slide()
 			$AnimatedSprite2D.play()
+			dash_timer.start(0.5)
 		if velocity.x < 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = true
@@ -88,6 +92,7 @@ func _dash():
 			can_dash = false
 			move_and_slide()
 			$AnimatedSprite2D.play()
+			dash_timer.start(0.5)
 	
 	
 func check_if_player_is_not_on_floor():
@@ -132,7 +137,7 @@ func check_if_player_is_on_floor():
 func _input(event):
 	if event.is_action_released("jump"):
 		if velocity.y < 0.0:
-			velocity.y *= 0.7
+			velocity.y *= 0.4
 			
 func check_if_player_is_on_wall():
 		# Wall-jump
@@ -170,13 +175,13 @@ func check_animation_if_on_wall():
 	if collinding_right_wall():
 		number_of_jumps = 0
 		can_dash = true
-		velocity.y = gravity+65
+		velocity.y = gravity+90
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = true
 	if colliding_left_wall():
 		number_of_jumps = 0
 		can_dash = true
-		velocity.y = gravity+65
+		velocity.y = gravity+90
 		$AnimatedSprite2D.animation = "stay"
 		$AnimatedSprite2D.flip_h = false
 			

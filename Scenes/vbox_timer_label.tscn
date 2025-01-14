@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2k7febsvejjl"]
+[gd_scene load_steps=5 format=3 uid="uid://b2k7febsvejjl"]
 
 [ext_resource type="Script" path="res://Scripts/VboxTimerLabel.gd" id="1_s6oky"]
+[ext_resource type="Texture2D" uid="uid://d0ffotplbx7kk" path="res://Arts/MedalSprite/GoldMedal.png" id="2_eo47u"]
+[ext_resource type="Texture2D" uid="uid://b3xwkjossotye" path="res://Arts/MedalSprite/SilverMedal.png" id="3_kx2cu"]
+[ext_resource type="Texture2D" uid="uid://v70dg745brn8" path="res://Arts/MedalSprite/BronzeMedal.png" id="4_fxi3u"]
 
 [node name="VboxTimerLabel" type="VBoxContainer"]
 offset_right = 267.0
@@ -26,3 +29,18 @@ theme_override_font_sizes/font_size = 35
 [node name="TimerRank5" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-32, 25)
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("2_eo47u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-32, 80)
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("3_kx2cu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-32, 134)
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("4_fxi3u")
