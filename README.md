@@ -1,9 +1,10 @@
 -- Learning Godot project --
-Classic platformer 2D in GDScript (In progress)
-4 levels with time ranks
+Classic platformer/runner 2D in GDScript
+4 levels(In progress) with time ranks
 
 
-![Godot Engine Screenshot 2024 12 11 - 02 51 58 24](https://github.com/user-attachments/assets/bc508e65-f670-44c4-b50e-873d5605120f)
+![Godot Engine Screenshot 2025 01 09 - 04 36 18 57](https://github.com/user-attachments/assets/1df87ec0-3f9a-497d-afda-4e27f6153687)
+
 
 ![Godot Engine Screenshot 2024 12 11 - 02 52 08 21](https://github.com/user-attachments/assets/8c63ea45-e7c2-4275-a373-41efccc197d4)
 
