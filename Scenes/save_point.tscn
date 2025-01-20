@@ -40,5 +40,6 @@ scale = Vector2(2.92, 1.28)
 
 [node name="SaveSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("3_ogtmp")
+volume_db = -3.586
 
 [connection signal="body_entered" from="SaveArea" to="." method="_on_save_area_body_entered"]

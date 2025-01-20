@@ -139,6 +139,38 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.get_child(1).animation = "stay"
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	reset_patrols_progress()
+	enable_patrol_groups()
+	
+func _on_cannon_player_dead_by_cannon_ball():
+	disable_patrol_groups()
+	display_dead_sprite_and_pause_timer_until_respawn("BOOM !")
+	await get_tree().create_timer(0.5).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.set_process(true)
+			
+func disable_patrol_groups():
+	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+			member.set_process(false)
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.set_process(false)
+		
+func enable_patrol_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+				member.set_process(true)
+		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+				member.set_process(true)
+				
+func reset_patrols_progress():
+	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+			member.get_parent().progress = 0
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.get_parent().progress = 0
 
 
 func _on_game_area_player_exited_game_area():
