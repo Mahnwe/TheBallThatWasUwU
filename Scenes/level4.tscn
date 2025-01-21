@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=35 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -58,6 +58,42 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_47ko0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3832, -66, 0, 0, 0, 0, -3732, -67, 0, 0, 0, 0, -3652, -68, 0, 0, 0, 0, -3560, -67, 0, 0, 0, 0, -3829, -67, 0, 0, 0, 0, -3832, -66)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_648qa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3112, -69, 0, 0, 0, 0, -3204, -69, 0, 0, 0, 0, -3276, -69, 0, 0, 0, 0, -3354, -68, 0, 0, 0, 0, -3422, -68, 0, 0, 0, 0, -3112, -69)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_6c4f5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3009, -125, 0, 0, 0, 0, -3009, -253, 0, 0, 0, 0, -3009, -330, 0, 0, 0, 0, -3009, -408, 0, 0, 0, 0, -3009, -479, 0, 0, 0, 0, -3009, -168)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_x0reo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3219, -355, 0, 0, 0, 0, -3319, -353, 0, 0, 0, 0, -3411, -352, 0, 0, 0, 0, -3496, -353, 0, 0, 0, 0, -3578, -353, 0, 0, 0, 0, -3219, -355)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_c3mgp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4071, -349, 0, 0, 0, 0, -3992, -350, 0, 0, 0, 0, -3928, -349, 0, 0, 0, 0, -3855, -349, 0, 0, 0, 0, -3763, -350, 0, 0, 0, 0, -3693, -350, 0, 0, 0, 0, -4071, -349)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_q6wn7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4148, -751, 0, 0, 0, 0, -4149, -640, 0, 0, 0, 0, -4151, -526, 0, 0, 0, 0, -4149, -436, 0, 0, 0, 0, -4148, -751)
+}
+point_count = 5
+
 [node name="level4" type="Node2D"]
 script = ExtResource("1_aw8g7")
 
@@ -71,7 +107,6 @@ position = Vector2(-3065, -1551)
 scale = Vector2(0.717345, 0.442253)
 
 [node name="Pause" parent="Player" instance=ExtResource("3_cxj1m")]
-visible = false
 offset_left = -692.833
 offset_top = -669.3
 offset_right = -692.833
@@ -202,8 +237,8 @@ scale = Vector2(0.411392, 0.641036)
 skew = 0.00281227
 
 [node name="platform7" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2374, -788)
-scale = Vector2(0.640007, 1)
+position = Vector2(-2426, -788)
+scale = Vector2(0.694417, 1)
 
 [node name="platform9" parent="." instance=ExtResource("9_ujhmm")]
 position = Vector2(-4644, 254)
@@ -252,12 +287,12 @@ rotation = 3.14159
 scale = Vector2(1.56, 1)
 
 [node name="platform14" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-4239, 285)
+position = Vector2(-4252, 306)
 rotation = -1.31841
-scale = Vector2(0.460603, 1)
+scale = Vector2(0.566812, 1)
 
 [node name="platform15" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-3070, 69)
+position = Vector2(-3073, 69)
 rotation = -1.5708
 scale = Vector2(0.88, 0.8)
 
@@ -343,7 +378,7 @@ scale = Vector2(0.88, 1)
 position = Vector2(-4089, -1083)
 
 [node name="platform10" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2822, -673)
+position = Vector2(-2638, -295)
 scale = Vector2(0.329639, 0.667853)
 
 [node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
@@ -403,11 +438,10 @@ position = Vector2(-18.3331, -26.4745)
 scale = Vector2(0.266282, 0.192662)
 
 [node name="Finish" parent="." instance=ExtResource("18_rc5ql")]
-position = Vector2(-2142, -774)
+position = Vector2(-2112, -774)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("19_mmpto")]
-visible = false
 
 [node name="Cannon4" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
 position = Vector2(-3941, -1506)
@@ -431,6 +465,84 @@ scale = Vector2(0.58183, 0.520863)
 [node name="SavePoint2" parent="." instance=ExtResource("21_w7q8s")]
 position = Vector2(-3937, -74)
 scale = Vector2(0.58183, 0.520863)
+
+[node name="Path2D6" type="Path2D" parent="."]
+curve = SubResource("Curve2D_47ko0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D6"]
+position = Vector2(-3832, -66)
+rotation = -0.00999967
+rotates = false
+
+[node name="Spike" parent="Path2D6/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
+position = Vector2(-30.6485, -35.3082)
+scale = Vector2(0.398133, 0.2002)
+
+[node name="Path2D7" type="Path2D" parent="."]
+curve = SubResource("Curve2D_648qa")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
+position = Vector2(-3112, -69)
+rotation = 3.14159
+rotates = false
+
+[node name="Spike" parent="Path2D7/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
+position = Vector2(-31, -25)
+scale = Vector2(0.398133, 0.2002)
+
+[node name="Path2D8" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6c4f5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D8"]
+position = Vector2(-3009, -125)
+rotation = -1.5708
+rotates = false
+
+[node name="Spike" parent="Path2D8/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
+position = Vector2(-34, -36)
+scale = Vector2(0.398133, 0.2002)
+
+[node name="Path2D9" type="Path2D" parent="."]
+curve = SubResource("Curve2D_x0reo")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D9"]
+position = Vector2(-3219, -355)
+rotation = -3.13159
+rotates = false
+
+[node name="Spike" parent="Path2D9/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
+position = Vector2(-35.3382, -33.6483)
+scale = Vector2(0.488281, 0.259441)
+
+[node name="Path2D10" type="Path2D" parent="."]
+curve = SubResource("Curve2D_c3mgp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D10"]
+position = Vector2(-4071, -349)
+rotation = -0.0126576
+rotates = false
+
+[node name="Spike" parent="Path2D10/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
+position = Vector2(-37.44, -44.4774)
+scale = Vector2(0.488281, 0.259441)
+
+[node name="Path2D11" type="Path2D" parent="."]
+curve = SubResource("Curve2D_q6wn7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D11"]
+position = Vector2(-4148, -751)
+rotation = 1.57981
+rotates = false
+
+[node name="Spike" parent="Path2D11/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
+position = Vector2(-37.3769, -41.665)
+scale = Vector2(0.488281, 0.259441)
+
+[node name="FinishPortal" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-2489, -311)
+
+[node name="FinishPortal2" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-2330, -787)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -457,3 +569,10 @@ scale = Vector2(0.58183, 0.520863)
 [connection signal="player_dead_by_cannon_ball" from="Cannon6" to="." method="_on_cannon_player_dead_by_cannon_ball"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
+[connection signal="spike_hit" from="Path2D6/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D7/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D8/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D9/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D10/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D11/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="body_entered" from="FinishPortal" to="." method="_on_finish_portal_body_entered"]
