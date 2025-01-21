@@ -48,3 +48,13 @@ func on_cannon_ball_exploding():
 func remove_cannon_ball():
 	self.remove_child(cannon_ball_inst)
 	cannon_ball_inst.queue_free()
+	
+func pause_cannon():
+	set_process(false)
+	if(self.get_child(1) != null):
+		self.get_child(1).set_process(false)
+	
+func unpause_cannon():
+	set_process(true)
+	if(self.get_child(1) != null):
+		self.get_child(1).set_process(true)

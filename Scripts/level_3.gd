@@ -147,6 +147,16 @@ func reset_patrols_progress():
 			member.get_parent().progress = 0
 	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
 			member.get_parent().progress = 0
+			
+func disable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.pause_cannon()
+		
+func enable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.unpause_cannon()
 
 
 func _on_finish_player_entered():
@@ -216,6 +226,7 @@ func toggle_pause():
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_patrol_groups()
+	disable_cannon_groups()
 	$Player.set_physics_process(false)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
@@ -228,6 +239,7 @@ func untoggle_pause():
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_patrol_groups()
+	enable_cannon_groups()
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false

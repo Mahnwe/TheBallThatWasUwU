@@ -8,13 +8,13 @@ var start_position_y = -1551
 var save_position_x = -3065
 var save_position_y = -1551
 
-var finish_position_x = -2378
+var finish_position_x = -2262
 var finish_position_y = -840
 
 var queue = preload("res://Ressources/Save_game.gd").new()
-var config = ConfigFile.new()
 
 # Load data from a file.
+var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 # Called when the node enters the scene tree for the first time.
@@ -89,6 +89,7 @@ func handle_pause():
 			
 			
 func _on_spike_spike_hit():
+	disable_patrol_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -171,6 +172,16 @@ func reset_patrols_progress():
 			member.get_parent().progress = 0
 	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
 			member.get_parent().progress = 0
+			
+func disable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.pause_cannon()
+		
+func enable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.unpause_cannon()
 
 
 func _on_game_area_player_exited_game_area():
@@ -223,6 +234,8 @@ func toggle_pause():
 	$Player/Pause.get_child(2).show()
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
+	disable_patrol_groups()
+	disable_cannon_groups()
 	$Player.set_physics_process(false)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
@@ -234,6 +247,8 @@ func untoggle_pause():
 	$Player/Pause.get_child(2).hide()
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
+	enable_patrol_groups()
+	enable_cannon_groups()
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
@@ -276,3 +291,11 @@ func _on_easy_platform_trigger_body_entered(body):
 
 func _on_finish_ui_next_level_pressed():
 	pass # Replace with function body.
+
+
+func _on_finish_portal_body_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($FinishPortal2.position.x - 75)
+		body.position.y = ($FinishPortal2.position.y - 50)
