@@ -33,6 +33,7 @@ func _ready():
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	_on_triple_sign_set_up_sign_label()
+	_on_triple_sign_2_set_up_sign_label()
 	$Path2D/PathFollow2D/HardRockMovingPlatform.set_process(false)
 	$Path2D2/PathFollow2D/EasyRockPlatform.set_process(false)
 	
@@ -299,3 +300,9 @@ func _on_finish_portal_body_entered(body):
 		await get_tree().create_timer(0.2).timeout
 		body.position.x = ($FinishPortal2.position.x - 75)
 		body.position.y = ($FinishPortal2.position.y - 50)
+
+
+func _on_triple_sign_2_set_up_sign_label():
+	$TripleSign2.get_child(1).text = "Finish"
+	$TripleSign2.get_child(2).text = "Beware of"
+	$TripleSign2.get_child(3).text = "the gap"
