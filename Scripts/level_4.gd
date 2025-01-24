@@ -306,3 +306,19 @@ func _on_triple_sign_2_set_up_sign_label():
 	$TripleSign2.get_child(1).text = "Finish"
 	$TripleSign2.get_child(2).text = "Beware of"
 	$TripleSign2.get_child(3).text = "the gap"
+
+
+func _on_h_way_portal_body_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($HWayPortal2.position.x - 140)
+		body.position.y = ($HWayPortal2.position.y + 40)
+
+
+func _on_v_way_portal_body_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($VWayPortal2.position.x - 120)
+		body.position.y = ($VWayPortal2.position.y)

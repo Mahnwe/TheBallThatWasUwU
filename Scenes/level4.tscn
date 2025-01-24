@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=45 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -26,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://bhxseqaq3bms5" path="res://Arts/CrystalSprite/GreenCrystalSprite.png" id="24_2cije"]
 [ext_resource type="Texture2D" uid="uid://danihsy4mjs3o" path="res://Arts/CrystalSprite/BlueCrystal.png" id="25_f3fua"]
 [ext_resource type="PackedScene" uid="uid://6evsxx3ik4ta" path="res://Scenes/warning_sign.tscn" id="26_7ypa6"]
+[ext_resource type="Texture2D" uid="uid://30v238vsniro" path="res://Arts/WillowSprite/WillowSprite.png" id="27_3tu2k"]
+[ext_resource type="Texture2D" uid="uid://b7ykvqooe5xhe" path="res://Arts/StalactiteSprite/BrownStalactiteSprite.png" id="28_8x2ov"]
+[ext_resource type="Texture2D" uid="uid://dqdxwbhyokt30" path="res://Arts/StalactiteSprite/StalactiteSprite.png" id="29_ui22c"]
+[ext_resource type="Texture2D" uid="uid://dlxsux07t7u1r" path="res://Arts/TreeSprite/TreeSprite2-removebg-preview.png" id="30_wtu3i"]
+[ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="31_k2kct"]
 
 [sub_resource type="Curve2D" id="Curve2D_wok5w"]
 _data = {
@@ -640,6 +645,105 @@ position = Vector2(-5637, -937)
 scale = Vector2(2.84615, 3.72727)
 texture = ExtResource("24_2cije")
 
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(-2670.63, -1519.13)
+scale = Vector2(1.526, 1.502)
+texture = ExtResource("27_3tu2k")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+position = Vector2(-2146, -1289)
+rotation = 3.14159
+texture = ExtResource("28_8x2ov")
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+position = Vector2(-2444, -1009)
+rotation = 3.14159
+texture = ExtResource("29_ui22c")
+
+[node name="Sprite2D17" type="Sprite2D" parent="."]
+position = Vector2(-3694, -630)
+scale = Vector2(0.578333, 0.531667)
+texture = ExtResource("28_8x2ov")
+flip_h = true
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+position = Vector2(-3715.25, -639.25)
+scale = Vector2(0.913335, 0.766666)
+texture = ExtResource("28_8x2ov")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D16"]
+position = Vector2(-28.2895, 21.8525)
+scale = Vector2(0.336257, 0.428057)
+texture = ExtResource("28_8x2ov")
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+position = Vector2(-3767.1, -1769.44)
+rotation = 3.14159
+scale = Vector2(1.26399, 1.41484)
+texture = ExtResource("29_ui22c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D18"]
+position = Vector2(-30.3585, 8.6825)
+scale = Vector2(0.731478, 0.760106)
+texture = ExtResource("29_ui22c")
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+position = Vector2(-3509.7, -212.93)
+rotation = 3.14159
+scale = Vector2(0.832008, 0.815212)
+texture = ExtResource("29_ui22c")
+flip_h = true
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+position = Vector2(-5132.25, -943.75)
+scale = Vector2(1.40667, 1.34)
+texture = ExtResource("29_ui22c")
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+position = Vector2(-4304.11, -1137.31)
+rotation = 3.14159
+scale = Vector2(1.18955, 1.04518)
+texture = ExtResource("28_8x2ov")
+flip_h = true
+
+[node name="Sprite2D22" type="Sprite2D" parent="."]
+position = Vector2(-2914, -1337)
+rotation = 3.14159
+texture = ExtResource("28_8x2ov")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D22"]
+position = Vector2(-20.2644, 14.2339)
+scale = Vector2(0.660384, 0.62043)
+texture = ExtResource("28_8x2ov")
+flip_h = true
+
+[node name="Sprite2D23" type="Sprite2D" parent="."]
+position = Vector2(-1677, -1699)
+scale = Vector2(0.545549, 0.501934)
+texture = ExtResource("30_wtu3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D23"]
+position = Vector2(417.928, 187.276)
+scale = Vector2(0.276057, 0.338322)
+texture = ExtResource("31_k2kct")
+
+[node name="HWayPortal" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-4415, -765)
+rotation = 1.5708
+scale = Vector2(1.79116, 2.01274)
+
+[node name="HWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-4018, -1788)
+rotation = 1.5708
+
+[node name="VWayPortal" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-4973, 216)
+rotation = 1.5708
+scale = Vector2(1.70364, 1.80244)
+
+[node name="VWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
+position = Vector2(-3509, -122)
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -674,3 +778,5 @@ texture = ExtResource("24_2cije")
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]
 [connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]
+[connection signal="body_entered" from="HWayPortal" to="." method="_on_h_way_portal_body_entered"]
+[connection signal="body_entered" from="VWayPortal" to="." method="_on_v_way_portal_body_entered"]
