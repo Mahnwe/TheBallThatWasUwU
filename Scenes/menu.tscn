@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="3_x4hsc"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="4_pwi5b"]
-[ext_resource type="Texture2D" uid="uid://dbrwk67lnlp18" path="res://Arts/SpritesPersoBall/UwUSpriteBallFront-removebg-preview.png" id="4_xglq7"]
+[ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="4_qktq1"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="5_ok2nw"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
 [ext_resource type="Texture2D" uid="uid://oyny4a5maq08" path="res://Arts/BackgroundSprite/BackgroundButton.png" id="7_272km"]
@@ -56,9 +56,9 @@ text = "The ball that was fast
 position = Vector2(568, 379)
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
-position = Vector2(412, 48)
-scale = Vector2(0.152778, 0.138309)
-texture = ExtResource("4_xglq7")
+position = Vector2(402, 55)
+scale = Vector2(1.3641, 1.35729)
+texture = ExtResource("4_qktq1")
 
 [node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
 position = Vector2(528, 54.875)

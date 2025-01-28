@@ -176,13 +176,13 @@ func check_animation_if_on_wall():
 		number_of_jumps = 0
 		can_dash = true
 		velocity.y = gravity+90
-		$AnimatedSprite2D.animation = "stay"
+		$AnimatedSprite2D.animation = "stay_in_air"
 		$AnimatedSprite2D.flip_h = true
 	if colliding_left_wall():
 		number_of_jumps = 0
 		can_dash = true
 		velocity.y = gravity+90
-		$AnimatedSprite2D.animation = "stay"
+		$AnimatedSprite2D.animation = "stay_in_air"
 		$AnimatedSprite2D.flip_h = false
 			
 func colliding_left_wall():

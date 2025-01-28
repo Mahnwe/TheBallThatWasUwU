@@ -288,6 +288,7 @@ rotation = 1.5708
 scale = Vector2(0.239995, 0.319147)
 
 [node name="Spikepatrol2" type="Path2D" parent="."]
+position = Vector2(1, 24)
 curve = SubResource("Curve2D_to7d3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spikepatrol2"]
