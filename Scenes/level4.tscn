@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=47 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://6evsxx3ik4ta" path="res://Scenes/warning_sign.tscn" id="26_7ypa6"]
 [ext_resource type="Texture2D" uid="uid://30v238vsniro" path="res://Arts/WillowSprite/WillowSprite.png" id="27_3tu2k"]
 [ext_resource type="Texture2D" uid="uid://b7ykvqooe5xhe" path="res://Arts/StalactiteSprite/BrownStalactiteSprite.png" id="28_8x2ov"]
+[ext_resource type="PackedScene" uid="uid://dnpgamit7qywn" path="res://Scenes/water_drop.tscn" id="29_elt0d"]
 [ext_resource type="Texture2D" uid="uid://dqdxwbhyokt30" path="res://Arts/StalactiteSprite/StalactiteSprite.png" id="29_ui22c"]
 [ext_resource type="Texture2D" uid="uid://dlxsux07t7u1r" path="res://Arts/TreeSprite/TreeSprite2-removebg-preview.png" id="30_wtu3i"]
 [ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="31_k2kct"]
@@ -103,6 +104,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -4148, -751, 0, 0, 0, 0, -4149, -640, 0, 0, 0, 0, -4151, -526, 0, 0, 0, 0, -4149, -436, 0, 0, 0, 0, -4148, -751)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_83owt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2147, -1250, 0, 0, 0, 0, -2146, -1217, 0, 0, 0, 0, -2145, -1179, 0, 0, 0, 0, -2146, -1140, 0, 0, 0, 0, -2145, -1104, 0, 0, 0, 0, -2145, -1087)
+}
+point_count = 6
 
 [node name="level4" type="Node2D"]
 script = ExtResource("1_aw8g7")
@@ -742,6 +749,18 @@ scale = Vector2(1.70364, 1.80244)
 
 [node name="VWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-3509, -122)
+
+[node name="Path2D12" type="Path2D" parent="."]
+curve = SubResource("Curve2D_83owt")
+
+[node name="WaterDropPathFollow2D" type="PathFollow2D" parent="Path2D12"]
+position = Vector2(-2147, -1250)
+rotation = 1.5405
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D12/WaterDropPathFollow2D" instance=ExtResource("29_elt0d")]
+rotation = -1.5708
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

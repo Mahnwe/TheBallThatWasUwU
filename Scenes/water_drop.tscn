@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnpgamit7qywn"]
+
+[ext_resource type="Script" path="res://Scripts/water_drop.gd" id="1_qdvak"]
+[ext_resource type="Texture2D" uid="uid://dmrjr1d12uoal" path="res://Arts/DropSprite/DropSprite2.png" id="2_wngau"]
+[ext_resource type="Texture2D" uid="uid://cwtl8eb7834x2" path="res://Arts/DropSprite/DropSprite3.png" id="3_af5a5"]
+[ext_resource type="Texture2D" uid="uid://c0jbcsa0gmonp" path="res://Arts/DropSprite/DropSprite4.png" id="4_mux4y"]
+[ext_resource type="Texture2D" uid="uid://bq20b6nd0hrhv" path="res://Arts/DropSprite/DropSprite.png" id="5_k83a0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lshsk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wngau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_af5a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mux4y")
+}],
+"loop": false,
+"name": &"DropExplosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_k83a0")
+}],
+"loop": false,
+"name": &"WaterDrop",
+"speed": 5.0
+}]
+
+[node name="WaterDrop" type="Node2D"]
+script = ExtResource("1_qdvak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.22)
+sprite_frames = SubResource("SpriteFrames_lshsk")
+animation = &"WaterDrop"

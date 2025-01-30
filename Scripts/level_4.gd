@@ -38,7 +38,8 @@ func _ready():
 	$Path2D2/PathFollow2D/EasyRockPlatform.set_process(false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
+	water_drop_animation(delta)
 	
 	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
@@ -322,3 +323,9 @@ func _on_v_way_portal_body_entered(body):
 		await get_tree().create_timer(0.2).timeout
 		body.position.x = ($VWayPortal2.position.x - 120)
 		body.position.y = ($VWayPortal2.position.y)
+		
+func water_drop_animation(delta):
+	if($Path2D12/WaterDropPathFollow2D/WaterDrop.drop_exploded == true):
+		$Path2D12/WaterDropPathFollow2D.progress_ratio = 0
+	if($Path2D12/WaterDropPathFollow2D/WaterDrop.drop_exploded == false):
+		$Path2D12/WaterDropPathFollow2D.progress += $Path2D12/WaterDropPathFollow2D/WaterDrop.speed * delta
