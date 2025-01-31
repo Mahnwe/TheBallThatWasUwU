@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=49 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -83,9 +83,9 @@ point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_6c4f5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -3009, -125, 0, 0, 0, 0, -3009, -253, 0, 0, 0, 0, -3009, -330, 0, 0, 0, 0, -3009, -408, 0, 0, 0, 0, -3009, -479, 0, 0, 0, 0, -3009, -168)
+"points": PackedVector2Array(0, 0, 0, 0, -3009, -125, 0, 0, 0, 0, -3009, -253, 0, 0, 0, 0, -3009, -330, 0, 0, 0, 0, -3009, -408, 0, 0, 0, 0, -3009, -479, 0, 0, 0, 0, -3009, -168, 0, 0, 0, 0, -3009, -125)
 }
-point_count = 6
+point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_x0reo"]
 _data = {
@@ -110,6 +110,18 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2147, -1250, 0, 0, 0, 0, -2146, -1217, 0, 0, 0, 0, -2145, -1179, 0, 0, 0, 0, -2146, -1140, 0, 0, 0, 0, -2145, -1104, 0, 0, 0, 0, -2145, -1087)
 }
 point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_fipa4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3771, -1714, 0, 0, 0, 0, -3770, -1668, 0, 0, 0, 0, -3770, -1619, 0, 0, 0, 0, -3770, -1566, 0, 0, 0, 0, -3769, -1491)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_hc13j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3732, -1741, 0, 0, 0, 0, -3731, -1715, 0, 0, 0, 0, -3730, -1685, 0, 0, 0, 0, -3729, -1643, 0, 0, 0, 0, -3728, -1603, 0, 0, 0, 0, -3727, -1559, 0, 0, 0, 0, -3726, -1512, 0, 0, 0, 0, -3726, -1492)
+}
+point_count = 8
 
 [node name="level4" type="Node2D"]
 script = ExtResource("1_aw8g7")
@@ -495,6 +507,7 @@ position = Vector2(-30.6485, -35.3082)
 scale = Vector2(0.398133, 0.2002)
 
 [node name="Path2D7" type="Path2D" parent="."]
+position = Vector2(-127, -1)
 curve = SubResource("Curve2D_648qa")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
@@ -748,7 +761,7 @@ rotation = 1.5708
 scale = Vector2(1.70364, 1.80244)
 
 [node name="VWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-3509, -122)
+position = Vector2(-3169, -126)
 
 [node name="Path2D12" type="Path2D" parent="."]
 curve = SubResource("Curve2D_83owt")
@@ -761,6 +774,33 @@ loop = false
 
 [node name="WaterDrop" parent="Path2D12/WaterDropPathFollow2D" instance=ExtResource("29_elt0d")]
 rotation = -1.5708
+speed = 300
+
+[node name="Path2D13" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fipa4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D13"]
+position = Vector2(-3771, -1714)
+rotation = 1.54906
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D13/PathFollow2D" instance=ExtResource("29_elt0d")]
+rotation = -1.5708
+speed = 300
+
+[node name="Path2D14" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hc13j")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D14"]
+position = Vector2(-3732, -1741)
+rotation = 1.53235
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D14/PathFollow2D" instance=ExtResource("29_elt0d")]
+rotation = -1.5708
+speed = 290
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

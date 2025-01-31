@@ -31,7 +31,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="WaterDrop" type="Node2D"]
+[node name="WaterDrop" type="Node2D" groups=["waterdrop_group"]]
 script = ExtResource("1_qdvak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

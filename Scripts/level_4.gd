@@ -325,7 +325,8 @@ func _on_v_way_portal_body_entered(body):
 		body.position.y = ($VWayPortal2.position.y)
 		
 func water_drop_animation(delta):
-	if($Path2D12/WaterDropPathFollow2D/WaterDrop.drop_exploded == true):
-		$Path2D12/WaterDropPathFollow2D.progress_ratio = 0
-	if($Path2D12/WaterDropPathFollow2D/WaterDrop.drop_exploded == false):
-		$Path2D12/WaterDropPathFollow2D.progress += $Path2D12/WaterDropPathFollow2D/WaterDrop.speed * delta
+	for member in get_tree().get_nodes_in_group("waterdrop_group"):
+		if(member.drop_exploded == true):
+			member.get_parent().progress_ratio = 0
+		if(member.drop_exploded == false):
+			member.get_parent().progress += member.speed * delta
