@@ -16,7 +16,8 @@ func _on_area_2d_body_entered(body):
 		self.self_modulate.a = 0.8
 		self.self_modulate.a = 0.5
 		body.gravity = 5
-		body.jump_force = -400
+		body.jump_force = -250
+		body.dash_speed = 1000
 		body.z_index = 0
 
 
@@ -26,4 +27,5 @@ func _on_area_2d_body_exited(body):
 		self.self_modulate.a = 1.0
 		body.gravity = 30
 		body.jump_force = -670
+		body.dash_speed = 2000
 		body.z_index = 2

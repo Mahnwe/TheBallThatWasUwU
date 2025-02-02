@@ -23,6 +23,7 @@ func _ready():
 	queue.is_level_2 = true
 	queue.is_level_3 = false
 	queue.is_level_4 = false
+	queue.is_level_5 = false
 	queue.load()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)

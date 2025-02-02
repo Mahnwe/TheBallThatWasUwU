@@ -1,0 +1,80 @@
+[gd_scene load_steps=14 format=3 uid="uid://cestyssnso4cy"]
+
+[ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
+[ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
+[ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="3_b23ve"]
+[ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="4_1303c"]
+[ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="5_r3v26"]
+[ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_kfex5"]
+[ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="7_myi0h"]
+[ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="8_oneui"]
+[ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="9_olh6r"]
+[ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="10_bs3iy"]
+[ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="11_y1yvh"]
+[ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="12_2be2h"]
+[ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="13_t8ogd"]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_11ckk")
+
+[node name="GameArea" parent="." instance=ExtResource("2_dd0d8")]
+position = Vector2(-99, -10)
+scale = Vector2(6.89288, 7.20584)
+
+[node name="platform" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-1991, -990)
+scale = Vector2(0.56, 1)
+
+[node name="platform" parent="platform" instance=ExtResource("3_b23ve")]
+position = Vector2(553.571, 51)
+
+[node name="StartArea" parent="." instance=ExtResource("4_1303c")]
+position = Vector2(-1804, -980)
+scale = Vector2(0.679995, 0.8)
+
+[node name="Player" parent="." instance=ExtResource("5_r3v26")]
+position = Vector2(-1953, -1033)
+scale = Vector2(0.717345, 0.442253)
+
+[node name="Pause" parent="Player" instance=ExtResource("6_kfex5")]
+visible = false
+
+[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_myi0h")
+
+[node name="TripleSign" parent="." instance=ExtResource("8_oneui")]
+position = Vector2(-1335, -988)
+scale = Vector2(0.479929, 0.461759)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign"]
+position = Vector2(47.9238, -8.66253)
+rotation = 3.14159
+scale = Vector2(0.144759, 0.164246)
+texture = ExtResource("9_olh6r")
+
+[node name="Wall" parent="." instance=ExtResource("10_bs3iy")]
+position = Vector2(-1211, -836)
+rotation = 1.5708
+scale = Vector2(1.54026, 1.65618)
+
+[node name="Wall" parent="Wall" instance=ExtResource("10_bs3iy")]
+position = Vector2(3.8954, -664.782)
+
+[node name="platform" parent="Wall" instance=ExtResource("11_y1yvh")]
+position = Vector2(214.25, 98.4192)
+rotation = -1.5708
+
+[node name="Water" parent="." instance=ExtResource("12_2be2h")]
+position = Vector2(-784, -583)
+scale = Vector2(2.09981, 0.949896)
+
+[node name="platform2" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-1128, -800)
+rotation = -1.5708
+scale = Vector2(0.76, 1.36)
+
+[node name="Spike" parent="." instance=ExtResource("13_t8ogd")]
+position = Vector2(-1099, -1385)
+
+[connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
+[connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]

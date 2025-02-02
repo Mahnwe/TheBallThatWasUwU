@@ -23,6 +23,7 @@ func _ready():
 	queue.is_level_2 = false
 	queue.is_level_3 = false
 	queue.is_level_4 = true
+	queue.is_level_5 = false
 	queue.load()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
@@ -65,7 +66,7 @@ func _process(delta):
 		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
-		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/level5.tscn")
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
