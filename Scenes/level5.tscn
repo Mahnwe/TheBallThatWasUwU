@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=18 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="11_y1yvh"]
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="12_2be2h"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="13_t8ogd"]
+[ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="14_yl5hm"]
+[ext_resource type="PackedScene" uid="uid://d21ljnkx42qta" path="res://Scenes/water_platform.tscn" id="15_3nnrj"]
+[ext_resource type="PackedScene" uid="uid://cmqedy04unkxa" path="res://Scenes/coral_spike.tscn" id="16_r1un4"]
+[ext_resource type="PackedScene" uid="uid://h0s30ni3wk5f" path="res://Scenes/kelp.tscn" id="17_ajufk"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -21,16 +25,16 @@ script = ExtResource("1_11ckk")
 position = Vector2(-99, -10)
 scale = Vector2(6.89288, 7.20584)
 
+[node name="StartArea" parent="." instance=ExtResource("4_1303c")]
+position = Vector2(-1804, -980)
+scale = Vector2(0.679995, 0.8)
+
 [node name="platform" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-1991, -990)
 scale = Vector2(0.56, 1)
 
 [node name="platform" parent="platform" instance=ExtResource("3_b23ve")]
 position = Vector2(553.571, 51)
-
-[node name="StartArea" parent="." instance=ExtResource("4_1303c")]
-position = Vector2(-1804, -980)
-scale = Vector2(0.679995, 0.8)
 
 [node name="Player" parent="." instance=ExtResource("5_r3v26")]
 position = Vector2(-1953, -1033)
@@ -60,21 +64,85 @@ scale = Vector2(1.54026, 1.65618)
 [node name="Wall" parent="Wall" instance=ExtResource("10_bs3iy")]
 position = Vector2(3.8954, -664.782)
 
-[node name="platform" parent="Wall" instance=ExtResource("11_y1yvh")]
-position = Vector2(214.25, 98.4192)
+[node name="platform3" parent="Wall/Wall" instance=ExtResource("11_y1yvh")]
+position = Vector2(225.936, 763.2)
 rotation = -1.5708
 
+[node name="platform3" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-306, -921)
+scale = Vector2(0.520004, 1.08)
+
 [node name="Water" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-784, -583)
-scale = Vector2(2.09981, 0.949896)
+position = Vector2(-807, -583)
+scale = Vector2(2.10749, 0.949896)
 
 [node name="platform2" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-1128, -800)
+position = Vector2(-979, -804)
 rotation = -1.5708
 scale = Vector2(0.76, 1.36)
 
 [node name="Spike" parent="." instance=ExtResource("13_t8ogd")]
-position = Vector2(-1099, -1385)
+position = Vector2(-950, -1389)
+
+[node name="Wall2" parent="." instance=ExtResource("14_yl5hm")]
+position = Vector2(-2149, -834)
+rotation = -1.5708
+scale = Vector2(1.64, 2.44)
+
+[node name="platform" parent="Wall2" instance=ExtResource("3_b23ve")]
+position = Vector2(407.927, 37.7051)
+rotation = 1.5708
+scale = Vector2(0.414634, 0.704917)
+
+[node name="WaterPlatform" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-998, -453)
+
+[node name="WaterPlatform" parent="WaterPlatform" instance=ExtResource("15_3nnrj")]
+position = Vector2(4.76837e-07, 28)
+scale = Vector2(1.52, 1.2)
+
+[node name="WaterPlatform2" parent="WaterPlatform" instance=ExtResource("15_3nnrj")]
+position = Vector2(-4, 56)
+scale = Vector2(2.08, 1.24)
+
+[node name="WaterPlatform2" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-874, -636)
+rotation = -1.5708
+scale = Vector2(1.2, 1)
+
+[node name="WaterPlatform3" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-1242, -597)
+scale = Vector2(1, 1.2)
+
+[node name="WaterPlatform4" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-582, -394)
+
+[node name="WaterPlatform5" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-351, -505)
+
+[node name="WaterPlatform6" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-618, -591)
+
+[node name="WaterPlatform7" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-350, -703)
+
+[node name="CoralSpike" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-769, -406)
+scale = Vector2(0.651606, 0.633404)
+
+[node name="CoralSpike2" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-310, -562)
+
+[node name="CoralSpike3" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-868, -735)
+scale = Vector2(0.398496, 0.419643)
+
+[node name="Kelp" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(-1003, -497)
+scale = Vector2(0.803113, 0.678986)
 
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike2" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike3" to="." method="_on_spike_spike_hit"]
