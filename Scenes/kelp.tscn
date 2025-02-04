@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://h0s30ni3wk5f"]
+
+[ext_resource type="Texture2D" uid="uid://dp6s4hi0kypsi" path="res://Arts/WaterAssets/KelpSprite.png" id="1_fpj8s"]
+[ext_resource type="Script" path="res://Scripts/kelp.gd" id="1_q60wn"]
+
+[node name="Kelp" type="Node2D"]
+script = ExtResource("1_q60wn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fpj8s")
