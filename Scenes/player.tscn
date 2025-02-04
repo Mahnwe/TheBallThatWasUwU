@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=47 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -40,6 +40,9 @@
 [ext_resource type="Texture2D" uid="uid://dv7coxl3p327a" path="res://Arts/UwUBallSpriteWalk/UwUWalk16.png" id="31_y3xv7"]
 [ext_resource type="Texture2D" uid="uid://bhgkwr0k7au6p" path="res://Arts/UwUBallSpriteWalk/UwUWalk17.png" id="32_223mb"]
 [ext_resource type="Texture2D" uid="uid://bfgc63o4poo8k" path="res://Arts/UwUBallSpriteWalk/UwUWalk18.png" id="33_40vk2"]
+[ext_resource type="Texture2D" uid="uid://c0jbcsa0gmonp" path="res://Arts/DropSprite/DropSprite4.png" id="41_rtt7p"]
+[ext_resource type="Texture2D" uid="uid://cwtl8eb7834x2" path="res://Arts/DropSprite/DropSprite3.png" id="42_dkr12"]
+[ext_resource type="Texture2D" uid="uid://dmrjr1d12uoal" path="res://Arts/DropSprite/DropSprite2.png" id="43_52a8e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
 animations = [{
@@ -195,6 +198,29 @@ animations = [{
 radius = 271.145
 height = 542.291
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nryhg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_rtt7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dkr12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_52a8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dkr12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_rtt7p")
+}],
+"loop": false,
+"name": &"sploch",
+"speed": 20.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 visibility_layer = 2
 position = Vector2(-212, -231)
@@ -292,3 +318,9 @@ stream = ExtResource("26_kudgl")
 
 [node name="DashSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("27_qyjky")
+
+[node name="WaterSploch" type="AnimatedSprite2D" parent="."]
+position = Vector2(209, 217)
+scale = Vector2(1.25, 1.55)
+sprite_frames = SubResource("SpriteFrames_nryhg")
+animation = &"sploch"

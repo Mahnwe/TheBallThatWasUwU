@@ -22,11 +22,15 @@ var number_of_jumps
 var jump_buffer
 var player_try_buffer_jump
 
+var is_in_water
+
 var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 func _ready():
+	$WaterSploch.hide()
+	is_in_water = false
 	can_dash = false
 	can_double_jump = false
 	dash_timer.one_shot = true
@@ -38,6 +42,7 @@ func _ready():
 		can_double_jump = true
 
 func _physics_process(_delta):
+	change_sound_pitch_in_water()
 	check_for_player_movement()
 	if is_on_floor():
 		check_if_player_is_on_floor()
@@ -201,3 +206,16 @@ func _on_jump_buffer_timer_timeout():
 	if !is_on_floor() and player_try_buffer_jump:
 		pass
 		
+func change_sound_pitch_in_water():
+	if is_in_water:
+		$JumpSound.pitch_scale = 0.7
+		$JumpSound2.pitch_scale = 0.7
+	else:
+		$JumpSound.pitch_scale = 1.0
+		$JumpSound2.pitch_scale = 1.0
+		
+func start_sploch_animation():
+	$WaterSploch.show()
+	$WaterSploch.play()
+	await $WaterSploch.animation_finished
+	$WaterSploch.hide()

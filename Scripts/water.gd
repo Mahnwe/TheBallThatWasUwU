@@ -4,6 +4,7 @@ extends Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	#$AnimatedSprite2D.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,8 +14,12 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		self.self_modulate.a = 0.8
+		body.start_sploch_animation()
+		body.is_in_water = true
 		self.self_modulate.a = 0.5
+		body.speed = 200
+		body.velocity.x = body.velocity.x/2
+		body.velocity.y = body.velocity.y/2
 		body.gravity = 5
 		body.jump_force = -250
 		body.dash_speed = 1000
@@ -23,8 +28,9 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
-		self.self_modulate.a = 0.8
+		body.is_in_water = false
 		self.self_modulate.a = 1.0
+		body.speed = 300
 		body.gravity = 30
 		body.jump_force = -670
 		body.dash_speed = 2000
