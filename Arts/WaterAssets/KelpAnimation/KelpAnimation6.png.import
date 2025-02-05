@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bklq0o2lkpxo0"
-path="res://.godot/imported/UwUJump4.png-dddf363ff06a2f1dce386a96d2daba8b.ctex"
+uid="uid://bul3fc3khjo0l"
+path="res://.godot/imported/KelpAnimation6.png-53b42a60d6a540278a8e65390c144fe5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/UwUBallSpriteJump/UwUJump4.png"
-dest_files=["res://.godot/imported/UwUJump4.png-dddf363ff06a2f1dce386a96d2daba8b.ctex"]
+source_file="res://Arts/WaterAssets/KelpAnimation/KelpAnimation6.png"
+dest_files=["res://.godot/imported/KelpAnimation6.png-53b42a60d6a540278a8e65390c144fe5.ctex"]
 
 [params]
 

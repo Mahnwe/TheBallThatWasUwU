@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci6a1bh6vyeyo"
-path="res://.godot/imported/UwUStayInAir.png-c21d6941e787370d44112810bfcd1754.ctex"
+uid="uid://b50u1gcdkdemo"
+path="res://.godot/imported/KelpAnimation8.png-ef41bbf79e163f65de8c02c33cbb4697.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/UwUBallSpriteJump/UwUStayInAir.png"
-dest_files=["res://.godot/imported/UwUStayInAir.png-c21d6941e787370d44112810bfcd1754.ctex"]
+source_file="res://Arts/WaterAssets/KelpAnimation/KelpAnimation8.png"
+dest_files=["res://.godot/imported/KelpAnimation8.png-ef41bbf79e163f65de8c02c33cbb4697.ctex"]
 
 [params]
 

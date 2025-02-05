@@ -1,10 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://h0s30ni3wk5f"]
+[gd_scene load_steps=11 format=3 uid="uid://h0s30ni3wk5f"]
 
-[ext_resource type="Texture2D" uid="uid://dp6s4hi0kypsi" path="res://Arts/WaterAssets/KelpSprite.png" id="1_fpj8s"]
 [ext_resource type="Script" path="res://Scripts/kelp.gd" id="1_q60wn"]
+[ext_resource type="Texture2D" uid="uid://bwdw1lh4n5o0t" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation1.png" id="2_lmdxp"]
+[ext_resource type="Texture2D" uid="uid://33cqnlbw18el" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation2.png" id="3_kqfxf"]
+[ext_resource type="Texture2D" uid="uid://pojnannp62bj" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation3.png" id="4_tvh38"]
+[ext_resource type="Texture2D" uid="uid://q3e8qiofhygi" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation4.png" id="5_o6svn"]
+[ext_resource type="Texture2D" uid="uid://djneviytmrwu0" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation5.png" id="6_iuyoq"]
+[ext_resource type="Texture2D" uid="uid://bul3fc3khjo0l" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation6.png" id="7_fn8uf"]
+[ext_resource type="Texture2D" uid="uid://3dy66pun2cpi" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation7.png" id="8_08b35"]
+[ext_resource type="Texture2D" uid="uid://b50u1gcdkdemo" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation8.png" id="9_6q0lj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egodg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lmdxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kqfxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tvh38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o6svn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fn8uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_08b35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6q0lj")
+}],
+"loop": true,
+"name": &"kelp",
+"speed": 7.0
+}]
 
 [node name="Kelp" type="Node2D"]
 script = ExtResource("1_q60wn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fpj8s")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_egodg")
+animation = &"kelp"
+speed_scale = 0.7

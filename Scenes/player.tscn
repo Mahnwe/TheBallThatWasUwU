@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=48 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -12,18 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://pgbtaggf63co" path="res://Arts/UwUBallSprite/UwUDead.png" id="11_ni8x3"]
 [ext_resource type="Texture2D" uid="uid://c6rg6sfn18sn7" path="res://Arts/UwUBallSpriteDash/UwUDash4.png" id="11_rhety"]
 [ext_resource type="Texture2D" uid="uid://bfcm3txqag1px" path="res://Arts/UwUBallSpriteDash/UwUDash5.png" id="12_pa06e"]
-[ext_resource type="Texture2D" uid="uid://d4i8xsi3mwcx" path="res://Arts/UwUBallSpriteJump/UwUJump2.png" id="13_jrgxk"]
+[ext_resource type="Texture2D" uid="uid://chuht0ykv2fmf" path="res://Arts/UwUBallJump/UwUBallJump2.png" id="14_3dbbo"]
 [ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="14_nxexs"]
-[ext_resource type="Texture2D" uid="uid://bnov3cepyg1qb" path="res://Arts/UwUBallSpriteJump/UwUJump3.png" id="14_v08kx"]
+[ext_resource type="Texture2D" uid="uid://ddospp50xni76" path="res://Arts/UwUBallJump/UwUBallJump3.png" id="15_8m8wu"]
 [ext_resource type="Texture2D" uid="uid://jik12d852dpy" path="res://Arts/UwUBallSprite/UwUStayInAir.png" id="15_jxw2b"]
-[ext_resource type="Texture2D" uid="uid://bs16y0rh0umur" path="res://Arts/UwUBallSpriteJump/UwUJump5.png" id="16_2oc5g"]
 [ext_resource type="Texture2D" uid="uid://d1cvn2onurkat" path="res://Arts/UwUBallSpriteWalk/UwUStayInAir.png" id="16_3jeno"]
-[ext_resource type="Texture2D" uid="uid://ci6a1bh6vyeyo" path="res://Arts/UwUBallSpriteJump/UwUStayInAir.png" id="17_dfgd1"]
-[ext_resource type="Texture2D" uid="uid://bt6mdcf0s0amh" path="res://Arts/UwUBallSpriteJump/UwUJump6.png" id="17_ivotp"]
+[ext_resource type="Texture2D" uid="uid://da8wvnd3rn8fg" path="res://Arts/UwUBallJump/UwUBallJump4.png" id="16_6kd6g"]
+[ext_resource type="Texture2D" uid="uid://dwybtgqa24n5s" path="res://Arts/UwUBallJump/UwUBallJump5.png" id="17_abtfl"]
 [ext_resource type="Texture2D" uid="uid://bmqo3tt8fxuy2" path="res://Arts/UwUBallSpriteWalk/UwUWalk2.png" id="17_ksa41"]
 [ext_resource type="Texture2D" uid="uid://dkqs7s22pt0vm" path="res://Arts/UwUBallSpriteWalk/UwUWalk3.png" id="18_2k6jt"]
+[ext_resource type="Texture2D" uid="uid://brp321rbhw877" path="res://Arts/UwUBallJump/UwUBallJump6.png" id="18_fulpt"]
 [ext_resource type="Texture2D" uid="uid://js0boqwsreig" path="res://Arts/UwUBallSpriteWalk/UwUWalk4.png" id="19_dblvh"]
 [ext_resource type="Texture2D" uid="uid://ccywwiurvesv0" path="res://Arts/UwUBallSpriteWalk/UwUWalk5.png" id="20_1hr78"]
+[ext_resource type="Texture2D" uid="uid://c8ctef1hpvf36" path="res://Arts/UwUBallJump/UwUStayInAir.png" id="20_gkn4w"]
 [ext_resource type="Texture2D" uid="uid://bicbwprqwlcnk" path="res://Arts/UwUBallSpriteWalk/UwUWalk6.png" id="21_76huf"]
 [ext_resource type="Texture2D" uid="uid://cqrb1opu725su" path="res://Arts/UwUBallSpriteWalk/UwUWalk7.png" id="22_dmxet"]
 [ext_resource type="Texture2D" uid="uid://cjh2lftygpcrx" path="res://Arts/UwUBallSpriteWalk/UwUWalk8.png" id="23_vnsg7"]
@@ -91,32 +92,26 @@ animations = [{
 "texture": ExtResource("15_jxw2b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jrgxk")
+"texture": ExtResource("14_3dbbo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_v08kx")
+"texture": ExtResource("15_8m8wu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_2oc5g")
+"texture": ExtResource("16_6kd6g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_ivotp")
+"texture": ExtResource("17_abtfl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_2oc5g")
+"texture": ExtResource("18_fulpt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_v08kx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_jrgxk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_dfgd1")
+"texture": ExtResource("20_gkn4w")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 30.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -281,7 +276,7 @@ visibility_layer = 2
 position = Vector2(212.5, 232)
 scale = Vector2(1.14, 2.2)
 sprite_frames = SubResource("SpriteFrames_b2da6")
-animation = &"dash"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2
@@ -324,3 +319,9 @@ position = Vector2(209, 217)
 scale = Vector2(1.25, 1.55)
 sprite_frames = SubResource("SpriteFrames_nryhg")
 animation = &"sploch"
+
+[node name="DashDurationTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]
