@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=20 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://d21ljnkx42qta" path="res://Scenes/water_platform.tscn" id="15_3nnrj"]
 [ext_resource type="PackedScene" uid="uid://cmqedy04unkxa" path="res://Scenes/coral_spike.tscn" id="16_r1un4"]
 [ext_resource type="PackedScene" uid="uid://h0s30ni3wk5f" path="res://Scenes/kelp.tscn" id="17_ajufk"]
+[ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="18_k03y4"]
+[ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="19_w2r3n"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -69,7 +71,7 @@ position = Vector2(225.936, 763.2)
 rotation = -1.5708
 
 [node name="platform3" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-306, -921)
+position = Vector2(-306, -913)
 scale = Vector2(0.520004, 1.08)
 
 [node name="Water" parent="." instance=ExtResource("12_2be2h")]
@@ -138,8 +140,30 @@ position = Vector2(-868, -735)
 scale = Vector2(0.398496, 0.419643)
 
 [node name="Kelp" parent="." instance=ExtResource("17_ajufk")]
-position = Vector2(-1003, -497)
-scale = Vector2(0.803113, 0.678986)
+position = Vector2(-620, -638)
+scale = Vector2(0.851024, 0.76261)
+is_flip = true
+
+[node name="Kelp2" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(-1040, -512)
+
+[node name="Kelp" parent="Kelp2" instance=ExtResource("17_ajufk")]
+position = Vector2(40, -4)
+scale = Vector2(1.08, 1.08)
+is_flip = true
+
+[node name="Kelp2" parent="Kelp2" instance=ExtResource("17_ajufk")]
+position = Vector2(79, 6)
+scale = Vector2(0.942389, 0.901252)
+
+[node name="Rock1" parent="." instance=ExtResource("18_k03y4")]
+position = Vector2(-393, -383)
+is_in_water = true
+
+[node name="Rock3" parent="." instance=ExtResource("19_w2r3n")]
+position = Vector2(-1172, -403)
+scale = Vector2(0.448265, 0.433847)
+is_in_water = true
 
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
