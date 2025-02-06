@@ -8,7 +8,7 @@ var wall_pushback = 700
 var gravity = 30
 
 #@export
-var jump_force = -680
+var jump_force = -670
 
 const VELOCITY_Y_MAX = 600
 var dash_speed = 800
@@ -157,7 +157,7 @@ func check_if_player_is_on_wall():
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-50)
+			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-80)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = true
@@ -166,7 +166,7 @@ func check_if_player_is_on_wall():
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-50)
+			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-80)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = false

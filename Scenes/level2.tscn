@@ -635,7 +635,7 @@ rotation = 3.14159
 scale = Vector2(1.8, 0.68)
 
 [node name="platform21" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-2652, 648)
+position = Vector2(-2650, 648)
 scale = Vector2(0.200005, 0.778904)
 
 [node name="AppleTree" parent="." instance=ExtResource("13_f34ya")]
