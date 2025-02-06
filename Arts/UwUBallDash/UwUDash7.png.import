@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwp2kivqkg3b"
-path="res://.godot/imported/UwUDash2.png-5da61e02f58c141515356f95cb5bff48.ctex"
+uid="uid://w0la042m0qag"
+path="res://.godot/imported/UwUDash7.png-d82263a46c95133ba6d41d5f3467b2a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/UwUBallSpriteDash/UwUDash2.png"
-dest_files=["res://.godot/imported/UwUDash2.png-5da61e02f58c141515356f95cb5bff48.ctex"]
+source_file="res://Arts/UwUBallDash/UwUDash7.png"
+dest_files=["res://.godot/imported/UwUDash7.png-d82263a46c95133ba6d41d5f3467b2a9.ctex"]
 
 [params]
 

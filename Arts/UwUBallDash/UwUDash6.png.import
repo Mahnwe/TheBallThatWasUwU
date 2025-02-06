@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://shraa8prwc77"
-path="res://.godot/imported/UwUStayInAir.png-abb55fd0542acfb60237104147de3741.ctex"
+uid="uid://qxv54jfrq4co"
+path="res://.godot/imported/UwUDash6.png-3d00d418fcb8b2ad81e64666e74e8292.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/UwUBallSpriteDash/UwUStayInAir.png"
-dest_files=["res://.godot/imported/UwUStayInAir.png-abb55fd0542acfb60237104147de3741.ctex"]
+source_file="res://Arts/UwUBallDash/UwUDash6.png"
+dest_files=["res://.godot/imported/UwUDash6.png-3d00d418fcb8b2ad81e64666e74e8292.ctex"]
 
 [params]
 
