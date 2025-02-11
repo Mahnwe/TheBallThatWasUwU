@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csqonqdu7jcj6"
-path="res://.godot/imported/WaterSprite-removebg-preview.png-67064cd5b2af21d94c612f17c4319e1e.ctex"
+uid="uid://bgcv8ox0ymw34"
+path="res://.godot/imported/WaterSpriteAnimation3.png-b1d9b3bba609679fd0316cfbb330423e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/WaterSprite/WaterSprite-removebg-preview.png"
-dest_files=["res://.godot/imported/WaterSprite-removebg-preview.png-67064cd5b2af21d94c612f17c4319e1e.ctex"]
+source_file="res://Arts/WaterSprite/WaterSpriteAnimation3.png"
+dest_files=["res://.godot/imported/WaterSpriteAnimation3.png-b1d9b3bba609679fd0316cfbb330423e.ctex"]
 
 [params]
 
