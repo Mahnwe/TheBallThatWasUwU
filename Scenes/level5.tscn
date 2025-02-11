@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=23 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://h0s30ni3wk5f" path="res://Scenes/kelp.tscn" id="17_ajufk"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="18_k03y4"]
 [ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="19_w2r3n"]
+[ext_resource type="PackedScene" uid="uid://choon04ib41uv" path="res://Scenes/portal.tscn" id="20_irhju"]
+[ext_resource type="AudioStream" uid="uid://06ksrea8xsdh" path="res://Sound/Effects/TELEPORT.mp3" id="21_j04kl"]
+[ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="22_7kwu3"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -71,17 +74,17 @@ position = Vector2(225.936, 763.2)
 rotation = -1.5708
 
 [node name="platform3" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-306, -913)
-scale = Vector2(0.520004, 1.08)
+position = Vector2(-303, -913)
+scale = Vector2(0.400003, 1.08)
 
 [node name="Water" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-807, -583)
-scale = Vector2(2.10749, 0.949896)
+position = Vector2(-793.5, -588)
+scale = Vector2(5.115, 2.19)
 
 [node name="platform2" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-979, -804)
 rotation = -1.5708
-scale = Vector2(0.76, 1.36)
+scale = Vector2(0.919999, 1.36)
 
 [node name="Spike" parent="." instance=ExtResource("13_t8ogd")]
 position = Vector2(-950, -1389)
@@ -165,8 +168,127 @@ position = Vector2(-1172, -403)
 scale = Vector2(0.448265, 0.433847)
 is_in_water = true
 
+[node name="platform4" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-1420, -1576)
+scale = Vector2(1, 1.36)
+
+[node name="platform" parent="platform4" instance=ExtResource("3_b23ve")]
+position = Vector2(624, -0.735333)
+
+[node name="platform2" parent="platform4" instance=ExtResource("3_b23ve")]
+position = Vector2(1270, -0.735329)
+scale = Vector2(0.514895, 1)
+
+[node name="Wall3" parent="." instance=ExtResource("14_yl5hm")]
+position = Vector2(387, -1074)
+rotation = 1.5708
+scale = Vector2(1.36, 2.64)
+
+[node name="Wall" parent="Wall3" instance=ExtResource("14_yl5hm")]
+position = Vector2(-301.471, -4.775e-06)
+
+[node name="Wall2" parent="Wall3" instance=ExtResource("14_yl5hm")]
+position = Vector2(294.118, 1.64964e-05)
+
+[node name="Wall3" parent="Wall3" instance=ExtResource("14_yl5hm")]
+position = Vector2(583.088, 9.9894e-06)
+
+[node name="platform5" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-578, 41)
+scale = Vector2(0.480001, 1.32)
+
+[node name="Wall4" parent="." instance=ExtResource("14_yl5hm")]
+position = Vector2(-29, -347)
+rotation = 1.5708
+scale = Vector2(1.56, 3.16)
+
+[node name="Water2" parent="." instance=ExtResource("12_2be2h")]
+position = Vector2(-0.500007, -313.5)
+scale = Vector2(2.065, 4.585)
+
+[node name="WaterPlatform8" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-26, 166)
+scale = Vector2(3.5248, 2.34612)
+
+[node name="WaterPlatform9" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(114, -606)
+scale = Vector2(1.12245, 1.125)
+
+[node name="WaterPlatform10" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-141, -501)
+scale = Vector2(1.28, 1)
+
+[node name="WaterPlatform11" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(63, -341)
+scale = Vector2(1.90756, 1.34224)
+
+[node name="WaterPlatform" parent="WaterPlatform11" instance=ExtResource("15_3nnrj")]
+position = Vector2(33.5506, -26.0759)
+scale = Vector2(0.489911, 0.891313)
+
+[node name="WaterPlatform12" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-139, -170)
+scale = Vector2(1.08047, 1.57815)
+
+[node name="WaterPlatform13" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(50, -21)
+scale = Vector2(2.0783, 1.68176)
+
+[node name="Portal" parent="." instance=ExtResource("20_irhju")]
+position = Vector2(117, 80)
+is_in_water = true
+
+[node name="Portal2" parent="." instance=ExtResource("20_irhju")]
+position = Vector2(-339, 79)
+
+[node name="PortalSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("21_j04kl")
+
+[node name="Kelp3" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(130, -438)
+
+[node name="Kelp4" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(-171, 79)
+scale = Vector2(1.19858, 1.27636)
+is_flip = true
+
+[node name="Kelp" parent="Kelp4" instance=ExtResource("17_ajufk")]
+position = Vector2(40, 0)
+
+[node name="CoralSpike4" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(25, -402)
+
+[node name="CoralSpike5" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-48, 111)
+scale = Vector2(0.621891, 0.608092)
+
+[node name="CoralSpike6" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(115, -104)
+scale = Vector2(1.22695, 1.28992)
+
+[node name="Rock2" parent="." instance=ExtResource("22_7kwu3")]
+position = Vector2(-18, -56)
+scale = Vector2(0.586582, 0.652502)
+flip_value = 1
+
+[node name="Kelp5" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(-172, -531)
+scale = Vector2(0.5875, 0.4875)
+
+[node name="Kelp" parent="Kelp5" instance=ExtResource("17_ajufk")]
+position = Vector2(34.0426, 0)
+is_flip = true
+
+[node name="Kelp2" parent="Kelp5" instance=ExtResource("17_ajufk")]
+position = Vector2(74.8936, 0)
+
+[node name="Kelp3" parent="Kelp5" instance=ExtResource("17_ajufk")]
+position = Vector2(117.447, 0)
+is_flip = true
+
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike2" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike3" to="." method="_on_spike_spike_hit"]
+[connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]

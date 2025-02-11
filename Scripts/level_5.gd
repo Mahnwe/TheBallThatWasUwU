@@ -216,3 +216,11 @@ func set_volume():
 func _on_triple_sign_set_up_sign_label():
 	$TripleSign.get_child(1).text = "  Good"
 	$TripleSign.get_child(2).text = "  Diving !"
+
+
+func _on_portal_body_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($Portal2.position.x - 160)
+		body.position.y = ($Portal2.position.y - 50)

@@ -200,8 +200,8 @@ position = Vector2(-2268, -1133)
 scale = Vector2(0.56, 0.8)
 
 [node name="Water" parent="." instance=ExtResource("14_dax5u")]
-position = Vector2(-2283, -1378)
-scale = Vector2(1.34783, 0.207724)
+position = Vector2(-2486, -1390.11)
+scale = Vector2(1.26, 0.328862)
 
 [node name="platform6" parent="." instance=ExtResource("9_ujhmm")]
 position = Vector2(-1681, -1268)
@@ -801,6 +801,10 @@ loop = false
 [node name="WaterDrop" parent="Path2D14/PathFollow2D" instance=ExtResource("29_elt0d")]
 rotation = -1.5708
 speed = 290
+
+[node name="Water2" parent="." instance=ExtResource("14_dax5u")]
+position = Vector2(-2089, -1394.21)
+scale = Vector2(1.205, 0.287898)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

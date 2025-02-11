@@ -997,12 +997,12 @@ position = Vector2(1182, -740)
 scale = Vector2(0.4, 0.399999)
 
 [node name="Water" parent="." instance=ExtResource("29_bvghq")]
-position = Vector2(347, -623)
-scale = Vector2(0.261036, 0.300626)
+position = Vector2(348, -639.469)
+scale = Vector2(0.62, 0.465313)
 
 [node name="Water2" parent="Water" instance=ExtResource("29_bvghq")]
-position = Vector2(3905.58, 0)
-scale = Vector2(1.22794, 1)
+position = Vector2(1645.86, -14.0364)
+scale = Vector2(1.25107, 1)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

@@ -692,8 +692,8 @@ position = Vector2(-944.5, 579.5)
 shape = SubResource("RectangleShape2D_bt6b5")
 
 [node name="Water" parent="." instance=ExtResource("26_0uo4e")]
-position = Vector2(533, -133)
-scale = Vector2(0.297265, 0.26905)
+position = Vector2(533, -148.048)
+scale = Vector2(0.72, 0.419525)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
