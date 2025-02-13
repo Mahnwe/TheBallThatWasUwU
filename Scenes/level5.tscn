@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=26 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -22,13 +22,16 @@
 [ext_resource type="PackedScene" uid="uid://choon04ib41uv" path="res://Scenes/portal.tscn" id="20_irhju"]
 [ext_resource type="AudioStream" uid="uid://06ksrea8xsdh" path="res://Sound/Effects/TELEPORT.mp3" id="21_j04kl"]
 [ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="22_7kwu3"]
+[ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="23_bgafk"]
+[ext_resource type="PackedScene" uid="uid://cvbepjlli6baq" path="res://Scenes/sand_platform.tscn" id="24_uva61"]
+[ext_resource type="PackedScene" uid="uid://dirhjvk3xk4re" path="res://Scenes/cannon.tscn" id="25_ucunx"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
 
 [node name="GameArea" parent="." instance=ExtResource("2_dd0d8")]
-position = Vector2(-99, -10)
-scale = Vector2(6.89288, 7.20584)
+position = Vector2(-1568, -81)
+scale = Vector2(8.34376, 9.42432)
 
 [node name="StartArea" parent="." instance=ExtResource("4_1303c")]
 position = Vector2(-1804, -980)
@@ -194,8 +197,8 @@ position = Vector2(294.118, 1.64964e-05)
 position = Vector2(583.088, 9.9894e-06)
 
 [node name="platform5" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-578, 41)
-scale = Vector2(0.480001, 1.32)
+position = Vector2(-686, 41)
+scale = Vector2(0.640002, 1.32)
 
 [node name="Wall4" parent="." instance=ExtResource("14_yl5hm")]
 position = Vector2(-29, -347)
@@ -286,9 +289,146 @@ position = Vector2(74.8936, 0)
 position = Vector2(117.447, 0)
 is_flip = true
 
+[node name="SavePoint" parent="." instance=ExtResource("23_bgafk")]
+position = Vector2(-462, 121)
+scale = Vector2(0.606914, 0.639194)
+
+[node name="SandPlatform" parent="." instance=ExtResource("24_uva61")]
+position = Vector2(-843, 110)
+scale = Vector2(0.681347, 0.413994)
+
+[node name="SandPlatform" parent="SandPlatform" instance=ExtResource("24_uva61")]
+position = Vector2(-745.582, 233.538)
+scale = Vector2(1.76319, 1.35929)
+
+[node name="SandPlatform2" parent="SandPlatform" instance=ExtResource("24_uva61")]
+position = Vector2(-1486.76, 2.41547)
+
+[node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
+position = Vector2(-1616, 130)
+flip_value = 1
+ball_speed = 10
+
+[node name="SandPlatform2" parent="." instance=ExtResource("24_uva61")]
+position = Vector2(-2433, 567)
+rotation = 3.14159
+scale = Vector2(1.46761, 0.518093)
+
+[node name="SandPlatform3" parent="SandPlatform2" instance=ExtResource("24_uva61")]
+position = Vector2(-303.896, 422.704)
+rotation = -1.5708
+scale = Vector2(1.44151, 0.330289)
+
+[node name="SandPlatform" parent="SandPlatform2" instance=ExtResource("24_uva61")]
+position = Vector2(303.896, 422.704)
+rotation = 1.5708
+scale = Vector2(1.44151, 0.330289)
+
+[node name="SandPlatform3" parent="." instance=ExtResource("24_uva61")]
+position = Vector2(-3088, 131)
+scale = Vector2(0.960371, 0.549455)
+
+[node name="Water3" parent="." instance=ExtResource("12_2be2h")]
+position = Vector2(-2433.5, 312.42)
+scale = Vector2(3.915, 1.9858)
+
+[node name="Wall5" parent="." instance=ExtResource("14_yl5hm")]
+position = Vector2(-3523, 102)
+rotation = -1.5708
+scale = Vector2(1.48, 2.76)
+
+[node name="Wall6" parent="." instance=ExtResource("14_yl5hm")]
+position = Vector2(-2931, -306)
+rotation = 1.5708
+scale = Vector2(0.600001, 2.48)
+
+[node name="platform6" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-3139, -379)
+scale = Vector2(0.480003, 0.873105)
+
+[node name="platform" parent="platform6" instance=ExtResource("3_b23ve")]
+position = Vector2(616.663, 50.3949)
+scale = Vector2(1.25, 1)
+
+[node name="platform7" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-2276, -290)
+rotation = 1.5708
+scale = Vector2(1.0666, 1.72)
+
+[node name="WaterPlatform14" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-2110, -40)
+scale = Vector2(4.64168, 2.25136)
+
+[node name="WaterPlatform" parent="WaterPlatform14" instance=ExtResource("15_3nnrj")]
+position = Vector2(116.122, 0)
+scale = Vector2(0.801796, 1)
+
+[node name="platform" parent="WaterPlatform14" instance=ExtResource("3_b23ve")]
+position = Vector2(131.418, -0.388899)
+rotation = -1.5708
+scale = Vector2(0.188052, 0.312453)
+
+[node name="Water4" parent="." instance=ExtResource("12_2be2h")]
+position = Vector2(-1908, -157)
+scale = Vector2(5.21, 0.96)
+
+[node name="Wall7" parent="." instance=ExtResource("10_bs3iy")]
+position = Vector2(-1466, -484)
+rotation = 1.5708
+scale = Vector2(0.68, 1)
+
+[node name="platform" parent="Wall7" instance=ExtResource("11_y1yvh")]
+position = Vector2(-139.706, 734)
+rotation = -1.5708
+
+[node name="platform8" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-2504, -679)
+scale = Vector2(0.52, 1.16)
+
+[node name="platform" parent="platform8" instance=ExtResource("3_b23ve")]
+position = Vector2(209.615, -157.759)
+rotation = 1.5708
+scale = Vector2(0.384618, 2)
+
+[node name="platform9" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-2325, -940)
+scale = Vector2(0.519995, 1)
+
+[node name="Wall" parent="platform9" instance=ExtResource("14_yl5hm")]
+position = Vector2(237.503, 71)
+rotation = 1.5708
+scale = Vector2(0.566504, 3.30965)
+
+[node name="platform10" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-3259, -804)
+scale = Vector2(1.08, 1)
+
+[node name="platform" parent="platform10" instance=ExtResource("3_b23ve")]
+position = Vector2(123.148, -547)
+rotation = 1.5708
+
+[node name="platform11" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-3257, -1388)
+
+[node name="platform" parent="platform11" instance=ExtResource("3_b23ve")]
+position = Vector2(592, -2)
+
+[node name="Water5" parent="." instance=ExtResource("12_2be2h")]
+position = Vector2(-2872, -765)
+scale = Vector2(3.4, 0.58)
+
+[node name="platform12" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-3091, -912)
+scale = Vector2(0.4, 0.76)
+
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike2" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike3" to="." method="_on_spike_spike_hit"]
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]
+[connection signal="spike_hit" from="CoralSpike4" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike5" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike6" to="." method="_on_spike_spike_hit"]
+[connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
+[connection signal="player_dead_by_cannon_ball" from="Cannon" to="." method="_on_cannon_player_dead_by_cannon_ball"]

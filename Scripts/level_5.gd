@@ -95,6 +95,7 @@ func toggle_pause():
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_patrol_groups()
+	disable_cannon_groups()
 	$Player.set_physics_process(false)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
@@ -107,6 +108,7 @@ func untoggle_pause():
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_patrol_groups()
+	enable_cannon_groups()
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
@@ -179,6 +181,27 @@ func reset_patrols_progress():
 			member.get_parent().progress = 0
 	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
 			member.get_parent().progress = 0
+			
+func disable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.pause_cannon()
+		
+func enable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.unpause_cannon()
+			
+func _on_cannon_player_dead_by_cannon_ball():
+	disable_patrol_groups()
+	display_dead_sprite_and_pause_timer_until_respawn("BOOM !")
+	await get_tree().create_timer(0.5).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.set_process(true)
 			
 func _on_game_area_player_exited_game_area():
 	display_dead_sprite_and_pause_timer_until_respawn("Out of game zone !")
