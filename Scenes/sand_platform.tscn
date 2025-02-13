@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dk05bfbkaqb2d" path="res://Arts/SpritesPlatform/SandPlatform-removebg-preview.png" id="1_mvt8q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6gf6"]
-size = Vector2(527, 203)
+size = Vector2(536, 208)
 
 [node name="SandPlatform" type="StaticBody2D"]
 z_index = 1
@@ -12,5 +12,5 @@ z_index = 1
 texture = ExtResource("1_mvt8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -2.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_g6gf6")
