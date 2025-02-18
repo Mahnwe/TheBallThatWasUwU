@@ -176,6 +176,7 @@ position = Vector2(-3147, -2127)
 
 [node name="Portal1" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-2238, -1497)
+portal_in = true
 
 [node name="platform3" parent="." instance=ExtResource("9_ujhmm")]
 position = Vector2(-2697, -1181)
@@ -243,9 +244,11 @@ texture = ExtResource("16_60pe7")
 
 [node name="HardPortal" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-1559, -1300)
+portal_in = true
 
 [node name="EasyPortal" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-1564, -1006)
+portal_in = true
 
 [node name="platform8" parent="." instance=ExtResource("9_ujhmm")]
 position = Vector2(-1061, -1548)
@@ -295,7 +298,7 @@ position = Vector2(-3177, 467)
 rotation = -1.59141
 rotates = false
 
-[node name="HardRockMovingPlatform" parent="Path2D/PathFollow2D" instance=ExtResource("9_ujhmm")]
+[node name="HardRockMovingPlatform" parent="Path2D/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("9_ujhmm")]
 position = Vector2(89.8366, -88.1667)
 rotation = 1.5708
 scale = Vector2(0.255908, 0.763641)
@@ -365,7 +368,7 @@ position = Vector2(-5644, -1101)
 rotation = -0.0090359
 rotates = false
 
-[node name="EasyRockPlatform" parent="Path2D2/PathFollow2D" instance=ExtResource("9_ujhmm")]
+[node name="EasyRockPlatform" parent="Path2D2/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("9_ujhmm")]
 position = Vector2(-98.3182, -75.8914)
 scale = Vector2(0.280029, 0.640374)
 sync_to_physics = false
@@ -569,6 +572,7 @@ scale = Vector2(0.488281, 0.259441)
 
 [node name="FinishPortal" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-2489, -311)
+portal_in = true
 
 [node name="FinishPortal2" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-2330, -787)
@@ -750,6 +754,7 @@ texture = ExtResource("31_k2kct")
 position = Vector2(-4415, -765)
 rotation = 1.5708
 scale = Vector2(1.79116, 2.01274)
+portal_in = true
 
 [node name="HWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-4018, -1788)
@@ -759,6 +764,7 @@ rotation = 1.5708
 position = Vector2(-4973, 216)
 rotation = 1.5708
 scale = Vector2(1.70364, 1.80244)
+portal_in = true
 
 [node name="VWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-3169, -126)

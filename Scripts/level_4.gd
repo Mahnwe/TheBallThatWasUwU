@@ -293,7 +293,8 @@ func _on_easy_platform_trigger_body_entered(body):
 
 
 func _on_finish_ui_next_level_pressed():
-	pass # Replace with function body.
+	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
+		get_tree().change_scene_to_file("res://Scenes/level5.tscn")
 
 
 func _on_finish_portal_body_entered(body):
