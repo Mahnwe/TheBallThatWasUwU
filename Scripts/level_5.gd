@@ -8,8 +8,8 @@ var start_position_y = -1033
 var save_position_x = -1953
 var save_position_y = -1033
 
-var finish_position_x = -2262
-var finish_position_y = -840
+var finish_position_x = -3100
+var finish_position_y = -975
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 
@@ -22,8 +22,8 @@ func _ready():
 	queue.is_level_1 = false
 	queue.is_level_2 = false
 	queue.is_level_3 = false
-	queue.is_level_4 = true
-	queue.is_level_5 = false
+	queue.is_level_4 = false
+	queue.is_level_5 = true
 	queue.load()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
@@ -240,6 +240,9 @@ func _on_triple_sign_set_up_sign_label():
 	$TripleSign.get_child(1).text = "  Good"
 	$TripleSign.get_child(2).text = "  Diving !"
 
+func _on_finish_ui_next_level_pressed():
+	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
+		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 
 func _on_portal_body_entered(body):
 	if body.name == "Player":

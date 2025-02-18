@@ -7,9 +7,12 @@ var cannon_ball_has_touch_player
 signal player_dead_by_cannon_ball
 @export var flip_value = 0
 @export var ball_speed = 0
+@export var is_in_water = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if is_in_water:
+		$Sprite2D.self_modulate.a = 0.5
 	if flip_value != 0:
 		$Sprite2D.flip_h = true
 	shoot_cannon_ball()

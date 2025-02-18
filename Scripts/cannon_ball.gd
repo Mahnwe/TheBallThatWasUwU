@@ -6,6 +6,8 @@ var has_touch_player
 var ball_speed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if get_parent().is_in_water:
+		$Sprite2D.self_modulate.a = 0.5
 	is_ball_explode = false
 
 
