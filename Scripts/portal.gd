@@ -3,10 +3,9 @@ extends Area2D
 var degrees_per_second = 360.0
 @export var is_in_water = false
 @export var portal_in = false
-var player_teleported
+var player_teleported = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player_teleported = false
 	if is_in_water:
 		$Sprite2D.self_modulate.a = 0.5
 
@@ -32,7 +31,7 @@ func _on_body_entered(body):
 				print("pouet")
 				$Sprite2D.scale.x *= 1.5
 				$Sprite2D.scale.y *= 1.5
-				await get_tree().create_timer(0.2).timeout
+				await get_tree().create_timer(0.3).timeout
 				player_teleported = false
 				$Sprite2D.scale.x /= 1.5
 				$Sprite2D.scale.y /= 1.5

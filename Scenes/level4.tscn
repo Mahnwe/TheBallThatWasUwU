@@ -189,6 +189,7 @@ scale = Vector2(1.11895, 1.59873)
 
 [node name="Portal2" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-2572, -1195)
+portal_in = true
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("11_6dpcl")
