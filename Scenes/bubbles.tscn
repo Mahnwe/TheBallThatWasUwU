@@ -1,0 +1,57 @@
+[gd_scene load_steps=13 format=3 uid="uid://bacfpyli26p32"]
+
+[ext_resource type="Texture2D" uid="uid://cmk5nu5cb0a6c" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation1.png" id="1_5rgi6"]
+[ext_resource type="Texture2D" uid="uid://dykomttqgbkob" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation2.png" id="2_j2uj2"]
+[ext_resource type="Texture2D" uid="uid://bqqi1i6m34gfk" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation3.png" id="3_gvss4"]
+[ext_resource type="Texture2D" uid="uid://bmt3dckhdpr8g" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation4.png" id="4_hbsxy"]
+[ext_resource type="Texture2D" uid="uid://67wsb3a3psff" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation5.png" id="5_sno7t"]
+[ext_resource type="Texture2D" uid="uid://bufpqdr1qccgg" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation6.png" id="6_37jy0"]
+[ext_resource type="Texture2D" uid="uid://h6rx66y6aunu" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation7.png" id="7_jx37b"]
+[ext_resource type="Texture2D" uid="uid://cyeofndar0cnw" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation8.png" id="8_6xc5y"]
+[ext_resource type="Texture2D" uid="uid://c84jbqtqxohu1" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation9.png" id="9_ph42u"]
+[ext_resource type="Texture2D" uid="uid://ci3lan3strhpy" path="res://Arts/WaterAssets/BubbleAnimation/BubbleAnimation10.png" id="10_ctovi"]
+[ext_resource type="Script" path="res://Scripts/bubbles.gd" id="11_xcpy7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urwvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5rgi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j2uj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gvss4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hbsxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sno7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_37jy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jx37b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6xc5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ph42u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ctovi")
+}],
+"loop": false,
+"name": &"bubble_spawn",
+"speed": 5.0
+}]
+
+[node name="Bubbles" type="AnimatedSprite2D"]
+scale = Vector2(1.15651, 1.22059)
+sprite_frames = SubResource("SpriteFrames_urwvp")
+animation = &"bubble_spawn"
+script = ExtResource("11_xcpy7")
