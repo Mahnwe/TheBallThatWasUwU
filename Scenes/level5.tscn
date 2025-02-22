@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=32 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -29,6 +29,18 @@
 [ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="27_qybqt"]
 [ext_resource type="PackedScene" uid="uid://cbnmtapo47fk2" path="res://Scenes/clams.tscn" id="28_f1b3o"]
 [ext_resource type="PackedScene" uid="uid://bacfpyli26p32" path="res://Scenes/bubbles.tscn" id="29_w1fmi"]
+
+[sub_resource type="Curve2D" id="Curve2D_jdew5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3265, 59, 0, 0, 0, 0, -3199, 57, 0, 0, 0, 0, -3125, 59, 0, 0, 0, 0, -3043, 57, 0, 0, 0, 0, -2954, 57, 0, 0, 0, 0, -2881, 58, 0, 0, 0, 0, -3265, 59)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_3xjob"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2788, -285, 0, 0, 0, 0, -2696, -286, 0, 0, 0, 0, -2611, -285, 0, 0, 0, 0, -2512, -287, 0, 0, 0, 0, -2440, -285, 0, 0, 0, 0, -2788, -285)
+}
+point_count = 6
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -488,6 +500,34 @@ scale = Vector2(1.27789, 1.27836)
 position = Vector2(40.6919, 0)
 is_flip = true
 
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jdew5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-3265, 59)
+rotation = -0.0302938
+rotates = false
+
+[node name="Spike" parent="Path2D/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
+position = Vector2(-24.0193, -32.7425)
+scale = Vector2(0.356646, 0.187326)
+
+[node name="Spike2" parent="." instance=ExtResource("13_t8ogd")]
+position = Vector2(-3345, -205)
+scale = Vector2(0.508411, 0.344069)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_3xjob")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(-2788, -285)
+rotation = -0.0108691
+rotates = false
+
+[node name="Spike" parent="Path2D2/PathFollow2D" instance=ExtResource("13_t8ogd")]
+position = Vector2(-28.5309, -43.3127)
+scale = Vector2(0.400344, 0.305909)
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
@@ -506,3 +546,6 @@ is_flip = true
 [connection signal="spike_hit" from="CoralSpike9" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]
+[connection signal="spike_hit" from="Path2D/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D2/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]

@@ -8,7 +8,7 @@ var wall_pushback = 700
 var gravity = 30
 
 #@export
-var jump_force = -670
+var jump_force = -680
 
 const VELOCITY_Y_MAX = 600
 var dash_speed = 800
@@ -147,7 +147,7 @@ func check_if_player_is_on_floor():
 func _input(event):
 	if event.is_action_released("jump"):
 		if velocity.y < 0.0:
-			velocity.y *= 0.4
+			velocity.y *= 0.6
 			
 func check_if_player_is_on_wall():
 		# Wall-jump
