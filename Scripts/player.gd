@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #@export
 var speed = 300
-var wall_pushback = 700
+var wall_pushback = 900
 
 #@export
 var gravity = 30
@@ -157,7 +157,7 @@ func check_if_player_is_on_wall():
 		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-80)
+			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = true
@@ -166,7 +166,7 @@ func check_if_player_is_on_wall():
 		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-80)
+			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
 			$AnimatedSprite2D.flip_h = false
@@ -185,13 +185,15 @@ func check_animation_if_on_wall():
 	if collinding_right_wall():
 		number_of_jumps = 0
 		can_dash = true
-		velocity.y = gravity+90
+		velocity.y = 0
+		velocity.y += gravity+90
 		$AnimatedSprite2D.animation = "stay_in_air"
 		$AnimatedSprite2D.flip_h = true
 	if colliding_left_wall():
 		number_of_jumps = 0
 		can_dash = true
-		velocity.y = gravity+90
+		velocity.y = 0
+		velocity.y += gravity+90
 		$AnimatedSprite2D.animation = "stay_in_air"
 		$AnimatedSprite2D.flip_h = false
 			

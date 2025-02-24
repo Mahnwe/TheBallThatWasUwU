@@ -8,8 +8,8 @@ var start_position_y = -1033
 var save_position_x = -1953
 var save_position_y = -1033
 
-var finish_position_x = -3100
-var finish_position_y = -975
+var finish_position_x = -3110
+var finish_position_y = -1030
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 

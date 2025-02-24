@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=34 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -39,6 +39,18 @@ point_count = 7
 [sub_resource type="Curve2D" id="Curve2D_3xjob"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2788, -285, 0, 0, 0, 0, -2696, -286, 0, 0, 0, 0, -2611, -285, 0, 0, 0, 0, -2512, -287, 0, 0, 0, 0, -2440, -285, 0, 0, 0, 0, -2788, -285)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_6lh4v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2304, -871, 0, 0, 0, 0, -2218, -872, 0, 0, 0, 0, -2127, -873, 0, 0, 0, 0, -2023, -873, 0, 0, 0, 0, -2304, -871)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_7vudj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2169, -1044, 0, 0, 0, 0, -2251, -1044, 0, 0, 0, 0, -2344, -1042, 0, 0, 0, 0, -2423, -1041, 0, 0, 0, 0, -2523, -1041, 0, 0, 0, 0, -2169, -1044)
 }
 point_count = 6
 
@@ -447,11 +459,11 @@ position = Vector2(-3257, -1388)
 position = Vector2(592, -2)
 
 [node name="Water5" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-2872, -765)
-scale = Vector2(3.4, 0.58)
+position = Vector2(-2872, -804.5)
+scale = Vector2(3.4, 0.845)
 
 [node name="platform12" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-3091, -912)
+position = Vector2(-3102, -975)
 scale = Vector2(0.4, 0.76)
 
 [node name="platform13" parent="." instance=ExtResource("3_b23ve")]
@@ -479,17 +491,17 @@ position = Vector2(-2541, 206)
 scale = Vector2(0.84, 0.897924)
 
 [node name="Finish" parent="." instance=ExtResource("26_r3r1h")]
-position = Vector2(-2945, -909)
+position = Vector2(-2956, -972)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("27_qybqt")]
 
 [node name="Clams" parent="." instance=ExtResource("28_f1b3o")]
-position = Vector2(-2746, 362)
-scale = Vector2(0.654826, 0.690084)
+position = Vector2(-2756.72, 354.439)
+scale = Vector2(0.94075, 0.891709)
 
 [node name="Bubbles" parent="." instance=ExtResource("29_w1fmi")]
-position = Vector2(-2746, 344)
+position = Vector2(-2756, 338)
 scale = Vector2(0.731767, 0.749274)
 
 [node name="Kelp6" parent="." instance=ExtResource("17_ajufk")]
@@ -524,9 +536,63 @@ position = Vector2(-2788, -285)
 rotation = -0.0108691
 rotates = false
 
-[node name="Spike" parent="Path2D2/PathFollow2D" instance=ExtResource("13_t8ogd")]
+[node name="Spike" parent="Path2D2/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
 position = Vector2(-28.5309, -43.3127)
 scale = Vector2(0.400344, 0.305909)
+
+[node name="CoralSpike10" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-1651, -106)
+scale = Vector2(1.04061, 1.07912)
+
+[node name="Wall8" parent="." instance=ExtResource("10_bs3iy")]
+position = Vector2(-2072, -498)
+rotation = 1.5708
+scale = Vector2(0.479999, 0.84)
+
+[node name="CoralSpike11" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-2183, -104)
+scale = Vector2(1.06573, 1.08258)
+
+[node name="WaterPlatform17" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-1893, -72)
+scale = Vector2(2.04, 1.28)
+
+[node name="WaterPlatform" parent="WaterPlatform17" instance=ExtResource("15_3nnrj")]
+position = Vector2(0.490195, -25.7812)
+scale = Vector2(0.588239, 1)
+
+[node name="platform15" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-1865, -425)
+scale = Vector2(0.219633, 0.582615)
+
+[node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
+position = Vector2(-2119, -555)
+flip_value = 1
+ball_speed = 10
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6lh4v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(-2304, -871)
+rotation = -0.0116274
+rotates = false
+
+[node name="Spike" parent="Path2D3/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
+position = Vector2(-22.7078, -25.2657)
+scale = Vector2(0.314187, 0.175526)
+
+[node name="Path2D4" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7vudj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2(-2169, -1044)
+rotation = 3.14159
+rotates = false
+
+[node name="Spike" parent="Path2D4/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
+position = Vector2(-26, -34)
+scale = Vector2(0.371509, 0.259285)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -549,3 +615,8 @@ scale = Vector2(0.400344, 0.305909)
 [connection signal="spike_hit" from="Path2D/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Path2D2/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike10" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike11" to="." method="_on_spike_spike_hit"]
+[connection signal="player_dead_by_cannon_ball" from="Cannon3" to="." method="_on_cannon_player_dead_by_cannon_ball"]
+[connection signal="spike_hit" from="Path2D3/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D4/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
