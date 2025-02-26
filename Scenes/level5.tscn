@@ -495,6 +495,7 @@ position = Vector2(-2956, -972)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("27_qybqt")]
+visible = false
 
 [node name="Clams" parent="." instance=ExtResource("28_f1b3o")]
 position = Vector2(-2756.72, 354.439)
@@ -593,6 +594,22 @@ rotates = false
 [node name="Spike" parent="Path2D4/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
 position = Vector2(-26, -34)
 scale = Vector2(0.371509, 0.259285)
+
+[node name="platform16" parent="." instance=ExtResource("3_b23ve")]
+position = Vector2(-2915, -852)
+rotation = -1.5708
+scale = Vector2(0.6, 1)
+
+[node name="WaterPlatform18" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-2994, -744)
+scale = Vector2(1.44178, 1.1842)
+
+[node name="Clams2" parent="WaterPlatform18" instance=ExtResource("28_f1b3o")]
+position = Vector2(118.604, -15.2001)
+scale = Vector2(0.693589, 0.84445)
+
+[node name="Bubbles" parent="WaterPlatform18/Clams2" instance=ExtResource("29_w1fmi")]
+position = Vector2(0, -28)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
