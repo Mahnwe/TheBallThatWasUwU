@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://i4jemvk3v54m"]
+[gd_scene load_steps=6 format=3 uid="uid://i4jemvk3v54m"]
 
 [ext_resource type="Script" path="res://Scripts/ability.gd" id="1_vfgwr"]
 [ext_resource type="AudioStream" uid="uid://dojptb2rgjdfi" path="res://Sound/Effects/ABILITY.wav" id="2_q1yff"]
+[ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="3_cwa40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4eu1f"]
 size = Vector2(92, 266)
@@ -12,14 +13,10 @@ size = Vector2(104, 281)
 [node name="Ability" type="StaticBody2D"]
 script = ExtResource("1_vfgwr")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -304.0
-offset_top = -312.0
-offset_right = -155.0
-offset_bottom = -237.0
-scale = Vector2(2.4, 1.24)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 25
+[node name="BubbleTooltip" parent="." instance=ExtResource("3_cwa40")]
+visible = false
+position = Vector2(159, -345)
+scale = Vector2(3.9225, 3.04167)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, -43)

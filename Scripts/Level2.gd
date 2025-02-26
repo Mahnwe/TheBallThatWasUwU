@@ -144,7 +144,7 @@ func enable_patrol_groups():
 func _on_ability_player_entered():
 	$Player/Pause.get_child(4).player_have_dash = true
 	$Player.have_dash_ability = true
-	$Ability.get_child(0).text = "You can dash now !\n             Shift\n       Square/X/Y"
+	$Ability.get_child(0).get_child(0).text = "You can dash now ! Use Shift or X button"
 
 
 func _on_save_point_player_entered():

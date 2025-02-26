@@ -109,7 +109,7 @@ func _on_start_area_player_exited_start_area():
 
 func _on_ability_player_entered():
 	$Player.can_double_jump = true
-	$Ability.get_child(0).text = "         You can \n double jump now !"
+	$Ability.get_child(0).get_child(0).text = "You can double jump now !"
 
 
 func _on_save_point_player_entered():

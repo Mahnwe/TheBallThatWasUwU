@@ -19,7 +19,7 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		$AbilitySound.play()
 		player_entered.emit()
-		$Label.show()
+		$BubbleTooltip.show()
 		$Label2.hide()
 		for n in 6:
 			$Sprite2D.hide()

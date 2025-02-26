@@ -1,5 +1,6 @@
 extends Control
 
+var bubble_message_reset
 var is_controller_focused = false
 var config = ConfigFile.new()
 
@@ -13,11 +14,13 @@ func _ready():
 	set_volume()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
-
+	change_bubble_message()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
+	if bubble_message_reset:
+		change_bubble_message()
 	wait_for_focus()
 	if Input.is_action_just_pressed("quit_game"):
 		get_tree().quit()
@@ -179,6 +182,16 @@ func _on_effect_slider_mouse_exited():
 
 func _on_button_focus_entered():
 	$ButtonSound.play()
+	
+func change_bubble_message():
+	bubble_message_reset = false
+	$BubbleTooltip.get_child(0).text = "This game is easier with a controller"
+	await get_tree().create_timer(5.0).timeout
+	$BubbleTooltip.get_child(0).text = "Levels with an icon above unlock abilities"
+	await get_tree().create_timer(5.0).timeout
+	$BubbleTooltip.get_child(0).text = "For smoother progression do levels in order"
+	await get_tree().create_timer(5.0).timeout
+	bubble_message_reset = true
 
 
 func _on_music_slider_value_changed(value):

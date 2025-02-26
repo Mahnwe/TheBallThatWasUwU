@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=20 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://bf3f1t5hsvtmq" path="res://Sound/Musics/MenuMusic.mp3" id="12_m2qtk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="13_owrtn"]
 [ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="14_45jmy"]
+[ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="16_gkf7k"]
+[ext_resource type="Texture2D" uid="uid://dmmixb0c26f0w" path="res://Arts/AbilitySprite/SpriteAbility-removebg-preview.png" id="17_ukqqs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
@@ -41,9 +43,9 @@ texture = ExtResource("2_p71ma")
 [node name="MenuTitle" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 646.0
+offset_left = 718.0
 offset_top = 52.0
-offset_right = 1263.0
+offset_right = 1335.0
 offset_bottom = 221.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.00551701, 0.00573812, 0.00551702, 1)
@@ -53,7 +55,7 @@ text = "The ball that was fast
            and UwU"
 
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(568, 379)
+position = Vector2(640, 379)
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
 position = Vector2(402, 55)
@@ -73,19 +75,19 @@ position = Vector2(214, -65.125)
 position = Vector2(603, 0.875)
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(647, 560)
+position = Vector2(719, 560)
 scale = Vector2(0.254949, 0.68)
 
 [node name="platform3" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1009, 557)
+position = Vector2(1081, 557)
 scale = Vector2(0.24, 0.72)
 
 [node name="Level1Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 459.0
+offset_left = 531.0
 offset_top = 595.0
-offset_right = 535.0
+offset_right = 607.0
 offset_bottom = 631.0
 scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../EffectSlider")
@@ -115,9 +117,9 @@ offset_bottom = 35.3938
 [node name="Level2Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 823.0
+offset_left = 895.0
 offset_top = 595.0
-offset_right = 899.0
+offset_right = 971.0
 offset_bottom = 631.0
 scale = Vector2(2.6, 2.007)
 focus_neighbor_left = NodePath("../Level1Button")
@@ -146,9 +148,9 @@ offset_bottom = 35.9367
 [node name="Level3Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 1174.0
+offset_left = 1246.0
 offset_top = 595.0
-offset_right = 1250.0
+offset_right = 1322.0
 offset_bottom = 631.0
 scale = Vector2(2.686, 2.006)
 focus_neighbor_left = NodePath("../Level2Button")
@@ -177,9 +179,9 @@ offset_bottom = 34.8953
 [node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 1177.0
+offset_left = 1249.0
 offset_top = 823.0
-offset_right = 1253.0
+offset_right = 1325.0
 offset_bottom = 859.0
 scale = Vector2(2.6, 2)
 focus_neighbor_left = NodePath("../Level3Button")
@@ -208,9 +210,9 @@ offset_bottom = 36.5
 [node name="Level5Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 825.0
+offset_left = 897.0
 offset_top = 825.0
-offset_right = 900.0
+offset_right = 972.0
 offset_bottom = 861.0
 scale = Vector2(2.6, 2)
 focus_neighbor_left = NodePath("../Level1Button")
@@ -237,11 +239,11 @@ offset_right = -4.61539
 offset_bottom = 39.5
 
 [node name="platform4" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1005, 794)
+position = Vector2(1077, 794)
 scale = Vector2(0.254949, 0.68)
 
 [node name="Wall" parent="." instance=ExtResource("8_ar47r")]
-position = Vector2(1593, 644)
+position = Vector2(1665, 644)
 rotation = 1.5708
 scale = Vector2(0.639999, 1.84)
 
@@ -293,20 +295,20 @@ stream = ExtResource("13_owrtn")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 58.0
-offset_right = 230.0
-offset_bottom = 100.0
+offset_left = 129.0
+offset_top = 51.0
+offset_right = 228.0
+offset_bottom = 93.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Musics"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 101.0
-offset_right = 308.0
-offset_bottom = 136.0
+offset_left = 56.0
+offset_top = 94.0
+offset_right = 306.0
+offset_bottom = 129.0
 scale = Vector2(1, 1.44)
 focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../EffectSlider")
@@ -316,20 +318,20 @@ max_value = 5.0
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 149.0
-offset_right = 282.0
-offset_bottom = 191.0
+offset_left = 98.0
+offset_top = 142.0
+offset_right = 280.0
+offset_bottom = 184.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Sound effect"
 
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 188.0
-offset_right = 312.0
-offset_bottom = 223.0
+offset_left = 60.0
+offset_top = 181.0
+offset_right = 310.0
+offset_bottom = 216.0
 scale = Vector2(1, 1.44)
 focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../MusicSlider")
@@ -341,28 +343,32 @@ theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(1769, 590)
+position = Vector2(118.5, 954.25)
 scale = Vector2(0.6875, 0.633929)
 texture = ExtResource("14_45jmy")
 
 [node name="Label" type="Label" parent="Logo"]
-offset_left = -132.364
-offset_top = -85.1831
-offset_right = 252.636
-offset_bottom = -16.1831
+offset_left = -127.273
+offset_top = 53.2391
+offset_right = 257.727
+offset_bottom = 122.239
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Manawé Games"
 
-[node name="ControllerAdvice" type="Label" parent="."]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 950.0
-offset_right = 469.0
-offset_bottom = 985.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "This game is easier with a controller"
+[node name="BubbleTooltip" parent="." instance=ExtResource("16_gkf7k")]
+position = Vector2(273.5, 860.25)
+bubble_message = "This game is easier with a controller"
+
+[node name="AbilityIcon" type="Sprite2D" parent="."]
+position = Vector2(993, 576)
+scale = Vector2(0.0770924, 0.0760473)
+texture = ExtResource("17_ukqqs")
+
+[node name="AbilityIcon2" type="Sprite2D" parent="."]
+position = Vector2(1349, 576)
+scale = Vector2(0.0770924, 0.0760473)
+texture = ExtResource("17_ukqqs")
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
