@@ -495,7 +495,6 @@ position = Vector2(-2956, -972)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("27_qybqt")]
-visible = false
 
 [node name="Clams" parent="." instance=ExtResource("28_f1b3o")]
 position = Vector2(-2756.72, 354.439)
@@ -611,6 +610,9 @@ scale = Vector2(0.693589, 0.84445)
 [node name="Bubbles" parent="WaterPlatform18/Clams2" instance=ExtResource("29_w1fmi")]
 position = Vector2(0, -28)
 
+[node name="CoralSpike12" parent="." instance=ExtResource("16_r1un4")]
+position = Vector2(-2643, -773)
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
@@ -637,3 +639,4 @@ position = Vector2(0, -28)
 [connection signal="player_dead_by_cannon_ball" from="Cannon3" to="." method="_on_cannon_player_dead_by_cannon_ball"]
 [connection signal="spike_hit" from="Path2D3/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Path2D4/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike12" to="." method="_on_spike_spike_hit"]

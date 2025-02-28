@@ -86,9 +86,9 @@ scale = Vector2(0.24, 0.72)
 z_index = 2
 layout_mode = 0
 offset_left = 531.0
-offset_top = 595.0
+offset_top = 592.0
 offset_right = 607.0
-offset_bottom = 631.0
+offset_bottom = 628.0
 scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../QuitButton")
@@ -109,10 +109,10 @@ texture = ExtResource("7_272km")
 [node name="TopTime" parent="Level1Button" instance=ExtResource("10_vv7ov")]
 visible = false
 layout_mode = 1
-offset_left = -5.36405
-offset_top = 35.3938
-offset_right = -5.36404
-offset_bottom = 35.3938
+offset_left = -3.83147
+offset_top = 36.3013
+offset_right = -3.83145
+offset_bottom = 36.3013
 
 [node name="Level2Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -121,7 +121,7 @@ offset_left = 895.0
 offset_top = 595.0
 offset_right = 971.0
 offset_bottom = 631.0
-scale = Vector2(2.6, 2.007)
+scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level3Button")
@@ -140,10 +140,10 @@ texture = ExtResource("7_272km")
 [node name="TopTime" parent="Level2Button" instance=ExtResource("10_vv7ov")]
 visible = false
 layout_mode = 1
-offset_left = -5.76923
-offset_top = 35.9367
-offset_right = -5.76923
-offset_bottom = 35.9367
+offset_left = -4.23077
+offset_top = 35.8744
+offset_right = -4.23077
+offset_bottom = 35.8745
 
 [node name="Level3Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -152,7 +152,7 @@ offset_left = 1246.0
 offset_top = 595.0
 offset_right = 1322.0
 offset_bottom = 631.0
-scale = Vector2(2.686, 2.006)
+scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level4Button")
@@ -171,19 +171,19 @@ texture = ExtResource("7_272km")
 [node name="TopTime" parent="Level3Button" instance=ExtResource("10_vv7ov")]
 visible = false
 layout_mode = 1
-offset_left = -7.44602
-offset_top = 34.8953
-offset_right = -7.44601
-offset_bottom = 34.8953
+offset_left = -4.98085
+offset_top = 35.818
+offset_right = -4.98084
+offset_bottom = 35.818
 
 [node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
 offset_left = 1249.0
-offset_top = 823.0
+offset_top = 840.0
 offset_right = 1325.0
-offset_bottom = 859.0
-scale = Vector2(2.6, 2)
+offset_bottom = 876.0
+scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level3Button")
 focus_neighbor_top = NodePath("../Level3Button")
 focus_neighbor_right = NodePath("../Level5Button")
@@ -202,19 +202,19 @@ texture = ExtResource("7_272km")
 [node name="TopTime" parent="Level4Button" instance=ExtResource("10_vv7ov")]
 visible = false
 layout_mode = 1
-offset_left = -4.61538
-offset_top = 36.5
-offset_right = -4.61539
-offset_bottom = 36.5
+offset_left = -3.83142
+offset_top = 36.7861
+offset_right = -3.83142
+offset_bottom = 36.7861
 
 [node name="Level5Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
 offset_left = 897.0
-offset_top = 825.0
+offset_top = 842.0
 offset_right = 972.0
-offset_bottom = 861.0
-scale = Vector2(2.6, 2)
+offset_bottom = 878.0
+scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../Level4Button")
@@ -233,19 +233,19 @@ texture = ExtResource("7_272km")
 [node name="TopTime" parent="Level5Button" instance=ExtResource("10_vv7ov")]
 visible = false
 layout_mode = 1
-offset_left = -4.61538
-offset_top = 39.5
-offset_right = -4.61539
-offset_bottom = 39.5
+offset_left = -4.21456
+offset_top = 36.302
+offset_right = -4.21457
+offset_bottom = 36.302
 
 [node name="platform4" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1077, 794)
+position = Vector2(1077, 811)
 scale = Vector2(0.254949, 0.68)
 
 [node name="Wall" parent="." instance=ExtResource("8_ar47r")]
 position = Vector2(1665, 644)
 rotation = 1.5708
-scale = Vector2(0.639999, 1.84)
+scale = Vector2(0.679999, 1.84)
 
 [node name="platform" parent="Wall" instance=ExtResource("3_x4hsc")]
 position = Vector2(220.314, 122.826)
@@ -253,7 +253,7 @@ rotation = -1.5708
 scale = Vector2(0.1, 1.186)
 
 [node name="platform2" parent="Wall" instance=ExtResource("3_x4hsc")]
-position = Vector2(112.501, 48.9129)
+position = Vector2(112.501, 52.7172)
 rotation = 1.5708
 scale = Vector2(0.1, 1.186)
 

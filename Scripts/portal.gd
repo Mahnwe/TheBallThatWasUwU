@@ -20,18 +20,11 @@ func rotate_portal(delta):
 func _on_body_entered(body):
 	if body.name == "Player":
 		if portal_in:
-			player_teleported = true
-			$Sprite2D.scale.x /= 2.0
-			$Sprite2D.scale.y /= 2.0
-			await get_tree().create_timer(0.3).timeout
-			$Sprite2D.scale.x *= 2.0
-			$Sprite2D.scale.y *= 2.0
-		if !portal_in:
-			if player_teleported:
-				print("pouet")
-				$Sprite2D.scale.x *= 1.5
-				$Sprite2D.scale.y *= 1.5
-				await get_tree().create_timer(0.3).timeout
-				player_teleported = false
-				$Sprite2D.scale.x /= 1.5
-				$Sprite2D.scale.y /= 1.5
+			$Sprite2D.animation = "Enter"
+			$Sprite2D.play()
+			await $Sprite2D.animation_finished
+		else:
+			$Sprite2D.animation = "Exit"
+			$Sprite2D.play()
+			await $Sprite2D.animation_finished
+		$Sprite2D.animation = "Idle"
