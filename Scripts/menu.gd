@@ -1,6 +1,8 @@
 extends Control
 
 var bubble_message_reset
+var music_slider_stylebox
+var effect_slider_stylebox
 var is_controller_focused = false
 var config = ConfigFile.new()
 
@@ -9,8 +11,11 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
-	$EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
+	music_slider_stylebox = $MusicSlider.get_theme_stylebox("grabber_area")
+	effect_slider_stylebox = $EffectSlider.get_theme_stylebox("grabber_area")
+	$MusicSlider.editable = false
+	$EffectSlider.editable = false
+	set_sliders_value_with_config()
 	set_volume()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
@@ -174,11 +179,15 @@ func _on_level_5_mouse_exited():
 func _on_music_slider_mouse_exited():
 	$MusicSlider.release_focus()
 	is_controller_focused = false
+	$MusicSlider.editable = false
+	$MusicSlider.add_theme_stylebox_override("grabber_area", music_slider_stylebox)
 
 
 func _on_effect_slider_mouse_exited():
 	$EffectSlider.release_focus()
 	is_controller_focused = false
+	$EffectSlider.editable = false
+	$EffectSlider.add_theme_stylebox_override("grabber_area", effect_slider_stylebox)
 
 func _on_button_focus_entered():
 	$ButtonSound.play()
@@ -195,60 +204,141 @@ func change_bubble_message():
 
 
 func _on_music_slider_value_changed(value):
-	config.set_value("musicSliderValue","sliderMusicValue", value)
-	match value:
-		0.0:
-			config.set_value("musicVolume","musicVolumeSet", -50)
-			for member in get_tree().get_nodes_in_group("music_group"):
-				member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		1.0:
-			config.set_value("musicVolume","musicVolumeSet", -20)
-			for member in get_tree().get_nodes_in_group("music_group"):
-				member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		2.0:
-			config.set_value("musicVolume","musicVolumeSet", -15)
-			for member in get_tree().get_nodes_in_group("music_group"):
-				member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		3.0:
-			config.set_value("musicVolume","musicVolumeSet", -10)
-			for member in get_tree().get_nodes_in_group("music_group"):
-				member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		4.0:
-			config.set_value("musicVolume","musicVolumeSet", -5)
-			for member in get_tree().get_nodes_in_group("music_group"):
-				member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		5.0:
-			config.set_value("musicVolume","musicVolumeSet", 0)
-			for member in get_tree().get_nodes_in_group("music_group"):
-				member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-	config.save("res://Ressources/PropertieFile/properties.cfg")
+	if !$MusicMuteButton.is_mute:
+		config.set_value("musicSliderValue","sliderMusicValue", value)
+		match value:
+			0.0:
+				config.set_value("musicVolume","musicVolumeSet", -50)
+				for member in get_tree().get_nodes_in_group("music_group"):
+					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+			1.0:
+				config.set_value("musicVolume","musicVolumeSet", -20)
+				for member in get_tree().get_nodes_in_group("music_group"):
+					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+			2.0:
+				config.set_value("musicVolume","musicVolumeSet", -15)
+				for member in get_tree().get_nodes_in_group("music_group"):
+					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+			3.0:
+				config.set_value("musicVolume","musicVolumeSet", -10)
+				for member in get_tree().get_nodes_in_group("music_group"):
+					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+			4.0:
+				config.set_value("musicVolume","musicVolumeSet", -5)
+				for member in get_tree().get_nodes_in_group("music_group"):
+					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+			5.0:
+				config.set_value("musicVolume","musicVolumeSet", 0)
+				for member in get_tree().get_nodes_in_group("music_group"):
+					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+		config.save("res://Ressources/PropertieFile/properties.cfg")
 
 
 func _on_effect_slider_value_changed(value):
-	config.set_value("effectSliderValue","sliderEffectValue", value)
-	match value:
-		0.0:
-			config.set_value("effectVolume","effectVolumeSet", -50)
-			for member in get_tree().get_nodes_in_group("sound_effect_group"):
-				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		1.0:
-			config.set_value("effectVolume","effectVolumeSet", -40)
-			for member in get_tree().get_nodes_in_group("sound_effect_group"):
-				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		2.0:
-			config.set_value("effectVolume","effectVolumeSet", -30)
-			for member in get_tree().get_nodes_in_group("sound_effect_group"):
-				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		3.0:
-			config.set_value("effectVolume","effectVolumeSet", -20)
-			for member in get_tree().get_nodes_in_group("sound_effect_group"):
-				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		4.0:
-			config.set_value("effectVolume","effectVolumeSet", -10)
-			for member in get_tree().get_nodes_in_group("sound_effect_group"):
-				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		5.0:
-			config.set_value("effectVolume","effectVolumeSet", -5)
-			for member in get_tree().get_nodes_in_group("sound_effect_group"):
-				member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-	config.save("res://Ressources/PropertieFile/properties.cfg")
+	if !$SoundMuteButton.is_mute:
+		config.set_value("effectSliderValue","sliderEffectValue", value)
+		match value:
+			0.0:
+				config.set_value("effectVolume","effectVolumeSet", -50)
+				for member in get_tree().get_nodes_in_group("sound_effect_group"):
+					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+			1.0:
+				config.set_value("effectVolume","effectVolumeSet", -40)
+				for member in get_tree().get_nodes_in_group("sound_effect_group"):
+					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+			2.0:
+				config.set_value("effectVolume","effectVolumeSet", -30)
+				for member in get_tree().get_nodes_in_group("sound_effect_group"):
+					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+			3.0:
+				config.set_value("effectVolume","effectVolumeSet", -20)
+				for member in get_tree().get_nodes_in_group("sound_effect_group"):
+					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+			4.0:
+				config.set_value("effectVolume","effectVolumeSet", -10)
+				for member in get_tree().get_nodes_in_group("sound_effect_group"):
+					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+			5.0:
+				config.set_value("effectVolume","effectVolumeSet", -5)
+				for member in get_tree().get_nodes_in_group("sound_effect_group"):
+					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		config.save("res://Ressources/PropertieFile/properties.cfg")
+
+
+func _on_music_mute_button_pressed():
+	if !$MusicMuteButton.is_mute:
+		$MusicMuteButton.is_mute = true
+		for member in get_tree().get_nodes_in_group("music_group"):
+			member.volume_db = -100
+	else:
+		$MusicMuteButton.is_mute = false
+		for member in get_tree().get_nodes_in_group("music_group"):
+			member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+		set_sliders_value_with_config()
+
+
+func _on_sound_mute_button_pressed():
+	if !$SoundMuteButton.is_mute:
+		$SoundMuteButton.is_mute = true
+		for member in get_tree().get_nodes_in_group("sound_effect_group"):
+			member.volume_db = -100
+	else:
+		$SoundMuteButton.is_mute = false
+		for member in get_tree().get_nodes_in_group("sound_effect_group"):
+			member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		set_sliders_value_with_config()
+			
+func set_sliders_value_with_config():
+	$MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
+	$EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
+
+
+func _on_music_slider_gui_input(event):
+	if $MusicSlider.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+		is_controller_focused = true
+		if event.is_action_pressed("ui_accept"):
+			$MusicSlider.editable = true
+
+
+func _on_effect_slider_gui_input(event):
+	if $EffectSlider.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+		is_controller_focused = true
+		if event.is_action_pressed("ui_accept"):
+			$EffectSlider.editable = true
+
+
+func _on_music_slider_focus_entered():
+	$ButtonSound.play()
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(207,26,26,255)
+	$MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+	
+func _on_effect_slider_focus_entered():
+	$ButtonSound.play()
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(207,26,26,255)
+	$EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+
+
+func _on_music_slider_focus_exited():
+	$MusicSlider.editable = false
+	$MusicSlider.add_theme_stylebox_override("grabber_area", music_slider_stylebox)
+
+
+func _on_effect_slider_focus_exited():
+	$EffectSlider.editable = false
+	$EffectSlider.add_theme_stylebox_override("grabber_area", effect_slider_stylebox)
+
+
+func _on_music_slider_mouse_entered():
+	$MusicSlider.editable = true
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(207,26,26,255)
+	$MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+
+
+func _on_effect_slider_mouse_entered():
+	$EffectSlider.editable = true
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(207,26,26,255)
+	$EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)

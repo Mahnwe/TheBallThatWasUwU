@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=25 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -17,12 +17,25 @@
 [ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="14_45jmy"]
 [ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="16_gkf7k"]
 [ext_resource type="Texture2D" uid="uid://dmmixb0c26f0w" path="res://Arts/AbilitySprite/SpriteAbility-removebg-preview.png" id="17_ukqqs"]
+[ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="18_danav"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuf5"]
 texture = SubResource("CanvasTexture_qbksh")
 modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gfb3x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0ro0"]
+texture = SubResource("CanvasTexture_gfb3x")
+modulate_color = Color(0.81, 0.1, 0.1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rtmt2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyecg"]
+texture = SubResource("CanvasTexture_rtmt2")
+modulate_color = Color(0.811765, 0.101961, 0.101961, 1)
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -295,9 +308,9 @@ stream = ExtResource("13_owrtn")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 129.0
+offset_left = 151.0
 offset_top = 51.0
-offset_right = 228.0
+offset_right = 250.0
 offset_bottom = 93.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -305,22 +318,26 @@ text = "Musics"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 81.0
 offset_top = 94.0
-offset_right = 306.0
+offset_right = 331.0
 offset_bottom = 129.0
 scale = Vector2(1, 1.44)
+focus_neighbor_left = NodePath("../MusicMuteButton")
 focus_neighbor_top = NodePath("../EffectSlider")
+focus_neighbor_right = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../EffectSlider")
 focus_next = NodePath("../EffectSlider")
+focus_previous = NodePath("../MusicMuteButton")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
 max_value = 5.0
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 98.0
+offset_left = 113.0
 offset_top = 142.0
-offset_right = 280.0
+offset_right = 295.0
 offset_bottom = 184.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -328,18 +345,19 @@ text = "Sound effect"
 
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 60.0
+offset_left = 83.0
 offset_top = 181.0
-offset_right = 310.0
+offset_right = 333.0
 offset_bottom = 216.0
 scale = Vector2(1, 1.44)
-focus_neighbor_left = NodePath("../MusicSlider")
+focus_neighbor_left = NodePath("../SoundMuteButton")
 focus_neighbor_top = NodePath("../MusicSlider")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
 focus_next = NodePath("../Level1Button")
-focus_previous = NodePath("../MusicSlider")
+focus_previous = NodePath("../SoundMuteButton")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_yyecg")
 max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
@@ -370,6 +388,26 @@ position = Vector2(1349, 576)
 scale = Vector2(0.0770924, 0.0760473)
 texture = ExtResource("17_ukqqs")
 
+[node name="MusicMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 99.0
+offset_right = 85.0
+offset_bottom = 147.0
+scale = Vector2(0.777683, 0.831632)
+focus_neighbor_top = NodePath("../SoundMuteButton")
+focus_neighbor_bottom = NodePath("../SoundMuteButton")
+
+[node name="SoundMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 186.0
+offset_right = 88.0
+offset_bottom = 234.0
+scale = Vector2(0.777683, 0.831632)
+focus_neighbor_top = NodePath("../MusicMuteButton")
+focus_neighbor_bottom = NodePath("../MusicMuteButton")
+
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="mouse_exited" from="Level1Button" to="." method="_on_level_1_button_mouse_exited"]
@@ -394,7 +432,19 @@ texture = ExtResource("17_ukqqs")
 [connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="focus_entered" from="MusicSlider" to="." method="_on_music_slider_focus_entered"]
+[connection signal="focus_exited" from="MusicSlider" to="." method="_on_music_slider_focus_exited"]
+[connection signal="gui_input" from="MusicSlider" to="." method="_on_music_slider_gui_input"]
+[connection signal="mouse_entered" from="MusicSlider" to="." method="_on_music_slider_mouse_entered"]
 [connection signal="mouse_exited" from="MusicSlider" to="." method="_on_music_slider_mouse_exited"]
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="focus_entered" from="EffectSlider" to="." method="_on_effect_slider_focus_entered"]
+[connection signal="focus_exited" from="EffectSlider" to="." method="_on_effect_slider_focus_exited"]
+[connection signal="gui_input" from="EffectSlider" to="." method="_on_effect_slider_gui_input"]
+[connection signal="mouse_entered" from="EffectSlider" to="." method="_on_effect_slider_mouse_entered"]
 [connection signal="mouse_exited" from="EffectSlider" to="." method="_on_effect_slider_mouse_exited"]
 [connection signal="value_changed" from="EffectSlider" to="." method="_on_effect_slider_value_changed"]
+[connection signal="focus_entered" from="MusicMuteButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="MusicMuteButton" to="." method="_on_music_mute_button_pressed"]
+[connection signal="focus_entered" from="SoundMuteButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
