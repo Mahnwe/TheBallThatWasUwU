@@ -8,6 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	update_sprite()
+		
+func update_sprite():
 	if is_mute:
 		$UnmuteSprite.hide()
 		$MuteSprite.show()

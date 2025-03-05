@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=24 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -18,6 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
 [ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="16_n0g5q"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
+[ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="19_mkub3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuf5"]
+texture = SubResource("CanvasTexture_qbksh")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gfb3x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0ro0"]
+texture = SubResource("CanvasTexture_gfb3x")
+modulate_color = Color(0.81, 0.1, 0.1, 1)
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -32,15 +45,15 @@ script = ExtResource("1_03lrq")
 [node name="ReturnLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ReturnLayer"]
-position = Vector2(1556.5, 694)
+position = Vector2(1556.5, 765)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="ReturnToMenu" type="Button" parent="ReturnLayer" groups=["pause_buttons"]]
 offset_left = 1331.0
-offset_top = 629.25
+offset_top = 676.0
 offset_right = 1628.0
-offset_bottom = 696.25
+offset_bottom = 773.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_top = NodePath("../../ContinueLayer/Continue")
@@ -50,15 +63,15 @@ focus_next = NodePath("../../CommandLayer/Command")
 focus_previous = NodePath("../../ContinueLayer/Continue")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Return to menu"
 flat = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer"]
 z_index = 5
-position = Vector2(1542, 1043)
+position = Vector2(1532, 929)
 scale = Vector2(0.626432, 0.594786)
 texture = ExtResource("2_g1xuu")
 
@@ -78,33 +91,33 @@ texture = ExtResource("1_t2voc")
 [node name="ContinueLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ContinueLayer"]
-position = Vector2(951.5, 487)
+position = Vector2(951.5, 558)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="Continue" type="Button" parent="ContinueLayer" groups=["pause_buttons"]]
-offset_left = 726.5
-offset_top = 421.0
-offset_right = 1020.5
-offset_bottom = 484.0
+offset_left = 727.0
+offset_top = 480.0
+offset_right = 1021.0
+offset_bottom = 565.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../CommandLayer/Command")
-focus_neighbor_top = NodePath("../../CommandLayer/Command")
+focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
 focus_neighbor_right = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_bottom = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_next = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_previous = NodePath("../../CommandLayer/Command")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Continue"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue"]
-position = Vector2(60.9799, 363.992)
+position = Vector2(61.5385, 144.186)
 scale = Vector2(0.135343, 0.161549)
 texture = ExtResource("5_d1asp")
 
@@ -139,33 +152,33 @@ scale = Vector2(12.1928, 7.48612)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="CommandLayer"]
-position = Vector2(361.5, 696)
+position = Vector2(361.5, 767)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="Command" type="Button" parent="CommandLayer" groups=["pause_buttons"]]
-offset_left = 127.5
-offset_top = 637.0
-offset_right = 421.5
-offset_bottom = 700.0
+offset_left = 128.0
+offset_top = 685.0
+offset_right = 422.0
+offset_bottom = 774.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ReturnLayer/ReturnToMenu")
-focus_neighbor_top = NodePath("../../ReturnLayer/ReturnToMenu")
+focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
 focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
 focus_next = NodePath("../../ContinueLayer/Continue")
 focus_previous = NodePath("../../ReturnLayer/ReturnToMenu")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Commands"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CommandLayer/Command"]
-position = Vector2(69.9542, 238.992)
+position = Vector2(70.5128, 140.698)
 scale = Vector2(0.188382, 0.19501)
 texture = ExtResource("11_felfj")
 
@@ -178,6 +191,79 @@ texture = ExtResource("12_nirwk")
 position = Vector2(811.679, -7.22157)
 scale = Vector2(2.12367, 1.79211)
 texture = ExtResource("13_6ho6x")
+
+[node name="SoundLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SoundLayer"]
+position = Vector2(310, 208.25)
+scale = Vector2(3.05405, 3.92763)
+texture = ExtResource("2_h85by")
+
+[node name="MusicSliderLabel" type="Label" parent="SoundLayer"]
+offset_left = 272.0
+offset_top = 95.5
+offset_right = 371.0
+offset_bottom = 137.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Musics"
+
+[node name="MusicSlider" type="HSlider" parent="SoundLayer"]
+offset_left = 204.0
+offset_top = 136.5
+offset_right = 454.0
+offset_bottom = 171.5
+scale = Vector2(1, 1.44)
+focus_neighbor_left = NodePath("../MusicMuteButton")
+focus_neighbor_top = NodePath("../EffectSlider")
+focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
+focus_neighbor_bottom = NodePath("../EffectSlider")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
+max_value = 5.0
+
+[node name="Label2" type="Label" parent="SoundLayer"]
+offset_left = 239.0
+offset_top = 201.5
+offset_right = 422.0
+offset_bottom = 243.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sound effect"
+
+[node name="EffectSlider" type="HSlider" parent="SoundLayer"]
+offset_left = 209.0
+offset_top = 241.5
+offset_right = 459.0
+offset_bottom = 276.5
+scale = Vector2(1, 1.44)
+focus_neighbor_left = NodePath("../SoundMuteButton")
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
+focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
+max_value = 5.0
+
+[node name="MusicMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
+offset_left = 144.0
+offset_top = 136.5
+offset_right = 192.0
+offset_bottom = 184.5
+focus_neighbor_left = NodePath("../MusicSlider")
+focus_neighbor_top = NodePath("../SoundMuteButton")
+focus_neighbor_right = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../SoundMuteButton")
+
+[node name="SoundMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
+offset_left = 149.0
+offset_top = 241.5
+offset_right = 197.0
+offset_bottom = 289.5
+focus_neighbor_left = NodePath("../EffectSlider")
+focus_neighbor_top = NodePath("../MusicMuteButton")
+focus_neighbor_right = NodePath("../EffectSlider")
+focus_neighbor_bottom = NodePath("../MusicMuteButton")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
@@ -209,6 +295,7 @@ scale = Vector2(28.6963, 10.8095)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]
+visible = false
 z_index = 20
 offset_left = 13.0
 offset_top = 16.0
@@ -254,6 +341,20 @@ grow_vertical = 2
 [connection signal="gui_input" from="CommandLayer/Command" to="." method="_on_command_gui_input"]
 [connection signal="mouse_exited" from="CommandLayer/Command" to="." method="_on_command_mouse_exited"]
 [connection signal="pressed" from="CommandLayer/Command" to="." method="_on_command_pressed"]
+[connection signal="focus_entered" from="SoundLayer/MusicSlider" to="." method="_on_music_slider_focus_entered"]
+[connection signal="focus_exited" from="SoundLayer/MusicSlider" to="." method="_on_music_slider_focus_exited"]
+[connection signal="gui_input" from="SoundLayer/MusicSlider" to="." method="_on_music_slider_gui_input"]
+[connection signal="mouse_entered" from="SoundLayer/MusicSlider" to="." method="_on_music_slider_mouse_entered"]
+[connection signal="mouse_exited" from="SoundLayer/MusicSlider" to="." method="_on_music_slider_mouse_exited"]
+[connection signal="value_changed" from="SoundLayer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="focus_entered" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_focus_entered"]
+[connection signal="focus_exited" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_focus_exited"]
+[connection signal="gui_input" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_gui_input"]
+[connection signal="mouse_entered" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_mouse_entered"]
+[connection signal="mouse_exited" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_mouse_exited"]
+[connection signal="value_changed" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_value_changed"]
+[connection signal="pressed" from="SoundLayer/MusicMuteButton" to="." method="_on_music_mute_button_pressed"]
+[connection signal="pressed" from="SoundLayer/SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
 [connection signal="gui_input" from="CommandsUI/CloseButton" to="." method="_on_close_button_gui_input"]
 [connection signal="mouse_entered" from="CommandsUI/CloseButton" to="." method="_on_close_button_mouse_entered"]
 [connection signal="pressed" from="CommandsUI/CloseButton" to="." method="_on_close_button_pressed"]

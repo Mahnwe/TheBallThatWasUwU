@@ -11,6 +11,10 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if config.get_value("Launch", "is_first_launch"):
+		config.set_value("musicVolume","is_music_mute", false)
+		config.set_value("effectVolume","is_effect_mute", false)
+		config.save("res://Ressources/PropertieFile/properties.cfg")
 	music_slider_stylebox = $MusicSlider.get_theme_stylebox("grabber_area")
 	effect_slider_stylebox = $EffectSlider.get_theme_stylebox("grabber_area")
 	$MusicSlider.editable = false
@@ -20,6 +24,8 @@ func _ready():
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
 	change_bubble_message()
+	config.set_value("Launch", "is_first_launch", false)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -268,30 +274,55 @@ func _on_effect_slider_value_changed(value):
 func _on_music_mute_button_pressed():
 	if !$MusicMuteButton.is_mute:
 		$MusicMuteButton.is_mute = true
-		for member in get_tree().get_nodes_in_group("music_group"):
-			member.volume_db = -100
-	else:
-		$MusicMuteButton.is_mute = false
+		$MusicSlider.editable = false
+		config.set_value("musicVolume","musicVolumeSet", -50)
+		config.set_value("musicVolume","is_music_mute", true)
+		config.set_value("musicSliderValue","sliderMusicValue", 0.0)
+		$MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
 		for member in get_tree().get_nodes_in_group("music_group"):
 			member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		set_sliders_value_with_config()
-
+		config.save("res://Ressources/PropertieFile/properties.cfg")
+		
+	else:
+		$MusicMuteButton.is_mute = false
+		$MusicSlider.editable = true
+		config.set_value("musicVolume","is_music_mute", false)
+		config.set_value("musicVolume","musicVolumeSet", -10)
+		config.set_value("musicSliderValue","sliderMusicValue", 3.0)
+		$MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
+		for member in get_tree().get_nodes_in_group("music_group"):
+			member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+		config.save("res://Ressources/PropertieFile/properties.cfg")
 
 func _on_sound_mute_button_pressed():
 	if !$SoundMuteButton.is_mute:
 		$SoundMuteButton.is_mute = true
-		for member in get_tree().get_nodes_in_group("sound_effect_group"):
-			member.volume_db = -100
-	else:
-		$SoundMuteButton.is_mute = false
+		$EffectSlider.editable = false
+		config.set_value("effectVolume","effectVolumeSet", -50)
+		config.set_value("effectVolume","is_effect_mute", true)
+		config.set_value("effectSliderValue","sliderEffectValue", 0.0)
+		$EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
 		for member in get_tree().get_nodes_in_group("sound_effect_group"):
 			member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		set_sliders_value_with_config()
+		config.save("res://Ressources/PropertieFile/properties.cfg")
+	else:
+		$SoundMuteButton.is_mute = false
+		$EffectSlider.editable = true
+		config.set_value("effectVolume","is_effect_mute", false)
+		config.set_value("effectVolume","effectVolumeSet", -20)
+		config.set_value("effectSliderValue","sliderEffectValue", 3.0)
+		$EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
+		for member in get_tree().get_nodes_in_group("sound_effect_group"):
+			member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		config.save("res://Ressources/PropertieFile/properties.cfg")
 			
 func set_sliders_value_with_config():
 	$MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
 	$EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
-
+	if config.get_value("musicVolume","is_music_mute"):
+		$MusicMuteButton.is_mute = true
+	if config.get_value("effectVolume","is_effect_mute"):
+		$SoundMuteButton.is_mute = true
 
 func _on_music_slider_gui_input(event):
 	if $MusicSlider.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
@@ -332,7 +363,8 @@ func _on_effect_slider_focus_exited():
 
 func _on_music_slider_mouse_entered():
 	$ButtonSound.play()
-	$MusicSlider.editable = true
+	if !$MusicMuteButton.is_mute:
+		$MusicSlider.editable = true
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
 	$MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
@@ -340,7 +372,8 @@ func _on_music_slider_mouse_entered():
 
 func _on_effect_slider_mouse_entered():
 	$ButtonSound.play()
-	$EffectSlider.editable = true
+	if !$SoundMuteButton.is_mute:
+		$EffectSlider.editable = true
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
 	$EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)

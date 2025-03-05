@@ -31,6 +31,7 @@ func _ready():
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
+	$Player/Pause.get_child(3).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 
@@ -204,10 +205,12 @@ func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
 		untoggle_pause()
 	elif $Player.position.x == start_position_x:
+		$PauseMusic.stop()
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
 		$Player/Pause.get_child(1).hide()
 		$Player/Pause.get_child(2).hide()
+		$Player/Pause.get_child(3).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		enable_patrol_groups()
 		$Player.set_physics_process(true)
@@ -224,6 +227,7 @@ func toggle_pause():
 	$Player/Pause.get_child(0).show()
 	$Player/Pause.get_child(1).show()
 	$Player/Pause.get_child(2).show()
+	$Player/Pause.get_child(3).show()
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_patrol_groups()
@@ -237,6 +241,7 @@ func untoggle_pause():
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
+	$Player/Pause.get_child(3).hide()
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_patrol_groups()

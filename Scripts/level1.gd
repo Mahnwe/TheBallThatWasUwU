@@ -31,6 +31,7 @@ func _ready():
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
+	$Player/Pause.get_child(3).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	set_up_signs()
@@ -170,10 +171,13 @@ func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
 		untoggle_pause()
 	elif $Player.position.x == start_position_x:
+		$PauseMusic.stop()
+		$Level1Music.stream_paused = false
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
 		$Player/Pause.get_child(1).hide()
 		$Player/Pause.get_child(2).hide()
+		$Player/Pause.get_child(3).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.set_physics_process(true)
 		is_paused = false
@@ -199,12 +203,14 @@ func toggle_pause():
 	$Player/Pause.get_child(0).show()
 	$Player/Pause.get_child(1).show()
 	$Player/Pause.get_child(2).show()
+	$Player/Pause.get_child(3).show()
 	$Level1Music.stream_paused = true
 	$DeadWayMusic.stream_paused = true
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.set_physics_process(false)
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
 	
 func untoggle_pause():
@@ -212,12 +218,14 @@ func untoggle_pause():
 	$Player/Pause.get_child(0).hide()
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
+	$Player/Pause.get_child(3).hide()
 	$PauseMusic.stop()
 	$Level1Music.stream_paused = false
 	$DeadWayMusic.stream_paused = false
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	$Player.set_physics_process(true)
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
 
 
