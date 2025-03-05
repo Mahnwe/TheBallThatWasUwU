@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr47sovtmwvxp"]
 
-[ext_resource type="Script" path="res://Scripts/top_time.gd" id="1_arqek"]
+[ext_resource type="Script" uid="uid://bm2otun8v5cm7" path="res://Scripts/top_time.gd" id="1_arqek"]
 [ext_resource type="Texture2D" uid="uid://d0ffotplbx7kk" path="res://Arts/MedalSprite/GoldMedal.png" id="2_3fovc"]
 [ext_resource type="Texture2D" uid="uid://b3xwkjossotye" path="res://Arts/MedalSprite/SilverMedal.png" id="3_uvmet"]
 [ext_resource type="Texture2D" uid="uid://v70dg745brn8" path="res://Arts/MedalSprite/BronzeMedal.png" id="4_460ux"]

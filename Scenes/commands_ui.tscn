@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://cp0mu2e8kcon"]
 
-[ext_resource type="Script" path="res://Scripts/commands_ui.gd" id="1_in6he"]
+[ext_resource type="Script" uid="uid://bxymd3lpn7qw7" path="res://Scripts/commands_ui.gd" id="1_in6he"]
 [ext_resource type="Texture2D" uid="uid://cea44i1yw26q1" path="res://Arts/KeyboardControls/Qkey-removebg-preview.png" id="2_apncb"]
 [ext_resource type="Texture2D" uid="uid://bnnl3n15x2t5l" path="res://Arts/KeyboardControls/Dkey-removebg-preview.png" id="3_uafni"]
 [ext_resource type="Texture2D" uid="uid://c32h8q26o4uyd" path="res://Arts/KeyboardControls/Zkey-removebg-preview.png" id="4_04nmc"]

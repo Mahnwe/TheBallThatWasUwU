@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dss5xj26b0dfl"]
 
-[ext_resource type="Script" path="res://Scripts/finish.gd" id="1_srp80"]
+[ext_resource type="Script" uid="uid://bpd3ekag5uccm" path="res://Scripts/finish.gd" id="1_srp80"]
 [ext_resource type="Texture2D" uid="uid://sa1yhgwcbfj0" path="res://Arts/FinishLaneSprite/FinishSprite-Photoroom-removebg-preview.png" id="2_51c3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gw35"]

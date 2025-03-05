@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bo7nw1yq804xk"]
 
-[ext_resource type="Script" path="res://Scripts/SpikeNode.gd" id="1_3ktyq"]
+[ext_resource type="Script" uid="uid://cwy6xxnt643ny" path="res://Scripts/SpikeNode.gd" id="1_3ktyq"]
 [ext_resource type="Texture2D" uid="uid://d3ona87nnbpfo" path="res://Arts/SpritesSpike/SpikeSprite.png" id="2_8tc88"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1o7nn"]

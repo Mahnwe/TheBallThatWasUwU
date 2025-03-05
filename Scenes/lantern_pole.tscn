@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckh3u5c14ylpi"]
 
-[ext_resource type="Script" path="res://Scripts/LanternPole.gd" id="1_yycmn"]
+[ext_resource type="Script" uid="uid://666ushlsbx1a" path="res://Scripts/LanternPole.gd" id="1_yycmn"]
 [ext_resource type="Texture2D" uid="uid://cbw7vw6npq0u4" path="res://Arts/LanternPoleSprite/LanterPole-removebg-preview.png" id="2_gv163"]
 
 [node name="LanternPole" type="Node2D"]

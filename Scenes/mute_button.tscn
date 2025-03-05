@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpsfdngntxqhn"]
 
 [ext_resource type="Texture2D" uid="uid://dl67en3t1bo0d" path="res://Arts/SoundSprite/UnmuteSound.png" id="1_gf6b1"]
-[ext_resource type="Script" path="res://Scripts/mute_button.gd" id="1_nvc1j"]
+[ext_resource type="Script" uid="uid://csfhlnk1niha6" path="res://Scripts/mute_button.gd" id="1_nvc1j"]
 [ext_resource type="Texture2D" uid="uid://cs5tkiae3jjbe" path="res://Arts/SoundSprite/MuteSound.png" id="2_7it37"]
 
 [node name="MuteButton" type="Button"]

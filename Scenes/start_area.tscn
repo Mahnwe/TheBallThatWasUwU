@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csgwqsc62crjo"]
 
-[ext_resource type="Script" path="res://Scripts/start_area.gd" id="1_my26t"]
+[ext_resource type="Script" uid="uid://bewlegceg6qvm" path="res://Scripts/start_area.gd" id="1_my26t"]
 [ext_resource type="Texture2D" uid="uid://billn103ew6nh" path="res://Arts/StartLaneSprite/StartSprite-Photoroom.png" id="2_nwjmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4srfq"]

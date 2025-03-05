@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d21ljnkx42qta"]
 
-[ext_resource type="Script" path="res://Scripts/water_platform.gd" id="1_wqe53"]
+[ext_resource type="Script" uid="uid://c5smr7jfnixjl" path="res://Scripts/water_platform.gd" id="1_wqe53"]
 [ext_resource type="Texture2D" uid="uid://cjoa1d2c6w2a3" path="res://Arts/SpritesPlatform/WaterPlatform.png" id="2_gwgua"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oqx8y"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bbctegcfntwoe"]
 
-[ext_resource type="Script" path="res://Scripts/pause.gd" id="1_03lrq"]
+[ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
 [ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="2_g1xuu"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_h85by"]

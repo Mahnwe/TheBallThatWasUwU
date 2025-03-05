@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bha08grmcxwnd"]
 
-[ext_resource type="Script" path="res://Scripts/rock1.gd" id="1_7ddvm"]
+[ext_resource type="Script" uid="uid://bvfubixt0lck3" path="res://Scripts/rock1.gd" id="1_7ddvm"]
 [ext_resource type="Texture2D" uid="uid://beamrmvigjq5p" path="res://Arts/RockSprite/RockSprite2-removebg-preview.png" id="1_nnhi5"]
 
 [node name="Rock2" type="Node2D"]

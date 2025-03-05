@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6k3vbroiylq0"]
 
-[ext_resource type="Script" path="res://Scripts/palm.gd" id="1_8p14a"]
+[ext_resource type="Script" uid="uid://cf1jdyuqosd66" path="res://Scripts/palm.gd" id="1_8p14a"]
 [ext_resource type="Texture2D" uid="uid://dd61grju0cj10" path="res://Arts/PalmSprite/PalmSprite-removebg-preview.png" id="2_u8koe"]
 
 [node name="Palm" type="Node2D"]

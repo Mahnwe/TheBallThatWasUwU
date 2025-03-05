@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://uwfcx0dtb2bc"]
 
-[ext_resource type="Script" path="res://Scripts/tree.gd" id="1_l8u1f"]
+[ext_resource type="Script" uid="uid://ltibcnxxqnx6" path="res://Scripts/tree.gd" id="1_l8u1f"]
 [ext_resource type="Texture2D" uid="uid://dlxsux07t7u1r" path="res://Arts/TreeSprite/TreeSprite2-removebg-preview.png" id="1_tgdef"]
 
 [node name="BigTree" type="Node2D"]

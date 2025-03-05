@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5pqy18mxsyby"]
 
 [ext_resource type="PackedScene" uid="uid://b2k7febsvejjl" path="res://Scenes/vbox_timer_label.tscn" id="1_jxowl"]
-[ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="2_cqnvk"]
+[ext_resource type="Script" uid="uid://brillgev8jji3" path="res://Scripts/TimerLabel.gd" id="2_cqnvk"]
 
 [node name="UI" type="Control"]
 z_index = 1

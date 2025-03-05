@@ -331,6 +331,7 @@ func _on_effect_slider_focus_exited():
 
 
 func _on_music_slider_mouse_entered():
+	$ButtonSound.play()
 	$MusicSlider.editable = true
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
@@ -338,6 +339,7 @@ func _on_music_slider_mouse_entered():
 
 
 func _on_effect_slider_mouse_entered():
+	$ButtonSound.play()
 	$EffectSlider.editable = true
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)

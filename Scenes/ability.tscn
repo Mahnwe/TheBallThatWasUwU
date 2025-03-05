@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://i4jemvk3v54m"]
 
-[ext_resource type="Script" path="res://Scripts/ability.gd" id="1_vfgwr"]
+[ext_resource type="Script" uid="uid://c7tpqyun8dcqy" path="res://Scripts/ability.gd" id="1_vfgwr"]
 [ext_resource type="AudioStream" uid="uid://dojptb2rgjdfi" path="res://Sound/Effects/ABILITY.wav" id="2_q1yff"]
 [ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="3_cwa40"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnpgamit7qywn"]
 
-[ext_resource type="Script" path="res://Scripts/water_drop.gd" id="1_qdvak"]
+[ext_resource type="Script" uid="uid://b2m6qdau1qbn2" path="res://Scripts/water_drop.gd" id="1_qdvak"]
 [ext_resource type="Texture2D" uid="uid://dmrjr1d12uoal" path="res://Arts/DropSprite/DropSprite2.png" id="2_wngau"]
 [ext_resource type="Texture2D" uid="uid://cwtl8eb7834x2" path="res://Arts/DropSprite/DropSprite3.png" id="3_af5a5"]
 [ext_resource type="Texture2D" uid="uid://c0jbcsa0gmonp" path="res://Arts/DropSprite/DropSprite4.png" id="4_mux4y"]

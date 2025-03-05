@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://7qfwpggjf11t"]
 
-[ext_resource type="Script" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
+[ext_resource type="Script" uid="uid://f8rg5bmw2l7" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
 [ext_resource type="Texture2D" uid="uid://bo382jwr13x5w" path="res://Arts/SpritesMemoryCard/SpritePositionMemoryCard-removebg-preview.png" id="2_sqixw"]
 [ext_resource type="AudioStream" uid="uid://bgou8b4pket55" path="res://Sound/Effects/SAVE.mp3" id="3_ogtmp"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://h0s30ni3wk5f"]
 
-[ext_resource type="Script" path="res://Scripts/kelp.gd" id="1_q60wn"]
+[ext_resource type="Script" uid="uid://chusc1tlbj73u" path="res://Scripts/kelp.gd" id="1_q60wn"]
 [ext_resource type="Texture2D" uid="uid://bwdw1lh4n5o0t" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation1.png" id="2_lmdxp"]
 [ext_resource type="Texture2D" uid="uid://33cqnlbw18el" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation2.png" id="3_kqfxf"]
 [ext_resource type="Texture2D" uid="uid://pojnannp62bj" path="res://Arts/WaterAssets/KelpAnimation/KelpAnimation3.png" id="4_tvh38"]

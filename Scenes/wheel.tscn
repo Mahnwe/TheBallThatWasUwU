@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3tiqo6vtui7s"]
 
-[ext_resource type="Script" path="res://Scripts/Wheel.gd" id="1_arclr"]
+[ext_resource type="Script" uid="uid://1qad27gjb8mj" path="res://Scripts/Wheel.gd" id="1_arclr"]
 [ext_resource type="Texture2D" uid="uid://b2f3tjvbgily0" path="res://Arts/WeelSprite/WeelSprite-removebg-preview.png" id="2_wldkr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bnp7t"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6evsxx3ik4ta"]
 
-[ext_resource type="Script" path="res://Scripts/warning_sign.gd" id="1_0cxxk"]
+[ext_resource type="Script" uid="uid://d3ccxvkhurd4i" path="res://Scripts/warning_sign.gd" id="1_0cxxk"]
 [ext_resource type="Texture2D" uid="uid://bms6xs6eedl8g" path="res://Arts/WarningSignSprite/WarningSign-removebg-preview.png" id="1_81kt7"]
 
 [node name="WarningSign" type="Node2D"]

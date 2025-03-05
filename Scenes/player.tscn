@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://c26rjdt07ubrq"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_24gvc"]
+[ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="3_ytwi2"]
 [ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="4_5dwnd"]

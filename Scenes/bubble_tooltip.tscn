@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj8cpxrhnlvkp"]
 
 [ext_resource type="Texture2D" uid="uid://blbv025dudnar" path="res://Arts/MessageBubble/TooltipMessageSprite.png" id="1_muu63"]
-[ext_resource type="Script" path="res://Scripts/bubble_tooltip.gd" id="2_isg8o"]
+[ext_resource type="Script" uid="uid://b2nbd0x0yyaxd" path="res://Scripts/bubble_tooltip.gd" id="2_isg8o"]
 
 [node name="BubbleTooltip" type="Sprite2D"]
 scale = Vector2(2.77, 2.32667)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cmqedy04unkxa"]
 
-[ext_resource type="Script" path="res://Scripts/coral_spike.gd" id="1_uxneo"]
+[ext_resource type="Script" uid="uid://cgenwhxemcd3d" path="res://Scripts/coral_spike.gd" id="1_uxneo"]
 [ext_resource type="Texture2D" uid="uid://bh6i6w6q4bysw" path="res://Arts/WaterAssets/CoralSprite.png" id="2_ngopw"]
 [ext_resource type="PackedScene" uid="uid://bacfpyli26p32" path="res://Scenes/bubbles.tscn" id="3_6w1y3"]
 

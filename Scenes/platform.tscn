@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwvnkbkl3fw0d"]
 
-[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_0i6cx"]
+[ext_resource type="Script" uid="uid://cc6k5dfe80plv" path="res://Scripts/platform.gd" id="1_0i6cx"]
 [ext_resource type="Texture2D" uid="uid://jg2dls04c4f7" path="res://Arts/SpritesPlatform/GrassPlatform-removebg-preview.png" id="2_svcx6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rsijb"]

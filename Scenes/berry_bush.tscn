@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://e0nrigj8kq3x"]
 
 [ext_resource type="Texture2D" uid="uid://bitt2jd4cilmg" path="res://Arts/BushSprite/BerryBushSprite-removebg-preview.png" id="1_bvoqf"]
-[ext_resource type="Script" path="res://Scripts/branches_bush.gd" id="1_j21sd"]
+[ext_resource type="Script" uid="uid://brfctq6wx4gbo" path="res://Scripts/branches_bush.gd" id="1_j21sd"]
 
 [node name="BerryBush" type="Node2D"]
 script = ExtResource("1_j21sd")

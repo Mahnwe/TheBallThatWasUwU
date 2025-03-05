@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmjeaxwj54rxk"]
 
-[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_ymfcf"]
+[ext_resource type="Script" uid="uid://cc6k5dfe80plv" path="res://Scripts/platform.gd" id="1_ymfcf"]
 [ext_resource type="Texture2D" uid="uid://b83xed8nal2re" path="res://Arts/SpritesPlatform/RockPlatform-removebg-preview.png" id="2_dv7ob"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rsijb"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbnmtapo47fk2"]
 
 [ext_resource type="Texture2D" uid="uid://b4qvun7t2vdxa" path="res://Arts/WaterAssets/ClamsSprite.png" id="1_1g4yt"]
-[ext_resource type="Script" path="res://Scripts/clams.gd" id="2_hh0h3"]
+[ext_resource type="Script" uid="uid://vdtjkhr5pqb0" path="res://Scripts/clams.gd" id="2_hh0h3"]
 
 [node name="Clams" type="Sprite2D"]
 texture = ExtResource("1_1g4yt")
