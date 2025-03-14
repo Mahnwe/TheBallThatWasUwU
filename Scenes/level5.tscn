@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=45 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -29,6 +29,15 @@
 [ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="27_qybqt"]
 [ext_resource type="PackedScene" uid="uid://cbnmtapo47fk2" path="res://Scenes/clams.tscn" id="28_f1b3o"]
 [ext_resource type="PackedScene" uid="uid://bacfpyli26p32" path="res://Scenes/bubbles.tscn" id="29_w1fmi"]
+[ext_resource type="PackedScene" uid="uid://b6k3vbroiylq0" path="res://Scenes/palm.tscn" id="30_au55g"]
+[ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="31_3quvk"]
+[ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="32_2vg6q"]
+[ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="33_e4fbw"]
+[ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="34_3quvk"]
+[ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="35_h51mq"]
+[ext_resource type="Texture2D" uid="uid://dqdxwbhyokt30" path="res://Arts/StalactiteSprite/StalactiteSprite.png" id="36_nks4y"]
+[ext_resource type="PackedScene" uid="uid://dnpgamit7qywn" path="res://Scenes/water_drop.tscn" id="37_fkoau"]
+[ext_resource type="Texture2D" uid="uid://b7ykvqooe5xhe" path="res://Arts/StalactiteSprite/BrownStalactiteSprite.png" id="38_nks4y"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -53,6 +62,18 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2169, -1044, 0, 0, 0, 0, -2251, -1044, 0, 0, 0, 0, -2344, -1042, 0, 0, 0, 0, -2423, -1041, 0, 0, 0, 0, -2523, -1041, 0, 0, 0, 0, -2169, -1044)
 }
 point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_k4k0d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -828, -162, 0, 0, 0, 0, -828, -88, 0, 0, 0, 0, -828, -23, 0, 0, 0, 0, -829, 33, 0, 0, 0, 0, -829, 62)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_fkoau"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2953, -599, 0, 0, 0, 0, -2953, -529, 0, 0, 0, 0, -2952, -451, 0, 0, 0, 0, -2952, -366, 0, 0, 0, 0, -2952, -312)
+}
+point_count = 5
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -581,6 +602,7 @@ rotates = false
 [node name="Spike" parent="Path2D3/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
 position = Vector2(-22.7078, -25.2657)
 scale = Vector2(0.314187, 0.175526)
+speed = 450
 
 [node name="Path2D4" type="Path2D" parent="."]
 curve = SubResource("Curve2D_7vudj")
@@ -593,6 +615,7 @@ rotates = false
 [node name="Spike" parent="Path2D4/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
 position = Vector2(-26, -34)
 scale = Vector2(0.371509, 0.259285)
+speed = 450
 
 [node name="platform16" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-2915, -852)
@@ -612,6 +635,115 @@ position = Vector2(0, -28)
 
 [node name="CoralSpike12" parent="." instance=ExtResource("16_r1un4")]
 position = Vector2(-2643, -773)
+
+[node name="Palm" parent="." instance=ExtResource("30_au55g")]
+position = Vector2(-805, -23)
+scale = Vector2(0.655878, 0.809716)
+
+[node name="BranchesBush" parent="." instance=ExtResource("31_3quvk")]
+position = Vector2(-835, 40)
+
+[node name="Rock4" parent="." instance=ExtResource("19_w2r3n")]
+position = Vector2(-1131, 118)
+rotation = 0.521293
+scale = Vector2(0.415841, 0.411915)
+
+[node name="BigTree" parent="." instance=ExtResource("32_2vg6q")]
+position = Vector2(-3007, -452)
+
+[node name="LanternPole" parent="." instance=ExtResource("33_e4fbw")]
+position = Vector2(-2856, -370)
+scale = Vector2(0.518952, 0.421812)
+
+[node name="BranchesBush2" parent="." instance=ExtResource("31_3quvk")]
+position = Vector2(-1516, -889)
+scale = Vector2(1.16016, 1.20029)
+
+[node name="Kelp7" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(-3027, -802)
+
+[node name="Kelp" parent="Kelp7" instance=ExtResource("17_ajufk")]
+position = Vector2(48, 0)
+is_flip = true
+
+[node name="Tree" parent="." instance=ExtResource("34_3quvk")]
+position = Vector2(-2228, -673)
+flip_value = 1
+
+[node name="BerryBush" parent="." instance=ExtResource("35_h51mq")]
+position = Vector2(-2288, -604)
+scale = Vector2(0.825541, 0.837058)
+
+[node name="BerryBush" parent="BerryBush" instance=ExtResource("35_h51mq")]
+position = Vector2(-36.3398, 0)
+flip_value = 1
+
+[node name="Kelp8" parent="." instance=ExtResource("17_ajufk")]
+position = Vector2(-1928, -145)
+scale = Vector2(0.614382, 0.679157)
+
+[node name="Kelp" parent="Kelp8" instance=ExtResource("17_ajufk")]
+position = Vector2(37.4358, 2.24672e-05)
+is_flip = true
+
+[node name="Kelp2" parent="Kelp8" instance=ExtResource("17_ajufk")]
+position = Vector2(74.8717, 2.24672e-05)
+
+[node name="Kelp3" parent="Kelp8" instance=ExtResource("17_ajufk")]
+position = Vector2(115.563, 2.24672e-05)
+is_flip = true
+
+[node name="Clams2" parent="." instance=ExtResource("28_f1b3o")]
+position = Vector2(-1467, -91)
+
+[node name="Rock5" parent="." instance=ExtResource("18_k03y4")]
+position = Vector2(-2345, -68)
+scale = Vector2(1.24639, 1.40158)
+
+[node name="Palm2" parent="." instance=ExtResource("30_au55g")]
+position = Vector2(-2864, -38)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-825, -198)
+rotation = 3.14159
+texture = ExtResource("36_nks4y")
+
+[node name="Path2D5" type="Path2D" parent="."]
+curve = SubResource("Curve2D_k4k0d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
+position = Vector2(-828, -162)
+rotation = 1.58431
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D5/PathFollow2D" instance=ExtResource("37_fkoau")]
+position = Vector2(2.99973, -0.0405367)
+rotation = -1.5708
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2952, -636)
+rotation = 3.14159
+texture = ExtResource("38_nks4y")
+
+[node name="Path2D6" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fkoau")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D6"]
+position = Vector2(-2953, -599)
+rotation = 1.5708
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D6/PathFollow2D" instance=ExtResource("37_fkoau")]
+position = Vector2(3, -1.31134e-07)
+rotation = -1.5708
+
+[node name="BigTree2" parent="." instance=ExtResource("32_2vg6q")]
+position = Vector2(-1582, -1002)
+
+[node name="Tree2" parent="." instance=ExtResource("34_3quvk")]
+position = Vector2(-143, -905)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]

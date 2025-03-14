@@ -233,7 +233,8 @@ func toggle_pause():
 	disable_patrol_groups()
 	disable_cannon_groups()
 	$Player.set_physics_process(false)
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
 	
 func untoggle_pause():
@@ -247,7 +248,8 @@ func untoggle_pause():
 	enable_patrol_groups()
 	enable_cannon_groups()
 	$Player.set_physics_process(true)
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
 
 

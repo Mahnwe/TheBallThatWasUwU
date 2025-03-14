@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=53 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://dwybtgqa24n5s" path="res://Arts/UwUBallJump/UwUBallJump5.png" id="17_abtfl"]
 [ext_resource type="Texture2D" uid="uid://bmqo3tt8fxuy2" path="res://Arts/UwUBallSpriteWalk/UwUWalk2.png" id="17_ksa41"]
 [ext_resource type="Texture2D" uid="uid://dkqs7s22pt0vm" path="res://Arts/UwUBallSpriteWalk/UwUWalk3.png" id="18_2k6jt"]
+[ext_resource type="Texture2D" uid="uid://cj7nlee07b522" path="res://Arts/UwUBallSprite/UwUIdle1.png" id="18_5x828"]
 [ext_resource type="Texture2D" uid="uid://brp321rbhw877" path="res://Arts/UwUBallJump/UwUBallJump6.png" id="18_fulpt"]
+[ext_resource type="Texture2D" uid="uid://dycpb6kyp34ry" path="res://Arts/UwUBallSprite/UwUIdle2.png" id="19_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://js0boqwsreig" path="res://Arts/UwUBallSpriteWalk/UwUWalk4.png" id="19_dblvh"]
 [ext_resource type="Texture2D" uid="uid://ccywwiurvesv0" path="res://Arts/UwUBallSpriteWalk/UwUWalk5.png" id="20_1hr78"]
 [ext_resource type="Texture2D" uid="uid://c8ctef1hpvf36" path="res://Arts/UwUBallJump/UwUStayInAir.png" id="20_gkn4w"]
@@ -89,6 +91,20 @@ animations = [{
 "loop": true,
 "name": &"dead",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_nxexs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5x828")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_c1k8q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -279,7 +295,7 @@ visibility_layer = 2
 position = Vector2(212.5, 232)
 scale = Vector2(1.14, 2.2)
 sprite_frames = SubResource("SpriteFrames_b2da6")
-animation = &"stay"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2

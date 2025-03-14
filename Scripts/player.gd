@@ -129,8 +129,7 @@ func check_if_player_is_on_floor():
 		can_dash = true
 		number_of_jumps = 0
 		if velocity.x == 0:
-			$AnimatedSprite2D.stop()
-			$AnimatedSprite2D.animation = "stay"
+			$AnimatedSprite2D.animation = "idle"
 			$AnimatedSprite2D.play()
 		if velocity.x != 0:
 			if velocity.x < 0:

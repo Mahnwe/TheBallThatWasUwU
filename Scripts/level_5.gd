@@ -38,7 +38,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
+	water_drop_animation(delta)
 	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
 	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
@@ -99,7 +100,8 @@ func toggle_pause():
 	disable_patrol_groups()
 	disable_cannon_groups()
 	$Player.set_physics_process(false)
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
 	
 func untoggle_pause():
@@ -113,7 +115,8 @@ func untoggle_pause():
 	enable_patrol_groups()
 	enable_cannon_groups()
 	$Player.set_physics_process(true)
-	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
 	
 func _on_start_area_player_exited_start_area():
@@ -255,3 +258,10 @@ func _on_portal_body_entered(body):
 		await get_tree().create_timer(0.2).timeout
 		body.position.x = ($Portal2.position.x - 160)
 		body.position.y = ($Portal2.position.y - 50)
+		
+func water_drop_animation(delta):
+	for member in get_tree().get_nodes_in_group("waterdrop_group"):
+		if(member.drop_exploded == true):
+			member.get_parent().progress_ratio = 0
+		if(member.drop_exploded == false):
+			member.get_parent().progress += member.speed * delta
