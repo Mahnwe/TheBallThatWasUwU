@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=47 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" uid="uid://dumtc4alnw10m" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="26_vfmhc"]
 [ext_resource type="AudioStream" uid="uid://g23as811441j" path="res://Sound/Musics/Project Manawe_LEVEL 2.mp3" id="27_w3haq"]
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="29_iq3kg"]
+[ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="30_o1sn7"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -635,7 +636,7 @@ rotation = 3.14159
 scale = Vector2(1.8, 0.68)
 
 [node name="platform21" parent="." instance=ExtResource("2_ja3c0")]
-position = Vector2(-2650, 648)
+position = Vector2(-2652, 672)
 scale = Vector2(0.200005, 0.778904)
 
 [node name="AppleTree" parent="." instance=ExtResource("13_f34ya")]
@@ -789,6 +790,10 @@ parameters/looping = true
 [node name="Water" parent="." instance=ExtResource("29_iq3kg")]
 position = Vector2(-4179, 203)
 scale = Vector2(3.07, 0.31)
+
+[node name="Chest" parent="." instance=ExtResource("30_o1sn7")]
+position = Vector2(-2564, 711)
+scale = Vector2(2.53154, 2.66816)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

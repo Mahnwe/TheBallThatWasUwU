@@ -25,6 +25,9 @@ func _ready():
 	queue.is_level_4 = false
 	queue.is_level_5 = false
 	queue.load()
+	$Chest.set_level_number(1)
+	if config.get_value("Chests", "level_one_chest"):
+		$Chest.chest_already_picked()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()

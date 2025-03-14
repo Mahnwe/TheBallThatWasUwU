@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=32 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://crdwni6w5i6a8" path="res://Sound/Musics/Level1DeadWayMusic.mp3" id="24_yla18"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="25_wl8uo"]
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="26_0uo4e"]
+[ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="28_pmaet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -694,6 +695,14 @@ shape = SubResource("RectangleShape2D_bt6b5")
 [node name="Water" parent="." instance=ExtResource("26_0uo4e")]
 position = Vector2(533, -148.048)
 scale = Vector2(0.72, 0.419525)
+
+[node name="platform10" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-595, -369)
+scale = Vector2(0.270711, 0.80041)
+
+[node name="Chest" parent="." instance=ExtResource("28_pmaet")]
+position = Vector2(-501, -329)
+scale = Vector2(2.53154, 2.66816)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

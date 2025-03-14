@@ -25,6 +25,9 @@ func _ready():
 	queue.is_level_4 = false
 	queue.is_level_5 = false
 	queue.load()
+	$Chest.set_level_number(2)
+	if config.get_value("Chests", "level_two_chest"):
+		$Chest.chest_already_picked()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
@@ -143,7 +146,7 @@ func enable_patrol_groups():
 				member.set_process(true)
 
 func _on_ability_player_entered():
-	$Player/Pause.get_child(4).player_have_dash = true
+	$Player/Pause.get_child(5).player_have_dash = true
 	$Player.have_dash_ability = true
 	$Ability.get_child(0).get_child(0).text = "You can dash now ! Use Shift or X button"
 

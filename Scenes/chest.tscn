@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://diohp78ekckkx"]
+
+[ext_resource type="Texture2D" uid="uid://c5bwd8ikb5ryi" path="res://Arts/ChestSprite/ChestSprite.png" id="1_cjfl1"]
+[ext_resource type="Script" uid="uid://baavm5lm7hqhh" path="res://Scripts/chest.gd" id="2_bagqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjfl1"]
+size = Vector2(35, 24.1176)
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("2_bagqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.425)
+texture = ExtResource("1_cjfl1")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-1.7053e-13, 7.05882)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cjfl1")
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
