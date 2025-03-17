@@ -26,6 +26,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if !is_paused and Input.is_action_just_pressed("close_commands"):
+		pass
 	if is_paused and Input.is_action_just_pressed("close_commands"):
 		if is_commands_display:
 			focus_pause_buttons()
@@ -138,6 +140,7 @@ func close_command_panel():
 	$SoundLayer.visible = true
 	$CommandsUI.hide()
 	is_commands_display = false
+	$ContinueLayer/Continue.grab_focus()
 	
 func open_commands_panel():
 	$ReturnLayer.visible = false

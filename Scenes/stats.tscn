@@ -1,0 +1,289 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0lw132ttyu44"]
+
+[ext_resource type="Script" uid="uid://verjiu4qydxm" path="res://Scripts/stats.gd" id="1_lwp2e"]
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_i6gfd"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_wue6w"]
+[ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="4_i6gfd"]
+
+[node name="Stats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwp2e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_i6gfd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1698.0
+offset_top = 30.0
+offset_right = 1856.0
+offset_bottom = 162.0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="QuitButton"]
+position = Vector2(82, 66)
+scale = Vector2(0.805, 0.73)
+texture = ExtResource("4_i6gfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 146)
+scale = Vector2(2.87838, 2.98684)
+texture = ExtResource("3_wue6w")
+
+[node name="TitleLabel" type="Label" parent="Sprite2D"]
+offset_left = -38.9108
+offset_top = -24.4405
+offset_right = 45.0892
+offset_bottom = 24.5595
+scale = Vector2(0.885097, 0.900786)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Stats"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 291.0
+offset_right = 1616.0
+offset_bottom = 1010.0
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 430.0
+offset_right = 820.0
+offset_bottom = 941.0
+theme_override_constants/separation = 25
+
+[node name="JumpsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of jumps    ="
+
+[node name="DashLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of dashes    ="
+
+[node name="DeathsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of deaths    ="
+
+[node name="DeathSpike" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of spike death  ="
+
+[node name="CannonDeath" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of cannon death   ="
+
+[node name="CoralDeath" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of coral death   ="
+
+[node name="ChestsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of chest found   ="
+
+[node name="JumpNumber" type="Label" parent="."]
+layout_mode = 2
+offset_left = 752.0
+offset_top = 428.0
+offset_right = 893.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="DashNumber" type="Label" parent="."]
+layout_mode = 2
+offset_left = 752.0
+offset_top = 495.0
+offset_right = 893.0
+offset_bottom = 537.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="DeathNumber" type="Label" parent="."]
+layout_mode = 2
+offset_left = 756.0
+offset_top = 561.0
+offset_right = 897.0
+offset_bottom = 603.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="DeathSpikeNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 629.0
+offset_right = 840.0
+offset_bottom = 671.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="DeathCannonNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 696.0
+offset_right = 883.0
+offset_bottom = 738.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="DeathCoralNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 762.0
+offset_right = 851.0
+offset_bottom = 804.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="ChestNumber" type="Label" parent="."]
+layout_mode = 2
+offset_left = 817.0
+offset_top = 828.0
+offset_right = 958.0
+offset_bottom = 870.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 980.0
+offset_top = 397.0
+offset_right = 1398.0
+offset_bottom = 908.0
+theme_override_constants/separation = 25
+
+[node name="LevelFinishedLabel" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of level finished  ="
+
+[node name="Label4" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level one finished   ="
+
+[node name="Label5" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level two finished   ="
+
+[node name="Label6" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level three finished   ="
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level four finished   ="
+
+[node name="Label2" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level five finished   ="
+
+[node name="Label3" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level six finished   ="
+
+[node name="Label7" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Times level seven finished   ="
+
+[node name="LevelNumber" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1391.0
+offset_top = 395.0
+offset_right = 1532.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level1Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1390.0
+offset_top = 462.0
+offset_right = 1430.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level2Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1388.0
+offset_top = 528.0
+offset_right = 1428.0
+offset_bottom = 570.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level3Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1414.0
+offset_top = 596.0
+offset_right = 1454.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level4Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1400.0
+offset_top = 663.0
+offset_right = 1440.0
+offset_bottom = 705.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level5Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1389.0
+offset_top = 730.0
+offset_right = 1429.0
+offset_bottom = 772.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level6Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1378.0
+offset_top = 797.0
+offset_right = 1418.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level7Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1426.0
+offset_top = 864.0
+offset_right = 1466.0
+offset_bottom = 906.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

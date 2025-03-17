@@ -1,7 +1,6 @@
 extends Node2D
 
 var config = ConfigFile.new()
-
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 

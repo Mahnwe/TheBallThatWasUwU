@@ -36,6 +36,8 @@ focus_neighbor_left = NodePath("../FinishMenuButton")
 focus_neighbor_top = NodePath("../FinishMenuButton")
 focus_neighbor_right = NodePath("../FinishMenuButton")
 focus_neighbor_bottom = NodePath("../FinishMenuButton")
+focus_next = NodePath("../FinishMenuButton")
+focus_previous = NodePath("../FinishMenuButton")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -46,7 +48,7 @@ text = "Move to next level"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton"]
-position = Vector2(27.3268, 343.269)
+position = Vector2(28.7303, 158.25)
 scale = Vector2(0.0811181, 0.177951)
 texture = ExtResource("2_fgywl")
 
@@ -55,7 +57,7 @@ position = Vector2(334.109, 0)
 texture = ExtResource("3_yfqki")
 
 [node name="Sprite2D2" type="Sprite2D" parent="FinishNextLevelButton"]
-position = Vector2(90.9141, 347.115)
+position = Vector2(92.3176, 162.096)
 scale = Vector2(0.300798, 0.767762)
 texture = ExtResource("4_6ltl3")
 
@@ -86,6 +88,8 @@ focus_neighbor_left = NodePath("../FinishNextLevelButton")
 focus_neighbor_top = NodePath("../FinishNextLevelButton")
 focus_neighbor_right = NodePath("../FinishNextLevelButton")
 focus_neighbor_bottom = NodePath("../FinishNextLevelButton")
+focus_next = NodePath("../FinishNextLevelButton")
+focus_previous = NodePath("../FinishNextLevelButton")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -97,12 +101,12 @@ text = "Return to menu
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishMenuButton"]
-position = Vector2(42.6768, 317.411)
+position = Vector2(25.2875, 146.916)
 scale = Vector2(0.0393632, 0.0713727)
 texture = ExtResource("7_m8y2d")
 
 [node name="Sprite2D2" type="Sprite2D" parent="FinishMenuButton"]
-position = Vector2(74.7475, 314.732)
+position = Vector2(57.3582, 144.237)
 scale = Vector2(0.285056, 0.405204)
 texture = ExtResource("8_iicse")
 
