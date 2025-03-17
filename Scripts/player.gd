@@ -24,6 +24,9 @@ var player_try_buffer_jump
 
 var is_in_water
 
+var stats_config= ConfigFile.new()
+var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
+
 var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
@@ -65,6 +68,9 @@ func jump():
 		$JumpSound.play()
 	else:
 		$JumpSound2.play()
+	var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
+	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 	velocity.y = jump_force
 	number_of_jumps += 1
 	if velocity.x < 0:
@@ -83,6 +89,9 @@ func jump():
 func _dash():
 	if can_dash and have_dash_ability and dash_cooldown_timer.time_left == 0:
 		$DashSound.play()
+		var number_of_dashes = stats_config.get_value("Stats", "dash_number")
+		stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
+		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = false

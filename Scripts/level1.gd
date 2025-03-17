@@ -12,8 +12,11 @@ var finish_position_x = -1827
 var finish_position_y = 324
 
 var queue = preload("res://Ressources/Save_game.gd").new()
-var config = ConfigFile.new()
 
+var stats_config= ConfigFile.new()
+var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
+
+var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
@@ -124,6 +127,11 @@ func _on_finish_player_entered():
 	$Finish/FinishUI.get_child(0).show()
 	$Finish/FinishUI.get_child(1).show()
 	$Finish/FinishUI.get_child(2).show()
+	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
+	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
+	var number_of_level_one_finished = stats_config.get_value("Stats", "level_one_finished_number")
+	stats_config.set_value("Stats", "level_one_finished_number", number_of_level_one_finished+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 
 
 func _on_start_area_player_exited_start_area():
@@ -215,6 +223,7 @@ func toggle_pause():
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
+	$Player/Pause.is_paused = true
 	
 func untoggle_pause():
 	$Player/Pause.hide()
@@ -230,6 +239,7 @@ func untoggle_pause():
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
+	$Player/Pause.is_paused = false
 
 
 func _on_trigger_level_music_body_entered(body):

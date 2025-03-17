@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=26 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="16_gkf7k"]
 [ext_resource type="Texture2D" uid="uid://dmmixb0c26f0w" path="res://Arts/AbilitySprite/SpriteAbility-removebg-preview.png" id="17_ukqqs"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="18_danav"]
+[ext_resource type="PackedScene" uid="uid://c0lw132ttyu44" path="res://Scenes/stats.tscn" id="19_dldpb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
@@ -108,6 +109,7 @@ focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 1"
 
@@ -137,6 +139,7 @@ focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level5Button")
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 2"
 
@@ -164,10 +167,11 @@ offset_bottom = 631.0
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_right = NodePath("../Level4Button")
+focus_neighbor_right = NodePath("../StatsButton")
 focus_neighbor_bottom = NodePath("../Level4Button")
 focus_next = NodePath("../Level4Button")
 focus_previous = NodePath("../Level2Button")
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 3"
 
@@ -197,6 +201,7 @@ focus_neighbor_left = NodePath("../Level5Button")
 focus_neighbor_top = NodePath("../Level3Button")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 4"
 
@@ -227,6 +232,7 @@ focus_neighbor_top = NodePath("../Level2Button")
 focus_neighbor_right = NodePath("../Level4Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level1Button")
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 5"
 
@@ -401,6 +407,33 @@ scale = Vector2(0.777683, 0.831632)
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
 
+[node name="StatsButton" type="Button" parent="." groups=["MenuButtons"]]
+layout_mode = 0
+offset_left = 1702.0
+offset_top = 533.0
+offset_right = 1846.0
+offset_bottom = 599.0
+focus_neighbor_left = NodePath("../Level3Button")
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../Level1Button")
+focus_neighbor_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level1Button")
+focus_previous = NodePath("../Level3Button")
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Stats"
+
+[node name="Sprite2D" type="Sprite2D" parent="StatsButton"]
+z_index = -1
+position = Vector2(71.9999, 33)
+scale = Vector2(0.285124, 0.413793)
+texture = ExtResource("7_272km")
+
+[node name="Stats" parent="." instance=ExtResource("19_dldpb")]
+visible = false
+z_index = 2
+layout_mode = 1
+
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="mouse_exited" from="Level1Button" to="." method="_on_level_1_button_mouse_exited"]
@@ -441,3 +474,6 @@ focus_neighbor_bottom = NodePath("../MusicMuteButton")
 [connection signal="pressed" from="MusicMuteButton" to="." method="_on_music_mute_button_pressed"]
 [connection signal="focus_entered" from="SoundMuteButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
+[connection signal="focus_entered" from="StatsButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="visibility_changed" from="Stats" to="." method="_on_stats_visibility_changed"]

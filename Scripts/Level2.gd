@@ -11,6 +11,9 @@ var save_position_y = 610
 var finish_position_x = -4842
 var finish_position_y = 270
 
+var stats_config= ConfigFile.new()
+var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
+
 var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
@@ -38,6 +41,8 @@ func _ready():
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	$Level2Music.play()
+	if $Player.have_dash_ability:
+		$Ability.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -172,6 +177,11 @@ func _on_finish_player_entered():
 	$Finish/FinishUI.get_child(1).show()
 	$Finish/FinishUI.get_child(2).show()
 	$Finish/FinishUI.is_UI_showing = true
+	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
+	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
+	var number_of_level_two_finished = stats_config.get_value("Stats", "level_two_finished_number")
+	stats_config.set_value("Stats", "level_two_finished_number", number_of_level_two_finished+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 
 
 func _on_game_area_player_exited_game_area():
@@ -219,6 +229,7 @@ func toggle_pause():
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
+	$Player/Pause.is_paused = true
 	
 func untoggle_pause():
 	$Player/Pause.hide()
@@ -234,6 +245,7 @@ func untoggle_pause():
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
+	$Player/Pause.is_paused = false
 
 
 func _on_pause_music_finished():

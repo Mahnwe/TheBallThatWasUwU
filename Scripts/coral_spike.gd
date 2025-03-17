@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+var stats_config= ConfigFile.new()
+var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
+
 signal spike_hit
 var parent_name
 @export var speed = 300
@@ -14,6 +17,11 @@ func _process(delta):
 
 func _on_spike_area_body_entered(body):
 	if body.name == "Player":
+		var number_of_death = stats_config.get_value("Stats", "death_number")
+		stats_config.set_value("Stats", "death_number", number_of_death+1)
+		var number_of_coral_death = stats_config.get_value("Stats", "coral_death_number")
+		stats_config.set_value("Stats", "coral_death_number", number_of_coral_death+1)
+		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		spike_hit.emit()
 		
 func _patrol(delta):
