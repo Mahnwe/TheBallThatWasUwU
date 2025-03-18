@@ -1,6 +1,8 @@
 -- Learning Godot project --
 
-Classic platformer/runner 2D in GDScript, every design asset is handmade, musics are made by Da French Panda
+Classic platformer/runner 2D in GDScript
+Every design asset is handmade, thanks Yossaan for helping with animations 
+Musics are made by Da French Panda
 
 5 levels(In progress) with time ranks
 
