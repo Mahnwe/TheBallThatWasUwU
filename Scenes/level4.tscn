@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=50 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" uid="uid://cwp4b2qowta5v" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dqdxwbhyokt30" path="res://Arts/StalactiteSprite/StalactiteSprite.png" id="29_ui22c"]
 [ext_resource type="Texture2D" uid="uid://dlxsux07t7u1r" path="res://Arts/TreeSprite/TreeSprite2-removebg-preview.png" id="30_wtu3i"]
 [ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="31_k2kct"]
+[ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="33_gnnhw"]
 
 [sub_resource type="Curve2D" id="Curve2D_wok5w"]
 _data = {
@@ -416,7 +417,7 @@ scale = Vector2(0.88, 1)
 position = Vector2(-4089, -1083)
 
 [node name="platform10" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2638, -295)
+position = Vector2(-2958, -68)
 scale = Vector2(0.329639, 0.667853)
 
 [node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
@@ -572,7 +573,7 @@ position = Vector2(-37.3769, -41.665)
 scale = Vector2(0.488281, 0.259441)
 
 [node name="FinishPortal" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-2489, -311)
+position = Vector2(-2809, -84)
 portal_in = true
 
 [node name="FinishPortal2" parent="." instance=ExtResource("8_cv4mv")]
@@ -812,6 +813,18 @@ speed = 290
 [node name="Water2" parent="." instance=ExtResource("14_dax5u")]
 position = Vector2(-2089, -1394.21)
 scale = Vector2(1.205, 0.287898)
+
+[node name="platform29" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2755, -368)
+scale = Vector2(0.326837, 0.491242)
+
+[node name="platform30" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2292, -222)
+scale = Vector2(0.35722, 0.553788)
+
+[node name="Chest" parent="." instance=ExtResource("33_gnnhw")]
+position = Vector2(-2159, -206)
+scale = Vector2(2.53154, 2.66816)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

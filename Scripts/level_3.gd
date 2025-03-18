@@ -28,6 +28,9 @@ func _ready():
 	queue.is_level_4 = false
 	queue.is_level_5 = false
 	queue.load()
+	$Chest.set_level_number(3)
+	if config.get_value("Chests", "level_three_chest"):
+		$Chest.chest_already_picked()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
@@ -38,7 +41,7 @@ func _ready():
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	if $Player.can_double_jump:
-		$Ability.hide()
+		$Ability.queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

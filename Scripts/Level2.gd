@@ -42,7 +42,7 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	$Level2Music.play()
 	if $Player.have_dash_ability:
-		$Ability.hide()
+		$Ability.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

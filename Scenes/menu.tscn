@@ -108,8 +108,10 @@ focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 1"
 
@@ -139,7 +141,10 @@ focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level5Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 2"
 
@@ -171,7 +176,10 @@ focus_neighbor_right = NodePath("../StatsButton")
 focus_neighbor_bottom = NodePath("../Level4Button")
 focus_next = NodePath("../Level4Button")
 focus_previous = NodePath("../Level2Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 3"
 
@@ -201,7 +209,10 @@ focus_neighbor_left = NodePath("../Level5Button")
 focus_neighbor_top = NodePath("../Level3Button")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 4"
 
@@ -232,7 +243,10 @@ focus_neighbor_top = NodePath("../Level2Button")
 focus_neighbor_right = NodePath("../Level4Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level1Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Level 5"
 
@@ -419,7 +433,10 @@ focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../Level3Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Stats"
 

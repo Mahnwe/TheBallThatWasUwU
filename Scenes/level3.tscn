@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=44 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b6k3vbroiylq0" path="res://Scenes/palm.tscn" id="27_lrvx7"]
 [ext_resource type="PackedScene" uid="uid://ndx4cg0d8fn8" path="res://Scenes/barrel.tscn" id="28_gq5he"]
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="29_bvghq"]
+[ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="30_5qe4c"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -1003,6 +1004,14 @@ scale = Vector2(0.62, 0.465313)
 [node name="Water2" parent="Water" instance=ExtResource("29_bvghq")]
 position = Vector2(1645.86, -14.0364)
 scale = Vector2(1.25107, 1)
+
+[node name="platform11" parent="." instance=ExtResource("2_gdtbw")]
+position = Vector2(788, -2265)
+scale = Vector2(0.207801, 0.671968)
+
+[node name="Chest" parent="." instance=ExtResource("30_5qe4c")]
+position = Vector2(863, -2235)
+scale = Vector2(2.53154, 2.66816)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
