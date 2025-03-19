@@ -1,0 +1,185 @@
+[gd_scene load_steps=17 format=3 uid="uid://dll3pfso18mlo"]
+
+[ext_resource type="Script" uid="uid://cngnw08xxshdu" path="res://Scripts/level_6.gd" id="1_enqk4"]
+[ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_eguui"]
+[ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="3_ys3ak"]
+[ext_resource type="PackedScene" uid="uid://bub4744m7a6ma" path="res://Scenes/metal_platform.tscn" id="4_achdq"]
+[ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="5_0vxl1"]
+[ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_ypqhe"]
+[ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="7_tw4yl"]
+[ext_resource type="PackedScene" uid="uid://sqq0aw1ppgq5" path="res://Scenes/tube.tscn" id="8_ypqhe"]
+[ext_resource type="Texture2D" uid="uid://dwb52g4s16krl" path="res://Arts/PipeSprite/PipeMachinery.png" id="9_tw4yl"]
+[ext_resource type="Texture2D" uid="uid://b43xkm2jug01j" path="res://Arts/PipeSprite/PipeBase.png" id="10_k6lm4"]
+[ext_resource type="Texture2D" uid="uid://ct1fhx6ywkm3n" path="res://Arts/PipeSprite/PipeCorner.png" id="11_hkip3"]
+[ext_resource type="Texture2D" uid="uid://bc1rpv5mkl14m" path="res://Arts/PipeSprite/PipeMiddle.png" id="12_q8la5"]
+[ext_resource type="PackedScene" uid="uid://bnm882gqmu7xl" path="res://Scenes/acid.tscn" id="13_tw4yl"]
+[ext_resource type="PackedScene" uid="uid://d1up1425o3fd0" path="res://Scenes/acid_drop.tscn" id="14_k6lm4"]
+
+[sub_resource type="Curve2D" id="Curve2D_hkip3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1410, -469, 0, 0, 0, 0, -1409, -420, 0, 0, 0, 0, -1408, -362, 0, 0, 0, 0, -1409, -307, 0, 0, 0, 0, -1410, -250, 0, 0, 0, 0, -1409, -232)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_q8la5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1129, -470, 0, 0, 0, 0, -1128, -436, 0, 0, 0, 0, -1126, -380, 0, 0, 0, 0, -1126, -311, 0, 0, 0, 0, -1125, -249, 0, 0, 0, 0, -1125, -233)
+}
+point_count = 6
+
+[node name="Level6" type="Node2D"]
+script = ExtResource("1_enqk4")
+
+[node name="GameArea" parent="." instance=ExtResource("2_eguui")]
+scale = Vector2(19.1229, 21.0484)
+
+[node name="StartArea" parent="." instance=ExtResource("3_ys3ak")]
+position = Vector2(-2129, -335)
+scale = Vector2(0.679995, 0.8)
+
+[node name="MetalPlatform" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-2106, -198)
+scale = Vector2(1.01525, 1.01)
+
+[node name="MetalPlatform" parent="MetalPlatform" instance=ExtResource("4_achdq")]
+position = Vector2(-299.434, -179.209)
+rotation = 1.5708
+scale = Vector2(1.36689, 1.61805)
+
+[node name="Player" parent="." instance=ExtResource("5_0vxl1")]
+position = Vector2(-2281, -390)
+scale = Vector2(0.717345, 0.442253)
+
+[node name="Pause" parent="Player" instance=ExtResource("6_ypqhe")]
+visible = false
+offset_left = -692.833
+offset_top = -669.3
+offset_right = -692.833
+offset_bottom = -669.3
+
+[node name="MetalPlatform2" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-1721, -175)
+scale = Vector2(1.09487, 0.725865)
+
+[node name="MetalPlatform" parent="MetalPlatform2" instance=ExtResource("4_achdq")]
+position = Vector2(364.427, 0)
+
+[node name="MetalPlatform2" parent="MetalPlatform2" instance=ExtResource("4_achdq")]
+position = Vector2(683.187, 0)
+scale = Vector2(0.744262, 1)
+
+[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tw4yl")
+
+[node name="Tube" parent="." instance=ExtResource("8_ypqhe")]
+position = Vector2(-1735, -309)
+scale = Vector2(1.81699, 2.03676)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1648, -257)
+scale = Vector2(1.295, 1.41724)
+texture = ExtResource("9_tw4yl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-2, -107)
+rotation = -1.5708
+scale = Vector2(1.19725, 0.761413)
+texture = ExtResource("10_k6lm4")
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(22, -205)
+rotation = 1.5708
+scale = Vector2(0.67563, 0.759539)
+texture = ExtResource("11_hkip3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(133, -205)
+scale = Vector2(0.977531, 0.670498)
+texture = ExtResource("12_q8la5")
+flip_v = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(184.555, -174.282)
+rotation = -1.5708
+scale = Vector2(0.34494, 0.59518)
+texture = ExtResource("10_k6lm4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(317.374, -205.329)
+scale = Vector2(1.90417, 0.670498)
+texture = ExtResource("12_q8la5")
+flip_v = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(399.999, -174.988)
+rotation = -1.5708
+scale = Vector2(0.34494, 0.59518)
+texture = ExtResource("10_k6lm4")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(561.388, -205.329)
+scale = Vector2(1.90417, 0.670498)
+texture = ExtResource("12_q8la5")
+flip_v = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(705.017, -184.161)
+scale = Vector2(0.676, 0.67)
+texture = ExtResource("11_hkip3")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(705.017, -38.1022)
+rotation = 1.5708
+scale = Vector2(1.62617, 0.670498)
+texture = ExtResource("12_q8la5")
+flip_v = true
+
+[node name="MetalPlatform3" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-641, -53)
+
+[node name="MetalPlatform4" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-287, -170)
+scale = Vector2(0.941085, 0.764256)
+
+[node name="Acid" parent="." instance=ExtResource("13_tw4yl")]
+position = Vector2(-641.5, -172)
+scale = Vector2(1.825, 0.445)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hkip3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1410, -469)
+rotation = 1.55039
+rotates = false
+loop = false
+
+[node name="AcidDrop" parent="Path2D/PathFollow2D" instance=ExtResource("14_k6lm4")]
+position = Vector2(1.99958, 0.0408079)
+rotation = -1.5708
+scale = Vector2(1.2175, 1.40276)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_q8la5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(-1129, -470)
+rotation = 1.54139
+rotates = false
+loop = false
+
+[node name="AcidDrop" parent="Path2D2/PathFollow2D" instance=ExtResource("14_k6lm4")]
+position = Vector2(1.99914, 0.0587981)
+rotation = -1.5708
+scale = Vector2(1.2175, 1.40276)
+
+[connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
+[connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
+[connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
+[connection signal="acid_hit" from="Acid" to="." method="_on_spike_spike_hit"]
+[connection signal="drop_touched" from="Path2D/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
+[connection signal="drop_touched" from="Path2D2/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]

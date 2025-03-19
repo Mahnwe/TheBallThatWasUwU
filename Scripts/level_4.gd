@@ -27,6 +27,7 @@ func _ready():
 	queue.is_level_3 = false
 	queue.is_level_4 = true
 	queue.is_level_5 = false
+	queue.is_level_6 = false
 	queue.load()
 	$Chest.set_level_number(4)
 	if config.get_value("Chests", "level_four_chest"):
@@ -156,6 +157,8 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	reset_patrols_progress()
+	reset_drop_progress()
+	enable_drop_groups()
 	enable_patrol_groups()
 	
 func _on_cannon_player_dead_by_cannon_ball():
@@ -220,6 +223,9 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.get_child(3).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.set_physics_process(true)
+		enable_patrol_groups()
+		enable_cannon_groups()
+		enable_drop_groups()
 		is_paused = false
 		
 func set_volume():
@@ -254,6 +260,7 @@ func toggle_pause():
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_patrol_groups()
 	disable_cannon_groups()
+	disable_drop_groups()
 	$Player.set_physics_process(false)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
@@ -270,6 +277,7 @@ func untoggle_pause():
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_patrol_groups()
 	enable_cannon_groups()
+	enable_drop_groups()
 	$Player.set_physics_process(true)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
@@ -348,7 +356,21 @@ func _on_v_way_portal_body_entered(body):
 		
 func water_drop_animation(delta):
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
-		if(member.drop_exploded == true):
-			member.get_parent().progress_ratio = 0
-		if(member.drop_exploded == false):
-			member.get_parent().progress += member.speed * delta
+		if !is_paused:
+			if(member.drop_exploded == true):
+				member.get_parent().progress_ratio = 0
+			if(member.drop_exploded == false):
+				member.get_parent().progress += member.speed * delta
+			
+func disable_drop_groups():
+	for member in get_tree().get_nodes_in_group("waterdrop_group"):
+			member.set_process(false)
+		
+func enable_drop_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("waterdrop_group"):
+				member.set_process(true)
+				
+func reset_drop_progress():
+	for member in get_tree().get_nodes_in_group("waterdrop_group"):
+			member.get_parent().progress = 0

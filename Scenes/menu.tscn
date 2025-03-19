@@ -107,7 +107,7 @@ scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level2Button")
-focus_neighbor_bottom = NodePath("../Level2Button")
+focus_neighbor_bottom = NodePath("../Level6Button")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
@@ -209,6 +209,8 @@ focus_neighbor_left = NodePath("../Level5Button")
 focus_neighbor_top = NodePath("../Level3Button")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level5Button")
+focus_previous = NodePath("../Level3Button")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
@@ -233,16 +235,17 @@ offset_bottom = 36.7861
 [node name="Level5Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 897.0
+offset_left = 891.0
 offset_top = 842.0
-offset_right = 972.0
+offset_right = 967.0
 offset_bottom = 878.0
 scale = Vector2(2.61, 2.066)
-focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_left = NodePath("../Level6Button")
 focus_neighbor_top = NodePath("../Level2Button")
 focus_neighbor_right = NodePath("../Level4Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
-focus_next = NodePath("../Level1Button")
+focus_next = NodePath("../Level6Button")
+focus_previous = NodePath("../Level4Button")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
@@ -264,6 +267,41 @@ offset_top = 36.302
 offset_right = -4.21457
 offset_bottom = 36.302
 
+[node name="Level6Button" type="Button" parent="." groups=["MenuButtons"]]
+z_index = 2
+layout_mode = 0
+offset_left = 543.0
+offset_top = 839.0
+offset_right = 619.0
+offset_bottom = 875.0
+scale = Vector2(2.61, 2.066)
+focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../Level5Button")
+focus_neighbor_bottom = NodePath("../Level1Button")
+focus_next = NodePath("../Level1Button")
+focus_previous = NodePath("../Level5Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Level 6"
+
+[node name="Sprite2D" type="Sprite2D" parent="Level6Button"]
+z_index = -1
+position = Vector2(37.931, 18.393)
+scale = Vector2(0.151, 0.23)
+texture = ExtResource("7_272km")
+
+[node name="TopTime" parent="Level6Button" instance=ExtResource("10_vv7ov")]
+visible = false
+layout_mode = 1
+offset_left = -1.91571
+offset_top = 35.818
+offset_right = -1.91571
+offset_bottom = 35.818
+
 [node name="platform4" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(1077, 811)
 scale = Vector2(0.254949, 0.68)
@@ -282,6 +320,10 @@ scale = Vector2(0.1, 1.186)
 position = Vector2(112.501, 52.7172)
 rotation = 1.5708
 scale = Vector2(0.1, 1.186)
+
+[node name="platform5" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(730, 807)
+scale = Vector2(0.236101, 0.701423)
 
 [node name="QuitButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
@@ -471,6 +513,10 @@ layout_mode = 1
 [connection signal="gui_input" from="Level5Button" to="." method="_on_level_5_gui_input"]
 [connection signal="mouse_exited" from="Level5Button" to="." method="_on_level_5_mouse_exited"]
 [connection signal="pressed" from="Level5Button" to="." method="_on_level_5_pressed"]
+[connection signal="focus_entered" from="Level6Button" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="Level6Button" to="." method="_on_level_6_button_gui_input"]
+[connection signal="mouse_exited" from="Level6Button" to="." method="_on_level_6_button_mouse_exited"]
+[connection signal="pressed" from="Level6Button" to="." method="_on_level_6_button_pressed"]
 [connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
 [connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]

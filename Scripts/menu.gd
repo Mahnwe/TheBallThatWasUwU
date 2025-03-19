@@ -55,10 +55,8 @@ func wait_for_focus():
 func _on_level_1_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 
-
 func _on_level_2_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/level2.tscn")
-
 
 func _on_level_3_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/level3.tscn")
@@ -68,6 +66,9 @@ func _on_level_4_button_pressed():
 	
 func _on_level_5_pressed():
 	get_tree().change_scene_to_file("res://Scenes/level5.tscn")
+	
+func _on_level_6_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/level6.tscn")
 
 
 func _on_level_1_button_gui_input(event):
@@ -79,7 +80,10 @@ func _on_level_1_button_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$EffectSlider.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_down"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level6Button.grab_focus()
+		elif event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level2Button.grab_focus()
 
@@ -93,7 +97,10 @@ func _on_level_2_button_gui_input(event):
 		elif event.is_action_pressed("ui_up"):
 			accept_event()
 			$QuitButton.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_down"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level5Button.grab_focus()
+		elif event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level3Button.grab_focus()
 
@@ -107,30 +114,55 @@ func _on_level_3_button_gui_input(event):
 		elif event.is_action_pressed("ui_up"):
 			accept_event()
 			$QuitButton.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_down"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level4Button.grab_focus()
+		elif event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$StatsButton.grab_focus()
 
 
 func _on_level_4_button_gui_input(event):
 	if $Level4Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_up"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level3Button.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level5Button.grab_focus()
+		elif event.is_action_pressed("ui_down"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level3Button.grab_focus()
+		elif event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$StatsButton.grab_focus()
 			
 func _on_level_5_gui_input(event):
 	if $Level5Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_up"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level2Button.grab_focus()
+		elif event.is_action_pressed("ui_left"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level6Button.grab_focus()
+		elif event.is_action_pressed("ui_down"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level2Button.grab_focus()
+		elif event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level4Button.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+			
+func _on_level_6_button_gui_input(event):
+	if $Level6Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+		is_controller_focused = true
+		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left") or event.is_action_pressed("ui_down"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level1Button.grab_focus()
+		elif event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level5Button.grab_focus()
 
 func _on_quit_button_gui_input(event):
 	if $QuitButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
@@ -183,6 +215,10 @@ func _on_level_4_button_mouse_exited():
 	
 func _on_level_5_mouse_exited():
 	$Level5Button.release_focus()
+	is_controller_focused = false
+	
+func _on_level_6_button_mouse_exited():
+	$Level6Button.release_focus()
 	is_controller_focused = false
 	
 func _on_music_slider_mouse_exited():

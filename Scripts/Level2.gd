@@ -27,6 +27,7 @@ func _ready():
 	queue.is_level_3 = false
 	queue.is_level_4 = false
 	queue.is_level_5 = false
+	queue.is_level_6 = false
 	queue.load()
 	$Chest.set_level_number(2)
 	if config.get_value("Chests", "level_two_chest"):
