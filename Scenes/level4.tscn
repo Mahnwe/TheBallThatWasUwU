@@ -826,6 +826,79 @@ scale = Vector2(0.35722, 0.553788)
 position = Vector2(-2159, -206)
 scale = Vector2(2.53154, 2.66816)
 
+[node name="platform31" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4276, -1728)
+rotation = 3.14159
+scale = Vector2(1.48, 1.16)
+
+[node name="platform" parent="platform31" instance=ExtResource("9_ujhmm")]
+position = Vector2(638.514, -46.5518)
+
+[node name="platform2" parent="platform31" instance=ExtResource("9_ujhmm")]
+position = Vector2(1179.05, 118.965)
+rotation = -1.5752
+scale = Vector2(1.24722, 1.10502)
+
+[node name="platform32" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4984, 776)
+rotation = 1.5708
+scale = Vector2(1.05435, 1.33772)
+
+[node name="platform" parent="platform32" instance=ExtResource("9_ujhmm")]
+position = Vector2(14.2268, 97.1806)
+rotation = -1.5602
+scale = Vector2(0.348474, 0.81417)
+
+[node name="platform2" parent="platform32" instance=ExtResource("9_ujhmm")]
+position = Vector2(-611.752, 31.3969)
+
+[node name="platform3" parent="platform32" instance=ExtResource("9_ujhmm")]
+position = Vector2(-1225.4, 31.3969)
+
+[node name="platform4" parent="platform32" instance=ExtResource("9_ujhmm")]
+position = Vector2(-1502.35, 34.3871)
+
+[node name="platform5" parent="platform32" instance=ExtResource("9_ujhmm")]
+position = Vector2(-509.319, 132.315)
+rotation = -1.56183
+scale = Vector2(0.415589, 1.11285)
+
+[node name="platform33" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4847, 1407)
+
+[node name="platform" parent="platform33" instance=ExtResource("9_ujhmm")]
+position = Vector2(605, 203)
+rotation = -1.5708
+
+[node name="Spike3" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-4538, 1390)
+rotation = 1.5708
+
+[node name="Spike4" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-4555, 1525)
+rotation = -1.5708
+scale = Vector2(1.28313, 1.40471)
+
+[node name="Spike5" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-4280, 955)
+scale = Vector2(1.03282, 1.57849)
+
+[node name="platform34" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-2807, -70)
+scale = Vector2(1.60026, 1.49474)
+
+[node name="platform" parent="platform34" instance=ExtResource("9_ujhmm")]
+position = Vector2(545.537, 161.901)
+rotation = -1.5708
+scale = Vector2(0.810361, 0.844181)
+
+[node name="Spike6" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-2382, -74)
+rotation = 1.5708
+
+[node name="Spike7" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-2012, -220)
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -862,3 +935,8 @@ scale = Vector2(2.53154, 2.66816)
 [connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]
 [connection signal="body_entered" from="HWayPortal" to="." method="_on_h_way_portal_body_entered"]
 [connection signal="body_entered" from="VWayPortal" to="." method="_on_v_way_portal_body_entered"]
+[connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike5" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike6" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike7" to="." method="_on_spike_spike_hit"]

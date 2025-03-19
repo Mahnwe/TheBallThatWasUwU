@@ -727,6 +727,96 @@ flip_v = true
 position = Vector2(-867, -489)
 scale = Vector2(0.256322, 0.745499)
 
+[node name="platform18" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(322, -904)
+rotation = 2.93362
+scale = Vector2(1.12, 1.56)
+
+[node name="platform31" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-889, 460)
+scale = Vector2(0.68, 1.2)
+
+[node name="platform" parent="platform31" instance=ExtResource("7_v154u")]
+position = Vector2(632.353, 4.23193e-06)
+
+[node name="platform2" parent="platform31" instance=ExtResource("7_v154u")]
+position = Vector2(947.059, -22.5)
+scale = Vector2(0.213576, 0.884086)
+
+[node name="platform3" parent="platform31" instance=ExtResource("7_v154u")]
+position = Vector2(945.589, -45)
+scale = Vector2(0.213846, 0.759302)
+
+[node name="Spike3" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-573, 516)
+rotation = 1.5708
+scale = Vector2(0.384603, 0.750432)
+
+[node name="Spike14" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-425, 573)
+rotation = -1.5708
+scale = Vector2(0.384603, 0.750432)
+
+[node name="platform32" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-899, 504)
+scale = Vector2(0.147373, 1.24157)
+
+[node name="platform34" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-1344, 797)
+scale = Vector2(0.52, 1)
+
+[node name="platform33" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-1072, 939)
+rotation = -1.5708
+scale = Vector2(0.4, 1)
+
+[node name="Spike24" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-977, 846)
+rotation = 1.5708
+scale = Vector2(0.341249, 0.727449)
+
+[node name="Spike38" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-1324, 894)
+rotation = -1.5708
+scale = Vector2(0.291667, 0.612659)
+
+[node name="platform35" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-2044, 838)
+scale = Vector2(1.08, 1)
+
+[node name="platform" parent="platform35" instance=ExtResource("7_v154u")]
+position = Vector2(99.074, -26)
+rotation = 1.5708
+scale = Vector2(0.23132, 0.592481)
+
+[node name="Spike39" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-1777, 862)
+rotation = 1.5708
+scale = Vector2(0.478904, 0.84554)
+
+[node name="Spike40" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-1757, 937)
+rotation = -1.5708
+scale = Vector2(0.46649, 1.02278)
+
+[node name="Spike41" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-1484, 810)
+scale = Vector2(1.09508, 0.507186)
+
+[node name="platform36" parent="." instance=ExtResource("7_v154u")]
+position = Vector2(-2311, 520)
+scale = Vector2(0.374216, 0.640425)
+
+[node name="Spike42" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-2293, 586)
+rotation = -1.5708
+scale = Vector2(0.689601, 0.834783)
+
+[node name="Spike43" parent="." instance=ExtResource("6_mp22g")]
+position = Vector2(-2124, 591)
+rotation = -0.318123
+scale = Vector2(0.646028, 0.585984)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -773,3 +863,12 @@ scale = Vector2(0.256322, 0.745499)
 [connection signal="body_entered" from="TriggerDeadWayMusic" to="." method="_on_trigger_dead_way_music_body_entered"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="body_entered" from="TriggerLevelMusic" to="." method="_on_trigger_level_music_body_entered"]
+[connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike14" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike24" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike38" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike39" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike40" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike41" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike42" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike43" to="." method="_on_spike_spike_hit"]

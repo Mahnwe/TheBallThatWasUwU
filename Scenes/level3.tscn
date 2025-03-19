@@ -1013,6 +1013,10 @@ scale = Vector2(0.207801, 0.671968)
 position = Vector2(863, -2235)
 scale = Vector2(2.53154, 2.66816)
 
+[node name="Spike17" parent="." instance=ExtResource("10_w0su0")]
+position = Vector2(-53.0001, 1224)
+rotation = 0.890816
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -1061,3 +1065,4 @@ scale = Vector2(2.53154, 2.66816)
 [connection signal="spike_hit" from="Spike16" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike16/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
+[connection signal="spike_hit" from="Spike17" to="." method="_on_spike_spike_hit"]
