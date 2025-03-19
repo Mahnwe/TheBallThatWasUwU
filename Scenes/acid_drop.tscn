@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1up1425o3fd0"]
+
+[ext_resource type="Script" uid="uid://dmwu87h2pnif" path="res://Scripts/acid_drop.gd" id="1_heujy"]
+[ext_resource type="Texture2D" uid="uid://mjxr7w65k5ls" path="res://Arts/AcidDropSprite/AcidDropSprite.png" id="2_sddfs"]
+[ext_resource type="Texture2D" uid="uid://cfy6khk78rdbo" path="res://Arts/AcidDropSprite/AcidDropSprite2.png" id="3_qop3y"]
+[ext_resource type="Texture2D" uid="uid://cd7lgnl0v0nss" path="res://Arts/AcidDropSprite/AcidDropSprite3.png" id="4_v3dev"]
+[ext_resource type="Texture2D" uid="uid://baml2pqb285sl" path="res://Arts/AcidDropSprite/AcidDropSprite4.png" id="5_e0trk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofwwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sddfs")
+}],
+"loop": false,
+"name": &"AcidDrop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qop3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v3dev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e0trk")
+}],
+"loop": false,
+"name": &"AcidExplosion",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_heujy"]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sddfs"]
+size = Vector2(2.12629, 1.20207)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qop3y"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3dev"]
+size = Vector2(2, 2.25)
+
+[node name="AcidDrop" type="Node2D" groups=["waterdrop_group"]]
+script = ExtResource("1_heujy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.22)
+sprite_frames = SubResource("SpriteFrames_ofwwb")
+animation = &"AcidDrop"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_heujy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.32091, 3.8255)
+rotation = -0.778298
+shape = SubResource("RectangleShape2D_sddfs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qop3y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v3dev")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
