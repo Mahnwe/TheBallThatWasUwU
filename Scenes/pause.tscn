@@ -61,29 +61,31 @@ focus_neighbor_right = NodePath("../../CommandLayer/Command")
 focus_neighbor_bottom = NodePath("../../CommandLayer/Command")
 focus_next = NodePath("../../CommandLayer/Command")
 focus_previous = NodePath("../../ContinueLayer/Continue")
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Return to menu"
 flat = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer"]
+[node name="ReturnButtonsTooltip" type="Sprite2D" parent="ReturnLayer/ReturnToMenu"]
+visible = false
 z_index = 5
-position = Vector2(1532, 929)
-scale = Vector2(0.626432, 0.594786)
+position = Vector2(128.846, 147.093)
+scale = Vector2(0.401559, 0.345806)
 texture = ExtResource("2_g1xuu")
 
-[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip"]
 position = Vector2(156.002, -0.407177)
 texture = ExtResource("3_xjpr8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer/Sprite2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip"]
 position = Vector2(303.514, 2.62105)
 texture = ExtResource("4_6cx23")
 
-[node name="Sprite2D3" type="Sprite2D" parent="ReturnLayer/Sprite2D2"]
+[node name="Sprite2D3" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip"]
 position = Vector2(-151.653, -1.68123)
 scale = Vector2(0.198088, 0.206318)
 texture = ExtResource("1_t2voc")
@@ -107,36 +109,37 @@ focus_neighbor_right = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_bottom = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_next = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_previous = NodePath("../../CommandLayer/Command")
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Continue"
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue"]
+[node name="ContinueButtonsTooltip" type="Sprite2D" parent="ContinueLayer/Continue"]
+visible = false
 position = Vector2(61.5385, 144.186)
 scale = Vector2(0.135343, 0.161549)
 texture = ExtResource("5_d1asp")
 
-[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip"]
 position = Vector2(412.936, -2.17391)
 scale = Vector2(0.81588, 0.81726)
 texture = ExtResource("6_3gj4a")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip"]
 position = Vector2(759.098, -16.7662)
 scale = Vector2(2.43545, 2.08033)
 texture = ExtResource("7_he205")
 
-[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D/Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip/Sprite2D2"]
 position = Vector2(145.18, 4.16473)
 scale = Vector2(0.466761, 0.50914)
 texture = ExtResource("8_rgm4r")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/Sprite2D/Sprite2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip/Sprite2D2"]
 position = Vector2(273.346, 4.16475)
 texture = ExtResource("9_set0a")
 
@@ -168,26 +171,27 @@ focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
 focus_next = NodePath("../../ContinueLayer/Continue")
 focus_previous = NodePath("../../ReturnLayer/ReturnToMenu")
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Commands"
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CommandLayer/Command"]
+[node name="CommandButtonsTooltip" type="Sprite2D" parent="CommandLayer/Command"]
+visible = false
 position = Vector2(70.5128, 140.698)
 scale = Vector2(0.188382, 0.19501)
 texture = ExtResource("11_felfj")
 
-[node name="Sprite2D" type="Sprite2D" parent="CommandLayer/Command/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CommandLayer/Command/CommandButtonsTooltip"]
 position = Vector2(392.362, 2.40719)
 scale = Vector2(0.696075, 0.624683)
 texture = ExtResource("12_nirwk")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CommandLayer/Command/Sprite2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="CommandLayer/Command/CommandButtonsTooltip"]
 position = Vector2(811.679, -7.22157)
 scale = Vector2(2.12367, 1.79211)
 texture = ExtResource("13_6ho6x")
@@ -353,7 +357,9 @@ grow_vertical = 2
 [connection signal="mouse_entered" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_mouse_entered"]
 [connection signal="mouse_exited" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_mouse_exited"]
 [connection signal="value_changed" from="SoundLayer/EffectSlider" to="." method="_on_effect_slider_value_changed"]
+[connection signal="focus_entered" from="SoundLayer/MusicMuteButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="SoundLayer/MusicMuteButton" to="." method="_on_music_mute_button_pressed"]
+[connection signal="focus_entered" from="SoundLayer/SoundMuteButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="SoundLayer/SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
 [connection signal="gui_input" from="CommandsUI/CloseButton" to="." method="_on_close_button_gui_input"]
 [connection signal="mouse_entered" from="CommandsUI/CloseButton" to="." method="_on_close_button_mouse_entered"]

@@ -119,6 +119,7 @@ func _on_save_point_player_entered():
 func _on_finish_player_entered():
 	$Player.position.x = finish_position_x
 	$Player.position.y = finish_position_y
+	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	queue.saveData()
@@ -227,6 +228,8 @@ func _on_pause_continue_is_clicked():
 		enable_cannon_groups()
 		enable_drop_groups()
 		is_paused = false
+		$Player/Pause.is_paused = false
+		$Player/Pause.is_controller_focused = false
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
@@ -283,6 +286,7 @@ func untoggle_pause():
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
 	$Player/Pause.is_paused = false
+	$Player/Pause.is_controller_focused = false
 
 
 func _on_pause_music_finished():

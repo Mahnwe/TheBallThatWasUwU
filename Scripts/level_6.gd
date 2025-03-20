@@ -133,6 +133,7 @@ func untoggle_pause():
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	is_paused = false
 	$Player/Pause.is_paused = false
+	$Player/Pause.is_controller_focused = false
 	
 func _on_game_area_player_exited_game_area():
 	display_dead_sprite_and_pause_timer_until_respawn("Out of game zone !")
@@ -172,6 +173,8 @@ func _on_pause_continue_is_clicked():
 		$Player.set_physics_process(true)
 		enable_drop_groups()
 		is_paused = false
+		$Player/Pause.is_paused = false
+		$Player/Pause.is_controller_focused = false
 		
 func _on_finish_ui_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:

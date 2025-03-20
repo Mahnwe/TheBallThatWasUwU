@@ -26,6 +26,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if is_paused and !is_controller_focused and !is_commands_display:
+		$ContinueLayer/Continue.grab_focus()
+	display_tooltip_when_button_focus()
 	if !is_paused and Input.is_action_just_pressed("close_commands"):
 		pass
 	if is_paused and Input.is_action_just_pressed("close_commands"):
@@ -38,8 +41,6 @@ func _process(_delta):
 	if is_commands_display and Input.is_action_just_pressed("restart_save"):
 		focus_pause_buttons()
 		close_command_panel()
-	if !is_controller_focused and !is_commands_display:
-		$ContinueLayer/Continue.grab_focus()
 	wait_for_focus()
 	
 func wait_for_focus():
@@ -119,7 +120,16 @@ func _on_command_mouse_exited():
 
 func _on_button_focus_entered():
 	if self.visible == true:
+		is_controller_focused = true
 		$ButtonSound.play()
+		
+func display_tooltip_when_button_focus():
+	if is_paused:
+		for member in get_tree().get_nodes_in_group("pause_buttons"):
+			if member.has_focus():
+				member.get_child(0).show()
+			else:
+				member.get_child(0).hide()
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
