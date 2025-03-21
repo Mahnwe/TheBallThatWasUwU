@@ -4,7 +4,7 @@ Classic platformer/runner 2D in GDScript
 Every design asset is handmade, thanks Yossaan for helping with animations 
 Musics are made by Da French Panda
 
-5 levels(In progress) with time ranks
+6 levels(In progress) with time ranks
 
 
 ![Godot Engine Screenshot 2025 02 26 - 15 57 42 74](https://github.com/user-attachments/assets/19872ee8-cf63-4d4f-b5f4-acff120da725)
