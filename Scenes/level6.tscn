@@ -76,7 +76,7 @@ position = Vector2(364.427, 0)
 position = Vector2(683.187, 0)
 scale = Vector2(0.744262, 1)
 
-[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+[node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_tw4yl")
 
 [node name="Tube" parent="." instance=ExtResource("8_ypqhe")]

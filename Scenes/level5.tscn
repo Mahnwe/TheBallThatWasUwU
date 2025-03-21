@@ -105,7 +105,7 @@ offset_top = -678.733
 offset_right = -723.849
 offset_bottom = -678.733
 
-[node name="PauseMusic" type="AudioStreamPlayer" parent="."]
+[node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_myi0h")
 
 [node name="TripleSign" parent="." instance=ExtResource("8_oneui")]
