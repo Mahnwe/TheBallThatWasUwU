@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://dga2fe53ycg0g"]
+
+[ext_resource type="Texture2D" uid="uid://cfs408tvgmsdf" path="res://Arts/LaserSprite/LaserBase.png" id="1_yw8sb"]
+[ext_resource type="Script" uid="uid://hdo2rmhqfdbv" path="res://Scripts/laser_base.gd" id="2_6wvei"]
+[ext_resource type="Texture2D" uid="uid://bgrl3urp5c2ru" path="res://Arts/LaserSprite/LaserCharge/LaserCharge.png" id="2_tuwwf"]
+[ext_resource type="Texture2D" uid="uid://dg06041qsd4yx" path="res://Arts/LaserSprite/LaserCharge/LaserCharge2.png" id="3_6wvei"]
+[ext_resource type="Texture2D" uid="uid://bglf6ljas0h20" path="res://Arts/LaserSprite/LaserCharge/LaserCharge4.png" id="3_irefs"]
+[ext_resource type="Texture2D" uid="uid://c0a8naa4s0yu5" path="res://Arts/LaserSprite/LaserCharge/LaserCharge3.png" id="4_irefs"]
+[ext_resource type="Texture2D" uid="uid://ersel2k4f6xs" path="res://Arts/LaserSprite/LaserCharge/LaserCharge5.png" id="4_okyeh"]
+[ext_resource type="Texture2D" uid="uid://dytqis821eehi" path="res://Arts/LaserSprite/LaserBeam/LaserBeam.png" id="5_okyeh"]
+[ext_resource type="Texture2D" uid="uid://cvcpfctqwlns1" path="res://Arts/LaserSprite/LaserBeam/LaserBeam2.png" id="6_d57bf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yth28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_irefs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_okyeh")
+}],
+"loop": true,
+"name": &"final_charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tuwwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6wvei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_irefs")
+}],
+"loop": true,
+"name": &"laser_charge",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6ctp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_okyeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d57bf")
+}],
+"loop": true,
+"name": &"laser_beam",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckdw5"]
+size = Vector2(201.052, 65.7893)
+
+[node name="LaserBase" type="Sprite2D"]
+texture = ExtResource("1_yw8sb")
+script = ExtResource("2_6wvei")
+
+[node name="LaserCharge" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.48814, 3.03297)
+sprite_frames = SubResource("SpriteFrames_yth28")
+animation = &"laser_charge"
+
+[node name="LaserBeam" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8.78599e-06, -201)
+rotation = 1.5708
+scale = Vector2(1.14105, 0.16)
+sprite_frames = SubResource("SpriteFrames_n6ctp")
+animation = &"laser_beam"
+
+[node name="Area2D" type="Area2D" parent="LaserBeam"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserBeam/Area2D"]
+position = Vector2(0, 1.45519e-11)
+shape = SubResource("RectangleShape2D_ckdw5")
+
+[node name="ChargeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="BeamTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="LaserBeam/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]
+[connection signal="timeout" from="BeamTimer" to="." method="_on_beam_timer_timeout"]

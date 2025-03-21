@@ -80,8 +80,8 @@ point_count = 5
 script = ExtResource("1_11ckk")
 
 [node name="GameArea" parent="." instance=ExtResource("2_dd0d8")]
-position = Vector2(-1568, -81)
-scale = Vector2(8.34376, 9.42432)
+position = Vector2(-1568, -504)
+scale = Vector2(8.34376, 7.14432)
 
 [node name="StartArea" parent="." instance=ExtResource("4_1303c")]
 position = Vector2(-1804, -980)
@@ -755,6 +755,14 @@ position = Vector2(-48, 59)
 [node name="Chest" parent="." instance=ExtResource("39_fkoau")]
 position = Vector2(-1788, -402)
 scale = Vector2(2.53154, 2.66816)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -4166.0
+offset_top = -1789.0
+offset_right = 1033.0
+offset_bottom = 763.0
+color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

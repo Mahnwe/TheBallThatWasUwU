@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dll3pfso18mlo"]
+[gd_scene load_steps=21 format=3 uid="uid://dll3pfso18mlo"]
 
 [ext_resource type="Script" uid="uid://cngnw08xxshdu" path="res://Scripts/level_6.gd" id="1_enqk4"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_eguui"]
@@ -10,22 +10,26 @@
 [ext_resource type="PackedScene" uid="uid://sqq0aw1ppgq5" path="res://Scenes/tube.tscn" id="8_ypqhe"]
 [ext_resource type="Texture2D" uid="uid://dwb52g4s16krl" path="res://Arts/PipeSprite/PipeMachinery.png" id="9_tw4yl"]
 [ext_resource type="Texture2D" uid="uid://b43xkm2jug01j" path="res://Arts/PipeSprite/PipeBase.png" id="10_k6lm4"]
-[ext_resource type="Texture2D" uid="uid://ct1fhx6ywkm3n" path="res://Arts/PipeSprite/PipeCorner.png" id="11_hkip3"]
+[ext_resource type="PackedScene" uid="uid://cuwy5qvhf3px4" path="res://Scenes/pipe_corner.tscn" id="11_25f8e"]
+[ext_resource type="PackedScene" uid="uid://cekqpr85ngmbs" path="res://Scenes/pipe_middle.tscn" id="12_gh5wq"]
 [ext_resource type="Texture2D" uid="uid://bc1rpv5mkl14m" path="res://Arts/PipeSprite/PipeMiddle.png" id="12_q8la5"]
 [ext_resource type="PackedScene" uid="uid://bnm882gqmu7xl" path="res://Scenes/acid.tscn" id="13_tw4yl"]
 [ext_resource type="PackedScene" uid="uid://d1up1425o3fd0" path="res://Scenes/acid_drop.tscn" id="14_k6lm4"]
+[ext_resource type="PackedScene" uid="uid://c7hibihskejek" path="res://Scenes/pipe_base.tscn" id="15_hkip3"]
+[ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="17_25f8e"]
+[ext_resource type="PackedScene" uid="uid://dga2fe53ycg0g" path="res://Scenes/laser_base.tscn" id="18_gh5wq"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkip3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1410, -469, 0, 0, 0, 0, -1409, -420, 0, 0, 0, 0, -1408, -362, 0, 0, 0, 0, -1409, -307, 0, 0, 0, 0, -1410, -250, 0, 0, 0, 0, -1409, -232)
+"points": PackedVector2Array(0, 0, 0, 0, -1410, -469, 0, 0, 0, 0, -1409, -420, 0, 0, 0, 0, -1408, -362, 0, 0, 0, 0, -1409, -307, 0, 0, 0, 0, -1410, -250, 0, 0, 0, 0, -1409, -232, 0, 0, 0, 0, -1409, -213)
 }
-point_count = 6
+point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_q8la5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1129, -470, 0, 0, 0, 0, -1128, -436, 0, 0, 0, 0, -1126, -380, 0, 0, 0, 0, -1126, -311, 0, 0, 0, 0, -1125, -249, 0, 0, 0, 0, -1125, -233)
+"points": PackedVector2Array(0, 0, 0, 0, -1129, -470, 0, 0, 0, 0, -1128, -436, 0, 0, 0, 0, -1126, -380, 0, 0, 0, 0, -1126, -311, 0, 0, 0, 0, -1125, -249, 0, 0, 0, 0, -1125, -233, 0, 0, 0, 0, -1126, -214)
 }
-point_count = 6
+point_count = 7
 
 [node name="Level6" type="Node2D"]
 script = ExtResource("1_enqk4")
@@ -45,6 +49,10 @@ scale = Vector2(1.01525, 1.01)
 position = Vector2(-299.434, -179.209)
 rotation = 1.5708
 scale = Vector2(1.36689, 1.61805)
+
+[node name="MetalPlatform2" parent="MetalPlatform" instance=ExtResource("4_achdq")]
+position = Vector2(-127.062, -436.634)
+scale = Vector2(1.59828, 1.86581)
 
 [node name="Player" parent="." instance=ExtResource("5_0vxl1")]
 position = Vector2(-2281, -390)
@@ -80,60 +88,52 @@ position = Vector2(-1648, -257)
 scale = Vector2(1.295, 1.41724)
 texture = ExtResource("9_tw4yl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(-2, -107)
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-1650, -422)
 rotation = -1.5708
-scale = Vector2(1.19725, 0.761413)
+scale = Vector2(1.85679, 0.98603)
 texture = ExtResource("10_k6lm4")
 flip_v = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(22, -205)
+[node name="PipeCorner" parent="." instance=ExtResource("11_25f8e")]
+position = Vector2(-1618, -571)
+rotation = 1.57079
+scale = Vector2(0.95753, 0.983603)
+
+[node name="PipeMiddle" parent="." instance=ExtResource("12_gh5wq")]
+position = Vector2(-1418, -571)
+rotation = 3.14159
+scale = Vector2(2.14797, 0.936981)
+
+[node name="PipeMiddle2" parent="." instance=ExtResource("12_gh5wq")]
+position = Vector2(-1123, -571)
+rotation = 3.14159
+scale = Vector2(2.4659, 0.950257)
+
+[node name="PipeBase" parent="." instance=ExtResource("15_hkip3")]
+position = Vector2(-1410, -525)
+rotation = -1.5708
+scale = Vector2(0.488863, 0.770758)
+
+[node name="PipeBase2" parent="." instance=ExtResource("15_hkip3")]
+position = Vector2(-1128, -525)
+rotation = -1.5708
+scale = Vector2(0.488863, 0.770758)
+
+[node name="PipeMiddle3" parent="." instance=ExtResource("12_gh5wq")]
+position = Vector2(-880, -571)
+rotation = 3.14159
+scale = Vector2(1.34797, 0.936981)
+
+[node name="PipeCorner2" parent="." instance=ExtResource("11_25f8e")]
+position = Vector2(-766, -540)
+rotation = 3.14159
+scale = Vector2(0.87542, 0.949551)
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(-765.987, -333.228)
 rotation = 1.5708
-scale = Vector2(0.67563, 0.759539)
-texture = ExtResource("11_hkip3")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(133, -205)
-scale = Vector2(0.977531, 0.670498)
-texture = ExtResource("12_q8la5")
-flip_v = true
-
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(184.555, -174.282)
-rotation = -1.5708
-scale = Vector2(0.34494, 0.59518)
-texture = ExtResource("10_k6lm4")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(317.374, -205.329)
-scale = Vector2(1.90417, 0.670498)
-texture = ExtResource("12_q8la5")
-flip_v = true
-
-[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(399.999, -174.988)
-rotation = -1.5708
-scale = Vector2(0.34494, 0.59518)
-texture = ExtResource("10_k6lm4")
-
-[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(561.388, -205.329)
-scale = Vector2(1.90417, 0.670498)
-texture = ExtResource("12_q8la5")
-flip_v = true
-
-[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(705.017, -184.161)
-scale = Vector2(0.676, 0.67)
-texture = ExtResource("11_hkip3")
-flip_h = true
-flip_v = true
-
-[node name="Sprite2D9" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(705.017, -38.1022)
-rotation = 1.5708
-scale = Vector2(1.62617, 0.670498)
+scale = Vector2(2.30467, 0.868295)
 texture = ExtResource("12_q8la5")
 flip_v = true
 
@@ -149,6 +149,7 @@ position = Vector2(-641.5, -172)
 scale = Vector2(1.825, 0.445)
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, -22)
 curve = SubResource("Curve2D_hkip3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -163,6 +164,7 @@ rotation = -1.5708
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(0, -22)
 curve = SubResource("Curve2D_q8la5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
@@ -176,6 +178,54 @@ position = Vector2(1.99914, 0.0587981)
 rotation = -1.5708
 scale = Vector2(1.2175, 1.40276)
 
+[node name="MetalPlatform5" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-187, -405)
+rotation = 1.5708
+
+[node name="MetalPlatform" parent="MetalPlatform5" instance=ExtResource("4_achdq")]
+position = Vector2(-365, 1.59547e-05)
+
+[node name="MetalPlatform6" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-538, -573)
+scale = Vector2(0.359093, 0.447507)
+
+[node name="MetalPlatform7" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-568, -1108)
+scale = Vector2(2, 2.12)
+
+[node name="MetalPlatform" parent="MetalPlatform7" instance=ExtResource("4_achdq")]
+position = Vector2(-353.571, 0)
+
+[node name="MetalPlatform2" parent="MetalPlatform7" instance=ExtResource("4_achdq")]
+position = Vector2(-629, -18.3962)
+scale = Vector2(0.507166, 1)
+
+[node name="Spike" parent="." instance=ExtResource("17_25f8e")]
+position = Vector2(-326, -959)
+scale = Vector2(0.617606, 0.523668)
+
+[node name="LaserBase" parent="." instance=ExtResource("18_gh5wq")]
+position = Vector2(-1277, -910)
+rotation = 3.14159
+charge_timer = 3.0
+beam_timer = 3.0
+
+[node name="LaserBase2" parent="." instance=ExtResource("18_gh5wq")]
+position = Vector2(-951, -908)
+rotation = 3.14159
+charge_timer = 3.0
+beam_timer = 5.0
+
+[node name="LaserBase3" parent="." instance=ExtResource("18_gh5wq")]
+position = Vector2(-1846, -604)
+rotation = 1.5708
+charge_timer = 3.0
+beam_timer = 5.0
+
+[node name="Spike2" parent="." instance=ExtResource("17_25f8e")]
+position = Vector2(-1960, -568)
+scale = Vector2(0.322334, 0.231027)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -183,3 +233,8 @@ scale = Vector2(1.2175, 1.40276)
 [connection signal="acid_hit" from="Acid" to="." method="_on_spike_spike_hit"]
 [connection signal="drop_touched" from="Path2D/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
 [connection signal="drop_touched" from="Path2D2/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="laser_touched_player" from="LaserBase" to="." method="_on_spike_spike_hit"]
+[connection signal="laser_touched_player" from="LaserBase2" to="." method="_on_spike_spike_hit"]
+[connection signal="laser_touched_player" from="LaserBase3" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]

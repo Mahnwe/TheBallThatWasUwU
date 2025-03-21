@@ -275,7 +275,7 @@ func _on_triple_sign_set_up_sign_label():
 
 func _on_finish_ui_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
-		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/level6.tscn")
 
 func _on_portal_body_entered(body):
 	if body.name == "Player":

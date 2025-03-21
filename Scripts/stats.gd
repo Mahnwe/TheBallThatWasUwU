@@ -28,6 +28,7 @@ func set_up_stats_with_file():
 	$DeathCannonNumber.text = str(stats_config.get_value("Stats", "cannon_death_number"))
 	$DeathCoralNumber.text = str(stats_config.get_value("Stats", "coral_death_number"))
 	$DeathAcidNumber.text = str(stats_config.get_value("Stats", "acid_death_number"))
+	$DeathLaserNumber.text = str(stats_config.get_value("Stats", "laser_death_number"))
 	$ChestNumber.text = str(properties_config.get_value("Chests", "chestNumber"))
 	$LevelNumber.text = str(stats_config.get_value("Stats", "finished_level_number"))
 	$Level1Number.text = str(stats_config.get_value("Stats", "level_one_finished_number"))

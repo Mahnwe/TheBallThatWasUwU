@@ -62,9 +62,9 @@ color = Color(0.125911, 0.125911, 0.125911, 1)
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 414.0
-offset_top = 399.0
+offset_top = 366.0
 offset_right = 820.0
-offset_bottom = 910.0
+offset_bottom = 944.0
 theme_override_constants/separation = 25
 
 [node name="JumpsLabel" type="Label" parent="VBoxContainer"]
@@ -102,6 +102,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Number of acid death   ="
 
+[node name="LaserDeath" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Number of laser death   ="
+
 [node name="ChestsLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -110,72 +115,81 @@ text = "Number of chest found   ="
 [node name="JumpNumber" type="Label" parent="."]
 layout_mode = 2
 offset_left = 752.0
-offset_top = 397.0
+offset_top = 364.0
 offset_right = 893.0
-offset_bottom = 439.0
+offset_bottom = 406.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="DashNumber" type="Label" parent="."]
 layout_mode = 2
 offset_left = 752.0
-offset_top = 464.0
+offset_top = 431.0
 offset_right = 893.0
-offset_bottom = 506.0
+offset_bottom = 473.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="DeathNumber" type="Label" parent="."]
 layout_mode = 2
 offset_left = 756.0
-offset_top = 530.0
+offset_top = 497.0
 offset_right = 897.0
-offset_bottom = 572.0
+offset_bottom = 539.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="DeathSpikeNumber" type="Label" parent="."]
 layout_mode = 0
 offset_left = 800.0
-offset_top = 598.0
+offset_top = 565.0
 offset_right = 840.0
-offset_bottom = 640.0
+offset_bottom = 607.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="DeathCannonNumber" type="Label" parent="."]
 layout_mode = 0
 offset_left = 843.0
-offset_top = 665.0
+offset_top = 632.0
 offset_right = 883.0
-offset_bottom = 707.0
+offset_bottom = 674.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="DeathCoralNumber" type="Label" parent="."]
 layout_mode = 0
 offset_left = 811.0
-offset_top = 731.0
+offset_top = 698.0
 offset_right = 851.0
-offset_bottom = 773.0
+offset_bottom = 740.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="DeathAcidNumber" type="Label" parent="."]
 layout_mode = 0
 offset_left = 796.0
-offset_top = 797.0
+offset_top = 764.0
 offset_right = 836.0
-offset_bottom = 839.0
+offset_bottom = 806.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="DeathLaserNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 831.0
+offset_right = 845.0
+offset_bottom = 873.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="ChestNumber" type="Label" parent="."]
 layout_mode = 2
 offset_left = 817.0
-offset_top = 866.0
+offset_top = 898.0
 offset_right = 958.0
-offset_bottom = 908.0
+offset_bottom = 940.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
