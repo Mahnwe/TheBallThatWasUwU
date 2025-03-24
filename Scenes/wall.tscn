@@ -11,11 +11,12 @@ size = Vector2(303, 20)
 z_index = 1
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(168, 68)
-scale = Vector2(312, 26)
+position = Vector2(167.5, 68)
+scale = Vector2(311, 26)
 mesh = SubResource("QuadMesh_qdqgg")
 texture = ExtResource("1_flumq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(167.5, 66)
+position = Vector2(167, 66)
+scale = Vector2(0.996706, 0.940805)
 shape = SubResource("RectangleShape2D_ehky3")

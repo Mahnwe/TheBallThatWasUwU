@@ -186,7 +186,7 @@ rotation = 1.5708
 position = Vector2(-365, 1.59547e-05)
 
 [node name="MetalPlatform6" parent="." instance=ExtResource("4_achdq")]
-position = Vector2(-538, -573)
+position = Vector2(-525, -541)
 scale = Vector2(0.359093, 0.447507)
 
 [node name="MetalPlatform7" parent="." instance=ExtResource("4_achdq")]
@@ -214,13 +214,13 @@ beam_timer = 3.0
 position = Vector2(-951, -908)
 rotation = 3.14159
 charge_timer = 3.0
-beam_timer = 5.0
+beam_timer = 3.0
 
 [node name="LaserBase3" parent="." instance=ExtResource("18_gh5wq")]
 position = Vector2(-1846, -604)
 rotation = 1.5708
 charge_timer = 3.0
-beam_timer = 5.0
+beam_timer = 3.0
 
 [node name="Spike2" parent="." instance=ExtResource("17_25f8e")]
 position = Vector2(-1960, -568)

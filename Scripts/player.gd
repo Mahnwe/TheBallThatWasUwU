@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #@export
 var speed = 300
-var wall_pushback = 900
+var wall_pushback = 1400
 
 #@export
 var gravity = 30
@@ -52,8 +52,7 @@ func _physics_process(_delta):
 		check_if_player_is_on_floor()
 	if !is_on_floor():
 		check_if_player_is_not_on_floor()
-	if is_on_wall():
-		check_if_player_is_on_wall()
+	check_if_player_is_on_wall()
 	if Input.is_action_just_pressed("dash"):
 		_dash()
 	if !is_on_floor() and Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps >= 1:
@@ -76,18 +75,22 @@ func jump():
 	if velocity.x < 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_h = true
+		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
 	if velocity.x > 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_h = false
+		$Raycast.scale.x = -1
 		$AnimatedSprite2D.play()
 	if velocity.x == 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_h = false
+		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
 	
 func _dash():
-	if can_dash and have_dash_ability and dash_cooldown_timer.time_left == 0:
+	var horizontal_direction = Input.get_axis("move_left","move_right")
+	if can_dash and have_dash_ability and horizontal_direction != 0 and dash_cooldown_timer.time_left == 0:
 		$DashSound.play()
 		var number_of_dashes = stats_config.get_value("Stats", "dash_number")
 		stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
@@ -95,6 +98,7 @@ func _dash():
 		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = false
+			$Raycast.scale.x = 1
 			speed = dash_speed
 			velocity.x += speed
 			move_and_slide()
@@ -105,6 +109,7 @@ func _dash():
 		if velocity.x < 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = true
+			$Raycast.scale.x = -1
 			speed = dash_speed
 			velocity.x -= speed
 			move_and_slide()
@@ -125,10 +130,12 @@ func check_if_player_is_not_on_floor():
 		if velocity.x < 0:
 			$AnimatedSprite2D.animation = "stay_in_air"
 			$AnimatedSprite2D.flip_h = true
+			$Raycast.scale.x = -1
 			$AnimatedSprite2D.play()
 		elif velocity.x > 0:
 			$AnimatedSprite2D.animation = "stay_in_air"
 			$AnimatedSprite2D.flip_h = false
+			$Raycast.scale.x = 1
 			$AnimatedSprite2D.play()
 		if velocity.y > VELOCITY_Y_MAX:
 			velocity.y = VELOCITY_Y_MAX
@@ -144,12 +151,14 @@ func check_if_player_is_on_floor():
 			if velocity.x < 0:
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = true
+				$Raycast.scale.x = -1
 				$AnimatedSprite2D.play()
 			elif velocity.x > 0:
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = false
+				$Raycast.scale.x = 1
 				$AnimatedSprite2D.play()
-	if is_on_floor() and Input.is_action_pressed("jump") or Input.is_action_just_pressed("jump") or Input.is_action_pressed("jump"):
+	if is_on_floor() and Input.is_action_pressed("jump") or Input.is_action_just_pressed("jump"):
 		jump()
 		
 func _input(event):
@@ -159,25 +168,14 @@ func _input(event):
 			
 func check_if_player_is_on_wall():
 		# Wall-jump
-	if is_on_wall():
 		check_animation_if_on_wall()
 		var wall_normal = get_wall_normal()
-		if collinding_right_wall() and Input.is_action_just_pressed("jump"):
+		if colliding_wall() and Input.is_action_just_pressed("jump"):
 			$JumpSound.play()
 			number_of_jumps += 1
-			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
+			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-100)
 			move_and_slide()
 			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play()
-			await $AnimatedSprite2D.animation_finished
-		if colliding_left_wall() and Input.is_action_just_pressed("jump"):
-			$JumpSound.play()
-			number_of_jumps += 1
-			velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
-			move_and_slide()
-			$AnimatedSprite2D.animation = "jump"
-			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play()
 			await $AnimatedSprite2D.animation_finished
 			
@@ -185,32 +183,27 @@ func check_for_player_movement():
 	# Horizontal movements
 	# 	return -1 if left, +1 if right, 0 if both or neither
 	var horizontal_direction = Input.get_axis("move_left","move_right")
-	velocity.x = speed * horizontal_direction
+	velocity.x =  speed * horizontal_direction
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+		$Raycast.scale.x = -1
+	if velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+		$Raycast.scale.x = 1
 	move_and_slide()
 	
 			
 func check_animation_if_on_wall():
-	if collinding_right_wall():
-		number_of_jumps = 0
-		can_dash = true
-		velocity.y = 0
-		velocity.y += gravity+90
-		$AnimatedSprite2D.animation = "stay_in_air"
-		$AnimatedSprite2D.flip_h = true
-	if colliding_left_wall():
-		number_of_jumps = 0
-		can_dash = true
-		velocity.y = 0
-		velocity.y += gravity+90
-		$AnimatedSprite2D.animation = "stay_in_air"
-		$AnimatedSprite2D.flip_h = false
+	if !is_on_floor():
+		if colliding_wall():
+			number_of_jumps = 0
+			can_dash = true
+			velocity.y = 0
+			velocity.y = gravity+90
+			$AnimatedSprite2D.animation = "stay_in_air"
 			
-func colliding_left_wall():
-	return $RaycastLeft.is_colliding()
-
-func collinding_right_wall():
-	return $RaycastRight.is_colliding()
-	
+func colliding_wall():
+	return $Raycast.is_colliding()
 	
 func _on_jump_buffer_timer_timeout():
 	if is_on_floor() and player_try_buffer_jump:

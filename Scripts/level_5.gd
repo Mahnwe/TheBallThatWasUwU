@@ -175,12 +175,12 @@ func display_dead_sprite_and_pause_timer_until_respawn(message):
 	$Player.velocity.x = 0
 	$Player.velocity.y = 0
 	$Player.get_child(1).animation = "dead"
-	$Player.get_child(5).text = message
+	$Player.get_child(4).text = message
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	
 func put_player_to_save_position_and_unpause_timer():
 	$Player.set_physics_process(true)
-	$Player.get_child(5).text = ""
+	$Player.get_child(4).text = ""
 	$Player.get_child(1).animation = "stay"
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
