@@ -4,6 +4,7 @@ var parent_name
 @export var speed = 150
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.self_modulate.a = 0.9
 	parent_name = get_parent()
 	self.play()
 

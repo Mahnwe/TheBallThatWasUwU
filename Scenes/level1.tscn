@@ -41,9 +41,9 @@ size = Vector2(101, 107)
 
 [sub_resource type="Curve2D" id="Curve2D_x7ktg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 498, -709, 0, 0, 0, 0, 327, -744, 0, 0, 0, 0, 155, -713, 0, 0, 0, 0, -59, -623, 0, 0, 0, 0, -248, -490, 0, 0, 0, 0, -449, -315, 0, 0, 0, 0, -608, -148, 0, 0, 0, 0, -795, -59, 0, 0, 0, 0, -1029, 17, 0, 0, 0, 0, -1190, 16, 0, 0, 0, 0, 498, -709)
+"points": PackedVector2Array(-12, -78, 12, 78, -1184, 15, 0, 0, 0, 0, -998, -8, -21, 9, 21, -9, -844, -48, 0, 0, 0, 0, -712, -115, -26.4463, 14.876, 26.4463, -14.876, -531, -187, 0, 0, 0, 0, -397, -209, -13.2231, 13.2231, 13.2231, -13.2231, -283, -229, 0, 0, 0, 0, -212, -290, -14.876, 14.876, 14.876, -14.876, -162, -348, 0, 0, 0, 0, -34, -429, 0, 0, 0, 0, 80, -459, 0, 0, 0, 0, 229, -470, -48.7603, 27.2727, 48.7603, -27.2727, 324, -480, 0, 0, 0, 0, 392, -543, 0, 0, 0, 0, 443, -596, -26.4463, 14.876, 26.4463, -14.876, 507, -649, 63.6364, 25.6198, -63.6364, -25.6198, 516, -735, 28.0992, -4.95868, -28.0992, 4.95868, 351, -702, 0, 0, 0, 0, 242, -625, 0, 0, 0, 0, 157, -556, 57.8512, 23.9669, -57.8512, -23.9669, -7, -509, 0, 0, 0, 0, -116, -543, 0, 0, 0, 0, -216, -549, 17.3554, -11.5702, -17.3554, 11.5702, -315, -544, 0, 0, 0, 0, -403, -487, 31, -17, -31, 17, -530, -412, 0, 0, 0, 0, -626, -400, 0, 0, 0, 0, -718, -392, 19, -31, -19, 31, -838, -345, 0, 0, 0, 0, -886, -285, 0, 0, 0, 0, -939, -215, 42, 0, -42, 0, -1022, -98, -18, -66, 18, 66, -1184, 15)
 }
-point_count = 11
+point_count = 33
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -149,7 +149,7 @@ rotation = 1.5708
 scale = Vector2(1.725, 1.725)
 
 [node name="platform4" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(96, 63)
+position = Vector2(100, 72)
 scale = Vector2(0.72, 1)
 
 [node name="Wall2" parent="." instance=ExtResource("10_8ng8k")]
@@ -183,9 +183,9 @@ position = Vector2(701, -105)
 scale = Vector2(0.422071, 0.6)
 
 [node name="Wall3" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(-1, 269)
+position = Vector2(-12, 272)
 rotation = -1.5708
-scale = Vector2(2.72, 1.72)
+scale = Vector2(2.72, 1.92)
 
 [node name="Wall4" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(394, -238)
@@ -202,8 +202,8 @@ position = Vector2(264, -250)
 scale = Vector2(0.288368, 0.185376)
 
 [node name="platform9" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(61, -703)
-scale = Vector2(0.879998, 1)
+position = Vector2(58, -703)
+scale = Vector2(0.889274, 0.977378)
 
 [node name="Wall5" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(950, -1088)
@@ -230,7 +230,7 @@ position = Vector2(591, -388)
 scale = Vector2(0.319999, 2.16)
 
 [node name="platform12" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-192, -701)
+position = Vector2(-190, -701)
 scale = Vector2(0.2, 1.04)
 
 [node name="platform13" parent="." instance=ExtResource("7_v154u")]
@@ -711,18 +711,6 @@ scale = Vector2(0.270711, 0.80041)
 position = Vector2(-501, -329)
 scale = Vector2(2.53154, 2.66816)
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_x7ktg")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(498, -709)
-rotation = -2.9397
-
-[node name="Bird" parent="Path2D/PathFollow2D" instance=ExtResource("29_x7ktg")]
-position = Vector2(6.23334, -9.44171)
-scale = Vector2(0.48785, 0.505692)
-flip_v = true
-
 [node name="platform15" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(-867, -489)
 scale = Vector2(0.256322, 0.745499)
@@ -816,6 +804,17 @@ scale = Vector2(0.689601, 0.834783)
 position = Vector2(-2124, 591)
 rotation = -0.318123
 scale = Vector2(0.646028, 0.585984)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_x7ktg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1184, 15)
+rotation = 1.41815
+
+[node name="Bird" parent="Path2D/PathFollow2D" instance=ExtResource("29_x7ktg")]
+position = Vector2(5.70215, 8.97136)
+scale = Vector2(0.626435, 0.567529)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

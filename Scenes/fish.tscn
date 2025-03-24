@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://xddsf6ly1i6v"]
+
+[ext_resource type="Texture2D" uid="uid://cninn0pln5qqd" path="res://Arts/FishSprite/Fish.png" id="1_urn1o"]
+[ext_resource type="Texture2D" uid="uid://c2vdybqncsiak" path="res://Arts/FishSprite/Fish2.png" id="2_jdl8t"]
+[ext_resource type="Texture2D" uid="uid://chfif3ra24q83" path="res://Arts/FishSprite/Fish3.png" id="3_21uvr"]
+[ext_resource type="Script" uid="uid://bhym5fy2nwoq" path="res://Scripts/fish.gd" id="4_csmc7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkfiq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_urn1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jdl8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_21uvr")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[node name="Fish" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lkfiq")
+animation = &"swim"
+script = ExtResource("4_csmc7")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=49 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://dnpgamit7qywn" path="res://Scenes/water_drop.tscn" id="37_fkoau"]
 [ext_resource type="Texture2D" uid="uid://b7ykvqooe5xhe" path="res://Arts/StalactiteSprite/BrownStalactiteSprite.png" id="38_nks4y"]
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="39_fkoau"]
+[ext_resource type="PackedScene" uid="uid://xddsf6ly1i6v" path="res://Scenes/fish.tscn" id="40_k4k0d"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -75,6 +76,18 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2953, -599, 0, 0, 0, 0, -2953, -529, 0, 0, 0, 0, -2952, -451, 0, 0, 0, 0, -2952, -366, 0, 0, 0, 0, -2952, -312)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_birjf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1277, -424, 0, 0, 0, 0, -1174, -436, -14.7241, 6.05251, 14.7241, -6.05251, -1115, -461, -22.3923, -6.5311, 22.3923, 6.5311, -1038, -475, 0, 0, 0, 0, -961, -467, 0, 0, 0, 0, -905, -471, -24.2584, -4.19857, 24.2584, 4.19857, -831, -455, 0, 0, 0, 0, -762, -459, 0, 0, 0, 0, -660, -451, -31.256, -15.3947, 31.256, 15.3947, -590, -433, 0, 0, 0, 0, -509, -433, 0, 0, 0, 0, -466, -448, 0, 0, 0, 0, -414, -451, 20.9928, 29.8565, -20.9928, -29.8565, -342, -464, 0, 0, 0, 0, -1277, -424)
+}
+point_count = 15
+
+[sub_resource type="Curve2D" id="Curve2D_s0a2a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2397, -181, 0, 0, 0, 0, -2340, -168, 0, 0, 0, 0, -2309, -151, 0, 0, 0, 0, -2272, -128, 0, 0, 0, 0, -2227, -107, 0, 0, 0, 0, -2150, -89, -18.162, 5.73535, 18.162, -5.73535, -2097, -87, 0, 0, 0, 0, -2056, -104, 0, 0, 0, 0, -2001, -119, 0, 0, 0, 0, -1944, -133, 0, 0, 0, 0, -1912, -148, -23.26, 6.05398, 23.26, -6.05398, -1872, -164, -36.0053, 6.05398, 36.0053, -6.05398, -1830, -185, 0, 0, 0, 0, -1747, -189, 0, 0, 0, 0, -1699, -186, 0, 0, 0, 0, -1659, -179, 0, 0, 0, 0, -1635, -168, 0, 0, 0, 0, -1589, -142, -11.9696, 1.43635, 11.9696, -1.43635, -1560, -124, 0, 0, 0, 0, -1533, -131, 0, 0, 0, 0, -1474, -118, 6.08295, 26.3595, -6.08295, -26.3595, -1427, -128, 0, 0, 0, 0, -1502, -131, 0, 0, 0, 0, -1596, -130, 0, 0, 0, 0, -1643, -140, 11.7302, -0.957568, -11.7302, 0.957568, -1720, -159, 5.02723, -8.8575, -5.02723, 8.8575, -1742, -137, 0, 0, 0, 0, -1798, -112, 49.4261, 9.21715, -49.4261, -9.21715, -1855, -110, 3.47682, 6.24046, -3.47682, -6.24046, -1907, -100, 11.8762, 11.2969, -11.8762, -11.2969, -1982, -100, 0, 0, 0, 0, -2043, -128, 0, 0, 0, 0, -2090, -137, 0, 0, 0, 0, -2179, -139, 0, 0, 0, 0, -2251, -129, 12.1659, 13.0349, -12.1659, -13.0349, -2322, -117, 17.9592, 19.4075, -17.9592, -19.4075, -2366, -138, 0, 0, 0, 0, -2397, -181)
+}
+point_count = 38
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -763,6 +776,30 @@ offset_top = -1789.0
 offset_right = 1033.0
 offset_bottom = 763.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
+
+[node name="Path2D7" type="Path2D" parent="."]
+curve = SubResource("Curve2D_birjf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
+position = Vector2(-1277, -424)
+rotation = -0.115982
+
+[node name="Fish" parent="Path2D7/PathFollow2D" instance=ExtResource("40_k4k0d")]
+position = Vector2(2.63263, 3.327)
+scale = Vector2(0.575294, 0.736007)
+speed = 75
+
+[node name="Path2D8" type="Path2D" parent="."]
+curve = SubResource("Curve2D_s0a2a")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D8"]
+position = Vector2(-2397, -181)
+rotation = 0.224235
+
+[node name="Fish" parent="Path2D8/PathFollow2D" instance=ExtResource("40_k4k0d")]
+position = Vector2(-8.60803, -3.11386)
+scale = Vector2(0.827839, 0.875446)
+speed = 90
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
