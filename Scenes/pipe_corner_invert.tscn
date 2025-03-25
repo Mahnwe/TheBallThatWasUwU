@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://12sh1513l8x2"]
+
+[ext_resource type="Texture2D" uid="uid://b3iibb0ip5buu" path="res://Arts/PipeSprite/PipeCornerInvert.png" id="1_mt2yr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go4l3"]
+size = Vector2(31, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7hav"]
+size = Vector2(17, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y1kt"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwgau"]
+size = Vector2(8, 7)
+
+[node name="PipeCornerInvert" type="StaticBody2D"]
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mt2yr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, -14)
+shape = SubResource("RectangleShape2D_go4l3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 32)
+shape = SubResource("RectangleShape2D_a7hav")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(11, 42)
+shape = SubResource("RectangleShape2D_3y1kt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(25, 39.5)
+shape = SubResource("RectangleShape2D_kwgau")

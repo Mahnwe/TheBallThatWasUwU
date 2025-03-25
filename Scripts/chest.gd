@@ -29,6 +29,8 @@ func save_level_chest_picked():
 		config.set_value("Chests", "level_four_chest", true)
 	if level_number == 5:
 		config.set_value("Chests", "level_five_chest", true)
+	if level_number == 6:
+		config.set_value("Chests", "level_six_chest", true)
 	config.save("res://Ressources/PropertieFile/properties.cfg")
 
 

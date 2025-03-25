@@ -168,6 +168,7 @@ func _input(event):
 			
 func check_if_player_is_on_wall():
 		# Wall-jump
+	if !is_on_floor():
 		check_animation_if_on_wall()
 		var wall_normal = get_wall_normal()
 		if colliding_wall() and Input.is_action_just_pressed("jump"):
@@ -194,7 +195,6 @@ func check_for_player_movement():
 	
 			
 func check_animation_if_on_wall():
-	if !is_on_floor():
 		if colliding_wall():
 			number_of_jumps = 0
 			can_dash = true

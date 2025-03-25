@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuwy5qvhf3px4"]
+[gd_scene load_steps=7 format=3 uid="uid://cuwy5qvhf3px4"]
 
+[ext_resource type="Script" uid="uid://yeuy4h7t16dg" path="res://Scripts/pipe.gd" id="1_bljoy"]
 [ext_resource type="Texture2D" uid="uid://ct1fhx6ywkm3n" path="res://Arts/PipeSprite/PipeCorner.png" id="1_niot7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bljoy"]
@@ -16,6 +17,7 @@ size = Vector2(17, 18)
 
 [node name="PipeCorner" type="StaticBody2D"]
 z_index = 1
+script = ExtResource("1_bljoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_niot7")

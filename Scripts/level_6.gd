@@ -29,6 +29,9 @@ func _ready():
 	queue.is_level_5 = false
 	queue.is_level_6 = true
 	queue.load()
+	$Chest.set_level_number(6)
+	if config.get_value("Chests", "level_six_chest"):
+		$Chest.chest_already_picked()
 	set_volume()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
@@ -38,6 +41,7 @@ func _ready():
 	$Player/Pause.get_child(3).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	$Path2D3/PathFollow2D/MetalPlatform.set_process(false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -113,6 +117,7 @@ func toggle_pause():
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_drop_groups()
+	disable_patrol_groups()
 	$Player.set_physics_process(false)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
@@ -128,6 +133,7 @@ func untoggle_pause():
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_drop_groups()
+	enable_patrol_groups()
 	$Player.set_physics_process(true)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
@@ -172,6 +178,7 @@ func _on_pause_continue_is_clicked():
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.set_physics_process(true)
 		enable_drop_groups()
+		enable_patrol_groups()
 		is_paused = false
 		$Player/Pause.is_paused = false
 		$Player/Pause.is_controller_focused = false
@@ -188,6 +195,15 @@ func set_volume():
 		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
 		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		
+func disable_patrol_groups():
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.set_process(false)
+		
+func enable_patrol_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+				member.set_process(true)
 		
 func water_drop_animation(delta):
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
@@ -209,3 +225,8 @@ func enable_drop_groups():
 func reset_drop_progress():
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
 			member.get_parent().progress = 0
+
+
+func _on_metal_platform_1_trigger_body_entered(body):
+	if body.name == "Player":
+		$Path2D3/PathFollow2D/MetalPlatform.set_process(true)
