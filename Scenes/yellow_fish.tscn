@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3chk3dy1p8t7"]
+
+[ext_resource type="Texture2D" uid="uid://bp5sa7xjahitl" path="res://Arts/FishSprite/YellowFish.png" id="1_qp1v7"]
+[ext_resource type="Texture2D" uid="uid://bpuemvc54pk25" path="res://Arts/FishSprite/YellowFish2.png" id="2_j5kwi"]
+[ext_resource type="Texture2D" uid="uid://d0pxtnumgwfgh" path="res://Arts/FishSprite/YellowFish3.png" id="3_cgf0g"]
+[ext_resource type="Script" uid="uid://bhym5fy2nwoq" path="res://Scripts/fish.gd" id="4_j5kwi"]
+[ext_resource type="PackedScene" uid="uid://bacfpyli26p32" path="res://Scenes/bubbles.tscn" id="5_cgf0g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7cuh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qp1v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j5kwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qp1v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cgf0g")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[node name="YellowFish" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_o7cuh")
+animation = &"swim"
+script = ExtResource("4_j5kwi")
+
+[node name="Bubbles" parent="." instance=ExtResource("5_cgf0g")]
+position = Vector2(33, -35)
+scale = Vector2(0.844309, 1.14144)
