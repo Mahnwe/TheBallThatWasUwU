@@ -1,0 +1,59 @@
+[gd_scene load_steps=14 format=3 uid="uid://clxwqr7ghixcp"]
+
+[ext_resource type="Texture2D" uid="uid://batvgt84aw0fy" path="res://Arts/TubeSprite/TubeSpriteSpike.png" id="1_csm7n"]
+[ext_resource type="Texture2D" uid="uid://br5twt22knuh" path="res://Arts/TubeSprite/TubeSpriteSpike2.png" id="2_q80yr"]
+[ext_resource type="Texture2D" uid="uid://bqcbpqx7wewol" path="res://Arts/TubeSprite/TubeSpriteSpike3.png" id="3_8rcgy"]
+[ext_resource type="Texture2D" uid="uid://7nuud5pe3gpg" path="res://Arts/TubeSprite/TubeSpriteSpike4.png" id="4_sgg13"]
+[ext_resource type="Texture2D" uid="uid://dxwnf60vto170" path="res://Arts/TubeSprite/TubeSpriteSpike5.png" id="5_kul47"]
+[ext_resource type="Texture2D" uid="uid://d2uubsgqtki0e" path="res://Arts/TubeSprite/TubeSpriteSpike6.png" id="6_x2of4"]
+[ext_resource type="Texture2D" uid="uid://bcxxim2wde7or" path="res://Arts/TubeSprite/TubeSpriteSpike7.png" id="7_ra1qf"]
+[ext_resource type="Texture2D" uid="uid://dtukp1jskaihu" path="res://Arts/TubeSprite/TubeSpriteSpike8.png" id="8_kcccu"]
+[ext_resource type="Texture2D" uid="uid://c5ejc7knr4c0o" path="res://Arts/TubeSprite/TubeSpriteSpike9.png" id="9_digpr"]
+[ext_resource type="Texture2D" uid="uid://bhdnaxgauhlls" path="res://Arts/TubeSprite/TubeSpriteSpike10.png" id="10_5ypbb"]
+[ext_resource type="Texture2D" uid="uid://pdrfeg4vakom" path="res://Arts/TubeSprite/TubeSpriteSpike11.png" id="11_qbo2c"]
+[ext_resource type="Script" uid="uid://cb2a3spnjbxrq" path="res://Scripts/tube.gd" id="12_q80yr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtlf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_csm7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q80yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8rcgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sgg13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kul47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x2of4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ra1qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kcccu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_digpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5ypbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qbo2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="FilledTube" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rtlf8")
+script = ExtResource("12_q80yr")

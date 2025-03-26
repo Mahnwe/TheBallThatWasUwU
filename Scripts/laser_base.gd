@@ -3,8 +3,8 @@ extends Sprite2D
 var stats_config= ConfigFile.new()
 var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 
-@export var beam_x_scale = 0
-@export var beam_y_position = 0
+@export var beam_x_scale = 0.0
+@export var beam_y_position = 0.0
 @export var charge_timer = 0.0
 @export var beam_timer = 0.0
 
@@ -15,6 +15,7 @@ func _ready():
 	setup_laser_beam()
 	$LaserBeam/Area2D.monitorable = false
 	$LaserBeam.visible = false
+	$LaserBeam/Area2D/CollisionShape2D.disabled = true
 	first_charge_beam()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +23,7 @@ func _process(_delta):
 	final_charge_trigger()
 	
 func setup_laser_beam():
-	if beam_x_scale != 0:
+	if beam_x_scale != 0.0:
 		$LaserBeam.scale.x *= beam_x_scale
 	$LaserBeam.position.y -= beam_y_position
 	$ChargeTimer.set_wait_time(charge_timer)
@@ -41,8 +42,8 @@ func final_charge_trigger():
 
 func _on_beam_timer_timeout():
 	$ChargeTimer.start()
-	$LaserBeam.visible = false
 	$LaserBeam/Area2D.monitoring = false
+	$LaserBeam.visible = false
 	$LaserCharge.visible = true
 	$LaserCharge.animation = "laser_charge"
 	$LaserCharge.play()
@@ -51,6 +52,7 @@ func _on_charge_timer_timeout():
 	$BeamTimer.start()
 	$LaserCharge.visible = false
 	$LaserBeam.visible = true
+	$LaserBeam/Area2D/CollisionShape2D.disabled = false
 	$LaserBeam/Area2D.monitoring = true
 	$LaserBeam.play()
 

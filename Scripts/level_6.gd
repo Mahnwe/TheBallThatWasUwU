@@ -68,6 +68,8 @@ func _process(delta):
 	handle_pause()
 	
 func _on_spike_spike_hit():
+	disable_patrol_groups()
+	disable_drop_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -198,12 +200,12 @@ func set_volume():
 		
 func disable_patrol_groups():
 	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-			member.set_process(false)
+		member.set_process(false)
 		
 func enable_patrol_groups():
 	if(get_tree() != null):
 		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-				member.set_process(true)
+			member.set_process(true)
 		
 func water_drop_animation(delta):
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
@@ -215,16 +217,16 @@ func water_drop_animation(delta):
 			
 func disable_drop_groups():
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
-			member.set_process(false)
+		member.set_process(false)
 		
 func enable_drop_groups():
 	if(get_tree() != null):
 		for member in get_tree().get_nodes_in_group("waterdrop_group"):
-				member.set_process(true)
+			member.set_process(true)
 				
 func reset_drop_progress():
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
-			member.get_parent().progress = 0
+		member.get_parent().progress = 0
 
 
 func _on_metal_platform_1_trigger_body_entered(body):
