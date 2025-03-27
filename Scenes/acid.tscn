@@ -23,7 +23,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7l1"]
-size = Vector2(198.661, 198.559)
+size = Vector2(198.662, 198.559)
 
 [node name="Acid" type="AnimatedSprite2D"]
 scale = Vector2(0.513436, 0.221597)

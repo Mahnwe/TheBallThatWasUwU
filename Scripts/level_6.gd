@@ -42,6 +42,7 @@ func _ready():
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	$Path2D3/PathFollow2D/MetalPlatform.set_process(false)
+	$Path2D11/PathFollow2D/MetalPlatform.set_process(false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -82,6 +83,10 @@ func restart_scene():
 	
 func _on_start_area_player_exited_start_area():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	
+func _on_save_point_player_entered():
+	save_position_x = $Player.position.x
+	save_position_y = $Player.position.y
 		
 		
 func handle_player_actions_when_level_finished():
@@ -166,6 +171,7 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	enable_drop_groups()
+	reset_metal_platform_patrol()
 	
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
@@ -232,3 +238,13 @@ func reset_drop_progress():
 func _on_metal_platform_1_trigger_body_entered(body):
 	if body.name == "Player":
 		$Path2D3/PathFollow2D/MetalPlatform.set_process(true)
+
+
+func _on_metal_platform_2_body_entered(body):
+	if body.name == "Player":
+		$Path2D11/PathFollow2D/MetalPlatform.set_process(true)
+		
+func reset_metal_platform_patrol():
+	$Path2D11/PathFollow2D.progress_ratio = 0.0
+	$Path2D11/PathFollow2D/MetalPlatform.set_process(false)
+	
