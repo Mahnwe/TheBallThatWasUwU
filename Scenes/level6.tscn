@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c7hibihskejek" path="res://Scenes/pipe_base.tscn" id="15_hkip3"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="17_25f8e"]
 [ext_resource type="PackedScene" uid="uid://dga2fe53ycg0g" path="res://Scenes/laser_base.tscn" id="18_gh5wq"]
+[ext_resource type="PackedScene" uid="uid://b3low4omymkyk" path="res://Scenes/tube_console.tscn" id="19_br5uj"]
 [ext_resource type="Texture2D" uid="uid://ct1fhx6ywkm3n" path="res://Arts/PipeSprite/PipeCorner.png" id="19_eboxf"]
-[ext_resource type="Texture2D" uid="uid://ccjhq2i41ljk8" path="res://Arts/TubeSprite/TubeConsole.png" id="19_tpddr"]
 [ext_resource type="PackedScene" uid="uid://12sh1513l8x2" path="res://Scenes/pipe_corner_invert.tscn" id="20_h7yc4"]
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="21_qob7w"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="24_br5uj"]
@@ -44,7 +44,7 @@ _data = {
 point_count = 6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eboxf"]
-size = Vector2(312.161, 108.313)
+size = Vector2(312.161, 34.2697)
 
 [sub_resource type="Curve2D" id="Curve2D_eboxf"]
 _data = {
@@ -95,7 +95,7 @@ _data = {
 point_count = 7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_br5uj"]
-size = Vector2(346.607, 118.25)
+size = Vector2(346.607, 44.0001)
 
 [sub_resource type="Curve2D" id="Curve2D_ujibb"]
 _data = {
@@ -330,10 +330,10 @@ position = Vector2(-1091, 0)
 position = Vector2(-3031, -1393)
 scale = Vector2(1.81699, 2.03676)
 
-[node name="Sprite2D" type="Sprite2D" parent="FilledTube"]
-position = Vector2(63.2915, 25.5307)
+[node name="TubeConsole" parent="FilledTube" instance=ExtResource("19_br5uj")]
+z_index = 2
+position = Vector2(60.5397, 32.4044)
 scale = Vector2(0.677752, 0.577149)
-texture = ExtResource("19_tpddr")
 
 [node name="Sprite2D8" type="Sprite2D" parent="."]
 position = Vector2(-4516.23, -1000.17)
@@ -399,7 +399,7 @@ texture = ExtResource("12_q8la5")
 flip_v = true
 
 [node name="Sprite2D13" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(-211.607, 474)
+position = Vector2(-218.017, 473.302)
 rotation = -1.5708
 scale = Vector2(1, 0.446428)
 texture = ExtResource("9_tw4yl")
@@ -497,7 +497,7 @@ sync_to_physics = false
 [node name="MetalPlatform1Trigger" type="Area2D" parent="Path2D3/PathFollow2D/MetalPlatform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D3/PathFollow2D/MetalPlatform/MetalPlatform1Trigger"]
-position = Vector2(4.26758, 129.005)
+position = Vector2(4.26758, 91.9834)
 shape = SubResource("RectangleShape2D_eboxf")
 
 [node name="Path2D4" type="Path2D" parent="."]
@@ -680,10 +680,10 @@ position = Vector2(-4343, -1405)
 scale = Vector2(1.81699, 2.03676)
 flip_h = true
 
-[node name="Sprite2D" type="Sprite2D" parent="FilledTube2"]
-position = Vector2(-60.5397, 22.5849)
+[node name="TubeConsole" parent="FilledTube2" instance=ExtResource("19_br5uj")]
+z_index = 2
+position = Vector2(-62.1908, 28.4766)
 scale = Vector2(0.677752, 0.577149)
-texture = ExtResource("19_tpddr")
 
 [node name="MetalPlatform14" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-2885, -2629)
@@ -864,8 +864,7 @@ speed = 200
 [node name="MetalPlatform2" type="Area2D" parent="Path2D11/PathFollow2D/MetalPlatform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D11/PathFollow2D/MetalPlatform/MetalPlatform2"]
-position = Vector2(2.37305, -133.375)
-scale = Vector2(1, 1)
+position = Vector2(2.375, -96.2501)
 shape = SubResource("RectangleShape2D_br5uj")
 
 [node name="MetalPlatform21" parent="." instance=ExtResource("4_achdq")]

@@ -902,7 +902,7 @@ position = Vector2(-2012, -220)
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
 offset_left = -3172.0
-offset_top = -2271.0
+offset_top = -2605.0
 offset_right = -1897.0
 offset_bottom = -1371.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
@@ -910,31 +910,31 @@ color = Color(0.372549, 0.815686, 0.92549, 1)
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
 offset_left = 1241.0
-offset_right = 2332.0
-offset_bottom = 778.0
+offset_right = 2582.0
+offset_bottom = 1116.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -6402.0
-offset_top = -2266.0
+offset_left = -6716.0
+offset_top = -2568.0
 offset_right = -3161.0
 offset_bottom = -1371.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect2"]
 layout_mode = 0
-offset_top = 894.0
-offset_right = 5567.0
-offset_bottom = 3951.0
+offset_top = 1192.0
+offset_right = 6038.0
+offset_bottom = 4644.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 4505.0
-offset_top = 774.0
-offset_right = 5559.0
-offset_bottom = 943.0
+offset_left = 4806.0
+offset_top = 1076.0
+offset_right = 6129.0
+offset_bottom = 1295.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

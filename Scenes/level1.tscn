@@ -644,10 +644,10 @@ scale = Vector2(0.160002, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -2785.0
-offset_top = -1107.0
-offset_right = 925.0
-offset_bottom = 1022.0
+offset_left = -3195.0
+offset_top = -1322.0
+offset_right = 1282.0
+offset_bottom = 1312.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="Background" type="Sprite2D" parent="."]

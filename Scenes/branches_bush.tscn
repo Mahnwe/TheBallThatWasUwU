@@ -1,12 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd6m23uhhgmfy"]
+[gd_scene load_steps=6 format=3 uid="uid://dd6m23uhhgmfy"]
 
 [ext_resource type="Script" uid="uid://brfctq6wx4gbo" path="res://Scripts/branches_bush.gd" id="1_5402i"]
-[ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="1_ychnd"]
+[ext_resource type="Texture2D" uid="uid://70hx5gt33ifs" path="res://Arts/BushSprite/NewBush.png" id="2_ru7wr"]
+[ext_resource type="Texture2D" uid="uid://cii6wx0mkkwt8" path="res://Arts/BushSprite/NewBush2.png" id="3_aogni"]
+[ext_resource type="Texture2D" uid="uid://3xycqjy2urvc" path="res://Arts/BushSprite/NewBush3.png" id="4_yyebe"]
 
-[node name="BranchesBush" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkijk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ru7wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aogni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yyebe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aogni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ru7wr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BranchesBush" type="AnimatedSprite2D"]
+scale = Vector2(1.06, 1.08)
+sprite_frames = SubResource("SpriteFrames_xkijk")
 script = ExtResource("1_5402i")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.999998, 0)
-scale = Vector2(0.122172, 0.141361)
-texture = ExtResource("1_ychnd")
