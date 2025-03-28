@@ -129,6 +129,9 @@ func _on_finish_player_entered():
 	$Finish/FinishUI.get_child(0).show()
 	$Finish/FinishUI.get_child(1).show()
 	$Finish/FinishUI.get_child(2).show()
+	$Finish/FinishUI.get_child(3).show()
+	$Finish/FinishUI.get_child(4).show()
+	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
 	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
 	var number_of_level_one_finished = stats_config.get_value("Stats", "level_one_finished_number")
@@ -228,6 +231,7 @@ func toggle_pause():
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
 	$Player/Pause.is_paused = true
+	$Player/Pause.get_child(1).get_child(1).grab_focus()
 	
 func untoggle_pause():
 	$Player/Pause.hide()

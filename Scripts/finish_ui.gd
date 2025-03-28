@@ -11,6 +11,8 @@ func _ready():
 	$Blur.hide()
 	$FinishNextLevelButton.hide()
 	$FinishMenuButton.hide()
+	$TimerCloud.hide()
+	$TimerPresentation.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -86,3 +88,14 @@ func _on_finish_menu_button_gui_input(event):
 		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$FinishNextLevelButton.grab_focus()
+			
+			
+func _setup_timer_label_display(player_timer):
+	$TimeLabel.text = _format_seconds(player_timer)
+	
+func _format_seconds(time : float) -> String:
+	var minutes := time / 60
+	var seconds := fmod(time, 60)
+	var milliseconds := fmod(time, 1) * 100
+
+	return "%02d:%02d:%02d" % [minutes, seconds, milliseconds]

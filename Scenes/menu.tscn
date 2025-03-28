@@ -416,7 +416,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_yyec
 max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(118.5, 954.25)
+position = Vector2(118, 988)
 scale = Vector2(0.6875, 0.633929)
 texture = ExtResource("14_45jmy")
 
@@ -430,7 +430,8 @@ theme_override_font_sizes/font_size = 35
 text = "Manawé Games"
 
 [node name="BubbleTooltip" parent="." instance=ExtResource("16_gkf7k")]
-position = Vector2(273.5, 860.25)
+position = Vector2(291, 875)
+scale = Vector2(3.3875, 2.735)
 bubble_message = "This game is easier with a controller"
 
 [node name="AbilityIcon" type="Sprite2D" parent="."]

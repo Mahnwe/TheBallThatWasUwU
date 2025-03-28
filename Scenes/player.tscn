@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=54 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://c0jbcsa0gmonp" path="res://Arts/DropSprite/DropSprite4.png" id="41_rtt7p"]
 [ext_resource type="Texture2D" uid="uid://cwtl8eb7834x2" path="res://Arts/DropSprite/DropSprite3.png" id="42_dkr12"]
 [ext_resource type="Texture2D" uid="uid://dmrjr1d12uoal" path="res://Arts/DropSprite/DropSprite2.png" id="43_52a8e"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="50_c1k8q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
 animations = [{
@@ -246,49 +247,56 @@ script = ExtResource("1_24gvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(214, 189)
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(1.35, 1.35)
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="UI" parent="Camera2D/CanvasLayer" instance=ExtResource("2_rhkkp")]
+z_index = 0
 offset_left = 315.0
 offset_top = 441.0
 offset_right = 315.0
 offset_bottom = 441.0
 
 [node name="Commands" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = 1559.0
-offset_top = 867.0
-offset_right = 1845.0
-offset_bottom = 916.0
+offset_left = -2.0
+offset_top = 864.0
+offset_right = 284.0
+offset_bottom = 913.0
 scale = Vector2(1.05147, 2.14183)
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "             Pause/Controls"
 
+[node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
+z_index = -1
+position = Vector2(140.28, 61.2536)
+scale = Vector2(1.61293, 1.04675)
+texture = ExtResource("50_c1k8q")
+
 [node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(208.945, 46.4237)
-scale = Vector2(0.453958, 0.25495)
+position = Vector2(206.378, 46.404)
+scale = Vector2(0.423347, 0.221768)
 texture = ExtResource("3_ytwi2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(141.42, 45.9567)
-scale = Vector2(0.453958, 0.25495)
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
+position = Vector2(-148.747, -1.83167)
 texture = ExtResource("4_5dwnd")
 
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(59.6298, 46.4237)
-scale = Vector2(0.30179, 0.142896)
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
+position = Vector2(-318.444, 5.4939)
+scale = Vector2(0.571687, 0.511652)
 texture = ExtResource("5_dqha1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(191.826, 82.3742)
-scale = Vector2(0.229824, 0.126494)
+[node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
+position = Vector2(-37.7104, 141.01)
+scale = Vector2(0.506267, 0.496152)
 texture = ExtResource("6_fuqpw")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(78.6508, 82.3742)
-scale = Vector2(0.201098, 0.0848941)
+[node name="Sprite2D5" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
+position = Vector2(-287.018, 141.01)
+scale = Vector2(0.442988, 0.332983)
 texture = ExtResource("7_dfmc8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -5,7 +5,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_qdqgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehky3"]
-size = Vector2(303, 20)
+size = Vector2(301.996, 20)
 
 [node name="Wall" type="StaticBody2D"]
 z_index = 1
@@ -17,6 +17,6 @@ mesh = SubResource("QuadMesh_qdqgg")
 texture = ExtResource("1_flumq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(167, 66)
+position = Vector2(167.5, 66)
 scale = Vector2(0.996706, 0.940805)
 shape = SubResource("RectangleShape2D_ehky3")

@@ -130,6 +130,7 @@ func toggle_pause():
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
 	$Player/Pause.is_paused = true
+	$Player/Pause.get_child(1).get_child(1).grab_focus()
 	
 func untoggle_pause():
 	$Player/Pause.hide()

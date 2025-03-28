@@ -26,8 +26,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if is_paused and !is_controller_focused and !is_commands_display:
-		$ContinueLayer/Continue.grab_focus()
+	#if is_paused and !is_controller_focused and !is_commands_display:
+		#$ContinueLayer/Continue.grab_focus()
 	display_tooltip_when_button_focus()
 	if !is_paused and Input.is_action_just_pressed("close_commands"):
 		pass
@@ -41,6 +41,9 @@ func _process(_delta):
 	if is_commands_display and Input.is_action_just_pressed("restart_save"):
 		focus_pause_buttons()
 		close_command_panel()
+	if is_commands_display and Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
+		$CommandsUI/CloseButton.grab_focus()
+		
 	wait_for_focus()
 	
 func wait_for_focus():
@@ -157,8 +160,9 @@ func open_commands_panel():
 	$ContinueLayer.visible = false
 	$CommandLayer.visible = false
 	$SoundLayer.visible = false
+	for member in get_tree().get_nodes_in_group("pause_buttons"):
+			member.release_focus()
 	$CommandsUI.show()
-	$CommandsUI/CloseButton.grab_focus()
 	is_commands_display = true
 	
 
@@ -185,7 +189,9 @@ func _on_close_button_gui_input(event):
 
 
 func _on_close_button_mouse_entered():
-	$CommandsUI/CloseButton.grab_focus() 
+	if $CommandsUI/CloseButton.is_hovered():
+		$CommandsUI/CloseButton.grab_focus() 
+		is_controller_focused = true
 	
 func focus_pause_buttons():
 	$ReturnLayer/ReturnToMenu.focus_mode = FOCUS_ALL

@@ -310,12 +310,24 @@ scale = Vector2(1.56, 2.36)
 [node name="CloseButton" type="Button" parent="CommandsUI"]
 z_index = 20
 layout_mode = 0
-offset_left = 1.87476
-offset_top = 4.23729
-offset_right = 1016.87
-offset_bottom = 719.237
-scale = Vector2(0.094359, 0.109153)
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1017.0
+offset_bottom = 719.0
+scale = Vector2(0.0817922, 0.0898942)
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 icon = ExtResource("16_n0g5q")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CommandsUI/CloseButton"]
+position = Vector2(492.806, 780.39)
+scale = Vector2(1.53326, 1.75755)
+texture = ExtResource("11_felfj")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("12_r111m")
@@ -361,6 +373,7 @@ grow_vertical = 2
 [connection signal="pressed" from="SoundLayer/MusicMuteButton" to="." method="_on_music_mute_button_pressed"]
 [connection signal="focus_entered" from="SoundLayer/SoundMuteButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="SoundLayer/SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
+[connection signal="focus_entered" from="CommandsUI/CloseButton" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="CommandsUI/CloseButton" to="." method="_on_close_button_gui_input"]
 [connection signal="mouse_entered" from="CommandsUI/CloseButton" to="." method="_on_close_button_mouse_entered"]
 [connection signal="pressed" from="CommandsUI/CloseButton" to="." method="_on_close_button_pressed"]
