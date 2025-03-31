@@ -57,19 +57,21 @@ texture = ExtResource("2_p71ma")
 [node name="MenuTitle" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 683.0
-offset_top = 17.0
-offset_right = 1317.0
-offset_bottom = 186.0
+offset_left = 657.0
+offset_top = 31.0
+offset_right = 1394.0
+offset_bottom = 226.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.00551701, 0.00573812, 0.00551702, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 70
 text = "The ball that was fast 
            and UwU"
 
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(627, 300)
+position = Vector2(640, 274)
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
 position = Vector2(402, 55)
@@ -80,10 +82,10 @@ texture = ExtResource("4_qktq1")
 position = Vector2(528, 54.875)
 
 [node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
-position = Vector2(272, 67.875)
+position = Vector2(235, 68)
 
 [node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
-position = Vector2(214, -65.125)
+position = Vector2(177, -65)
 
 [node name="Tree" parent="platform" instance=ExtResource("6_ilarj")]
 position = Vector2(603, 0.875)
@@ -105,7 +107,7 @@ offset_right = 607.0
 offset_bottom = 569.875
 scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../EffectSlider")
-focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level6Button")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
@@ -325,12 +327,17 @@ scale = Vector2(0.1, 0.990349)
 position = Vector2(727, 772)
 scale = Vector2(0.240764, 0.701423)
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1813, 101)
+scale = Vector2(0.435, 0.415)
+texture = ExtResource("11_p1e1o")
+
 [node name="QuitButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 1726.0
-offset_top = 37.0
-offset_right = 2741.0
-offset_bottom = 752.0
+offset_left = 1752.0
+offset_top = 38.0
+offset_right = 2767.0
+offset_bottom = 753.0
 scale = Vector2(0.12, 0.16)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
@@ -340,19 +347,14 @@ flat = true
 
 [node name="QuitLabel" type="Label" parent="QuitButton"]
 layout_mode = 0
-offset_left = 24.9999
-offset_top = 581.25
-offset_right = 152.0
-offset_bottom = 616.25
+offset_left = -50.0001
+offset_top = -18.75
+offset_right = 77.0
+offset_bottom = 16.25
 scale = Vector2(8.49967, 4.83334)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
-
-[node name="Sprite2D2" type="Sprite2D" parent="QuitButton"]
-position = Vector2(533.333, 337.5)
-scale = Vector2(3.625, 2.59375)
-texture = ExtResource("11_p1e1o")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("12_m2qtk")
@@ -361,12 +363,13 @@ parameters/looping = true
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("13_owrtn")
 
-[node name="Label2" type="Label" parent="."]
+[node name="MusicLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 151.0
+offset_left = 143.0
 offset_top = 51.0
-offset_right = 250.0
+offset_right = 242.0
 offset_bottom = 93.0
+scale = Vector2(0.968542, 0.955579)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Musics"
@@ -374,10 +377,10 @@ text = "Musics"
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 81.0
-offset_top = 94.0
+offset_top = 89.0
 offset_right = 331.0
-offset_bottom = 129.0
-scale = Vector2(1, 1.44)
+offset_bottom = 124.0
+scale = Vector2(0.968542, 1.37603)
 focus_neighbor_left = NodePath("../MusicMuteButton")
 focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_right = NodePath("../EffectSlider")
@@ -388,12 +391,13 @@ theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
 max_value = 5.0
 
-[node name="Label3" type="Label" parent="."]
+[node name="EffectLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 113.0
-offset_top = 142.0
-offset_right = 295.0
-offset_bottom = 184.0
+offset_top = 135.0
+offset_right = 296.0
+offset_bottom = 177.0
+scale = Vector2(0.949514, 0.903602)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Sound effect"
@@ -401,10 +405,10 @@ text = "Sound effect"
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 83.0
-offset_top = 181.0
+offset_top = 174.0
 offset_right = 333.0
-offset_bottom = 216.0
-scale = Vector2(1, 1.44)
+offset_bottom = 209.0
+scale = Vector2(0.949514, 1.30119)
 focus_neighbor_left = NodePath("../SoundMuteButton")
 focus_neighbor_top = NodePath("../MusicSlider")
 focus_neighbor_right = NodePath("../Level1Button")
@@ -447,20 +451,20 @@ texture = ExtResource("17_ukqqs")
 [node name="MusicMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
 layout_mode = 0
 offset_left = 37.0
-offset_top = 99.0
+offset_top = 94.0
 offset_right = 85.0
-offset_bottom = 147.0
-scale = Vector2(0.777683, 0.831632)
+offset_bottom = 142.0
+scale = Vector2(0.753219, 0.79469)
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
 
 [node name="SoundMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
 layout_mode = 0
 offset_left = 40.0
-offset_top = 186.0
+offset_top = 179.0
 offset_right = 88.0
-offset_bottom = 234.0
-scale = Vector2(0.777683, 0.831632)
+offset_bottom = 227.0
+scale = Vector2(0.738421, 0.751464)
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
 
@@ -521,6 +525,7 @@ layout_mode = 1
 [connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
 [connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
+[connection signal="mouse_exited" from="QuitButton" to="." method="_on_quit_button_mouse_exited"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="focus_entered" from="MusicSlider" to="." method="_on_music_slider_focus_entered"]
 [connection signal="focus_exited" from="MusicSlider" to="." method="_on_music_slider_focus_exited"]
@@ -539,5 +544,6 @@ layout_mode = 1
 [connection signal="focus_entered" from="SoundMuteButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
 [connection signal="focus_entered" from="StatsButton" to="." method="_on_button_focus_entered"]
+[connection signal="mouse_exited" from="StatsButton" to="." method="_on_stats_button_mouse_exited"]
 [connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
 [connection signal="visibility_changed" from="Stats" to="." method="_on_stats_visibility_changed"]

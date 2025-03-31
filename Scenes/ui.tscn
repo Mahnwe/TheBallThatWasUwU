@@ -20,7 +20,7 @@ offset_left = -183.0
 offset_top = -330.0
 offset_right = 16.0
 offset_bottom = -261.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "00:00:00"
 script = ExtResource("2_cqnvk")
@@ -28,10 +28,10 @@ script = ExtResource("2_cqnvk")
 [node name="VboxTimerLabel" parent="." instance=ExtResource("1_jxowl")]
 z_index = 1
 layout_mode = 1
-offset_left = 1366.0
-offset_top = -390.0
-offset_right = 1633.0
-offset_bottom = -106.0
+offset_left = 1405.0
+offset_top = -315.0
+offset_right = 1672.0
+offset_bottom = -31.0
 scale = Vector2(1.10709, 0.870471)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

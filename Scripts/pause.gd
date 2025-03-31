@@ -26,8 +26,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	#if is_paused and !is_controller_focused and !is_commands_display:
-		#$ContinueLayer/Continue.grab_focus()
 	display_tooltip_when_button_focus()
 	if !is_paused and Input.is_action_just_pressed("close_commands"):
 		pass
@@ -41,7 +39,8 @@ func _process(_delta):
 	if is_commands_display and Input.is_action_just_pressed("restart_save"):
 		focus_pause_buttons()
 		close_command_panel()
-	if is_commands_display and Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
+	if is_commands_display:
+		$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
 		$CommandsUI/CloseButton.grab_focus()
 		
 	wait_for_focus()
@@ -73,10 +72,10 @@ func _on_return_to_menu_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ContinueLayer/Continue.grab_focus()
-		elif event.is_action_pressed("ui_up"):
+		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$ContinueLayer/Continue.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$CommandLayer/Command.grab_focus()
 
@@ -86,10 +85,10 @@ func _on_continue_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$CommandLayer/Command.grab_focus()
-		elif event.is_action_pressed("ui_up"):
+		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$SoundLayer/EffectSlider.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ReturnLayer/ReturnToMenu.grab_focus() 
 			
@@ -100,10 +99,10 @@ func _on_command_gui_input(event):
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ReturnLayer/ReturnToMenu.grab_focus()
-		elif event.is_action_pressed("ui_up"):
+		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$ReturnLayer/ReturnToMenu.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$ContinueLayer/Continue.grab_focus()
 
@@ -213,6 +212,9 @@ func focus_close_command_button():
 	$SoundLayer/SoundMuteButton.focus_mode = FOCUS_NONE
 	$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
 	
+func set_current_timer_when_paused(player_timer):
+	$Sprite2D/Label.text = _format_seconds(player_timer)
+	
 func set_sliders_value_with_config():
 	$SoundLayer/MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
 	$SoundLayer/EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
@@ -226,12 +228,14 @@ func _on_music_slider_mouse_exited():
 	is_controller_focused = false
 	$SoundLayer/MusicSlider.editable = false
 	$SoundLayer/MusicSlider.add_theme_stylebox_override("grabber_area", music_slider_stylebox)
+	$SoundLayer/MusicSliderLabel.add_theme_color_override("font_color", Color("#000000"))
 
 func _on_effect_slider_mouse_exited():
 	$SoundLayer/EffectSlider.release_focus()
 	is_controller_focused = false
 	$SoundLayer/EffectSlider.editable = false
 	$SoundLayer/EffectSlider.add_theme_stylebox_override("grabber_area", effect_slider_stylebox)
+	$SoundLayer/EffectSliderLabel.add_theme_color_override("font_color", Color("#000000"))
 	
 func _on_music_slider_value_changed(value):
 	if !$SoundLayer/MusicMuteButton.is_mute:
@@ -358,6 +362,7 @@ func _on_music_slider_focus_entered():
 	$ButtonSound.play()
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
+	$SoundLayer/MusicSliderLabel.add_theme_color_override("font_color", Color("#d90000"))
 	$SoundLayer/MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
 	
 func _on_effect_slider_focus_entered():
@@ -365,16 +370,19 @@ func _on_effect_slider_focus_entered():
 	$ButtonSound.play()
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
+	$SoundLayer/EffectSliderLabel.add_theme_color_override("font_color", Color("#d90000"))
 	$SoundLayer/EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
 
 
 func _on_music_slider_focus_exited():
 	$SoundLayer/MusicSlider.editable = false
+	$SoundLayer/MusicSliderLabel.add_theme_color_override("font_color", Color("#000000"))
 	$SoundLayer/MusicSlider.add_theme_stylebox_override("grabber_area", music_slider_stylebox)
 
 
 func _on_effect_slider_focus_exited():
 	$SoundLayer/EffectSlider.editable = false
+	$SoundLayer/EffectSliderLabel.add_theme_color_override("font_color", Color("#000000"))
 	$SoundLayer/EffectSlider.add_theme_stylebox_override("grabber_area", effect_slider_stylebox)
 
 
@@ -386,6 +394,7 @@ func _on_music_slider_mouse_entered():
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
 	$SoundLayer/MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+	$SoundLayer/MusicSliderLabel.add_theme_color_override("font_color", Color("#d90000"))
 
 
 func _on_effect_slider_mouse_entered():
@@ -396,3 +405,11 @@ func _on_effect_slider_mouse_entered():
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
 	$SoundLayer/EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+	$SoundLayer/EffectSliderLabel.add_theme_color_override("font_color", Color("#d90000"))
+	
+func _format_seconds(time : float) -> String:
+	var minutes := time / 60
+	var seconds := fmod(time, 60)
+	var milliseconds := fmod(time, 1) * 100
+
+	return "%02d:%02d:%02d" % [minutes, seconds, milliseconds]

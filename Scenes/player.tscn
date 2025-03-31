@@ -260,24 +260,24 @@ offset_right = 315.0
 offset_bottom = 441.0
 
 [node name="Commands" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = -2.0
-offset_top = 864.0
-offset_right = 284.0
-offset_bottom = 913.0
-scale = Vector2(1.05147, 2.14183)
+offset_left = 1755.0
+offset_top = 916.0
+offset_right = 1877.0
+offset_bottom = 971.0
+scale = Vector2(0.938255, 1.08326)
 theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "             Pause/Controls"
+theme_override_font_sizes/font_size = 40
+text = "Pause"
 
 [node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
 z_index = -1
-position = Vector2(140.28, 61.2536)
-scale = Vector2(1.61293, 1.04675)
+position = Vector2(61.3845, 81.0822)
+scale = Vector2(1.84003, 2.47263)
 texture = ExtResource("50_c1k8q")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(206.378, 46.404)
-scale = Vector2(0.423347, 0.221768)
+position = Vector2(116.073, 71.5432)
+scale = Vector2(0.351278, 0.383668)
 texture = ExtResource("3_ytwi2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
@@ -290,12 +290,12 @@ scale = Vector2(0.571687, 0.511652)
 texture = ExtResource("5_dqha1")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
-position = Vector2(-37.7104, 141.01)
+position = Vector2(-37.8683, 126.334)
 scale = Vector2(0.506267, 0.496152)
 texture = ExtResource("6_fuqpw")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
-position = Vector2(-287.018, 141.01)
+position = Vector2(-287.176, 126.334)
 scale = Vector2(0.442988, 0.332983)
 texture = ExtResource("7_dfmc8")
 

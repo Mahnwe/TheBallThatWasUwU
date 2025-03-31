@@ -24,6 +24,7 @@ func _ready():
 	$EffectSlider.editable = false
 	set_sliders_value_with_config()
 	set_volume()
+	setup_quit_button_stylebox()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
 	change_bubble_message()
@@ -76,7 +77,7 @@ func _on_level_1_button_gui_input(event):
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up"):
 			accept_event()
-			$QuitButton.grab_focus() 
+			$EffectSlider.grab_focus() 
 		if event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$EffectSlider.grab_focus()
@@ -221,11 +222,31 @@ func _on_level_6_button_mouse_exited():
 	$Level6Button.release_focus()
 	is_controller_focused = false
 	
+func _on_music_slider_mouse_entered():
+	$ButtonSound.play()
+	if !$MusicMuteButton.is_mute:
+		$MusicSlider.editable = true
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(207,26,26,255)
+	$MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+	$MusicLabel.add_theme_color_override("font_color", Color("#d90000"))
+
+
+func _on_effect_slider_mouse_entered():
+	$ButtonSound.play()
+	if !$SoundMuteButton.is_mute:
+		$EffectSlider.editable = true
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(207,26,26,255)
+	$EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
+	$EffectLabel.add_theme_color_override("font_color", Color("#d90000"))
+	
 func _on_music_slider_mouse_exited():
 	$MusicSlider.release_focus()
 	is_controller_focused = false
 	$MusicSlider.editable = false
 	$MusicSlider.add_theme_stylebox_override("grabber_area", music_slider_stylebox)
+	$MusicLabel.add_theme_color_override("font_color", Color("#000000"))
 
 
 func _on_effect_slider_mouse_exited():
@@ -233,6 +254,7 @@ func _on_effect_slider_mouse_exited():
 	is_controller_focused = false
 	$EffectSlider.editable = false
 	$EffectSlider.add_theme_stylebox_override("grabber_area", effect_slider_stylebox)
+	$EffectLabel.add_theme_color_override("font_color", Color("#000000"))
 
 func _on_button_focus_entered():
 	$ButtonSound.play()
@@ -381,41 +403,27 @@ func _on_music_slider_focus_entered():
 	$ButtonSound.play()
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
+	$MusicLabel.add_theme_color_override("font_color", Color("#d90000"))
 	$MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
 	
 func _on_effect_slider_focus_entered():
 	$ButtonSound.play()
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(207,26,26,255)
+	$EffectLabel.add_theme_color_override("font_color", Color("#d90000"))
 	$EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
 
 
 func _on_music_slider_focus_exited():
 	$MusicSlider.editable = false
+	$MusicLabel.add_theme_color_override("font_color", Color("#000000"))
 	$MusicSlider.add_theme_stylebox_override("grabber_area", music_slider_stylebox)
 
 
 func _on_effect_slider_focus_exited():
 	$EffectSlider.editable = false
+	$EffectLabel.add_theme_color_override("font_color", Color("#000000"))
 	$EffectSlider.add_theme_stylebox_override("grabber_area", effect_slider_stylebox)
-
-
-func _on_music_slider_mouse_entered():
-	$ButtonSound.play()
-	if !$MusicMuteButton.is_mute:
-		$MusicSlider.editable = true
-	var new_stylebox = StyleBoxTexture.new()
-	new_stylebox.modulate_color = Color(207,26,26,255)
-	$MusicSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
-
-
-func _on_effect_slider_mouse_entered():
-	$ButtonSound.play()
-	if !$SoundMuteButton.is_mute:
-		$EffectSlider.editable = true
-	var new_stylebox = StyleBoxTexture.new()
-	new_stylebox.modulate_color = Color(207,26,26,255)
-	$EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
 
 
 func _on_stats_button_pressed():
@@ -440,3 +448,18 @@ func focus_close_stats_button():
 		member.focus_mode = FOCUS_NONE
 		$MusicSlider.focus_mode = FOCUS_NONE
 	$EffectSlider.focus_mode = FOCUS_NONE
+
+
+func _on_quit_button_mouse_exited():
+	$QuitButton.release_focus()
+	is_controller_focused = false
+
+
+func _on_stats_button_mouse_exited():
+	$StatsButton.release_focus()
+	is_controller_focused = false
+	
+func setup_quit_button_stylebox():
+	var new_stylebox = StyleBoxTexture.new()
+	new_stylebox.modulate_color = Color(217,0,0,255)
+	$QuitButton.add_theme_stylebox_override("focus", new_stylebox)

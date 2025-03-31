@@ -45,15 +45,15 @@ script = ExtResource("1_03lrq")
 [node name="ReturnLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ReturnLayer"]
-position = Vector2(1556.5, 765)
+position = Vector2(1556.5, 806)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="ReturnToMenu" type="Button" parent="ReturnLayer" groups=["pause_buttons"]]
 offset_left = 1331.0
-offset_top = 676.0
+offset_top = 717.0
 offset_right = 1628.0
-offset_bottom = 773.0
+offset_bottom = 814.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_top = NodePath("../../ContinueLayer/Continue")
@@ -69,6 +69,7 @@ theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Return to menu"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ReturnButtonsTooltip" type="Sprite2D" parent="ReturnLayer/ReturnToMenu"]
 visible = false
@@ -93,15 +94,15 @@ texture = ExtResource("1_t2voc")
 [node name="ContinueLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ContinueLayer"]
-position = Vector2(951.5, 558)
+position = Vector2(951.5, 599)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="Continue" type="Button" parent="ContinueLayer" groups=["pause_buttons"]]
 offset_left = 727.0
-offset_top = 480.0
+offset_top = 521.0
 offset_right = 1021.0
-offset_bottom = 565.0
+offset_bottom = 606.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../CommandLayer/Command")
 focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
@@ -117,6 +118,7 @@ theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Continue"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ContinueButtonsTooltip" type="Sprite2D" parent="ContinueLayer/Continue"]
 visible = false
@@ -155,15 +157,15 @@ scale = Vector2(12.1928, 7.48612)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="CommandLayer"]
-position = Vector2(361.5, 767)
+position = Vector2(361.5, 808)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="Command" type="Button" parent="CommandLayer" groups=["pause_buttons"]]
 offset_left = 128.0
-offset_top = 685.0
+offset_top = 726.0
 offset_right = 422.0
-offset_bottom = 774.0
+offset_bottom = 815.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
@@ -179,6 +181,7 @@ theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Commands"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CommandButtonsTooltip" type="Sprite2D" parent="CommandLayer/Command"]
 visible = false
@@ -211,6 +214,7 @@ offset_bottom = 137.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Musics"
+metadata/_edit_use_anchors_ = true
 
 [node name="MusicSlider" type="HSlider" parent="SoundLayer"]
 offset_left = 204.0
@@ -225,8 +229,9 @@ focus_neighbor_bottom = NodePath("../EffectSlider")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
 max_value = 5.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="SoundLayer"]
+[node name="EffectSliderLabel" type="Label" parent="SoundLayer"]
 offset_left = 239.0
 offset_top = 201.5
 offset_right = 422.0
@@ -234,6 +239,7 @@ offset_bottom = 243.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Sound effect"
+metadata/_edit_use_anchors_ = true
 
 [node name="EffectSlider" type="HSlider" parent="SoundLayer"]
 offset_left = 209.0
@@ -248,6 +254,7 @@ focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
 max_value = 5.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MusicMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
 offset_left = 144.0
@@ -258,6 +265,7 @@ focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_right = NodePath("../MusicSlider")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
+metadata/_edit_use_anchors_ = true
 
 [node name="SoundMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
 offset_left = 149.0
@@ -268,35 +276,39 @@ focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_right = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1499, 337)
+scale = Vector2(1.84459, 2.30263)
+texture = ExtResource("2_h85by")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -63.0864
+offset_top = -24.9285
+offset_right = -23.0864
+offset_bottom = 24.0715
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 789.0
-offset_top = 163.0
-offset_right = 945.0
-offset_bottom = 232.0
-scale = Vector2(2.06503, 1.85047)
+offset_left = 779.0
+offset_top = 128.0
+offset_right = 1248.0
+offset_bottom = 333.0
+scale = Vector2(0.725781, 0.940311)
 theme_override_colors/font_color = Color(0.725349, 0, 0.0495564, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 150
 text = "PAUSE"
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]
 z_index = -1
-position = Vector2(75.5439, 31.8837)
-scale = Vector2(1.4413, 1.60091)
+position = Vector2(231.919, 117.239)
+scale = Vector2(4.08481, 4.24646)
 texture = ExtResource("2_h85by")
-
-[node name="ColorRect" type="ColorRect" parent="Label"]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = -20.2212
-offset_top = -7.26744
-offset_right = -13.2212
-offset_bottom = 0.732559
-scale = Vector2(28.6963, 10.8095)
-color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]
 visible = false

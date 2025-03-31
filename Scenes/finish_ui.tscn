@@ -143,6 +143,7 @@ scale = Vector2(5.10811, 5.65789)
 texture = ExtResource("7_qv8jw")
 
 [node name="TimerPresentation" type="Label" parent="."]
+layout_mode = 0
 offset_left = -225.0
 offset_top = -325.0
 offset_right = 170.0
