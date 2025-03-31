@@ -15,7 +15,7 @@ script = ExtResource("1_vfgwr")
 
 [node name="BubbleTooltip" parent="." instance=ExtResource("3_cwa40")]
 visible = false
-position = Vector2(159, -345)
+position = Vector2(186, -285)
 scale = Vector2(3.9225, 3.04167)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -132,10 +132,10 @@ scale = Vector2(0.717, 0.442)
 
 [node name="Pause" parent="Player" instance=ExtResource("6_oxgjf")]
 visible = false
-offset_left = -723.849
-offset_top = -678.733
-offset_right = -723.849
-offset_bottom = -678.733
+offset_left = -733.259
+offset_top = -671.561
+offset_right = -733.259
+offset_bottom = -671.561
 
 [node name="platform2" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(-125, 1149)
@@ -981,7 +981,7 @@ offset_left = -1596.0
 offset_top = -3301.0
 offset_right = 3288.0
 offset_bottom = 2221.0
-color = Color(0.372549, 0.815686, 0.92549, 1)
+color = Color(6.73831e-06, 0.683953, 0.89999, 1)
 
 [node name="Palm2" parent="." instance=ExtResource("27_lrvx7")]
 position = Vector2(532, -740)

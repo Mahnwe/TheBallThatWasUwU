@@ -39,6 +39,8 @@ func _ready():
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
 	$Player/Pause.get_child(3).hide()
+	$Player/Pause.get_child(4).hide()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	set_up_signs()
@@ -131,6 +133,7 @@ func _on_finish_player_entered():
 	$Finish/FinishUI.get_child(2).show()
 	$Finish/FinishUI.get_child(3).show()
 	$Finish/FinishUI.get_child(4).show()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
 	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
 	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
@@ -194,7 +197,9 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.get_child(1).hide()
 		$Player/Pause.get_child(2).hide()
 		$Player/Pause.get_child(3).hide()
+		$Player/Pause.get_child(4).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
+		$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 		$Player.set_physics_process(true)
 		is_paused = false
 		$Player/Pause.is_paused = false
@@ -222,11 +227,14 @@ func toggle_pause():
 	$Player/Pause.get_child(1).show()
 	$Player/Pause.get_child(2).show()
 	$Player/Pause.get_child(3).show()
+	$Player/Pause.get_child(4).show()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
 	$Level1Music.stream_paused = true
 	$DeadWayMusic.stream_paused = true
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	$Player.set_physics_process(false)
+	$Player/Pause.set_current_timer_when_paused($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	is_paused = true
@@ -239,6 +247,8 @@ func untoggle_pause():
 	$Player/Pause.get_child(1).hide()
 	$Player/Pause.get_child(2).hide()
 	$Player/Pause.get_child(3).hide()
+	$Player/Pause.get_child(4).hide()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	$PauseMusic.stop()
 	$Level1Music.stream_paused = false
 	$DeadWayMusic.stream_paused = false

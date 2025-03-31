@@ -125,8 +125,17 @@ point_count = 4
 script = ExtResource("1_enqk4")
 
 [node name="GameArea" parent="." instance=ExtResource("2_eguui")]
-position = Vector2(-2131, 0)
-scale = Vector2(19.1229, 21.0484)
+position = Vector2(-3387, -1126)
+scale = Vector2(11.1858, 10.3333)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -20
+offset_left = -6859.0
+offset_top = -2986.0
+offset_right = 69.0
+offset_bottom = 732.0
+color = Color(0.783523, 0.783523, 0.783523, 1)
 
 [node name="StartArea" parent="." instance=ExtResource("3_ys3ak")]
 position = Vector2(-2129, -335)
@@ -151,10 +160,10 @@ scale = Vector2(0.717345, 0.442253)
 
 [node name="Pause" parent="Player" instance=ExtResource("6_ypqhe")]
 visible = false
-offset_left = -692.833
-offset_top = -669.3
-offset_right = -692.833
-offset_bottom = -669.3
+offset_left = -733.259
+offset_top = -671.561
+offset_right = -733.259
+offset_bottom = -671.561
 
 [node name="MetalPlatform2" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-1721, -175)
@@ -171,7 +180,7 @@ scale = Vector2(0.744262, 1)
 stream = ExtResource("7_tw4yl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1648, -257)
+position = Vector2(-1648, -258)
 scale = Vector2(1.295, 1.41724)
 texture = ExtResource("9_tw4yl")
 
@@ -332,7 +341,7 @@ scale = Vector2(1.81699, 2.03676)
 
 [node name="TubeConsole" parent="FilledTube" instance=ExtResource("19_br5uj")]
 z_index = 2
-position = Vector2(60.5397, 32.4044)
+position = Vector2(60.5397, 28.4766)
 scale = Vector2(0.677752, 0.577149)
 
 [node name="Sprite2D8" type="Sprite2D" parent="."]
@@ -594,7 +603,7 @@ position = Vector2(-4249, -1442)
 rotation = 3.14159
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(-4264, -1346)
+position = Vector2(-4263, -1346)
 texture = ExtResource("9_tw4yl")
 
 [node name="MetalPlatform12" parent="." instance=ExtResource("4_achdq")]
@@ -682,7 +691,7 @@ flip_h = true
 
 [node name="TubeConsole" parent="FilledTube2" instance=ExtResource("19_br5uj")]
 z_index = 2
-position = Vector2(-62.1908, 28.4766)
+position = Vector2(-62.1908, 21.6029)
 scale = Vector2(0.677752, 0.577149)
 
 [node name="MetalPlatform14" parent="." instance=ExtResource("4_achdq")]

@@ -120,10 +120,10 @@ scale = Vector2(0.717345, 0.442253)
 
 [node name="Pause" parent="Player" instance=ExtResource("6_kfex5")]
 visible = false
-offset_left = -723.849
-offset_top = -678.733
-offset_right = -723.849
-offset_bottom = -678.733
+offset_left = -733.259
+offset_top = -671.561
+offset_right = -733.259
+offset_bottom = -671.561
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_myi0h")
@@ -153,6 +153,14 @@ rotation = -1.5708
 [node name="platform3" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-303, -913)
 scale = Vector2(0.400003, 1.08)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -1303.0
+offset_top = -804.0
+offset_right = -281.0
+offset_bottom = -374.0
+color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water" parent="." instance=ExtResource("12_2be2h")]
 position = Vector2(-793.5, -588)
@@ -279,6 +287,14 @@ position = Vector2(-448, 173)
 rotation = -1.5708
 scale = Vector2(1.56, 3.16)
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -202.0
+offset_top = -766.0
+offset_right = 189.0
+offset_bottom = 145.0
+color = Color(0, 0.651925, 0.918168, 1)
+
 [node name="Water2" parent="." instance=ExtResource("12_2be2h")]
 position = Vector2(-0.500007, -313.5)
 scale = Vector2(2.065, 4.585)
@@ -404,6 +420,14 @@ scale = Vector2(1.44151, 0.330289)
 position = Vector2(-3088, 131)
 scale = Vector2(0.960371, 0.549455)
 
+[node name="ColorRect4" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -2830.0
+offset_top = 122.0
+offset_right = -2036.0
+offset_bottom = 516.0
+color = Color(0, 0.651925, 0.918168, 1)
+
 [node name="Water3" parent="." instance=ExtResource("12_2be2h")]
 position = Vector2(-2434.5, 312.92)
 scale = Vector2(3.965, 1.9908)
@@ -458,6 +482,14 @@ scale = Vector2(0.188052, 0.312453)
 [node name="Water4" parent="." instance=ExtResource("12_2be2h")]
 position = Vector2(-1908, -157)
 scale = Vector2(5.21, 0.96)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -2424.0
+offset_top = -251.0
+offset_right = -1386.0
+offset_bottom = -38.0
+color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Wall7" parent="." instance=ExtResource("10_bs3iy")]
 position = Vector2(-1466, -484)

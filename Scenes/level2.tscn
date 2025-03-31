@@ -161,10 +161,10 @@ scale = Vector2(0.717, 0.442)
 
 [node name="Pause" parent="Player" instance=ExtResource("5_35jiw")]
 visible = false
-offset_left = -723.849
-offset_top = -685.52
-offset_right = -723.849
-offset_bottom = -685.52
+offset_left = -733.259
+offset_top = -671.561
+offset_right = -733.259
+offset_bottom = -671.561
 
 [node name="platform" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-37, 657)
