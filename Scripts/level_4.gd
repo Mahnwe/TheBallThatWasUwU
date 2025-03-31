@@ -190,6 +190,7 @@ func enable_patrol_groups():
 		for member in get_tree().get_nodes_in_group("spike_on_patrol"):
 				member.set_process(true)
 		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			if !member.trigger_required:
 				member.set_process(true)
 				
 func reset_patrols_progress():
@@ -323,6 +324,7 @@ func _on_hard_portal_entered(body):
 func _on_hard_platform_trigger_body_entered(body):
 	if body.name == "Player":
 		$Path2D/PathFollow2D/HardRockMovingPlatform.set_process(true)
+		$Path2D/PathFollow2D/HardRockMovingPlatform.trigger_required = false
 
 
 func _on_easy_portal_body_entered(body):
@@ -336,6 +338,7 @@ func _on_easy_portal_body_entered(body):
 func _on_easy_platform_trigger_body_entered(body):
 	if body.name == "Player":
 		$Path2D2/PathFollow2D/EasyRockPlatform.set_process(true)
+		$Path2D2/PathFollow2D/EasyRockPlatform.trigger_required = false
 
 
 func _on_finish_ui_next_level_pressed():

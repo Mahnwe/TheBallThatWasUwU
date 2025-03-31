@@ -86,6 +86,10 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="LaserBeam/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]
 [connection signal="timeout" from="BeamTimer" to="." method="_on_beam_timer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

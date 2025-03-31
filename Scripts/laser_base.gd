@@ -7,6 +7,7 @@ var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 @export var beam_y_position = 0.0
 @export var charge_timer = 0.0
 @export var beam_timer = 0.0
+@export var wait_timer = 0.0
 
 signal laser_touched_player
 
@@ -16,7 +17,10 @@ func _ready():
 	$LaserBeam/Area2D.monitorable = false
 	$LaserBeam.visible = false
 	$LaserBeam/Area2D/CollisionShape2D.disabled = true
-	first_charge_beam()
+	if wait_timer != 0.0:
+		$WaitTimer.start(wait_timer)
+	else:
+		first_charge_beam()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -65,3 +69,7 @@ func _on_area_2d_body_entered(body):
 		stats_config.set_value("Stats", "laser_death_number", number_of_laser_death+1)
 		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		laser_touched_player.emit()
+
+
+func _on_wait_timer_timeout():
+	first_charge_beam()

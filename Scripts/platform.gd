@@ -2,6 +2,7 @@ extends AnimatableBody2D
 
 var parent_name
 @export var speed = 150
+@export var trigger_required = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parent_name = get_parent()

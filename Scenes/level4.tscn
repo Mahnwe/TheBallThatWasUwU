@@ -305,6 +305,7 @@ position = Vector2(89.8366, -88.1667)
 rotation = 1.5708
 scale = Vector2(0.255908, 0.763641)
 sync_to_physics = false
+trigger_required = true
 
 [node name="HardPlatformTrigger" type="Area2D" parent="Path2D/PathFollow2D/HardRockMovingPlatform"]
 
@@ -374,6 +375,7 @@ rotates = false
 position = Vector2(-98.3182, -75.8914)
 scale = Vector2(0.280029, 0.640374)
 sync_to_physics = false
+trigger_required = true
 
 [node name="EasyPlatformTrigger" type="Area2D" parent="Path2D2/PathFollow2D/EasyRockPlatform"]
 

@@ -221,7 +221,8 @@ func disable_patrol_groups():
 func enable_patrol_groups():
 	if(get_tree() != null):
 		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
-			member.set_process(true)
+			if !member.trigger_required:
+				member.set_process(true)
 		
 func water_drop_animation(delta):
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
@@ -248,11 +249,13 @@ func reset_drop_progress():
 func _on_metal_platform_1_trigger_body_entered(body):
 	if body.name == "Player":
 		$Path2D3/PathFollow2D/MetalPlatform.set_process(true)
+		$Path2D3/PathFollow2D/MetalPlatform.trigger_required = false
 
 
 func _on_metal_platform_2_body_entered(body):
 	if body.name == "Player":
 		$Path2D11/PathFollow2D/MetalPlatform.set_process(true)
+		$Path2D11/PathFollow2D/MetalPlatform.trigger_required = false
 		
 func reset_metal_platform_patrol():
 	$Path2D11/PathFollow2D.progress_ratio = 0.0

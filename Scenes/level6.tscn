@@ -317,6 +317,7 @@ position = Vector2(-1846, -604)
 rotation = 1.5708
 charge_timer = 3.0
 beam_timer = 3.0
+wait_timer = 1.0
 
 [node name="Spike2" parent="." instance=ExtResource("17_25f8e")]
 position = Vector2(-1960, -568)
@@ -502,6 +503,7 @@ rotates = false
 position = Vector2(1.02675, 1.9864)
 scale = Vector2(0.297941, 0.458424)
 sync_to_physics = false
+trigger_required = true
 
 [node name="MetalPlatform1Trigger" type="Area2D" parent="Path2D3/PathFollow2D/MetalPlatform"]
 
@@ -722,6 +724,7 @@ rotation = -1.5708
 beam_x_scale = 2.0
 charge_timer = 2.0
 beam_timer = 2.0
+wait_timer = 1.5
 
 [node name="LaserBase5" parent="." instance=ExtResource("18_gh5wq")]
 position = Vector2(-3092, -1898)
@@ -730,20 +733,20 @@ charge_timer = 2.0
 beam_timer = 2.0
 
 [node name="LaserBase6" parent="." instance=ExtResource("18_gh5wq")]
-position = Vector2(-3441, -2466)
+position = Vector2(-3326, -2466)
 rotation = 3.14159
 beam_x_scale = 2.5
 charge_timer = 2.0
 beam_timer = 2.0
 
 [node name="LaserBase7" parent="." instance=ExtResource("18_gh5wq")]
-position = Vector2(-3774, -1895)
+position = Vector2(-3554, -1895)
 beam_x_scale = 2.5
 charge_timer = 2.0
 beam_timer = 2.0
 
 [node name="LaserBase8" parent="." instance=ExtResource("18_gh5wq")]
-position = Vector2(-4189, -2467)
+position = Vector2(-3783, -2467)
 rotation = 3.14159
 beam_x_scale = 2.5
 charge_timer = 2.0
@@ -807,7 +810,7 @@ position = Vector2(80.138, 118.604)
 scale = Vector2(0.567122, 0.618748)
 
 [node name="SavePoint" parent="." instance=ExtResource("24_br5uj")]
-position = Vector2(-2624, -1325)
+position = Vector2(-4103, -1968)
 scale = Vector2(0.606914, 0.639194)
 
 [node name="Spike3" parent="." instance=ExtResource("17_25f8e")]
@@ -869,6 +872,7 @@ position = Vector2(0, 1)
 scale = Vector2(0.210614, 0.363636)
 sync_to_physics = false
 speed = 200
+trigger_required = true
 
 [node name="MetalPlatform2" type="Area2D" parent="Path2D11/PathFollow2D/MetalPlatform"]
 
@@ -877,8 +881,8 @@ position = Vector2(2.375, -96.2501)
 shape = SubResource("RectangleShape2D_br5uj")
 
 [node name="MetalPlatform21" parent="." instance=ExtResource("4_achdq")]
-position = Vector2(-4521, 88)
-scale = Vector2(0.642937, 0.888682)
+position = Vector2(-4501, 101)
+scale = Vector2(0.762927, 1.04868)
 
 [node name="Sprite2D16" type="Sprite2D" parent="."]
 position = Vector2(-5369, -192)
@@ -981,6 +985,17 @@ loop = false
 
 [node name="AcidDrop" parent="Path2D15/PathFollow2D" instance=ExtResource("14_k6lm4")]
 scale = Vector2(1.2175, 1.40276)
+
+[node name="MetalPlatform23" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-3646, -350)
+scale = Vector2(1, 2.48)
+
+[node name="MetalPlatform22" parent="." instance=ExtResource("4_achdq")]
+position = Vector2(-4169, 116)
+scale = Vector2(1.06647, 1.25554)
+
+[node name="MetalPlatform" parent="MetalPlatform22" instance=ExtResource("4_achdq")]
+position = Vector2(363.817, 0)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
