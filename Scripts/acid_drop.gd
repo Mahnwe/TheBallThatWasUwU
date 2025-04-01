@@ -13,7 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(get_parent().progress_ratio == 0):
+	if get_parent().progress_ratio == 0 and $WaitTimer.time_left == 0.0:
 		drop_exploded = false
 		$AnimatedSprite2D.animation = "AcidDrop"
 		get_parent().progress += speed * delta
@@ -26,6 +26,9 @@ func check_for_explosion_animation():
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
 		drop_exploded = true
+		var random = RandomNumberGenerator.new()
+		random.randomize()
+		$WaitTimer.start(random.randf())
 
 
 func _on_area_2d_body_entered(body):

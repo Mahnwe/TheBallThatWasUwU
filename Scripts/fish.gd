@@ -21,8 +21,10 @@ func _patrol(delta):
 	if parent_progress.progress_ratio >= 0.00 and parent_progress.progress_ratio < 0.001:
 		parent_progress.rotates = false
 		self.flip_v = false
+		self.get_child(0).flip_v = false
 		parent_progress.rotates = true
 	if parent_progress.progress_ratio >= 0.500 and parent_progress.progress_ratio < 0.501:
 		parent_progress.rotates = false
 		self.flip_v = true
+		self.get_child(0).flip_v = true
 		parent_progress.rotates = true
