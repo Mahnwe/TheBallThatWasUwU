@@ -15,7 +15,7 @@
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="12_qmenm"]
 
 [node name="FinishUI" type="Control"]
-z_index = 3
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,9 +28,9 @@ script = ExtResource("1_8cftm")
 z_index = 2
 layout_mode = 0
 offset_left = 345.0
-offset_top = 274.0
+offset_top = 223.0
 offset_right = 530.0
-offset_bottom = 341.0
+offset_bottom = 315.0
 scale = Vector2(3.80579, 2.08)
 focus_neighbor_left = NodePath("../FinishMenuButton")
 focus_neighbor_top = NodePath("../FinishMenuButton")
@@ -72,17 +72,17 @@ texture = ExtResource("6_uhy2h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="FinishNextLevelButton"]
 z_index = -1
-position = Vector2(90.3886, 38.9423)
-scale = Vector2(1.49133, 2.82465)
+position = Vector2(89.8631, 48.7355)
+scale = Vector2(1.49133, 2.67751)
 texture = ExtResource("7_qv8jw")
 
 [node name="FinishMenuButton" type="Button" parent="." groups=["finish_button"]]
 z_index = 2
 layout_mode = 0
 offset_left = -997.0
-offset_top = 276.0
+offset_top = 197.0
 offset_right = -836.0
-offset_bottom = 336.0
+offset_bottom = 293.0
 scale = Vector2(3.96, 2.24)
 focus_neighbor_left = NodePath("../FinishNextLevelButton")
 focus_neighbor_top = NodePath("../FinishNextLevelButton")
@@ -120,8 +120,8 @@ texture = ExtResource("10_a00tp")
 
 [node name="Sprite2D3" type="Sprite2D" parent="FinishMenuButton"]
 z_index = -1
-position = Vector2(78.0303, 35.2679)
-scale = Vector2(1.38039, 2.49315)
+position = Vector2(78.0303, 49.0587)
+scale = Vector2(1.38039, 2.30391)
 texture = ExtResource("7_qv8jw")
 
 [node name="Blur" type="ColorRect" parent="."]
@@ -138,26 +138,28 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TimerCloud" type="Sprite2D" parent="."]
-position = Vector2(-24, -179)
-scale = Vector2(5.10811, 5.65789)
+position = Vector2(-7.67892, -320.399)
+scale = Vector2(4.78812, 5.46317)
 texture = ExtResource("7_qv8jw")
 
 [node name="TimerPresentation" type="Label" parent="."]
 layout_mode = 0
-offset_left = -225.0
-offset_top = -325.0
-offset_right = 170.0
-offset_bottom = -222.0
+offset_left = -208.679
+offset_top = -466.399
+offset_right = 186.321
+offset_bottom = -363.399
+scale = Vector2(0.937357, 0.965585)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 text = "Your time :"
 
 [node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = -168.0
-offset_top = -186.0
-offset_right = -128.0
-offset_bottom = -83.0
+offset_left = -151.679
+offset_top = -327.399
+offset_right = -111.679
+offset_bottom = -224.399
+scale = Vector2(0.937357, 0.965585)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 
@@ -166,9 +168,11 @@ stream = ExtResource("11_p5o4v")
 
 [connection signal="focus_entered" from="FinishNextLevelButton" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]
+[connection signal="mouse_entered" from="FinishNextLevelButton" to="." method="_on_finish_next_level_button_mouse_entered"]
 [connection signal="mouse_exited" from="FinishNextLevelButton" to="." method="_on_next_level_mouse_exited"]
 [connection signal="pressed" from="FinishNextLevelButton" to="." method="_on_next_level_pressed"]
 [connection signal="focus_entered" from="FinishMenuButton" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="FinishMenuButton" to="." method="_on_finish_menu_button_gui_input"]
+[connection signal="mouse_entered" from="FinishMenuButton" to="." method="_on_finish_menu_button_mouse_entered"]
 [connection signal="mouse_exited" from="FinishMenuButton" to="." method="_on_menu_mouse_exited"]
 [connection signal="pressed" from="FinishMenuButton" to="." method="_on_menu_pressed"]

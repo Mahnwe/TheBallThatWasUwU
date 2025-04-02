@@ -586,6 +586,7 @@ position = Vector2(-2112, -774)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("19_mmpto")]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1839, -836)

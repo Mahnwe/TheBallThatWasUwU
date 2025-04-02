@@ -493,6 +493,7 @@ position = Vector2(-1673, 389)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("16_k2ysy")]
+visible = false
 
 [node name="Tree" parent="." instance=ExtResource("14_shu8y")]
 position = Vector2(392, -272)

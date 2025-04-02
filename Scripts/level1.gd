@@ -28,6 +28,7 @@ func _ready():
 	queue.is_level_4 = false
 	queue.is_level_5 = false
 	queue.is_level_6 = false
+	queue.is_level_7 = false
 	queue.load()
 	$Chest.set_level_number(1)
 	if config.get_value("Chests", "level_one_chest"):
@@ -128,11 +129,8 @@ func _on_finish_player_entered():
 	$Player.set_physics_process(false)
 	await get_tree().create_timer(1.0).timeout
 	$Finish/FinishUI.is_UI_showing = true
-	$Finish/FinishUI.get_child(0).show()
-	$Finish/FinishUI.get_child(1).show()
-	$Finish/FinishUI.get_child(2).show()
-	$Finish/FinishUI.get_child(3).show()
-	$Finish/FinishUI.get_child(4).show()
+	$Finish/FinishUI.show()
+	$Finish/FinishUI.get_child(0).grab_focus()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
 	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")

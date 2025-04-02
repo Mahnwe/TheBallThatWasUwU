@@ -8,32 +8,22 @@ var is_controller_focused
 func _ready():
 	is_controller_focused = false
 	is_UI_showing = false
-	$Blur.hide()
-	$FinishNextLevelButton.hide()
-	$FinishMenuButton.hide()
-	$TimerCloud.hide()
-	$TimerPresentation.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if is_UI_showing:
-		if !is_controller_focused and Input.is_action_just_pressed("ui_down"):
-			$FinishNextLevelButton.grab_focus()
-		if !is_controller_focused and Input.is_action_just_pressed("ui_right"):
-			$FinishNextLevelButton.grab_focus()
-		if !is_controller_focused and Input.is_action_just_pressed("ui_up"):
-			$FinishMenuButton.grab_focus()
-		if !is_controller_focused and Input.is_action_just_pressed("ui_left"):
-			$FinishMenuButton.grab_focus()
-	wait_for_focus()
-	display_tooltip_when_button_focus()
+		display_tooltip_when_button_focus()
+		for member in get_tree().get_nodes_in_group("finish_button"):
+			member.focus_mode = FOCUS_ALL
+		wait_for_focus()
 		
 		
 func wait_for_focus():
-	for member in get_tree().get_nodes_in_group("finish_button"):
-		if member.is_hovered():
-			member.grab_focus()
-			is_controller_focused = true
+	if is_UI_showing:
+		for member in get_tree().get_nodes_in_group("finish_button"):
+			if member.is_hovered():
+				member.grab_focus()
+				is_controller_focused = true
 			
 			
 func _on_next_level_pressed():
@@ -99,3 +89,13 @@ func _format_seconds(time : float) -> String:
 	var milliseconds := fmod(time, 1) * 100
 
 	return "%02d:%02d:%02d" % [minutes, seconds, milliseconds]
+
+
+func _on_finish_next_level_button_mouse_entered():
+	$FinishNextLevelButton.grab_focus()
+	is_controller_focused = true
+
+
+func _on_finish_menu_button_mouse_entered():
+	$FinishMenuButton.grab_focus()
+	is_controller_focused = true

@@ -46,11 +46,11 @@ func _process(_delta):
 	wait_for_focus()
 	
 func wait_for_focus():
-	for member in get_tree().get_nodes_in_group("pause_buttons"):
-		if member.is_hovered():
-			member.grab_focus()
-			is_controller_focused = true
-			
+	if is_paused:
+		for member in get_tree().get_nodes_in_group("pause_buttons"):
+			if member.is_hovered():
+				member.grab_focus()
+				is_controller_focused = true
 
 func _on_return_to_menu_pressed():
 	if !is_commands_display:
