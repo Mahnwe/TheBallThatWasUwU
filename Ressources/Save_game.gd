@@ -13,6 +13,7 @@ class_name SaveGame
 @export var is_level_4 = false
 @export var is_level_5 = false
 @export var is_level_6 = false
+@export var is_level_7 = false
 
 func sort_ascending(player_timer):
 	if player_timer < file_data[4] && player_timer > file_data[3]:
@@ -54,6 +55,9 @@ func saveData():
 		file.store_line(JSON.stringify(file_data))
 	if is_level_6:
 		var file = FileAccess.open("Ressources/timer_rank_data_level6.json", FileAccess.WRITE)
+		file.store_line(JSON.stringify(file_data))
+	if is_level_7:
+		var file = FileAccess.open("Ressources/timer_rank_data_level7.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 
 func load():
@@ -109,5 +113,14 @@ func load():
 			return
 		else:
 			var file = FileAccess.open("Ressources/timer_rank_data_level6.json", FileAccess.READ)
+			var data = JSON.parse_string(file.get_as_text())
+			file_data = data
+	elif is_level_7:
+		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level7.json")
+		if check_if_file_empty.is_empty():
+			saveData()
+			return
+		else:
+			var file = FileAccess.open("Ressources/timer_rank_data_level7.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data

@@ -8,8 +8,8 @@ var start_position_y = -390
 var save_position_x = -2281
 var save_position_y = -390
 
-var finish_position_x = -3110
-var finish_position_y = -1030
+var finish_position_x = -1570
+var finish_position_y = 5
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 
@@ -28,6 +28,7 @@ func _ready():
 	queue.is_level_4 = false
 	queue.is_level_5 = false
 	queue.is_level_6 = true
+	queue.is_level_7 = false
 	queue.load()
 	$Chest.set_level_number(6)
 	if config.get_value("Chests", "level_six_chest"):
@@ -261,3 +262,27 @@ func reset_metal_platform_patrol():
 	$Path2D11/PathFollow2D.progress_ratio = 0.0
 	$Path2D11/PathFollow2D/MetalPlatform.set_process(false)
 	
+
+func _on_finish_player_entered():
+	$Player.position.x = finish_position_x
+	$Player.position.y = finish_position_y
+	$Player.get_child(0).get_child(0).get_child(1).hide()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
+	queue.saveData()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
+	config.set_value("levels", "is_level_six_finished", true)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
+	$Player.get_child(1).animation = "stay"
+	$Player.set_physics_process(false)
+	await get_tree().create_timer(1).timeout
+	$Finish/FinishUI.show()
+	$Finish/FinishUI.get_child(0).grab_focus()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
+	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
+	$Finish/FinishUI.is_UI_showing = true
+	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
+	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
+	var number_of_level_six_finished = stats_config.get_value("Stats", "level_six_finished_number")
+	stats_config.set_value("Stats", "level_six_finished_number", number_of_level_six_finished+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")

@@ -12,6 +12,7 @@ var level3_file = FileAccess.open("Ressources/timer_rank_data_level3.json", File
 var level4_file = FileAccess.open("Ressources/timer_rank_data_level4.json", FileAccess.READ)
 var level5_file = FileAccess.open("Ressources/timer_rank_data_level5.json", FileAccess.READ)
 var level6_file = FileAccess.open("Ressources/timer_rank_data_level6.json", FileAccess.READ)
+var level7_file = FileAccess.open("Ressources/timer_rank_data_level7.json", FileAccess.READ)
 
 var file_data: Array = [timer_rank_1, timer_rank_2, timer_rank_3, timer_rank_4, timer_rank_5]
 
@@ -45,6 +46,9 @@ func get_level_selected():
 		file_data = data
 	if (self.get_parent().name == "Level6Button"):
 		var data = JSON.parse_string(level6_file.get_as_text())
+		file_data = data
+	if (self.get_parent().name == "Level7Button"):
+		var data = JSON.parse_string(level7_file.get_as_text())
 		file_data = data
 		
 func _format_seconds(time : float) -> String:

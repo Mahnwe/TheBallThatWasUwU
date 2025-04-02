@@ -12,6 +12,8 @@ var properties_config = ConfigFile.new()
 # Load data from a file.
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var chestNumber
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if properties_config.get_value("Launch", "is_first_launch"):
@@ -25,6 +27,8 @@ func _ready():
 	set_sliders_value_with_config()
 	set_volume()
 	setup_quit_button_stylebox()
+	chestNumber = properties_config.get_value("Chests", "chestNumber")
+	check_level7_button_visibility()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
 	change_bubble_message()
@@ -78,9 +82,13 @@ func _on_level_1_button_gui_input(event):
 		if event.is_action_pressed("ui_up"):
 			accept_event()
 			$EffectSlider.grab_focus() 
-		if event.is_action_pressed("ui_left"):
+		elif event.is_action_pressed("ui_left"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$EffectSlider.grab_focus()
+			if $Level7Button.visible == false:
+				$EffectSlider.grab_focus()
+			else:
+				print("pouet")
+				$Level7Button.grab_focus()
 		elif event.is_action_pressed("ui_down"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level6Button.grab_focus()
@@ -164,7 +172,17 @@ func _on_level_6_button_gui_input(event):
 		elif event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level5Button.grab_focus()
-
+			
+func _on_level_7_button_gui_input(event):
+	if $Level7Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+		is_controller_focused = true
+		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$EffectSlider.grab_focus()
+		elif event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
+			accept_event() # prevent the normal focus-stuff from happening
+			$Level1Button.grab_focus()
+			
 func _on_quit_button_gui_input(event):
 	if $QuitButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
@@ -463,3 +481,18 @@ func setup_quit_button_stylebox():
 	var new_stylebox = StyleBoxTexture.new()
 	new_stylebox.modulate_color = Color(217,0,0,255)
 	$QuitButton.add_theme_stylebox_override("focus", new_stylebox)
+	
+func check_level7_button_visibility():
+	if chestNumber == 6:
+		$Level7Button.show()
+		$Level7Platforms.show()
+		$Level1Button.focus_neighbor_left = "../Level7Button"
+	else:
+		$Level7Button.hide()
+		$Level7Platforms.hide()
+		$Level1Button.focus_neighbor_left = "../EffectSlider"
+
+
+func _on_level_7_button_mouse_exited():
+	$Level7Button.release_focus()
+	is_controller_focused = false

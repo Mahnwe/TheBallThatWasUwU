@@ -91,20 +91,20 @@ position = Vector2(177, -65)
 position = Vector2(603, 0.875)
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(719, 501.875)
+position = Vector2(719, 470.875)
 scale = Vector2(0.254949, 0.68)
 
 [node name="platform3" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1081, 498.875)
+position = Vector2(1081, 467.875)
 scale = Vector2(0.24, 0.72)
 
 [node name="Level1Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
 offset_left = 531.0
-offset_top = 533.875
+offset_top = 502.875
 offset_right = 607.0
-offset_bottom = 569.875
+offset_bottom = 538.875
 scale = Vector2(2.60997, 2.06604)
 focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../EffectSlider")
@@ -135,9 +135,9 @@ offset_bottom = 40.234
 z_index = 2
 layout_mode = 0
 offset_left = 895.0
-offset_top = 536.875
+offset_top = 505.875
 offset_right = 971.0
-offset_bottom = 572.875
+offset_bottom = 541.875
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../QuitButton")
@@ -168,9 +168,9 @@ offset_bottom = 39.8073
 z_index = 2
 layout_mode = 0
 offset_left = 1246.0
-offset_top = 536.875
+offset_top = 505.875
 offset_right = 1322.0
-offset_bottom = 572.875
+offset_bottom = 541.875
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../QuitButton")
@@ -304,24 +304,67 @@ offset_top = 38.7222
 offset_right = -3.06513
 offset_bottom = 38.7222
 
+[node name="Level7Button" type="Button" parent="." groups=["MenuButtons"]]
+z_index = 2
+layout_mode = 0
+offset_left = 97.0
+offset_top = 428.0
+offset_right = 173.0
+offset_bottom = 464.0
+scale = Vector2(2.61, 2.066)
+focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_top = NodePath("../EffectSlider")
+focus_neighbor_right = NodePath("../Level1Button")
+focus_neighbor_bottom = NodePath("../Level1Button")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Level 7"
+
+[node name="Sprite2D" type="Sprite2D" parent="Level7Button"]
+z_index = -1
+position = Vector2(37.5479, 17.909)
+scale = Vector2(0.151, 0.23)
+texture = ExtResource("7_272km")
+
+[node name="TopTime" parent="Level7Button" instance=ExtResource("10_vv7ov")]
+visible = false
+layout_mode = 1
+offset_left = -3.44828
+offset_top = 39.6902
+offset_right = -3.44827
+offset_bottom = 39.6902
+
+[node name="Label" type="Label" parent="Level7Button"]
+layout_mode = 0
+offset_left = 5.36399
+offset_top = -19.8451
+offset_right = 116.364
+offset_bottom = 8.15489
+scale = Vector2(0.587489, 0.792687)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Secret level"
+
+[node name="platform6" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(1568, 623.205)
+rotation = -3.14159
+scale = Vector2(0.184, 0.730337)
+
 [node name="platform4" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(1077, 776)
 scale = Vector2(0.254949, 0.68)
 
 [node name="Wall" parent="." instance=ExtResource("8_ar47r")]
-position = Vector2(1665, 585.875)
+position = Vector2(1665, 549)
 rotation = 1.5708
-scale = Vector2(0.737454, 1.84)
+scale = Vector2(0.897454, 1.84)
 
-[node name="platform" parent="Wall" instance=ExtResource("3_x4hsc")]
-position = Vector2(243.908, 122.826)
-rotation = -1.5708
-scale = Vector2(0.1, 0.94687)
-
-[node name="platform2" parent="Wall" instance=ExtResource("3_x4hsc")]
-position = Vector2(92.6568, 52.7172)
-rotation = 1.5708
-scale = Vector2(0.1, 0.990349)
+[node name="platform7" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(1439, 765.745)
+scale = Vector2(0.184, 0.698273)
 
 [node name="platform5" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(727, 772)
@@ -439,12 +482,12 @@ scale = Vector2(3.3875, 2.735)
 bubble_message = "This game is easier with a controller"
 
 [node name="AbilityIcon" type="Sprite2D" parent="."]
-position = Vector2(993, 517.875)
+position = Vector2(993, 486.875)
 scale = Vector2(0.0770924, 0.0760473)
 texture = ExtResource("17_ukqqs")
 
 [node name="AbilityIcon2" type="Sprite2D" parent="."]
-position = Vector2(1349, 517.875)
+position = Vector2(1349, 486.875)
 scale = Vector2(0.0770924, 0.0760473)
 texture = ExtResource("17_ukqqs")
 
@@ -498,6 +541,19 @@ visible = false
 z_index = 2
 layout_mode = 1
 
+[node name="Level7Platforms" parent="." instance=ExtResource("3_x4hsc")]
+position = Vector2(398, 479)
+scale = Vector2(0.195505, 0.622132)
+
+[node name="Wall2" parent="Level7Platforms" instance=ExtResource("8_ar47r")]
+position = Vector2(-445, 139.842)
+rotation = -1.5708
+scale = Vector2(0.522351, 6.44424)
+
+[node name="platform" parent="Level7Platforms" instance=ExtResource("3_x4hsc")]
+position = Vector2(-562.644, -128.59)
+scale = Vector2(0.88378, 1)
+
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="mouse_exited" from="Level1Button" to="." method="_on_level_1_button_mouse_exited"]
@@ -522,6 +578,9 @@ layout_mode = 1
 [connection signal="gui_input" from="Level6Button" to="." method="_on_level_6_button_gui_input"]
 [connection signal="mouse_exited" from="Level6Button" to="." method="_on_level_6_button_mouse_exited"]
 [connection signal="pressed" from="Level6Button" to="." method="_on_level_6_button_pressed"]
+[connection signal="focus_entered" from="Level7Button" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="Level7Button" to="." method="_on_level_7_button_gui_input"]
+[connection signal="mouse_exited" from="Level7Button" to="." method="_on_level_7_button_mouse_exited"]
 [connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
 [connection signal="focus_exited" from="QuitButton" to="." method="_on_quit_button_focus_exited"]
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
