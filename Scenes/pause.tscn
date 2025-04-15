@@ -280,15 +280,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(1499, 337)
-scale = Vector2(1.84459, 2.30263)
+position = Vector2(1467, 342)
+scale = Vector2(2.0304, 2.44079)
 texture = ExtResource("2_h85by")
 
 [node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -63.0864
-offset_top = -24.9285
-offset_right = -23.0864
-offset_bottom = 24.0715
+offset_left = -59.594
+offset_top = -24.1725
+offset_right = -19.594
+offset_bottom = 24.8275
+scale = Vector2(0.87275, 0.931522)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 

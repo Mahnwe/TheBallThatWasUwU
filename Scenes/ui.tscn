@@ -28,9 +28,9 @@ script = ExtResource("2_cqnvk")
 [node name="VboxTimerLabel" parent="." instance=ExtResource("1_jxowl")]
 z_index = 1
 layout_mode = 1
-offset_left = 1405.0
+offset_left = 1385.0
 offset_top = -315.0
-offset_right = 1672.0
+offset_right = 1652.0
 offset_bottom = -31.0
 scale = Vector2(1.10709, 0.870471)
 
