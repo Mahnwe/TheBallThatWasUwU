@@ -155,7 +155,7 @@ func enable_patrol_groups():
 				member.set_process(true)
 
 func _on_ability_player_entered():
-	$Player/Pause.get_child(5).player_have_dash = true
+	$Player/Pause.get_child(6).player_have_dash = true
 	$Player.have_dash_ability = true
 	$Ability.get_child(0).get_child(0).text = "You can dash now ! Use Shift or X button"
 

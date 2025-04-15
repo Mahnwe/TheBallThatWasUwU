@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 #@export
-var speed = 300
-var wall_pushback = 1400
+var speed = 350
+var wall_pushback = 1200
 
 #@export
 var gravity = 30
@@ -77,16 +77,19 @@ func jump():
 		$AnimatedSprite2D.flip_h = true
 		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
+		await $AnimatedSprite2D.animation_finished
 	if velocity.x > 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_h = false
 		$Raycast.scale.x = -1
 		$AnimatedSprite2D.play()
+		await $AnimatedSprite2D.animation_finished
 	if velocity.x == 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_h = false
 		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
+		await $AnimatedSprite2D.animation_finished
 	
 func _dash():
 	var horizontal_direction = Input.get_axis("move_left","move_right")
@@ -106,6 +109,7 @@ func _dash():
 			$DashDurationTimer.start()
 			$AnimatedSprite2D.play()
 			dash_cooldown_timer.start(0.5)
+			await $AnimatedSprite2D.animation_finished
 		if velocity.x < 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = true
@@ -117,6 +121,7 @@ func _dash():
 			$DashDurationTimer.start()
 			$AnimatedSprite2D.play()
 			dash_cooldown_timer.start(0.5)
+			await $AnimatedSprite2D.animation_finished
 	
 	
 func check_if_player_is_not_on_floor():
@@ -172,6 +177,9 @@ func check_if_player_is_on_wall():
 		check_animation_if_on_wall()
 		var wall_normal = get_wall_normal()
 		if colliding_wall() and Input.is_action_just_pressed("jump"):
+			var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
+			stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 			$JumpSound.play()
 			number_of_jumps += 1
 			velocity += Vector2(wall_pushback * wall_normal.x, jump_force-100)
@@ -184,14 +192,14 @@ func check_for_player_movement():
 	# Horizontal movements
 	# 	return -1 if left, +1 if right, 0 if both or neither
 	var horizontal_direction = Input.get_axis("move_left","move_right")
-	velocity.x =  speed * horizontal_direction
+	velocity.x = speed * horizontal_direction
+	move_and_slide()
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 		$Raycast.scale.x = -1
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
 		$Raycast.scale.x = 1
-	move_and_slide()
 	
 			
 func check_animation_if_on_wall():

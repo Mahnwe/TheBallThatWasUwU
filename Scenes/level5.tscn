@@ -656,7 +656,7 @@ rotates = false
 [node name="Spike" parent="Path2D3/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
 position = Vector2(-22.7078, -25.2657)
 scale = Vector2(0.314187, 0.175526)
-speed = 450
+speed = 400
 
 [node name="Path2D4" type="Path2D" parent="."]
 curve = SubResource("Curve2D_7vudj")
@@ -669,7 +669,7 @@ rotates = false
 [node name="Spike" parent="Path2D4/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("13_t8ogd")]
 position = Vector2(-26, -34)
 scale = Vector2(0.371509, 0.259285)
-speed = 450
+speed = 400
 
 [node name="platform16" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-2915, -852)
@@ -703,7 +703,8 @@ rotation = 0.521293
 scale = Vector2(0.415841, 0.411915)
 
 [node name="BigTree" parent="." instance=ExtResource("32_2vg6q")]
-position = Vector2(-3007, -452)
+z_index = 1
+position = Vector2(-3022, -452)
 
 [node name="BranchesBush" parent="BigTree" instance=ExtResource("31_3quvk")]
 position = Vector2(74, 117)
@@ -863,6 +864,10 @@ loop = false
 rotation = -1.5708
 speed = 125
 
+[node name="SavePoint2" parent="." instance=ExtResource("23_bgafk")]
+position = Vector2(-2889, -329)
+scale = Vector2(0.606914, 0.639194)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -892,3 +897,4 @@ speed = 125
 [connection signal="spike_hit" from="Path2D3/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Path2D4/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike12" to="." method="_on_spike_spike_hit"]
+[connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]

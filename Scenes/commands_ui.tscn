@@ -54,7 +54,7 @@ offset_left = 282.0
 offset_top = 26.0
 offset_right = 472.0
 offset_bottom = 85.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "    Righty
     (ZQSD)"
@@ -109,6 +109,7 @@ offset_left = 597.0
 offset_top = 25.0
 offset_right = 778.0
 offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "    Lefty
    (OKLM)"
@@ -164,6 +165,7 @@ offset_top = 35.0
 offset_right = 1073.0
 offset_bottom = 94.0
 scale = Vector2(1.06798, 0.97)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "        Controller
 PS/XBOX/NINTENDO"
@@ -266,6 +268,7 @@ offset_left = 40.0
 offset_top = 140.0
 offset_right = 154.0
 offset_bottom = 168.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Movements"
 
@@ -275,6 +278,7 @@ offset_left = 61.0
 offset_top = 213.0
 offset_right = 112.0
 offset_bottom = 241.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Jump"
 
@@ -284,6 +288,7 @@ offset_left = 37.0
 offset_top = 301.0
 offset_right = 158.0
 offset_bottom = 329.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Restart Save"
 
@@ -293,6 +298,7 @@ offset_left = 39.0
 offset_top = 382.0
 offset_right = 165.0
 offset_bottom = 410.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Restart Level"
 
@@ -302,6 +308,7 @@ offset_left = 51.0
 offset_top = 462.0
 offset_right = 153.0
 offset_bottom = 490.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Next Level"
 
@@ -311,6 +318,7 @@ offset_left = 68.0
 offset_top = 551.0
 offset_right = 124.0
 offset_bottom = 579.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Pause"
 
@@ -321,6 +329,7 @@ offset_top = 631.0
 offset_right = 121.0
 offset_bottom = 659.0
 scale = Vector2(1.12, 1)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Dash"
 
@@ -330,4 +339,4 @@ custom_minimum_size = Vector2(1200, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.219501, 0.219501, 0.219501, 1)
+color = Color(0.151276, 0.151276, 0.151276, 1)

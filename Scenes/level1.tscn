@@ -149,7 +149,7 @@ rotation = 1.5708
 scale = Vector2(1.725, 1.725)
 
 [node name="platform4" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(100, 72)
+position = Vector2(100, 81)
 scale = Vector2(0.72, 1)
 
 [node name="Wall2" parent="." instance=ExtResource("10_8ng8k")]
@@ -626,13 +626,14 @@ scale = Vector2(0.865133, 3.20248)
 skew = -0.852695
 
 [node name="WoodenPlank5" parent="." instance=ExtResource("20_fheu7")]
+z_index = 5
 position = Vector2(-1935, 70)
 scale = Vector2(0.279995, 0.632257)
 
 [node name="WoodenPlank" parent="WoodenPlank5" instance=ExtResource("20_fheu7")]
-position = Vector2(-771.442, 142.347)
+position = Vector2(-746.442, 142.347)
 rotation = 1.5708
-scale = Vector2(0.442856, 4.42865)
+scale = Vector2(0.442856, 4.23885)
 
 [node name="WoodenPlank4" parent="WoodenPlank5" instance=ExtResource("20_fheu7")]
 position = Vector2(571.439, 142.347)
