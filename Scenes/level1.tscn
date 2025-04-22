@@ -626,7 +626,7 @@ scale = Vector2(0.865133, 3.20248)
 skew = -0.852695
 
 [node name="WoodenPlank5" parent="." instance=ExtResource("20_fheu7")]
-z_index = 5
+z_index = 1
 position = Vector2(-1935, 70)
 scale = Vector2(0.279995, 0.632257)
 

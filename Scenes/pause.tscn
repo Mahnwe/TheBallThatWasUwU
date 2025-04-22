@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=27 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -20,6 +20,14 @@
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="19_mkub3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuf5"]
@@ -31,6 +39,27 @@ modulate_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0ro0"]
 texture = SubResource("CanvasTexture_gfb3x")
 modulate_color = Color(0.81, 0.1, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77ms"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6gfd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 3.0
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -67,6 +96,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Return to menu"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -116,6 +146,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Continue"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -179,6 +210,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Commands"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -265,6 +297,7 @@ focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_right = NodePath("../MusicSlider")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 metadata/_edit_use_anchors_ = true
 
 [node name="SoundMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
@@ -276,6 +309,7 @@ focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_right = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -321,7 +355,6 @@ offset_bottom = 1096.0
 scale = Vector2(1.56, 2.36)
 
 [node name="CloseButton" type="Button" parent="CommandsUI"]
-z_index = 20
 layout_mode = 0
 offset_left = 2.0
 offset_top = 4.0
@@ -334,6 +367,7 @@ focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6gfd")
 icon = ExtResource("16_n0g5q")
 flat = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=28 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -20,6 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="18_danav"]
 [ext_resource type="PackedScene" uid="uid://c0lw132ttyu44" path="res://Scenes/stats.tscn" id="19_dldpb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuf5"]
@@ -37,6 +45,17 @@ modulate_color = Color(0.81, 0.1, 0.1, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyecg"]
 texture = SubResource("CanvasTexture_rtmt2")
 modulate_color = Color(0.811765, 0.101961, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77ms"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 5.0
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -115,6 +134,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 1"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level1Button"]
@@ -148,6 +168,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level2Button"]
@@ -183,6 +204,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level3Button"]
@@ -218,6 +240,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level4Button"]
@@ -253,6 +276,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 5"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level5Button"]
@@ -288,6 +312,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 6"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level6Button"]
@@ -321,6 +346,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 7"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level7Button"]
@@ -386,6 +412,7 @@ focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 flat = true
 
 [node name="QuitLabel" type="Label" parent="QuitButton"]
@@ -482,13 +509,13 @@ scale = Vector2(3.3875, 2.735)
 bubble_message = "This game is easier with a controller"
 
 [node name="AbilityIcon" type="Sprite2D" parent="."]
-position = Vector2(993, 486.875)
-scale = Vector2(0.0770924, 0.0760473)
+position = Vector2(995, 486)
+scale = Vector2(0.0870042, 0.0817395)
 texture = ExtResource("17_ukqqs")
 
 [node name="AbilityIcon2" type="Sprite2D" parent="."]
-position = Vector2(1349, 486.875)
-scale = Vector2(0.0770924, 0.0760473)
+position = Vector2(1349, 486)
+scale = Vector2(0.0870042, 0.0817395)
 texture = ExtResource("17_ukqqs")
 
 [node name="MusicMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
@@ -500,6 +527,7 @@ offset_bottom = 142.0
 scale = Vector2(0.753219, 0.79469)
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 
 [node name="SoundMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
 layout_mode = 0
@@ -510,6 +538,7 @@ offset_bottom = 227.0
 scale = Vector2(0.738421, 0.751464)
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 
 [node name="StatsButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
@@ -528,6 +557,7 @@ theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Stats"
 
 [node name="Sprite2D" type="Sprite2D" parent="StatsButton"]
@@ -542,6 +572,7 @@ z_index = 2
 layout_mode = 1
 
 [node name="Level7Platforms" parent="." instance=ExtResource("3_x4hsc")]
+z_index = 0
 position = Vector2(398, 479)
 scale = Vector2(0.195505, 0.622132)
 

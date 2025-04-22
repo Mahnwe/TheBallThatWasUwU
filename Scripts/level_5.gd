@@ -74,7 +74,7 @@ func _process(delta):
 		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
-		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/level6.tscn")
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
@@ -82,17 +82,15 @@ func handle_pause():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		pass
 	else:
-		if is_paused and $Player/Pause.is_commands_display == true:
+		if is_paused and $Player/Pause.is_commands_display:
 			$Player.get_child(0).get_child(0).get_child(0).hide()
-		elif is_paused and $Player/Pause.is_commands_display == false:
+		elif is_paused and !$Player/Pause.is_commands_display:
 			$Player.get_child(0).get_child(0).get_child(0).show()
-		if !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x != start_position_x:
+		if !is_paused and Input.is_action_just_pressed("pause"):
 			toggle_pause()
-		elif !is_paused and Input.is_action_just_pressed("pause") and $Player.position.x == start_position_x:
-			toggle_pause()
-		elif is_paused and $Player/Pause.is_commands_display == false and $Player.position.x != start_position_x and Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("restart_save"):
+		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("pause"):
 			untoggle_pause()
-		elif is_paused and $Player/Pause.is_commands_display == false and $Player.position.x == start_position_x and Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("restart_save"):
+		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("restart_save"):
 			untoggle_pause()
 		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
