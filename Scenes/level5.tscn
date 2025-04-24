@@ -394,7 +394,7 @@ position = Vector2(-745.582, 233.538)
 scale = Vector2(1.76319, 1.35929)
 
 [node name="SandPlatform2" parent="SandPlatform" instance=ExtResource("24_uva61")]
-position = Vector2(-1486.76, 2.41547)
+position = Vector2(-1486.76, 50.7254)
 
 [node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
 position = Vector2(-1616, 130)

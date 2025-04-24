@@ -105,9 +105,9 @@ point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_sdcnp"]
 _data = {
-"points": PackedVector2Array(39.0883, -22.4412, -39.0883, 22.4412, -436.28, -1450.27, 32.9633, 32.0724, -32.9633, -32.0724, -597, -1443, 0, 0, 0, 0, -641, -1534, -8.90899, 29.3997, 8.90899, -29.3997, -638, -1621, 0, 0, 0, 0, -597, -1662, -42.7149, -9.34388, 42.7149, 9.34388, -474, -1665, 0, 0, 0, 0, -426, -1606, 0, 0, 0, 0, -429, -1514, 7.37888, 1.64058, -7.37888, -1.64058, -435.43, -1451.09)
+"points": PackedVector2Array(39.0883, -22.4412, -39.0883, 22.4412, -437.981, -1439.62, 32.9633, 32.0724, -32.9633, -32.0724, -621.678, -1436.34, 0, 0, 0, 0, -646.341, -1534.67, -8.90899, 29.3997, 8.90899, -29.3997, -638, -1621, 0, 0, 0, 0, -597, -1662, -42.7149, -9.34388, 42.7149, 9.34388, -474, -1665, 0, 0, 0, 0, -426, -1606, 0, 0, 0, 0, -429, -1514, 7.37888, 1.64058, -7.37888, -1.64058, -432.028, -1445.36, 0, 0, 0, 0, -432.028, -1446.18, 0, 0, 0, 0, -437.981, -1439.62)
 }
-point_count = 9
+point_count = 11
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_1urae")
@@ -928,7 +928,6 @@ position = Vector2(-87.0305, -81.1647)
 rotation = -0.0872665
 scale = Vector2(0.234248, 0.878037)
 sync_to_physics = false
-speed = 100
 
 [node name="Path2D3" type="Path2D" parent="."]
 position = Vector2(435, -17)
@@ -943,7 +942,7 @@ rotates = false
 position = Vector2(-61.6656, -95)
 scale = Vector2(0.299398, 1)
 sync_to_physics = false
-speed = 225
+speed = 200
 
 [node name="Path2D4" type="Path2D" parent="."]
 position = Vector2(-25, 355)
@@ -958,7 +957,6 @@ rotates = false
 position = Vector2(-136.155, -84.0444)
 scale = Vector2(0.241409, 0.79739)
 sync_to_physics = false
-speed = 100
 
 [node name="Path2D5" type="Path2D" parent="."]
 position = Vector2(205, 268)
@@ -966,7 +964,7 @@ scale = Vector2(1.17585, 1.22046)
 curve = SubResource("Curve2D_sdcnp")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
-position = Vector2(-436.28, -1450.27)
+position = Vector2(-437.981, -1439.62)
 scale = Vector2(0.240001, 0.92)
 rotates = false
 
@@ -974,7 +972,7 @@ rotates = false
 position = Vector2(-713.989, -59.2969)
 scale = Vector2(0.858259, 0.786251)
 sync_to_physics = false
-speed = 225
+speed = 200
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20

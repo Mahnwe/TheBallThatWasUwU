@@ -1038,11 +1038,12 @@ charge_timer = 2.0
 beam_timer = 2.0
 
 [node name="MetalPlatform24" parent="." instance=ExtResource("4_achdq")]
-position = Vector2(-3236, -10)
-scale = Vector2(0.633888, 2.13349)
+position = Vector2(-3247, -10)
+scale = Vector2(0.553883, 2.13349)
 
 [node name="MetalPlatform" parent="MetalPlatform24" instance=ExtResource("4_achdq")]
-position = Vector2(0, 144.833)
+position = Vector2(0, 140.146)
+scale = Vector2(1, 0.906257)
 
 [node name="MetalPlatform25" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-3520, 486)

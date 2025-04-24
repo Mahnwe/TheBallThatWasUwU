@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=51 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" uid="uid://cwp4b2qowta5v" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -121,6 +121,12 @@ point_count = 5
 [sub_resource type="Curve2D" id="Curve2D_hc13j"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -3732, -1741, 0, 0, 0, 0, -3731, -1715, 0, 0, 0, 0, -3730, -1685, 0, 0, 0, 0, -3729, -1643, 0, 0, 0, 0, -3728, -1603, 0, 0, 0, 0, -3727, -1559, 0, 0, 0, 0, -3726, -1512, 0, 0, 0, 0, -3726, -1492)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_gnnhw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4527, -510, 0, 0, 0, 0, -4526.1, -358.844, 0, 0, 0, 0, -4526.1, -205.844, 0, 0, 0, 0, -4526.1, -21.8441, 0, 0, 0, 0, -4527.1, 279.156, 0, 0, 0, 0, -4525.1, 704.156, 0, 0, 0, 0, -4526.1, 1166.16, 0, 0, 0, 0, -4526.1, 1475.16)
 }
 point_count = 8
 
@@ -276,7 +282,7 @@ scale = Vector2(0.411392, 0.641036)
 skew = 0.00281227
 
 [node name="platform7" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2426, -788)
+position = Vector2(-2404, -788)
 scale = Vector2(0.694417, 1)
 
 [node name="platform9" parent="." instance=ExtResource("9_ujhmm")]
@@ -435,7 +441,7 @@ ball_speed = 10
 [node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
 position = Vector2(-4773, 199)
 flip_value = 1
-ball_speed = 10
+ball_speed = 7
 
 [node name="platform28" parent="." instance=ExtResource("9_ujhmm")]
 z_index = -1
@@ -579,10 +585,10 @@ position = Vector2(-2809, -84)
 portal_in = true
 
 [node name="FinishPortal2" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-2330, -787)
+position = Vector2(-2308, -787)
 
 [node name="Finish" parent="." instance=ExtResource("18_rc5ql")]
-position = Vector2(-2112, -774)
+position = Vector2(-2090, -774)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("19_mmpto")]
@@ -756,9 +762,8 @@ scale = Vector2(0.276057, 0.338322)
 texture = ExtResource("31_k2kct")
 
 [node name="HWayPortal" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-4415, -765)
-rotation = 1.5708
-scale = Vector2(1.79116, 2.01274)
+position = Vector2(-4434, -775)
+scale = Vector2(1.43768, 1.46391)
 portal_in = true
 
 [node name="HWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
@@ -766,9 +771,8 @@ position = Vector2(-4018, -1788)
 rotation = 1.5708
 
 [node name="VWayPortal" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-4973, 216)
-rotation = 1.5708
-scale = Vector2(1.70364, 1.80244)
+position = Vector2(-4969, 235)
+scale = Vector2(1.43768, 1.46391)
 portal_in = true
 
 [node name="VWayPortal2" parent="." instance=ExtResource("8_cv4mv")]
@@ -901,6 +905,34 @@ rotation = 1.5708
 
 [node name="Spike7" parent="." instance=ExtResource("7_p558y")]
 position = Vector2(-2012, -220)
+
+[node name="platform35" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-4683, -763)
+scale = Vector2(0.639995, 1)
+
+[node name="platform" parent="platform35" instance=ExtResource("9_ujhmm")]
+position = Vector2(-156.25, -123)
+scale = Vector2(0.373431, 1.342)
+
+[node name="Sprite2D24" type="Sprite2D" parent="."]
+position = Vector2(-4591.9, -557.156)
+rotation = -3.14159
+scale = Vector2(1.09597, 1.22251)
+texture = ExtResource("29_ui22c")
+
+[node name="Path2D15" type="Path2D" parent="."]
+position = Vector2(-67.9014, -0.155884)
+curve = SubResource("Curve2D_gnnhw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D15"]
+position = Vector2(-4527, -510)
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D15/PathFollow2D" instance=ExtResource("29_elt0d")]
+position = Vector2(-0.0986328, 2.15588)
+scale = Vector2(1.22769, 1.55137)
+speed = 400
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20

@@ -154,10 +154,10 @@ texture = ExtResource("7_qv8jw")
 
 [node name="TimerPresentation" type="Label" parent="."]
 layout_mode = 0
-offset_left = -208.679
-offset_top = -466.399
-offset_right = 186.321
-offset_bottom = -363.399
+offset_left = -194.0
+offset_top = -466.0
+offset_right = 201.0
+offset_bottom = -363.0
 scale = Vector2(0.937357, 0.965585)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
@@ -165,12 +165,12 @@ text = "Your time :"
 
 [node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = -151.679
-offset_top = -327.399
-offset_right = -111.679
-offset_bottom = -224.399
+offset_left = -162.0
+offset_top = -337.0
+offset_right = -122.0
+offset_bottom = -234.0
 scale = Vector2(0.937357, 0.965585)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
