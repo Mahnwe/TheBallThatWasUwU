@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TheBallThatWasUwU"
-run/main_scene="res://Scenes/menu.tscn"
+run/main_scene="uid://b8xvas0md65yk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.png"
