@@ -213,11 +213,12 @@ position = Vector2(-2486, -1390.11)
 scale = Vector2(1.26, 0.328862)
 
 [node name="platform6" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-1681, -1268)
+position = Vector2(-1681, -1319)
 scale = Vector2(0.320002, 0.48)
 
-[node name="platform7" parent="platform6" instance=ExtResource("9_ujhmm")]
-position = Vector2(3.12402, 616.667)
+[node name="platform36" parent="." instance=ExtResource("9_ujhmm")]
+position = Vector2(-1680, -972)
+scale = Vector2(0.320002, 0.48)
 
 [node name="TripleSign" parent="." instance=ExtResource("14_d3ynf")]
 position = Vector2(-1981, -1188)
@@ -251,7 +252,7 @@ position = Vector2(339.315, 204.082)
 texture = ExtResource("16_60pe7")
 
 [node name="HardPortal" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-1559, -1300)
+position = Vector2(-1559, -1351)
 portal_in = true
 
 [node name="EasyPortal" parent="." instance=ExtResource("8_cv4mv")]
@@ -282,7 +283,7 @@ scale = Vector2(0.411392, 0.641036)
 skew = 0.00281227
 
 [node name="platform7" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2404, -788)
+position = Vector2(-2404, -848)
 scale = Vector2(0.694417, 1)
 
 [node name="platform9" parent="." instance=ExtResource("9_ujhmm")]
@@ -585,10 +586,10 @@ position = Vector2(-2809, -84)
 portal_in = true
 
 [node name="FinishPortal2" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-2308, -787)
+position = Vector2(-2308, -847)
 
 [node name="Finish" parent="." instance=ExtResource("18_rc5ql")]
-position = Vector2(-2090, -774)
+position = Vector2(-2090, -834)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("19_mmpto")]

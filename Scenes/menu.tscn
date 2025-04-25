@@ -93,12 +93,16 @@ text = "The ball that was fast
 position = Vector2(640, 274)
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
-position = Vector2(402, 55)
+position = Vector2(366, 55)
 scale = Vector2(1.3641, 1.35729)
 texture = ExtResource("4_qktq1")
 
 [node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
 position = Vector2(528, 54.875)
+
+[node name="BranchesBush" parent="platform/BranchesBush" instance=ExtResource("5_ok2nw")]
+position = Vector2(-36.7925, 0.115741)
+flip_value = 1
 
 [node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
 position = Vector2(235, 68)
@@ -136,6 +140,7 @@ theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 1"
+alignment = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Level1Button"]
 z_index = -1
@@ -364,11 +369,11 @@ offset_right = -3.44827
 offset_bottom = 39.6902
 
 [node name="Label" type="Label" parent="Level7Button"]
-layout_mode = 0
-offset_left = 5.36399
+layout_mode = 1
+offset_left = 4.21456
 offset_top = -19.8451
-offset_right = 116.364
-offset_bottom = 8.15489
+offset_right = 115.215
+offset_bottom = 8.15487
 scale = Vector2(0.587489, 0.792687)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -416,15 +421,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 flat = true
 
 [node name="QuitLabel" type="Label" parent="QuitButton"]
-layout_mode = 0
-offset_left = -50.0001
-offset_top = -18.75
-offset_right = 77.0
-offset_bottom = 16.25
+layout_mode = 1
+offset_left = -50.0
+offset_top = -6.25
+offset_right = 77.0001
+offset_bottom = 28.75
 scale = Vector2(8.49967, 4.83334)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("12_m2qtk")
@@ -434,15 +441,17 @@ parameters/looping = true
 stream = ExtResource("13_owrtn")
 
 [node name="MusicLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 143.0
+layout_mode = 1
+offset_left = 139.0
 offset_top = 51.0
-offset_right = 242.0
+offset_right = 238.0
 offset_bottom = 93.0
 scale = Vector2(0.968542, 0.955579)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Musics"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
@@ -462,15 +471,17 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro
 max_value = 5.0
 
 [node name="EffectLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 113.0
+layout_mode = 1
+offset_left = 103.0
 offset_top = 135.0
-offset_right = 296.0
+offset_right = 300.0
 offset_bottom = 177.0
 scale = Vector2(0.949514, 0.903602)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Sound effect"
+text = "Sound effects"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
@@ -630,8 +641,10 @@ scale = Vector2(0.88378, 1)
 [connection signal="mouse_exited" from="EffectSlider" to="." method="_on_effect_slider_mouse_exited"]
 [connection signal="value_changed" from="EffectSlider" to="." method="_on_effect_slider_value_changed"]
 [connection signal="focus_entered" from="MusicMuteButton" to="." method="_on_button_focus_entered"]
+[connection signal="mouse_exited" from="MusicMuteButton" to="." method="_on_music_mute_button_mouse_exited"]
 [connection signal="pressed" from="MusicMuteButton" to="." method="_on_music_mute_button_pressed"]
 [connection signal="focus_entered" from="SoundMuteButton" to="." method="_on_button_focus_entered"]
+[connection signal="mouse_exited" from="SoundMuteButton" to="." method="_on_sound_mute_button_mouse_exited"]
 [connection signal="pressed" from="SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
 [connection signal="focus_entered" from="StatsButton" to="." method="_on_button_focus_entered"]
 [connection signal="mouse_exited" from="StatsButton" to="." method="_on_stats_button_mouse_exited"]

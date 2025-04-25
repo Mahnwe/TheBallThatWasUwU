@@ -8,14 +8,15 @@ var stats_ui_display = false
 
 var is_controller_focused = false
 var properties_config = ConfigFile.new()
-
 # Load data from a file.
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
+var translate_file
 
 var chestNumber
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	translate_text()
 	if properties_config.get_value("Launch", "is_first_launch"):
 		properties_config.set_value("musicVolume","is_music_mute", false)
 		properties_config.set_value("effectVolume","is_effect_mute", false)
@@ -37,7 +38,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
 	if bubble_message_reset:
 		change_bubble_message()
 	wait_for_focus()
@@ -278,14 +278,25 @@ func _on_button_focus_entered():
 	$ButtonSound.play()
 	
 func change_bubble_message():
-	bubble_message_reset = false
-	$BubbleTooltip.get_child(0).text = "This game is easier with a controller"
-	await get_tree().create_timer(5.0).timeout
-	$BubbleTooltip.get_child(0).text = "Levels with an icon above unlock abilities"
-	await get_tree().create_timer(5.0).timeout
-	$BubbleTooltip.get_child(0).text = "For smoother progression do levels in order"
-	await get_tree().create_timer(5.0).timeout
-	bubble_message_reset = true
+	if properties_config.get_value("Languages", "is_english"):
+		bubble_message_reset = false
+		$BubbleTooltip.get_child(0).text = "This game is easier with a controller"
+		await get_tree().create_timer(5.0).timeout
+		$BubbleTooltip.get_child(0).text = "Levels with an icon above unlock abilities"
+		await get_tree().create_timer(5.0).timeout
+		$BubbleTooltip.get_child(0).text = "For smoother progression do levels in order"
+		await get_tree().create_timer(5.0).timeout
+		bubble_message_reset = true
+	else:
+		bubble_message_reset = false
+		$BubbleTooltip.get_child(0).text = "Le jeu est plus facile avec une manette"
+		await get_tree().create_timer(5.0).timeout
+		$BubbleTooltip.get_child(0).text = "Les niveaux avec une icone débloquent des capacités"
+		await get_tree().create_timer(5.0).timeout
+		$BubbleTooltip.get_child(0).text = "Il est conseillé de faire les niveaux dans l'ordre"
+		await get_tree().create_timer(5.0).timeout
+		bubble_message_reset = true
+		
 
 
 func _on_music_slider_value_changed(value):
@@ -496,3 +507,39 @@ func check_level7_button_visibility():
 func _on_level_7_button_mouse_exited():
 	$Level7Button.release_focus()
 	is_controller_focused = false
+
+
+func _on_music_mute_button_mouse_exited():
+	$MusicMuteButton.release_focus()
+
+
+func _on_sound_mute_button_mouse_exited():
+	$SoundMuteButton.release_focus()
+	
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if properties_config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		change_font_size()
+		
+	$QuitButton/QuitLabel.text = translate_config.get_value("TranslationMenu", "QuitButton")
+	$StatsButton.text = translate_config.get_value("TranslationMenu", "StatsButton")
+	$MusicLabel.text = translate_config.get_value("TranslationMenu", "MusicLabel")
+	$EffectLabel.text = translate_config.get_value("TranslationMenu", "EffectLabel")
+	$Level1Button.text = translate_config.get_value("TranslationMenu", "LevelOne")
+	$Level2Button.text = translate_config.get_value("TranslationMenu", "LevelTwo")
+	$Level3Button.text = translate_config.get_value("TranslationMenu", "LevelThree")
+	$Level4Button.text = translate_config.get_value("TranslationMenu", "LevelFour")
+	$Level5Button.text = translate_config.get_value("TranslationMenu", "LevelFive")
+	$Level6Button.text = translate_config.get_value("TranslationMenu", "LevelSix")
+	$Level7Button.text = translate_config.get_value("TranslationMenu", "LevelSeven")
+	$Level7Button/Label.text = translate_config.get_value("TranslationMenu", "LevelSevenLabel")
+	
+	
+func change_font_size():
+	for member in get_tree().get_nodes_in_group("MenuButtons"):
+		if member.name != "StatsButton":
+			member.add_theme_font_size_override("font_size", 16)
+	$Level7Button/Label.add_theme_font_size_override("font_size", 17)

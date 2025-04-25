@@ -305,8 +305,12 @@ func _on_pause_music_finished():
 
 
 func _on_triple_sign_set_up_sign_label():
-	$TripleSign.get_child(2).text = "Hard way"
-	$TripleSign.get_child(3).text = "Easy way"
+	if config.get_value("Languages", "is_english"):
+		$TripleSign.get_child(2).text = "Hard way"
+		$TripleSign.get_child(3).text = "Easy way"
+	else:
+		$TripleSign.get_child(2).text = "Difficile"
+		$TripleSign.get_child(3).text = "Facile"
 
 
 func _on_hard_portal_entered(body):
@@ -351,9 +355,14 @@ func _on_finish_portal_body_entered(body):
 
 
 func _on_triple_sign_2_set_up_sign_label():
-	$TripleSign2.get_child(1).text = "Finish"
-	$TripleSign2.get_child(2).text = "Beware of"
-	$TripleSign2.get_child(3).text = "the gap"
+	if config.get_value("Languages", "is_english"):
+		$TripleSign2.get_child(1).text = "Finish,"
+		$TripleSign2.get_child(2).text = "Beware of"
+		$TripleSign2.get_child(3).text = "the gap"
+	else:
+		$TripleSign2.get_child(1).text = "Fin,"
+		$TripleSign2.get_child(2).text = "Attention à"
+		$TripleSign2.get_child(3).text = "la marche"
 
 
 func _on_h_way_portal_body_entered(body):

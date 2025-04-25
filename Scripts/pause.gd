@@ -13,9 +13,12 @@ var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	translate_text()
 	music_slider_stylebox = $SoundLayer/MusicSlider.get_theme_stylebox("grabber_area")
 	effect_slider_stylebox = $SoundLayer/EffectSlider.get_theme_stylebox("grabber_area")
 	$SoundLayer/MusicSlider.editable = false
@@ -413,3 +416,17 @@ func _format_seconds(time : float) -> String:
 	var milliseconds := fmod(time, 1) * 1000
 
 	return "%02d:%02d:%03d" % [minutes, seconds, milliseconds]
+	
+	
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	$SoundLayer/MusicSliderLabel.text = translate_config.get_value("TranslationPause", "MusicLabel")
+	$SoundLayer/EffectSliderLabel.text = translate_config.get_value("TranslationPause", "EffectLabel")
+	$ReturnLayer/ReturnToMenu.text = translate_config.get_value("TranslationPause", "MenuButton")
+	$ContinueLayer/Continue.text = translate_config.get_value("TranslationPause", "ContinueButton")
+	$CommandLayer/Command.text = translate_config.get_value("TranslationPause", "CommandsButton")

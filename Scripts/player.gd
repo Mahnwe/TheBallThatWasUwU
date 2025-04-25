@@ -5,7 +5,7 @@ var speed = 350
 var wall_pushback = 1200
 
 #@export
-var gravity = 30
+var gravity = 28
 
 #@export
 var jump_force = -680

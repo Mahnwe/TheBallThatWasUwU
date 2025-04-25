@@ -16,8 +16,8 @@ grow_vertical = 2
 script = ExtResource("1_arqek")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(43, 41)
-scale = Vector2(0.77027, 1.42105)
+position = Vector2(42.5, 41)
+scale = Vector2(0.817567, 1.42105)
 texture = ExtResource("2_cui77")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]

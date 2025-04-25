@@ -35,10 +35,10 @@ script = ExtResource("1_8cftm")
 [node name="FinishNextLevelButton" type="Button" parent="." groups=["finish_button"]]
 z_index = 2
 layout_mode = 0
-offset_left = 345.0
-offset_top = 223.0
-offset_right = 530.0
-offset_bottom = 315.0
+offset_left = 358.0
+offset_top = 197.0
+offset_right = 519.0
+offset_bottom = 293.0
 scale = Vector2(3.80579, 2.08)
 focus_neighbor_left = NodePath("../FinishMenuButton")
 focus_neighbor_top = NodePath("../FinishMenuButton")
@@ -53,11 +53,11 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
-text = "Move to next level"
+text = "Next level"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton"]
-position = Vector2(28.7303, 158.25)
+position = Vector2(20.5851, 164.145)
 scale = Vector2(0.0811181, 0.177951)
 texture = ExtResource("2_fgywl")
 
@@ -81,7 +81,7 @@ texture = ExtResource("6_uhy2h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="FinishNextLevelButton"]
 z_index = -1
-position = Vector2(89.8631, 48.7355)
+position = Vector2(81.7179, 54.63)
 scale = Vector2(1.49133, 2.67751)
 texture = ExtResource("7_qv8jw")
 
@@ -154,14 +154,16 @@ texture = ExtResource("7_qv8jw")
 
 [node name="TimerPresentation" type="Label" parent="."]
 layout_mode = 0
-offset_left = -194.0
+offset_left = -207.0
 offset_top = -466.0
-offset_right = 201.0
+offset_right = 188.0
 offset_bottom = -363.0
 scale = Vector2(0.937357, 0.965585)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 text = "Your time :"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0

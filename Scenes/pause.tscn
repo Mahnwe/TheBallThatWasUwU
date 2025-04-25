@@ -239,10 +239,10 @@ scale = Vector2(3.05405, 3.92763)
 texture = ExtResource("2_h85by")
 
 [node name="MusicSliderLabel" type="Label" parent="SoundLayer"]
-offset_left = 272.0
-offset_top = 95.5
-offset_right = 371.0
-offset_bottom = 137.5
+offset_left = 260.0
+offset_top = 96.0
+offset_right = 359.0
+offset_bottom = 138.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Musics"

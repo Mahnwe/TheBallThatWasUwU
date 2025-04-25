@@ -4,8 +4,16 @@ signal next_level_pressed
 @export var is_UI_showing = false
 var is_controller_focused
 
+var config = ConfigFile.new()
+
+# Load data from a file.
+var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
+
+var translate_file
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	translate_text()
 	is_controller_focused = false
 	is_UI_showing = false
 
@@ -99,3 +107,18 @@ func _on_finish_next_level_button_mouse_entered():
 func _on_finish_menu_button_mouse_entered():
 	$FinishMenuButton.grab_focus()
 	is_controller_focused = true
+	
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		change_font_size()
+		
+	$TimerPresentation.text = translate_config.get_value("TranslationFinish", "PlayerTimer")
+	$FinishNextLevelButton.text = translate_config.get_value("TranslationFinish", "NextLevelButton")
+	$FinishMenuButton.text = translate_config.get_value("TranslationFinish", "ReturnButton")
+	
+func change_font_size():
+	$TimerPresentation.add_theme_font_size_override("font_size", 70)

@@ -280,8 +280,12 @@ func set_volume():
 		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
 		
 func _on_triple_sign_set_up_sign_label():
-	$TripleSign.get_child(1).text = "  Good"
-	$TripleSign.get_child(2).text = "  Diving !"
+	if config.get_value("Languages", "is_english"):
+		$TripleSign.get_child(1).text = "  Good"
+		$TripleSign.get_child(2).text = "  Diving !"
+	else:
+		$TripleSign.get_child(1).text = " Bonne"
+		$TripleSign.get_child(2).text = " Plongée !"
 
 func _on_finish_ui_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:

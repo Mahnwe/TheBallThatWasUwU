@@ -155,7 +155,10 @@ func enable_patrol_groups():
 func _on_ability_player_entered():
 	$Player/Pause.get_child(6).player_have_dash = true
 	$Player.have_dash_ability = true
-	$Ability.get_child(0).get_child(0).text = "You can dash now ! Use Shift or X button"
+	if config.get_value("Languages", "is_english"):
+		$Ability.get_child(0).get_child(0).text = "You can dash now ! Use Shift or X button"
+	else:
+		$Ability.get_child(0).get_child(0).text = "Vous avez débloqué l'élan ! Utilisez Shift ou X"
 
 
 func _on_save_point_player_entered():

@@ -9,8 +9,11 @@ var properties_config = ConfigFile.new()
 # Load data from a file.
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	translate_text()
 	set_up_stats_with_file()
 	$QuitButton.grab_focus()
 
@@ -54,4 +57,30 @@ func _on_quit_button_gui_input(event):
 			$QuitButton.grab_focus()
 		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$QuitButton.grab_focus() 
+			$QuitButton.grab_focus()
+			
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if properties_config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		$VBoxContainer/JumpsLabel.text = translate_config.get_value("TranslationStats", "Jumps")
+		$VBoxContainer/DashLabel.text = translate_config.get_value("TranslationStats", "Dash")
+		$VBoxContainer/DeathsLabel.text = translate_config.get_value("TranslationStats", "Deaths")
+		$VBoxContainer/DeathSpike.text = translate_config.get_value("TranslationStats", "SpikeDeath")
+		$VBoxContainer/CannonDeath.text = translate_config.get_value("TranslationStats", "CannonDeath")
+		$VBoxContainer/CoralDeath.text = translate_config.get_value("TranslationStats", "CoralDeath")
+		$VBoxContainer/AcidDeath.text = translate_config.get_value("TranslationStats", "AcidDeath")
+		$VBoxContainer/LaserDeath.text = translate_config.get_value("TranslationStats", "LaserDeath")
+		$VBoxContainer/ChestsLabel.text = translate_config.get_value("TranslationStats", "Chests")
+		
+		$VBoxContainer3/LevelFinishedLabel.text = translate_config.get_value("TranslationStats", "LevelFinished")
+		$VBoxContainer3/Label4.text = translate_config.get_value("TranslationStats", "Level1Finished")
+		$VBoxContainer3/Label5.text = translate_config.get_value("TranslationStats", "Level2Finished")
+		$VBoxContainer3/Label6.text = translate_config.get_value("TranslationStats", "Level3Finished")
+		$VBoxContainer3/Label.text = translate_config.get_value("TranslationStats", "Level4Finished")
+		$VBoxContainer3/Label2.text = translate_config.get_value("TranslationStats", "Level5Finished")
+		$VBoxContainer3/Label3.text = translate_config.get_value("TranslationStats", "Level6Finished")
+		$VBoxContainer3/Label7.text = translate_config.get_value("TranslationStats", "Level7Finished")
+	

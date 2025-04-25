@@ -171,14 +171,24 @@ func set_up_signs():
 	_on_triple_sign_2_set_up_sign_label()
 
 func _on_triple_sign_set_up_sign_label():
-	$TripleSign.get_child(1).text = "Easy way"
-	$TripleSign.get_child(2).text = "Hard way"
-	$TripleSign.get_child(3).text = "Dead way"
+	if config.get_value("Languages", "is_english"):
+		$TripleSign.get_child(1).text = "Easy way"
+		$TripleSign.get_child(2).text = "Hard way"
+		$TripleSign.get_child(3).text = "Dead way"
+	else:
+		$TripleSign.get_child(1).text = "Facile"
+		$TripleSign.get_child(2).text = "Difficile"
+		$TripleSign.get_child(3).text = "Mortel"
+
 
 
 func _on_triple_sign_2_set_up_sign_label():
-	$TripleSign2.get_child(2).text = "Hard way"
-	$TripleSign2.get_child(3).text = "Easy way"
+	if config.get_value("Languages", "is_english"):
+		$TripleSign2.get_child(2).text = "Hard way"
+		$TripleSign2.get_child(3).text = "Easy way"
+	else:
+		$TripleSign2.get_child(2).text = "Difficile"
+		$TripleSign2.get_child(3).text = "Facile"
 	
 
 
@@ -266,3 +276,4 @@ func _on_trigger_level_music_body_entered(body):
 func _on_finish_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		get_tree().change_scene_to_file("res://Scenes/level2.tscn")
+		
