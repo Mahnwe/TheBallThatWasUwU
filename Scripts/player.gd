@@ -10,6 +10,8 @@ var gravity = 28
 #@export
 var jump_force = -680
 
+var wall_slide = gravity+70
+
 const VELOCITY_Y_MAX = 600
 var dash_speed = 800
 
@@ -23,6 +25,7 @@ var jump_buffer
 var player_try_buffer_jump
 
 var is_in_water
+var is_sliding
 
 var stats_config= ConfigFile.new()
 var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
@@ -34,6 +37,7 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 func _ready():
 	number_of_jumps = 0
 	$WaterSploch.hide()
+	is_sliding = false
 	is_in_water = false
 	can_dash = false
 	can_double_jump = false
@@ -203,12 +207,17 @@ func check_for_player_movement():
 	
 			
 func check_animation_if_on_wall():
-		if colliding_wall():
-			number_of_jumps = 0
-			can_dash = true
-			velocity.y = 0
-			velocity.y = gravity+90
-			$AnimatedSprite2D.animation = "stay_in_air"
+	if colliding_wall():
+		if !is_sliding and $WallSlideTimer.time_left == 0.0:
+			$WallSlideTimer.start()
+			wall_slide = gravity+70
+		number_of_jumps = 0
+		can_dash = true
+		velocity.y = 0
+		velocity.y = wall_slide
+		$AnimatedSprite2D.animation = "stay_in_air"
+	else:
+		is_sliding = false
 			
 func colliding_wall():
 	return $Raycast.is_colliding()
@@ -241,3 +250,9 @@ func start_sploch_animation():
 
 func _on_dash_duration_timer_timeout():
 	speed = 300
+
+
+func _on_wall_slide_timer_timeout():
+	if colliding_wall():
+		is_sliding = true
+		wall_slide = gravity+120

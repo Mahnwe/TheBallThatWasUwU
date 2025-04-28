@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8xvas0md65yk"]
+[gd_scene load_steps=8 format=3 uid="uid://b8xvas0md65yk"]
 
-[ext_resource type="Texture2D" uid="uid://u2luvsnkt20j" path="res://Arts/BackgroundSprite/NewBackgroundSprite.png" id="1_r0rkp"]
 [ext_resource type="Script" uid="uid://bhp7m2lbln0pg" path="res://Scripts/language_scene.gd" id="1_s0hyc"]
-[ext_resource type="Texture2D" uid="uid://dy816tof24l76" path="res://Arts/BackgroundSprite/BackgroundLVL2Sprite-removebg-preview.png" id="2_s0hyc"]
 [ext_resource type="Texture2D" uid="uid://cywfj8wckdw1t" path="res://Arts/FlagsSprite/FrenchFlag.png" id="3_iktbb"]
+[ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="3_mcjyt"]
 [ext_resource type="Texture2D" uid="uid://c7577pausvcq5" path="res://Arts/FlagsSprite/Flag_of_the_United_Kingdom.png" id="4_mcjyt"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="5_sih3h"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="7_iktbb"]
@@ -25,47 +24,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s0hyc")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(1103.88, 421)
-scale = Vector2(1.69659, 1.45516)
-texture = ExtResource("1_r0rkp")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 644.125)
-scale = Vector2(3.89351, 1.95505)
-texture = ExtResource("2_s0hyc")
+position = Vector2(957, 543)
+scale = Vector2(1, 1.00648)
+texture = ExtResource("3_mcjyt")
 
 [node name="FrFlag" type="Sprite2D" parent="."]
-position = Vector2(613, 618)
+position = Vector2(627, 687)
 scale = Vector2(1.98667, 1.91111)
 texture = ExtResource("3_iktbb")
 
 [node name="EnFlag" type="Sprite2D" parent="."]
-position = Vector2(1312, 618)
+position = Vector2(1326, 687)
 scale = Vector2(0.198333, 0.229333)
 texture = ExtResource("4_mcjyt")
 
 [node name="Cloud" type="Sprite2D" parent="."]
-position = Vector2(932, 347)
-scale = Vector2(2.46622, 2.42105)
+position = Vector2(956, 406)
+scale = Vector2(2.69257, 2.8421)
 texture = ExtResource("5_sih3h")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 801.0
-offset_top = 307.0
-offset_right = 1058.0
-offset_bottom = 376.0
+offset_left = 813.0
+offset_top = 355.0
+offset_right = 1096.0
+offset_bottom = 431.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "Languages"
 
 [node name="FrButton" type="Button" parent="." groups=["language_buttons"]]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 529.0
-offset_right = 767.0
-offset_bottom = 708.0
+offset_left = 473.0
+offset_top = 598.0
+offset_right = 781.0
+offset_bottom = 777.0
 focus_neighbor_left = NodePath("../EnButton")
 focus_neighbor_top = NodePath("../EnButton")
 focus_neighbor_right = NodePath("../EnButton")
@@ -77,10 +71,10 @@ flat = true
 
 [node name="EnButton" type="Button" parent="." groups=["language_buttons"]]
 layout_mode = 0
-offset_left = 1158.0
-offset_top = 529.0
-offset_right = 1466.0
-offset_bottom = 708.0
+offset_left = 1172.0
+offset_top = 598.0
+offset_right = 1480.0
+offset_bottom = 777.0
 focus_neighbor_left = NodePath("../FrButton")
 focus_neighbor_top = NodePath("../FrButton")
 focus_neighbor_right = NodePath("../FrButton")

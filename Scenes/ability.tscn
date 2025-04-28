@@ -36,9 +36,10 @@ shape = SubResource("RectangleShape2D_84xg5")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -83.0
-offset_top = -237.0
+offset_top = -265.0
 offset_right = 62.0
-offset_bottom = -124.0
+offset_bottom = -152.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "   NEW
 ABILITY"
