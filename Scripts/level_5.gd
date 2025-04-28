@@ -20,6 +20,8 @@ var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.is_level_1 = false
@@ -34,6 +36,7 @@ func _ready():
 	if config.get_value("Chests", "level_five_chest"):
 		$Chest.chest_already_picked()
 	set_volume()
+	translate_text()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -44,7 +47,6 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-	_on_triple_sign_set_up_sign_label()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -278,14 +280,6 @@ func set_volume():
 		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
 		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		
-func _on_triple_sign_set_up_sign_label():
-	if config.get_value("Languages", "is_english"):
-		$TripleSign.get_child(1).text = "  Good"
-		$TripleSign.get_child(2).text = "  Diving !"
-	else:
-		$TripleSign.get_child(1).text = " Bonne"
-		$TripleSign.get_child(2).text = " Plongée !"
 
 func _on_finish_ui_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
@@ -319,3 +313,13 @@ func enable_drop_groups():
 func reset_drop_progress():
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
 			member.get_parent().progress = 0
+			
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	$TripleSign.get_child(1).text = translate_config.get_value("TranslationSign", "GoodSign")
+	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "DivingSign")

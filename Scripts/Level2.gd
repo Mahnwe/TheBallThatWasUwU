@@ -18,6 +18,8 @@ var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 var queue = preload("res://Ressources/Save_game.gd").new()
 
 # Called when the node enters the scene tree for the first time.
@@ -155,10 +157,7 @@ func enable_patrol_groups():
 func _on_ability_player_entered():
 	$Player/Pause.get_child(6).player_have_dash = true
 	$Player.have_dash_ability = true
-	if config.get_value("Languages", "is_english"):
-		$Ability.get_child(0).get_child(0).text = "You can dash now ! Use Shift or X button"
-	else:
-		$Ability.get_child(0).get_child(0).text = "Vous avez débloqué l'élan ! Utilisez Shift ou X"
+	translate_text()
 
 
 func _on_save_point_player_entered():
@@ -273,3 +272,11 @@ func _on_pause_music_finished():
 func _on_finish_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		get_tree().change_scene_to_file("res://Scenes/level3.tscn")
+		
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+	$Ability.get_child(0).get_child(0).text = translate_config.get_value("TranslationAbility", "DashAbility")

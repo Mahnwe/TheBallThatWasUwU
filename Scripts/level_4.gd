@@ -20,6 +20,9 @@ var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.is_level_1 = false
@@ -44,8 +47,7 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-	_on_triple_sign_set_up_sign_label()
-	_on_triple_sign_2_set_up_sign_label()
+	translate_text()
 	$Path2D/PathFollow2D/HardRockMovingPlatform.set_process(false)
 	$Path2D2/PathFollow2D/EasyRockPlatform.set_process(false)
 	
@@ -303,16 +305,6 @@ func untoggle_pause():
 func _on_pause_music_finished():
 	$PauseMusic.play()
 
-
-func _on_triple_sign_set_up_sign_label():
-	if config.get_value("Languages", "is_english"):
-		$TripleSign.get_child(2).text = "Hard way"
-		$TripleSign.get_child(3).text = "Easy way"
-	else:
-		$TripleSign.get_child(2).text = "Difficile"
-		$TripleSign.get_child(3).text = "Facile"
-
-
 func _on_hard_portal_entered(body):
 	if body.name == "Player":
 		$PortalSound.play()
@@ -354,17 +346,6 @@ func _on_finish_portal_body_entered(body):
 		body.position.y = ($FinishPortal2.position.y - 50)
 
 
-func _on_triple_sign_2_set_up_sign_label():
-	if config.get_value("Languages", "is_english"):
-		$TripleSign2.get_child(1).text = "Finish,"
-		$TripleSign2.get_child(2).text = "Beware of"
-		$TripleSign2.get_child(3).text = "the gap"
-	else:
-		$TripleSign2.get_child(1).text = "Fin,"
-		$TripleSign2.get_child(2).text = "Attention à"
-		$TripleSign2.get_child(3).text = "la marche"
-
-
 func _on_h_way_portal_body_entered(body):
 	if body.name == "Player":
 		$PortalSound.play()
@@ -400,3 +381,16 @@ func enable_drop_groups():
 func reset_drop_progress():
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
 			member.get_parent().progress = 0
+			
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "HardSign")
+	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "EasySign")
+	$TripleSign2.get_child(1).text = translate_config.get_value("TranslationSign", "FinishSign")
+	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "BewareSign")
+	$TripleSign2.get_child(3).text = translate_config.get_value("TranslationSign", "GapSign")

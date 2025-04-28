@@ -20,6 +20,8 @@ var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.is_level_1 = true
@@ -34,6 +36,7 @@ func _ready():
 	if config.get_value("Chests", "level_one_chest"):
 		$Chest.chest_already_picked()
 	set_volume()
+	translate_text()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -44,7 +47,6 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-	set_up_signs()
 	$Level1Music.play()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -166,32 +168,6 @@ func _on_game_area_player_exited_game_area():
 		put_player_to_save_position_and_unpause_timer()
 		
 
-func set_up_signs():
-	_on_triple_sign_set_up_sign_label()
-	_on_triple_sign_2_set_up_sign_label()
-
-func _on_triple_sign_set_up_sign_label():
-	if config.get_value("Languages", "is_english"):
-		$TripleSign.get_child(1).text = "Easy way"
-		$TripleSign.get_child(2).text = "Hard way"
-		$TripleSign.get_child(3).text = "Dead way"
-	else:
-		$TripleSign.get_child(1).text = "Facile"
-		$TripleSign.get_child(2).text = "Difficile"
-		$TripleSign.get_child(3).text = "Mortel"
-
-
-
-func _on_triple_sign_2_set_up_sign_label():
-	if config.get_value("Languages", "is_english"):
-		$TripleSign2.get_child(2).text = "Hard way"
-		$TripleSign2.get_child(3).text = "Easy way"
-	else:
-		$TripleSign2.get_child(2).text = "Difficile"
-		$TripleSign2.get_child(3).text = "Facile"
-	
-
-
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
 		untoggle_pause()
@@ -276,4 +252,17 @@ func _on_trigger_level_music_body_entered(body):
 func _on_finish_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		get_tree().change_scene_to_file("res://Scenes/level2.tscn")
+		
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	$TripleSign.get_child(1).text = translate_config.get_value("TranslationSign", "EasySign")
+	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "HardSign")
+	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "DeadSign")
+	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "HardSign")
+	$TripleSign2.get_child(3).text = translate_config.get_value("TranslationSign", "EasySign")
 		
