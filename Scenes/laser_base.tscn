@@ -78,15 +78,15 @@ animation = &"laser_beam"
 position = Vector2(0, 1.45519e-11)
 shape = SubResource("RectangleShape2D_ckdw5")
 
-[node name="ChargeTimer" type="Timer" parent="."]
+[node name="ChargeTimer" type="Timer" parent="." groups=["laser_timer"]]
 wait_time = 3.0
 one_shot = true
 
-[node name="BeamTimer" type="Timer" parent="."]
+[node name="BeamTimer" type="Timer" parent="." groups=["laser_timer"]]
 wait_time = 5.0
 one_shot = true
 
-[node name="WaitTimer" type="Timer" parent="."]
+[node name="WaitTimer" type="Timer" parent="." groups=["laser_timer"]]
 one_shot = true
 
 [connection signal="body_entered" from="LaserBeam/Area2D" to="." method="_on_area_2d_body_entered"]

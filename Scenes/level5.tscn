@@ -698,7 +698,7 @@ scale = Vector2(0.655878, 0.809716)
 position = Vector2(-835, 40)
 
 [node name="Rock4" parent="." instance=ExtResource("19_w2r3n")]
-position = Vector2(-1131, 118)
+position = Vector2(-1130, 120)
 rotation = 0.521293
 scale = Vector2(0.415841, 0.411915)
 

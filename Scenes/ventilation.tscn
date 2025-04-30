@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb1ke3vkx62tx"]
+
+[ext_resource type="Texture2D" uid="uid://cqn1cba37a7de" path="res://Arts/TubeSprite/VentilationSprite1.png" id="1_cn3i7"]
+[ext_resource type="Texture2D" uid="uid://dhm7j6kljd0rg" path="res://Arts/TubeSprite/VentilationSprite2.png" id="2_fonyw"]
+[ext_resource type="Texture2D" uid="uid://c7j4osqeqnipk" path="res://Arts/TubeSprite/VentilationSprite3.png" id="3_embrb"]
+[ext_resource type="Script" uid="uid://20mvwn4acjiy" path="res://Scripts/ventilation.gd" id="4_n0c04"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ouubg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cn3i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fonyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_embrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Ventilation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ouubg")
+script = ExtResource("4_n0c04")

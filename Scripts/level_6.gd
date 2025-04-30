@@ -128,6 +128,7 @@ func toggle_pause():
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_drop_groups()
 	disable_patrol_groups()
+	pause_laser()
 	$Player.set_physics_process(false)
 	$Player/Pause.set_current_timer_when_paused($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
@@ -148,6 +149,7 @@ func untoggle_pause():
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_drop_groups()
 	enable_patrol_groups()
+	unpause_laser()
 	$Player.set_physics_process(true)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
@@ -196,6 +198,7 @@ func _on_pause_continue_is_clicked():
 		$Player.set_physics_process(true)
 		enable_drop_groups()
 		enable_patrol_groups()
+		unpause_laser()
 		is_paused = false
 		$Player/Pause.is_paused = false
 		$Player/Pause.is_controller_focused = false
@@ -284,3 +287,11 @@ func _on_finish_player_entered():
 	var number_of_level_six_finished = stats_config.get_value("Stats", "level_six_finished_number")
 	stats_config.set_value("Stats", "level_six_finished_number", number_of_level_six_finished+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	
+func pause_laser():
+	for member in get_tree().get_nodes_in_group("laser_group"):
+		member.is_paused = true
+		
+func unpause_laser():
+	for member in get_tree().get_nodes_in_group("laser_group"):
+		member.is_paused = false

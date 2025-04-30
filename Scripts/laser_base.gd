@@ -3,6 +3,8 @@ extends Sprite2D
 var stats_config= ConfigFile.new()
 var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 
+var is_paused
+
 @export var beam_x_scale = 0.0
 @export var beam_y_position = 0.0
 @export var charge_timer = 0.0
@@ -13,6 +15,7 @@ signal laser_touched_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	is_paused = false
 	setup_laser_beam()
 	$LaserBeam/Area2D.monitorable = false
 	$LaserBeam.visible = false
@@ -25,6 +28,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	final_charge_trigger()
+	if is_paused:
+		for member in get_tree().get_nodes_in_group("laser_timer"):
+			member.set_paused(true)
+	else:
+		for member in get_tree().get_nodes_in_group("laser_timer"):
+			member.set_paused(false)
 	
 func setup_laser_beam():
 	if beam_x_scale != 0.0:
