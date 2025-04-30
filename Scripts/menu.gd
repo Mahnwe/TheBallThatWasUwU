@@ -74,7 +74,9 @@ func _on_level_5_pressed():
 	
 func _on_level_6_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/level6.tscn")
-
+	
+func _on_level_7_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/level7.tscn")
 
 func _on_level_1_button_gui_input(event):
 	if $Level1Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
