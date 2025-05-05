@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=64 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -50,6 +50,13 @@
 [ext_resource type="Texture2D" uid="uid://cwtl8eb7834x2" path="res://Arts/DropSprite/DropSprite3.png" id="42_dkr12"]
 [ext_resource type="Texture2D" uid="uid://dmrjr1d12uoal" path="res://Arts/DropSprite/DropSprite2.png" id="43_52a8e"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="50_c1k8q"]
+[ext_resource type="Texture2D" uid="uid://cxkkbn1xea4nv" path="res://Arts/DustPlayerSprite/DustJump1.png" id="51_m376e"]
+[ext_resource type="Texture2D" uid="uid://7us5bk7i4j4k" path="res://Arts/DustPlayerSprite/DustJump2.png" id="52_6b312"]
+[ext_resource type="Texture2D" uid="uid://ba70454umbjtw" path="res://Arts/DustPlayerSprite/DustJump3.png" id="53_lisdf"]
+[ext_resource type="Texture2D" uid="uid://b4aulqxsglf1s" path="res://Arts/DustPlayerSprite/SlideDust1.png" id="54_n1x1j"]
+[ext_resource type="Texture2D" uid="uid://o6rxr0tl5r55" path="res://Arts/DustPlayerSprite/SlideDust2.png" id="55_c8b32"]
+[ext_resource type="Texture2D" uid="uid://kwg2t1m6exfa" path="res://Arts/DustPlayerSprite/SlideDust3.png" id="56_nj1g2"]
+[ext_resource type="Texture2D" uid="uid://cs82v4wsqcjxg" path="res://Arts/DustPlayerSprite/SlideDust4.png" id="57_usbl8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b2da6"]
 animations = [{
@@ -236,6 +243,88 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtg1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_m376e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_6b312")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_lisdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_6b312")
+}],
+"loop": false,
+"name": &"JumpDust",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuaet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_n1x1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_c8b32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nj1g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_usbl8")
+}],
+"loop": false,
+"name": &"SlideDust",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_nj1g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_usbl8")
+}],
+"loop": true,
+"name": &"StaySliding",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m376e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_n1x1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_c8b32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nj1g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_usbl8")
+}],
+"loop": false,
+"name": &"SlideDust",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_nj1g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_usbl8")
+}],
+"loop": true,
+"name": &"StaySliding",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 visibility_layer = 2
 position = Vector2(-212, -231)
@@ -348,5 +437,35 @@ one_shot = true
 [node name="WallSlideTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="JumpDustAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(212, 272)
+scale = Vector2(1.35012, 0.790004)
+sprite_frames = SubResource("SpriteFrames_dtg1u")
+animation = &"JumpDust"
+
+[node name="SlideDustAnimLeft" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(203, 231)
+scale = Vector2(2.31247, 3.42324)
+sprite_frames = SubResource("SpriteFrames_nuaet")
+animation = &"SlideDust"
+
+[node name="SlideDustAnimRight" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(222, 231)
+scale = Vector2(2.31247, 3.42324)
+sprite_frames = SubResource("SpriteFrames_m376e")
+animation = &"SlideDust"
+flip_h = true
+
+[node name="JustJumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]
 [connection signal="timeout" from="WallSlideTimer" to="." method="_on_wall_slide_timer_timeout"]
+[connection signal="animation_finished" from="JumpDustAnim" to="." method="_on_jump_dust_anim_animation_finished"]
+[connection signal="animation_finished" from="SlideDustAnimLeft" to="." method="_on_slide_dust_anim_left_animation_finished"]
+[connection signal="animation_finished" from="SlideDustAnimRight" to="." method="_on_slide_dust_anim_right_animation_finished"]
+[connection signal="timeout" from="JustJumpTimer" to="." method="_on_just_jump_timer_timeout"]

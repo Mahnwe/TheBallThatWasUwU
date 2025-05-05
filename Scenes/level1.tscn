@@ -127,7 +127,7 @@ position = Vector2(437, -643)
 scale = Vector2(0.579818, 0.616465)
 
 [node name="platform2" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-868, 365)
+position = Vector2(-867, 365)
 scale = Vector2(0.159997, 1.76)
 
 [node name="SavePoint2" parent="." instance=ExtResource("9_3dyia")]
@@ -163,7 +163,7 @@ scale = Vector2(1.12, 1)
 
 [node name="platform6" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(-613, 404)
-scale = Vector2(0.32, 1)
+scale = Vector2(0.32, 1.16)
 
 [node name="platform7" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(-267, 350)
@@ -459,7 +459,7 @@ position = Vector2(-2072, 511)
 scale = Vector2(0.160001, 0.16)
 
 [node name="platform26" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-1001, 555)
+position = Vector2(-1000, 555)
 scale = Vector2(0.16, 1)
 
 [node name="platform27" parent="." instance=ExtResource("7_v154u")]
@@ -698,7 +698,7 @@ texture = ExtResource("21_ocefe")
 [node name="TriggerLevelMusic" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerLevelMusic"]
-position = Vector2(-944.5, 579.5)
+position = Vector2(-943, 580)
 shape = SubResource("RectangleShape2D_bt6b5")
 
 [node name="Water" parent="." instance=ExtResource("26_0uo4e")]

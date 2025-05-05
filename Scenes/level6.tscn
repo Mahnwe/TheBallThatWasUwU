@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dll3pfso18mlo"]
+[gd_scene load_steps=50 format=3 uid="uid://dll3pfso18mlo"]
 
 [ext_resource type="Script" uid="uid://cngnw08xxshdu" path="res://Scripts/level_6.gd" id="1_enqk4"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_eguui"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://cbmjd018b3u8x" path="res://Arts/TubeSprite/GazBottle.png" id="28_dcbuv"]
 [ext_resource type="Texture2D" uid="uid://babjfc7nhmycj" path="res://Arts/TubeSprite/LightningCloset.png" id="29_enw33"]
 [ext_resource type="PackedScene" uid="uid://cb1ke3vkx62tx" path="res://Scenes/ventilation.tscn" id="30_omhh0"]
+[ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_g7lwf"]
+[ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_0v3qi"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkip3"]
 _data = {
@@ -1351,6 +1353,16 @@ scale = Vector2(0.649138, 0.93339)
 [node name="MetalPlatform36" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-6035, -992)
 scale = Vector2(0.455087, 0.731707)
+
+[node name="TripleSign" parent="." instance=ExtResource("31_g7lwf")]
+position = Vector2(-3549, 693)
+scale = Vector2(0.296139, 0.29559)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign"]
+position = Vector2(171.872, -106.25)
+rotation = 0.964394
+scale = Vector2(0.113332, 0.12655)
+texture = ExtResource("32_0v3qi")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

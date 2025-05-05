@@ -20,6 +20,8 @@ var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.is_level_1 = false
@@ -34,6 +36,7 @@ func _ready():
 	if config.get_value("Chests", "level_six_chest"):
 		$Chest.chest_already_picked()
 	set_volume()
+	translate_text()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -295,3 +298,12 @@ func pause_laser():
 func unpause_laser():
 	for member in get_tree().get_nodes_in_group("laser_group"):
 		member.is_paused = false
+		
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")
