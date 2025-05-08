@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #@export
-var speed = 380
+var speed = 400
 var wall_pushback = 500
 
 #@export
@@ -14,6 +14,7 @@ var wall_slide = gravity+70
 
 const VELOCITY_Y_MAX = 600
 var dash_speed = 800
+var horizontal_direction
 
 var just_jumped
 
@@ -104,7 +105,7 @@ func jump():
 		await $AnimatedSprite2D.animation_finished
 	
 func _dash():
-	var horizontal_direction = Input.get_axis("move_left","move_right")
+	horizontal_direction = Input.get_axis("move_left","move_right")
 	if can_dash and have_dash_ability and horizontal_direction != 0 and dash_cooldown_timer.time_left == 0:
 		$DashSound.play()
 		var number_of_dashes = stats_config.get_value("Stats", "dash_number")
@@ -211,7 +212,7 @@ func check_for_player_movement():
 	# Horizontal movements
 	# 	return -1 if left, +1 if right, 0 if both or neither
 	if !just_jumped:
-		var horizontal_direction = Input.get_axis("move_left","move_right")
+		horizontal_direction = Input.get_axis("move_left","move_right")
 		velocity.x = speed * horizontal_direction
 	move_and_slide()
 	if velocity.x < 0:
@@ -303,4 +304,18 @@ func _on_slide_dust_anim_right_animation_finished():
 
 
 func _on_just_jump_timer_timeout():
+	just_jumped = false
+	
+func player_hit_bumper(bumper_rotation):
+	$JustJumpTimer.start()
+	just_jumped = true
+	if bumper_rotation <= 1.00 and bumper_rotation >= -1.00:
+		velocity = Vector2(speed * horizontal_direction, jump_force-100)
+	elif bumper_rotation <= 46.00 and bumper_rotation >= 44.00:
+		velocity = Vector2(wall_pushback * 1.5, jump_force)
+	elif bumper_rotation >= -46.00 and bumper_rotation <= -44.00:
+		velocity = Vector2(wall_pushback * -1.5, jump_force)
+
+
+func _on_just_bump_timer_timeout():
 	just_jumped = false

@@ -218,3 +218,13 @@ func set_volume():
 		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
 		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+
+
+func _on_bumper_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper.get_rotation_degrees())
+
+func _on_bumper_2_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper2.get_rotation_degrees())
+
+func _on_bumper_3_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper3.get_rotation_degrees())
