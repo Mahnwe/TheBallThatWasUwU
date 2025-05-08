@@ -280,24 +280,22 @@ func _on_button_focus_entered():
 	$ButtonSound.play()
 	
 func change_bubble_message():
+	var translate_config = ConfigFile.new()
 	if properties_config.get_value("Languages", "is_english"):
-		bubble_message_reset = false
-		$BubbleTooltip.get_child(0).text = "This game is easier with a controller"
-		await get_tree().create_timer(5.0).timeout
-		$BubbleTooltip.get_child(0).text = "Levels with an icon above unlock abilities"
-		await get_tree().create_timer(5.0).timeout
-		$BubbleTooltip.get_child(0).text = "For smoother progression do levels in order"
-		await get_tree().create_timer(5.0).timeout
-		bubble_message_reset = true
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
-		bubble_message_reset = false
-		$BubbleTooltip.get_child(0).text = "Le jeu est plus facile avec une manette"
-		await get_tree().create_timer(5.0).timeout
-		$BubbleTooltip.get_child(0).text = "Les niveaux avec une icone débloquent des capacités"
-		await get_tree().create_timer(5.0).timeout
-		$BubbleTooltip.get_child(0).text = "Il est conseillé de faire les niveaux dans l'ordre"
-		await get_tree().create_timer(5.0).timeout
-		bubble_message_reset = true
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	bubble_message_reset = false
+	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FirstAdvice")
+	await get_tree().create_timer(5.0).timeout
+	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "SecondAdvice")
+	await get_tree().create_timer(5.0).timeout
+	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "ThirdAdvice")
+	await get_tree().create_timer(5.0).timeout
+	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FourthAdvice")
+	await get_tree().create_timer(5.0).timeout
+	bubble_message_reset = true
 		
 
 

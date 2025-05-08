@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvk6tkjkq8bkx"]
+
+[ext_resource type="Script" uid="uid://djneplonxahdr" path="res://Scripts/bumper.gd" id="1_3eik2"]
+[ext_resource type="Texture2D" uid="uid://pxpgytpc2lxc" path="res://Arts/BumperSprite/BumperSprite1.png" id="1_kx533"]
+[ext_resource type="Texture2D" uid="uid://bw4cta85m8xp4" path="res://Arts/BumperSprite/BumperSprite2.png" id="2_3eik2"]
+[ext_resource type="Texture2D" uid="uid://dhkjvs31hu0dt" path="res://Arts/BumperSprite/BumperSprite3.png" id="3_52k27"]
+[ext_resource type="Texture2D" uid="uid://ds0lctfqrq2jq" path="res://Arts/BumperSprite/BumperSprite4.png" id="4_fdc5w"]
+[ext_resource type="Texture2D" uid="uid://cw52mctrfleus" path="res://Arts/BumperSprite/BumperSprite5.png" id="5_qjlrq"]
+[ext_resource type="Texture2D" uid="uid://7q6ctteino3c" path="res://Arts/BumperSprite/BumperSprite6.png" id="6_it6au"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eik2"]
+height = 98.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eik2"]
+size = Vector2(96, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oujyj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kx533")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3eik2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_52k27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdc5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qjlrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_it6au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qjlrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdc5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_52k27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3eik2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kx533")
+}],
+"loop": false,
+"name": &"Bump",
+"speed": 25.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t2j8f"]
+radius = 11.0
+height = 98.0
+
+[node name="Bumper" type="AnimatableBody2D"]
+script = ExtResource("1_3eik2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3eik2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_3eik2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oujyj")
+animation = &"Bump"
+
+[node name="BumperTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BumperTrigger"]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t2j8f")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="BumperTrigger" to="." method="_on_bumper_trigger_body_entered"]
