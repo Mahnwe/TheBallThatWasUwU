@@ -153,6 +153,8 @@ func close_command_panel():
 	$ContinueLayer.visible = true
 	$CommandLayer.visible = true
 	$SoundLayer.visible = true
+	$CanvasLayer.visible = true
+	$CanvasLayer2.visible = true
 	$CommandsUI.hide()
 	is_commands_display = false
 	$ContinueLayer/Continue.grab_focus()
@@ -162,6 +164,8 @@ func open_commands_panel():
 	$ContinueLayer.visible = false
 	$CommandLayer.visible = false
 	$SoundLayer.visible = false
+	$CanvasLayer.visible = false
+	$CanvasLayer2.visible = false
 	for member in get_tree().get_nodes_in_group("pause_buttons"):
 			member.release_focus()
 	$CommandsUI.show()
@@ -216,7 +220,7 @@ func focus_close_command_button():
 	$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
 	
 func set_current_timer_when_paused(player_timer):
-	$Sprite2D/Label.text = _format_seconds(player_timer)
+	$CanvasLayer/PlayerTimerCloud/Label.text = _format_seconds(player_timer)
 	
 func set_sliders_value_with_config():
 	$SoundLayer/MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")

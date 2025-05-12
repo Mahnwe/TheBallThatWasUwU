@@ -32,20 +32,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8cftm")
 
-[node name="FinishNextLevelButton" type="Button" parent="." groups=["finish_button"]]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FinishNextLevelButton" type="Button" parent="CanvasLayer" groups=["finish_button"]]
 z_index = 2
-layout_mode = 0
-offset_left = 358.0
-offset_top = 197.0
-offset_right = 519.0
-offset_bottom = 293.0
-scale = Vector2(3.80579, 2.08)
-focus_neighbor_left = NodePath("../FinishMenuButton")
-focus_neighbor_top = NodePath("../FinishMenuButton")
-focus_neighbor_right = NodePath("../FinishMenuButton")
-focus_neighbor_bottom = NodePath("../FinishMenuButton")
-focus_next = NodePath("../FinishMenuButton")
-focus_previous = NodePath("../FinishMenuButton")
+offset_left = 1212.0
+offset_top = 664.0
+offset_right = 1373.0
+offset_bottom = 760.0
+scale = Vector2(2.98667, 1.69947)
+focus_neighbor_left = NodePath("../../CanvasLayer2/FinishMenuButton")
+focus_neighbor_top = NodePath("../../CanvasLayer2/FinishMenuButton")
+focus_neighbor_right = NodePath("../../CanvasLayer2/FinishMenuButton")
+focus_neighbor_bottom = NodePath("../../CanvasLayer2/FinishMenuButton")
+focus_next = NodePath("../../CanvasLayer2/FinishMenuButton")
+focus_previous = NodePath("../../CanvasLayer2/FinishMenuButton")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -56,49 +57,50 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Next level"
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
 position = Vector2(20.5851, 164.145)
 scale = Vector2(0.0811181, 0.177951)
 texture = ExtResource("2_fgywl")
 
-[node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
 position = Vector2(334.109, 0)
 texture = ExtResource("3_yfqki")
 
-[node name="Sprite2D2" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
 position = Vector2(783.885, 21.6128)
 scale = Vector2(3.70815, 4.31446)
 texture = ExtResource("4_6ltl3")
 
-[node name="Sprite2D" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D/Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D/Sprite2D2"]
 position = Vector2(100.518, 0.490944)
 scale = Vector2(0.743998, 0.784597)
 texture = ExtResource("5_nugpk")
 
-[node name="Sprite2D2" type="Sprite2D" parent="FinishNextLevelButton/Sprite2D/Sprite2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D/Sprite2D2"]
 position = Vector2(215.771, 0)
 texture = ExtResource("6_uhy2h")
 
-[node name="Sprite2D3" type="Sprite2D" parent="FinishNextLevelButton"]
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
 z_index = -1
 position = Vector2(81.7179, 54.63)
 scale = Vector2(1.49133, 2.67751)
 texture = ExtResource("7_qv8jw")
 
-[node name="FinishMenuButton" type="Button" parent="." groups=["finish_button"]]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="FinishMenuButton" type="Button" parent="CanvasLayer2" groups=["finish_button"]]
 z_index = 2
-layout_mode = 0
-offset_left = -997.0
-offset_top = 197.0
-offset_right = -836.0
-offset_bottom = 293.0
-scale = Vector2(3.96, 2.24)
-focus_neighbor_left = NodePath("../FinishNextLevelButton")
-focus_neighbor_top = NodePath("../FinishNextLevelButton")
-focus_neighbor_right = NodePath("../FinishNextLevelButton")
-focus_neighbor_bottom = NodePath("../FinishNextLevelButton")
-focus_next = NodePath("../FinishNextLevelButton")
-focus_previous = NodePath("../FinishNextLevelButton")
+offset_left = 165.0
+offset_top = 656.0
+offset_right = 326.0
+offset_bottom = 752.0
+scale = Vector2(3.10769, 1.8302)
+focus_neighbor_left = NodePath("../../CanvasLayer/FinishNextLevelButton")
+focus_neighbor_top = NodePath("../../CanvasLayer/FinishNextLevelButton")
+focus_neighbor_right = NodePath("../../CanvasLayer/FinishNextLevelButton")
+focus_neighbor_bottom = NodePath("../../CanvasLayer/FinishNextLevelButton")
+focus_next = NodePath("../../CanvasLayer/FinishNextLevelButton")
+focus_previous = NodePath("../../CanvasLayer/FinishNextLevelButton")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -110,25 +112,25 @@ text = "Return to menu
 "
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="FinishMenuButton"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
 position = Vector2(25.2875, 146.916)
 scale = Vector2(0.0393632, 0.0713727)
 texture = ExtResource("7_m8y2d")
 
-[node name="Sprite2D2" type="Sprite2D" parent="FinishMenuButton/Sprite2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D"]
 position = Vector2(814.738, -37.5349)
 scale = Vector2(7.24169, 5.6773)
 texture = ExtResource("8_iicse")
 
-[node name="Sprite2D" type="Sprite2D" parent="FinishMenuButton/Sprite2D/Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D/Sprite2D2"]
 position = Vector2(119.969, -0.0991861)
 texture = ExtResource("9_j43j2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="FinishMenuButton/Sprite2D/Sprite2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D/Sprite2D2"]
 position = Vector2(242.752, -0.0991861)
 texture = ExtResource("10_a00tp")
 
-[node name="Sprite2D3" type="Sprite2D" parent="FinishMenuButton"]
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
 z_index = -1
 position = Vector2(78.0303, 49.0587)
 scale = Vector2(1.38039, 2.30391)
@@ -147,44 +149,44 @@ offset_bottom = 2794.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TimerCloud" type="Sprite2D" parent="."]
-position = Vector2(-7.67892, -320.399)
-scale = Vector2(4.78812, 5.46317)
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="TimerCloud" type="Sprite2D" parent="CanvasLayer3"]
+position = Vector2(959.061, 228.621)
+scale = Vector2(3.75757, 4.4637)
 texture = ExtResource("7_qv8jw")
 
-[node name="TimerPresentation" type="Label" parent="."]
-layout_mode = 0
-offset_left = -207.0
-offset_top = -466.0
-offset_right = 188.0
-offset_bottom = -363.0
-scale = Vector2(0.937357, 0.965585)
+[node name="TimerPresentation" type="Label" parent="CanvasLayer3"]
+offset_left = 814.0
+offset_top = 115.0
+offset_right = 1209.0
+offset_bottom = 218.0
+scale = Vector2(0.73561, 0.788935)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 text = "Your time :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimeLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = -162.0
-offset_top = -337.0
-offset_right = -122.0
-offset_bottom = -234.0
-scale = Vector2(0.937357, 0.965585)
+[node name="TimeLabel" type="Label" parent="CanvasLayer3"]
+offset_left = 818.0
+offset_top = 212.0
+offset_right = 858.0
+offset_bottom = 315.0
+scale = Vector2(0.73561, 0.788935)
 theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("11_p5o4v")
 
-[connection signal="focus_entered" from="FinishNextLevelButton" to="." method="_on_button_focus_entered"]
-[connection signal="gui_input" from="FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]
-[connection signal="mouse_entered" from="FinishNextLevelButton" to="." method="_on_finish_next_level_button_mouse_entered"]
-[connection signal="mouse_exited" from="FinishNextLevelButton" to="." method="_on_next_level_mouse_exited"]
-[connection signal="pressed" from="FinishNextLevelButton" to="." method="_on_next_level_pressed"]
-[connection signal="focus_entered" from="FinishMenuButton" to="." method="_on_button_focus_entered"]
-[connection signal="gui_input" from="FinishMenuButton" to="." method="_on_finish_menu_button_gui_input"]
-[connection signal="mouse_entered" from="FinishMenuButton" to="." method="_on_finish_menu_button_mouse_entered"]
-[connection signal="mouse_exited" from="FinishMenuButton" to="." method="_on_menu_mouse_exited"]
-[connection signal="pressed" from="FinishMenuButton" to="." method="_on_menu_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_next_level_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_next_level_pressed"]
+[connection signal="focus_entered" from="CanvasLayer2/FinishMenuButton" to="." method="_on_button_focus_entered"]
+[connection signal="gui_input" from="CanvasLayer2/FinishMenuButton" to="." method="_on_finish_menu_button_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer2/FinishMenuButton" to="." method="_on_finish_menu_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/FinishMenuButton" to="." method="_on_menu_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/FinishMenuButton" to="." method="_on_menu_pressed"]

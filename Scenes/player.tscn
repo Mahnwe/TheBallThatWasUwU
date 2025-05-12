@@ -345,8 +345,8 @@ position_smoothing_enabled = true
 z_index = 0
 offset_left = 315.0
 offset_top = 441.0
-offset_right = 315.0
-offset_bottom = 441.0
+offset_right = -1605.0
+offset_bottom = -639.0
 
 [node name="Commands" type="Label" parent="Camera2D/CanvasLayer"]
 offset_left = 1755.0

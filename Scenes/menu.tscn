@@ -69,8 +69,8 @@ script = ExtResource("1_ltdc4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(962, 546.5)
-scale = Vector2(1, 1.00648)
+position = Vector2(969.25, 543)
+scale = Vector2(1.03047, 1.02963)
 texture = ExtResource("2_p71ma")
 
 [node name="MenuTitle" type="Label" parent="."]
@@ -402,16 +402,16 @@ position = Vector2(727, 772)
 scale = Vector2(0.240764, 0.701423)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1813, 101)
+position = Vector2(1832, 96)
 scale = Vector2(0.435, 0.415)
 texture = ExtResource("11_p1e1o")
 
 [node name="QuitButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 1752.0
-offset_top = 38.0
-offset_right = 2767.0
-offset_bottom = 753.0
+offset_left = 1771.0
+offset_top = 33.0
+offset_right = 2786.0
+offset_bottom = 748.0
 scale = Vector2(0.12, 0.16)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
@@ -442,10 +442,10 @@ stream = ExtResource("13_owrtn")
 
 [node name="MusicLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 139.0
-offset_top = 51.0
-offset_right = 238.0
-offset_bottom = 93.0
+offset_left = 127.0
+offset_top = 39.0
+offset_right = 226.0
+offset_bottom = 81.0
 scale = Vector2(0.968542, 0.955579)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -455,10 +455,10 @@ vertical_alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 89.0
-offset_right = 331.0
-offset_bottom = 124.0
+offset_left = 69.0
+offset_top = 77.0
+offset_right = 319.0
+offset_bottom = 112.0
 scale = Vector2(0.968542, 1.37603)
 focus_neighbor_left = NodePath("../MusicMuteButton")
 focus_neighbor_top = NodePath("../EffectSlider")
@@ -472,10 +472,10 @@ max_value = 5.0
 
 [node name="EffectLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 103.0
-offset_top = 135.0
-offset_right = 300.0
-offset_bottom = 177.0
+offset_left = 91.0
+offset_top = 123.0
+offset_right = 288.0
+offset_bottom = 165.0
 scale = Vector2(0.949514, 0.903602)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -485,10 +485,10 @@ vertical_alignment = 1
 
 [node name="EffectSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 174.0
-offset_right = 333.0
-offset_bottom = 209.0
+offset_left = 71.0
+offset_top = 162.0
+offset_right = 321.0
+offset_bottom = 197.0
 scale = Vector2(0.949514, 1.30119)
 focus_neighbor_left = NodePath("../SoundMuteButton")
 focus_neighbor_top = NodePath("../MusicSlider")
@@ -531,10 +531,10 @@ texture = ExtResource("17_ukqqs")
 
 [node name="MusicMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 94.0
-offset_right = 85.0
-offset_bottom = 142.0
+offset_left = 25.0
+offset_top = 82.0
+offset_right = 73.0
+offset_bottom = 130.0
 scale = Vector2(0.753219, 0.79469)
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
@@ -542,10 +542,10 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 
 [node name="SoundMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 179.0
-offset_right = 88.0
-offset_bottom = 227.0
+offset_left = 28.0
+offset_top = 167.0
+offset_right = 76.0
+offset_bottom = 215.0
 scale = Vector2(0.738421, 0.751464)
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
@@ -553,9 +553,9 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 
 [node name="StatsButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 1702.0
+offset_left = 1735.0
 offset_top = 533.0
-offset_right = 1846.0
+offset_right = 1879.0
 offset_bottom = 599.0
 focus_neighbor_left = NodePath("../Level3Button")
 focus_neighbor_top = NodePath("../QuitButton")

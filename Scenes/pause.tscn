@@ -312,13 +312,15 @@ focus_neighbor_bottom = NodePath("../MusicMuteButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerTimerCloud" type="Sprite2D" parent="CanvasLayer"]
 z_index = 2
-position = Vector2(1467, 342)
-scale = Vector2(2.0304, 2.44079)
+position = Vector2(1459, 262)
+scale = Vector2(2.0304, 2.32079)
 texture = ExtResource("2_h85by")
 
-[node name="Label" type="Label" parent="Sprite2D"]
+[node name="Label" type="Label" parent="CanvasLayer/PlayerTimerCloud"]
 offset_left = -59.594
 offset_top = -24.1725
 offset_right = -19.594
@@ -327,19 +329,20 @@ scale = Vector2(0.87275, 0.931522)
 theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 
-[node name="Label" type="Label" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseLabel" type="Label" parent="CanvasLayer2"]
 z_index = 2
-layout_mode = 0
-offset_left = 779.0
+offset_left = 769.0
 offset_top = 128.0
-offset_right = 1248.0
+offset_right = 1238.0
 offset_bottom = 333.0
-scale = Vector2(0.725781, 0.940311)
+scale = Vector2(0.725781, 0.821826)
 theme_override_colors/font_color = Color(0.725349, 0, 0.0495564, 1)
 theme_override_font_sizes/font_size = 150
 text = "PAUSE"
 
-[node name="Sprite2D" type="Sprite2D" parent="Label"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/PauseLabel"]
 z_index = -1
 position = Vector2(231.919, 117.239)
 scale = Vector2(4.08481, 4.24646)

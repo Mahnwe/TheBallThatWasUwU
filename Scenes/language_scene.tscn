@@ -15,36 +15,40 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.85098, 0, 0, 1)
 
-[node name="LanguageScene" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="LanguageScene" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s0hyc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(957, 543)
-scale = Vector2(1, 1.00648)
+[node name="Sprite2D" type="Sprite2D" parent="LanguageScene"]
+position = Vector2(985.5, 540.5)
+scale = Vector2(1.0474, 1.02685)
 texture = ExtResource("3_mcjyt")
 
-[node name="FrFlag" type="Sprite2D" parent="."]
+[node name="FrFlag" type="Sprite2D" parent="LanguageScene"]
 position = Vector2(627, 687)
 scale = Vector2(1.98667, 1.91111)
 texture = ExtResource("3_iktbb")
 
-[node name="EnFlag" type="Sprite2D" parent="."]
+[node name="EnFlag" type="Sprite2D" parent="LanguageScene"]
 position = Vector2(1326, 687)
 scale = Vector2(0.198333, 0.229333)
 texture = ExtResource("4_mcjyt")
 
-[node name="Cloud" type="Sprite2D" parent="."]
+[node name="Cloud" type="Sprite2D" parent="LanguageScene"]
 position = Vector2(956, 406)
 scale = Vector2(2.69257, 2.8421)
 texture = ExtResource("5_sih3h")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="LanguageScene"]
 layout_mode = 0
 offset_left = 813.0
 offset_top = 355.0
@@ -54,7 +58,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
 text = "Languages"
 
-[node name="FrButton" type="Button" parent="." groups=["language_buttons"]]
+[node name="FrButton" type="Button" parent="LanguageScene" groups=["language_buttons"]]
 layout_mode = 0
 offset_left = 473.0
 offset_top = 598.0
@@ -69,7 +73,7 @@ focus_previous = NodePath("../EnButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_iktbb")
 flat = true
 
-[node name="EnButton" type="Button" parent="." groups=["language_buttons"]]
+[node name="EnButton" type="Button" parent="LanguageScene" groups=["language_buttons"]]
 layout_mode = 0
 offset_left = 1172.0
 offset_top = 598.0
@@ -84,11 +88,11 @@ focus_previous = NodePath("../FrButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_iktbb")
 flat = true
 
-[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+[node name="ButtonSound" type="AudioStreamPlayer" parent="LanguageScene"]
 stream = ExtResource("7_iktbb")
 volume_db = -10.852
 
-[connection signal="focus_entered" from="FrButton" to="." method="_on_fr_button_focus_entered"]
-[connection signal="pressed" from="FrButton" to="." method="_on_fr_button_pressed"]
-[connection signal="focus_entered" from="EnButton" to="." method="_on_en_button_focus_entered"]
-[connection signal="pressed" from="EnButton" to="." method="_on_en_button_pressed"]
+[connection signal="focus_entered" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_focus_entered"]
+[connection signal="pressed" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_pressed"]
+[connection signal="focus_entered" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_focus_entered"]
+[connection signal="pressed" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_pressed"]

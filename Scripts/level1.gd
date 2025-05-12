@@ -44,6 +44,10 @@ func _ready():
 	$Player/Pause.get_child(2).hide()
 	$Player/Pause.get_child(3).hide()
 	$Player/Pause.get_child(4).hide()
+	$Player/Pause.get_child(5).hide()
+	$Finish/FinishUI.get_child(0).hide()
+	$Finish/FinishUI.get_child(1).hide()
+	$Finish/FinishUI.get_child(3).hide()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
@@ -130,7 +134,10 @@ func _on_finish_player_entered():
 	await get_tree().create_timer(1.0).timeout
 	$Finish/FinishUI.is_UI_showing = true
 	$Finish/FinishUI.show()
-	$Finish/FinishUI.get_child(0).grab_focus()
+	$Finish/FinishUI.get_child(0).show()
+	$Finish/FinishUI.get_child(1).show()
+	$Finish/FinishUI.get_child(3).show()
+	$Finish/FinishUI.get_child(0).get_child(0).grab_focus()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
 	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
@@ -180,6 +187,7 @@ func _on_pause_continue_is_clicked():
 		$Player/Pause.get_child(2).hide()
 		$Player/Pause.get_child(3).hide()
 		$Player/Pause.get_child(4).hide()
+		$Player/Pause.get_child(5).hide()
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 		$Player.set_physics_process(true)
@@ -210,6 +218,7 @@ func toggle_pause():
 	$Player/Pause.get_child(2).show()
 	$Player/Pause.get_child(3).show()
 	$Player/Pause.get_child(4).show()
+	$Player/Pause.get_child(5).show()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
 	$Level1Music.stream_paused = true
 	$DeadWayMusic.stream_paused = true
@@ -230,6 +239,7 @@ func untoggle_pause():
 	$Player/Pause.get_child(2).hide()
 	$Player/Pause.get_child(3).hide()
 	$Player/Pause.get_child(4).hide()
+	$Player/Pause.get_child(5).hide()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	$PauseMusic.stop()
 	$Level1Music.stream_paused = false

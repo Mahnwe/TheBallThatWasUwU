@@ -16,6 +16,7 @@ func _ready():
 	translate_text()
 	is_controller_focused = false
 	is_UI_showing = false
+	self.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -45,7 +46,7 @@ func _on_button_focus_entered():
 
 
 func _on_next_level_mouse_exited():
-	$FinishNextLevelButton.release_focus()
+	$CanvasLayer/FinishNextLevelButton.release_focus()
 	is_controller_focused = false
 
 
@@ -54,7 +55,7 @@ func _on_menu_pressed():
 
 
 func _on_menu_mouse_exited():
-	$FinishMenuButton.release_focus()
+	$CanvasLayer2/FinishMenuButton.release_focus()
 	is_controller_focused = false
 	
 func display_tooltip_when_button_focus():
@@ -67,29 +68,29 @@ func display_tooltip_when_button_focus():
 
 
 func _on_finish_next_level_button_gui_input(event):
-	if $FinishNextLevelButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $CanvasLayer/FinishNextLevelButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_up"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$FinishMenuButton.grab_focus()
+			$CanvasLayer2/FinishMenuButton.grab_focus()
 		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$FinishMenuButton.grab_focus()
+			$CanvasLayer2/FinishMenuButton.grab_focus()
 
 
 func _on_finish_menu_button_gui_input(event):
-	if $FinishMenuButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
+	if $CanvasLayer2/FinishMenuButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
 		if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_up"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$FinishNextLevelButton.grab_focus()
+			$CanvasLayer/FinishNextLevelButton.grab_focus()
 		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$FinishNextLevelButton.grab_focus()
+			$CanvasLayer/FinishNextLevelButton.grab_focus()
 			
 			
 func _setup_timer_label_display(player_timer):
-	$TimeLabel.text = _format_seconds(player_timer)
+	$CanvasLayer3/TimeLabel.text = _format_seconds(player_timer)
 	
 func _format_seconds(time : float) -> String:
 	var minutes := time / 60
@@ -100,12 +101,12 @@ func _format_seconds(time : float) -> String:
 
 
 func _on_finish_next_level_button_mouse_entered():
-	$FinishNextLevelButton.grab_focus()
+	$CanvasLayer/FinishNextLevelButton.grab_focus()
 	is_controller_focused = true
 
 
 func _on_finish_menu_button_mouse_entered():
-	$FinishMenuButton.grab_focus()
+	$CanvasLayer2/FinishMenuButton.grab_focus()
 	is_controller_focused = true
 	
 func translate_text():
@@ -116,9 +117,9 @@ func translate_text():
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 		change_font_size()
 		
-	$TimerPresentation.text = translate_config.get_value("TranslationFinish", "PlayerTimer")
-	$FinishNextLevelButton.text = translate_config.get_value("TranslationFinish", "NextLevelButton")
-	$FinishMenuButton.text = translate_config.get_value("TranslationFinish", "ReturnButton")
+	$CanvasLayer3/TimerPresentation.text = translate_config.get_value("TranslationFinish", "PlayerTimer")
+	$CanvasLayer/FinishNextLevelButton.text = translate_config.get_value("TranslationFinish", "NextLevelButton")
+	$CanvasLayer2/FinishMenuButton.text = translate_config.get_value("TranslationFinish", "ReturnButton")
 	
 func change_font_size():
-	$TimerPresentation.add_theme_font_size_override("font_size", 70)
+	$CanvasLayer3/TimerPresentation.add_theme_font_size_override("font_size", 70)
