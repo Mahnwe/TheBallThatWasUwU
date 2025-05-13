@@ -232,15 +232,19 @@ func check_animation_if_on_wall():
 		can_dash = true
 		velocity.y = 0
 		velocity.y = wall_slide
-		$AnimatedSprite2D.animation = "stay_in_air"
+		$AnimatedSprite2D.animation = "slide"
 		if !is_on_floor():
 			var wall_normal = get_wall_normal()
 			var left_wall_vector = Vector2(1.0, 0.0)
 			if wall_normal == left_wall_vector:
+				$AnimatedSprite2D.flip_h = false
+				$AnimatedSprite2D.animation = "slide"
 				$SlideDustAnimLeft.animation = "SlideDust"
 				$SlideDustAnimLeft.show()
 				$SlideDustAnimLeft.play()
 			else:
+				$AnimatedSprite2D.flip_h = true
+				$AnimatedSprite2D.animation = "slide"
 				$SlideDustAnimRight.animation = "SlideDust"
 				$SlideDustAnimRight.show()
 				$SlideDustAnimRight.play()

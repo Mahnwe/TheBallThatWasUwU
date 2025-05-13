@@ -549,7 +549,7 @@ position = Vector2(-2091, 239)
 rotation = -1.5708
 
 [node name="CoralSpike8" parent="." instance=ExtResource("16_r1un4")]
-position = Vector2(-2368, 359)
+position = Vector2(-2368, 328)
 rotation = 1.5708
 
 [node name="WaterPlatform15" parent="." instance=ExtResource("15_3nnrj")]

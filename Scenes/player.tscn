@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=65 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://cu47fvabu26sp" path="res://Sound/Effects/JumpSound.mp3" id="25_wcpjr"]
 [ext_resource type="Texture2D" uid="uid://dlnqow1yj3b82" path="res://Arts/UwUBallSpriteWalk/UwUWalk11.png" id="26_fc3du"]
 [ext_resource type="AudioStream" uid="uid://b4w82e2ntorl" path="res://Sound/Effects/JUMP.mp3" id="26_kudgl"]
+[ext_resource type="Texture2D" uid="uid://cdwuf0oaeiges" path="res://Arts/UwUBallSlideSprite/UwUSlide.png" id="27_6b312"]
 [ext_resource type="Texture2D" uid="uid://b8w8cwbeotfcv" path="res://Arts/UwUBallSpriteWalk/UwUWalk12.png" id="27_nlbjv"]
 [ext_resource type="AudioStream" uid="uid://bcn815ajnley0" path="res://Sound/Effects/DASH.mp3" id="27_qyjky"]
 [ext_resource type="Texture2D" uid="uid://cpskpjjabtm8j" path="res://Arts/UwUBallSpriteWalk/UwUWalk14.png" id="28_f48j5"]
@@ -139,6 +140,14 @@ animations = [{
 "loop": false,
 "name": &"jump",
 "speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_6b312")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -260,7 +269,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"JumpDust",
-"speed": 20.0
+"speed": 60.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nuaet"]
@@ -393,7 +402,7 @@ visibility_layer = 2
 position = Vector2(212.5, 232)
 scale = Vector2(1.14, 2.2)
 sprite_frames = SubResource("SpriteFrames_b2da6")
-animation = &"idle"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2

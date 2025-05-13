@@ -409,9 +409,9 @@ texture = ExtResource("12_q8la5")
 flip_v = true
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(-79.9106, 617.233)
+position = Vector2(-79.9106, 630.41)
 rotation = -1.5708
-scale = Vector2(3.09092, 0.499999)
+scale = Vector2(3.29681, 0.499999)
 texture = ExtResource("12_q8la5")
 flip_v = true
 
@@ -440,23 +440,29 @@ texture = ExtResource("12_q8la5")
 flip_v = true
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D6"]
-position = Vector2(-83.1754, -448.678)
+position = Vector2(-83.1754, -457.307)
 rotation = -1.5708
-scale = Vector2(2.18414, 0.597657)
+scale = Vector2(2.31897, 0.597657)
 texture = ExtResource("12_q8la5")
 flip_v = true
 
 [node name="Sprite2D11" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-3673, -1011)
+position = Vector2(-4293, -1197)
 scale = Vector2(3.60024, 1.18818)
 texture = ExtResource("12_q8la5")
 flip_v = true
 
+[node name="Sprite2D28" type="Sprite2D" parent="."]
+position = Vector2(-3480, -1009)
+rotation = -1.5708
+scale = Vector2(0.271416, -0.771959)
+texture = ExtResource("10_k6lm4")
+
 [node name="PipeMiddle4" parent="." instance=ExtResource("12_gh5wq")]
-position = Vector2(-3481, -1238)
+position = Vector2(-3481, -1223)
 rotation = 1.5708
-scale = Vector2(3.40001, 1)
+scale = Vector2(3.56, 1.09201)
 
 [node name="PipeCorner4" parent="." instance=ExtResource("11_25f8e")]
 position = Vector2(-3448, -1453)
@@ -478,8 +484,9 @@ position = Vector2(-1739, -318)
 scale = Vector2(1.81699, 2.03676)
 
 [node name="Acid2" parent="." instance=ExtResource("13_tw4yl")]
-position = Vector2(-3000.83, -617.58)
-scale = Vector2(4.69172, 1.2458)
+z_index = 2
+position = Vector2(-3017.33, -617.58)
+scale = Vector2(4.85671, 1.2458)
 
 [node name="MetalPlatform9" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-2763, -330)
@@ -495,8 +502,8 @@ position = Vector2(-1009.55, 1.37427e-05)
 position = Vector2(-1374.55, 1.37427e-05)
 
 [node name="MetalPlatform10" parent="." instance=ExtResource("4_achdq")]
-position = Vector2(-3646, -617)
-scale = Vector2(1, 2.48)
+position = Vector2(-3670, -617)
+scale = Vector2(0.92, 2.48)
 
 [node name="Path2D3" type="Path2D" parent="."]
 curve = SubResource("Curve2D_gh5wq")
@@ -565,8 +572,9 @@ scale = Vector2(1.2175, 1.40276)
 speed = 230
 
 [node name="Acid3" parent="." instance=ExtResource("13_tw4yl")]
-position = Vector2(-4298, -620)
-scale = Vector2(4.69172, 1.2458)
+z_index = 2
+position = Vector2(-4301.09, -620)
+scale = Vector2(4.66086, 1.2458)
 
 [node name="MetalPlatform11" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-5018, -543)
@@ -591,10 +599,16 @@ scale = Vector2(0.788286, 0.442375)
 position = Vector2(676.307, -179.708)
 scale = Vector2(0.761955, 0.439612)
 
+[node name="Sprite2D27" type="Sprite2D" parent="."]
+position = Vector2(-3871, -1008)
+rotation = -1.57079
+scale = Vector2(0.271416, -0.771959)
+texture = ExtResource("10_k6lm4")
+
 [node name="PipeMiddle6" parent="." instance=ExtResource("12_gh5wq")]
-position = Vector2(-3870, -1237)
+position = Vector2(-3870, -1234)
 rotation = 1.5708
-scale = Vector2(3.28, 1.09201)
+scale = Vector2(3.75999, 1.09201)
 flip_v_setup = true
 
 [node name="PipeCornerInvert" parent="." instance=ExtResource("20_h7yc4")]
