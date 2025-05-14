@@ -36,6 +36,7 @@ func _ready():
 	if config.get_value("Chests", "level_three_chest"):
 		$Chest.chest_already_picked()
 	set_volume()
+	translate_text()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -126,7 +127,6 @@ func _on_start_area_player_exited_start_area():
 
 func _on_ability_player_entered():
 	$Player.can_double_jump = true
-	translate_text()
 
 
 func _on_save_point_player_entered():
@@ -310,3 +310,4 @@ func translate_text():
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 	$Ability.get_child(0).get_child(0).text = translate_config.get_value("TranslationAbility", "JumpAbility")
+	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")

@@ -446,13 +446,6 @@ scale = Vector2(2.31897, 0.597657)
 texture = ExtResource("12_q8la5")
 flip_v = true
 
-[node name="Sprite2D11" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(-4293, -1197)
-scale = Vector2(3.60024, 1.18818)
-texture = ExtResource("12_q8la5")
-flip_v = true
-
 [node name="Sprite2D28" type="Sprite2D" parent="."]
 position = Vector2(-3480, -1009)
 rotation = -1.5708
@@ -1376,6 +1369,15 @@ scale = Vector2(0.296139, 0.29559)
 position = Vector2(171.872, -106.25)
 rotation = 0.964394
 scale = Vector2(0.113332, 0.12655)
+texture = ExtResource("32_0v3qi")
+
+[node name="TripleSign2" parent="." instance=ExtResource("31_g7lwf")]
+position = Vector2(-3686, -906)
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign2"]
+position = Vector2(177.5, -107.5)
+scale = Vector2(0.106972, 0.118572)
 texture = ExtResource("32_0v3qi")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

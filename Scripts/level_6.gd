@@ -317,3 +317,4 @@ func translate_text():
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 		
 	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")
+	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")

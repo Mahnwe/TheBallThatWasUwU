@@ -36,6 +36,7 @@ func _ready():
 	if config.get_value("Chests", "level_two_chest"):
 		$Chest.chest_already_picked()
 	set_volume()
+	translate_text()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -161,7 +162,6 @@ func enable_patrol_groups():
 func _on_ability_player_entered():
 	$Player/Pause.get_child(6).player_have_dash = true
 	$Player.have_dash_ability = true
-	translate_text()
 
 
 func _on_save_point_player_entered():
