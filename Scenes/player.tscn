@@ -269,7 +269,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"JumpDust",
-"speed": 60.0
+"speed": 40.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nuaet"]
@@ -469,7 +469,7 @@ animation = &"SlideDust"
 flip_h = true
 
 [node name="JustJumpTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.17
 one_shot = true
 
 [node name="JustBumpTimer" type="Timer" parent="."]

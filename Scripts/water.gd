@@ -20,6 +20,7 @@ func _on_area_2d_body_entered(body):
 		body.velocity.y = body.velocity.y/2
 		body.gravity = 5
 		body.jump_force = -250
+		body.wall_pushback = 300
 		body.dash_speed = 400
 		body.z_index = 0
 
@@ -28,8 +29,9 @@ func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		body.is_in_water = false
 		self.self_modulate.a = 1.0
-		body.speed = 300
+		body.speed = 400
 		body.gravity = 30
-		body.jump_force = -670
+		body.jump_force = -690
+		body.wall_pushback = 500
 		body.dash_speed = 800
 		body.z_index = 2

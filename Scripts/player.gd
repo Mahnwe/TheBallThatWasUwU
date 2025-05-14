@@ -8,7 +8,7 @@ var wall_pushback = 500
 var gravity = 30
 
 #@export
-var jump_force = -680
+var jump_force = -690
 
 var wall_slide = gravity+70
 
@@ -66,9 +66,7 @@ func _physics_process(_delta):
 	check_if_player_is_on_wall()
 	if Input.is_action_just_pressed("dash"):
 		_dash()
-	if !is_on_floor() and Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps >= 1:
-		player_try_buffer_jump = true
-		get_tree().create_timer(0.1).timeout.connect(_on_jump_buffer_timer_timeout)
+	move_and_slide()
 		
 		
 func jump():
@@ -82,7 +80,7 @@ func jump():
 	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 	velocity.y = jump_force
-	just_jumped = true
+	#just_jumped = true
 	$JustJumpTimer.start()
 	number_of_jumps += 1
 	if velocity.x < 0:
@@ -117,7 +115,6 @@ func _dash():
 			$Raycast.scale.x = 1
 			speed = dash_speed
 			velocity.x += speed
-			move_and_slide()
 			can_dash = false
 			$DashDurationTimer.start()
 			$AnimatedSprite2D.play()
@@ -129,7 +126,6 @@ func _dash():
 			$Raycast.scale.x = -1
 			speed = dash_speed
 			velocity.x -= speed
-			move_and_slide()
 			can_dash = false
 			$DashDurationTimer.start()
 			$AnimatedSprite2D.play()
@@ -138,12 +134,15 @@ func _dash():
 	
 	
 func check_if_player_is_not_on_floor():
-	if !is_on_floor():
+	if !is_on_floor() and !is_on_wall():
 		is_grounded = false
 		if Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps < 1:
 			jump()
 		if Input.is_action_just_pressed("jump") and can_double_jump and number_of_jumps <= 1:
 			jump()
+		if Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps >= 1:
+			player_try_buffer_jump = true
+			get_tree().create_timer(0.1).timeout.connect(_on_jump_buffer_timer_timeout)
 		velocity.y += gravity
 		await $AnimatedSprite2D.animation_finished
 		if velocity.x < 0:
@@ -186,9 +185,10 @@ func check_if_player_is_on_floor():
 		jump()
 		
 func _input(event):
-	if event.is_action_released("jump"):
-		if velocity.y < 0.0:
-			velocity.y *= 0.6
+	var is_jump_interrupted = event.is_action_released("jump") and velocity.y < 0.0
+	if is_jump_interrupted:
+		# Decrease the Y velocity by multiplying it, but don't set it to 0
+		velocity.y *= 0.6
 			
 func check_if_player_is_on_wall():
 	# Wall-jump
@@ -203,7 +203,6 @@ func check_if_player_is_on_wall():
 		velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
 		just_jumped = true
 		$JustJumpTimer.start()
-		move_and_slide()
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
@@ -214,7 +213,6 @@ func check_for_player_movement():
 	if !just_jumped:
 		horizontal_direction = Input.get_axis("move_left","move_right")
 		velocity.x = speed * horizontal_direction
-	move_and_slide()
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 		$Raycast.scale.x = -1
@@ -224,7 +222,7 @@ func check_for_player_movement():
 	
 			
 func check_animation_if_on_wall():
-	if colliding_wall():
+	if colliding_wall() and !just_jumped:
 		if !is_sliding and $WallSlideTimer.time_left == 0.0:
 			$WallSlideTimer.start()
 			wall_slide = gravity+70
@@ -233,19 +231,21 @@ func check_animation_if_on_wall():
 		velocity.y = 0
 		velocity.y = wall_slide
 		$AnimatedSprite2D.animation = "slide"
-		if !is_on_floor():
+		if !is_on_floor() and is_on_wall():
 			var wall_normal = get_wall_normal()
 			var left_wall_vector = Vector2(1.0, 0.0)
 			if wall_normal == left_wall_vector:
 				$AnimatedSprite2D.flip_h = false
 				$AnimatedSprite2D.animation = "slide"
 				$SlideDustAnimLeft.animation = "SlideDust"
+				$SlideDustAnimRight.hide()
 				$SlideDustAnimLeft.show()
 				$SlideDustAnimLeft.play()
 			else:
 				$AnimatedSprite2D.flip_h = true
 				$AnimatedSprite2D.animation = "slide"
 				$SlideDustAnimRight.animation = "SlideDust"
+				$SlideDustAnimLeft.hide()
 				$SlideDustAnimRight.show()
 				$SlideDustAnimRight.play()
 	else:
@@ -283,7 +283,7 @@ func start_sploch_animation():
 
 
 func _on_dash_duration_timer_timeout():
-	speed = 300
+	speed = 400
 
 
 func _on_wall_slide_timer_timeout():
