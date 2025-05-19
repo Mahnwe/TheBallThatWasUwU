@@ -202,6 +202,14 @@ rotation = 0.785398
 position = Vector2(-21, -835)
 rotation = -0.785398
 
+[node name="MetalPlatform7" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(185, -1172)
+scale = Vector2(1, 2.64)
+
+[node name="MetalPlatform" parent="MetalPlatform7" instance=ExtResource("3_h0p4h")]
+position = Vector2(-559, -101.515)
+scale = Vector2(2.04, 0.772727)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]

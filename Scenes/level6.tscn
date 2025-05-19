@@ -142,7 +142,7 @@ offset_left = -6859.0
 offset_top = -2986.0
 offset_right = 69.0
 offset_bottom = 1180.0
-color = Color(0.581033, 0.581033, 0.581033, 1)
+color = Color(0.553269, 0.585908, 0.618709, 1)
 
 [node name="StartArea" parent="." instance=ExtResource("3_ys3ak")]
 position = Vector2(-2129, -335)

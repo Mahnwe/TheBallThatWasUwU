@@ -473,7 +473,7 @@ wait_time = 0.17
 one_shot = true
 
 [node name="JustBumpTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.7
 
 [connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]
 [connection signal="timeout" from="WallSlideTimer" to="." method="_on_wall_slide_timer_timeout"]

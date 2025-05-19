@@ -311,3 +311,27 @@ func translate_text():
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 	$Ability.get_child(0).get_child(0).text = translate_config.get_value("TranslationAbility", "JumpAbility")
 	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")
+
+
+func _on_bumper_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper.get_rotation_degrees())
+
+
+func _on_bumper_2_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper2.get_rotation_degrees())
+
+
+func _on_bumper_3_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper3.get_rotation_degrees())
+
+
+func _on_bumper_4_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper4.get_rotation_degrees())
+
+
+func _on_bumper_5_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper5.get_rotation_degrees())
+
+
+func _on_bumper_6_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper6.get_rotation_degrees())

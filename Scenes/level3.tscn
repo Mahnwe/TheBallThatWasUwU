@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=47 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="30_5qe4c"]
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_mf2hp"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_1alju"]
+[ext_resource type="PackedScene" uid="uid://dvk6tkjkq8bkx" path="res://Scenes/bumper.tscn" id="33_5v8i3"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -295,7 +296,7 @@ rotation = 1.5708
 scale = Vector2(2.28, 2.8)
 
 [node name="Wall13" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(2174, -90)
+position = Vector2(2178, -90)
 rotation = -1.5708
 scale = Vector2(2.28, 2.8)
 
@@ -492,26 +493,26 @@ rotation = 1.44699
 scale = Vector2(1, 2.2)
 
 [node name="Spike7" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(-942, -329)
+position = Vector2(-942, -355)
 scale = Vector2(0.617924, 0.441128)
 
 [node name="Spike" parent="Spike7" instance=ExtResource("10_w0su0")]
-position = Vector2(394.871, -571.262)
+position = Vector2(394.871, -500.988)
 
 [node name="Spike2" parent="Spike7" instance=ExtResource("10_w0su0")]
-position = Vector2(-1.61842, -1271.74)
+position = Vector2(3.23674, -1196.93)
 rotation = 0.167125
 scale = Vector2(1, 1.45338)
 
 [node name="Spike8" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(2595, -329)
+position = Vector2(2595, -357)
 scale = Vector2(0.617924, 0.441128)
 
 [node name="Spike" parent="Spike8" instance=ExtResource("10_w0su0")]
-position = Vector2(-419.146, -571.262)
+position = Vector2(-419.145, -491.921)
 
 [node name="Spike2" parent="Spike8" instance=ExtResource("10_w0su0")]
-position = Vector2(-8.09146, -1208.27)
+position = Vector2(8.09176, -1140.26)
 rotation = -0.43635
 scale = Vector2(1.09737, 1.38133)
 skew = 0.288067
@@ -714,12 +715,12 @@ position = Vector2(-47, 88)
 scale = Vector2(0.76, 0.88)
 
 [node name="BranchesBush2" parent="." instance=ExtResource("18_icw0h")]
-position = Vector2(509, 539)
+position = Vector2(420, 539)
 scale = Vector2(1.52, 1.4)
 flip_value = 1
 
 [node name="BranchesBush" parent="BranchesBush2" instance=ExtResource("18_icw0h")]
-position = Vector2(480.262, -4.35965e-05)
+position = Vector2(585.526, 4.00178e-11)
 
 [node name="Barrier2" parent="." instance=ExtResource("20_ctgch")]
 position = Vector2(260, -1968)
@@ -1029,6 +1030,28 @@ rotation = 3.14159
 scale = Vector2(0.0979451, 0.125902)
 texture = ExtResource("32_1alju")
 
+[node name="Bumper" parent="." instance=ExtResource("33_5v8i3")]
+position = Vector2(573, 528)
+
+[node name="Bumper2" parent="." instance=ExtResource("33_5v8i3")]
+position = Vector2(1173, 522)
+
+[node name="Bumper3" parent="." instance=ExtResource("33_5v8i3")]
+position = Vector2(-889, -556)
+rotation = 0.785398
+
+[node name="Bumper4" parent="." instance=ExtResource("33_5v8i3")]
+position = Vector2(2638, -556)
+rotation = -0.785398
+
+[node name="Bumper5" parent="." instance=ExtResource("33_5v8i3")]
+position = Vector2(-855, -1483)
+rotation = 0.785398
+
+[node name="Bumper6" parent="." instance=ExtResource("33_5v8i3")]
+position = Vector2(2596, -1483)
+rotation = -0.785398
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -1078,3 +1101,9 @@ texture = ExtResource("32_1alju")
 [connection signal="spike_hit" from="Spike16/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="spike_hit" from="Spike17" to="." method="_on_spike_spike_hit"]
+[connection signal="player_hit_bumper" from="Bumper" to="." method="_on_bumper_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper2" to="." method="_on_bumper_2_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper3" to="." method="_on_bumper_3_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper4" to="." method="_on_bumper_4_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper5" to="." method="_on_bumper_5_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper6" to="." method="_on_bumper_6_player_hit_bumper"]

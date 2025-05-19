@@ -12,7 +12,7 @@ var jump_force = -690
 
 var wall_slide = gravity+70
 
-const VELOCITY_Y_MAX = 600
+var velocity_y_max = 600
 var dash_speed = 800
 var horizontal_direction
 
@@ -155,8 +155,8 @@ func check_if_player_is_not_on_floor():
 			$AnimatedSprite2D.flip_h = false
 			$Raycast.scale.x = 1
 			$AnimatedSprite2D.play()
-		if velocity.y > VELOCITY_Y_MAX:
-			velocity.y = VELOCITY_Y_MAX
+		if velocity.y > velocity_y_max:
+			velocity.y = velocity_y_max
 	
 func check_if_player_is_on_floor():
 	if is_on_floor():
@@ -283,7 +283,10 @@ func start_sploch_animation():
 
 
 func _on_dash_duration_timer_timeout():
-	speed = 400
+	if !is_in_water:
+		speed = 400
+	else:
+		speed = 200
 
 
 func _on_wall_slide_timer_timeout():
@@ -316,9 +319,9 @@ func player_hit_bumper(bumper_rotation):
 	if bumper_rotation <= 1.00 and bumper_rotation >= -1.00:
 		velocity = Vector2(speed * horizontal_direction, jump_force-100)
 	elif bumper_rotation <= 46.00 and bumper_rotation >= 44.00:
-		velocity = Vector2(wall_pushback * 1.5, jump_force)
+		velocity = Vector2(wall_pushback * 1.3, jump_force)
 	elif bumper_rotation >= -46.00 and bumper_rotation <= -44.00:
-		velocity = Vector2(wall_pushback * -1.5, jump_force)
+		velocity = Vector2(wall_pushback * -1.3, jump_force)
 
 
 func _on_just_bump_timer_timeout():
