@@ -30,6 +30,7 @@ func _ready():
 	setup_quit_button_stylebox()
 	chestNumber = properties_config.get_value("Chests", "chestNumber")
 	check_level7_button_visibility()
+	check_for_ability_icons()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
 	change_bubble_message()
@@ -43,12 +44,7 @@ func _process(_delta):
 	wait_for_focus()
 	if Input.is_action_just_pressed("quit_game"):
 		get_tree().quit()
-	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if(member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton"):
-			member.get_child(1).show()
-	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if(!member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton"):
-			member.get_child(1).hide()
+	handle_buttons_child_visibility()
 		
 func wait_for_focus():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
@@ -494,7 +490,7 @@ func setup_quit_button_stylebox():
 	$QuitButton.add_theme_stylebox_override("focus", new_stylebox)
 	
 func check_level7_button_visibility():
-	if chestNumber == 6:
+	if chestNumber >= 6:
 		$Level7Button.show()
 		$Level7Platforms.show()
 		$Level1Button.focus_neighbor_left = "../Level7Button"
@@ -543,3 +539,24 @@ func change_font_size():
 		if member.name != "StatsButton":
 			member.add_theme_font_size_override("font_size", 16)
 	$Level7Button/Label.add_theme_font_size_override("font_size", 17)
+	
+func handle_buttons_child_visibility():
+	for member in get_tree().get_nodes_in_group("MenuButtons"):
+		if member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton":
+			member.get_child(1).show()
+			if member.name != "Level7Button":
+				if member.get_child(2).is_chest_valid:
+					member.get_child(2).show()
+	for member in get_tree().get_nodes_in_group("MenuButtons"):
+		if !member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton":
+			member.get_child(1).hide()
+			if member.name != "Level7Button":
+				member.get_child(2).hide()
+			else:
+				member.get_child(3).hide()
+
+func check_for_ability_icons():
+	if properties_config.get_value("levels", "is_level_two_finished"):
+		$AbilityIcon.hide()
+	if properties_config.get_value("levels", "is_level_three_finished"):
+		$AbilityIcon2.hide()
