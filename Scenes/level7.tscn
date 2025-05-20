@@ -110,8 +110,9 @@ scale = Vector2(0.781364, 4.28358)
 position = Vector2(-1588, -337)
 rotation = 1.5708
 beam_x_scale = 1.7
-charge_timer = 3.0
+charge_timer = 2.0
 beam_timer = 2.0
+wait_timer = 2.0
 
 [node name="MetalPlatform6" parent="." instance=ExtResource("3_h0p4h")]
 position = Vector2(-1604, -770)
@@ -199,7 +200,7 @@ position = Vector2(-278, -723)
 rotation = 0.785398
 
 [node name="Bumper3" parent="." instance=ExtResource("12_dk2oo")]
-position = Vector2(-21, -835)
+position = Vector2(-15, -857)
 rotation = -0.785398
 
 [node name="MetalPlatform7" parent="." instance=ExtResource("3_h0p4h")]

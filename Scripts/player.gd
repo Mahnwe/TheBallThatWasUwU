@@ -12,6 +12,9 @@ var jump_force = -690
 
 var wall_slide = gravity+70
 
+var velocity_y_bumper_check
+var velocity_x_bumper_check
+
 var velocity_y_max = 600
 var dash_speed = 800
 var horizontal_direction
@@ -42,6 +45,8 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 func _ready():
 	number_of_jumps = 0
 	$WaterSploch.hide()
+	velocity_y_bumper_check = jump_force-100
+	velocity_x_bumper_check = speed
 	is_sliding = false
 	is_in_water = false
 	is_grounded = true
@@ -313,15 +318,15 @@ func _on_slide_dust_anim_right_animation_finished():
 func _on_just_jump_timer_timeout():
 	just_jumped = false
 	
-func player_hit_bumper(bumper_rotation):
+func player_hit_bumper(bumper_rotation, velocity_y, velocity_x):
 	$JustJumpTimer.start()
 	just_jumped = true
 	if bumper_rotation <= 1.00 and bumper_rotation >= -1.00:
-		velocity = Vector2(speed * horizontal_direction, jump_force-100)
+		velocity = Vector2(speed * horizontal_direction, velocity_y)
 	elif bumper_rotation <= 46.00 and bumper_rotation >= 44.00:
-		velocity = Vector2(wall_pushback * 1.3, jump_force)
+		velocity = Vector2(velocity_x, velocity_y)
 	elif bumper_rotation >= -46.00 and bumper_rotation <= -44.00:
-		velocity = Vector2(wall_pushback * -1.3, jump_force)
+		velocity = Vector2(velocity_x, velocity_y)
 
 
 func _on_just_bump_timer_timeout():

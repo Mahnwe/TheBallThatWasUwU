@@ -225,10 +225,10 @@ func set_volume():
 
 
 func _on_bumper_player_hit_bumper():
-	$Player.player_hit_bumper($Bumper.get_rotation_degrees())
+	$Player.player_hit_bumper($Bumper.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 
 func _on_bumper_2_player_hit_bumper():
-	$Player.player_hit_bumper($Bumper2.get_rotation_degrees())
+	$Player.player_hit_bumper($Bumper2.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 
 func _on_bumper_3_player_hit_bumper():
-	$Player.player_hit_bumper($Bumper3.get_rotation_degrees())
+	$Player.player_hit_bumper($Bumper3.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)

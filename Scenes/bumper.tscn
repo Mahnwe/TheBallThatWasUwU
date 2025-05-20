@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvk6tkjkq8bkx"]
+[gd_scene load_steps=15 format=3 uid="uid://dvk6tkjkq8bkx"]
 
 [ext_resource type="Script" uid="uid://djneplonxahdr" path="res://Scripts/bumper.gd" id="1_3eik2"]
 [ext_resource type="Texture2D" uid="uid://pxpgytpc2lxc" path="res://Arts/BumperSprite/BumperSprite1.png" id="1_kx533"]
@@ -52,12 +52,21 @@ animations = [{
 }],
 "loop": false,
 "name": &"Bump",
-"speed": 25.0
+"speed": 50.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t2j8f"]
 radius = 11.0
 height = 98.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52k27"]
+size = Vector2(94, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdc5w"]
+size = Vector2(19, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjlrq"]
+size = Vector2(20, 57)
 
 [node name="Bumper" type="AnimatableBody2D"]
 script = ExtResource("1_3eik2")
@@ -82,5 +91,20 @@ position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_t2j8f")
 
+[node name="VelocityReturnArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VelocityReturnArea"]
+position = Vector2(-1, -54.5)
+shape = SubResource("RectangleShape2D_52k27")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VelocityReturnArea"]
+position = Vector2(-57.5, -41.5)
+shape = SubResource("RectangleShape2D_fdc5w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VelocityReturnArea"]
+position = Vector2(56, -41.5)
+shape = SubResource("RectangleShape2D_qjlrq")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="BumperTrigger" to="." method="_on_bumper_trigger_body_entered"]
+[connection signal="body_entered" from="VelocityReturnArea" to="." method="_on_velocity_return_area_body_entered"]
