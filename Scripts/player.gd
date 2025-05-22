@@ -12,14 +12,15 @@ var jump_force = -690
 
 var wall_slide = gravity+70
 
+enum state {GROUNDED,AIRBORNE,INAIR,SLIDING}
+var current_state
+
 var velocity_y_bumper_check
 var velocity_x_bumper_check
 
 var velocity_y_max = 600
 var dash_speed = 800
 var horizontal_direction
-
-var just_jumped
 
 var can_dash
 var have_dash_ability
@@ -31,9 +32,7 @@ var jump_buffer
 var player_try_buffer_jump
 
 var is_in_water
-var is_sliding
-var just_grounded
-var is_grounded
+var has_grounded
 
 var stats_config= ConfigFile.new()
 var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
@@ -47,10 +46,8 @@ func _ready():
 	$WaterSploch.hide()
 	velocity_y_bumper_check = jump_force-100
 	velocity_x_bumper_check = speed
-	is_sliding = false
+	has_grounded = false
 	is_in_water = false
-	is_grounded = true
-	just_jumped = false
 	can_dash = false
 	can_double_jump = false
 	dash_cooldown_timer.one_shot = true
@@ -85,7 +82,6 @@ func jump():
 	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 	velocity.y = jump_force
-	#just_jumped = true
 	$JustJumpTimer.start()
 	number_of_jumps += 1
 	if velocity.x < 0:
@@ -140,7 +136,7 @@ func _dash():
 	
 func check_if_player_is_not_on_floor():
 	if !is_on_floor() and !is_on_wall():
-		is_grounded = false
+		has_grounded = false
 		if Input.is_action_just_pressed("jump") and !can_double_jump and number_of_jumps < 1:
 			jump()
 		if Input.is_action_just_pressed("jump") and can_double_jump and number_of_jumps <= 1:
@@ -167,7 +163,7 @@ func check_if_player_is_on_floor():
 	if is_on_floor():
 		$SlideDustAnimLeft.hide()
 		$SlideDustAnimRight.hide()
-		if !is_grounded:
+		if !has_grounded and !colliding_wall():
 			$JumpDustAnim.show()
 			$JumpDustAnim.play()
 		can_dash = true
@@ -206,7 +202,7 @@ func check_if_player_is_on_wall():
 		$JumpSound.play()
 		number_of_jumps += 1
 		velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
-		just_jumped = true
+		current_state = state.AIRBORNE
 		$JustJumpTimer.start()
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.play()
@@ -215,7 +211,7 @@ func check_if_player_is_on_wall():
 func check_for_player_movement():
 	# Horizontal movements
 	# 	return -1 if left, +1 if right, 0 if both or neither
-	if !just_jumped:
+	if current_state != state.AIRBORNE:
 		horizontal_direction = Input.get_axis("move_left","move_right")
 		velocity.x = speed * horizontal_direction
 	if velocity.x < 0:
@@ -227,13 +223,14 @@ func check_for_player_movement():
 	
 			
 func check_animation_if_on_wall():
-	if colliding_wall() and !just_jumped:
-		if !is_sliding and $WallSlideTimer.time_left == 0.0:
+	if colliding_wall() and current_state != state.AIRBORNE:
+		if current_state != state.SLIDING and $WallSlideTimer.time_left == 0.0:
 			$WallSlideTimer.start()
 			wall_slide = gravity+70
 		number_of_jumps = 0
 		can_dash = true
 		velocity.y = 0
+		current_state = state.SLIDING
 		velocity.y = wall_slide
 		$AnimatedSprite2D.animation = "slide"
 		if !is_on_floor() and is_on_wall():
@@ -254,7 +251,6 @@ func check_animation_if_on_wall():
 				$SlideDustAnimRight.show()
 				$SlideDustAnimRight.play()
 	else:
-		is_sliding = false
 		$SlideDustAnimLeft.hide()
 		$SlideDustAnimRight.hide()
 			
@@ -295,14 +291,14 @@ func _on_dash_duration_timer_timeout():
 
 
 func _on_wall_slide_timer_timeout():
-	if colliding_wall():
-		is_sliding = true
+	if colliding_wall() and current_state != state.GROUNDED:
+		current_state = state.SLIDING
 		wall_slide = gravity+120
 
 
 func _on_jump_dust_anim_animation_finished():
 	$JumpDustAnim.hide()
-	is_grounded = true
+	has_grounded = true
 
 
 func _on_slide_dust_anim_left_animation_finished():
@@ -316,18 +312,24 @@ func _on_slide_dust_anim_right_animation_finished():
 
 
 func _on_just_jump_timer_timeout():
-	just_jumped = false
+	current_state = state.INAIR
 	
 func player_hit_bumper(bumper_rotation, velocity_y, velocity_x):
-	$JustJumpTimer.start()
-	just_jumped = true
 	if bumper_rotation <= 1.00 and bumper_rotation >= -1.00:
 		velocity = Vector2(speed * horizontal_direction, velocity_y)
-	elif bumper_rotation <= 46.00 and bumper_rotation >= 44.00:
-		velocity = Vector2(velocity_x, velocity_y)
-	elif bumper_rotation >= -46.00 and bumper_rotation <= -44.00:
-		velocity = Vector2(velocity_x, velocity_y)
+	elif bumper_rotation <= 50.00 and bumper_rotation >= 40.00:
+		if velocity_x > 400 or velocity_x < -400:
+			velocity = Vector2(velocity_x, velocity_y-100)
+		else:
+			velocity = Vector2(velocity_x, velocity_y)
+	elif bumper_rotation >= -50.00 and bumper_rotation <= -40.00:
+		if velocity_x > 400 or velocity_x < -400:
+			velocity = Vector2(velocity_x, velocity_y-100)
+		else:
+			velocity = Vector2(velocity_x, velocity_y)
+	$JustBumpTimer.start()
+	current_state = state.AIRBORNE
 
 
 func _on_just_bump_timer_timeout():
-	just_jumped = false
+	current_state = state.INAIR
