@@ -42,6 +42,9 @@ func _process(_delta):
 	if is_commands_display and Input.is_action_just_pressed("restart_save"):
 		focus_pause_buttons()
 		close_command_panel()
+	if Input.is_action_just_pressed("menu_when_finish") and is_commands_display:
+		focus_pause_buttons()
+		close_command_panel()
 	if is_commands_display:
 		$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
 		$CommandsUI/CloseButton.grab_focus()

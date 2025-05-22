@@ -110,7 +110,7 @@ scale = Vector2(0.781364, 4.28358)
 position = Vector2(-1588, -337)
 rotation = 1.5708
 beam_x_scale = 1.7
-charge_timer = 2.0
+charge_timer = 3.0
 beam_timer = 2.0
 wait_timer = 2.0
 
@@ -126,7 +126,7 @@ position = Vector2(743.621, -26.406)
 scale = Vector2(1.08706, 1)
 
 [node name="MetalPlatform3" parent="MetalPlatform6" instance=ExtResource("3_h0p4h")]
-position = Vector2(1365.36, -26.406)
+position = Vector2(1392.93, -26.406)
 scale = Vector2(1.08706, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -200,11 +200,11 @@ position = Vector2(-278, -723)
 rotation = 0.785398
 
 [node name="Bumper3" parent="." instance=ExtResource("12_dk2oo")]
-position = Vector2(-15, -857)
-rotation = -0.785398
+position = Vector2(28, -863)
+rotation = -0.855211
 
 [node name="MetalPlatform7" parent="." instance=ExtResource("3_h0p4h")]
-position = Vector2(185, -1172)
+position = Vector2(225, -1172)
 scale = Vector2(1, 2.64)
 
 [node name="MetalPlatform" parent="MetalPlatform7" instance=ExtResource("3_h0p4h")]

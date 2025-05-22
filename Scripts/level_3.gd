@@ -57,7 +57,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
 	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
 		restart_scene()
 	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
@@ -100,7 +99,7 @@ func handle_pause():
 			untoggle_pause()
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("restart_save"):
 			untoggle_pause()
-		elif is_paused and Input.is_action_just_pressed("menu_when_finish"):
+		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 			
