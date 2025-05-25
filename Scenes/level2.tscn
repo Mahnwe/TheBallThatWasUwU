@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=50 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" uid="uid://dumtc4alnw10m" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="29_iq3kg"]
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="30_o1sn7"]
 [ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="31_u1na6"]
+[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="32_se7y5"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -826,6 +827,11 @@ position = Vector2(632.373, 18.4656)
 
 [node name="platform2" parent="platform18" instance=ExtResource("2_ja3c0")]
 position = Vector2(1157, -17.3116)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-2127, 879)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("32_se7y5")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

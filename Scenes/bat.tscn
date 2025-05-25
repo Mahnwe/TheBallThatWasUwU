@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt7djk3ywuucy"]
+
+[ext_resource type="Texture2D" uid="uid://c666bkauqsp6h" path="res://Arts/BatSprite/BatSprite2.png" id="1_jckqh"]
+[ext_resource type="Texture2D" uid="uid://bv5lx3mdbdgfl" path="res://Arts/BatSprite/BatSprite1.png" id="2_wt6c1"]
+[ext_resource type="Script" uid="uid://dc1p174oc303e" path="res://Scripts/bat.gd" id="3_wt6c1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50dnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jckqh")
+}],
+"loop": false,
+"name": &"awake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wt6c1")
+}],
+"loop": false,
+"name": &"sleep",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqh3e"]
+size = Vector2(169, 192)
+
+[node name="Bat" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_50dnf")
+animation = &"sleep"
+script = ExtResource("3_wt6c1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 120)
+shape = SubResource("RectangleShape2D_mqh3e")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

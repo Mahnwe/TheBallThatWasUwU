@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba70454umbjtw"
-path="res://.godot/imported/DustJump3.png-a895e5742938461269fdfebcacdb86ee.ctex"
+uid="uid://byylbubfqoidr"
+path="res://.godot/imported/BugSprite.png-d66c6aff15f05cf702998a197fdc22be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/DustPlayerSprite/DustJump3.png"
-dest_files=["res://.godot/imported/DustJump3.png-a895e5742938461269fdfebcacdb86ee.ctex"]
+source_file="res://Arts/BugSprite/BugSprite.png"
+dest_files=["res://.godot/imported/BugSprite.png-d66c6aff15f05cf702998a197fdc22be.ctex"]
 
 [params]
 

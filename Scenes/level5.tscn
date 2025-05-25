@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=54 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -41,6 +41,9 @@
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="39_fkoau"]
 [ext_resource type="PackedScene" uid="uid://xddsf6ly1i6v" path="res://Scenes/fish.tscn" id="40_k4k0d"]
 [ext_resource type="PackedScene" uid="uid://d3chk3dy1p8t7" path="res://Scenes/yellow_fish.tscn" id="41_birjf"]
+[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="42_s0a2a"]
+[ext_resource type="PackedScene" uid="uid://cjcrx6k82ajb6" path="res://Scenes/shrimp.tscn" id="43_650y6"]
+[ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="44_vxmds"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -867,6 +870,27 @@ speed = 125
 [node name="SavePoint2" parent="." instance=ExtResource("23_bgafk")]
 position = Vector2(-2889, -329)
 scale = Vector2(0.606914, 0.639194)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-1557, -1044)
+scale = Vector2(0.66, 0.74)
+texture = ExtResource("42_s0a2a")
+
+[node name="Shrimp" parent="." instance=ExtResource("43_650y6")]
+z_index = 1
+position = Vector2(-488, -385)
+scale = Vector2(0.74, 0.78)
+
+[node name="Shrimp2" parent="." instance=ExtResource("43_650y6")]
+position = Vector2(-2302, 502)
+scale = Vector2(0.74, 0.78)
+
+[node name="Shrimp3" parent="." instance=ExtResource("43_650y6")]
+position = Vector2(-2237, -63)
+scale = Vector2(0.74, 0.78)
+
+[node name="Advice" parent="." instance=ExtResource("44_vxmds")]
+position = Vector2(-1805, -1100)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
