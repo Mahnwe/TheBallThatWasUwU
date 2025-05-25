@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dll3pfso18mlo"]
+[gd_scene load_steps=51 format=3 uid="uid://dll3pfso18mlo"]
 
 [ext_resource type="Script" uid="uid://cngnw08xxshdu" path="res://Scripts/level_6.gd" id="1_enqk4"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_eguui"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cb1ke3vkx62tx" path="res://Scenes/ventilation.tscn" id="30_omhh0"]
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_g7lwf"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_0v3qi"]
+[ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="33_0v3qi"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkip3"]
 _data = {
@@ -107,25 +108,25 @@ size = Vector2(346.607, 44.0001)
 
 [sub_resource type="Curve2D" id="Curve2D_ujibb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5369, -171, 0, 0, 0, 0, -5370, -120, 0, 0, 0, 0, -5370, -63, 0, 0, 0, 0, -5370, -2)
+"points": PackedVector2Array(0, 0, 0, 0, -5369, -171, 0, 0, 0, 0, -5370, -120, 0, 0, 0, 0, -5370, -63, 0, 0, 0, 0, -5369, 64.1749)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_dcbuv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5236, -173, 0, 0, 0, 0, -5236, -122, 0, 0, 0, 0, -5236, -75, 0, 0, 0, 0, -5236, -4)
+"points": PackedVector2Array(0, 0, 0, 0, -5236, -173, 0, 0, 0, 0, -5236, -122, 0, 0, 0, 0, -5236, -75, 0, 0, 0, 0, -5236, 61.1749)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_enw33"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5092, -171, 0, 0, 0, 0, -5092, -126, 0, 0, 0, 0, -5092, -55, 0, 0, 0, 0, -5092, -3)
+"points": PackedVector2Array(0, 0, 0, 0, -5092, -171, 0, 0, 0, 0, -5092, -126, 0, 0, 0, 0, -5092, -55, 0, 0, 0, 0, -5090.77, 59.3489)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_omhh0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4938, -171, 0, 0, 0, 0, -4937, -111, 0, 0, 0, 0, -4937, -48, 0, 0, 0, 0, -4937, -4)
+"points": PackedVector2Array(0, 0, 0, 0, -4938, -171, 0, 0, 0, 0, -4937, -111, 0, 0, 0, 0, -4937, -48, 0, 0, 0, 0, -4937.77, 60.3483)
 }
 point_count = 4
 
@@ -910,7 +911,7 @@ position = Vector2(-4501, 101)
 scale = Vector2(0.762927, 1.04868)
 
 [node name="Sprite2D16" type="Sprite2D" parent="."]
-position = Vector2(-5369, -192)
+position = Vector2(-5369, -245.175)
 rotation = -1.5708
 scale = Vector2(0.29414, 0.805407)
 texture = ExtResource("10_k6lm4")
@@ -928,9 +929,9 @@ position = Vector2(-2.81059, 564.65)
 texture = ExtResource("10_k6lm4")
 
 [node name="Sprite2D14" type="Sprite2D" parent="."]
-position = Vector2(-5501, -77)
+position = Vector2(-5501, -111.675)
 rotation = 1.5708
-scale = Vector2(1.63594, 1)
+scale = Vector2(1.925, 1)
 texture = ExtResource("12_q8la5")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Sprite2D14"]
@@ -952,9 +953,9 @@ scale = Vector2(0.86747, 0.523631)
 texture = ExtResource("19_eboxf")
 
 [node name="Sprite2D18" type="Sprite2D" parent="Sprite2D14"]
-position = Vector2(-8.55768, -899)
+position = Vector2(-0.246006, -899)
 rotation = 3.14159
-scale = Vector2(0.540744, 0.879856)
+scale = Vector2(0.670614, 0.879856)
 texture = ExtResource("10_k6lm4")
 
 [node name="Sprite2D15" type="Sprite2D" parent="."]
@@ -967,6 +968,7 @@ position = Vector2(-4529, -68)
 scale = Vector2(1.81699, 2.03676)
 
 [node name="Path2D12" type="Path2D" parent="."]
+position = Vector2(0.000488281, -53.1749)
 curve = SubResource("Curve2D_ujibb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D12"]
@@ -980,6 +982,7 @@ rotation = -1.5708
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D13" type="Path2D" parent="."]
+position = Vector2(0.000488281, -53.1749)
 curve = SubResource("Curve2D_dcbuv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D13"]
@@ -992,7 +995,7 @@ position = Vector2(0, 1)
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D14" type="Path2D" parent="."]
-position = Vector2(15.7725, -0.17395)
+position = Vector2(15.773, -53.3489)
 curve = SubResource("Curve2D_enw33")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D14"]
@@ -1004,7 +1007,7 @@ loop = false
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D15" type="Path2D" parent="."]
-position = Vector2(24.7725, 0.826599)
+position = Vector2(24.773, -52.3483)
 curve = SubResource("Curve2D_omhh0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D15"]
@@ -1379,6 +1382,9 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(177.5, -107.5)
 scale = Vector2(0.106972, 0.118572)
 texture = ExtResource("32_0v3qi")
+
+[node name="Advice" parent="." instance=ExtResource("33_0v3qi")]
+position = Vector2(-2132, -455)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

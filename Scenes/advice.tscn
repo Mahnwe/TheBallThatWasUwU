@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://we3djq1fuccm"]
+
+[ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="1_7rxit"]
+[ext_resource type="Script" uid="uid://c7cjfahd13ixs" path="res://Scripts/advice.gd" id="1_wip7c"]
+[ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="2_wip7c"]
+
+[node name="Advice" type="Node2D"]
+visible = false
+script = ExtResource("1_wip7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7rxit")
+
+[node name="BubbleTooltip" parent="Sprite2D" instance=ExtResource("2_wip7c")]
+position = Vector2(164, -104)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

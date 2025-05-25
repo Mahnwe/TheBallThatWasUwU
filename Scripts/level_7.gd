@@ -42,6 +42,7 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	display_advice()
 	
 	
 func _process(delta):
@@ -232,3 +233,7 @@ func _on_bumper_2_player_hit_bumper():
 
 func _on_bumper_3_player_hit_bumper():
 	$Player.player_hit_bumper($Bumper3.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
+func display_advice():
+	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):
+		$Advice.show()

@@ -9,7 +9,7 @@ var save_position_x = -3065
 var save_position_y = -1551
 
 var finish_position_x = -2230
-var finish_position_y = -850
+var finish_position_y = -910
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 
@@ -54,6 +54,7 @@ func _ready():
 	translate_text()
 	$Path2D/PathFollow2D/HardRockMovingPlatform.set_process(false)
 	$Path2D2/PathFollow2D/EasyRockPlatform.set_process(false)
+	display_advice()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -403,3 +404,7 @@ func translate_text():
 	$TripleSign2.get_child(1).text = translate_config.get_value("TranslationSign", "FinishSign")
 	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "BewareSign")
 	$TripleSign2.get_child(3).text = translate_config.get_value("TranslationSign", "GapSign")
+	
+func display_advice():
+	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):
+		$Advice.show()

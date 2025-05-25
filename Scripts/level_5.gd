@@ -51,6 +51,7 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	display_advice()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -333,3 +334,7 @@ func translate_text():
 		
 	$TripleSign.get_child(1).text = translate_config.get_value("TranslationSign", "GoodSign")
 	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "DivingSign")
+	
+func display_advice():
+	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):
+		$Advice.show()

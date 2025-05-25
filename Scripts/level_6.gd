@@ -9,7 +9,7 @@ var save_position_x = -2281
 var save_position_y = -390
 
 var finish_position_x = -1570
-var finish_position_y = 5
+var finish_position_y = -25
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 
@@ -53,6 +53,7 @@ func _ready():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	$Path2D3/PathFollow2D/MetalPlatform.set_process(false)
 	$Path2D11/PathFollow2D/MetalPlatform.set_process(false)
+	display_advice()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -318,3 +319,7 @@ func translate_text():
 		
 	$TripleSign.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")
 	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "ContinueSign")
+	
+func display_advice():
+	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):
+		$Advice.show()

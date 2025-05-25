@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=48 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_mf2hp"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_1alju"]
 [ext_resource type="PackedScene" uid="uid://dvk6tkjkq8bkx" path="res://Scenes/bumper.tscn" id="33_5v8i3"]
+[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="34_tsss4"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -809,37 +810,40 @@ rotation = 1.05778
 scale = Vector2(1.21762, 1.35163)
 
 [node name="platform33" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(2583, -1559)
-rotation = -2.14326
+position = Vector2(2558, -1580)
+rotation = -1.85005
+scale = Vector2(0.857651, 1)
 
 [node name="platform" parent="platform33" instance=ExtResource("2_gdtbw")]
-position = Vector2(638.573, 2.28191)
-
-[node name="platform2" parent="platform33" instance=ExtResource("2_gdtbw")]
-position = Vector2(1210.81, 109.336)
-rotation = -0.992146
-
-[node name="platform3" parent="platform33" instance=ExtResource("2_gdtbw")]
-position = Vector2(1502.12, -333.456)
-rotation = -1.00335
+position = Vector2(633.269, -0.306522)
 
 [node name="platform34" parent="." instance=ExtResource("2_gdtbw")]
-position = Vector2(-463, -2171)
-rotation = 2.12521
+position = Vector2(-642, -2183)
+rotation = 1.85522
+scale = Vector2(0.857651, 1)
 
 [node name="platform" parent="platform34" instance=ExtResource("2_gdtbw")]
-position = Vector2(-634.622, -1.06665)
+position = Vector2(-630.56, -0.261505)
 
-[node name="GrassWall" parent="platform34" instance=ExtResource("11_2euqt")]
-position = Vector2(-821.025, -317.305)
-rotation = 1.01229
-scale = Vector2(1.6433, 0.761782)
+[node name="GrassWall" parent="." instance=ExtResource("11_2euqt")]
+position = Vector2(-290, -2712)
+rotation = -3.14159
+scale = Vector2(1.06944, 0.601699)
 
-[node name="GrassWall" parent="platform34/GrassWall" instance=ExtResource("11_2euqt")]
+[node name="GrassWall" parent="GrassWall" instance=ExtResource("11_2euqt")]
 position = Vector2(-461.271, -0.133246)
 
-[node name="GrassWall2" parent="platform34/GrassWall" instance=ExtResource("11_2euqt")]
+[node name="GrassWall2" parent="GrassWall" instance=ExtResource("11_2euqt")]
 position = Vector2(-747.892, -0.0376668)
+
+[node name="GrassWall3" parent="GrassWall" instance=ExtResource("11_2euqt")]
+position = Vector2(-1358.65, -0.000211111)
+
+[node name="GrassWall4" parent="GrassWall" instance=ExtResource("11_2euqt")]
+position = Vector2(-1953.35, -0.000303518)
+
+[node name="GrassWall5" parent="GrassWall" instance=ExtResource("11_2euqt")]
+position = Vector2(-2175.9, -0.000338097)
 
 [node name="Spike15" parent="." instance=ExtResource("10_w0su0")]
 position = Vector2(-1051, 255)
@@ -1051,6 +1055,10 @@ rotation = 0.785398
 [node name="Bumper6" parent="." instance=ExtResource("33_5v8i3")]
 position = Vector2(2596, -1483)
 rotation = -0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(874, -1719)
+texture = ExtResource("34_tsss4")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
