@@ -16,6 +16,7 @@ func _on_area_2d_body_entered(body):
 		body.is_in_water = true
 		self.self_modulate.a = 0.5
 		body.speed = 200
+		body.wall_slide = body.gravity+30
 		body.velocity.x = body.velocity.x/2
 		body.velocity.y = body.velocity.y/2
 		body.gravity = 5
@@ -31,6 +32,7 @@ func _on_area_2d_body_exited(body):
 		body.is_in_water = false
 		self.self_modulate.a = 1.0
 		body.speed = 400
+		body.wall_slide = body.gravity+70
 		body.gravity = 30
 		body.jump_force = -690
 		body.wall_pushback = 500

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=22 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://d1up1425o3fd0" path="res://Scenes/acid_drop.tscn" id="11_rnbej"]
 [ext_resource type="PackedScene" uid="uid://dvk6tkjkq8bkx" path="res://Scenes/bumper.tscn" id="12_dk2oo"]
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="13_u17fo"]
+[ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="14_42yhu"]
+[ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="15_54uab"]
+[ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="16_1rju1"]
+[ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="17_l0h5v"]
+[ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="18_l0h5v"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -36,8 +41,8 @@ point_count = 4
 script = ExtResource("1_c77lg")
 
 [node name="GameArea" parent="." instance=ExtResource("2_sr0ya")]
-position = Vector2(0, -506)
-scale = Vector2(7.36182, 6.09085)
+position = Vector2(1945, -1629)
+scale = Vector2(13.8487, 12.6613)
 
 [node name="MetalPlatform" parent="." instance=ExtResource("3_h0p4h")]
 position = Vector2(-56, 122)
@@ -108,8 +113,8 @@ position = Vector2(-1666, -295)
 scale = Vector2(0.781364, 4.28358)
 
 [node name="LaserBase" parent="." groups=["laser_group"] instance=ExtResource("9_h0p4h")]
-position = Vector2(-1588, -337)
-rotation = 1.5708
+position = Vector2(-1076, -339)
+rotation = -1.5708
 beam_x_scale = 1.7
 charge_timer = 3.0
 beam_timer = 2.0
@@ -209,11 +214,146 @@ position = Vector2(225, -1172)
 scale = Vector2(1, 2.64)
 
 [node name="MetalPlatform" parent="MetalPlatform7" instance=ExtResource("3_h0p4h")]
-position = Vector2(-559, -101.515)
+position = Vector2(-553, -101.515)
 scale = Vector2(2.04, 0.772727)
 
 [node name="Advice" parent="." instance=ExtResource("13_u17fo")]
 position = Vector2(4, -178)
+
+[node name="Bumper4" parent="." instance=ExtResource("12_dk2oo")]
+position = Vector2(728, -225)
+
+[node name="MetalPlatform8" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(716, -99)
+scale = Vector2(0.639999, 1)
+
+[node name="MetalPlatform" parent="MetalPlatform8" instance=ExtResource("3_h0p4h")]
+position = Vector2(-345.313, -74)
+
+[node name="MetalPlatform2" parent="MetalPlatform8" instance=ExtResource("3_h0p4h")]
+position = Vector2(364.063, -61)
+
+[node name="MetalPlatform9" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(942, -422)
+scale = Vector2(0.6, 2.56)
+
+[node name="MetalPlatform" parent="MetalPlatform9" instance=ExtResource("3_h0p4h")]
+position = Vector2(0, -147.266)
+
+[node name="Spike" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(783, -900)
+scale = Vector2(0.59543, 0.58821)
+
+[node name="Spike2" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(555, -902)
+scale = Vector2(0.59543, 0.58821)
+
+[node name="MetalPlatform10" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(949, -1118)
+scale = Vector2(0.639996, 1.8)
+
+[node name="MetalPlatform" parent="MetalPlatform10" instance=ExtResource("3_h0p4h")]
+position = Vector2(-304.689, -63.3334)
+
+[node name="MetalPlatform11" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(-1957, -1072)
+scale = Vector2(0.790868, 2.00215)
+
+[node name="MetalPlatform" parent="MetalPlatform11" instance=ExtResource("3_h0p4h")]
+position = Vector2(0, -144.345)
+
+[node name="MetalPlatform2" parent="MetalPlatform11" instance=ExtResource("3_h0p4h")]
+position = Vector2(0, -283.196)
+
+[node name="MetalPlatform3" parent="MetalPlatform11" instance=ExtResource("3_h0p4h")]
+position = Vector2(360.363, -284.694)
+
+[node name="MetalPlatform12" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(-763, -753)
+
+[node name="MetalPlatform13" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(-882, -1264)
+scale = Vector2(1, 1.561)
+
+[node name="LaserBase2" parent="." instance=ExtResource("9_h0p4h")]
+position = Vector2(44, -1404)
+rotation = 1.5708
+charge_timer = 3.0
+beam_timer = 2.0
+
+[node name="LaserBase3" parent="." instance=ExtResource("9_h0p4h")]
+position = Vector2(-704, -1417)
+rotation = -1.5708
+charge_timer = 3.0
+beam_timer = 2.0
+
+[node name="MetalPlatform14" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(800, -1582)
+scale = Vector2(0.8884, 2.97912)
+
+[node name="MetalPlatform15" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(604, -1805)
+rotation = -0.785398
+scale = Vector2(0.8884, 2.97912)
+
+[node name="MetalPlatform16" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(-1318, -1801)
+rotation = 0.785398
+scale = Vector2(0.8884, 2.97912)
+
+[node name="MetalPlatform17" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(-799, -1975)
+scale = Vector2(1.4, 1.72)
+
+[node name="MetalPlatform" parent="MetalPlatform17" instance=ExtResource("3_h0p4h")]
+position = Vector2(633.572, 0)
+
+[node name="Bumper5" parent="." instance=ExtResource("12_dk2oo")]
+position = Vector2(-350, -1635)
+
+[node name="platform" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(-1088, -2307)
+scale = Vector2(0.804422, 1.2828)
+
+[node name="platform" parent="platform" instance=ExtResource("15_54uab")]
+position = Vector2(1103.9, 2.3387)
+
+[node name="platform2" parent="platform" instance=ExtResource("15_54uab")]
+position = Vector2(-2.6226e-05, -82.6318)
+
+[node name="platform3" parent="platform" instance=ExtResource("15_54uab")]
+position = Vector2(1103.9, -84.9704)
+
+[node name="Spike3" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(-1129, -1355)
+scale = Vector2(0.68863, 0.691304)
+
+[node name="MetalPlatform18" parent="." instance=ExtResource("3_h0p4h")]
+position = Vector2(-1446, -1242)
+scale = Vector2(0.503226, 0.806171)
+
+[node name="Spike4" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(-1379, -1303)
+scale = Vector2(0.395746, 0.436114)
+
+[node name="TripleSign" parent="." instance=ExtResource("16_1rju1")]
+position = Vector2(-78, -544)
+scale = Vector2(0.296139, 0.29559)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TripleSign"]
+position = Vector2(172.216, -209.75)
+scale = Vector2(0.113332, 0.12655)
+texture = ExtResource("17_l0h5v")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TripleSign"]
+position = Vector2(175.593, -6.76613)
+rotation = 1.5708
+scale = Vector2(0.113332, 0.12655)
+texture = ExtResource("17_l0h5v")
+
+[node name="SavePoint" parent="." instance=ExtResource("18_l0h5v")]
+position = Vector2(56, -2350)
+scale = Vector2(0.606914, 0.639194)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
@@ -227,3 +367,12 @@ position = Vector2(4, -178)
 [connection signal="player_hit_bumper" from="Bumper" to="." method="_on_bumper_player_hit_bumper"]
 [connection signal="player_hit_bumper" from="Bumper2" to="." method="_on_bumper_2_player_hit_bumper"]
 [connection signal="player_hit_bumper" from="Bumper3" to="." method="_on_bumper_3_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper4" to="." method="_on_bumper_4_player_hit_bumper"]
+[connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
+[connection signal="laser_touched_player" from="LaserBase2" to="." method="_on_spike_spike_hit"]
+[connection signal="laser_touched_player" from="LaserBase3" to="." method="_on_spike_spike_hit"]
+[connection signal="player_hit_bumper" from="Bumper5" to="." method="_on_bumper_5_player_hit_bumper"]
+[connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
+[connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]

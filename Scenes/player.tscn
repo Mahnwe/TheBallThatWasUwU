@@ -470,7 +470,7 @@ animation = &"SlideDust"
 flip_h = true
 
 [node name="JustJumpTimer" type="Timer" parent="."]
-wait_time = 0.17
+wait_time = 0.2
 one_shot = true
 
 [node name="JustBumpTimer" type="Timer" parent="."]

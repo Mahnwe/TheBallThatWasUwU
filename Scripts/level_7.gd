@@ -3,10 +3,10 @@ extends Node2D
 var is_paused
 
 var start_position_x = -152
-var start_position_y = -95
+var start_position_y = -115
 
 var save_position_x = -152
-var save_position_y = -95
+var save_position_y = -115
 
 var finish_position_x = -1570
 var finish_position_y = 5
@@ -20,6 +20,7 @@ var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
 
 func _ready():
 	queue.is_level_1 = false
@@ -31,6 +32,7 @@ func _ready():
 	queue.is_level_7 = true
 	queue.load()
 	set_volume()
+	translate_text()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -84,6 +86,10 @@ func handle_pause():
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+			
+func _on_save_point_player_entered():
+	save_position_x = $Player.position.x
+	save_position_y = $Player.position.y
 			
 func toggle_pause():
 	$Player/Pause.show()
@@ -234,6 +240,23 @@ func _on_bumper_2_player_hit_bumper():
 func _on_bumper_3_player_hit_bumper():
 	$Player.player_hit_bumper($Bumper3.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 	
+func _on_bumper_4_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper4.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
+	
+func _on_bumper_5_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper5.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
 func display_advice():
 	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):
 		$Advice.show()
+		
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		
+	$TripleSign.get_child(1).text = translate_config.get_value("TranslationSign", "RunSign")
+	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "JumpSign")

@@ -12,6 +12,7 @@ func _process(_delta):
 func _on_bumper_trigger_body_entered(body):
 	if body.name == "Player":
 		if !is_trigger:
+			body.is_on_bumper = true
 			$AnimatedSprite2D.play()
 			is_trigger = true
 			player_hit_bumper.emit()

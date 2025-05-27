@@ -883,6 +883,7 @@ position = Vector2(606.96, -112.426)
 scale = Vector2(0.335558, 0.669719)
 
 [node name="Acid7" parent="." instance=ExtResource("13_tw4yl")]
+z_index = 1
 position = Vector2(-5229, 70.4202)
 scale = Vector2(4.42, 0.675799)
 
@@ -911,7 +912,7 @@ position = Vector2(-4501, 101)
 scale = Vector2(0.762927, 1.04868)
 
 [node name="Sprite2D16" type="Sprite2D" parent="."]
-position = Vector2(-5369, -245.175)
+position = Vector2(-5369, -220.175)
 rotation = -1.5708
 scale = Vector2(0.29414, 0.805407)
 texture = ExtResource("10_k6lm4")
@@ -929,7 +930,7 @@ position = Vector2(-2.81059, 564.65)
 texture = ExtResource("10_k6lm4")
 
 [node name="Sprite2D14" type="Sprite2D" parent="."]
-position = Vector2(-5501, -111.675)
+position = Vector2(-5501, -86.6749)
 rotation = 1.5708
 scale = Vector2(1.925, 1)
 texture = ExtResource("12_q8la5")
@@ -953,9 +954,9 @@ scale = Vector2(0.86747, 0.523631)
 texture = ExtResource("19_eboxf")
 
 [node name="Sprite2D18" type="Sprite2D" parent="Sprite2D14"]
-position = Vector2(-0.246006, -899)
+position = Vector2(-8.0213, -899)
 rotation = 3.14159
-scale = Vector2(0.670614, 0.879856)
+scale = Vector2(0.549125, 0.879856)
 texture = ExtResource("10_k6lm4")
 
 [node name="Sprite2D15" type="Sprite2D" parent="."]
@@ -968,7 +969,7 @@ position = Vector2(-4529, -68)
 scale = Vector2(1.81699, 2.03676)
 
 [node name="Path2D12" type="Path2D" parent="."]
-position = Vector2(0.000488281, -53.1749)
+position = Vector2(0.000976562, -28.1748)
 curve = SubResource("Curve2D_ujibb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D12"]
@@ -982,7 +983,7 @@ rotation = -1.5708
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D13" type="Path2D" parent="."]
-position = Vector2(0.000488281, -53.1749)
+position = Vector2(0.000976562, -28.1748)
 curve = SubResource("Curve2D_dcbuv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D13"]
@@ -995,7 +996,7 @@ position = Vector2(0, 1)
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D14" type="Path2D" parent="."]
-position = Vector2(15.773, -53.3489)
+position = Vector2(15.7735, -28.3488)
 curve = SubResource("Curve2D_enw33")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D14"]
@@ -1007,7 +1008,7 @@ loop = false
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D15" type="Path2D" parent="."]
-position = Vector2(24.773, -52.3483)
+position = Vector2(24.7735, -27.3482)
 curve = SubResource("Curve2D_omhh0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D15"]

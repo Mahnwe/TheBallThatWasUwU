@@ -17,6 +17,7 @@ var current_state
 
 var velocity_y_bumper_check
 var velocity_x_bumper_check
+var is_on_bumper
 
 var velocity_y_max = 600
 var dash_speed = 800
@@ -46,6 +47,7 @@ func _ready():
 	$WaterSploch.hide()
 	velocity_y_bumper_check = jump_force-100
 	velocity_x_bumper_check = speed
+	is_on_bumper = false
 	has_grounded = false
 	is_in_water = false
 	can_dash = false
@@ -183,13 +185,14 @@ func check_if_player_is_on_floor():
 				$Raycast.scale.x = 1
 				$AnimatedSprite2D.play()
 	if is_on_floor() and Input.is_action_pressed("jump") or Input.is_action_just_pressed("jump"):
-		jump()
+		if !is_on_bumper:
+			jump()
 		
 func _input(event):
 	var is_jump_interrupted = event.is_action_released("jump") and velocity.y < 0.0
 	if is_jump_interrupted:
 		# Decrease the Y velocity by multiplying it, but don't set it to 0
-		velocity.y *= 0.6
+		velocity.y *= 0.4
 			
 func check_if_player_is_on_wall():
 	# Wall-jump
@@ -293,7 +296,10 @@ func _on_dash_duration_timer_timeout():
 func _on_wall_slide_timer_timeout():
 	if colliding_wall() and current_state != state.GROUNDED:
 		current_state = state.SLIDING
-		wall_slide = gravity+120
+		if !is_in_water:
+			wall_slide = gravity+100
+		else:
+			wall_slide = gravity+70
 
 
 func _on_jump_dust_anim_animation_finished():
@@ -316,20 +322,21 @@ func _on_just_jump_timer_timeout():
 	
 func player_hit_bumper(bumper_rotation, velocity_y, velocity_x):
 	if bumper_rotation <= 1.00 and bumper_rotation >= -1.00:
-		velocity = Vector2(speed * horizontal_direction, velocity_y)
+		velocity = Vector2((speed * horizontal_direction), velocity_y-100)
 	elif bumper_rotation <= 50.00 and bumper_rotation >= 40.00:
-		if velocity_x > 400 or velocity_x < -400:
-			velocity = Vector2(velocity_x, velocity_y-100)
+		if velocity_x < -400:
+			velocity = Vector2(velocity_x, (velocity_y-100))
 		else:
-			velocity = Vector2(velocity_x, velocity_y)
+			velocity = Vector2(velocity_x, velocity_y-50)
 	elif bumper_rotation >= -50.00 and bumper_rotation <= -40.00:
-		if velocity_x > 400 or velocity_x < -400:
-			velocity = Vector2(velocity_x, velocity_y-100)
+		if velocity_x > 400:
+			velocity = Vector2(velocity_x, (velocity_y-100))
 		else:
-			velocity = Vector2(velocity_x, velocity_y)
+			velocity = Vector2(velocity_x, velocity_y-50)
 	$JustBumpTimer.start()
 	current_state = state.AIRBORNE
 
 
 func _on_just_bump_timer_timeout():
+	is_on_bumper = false
 	current_state = state.INAIR
