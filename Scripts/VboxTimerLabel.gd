@@ -7,6 +7,7 @@ func instantiate(file_data):
 	self.get_child(2).text = _format_seconds(file_data[2])
 	self.get_child(3).text = _format_seconds(file_data[3])
 	self.get_child(4).text = _format_seconds(file_data[4])
+	self.get_child(5).text = _format_seconds(file_data[5])
 
 func _format_seconds(time : float) -> String:
 	var minutes := time / 60

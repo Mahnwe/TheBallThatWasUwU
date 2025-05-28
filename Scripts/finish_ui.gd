@@ -11,6 +11,12 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_file
 
+var bronze_texture = load("res://Arts/MedalSprite/BronzeMedal.png")
+var silver_texture = load("res://Arts/MedalSprite/SilverMedal.png")
+var gold_texture = load("res://Arts/MedalSprite/GoldMedal.png")
+var dev_texture = load("res://Arts/MedalSprite/DevMedal.png")
+var nomedal_texture = load("res://Arts/CloudButtonSprite/Validate.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	translate_text()
@@ -123,3 +129,17 @@ func translate_text():
 	
 func change_font_size():
 	$CanvasLayer3/TimerPresentation.add_theme_font_size_override("font_size", 70)
+	
+func set_medal_sprite(current_medal):
+	print(current_medal)
+	if current_medal == 0:
+		$CanvasLayer3/MedalSprite.texture = nomedal_texture
+	if current_medal == 1:
+		$CanvasLayer3/MedalSprite.texture = bronze_texture
+	if current_medal == 2:
+		$CanvasLayer3/MedalSprite.texture = silver_texture
+	if current_medal == 3:
+		$CanvasLayer3/MedalSprite.texture = gold_texture
+	if current_medal == 4:
+		$CanvasLayer3/MedalSprite.texture = dev_texture
+	

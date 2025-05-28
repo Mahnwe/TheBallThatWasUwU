@@ -6,7 +6,9 @@ class_name SaveGame
 @export var timer_rank_4 := 0.0
 @export var timer_rank_5 := 0.0
 @export var timer_rank_6 := 0.0
-@export var file_data: Array = [timer_rank_1, timer_rank_2, timer_rank_3, timer_rank_4, timer_rank_5]
+
+@export var file_data: Array = [timer_rank_1, timer_rank_2, timer_rank_3, timer_rank_4, timer_rank_5, timer_rank_6]
+
 @export var is_level_1 = false
 @export var is_level_2 = false
 @export var is_level_3 = false
@@ -15,27 +17,34 @@ class_name SaveGame
 @export var is_level_6 = false
 @export var is_level_7 = false
 
+enum medal {NOMEDAL,BRONZE,SILVER,GOLD,DEV}
+var current_medal
+
 func sort_ascending(player_timer):
-	if player_timer < file_data[4] && player_timer > file_data[3]:
+	if player_timer < file_data[5] && player_timer > file_data[4]:
+		file_data[5] = player_timer
+		current_medal = medal.NOMEDAL
+	if player_timer < file_data[5] && player_timer < file_data[4] && player_timer > file_data[3]:
 		file_data[4] = player_timer
-	if player_timer < file_data[4] && player_timer < file_data[3] && player_timer > file_data[2]:
+		current_medal = medal.NOMEDAL
+	if player_timer < file_data[5] && player_timer < file_data[4] && player_timer < file_data[3] && player_timer > file_data[2]:
 		file_data[4] = file_data[3]
 		file_data[3] = player_timer
-	if  player_timer < file_data[4] && player_timer < file_data[3] && player_timer < file_data[2] && player_timer > file_data[1]:
+		current_medal = medal.BRONZE
+	if player_timer < file_data[5] && player_timer < file_data[4] && player_timer < file_data[3] && player_timer < file_data[2] && player_timer > file_data[1]:
 		file_data[4] = file_data[3]
 		file_data[3] = file_data[2]
 		file_data[2] = player_timer
-	if  player_timer < file_data[4] && player_timer < file_data[3] && player_timer < file_data[2] && player_timer < file_data[1] && player_timer > file_data[0]:
+		current_medal = medal.SILVER
+	if player_timer < file_data[5] && player_timer < file_data[4] && player_timer < file_data[3] && player_timer < file_data[2] && player_timer < file_data[1] && player_timer > file_data[0]:
 		file_data[4] = file_data[3]
 		file_data[3] = file_data[2]
 		file_data[2] = file_data[1]
 		file_data[1] = player_timer
-	if player_timer < file_data[4] && player_timer < file_data[3] && player_timer < file_data[2] && player_timer < file_data[1] && player_timer < file_data[0]:
-		file_data[4] = file_data[3]
-		file_data[3] = file_data[2]
-		file_data[2] = file_data[1]
-		file_data[1] = file_data[0]
+		current_medal = medal.GOLD
+	if player_timer < file_data[5] && player_timer < file_data[4] && player_timer < file_data[3] && player_timer < file_data[2] && player_timer < file_data[1] && player_timer < file_data[0]:
 		file_data[0] = player_timer
+		current_medal = medal.DEV
 	
 func saveData():
 	if is_level_1:

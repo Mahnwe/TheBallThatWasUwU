@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=31 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="11_p1e1o"]
 [ext_resource type="Script" uid="uid://cat0vjr1aycp1" path="res://Scripts/chest_validator.gd" id="12_3p34a"]
 [ext_resource type="AudioStream" uid="uid://bf3f1t5hsvtmq" path="res://Sound/Musics/MenuMusic.mp3" id="12_m2qtk"]
+[ext_resource type="PackedScene" uid="uid://c07mapa63mxm2" path="res://Scenes/level_validator.tscn" id="13_h63v2"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="13_owrtn"]
 [ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="14_45jmy"]
 [ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="16_gkf7k"]
@@ -116,12 +117,12 @@ position = Vector2(177, -65)
 position = Vector2(603, 0.875)
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(719, 470.875)
-scale = Vector2(0.254949, 0.68)
+position = Vector2(714, 471)
+scale = Vector2(0.294947, 0.68)
 
 [node name="platform3" parent="." instance=ExtResource("3_x4hsc")]
-position = Vector2(1081, 467.875)
-scale = Vector2(0.24, 0.72)
+position = Vector2(1077, 468)
+scale = Vector2(0.28, 0.72)
 
 [node name="Level1Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -160,10 +161,14 @@ offset_bottom = 40.234
 
 [node name="ChestValidator" type="Sprite2D" parent="Level1Button"]
 visible = false
-position = Vector2(78.0422, -3.7577)
+position = Vector2(77.8983, 0.114442)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
 script = ExtResource("12_3p34a")
+
+[node name="LevelValidator" parent="Level1Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="Level2Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -201,10 +206,14 @@ offset_bottom = 39.8073
 
 [node name="ChestValidator" type="Sprite2D" parent="Level2Button"]
 visible = false
-position = Vector2(79.3103, -4.29574)
+position = Vector2(79.1664, -0.423523)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
 script = ExtResource("12_3p34a")
+
+[node name="LevelValidator" parent="Level2Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="Level3Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -244,10 +253,14 @@ offset_bottom = 39.7507
 
 [node name="ChestValidator" type="Sprite2D" parent="Level3Button"]
 visible = false
-position = Vector2(79.3103, -4.29573)
+position = Vector2(79.1664, -0.423513)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
 script = ExtResource("12_3p34a")
+
+[node name="LevelValidator" parent="Level3Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="Level4Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -287,10 +300,14 @@ offset_bottom = 39.6903
 
 [node name="ChestValidator" type="Sprite2D" parent="Level4Button"]
 visible = false
-position = Vector2(79.3103, -2.42014)
+position = Vector2(79.1664, 1.45208)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
 script = ExtResource("12_3p34a")
+
+[node name="LevelValidator" parent="Level4Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="Level5Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -330,10 +347,14 @@ offset_bottom = 39.2062
 
 [node name="ChestValidator" type="Sprite2D" parent="Level5Button"]
 visible = false
-position = Vector2(78.5441, -2.42015)
+position = Vector2(78.4002, 1.45207)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
 script = ExtResource("12_3p34a")
+
+[node name="LevelValidator" parent="Level5Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="Level6Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -373,10 +394,14 @@ offset_bottom = 38.7222
 
 [node name="ChestValidator" type="Sprite2D" parent="Level6Button"]
 visible = false
-position = Vector2(78.5441, -2.42015)
+position = Vector2(78.4002, 1.45207)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
 script = ExtResource("12_3p34a")
+
+[node name="LevelValidator" parent="Level6Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="Level7Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
@@ -425,9 +450,13 @@ text = "Secret level"
 
 [node name="ChestValidator" type="Sprite2D" parent="Level7Button"]
 visible = false
-position = Vector2(78.5441, -1.93611)
+position = Vector2(78.5441, 1.45208)
 scale = Vector2(0.295977, 0.462514)
 texture = ExtResource("11_d77ms")
+
+[node name="LevelValidator" parent="Level7Button" instance=ExtResource("13_h63v2")]
+visible = false
+position = Vector2(0.88, 0.88)
 
 [node name="platform6" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(1568, 623.205)

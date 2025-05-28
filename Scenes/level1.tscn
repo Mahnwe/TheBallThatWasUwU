@@ -418,12 +418,12 @@ rotation = -1.5708
 scale = Vector2(0.241269, 1.32)
 
 [node name="Wall18" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(-1753, 473)
+position = Vector2(-1753, 481)
 rotation = 1.5708
-scale = Vector2(0.639994, 1.16)
+scale = Vector2(0.759994, 1.16)
 
 [node name="platform24" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-1795, 790)
+position = Vector2(-1804, 790)
 scale = Vector2(0.08, 1)
 
 [node name="platform25" parent="." instance=ExtResource("7_v154u")]
@@ -436,9 +436,9 @@ position = Vector2(-2033, 713)
 scale = Vector2(0.286369, 0.23606)
 
 [node name="Wall20" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(-2116, 581)
+position = Vector2(-2116, 609)
 rotation = -1.5708
-scale = Vector2(0.159998, 1)
+scale = Vector2(0.24, 1)
 
 [node name="Spike28" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-1810, 405)
@@ -780,7 +780,7 @@ rotation = 1.5708
 scale = Vector2(0.23132, 0.592481)
 
 [node name="Spike39" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-1777, 862)
+position = Vector2(-1786, 862)
 rotation = 1.5708
 scale = Vector2(0.478904, 0.84554)
 
@@ -803,7 +803,7 @@ rotation = -1.5708
 scale = Vector2(0.689601, 0.834783)
 
 [node name="Spike43" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-2124, 591)
+position = Vector2(-2128, 611)
 rotation = -0.318123
 scale = Vector2(0.646028, 0.585984)
 
