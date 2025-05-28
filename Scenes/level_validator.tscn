@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c07mapa63mxm2"]
+
+[ext_resource type="Texture2D" uid="uid://bdlbx2soinpgk" path="res://Arts/CloudButtonSprite/Validate.png" id="1_na73g"]
+[ext_resource type="Script" uid="uid://d0ld7jk1y0dhg" path="res://Scripts/level_validator.gd" id="1_sijd1"]
+
+[node name="LevelValidator" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_na73g")
+script = ExtResource("1_sijd1")
