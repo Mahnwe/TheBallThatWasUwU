@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cp0mu2e8kcon"]
+[gd_scene load_steps=34 format=3 uid="uid://cp0mu2e8kcon"]
 
 [ext_resource type="Script" uid="uid://bxymd3lpn7qw7" path="res://Scripts/commands_ui.gd" id="1_in6he"]
 [ext_resource type="Texture2D" uid="uid://cea44i1yw26q1" path="res://Arts/KeyboardControls/Qkey-removebg-preview.png" id="2_apncb"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="31_pbdu2"]
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="32_k81pc"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="33_cep7v"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="33_pq72j"]
 [ext_resource type="Texture2D" uid="uid://d2tdp336bis5j" path="res://Arts/ControllerControls/Square-removebg-preview.png" id="34_k6euw"]
 [ext_resource type="Texture2D" uid="uid://cmof2sbw6pjjp" path="res://Arts/ControllerControls/XButton-removebg-preview.png" id="35_dq218"]
 [ext_resource type="Texture2D" uid="uid://b2x3glmt64vks" path="res://Arts/ControllerControls/YSwitch-removebg-preview.png" id="36_jtqtl"]
@@ -38,16 +39,16 @@ z_index = 2
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_in6he")
 
 [node name="Keyboard1" type="Label" parent="."]
 z_index = 2
 layout_mode = 2
-offset_left = 322.0
+offset_left = 343.5
 offset_top = 61.0
-offset_right = 512.0
+offset_right = 533.5
 offset_bottom = 120.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -94,9 +95,9 @@ texture = ExtResource("10_rd156")
 [node name="Keyboard2" type="Label" parent="."]
 z_index = 2
 layout_mode = 2
-offset_left = 634.0
+offset_left = 655.5
 offset_top = 61.0
-offset_right = 815.0
+offset_right = 836.5
 offset_bottom = 120.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -143,9 +144,9 @@ texture = ExtResource("18_0xvtq")
 [node name="Controller" type="Label" parent="."]
 z_index = 2
 layout_mode = 2
-offset_left = 930.0
+offset_left = 951.5
 offset_top = 61.0
-offset_right = 1114.0
+offset_right = 1135.5
 offset_bottom = 120.0
 scale = Vector2(1.06798, 0.97)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
@@ -230,9 +231,9 @@ texture = ExtResource("36_jtqtl")
 
 [node name="Movements" type="Label" parent="."]
 layout_mode = 2
-offset_left = 36.0
+offset_left = 57.5
 offset_top = 167.0
-offset_right = 150.0
+offset_right = 171.5
 offset_bottom = 195.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -240,9 +241,9 @@ text = "Movements"
 
 [node name="Jump" type="Label" parent="."]
 layout_mode = 2
-offset_left = 61.0
+offset_left = 82.5
 offset_top = 255.626
-offset_right = 112.0
+offset_right = 133.5
 offset_bottom = 283.626
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -250,9 +251,9 @@ text = "Jump"
 
 [node name="RestartSave" type="Label" parent="."]
 layout_mode = 2
-offset_left = 33.0
+offset_left = 54.5
 offset_top = 343.0
-offset_right = 154.0
+offset_right = 175.5
 offset_bottom = 371.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -260,9 +261,9 @@ text = "Restart Save"
 
 [node name="RestartLevel" type="Label" parent="."]
 layout_mode = 2
-offset_left = 33.0
+offset_left = 54.5
 offset_top = 428.0
-offset_right = 159.0
+offset_right = 180.5
 offset_bottom = 456.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -270,9 +271,9 @@ text = "Restart Level"
 
 [node name="Pause" type="Label" parent="."]
 layout_mode = 2
-offset_left = 65.0
+offset_left = 86.5
 offset_top = 525.0
-offset_right = 123.0
+offset_right = 144.5
 offset_bottom = 553.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -280,19 +281,49 @@ text = "Pause"
 
 [node name="Dash" type="Label" parent="."]
 layout_mode = 0
-offset_left = 68.0
+offset_left = 89.5
 offset_top = 614.0
-offset_right = 117.0
+offset_right = 138.5
 offset_bottom = 642.0
 scale = Vector2(1.12, 1)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Dash"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-custom_minimum_size = Vector2(1200, 720)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.151276, 0.151276, 0.151276, 1)
+position = Vector2(205.25, 137)
+scale = Vector2(3.19257, 4.71053)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(125.967, -1.48603)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(241.754, -1.48604)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0.151946, 52.8603)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(121.105, 54.3464)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(248.743, 52.2235)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0.151946, 93.8324)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(130.83, 95.743)
+texture = ExtResource("33_pq72j")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(249.807, 94.8939)
+texture = ExtResource("33_pq72j")

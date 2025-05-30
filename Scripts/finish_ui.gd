@@ -131,7 +131,6 @@ func change_font_size():
 	$CanvasLayer3/TimerPresentation.add_theme_font_size_override("font_size", 70)
 	
 func set_medal_sprite(current_medal):
-	print(current_medal)
 	if current_medal == 0:
 		$CanvasLayer3/MedalSprite.texture = nomedal_texture
 	if current_medal == 1:

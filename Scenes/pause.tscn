@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=28 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
 [ext_resource type="Texture2D" uid="uid://uxl3y05r1kun" path="res://Arts/CrossCloseSprite/CrossClose.png" id="16_n0g5q"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
+[ext_resource type="Texture2D" uid="uid://cx83hytcg66vq" path="res://Arts/ControllerControls/BButton-removebg-preview.png" id="18_isk47"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="19_mkub3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
@@ -51,15 +52,15 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6gfd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isk47"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.85098, 0, 0, 1)
-expand_margin_top = 5.0
-expand_margin_bottom = 3.0
+corner_radius_top_right = 5
+corner_radius_bottom_left = 3
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -359,25 +360,35 @@ scale = Vector2(1.56, 2.36)
 
 [node name="CloseButton" type="Button" parent="CommandsUI"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 1017.0
-offset_bottom = 719.0
-scale = Vector2(0.0817922, 0.0898942)
+offset_left = 77.5641
+offset_top = 14.4068
+offset_right = 1092.56
+offset_bottom = 729.407
+scale = Vector2(0.0886672, 0.0923192)
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
-theme_override_styles/focus = SubResource("StyleBoxFlat_i6gfd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_isk47")
 icon = ExtResource("16_n0g5q")
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CommandsUI/CloseButton"]
-position = Vector2(492.806, 780.39)
+position = Vector2(219.005, 778.467)
 scale = Vector2(1.53326, 1.75755)
 texture = ExtResource("11_felfj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CommandsUI/CloseButton"]
+position = Vector2(532.495, 778.467)
+scale = Vector2(0.436578, 0.50538)
+texture = ExtResource("1_t2voc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CommandsUI/CloseButton"]
+position = Vector2(853.822, 782.747)
+scale = Vector2(1, 1.11746)
+texture = ExtResource("18_isk47")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("12_r111m")

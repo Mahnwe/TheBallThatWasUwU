@@ -178,7 +178,7 @@ theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 
 [node name="MedalSprite" type="Sprite2D" parent="CanvasLayer3"]
-position = Vector2(716, 236)
+position = Vector2(737, 251)
 scale = Vector2(1.5, 1.5)
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
