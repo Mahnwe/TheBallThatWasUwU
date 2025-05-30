@@ -205,6 +205,7 @@ func _on_finish_player_entered():
 	var number_of_level_three_finished = stats_config.get_value("Stats", "level_three_finished_number")
 	stats_config.set_value("Stats", "level_three_finished_number", number_of_level_three_finished+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	save_medals_stats()
 
 
 func _on_cannon_player_dead_by_cannon_ball():
@@ -337,3 +338,24 @@ func _on_bumper_5_player_hit_bumper():
 
 func _on_bumper_6_player_hit_bumper():
 	$Player.player_hit_bumper($Bumper6.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
+func save_medals_stats():
+	if queue.current_medal != 0:
+		var medal_number = stats_config.get_value("Stats", "medal_number")
+		stats_config.set_value("Stats", "medal_number", medal_number+1)
+		if queue.current_medal == 1:
+			var bronze_medal_number = stats_config.get_value("Stats", "bronze_medal_number")
+			stats_config.set_value("Stats", "bronze_medal_number", bronze_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 2:
+			var silver_medal_number = stats_config.get_value("Stats", "silver_medal_number")
+			stats_config.set_value("Stats", "silver_medal_number", silver_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 3:
+			var gold_medal_number = stats_config.get_value("Stats", "gold_medal_number")
+			stats_config.set_value("Stats", "gold_medal_number", gold_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 4:
+			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
+			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")

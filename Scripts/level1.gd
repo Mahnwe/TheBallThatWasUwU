@@ -147,6 +147,7 @@ func _on_finish_player_entered():
 	var number_of_level_one_finished = stats_config.get_value("Stats", "level_one_finished_number")
 	stats_config.set_value("Stats", "level_one_finished_number", number_of_level_one_finished+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	save_medals_stats()
 
 
 func _on_start_area_player_exited_start_area():
@@ -277,4 +278,25 @@ func translate_text():
 	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "DeadSign")
 	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "HardSign")
 	$TripleSign2.get_child(3).text = translate_config.get_value("TranslationSign", "EasySign")
-		
+	
+	
+func save_medals_stats():
+	if queue.current_medal != 0:
+		var medal_number = stats_config.get_value("Stats", "medal_number")
+		stats_config.set_value("Stats", "medal_number", medal_number+1)
+		if queue.current_medal == 1:
+			var bronze_medal_number = stats_config.get_value("Stats", "bronze_medal_number")
+			stats_config.set_value("Stats", "bronze_medal_number", bronze_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 2:
+			var silver_medal_number = stats_config.get_value("Stats", "silver_medal_number")
+			stats_config.set_value("Stats", "silver_medal_number", silver_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 3:
+			var gold_medal_number = stats_config.get_value("Stats", "gold_medal_number")
+			stats_config.set_value("Stats", "gold_medal_number", gold_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 4:
+			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
+			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
