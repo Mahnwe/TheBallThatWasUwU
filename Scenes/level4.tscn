@@ -104,7 +104,7 @@ point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_q6wn7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4148, -751, 0, 0, 0, 0, -4149, -640, 0, 0, 0, 0, -4151, -526, 0, 0, 0, 0, -4149, -436, 0, 0, 0, 0, -4148, -751)
+"points": PackedVector2Array(0, 0, 0, 0, -4148, -751, 0, 0, 0, 0, -4149, -640, 0, 0, 0, 0, -4151, -526, 0, 0, 0, 0, -4150, -413, 0, 0, 0, 0, -4148, -751)
 }
 point_count = 5
 
@@ -279,14 +279,14 @@ scale = Vector2(0.641036, 1.14602)
 skew = -0.00281227
 
 [node name="platform10" parent="platform8" instance=ExtResource("9_ujhmm")]
-position = Vector2(377.749, 488.031)
+position = Vector2(375.409, 499.55)
 rotation = 0.0089742
-scale = Vector2(0.411392, 0.641036)
+scale = Vector2(0.411392, 0.461549)
 skew = 0.00281227
 
 [node name="platform7" parent="." instance=ExtResource("9_ujhmm")]
-position = Vector2(-2404, -848)
-scale = Vector2(0.694417, 1)
+position = Vector2(-2359, -848)
+scale = Vector2(0.614412, 1)
 
 [node name="platform9" parent="." instance=ExtResource("9_ujhmm")]
 position = Vector2(-4644, 254)
@@ -572,6 +572,7 @@ position = Vector2(-37.44, -44.4774)
 scale = Vector2(0.488281, 0.259441)
 
 [node name="Path2D11" type="Path2D" parent="."]
+position = Vector2(-1, -35)
 curve = SubResource("Curve2D_q6wn7")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D11"]
@@ -588,10 +589,10 @@ position = Vector2(-2809, -84)
 portal_in = true
 
 [node name="FinishPortal2" parent="." instance=ExtResource("8_cv4mv")]
-position = Vector2(-2308, -847)
+position = Vector2(-2286, -847)
 
 [node name="Finish" parent="." instance=ExtResource("18_rc5ql")]
-position = Vector2(-2090, -834)
+position = Vector2(-2046, -834)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("19_mmpto")]

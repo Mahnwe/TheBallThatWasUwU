@@ -323,12 +323,12 @@ func _on_just_jump_timer_timeout():
 func player_hit_bumper(bumper_rotation, velocity_y, velocity_x):
 	if bumper_rotation <= 1.00 and bumper_rotation >= -1.00:
 		velocity = Vector2((speed * horizontal_direction), velocity_y-100)
-	elif bumper_rotation <= 50.00 and bumper_rotation >= 40.00:
+	elif bumper_rotation <= 55.00 and bumper_rotation >= 40.00:
 		if velocity_x < -400:
 			velocity = Vector2(velocity_x, (velocity_y-100))
 		else:
 			velocity = Vector2(velocity_x, velocity_y-50)
-	elif bumper_rotation >= -50.00 and bumper_rotation <= -40.00:
+	elif bumper_rotation >= -55.00 and bumper_rotation <= -40.00:
 		if velocity_x > 400:
 			velocity = Vector2(velocity_x, (velocity_y-100))
 		else:

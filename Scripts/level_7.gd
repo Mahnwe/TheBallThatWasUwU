@@ -134,6 +134,7 @@ func untoggle_pause():
 	
 func _on_spike_spike_hit():
 	disable_drop_groups()
+	disable_patrol_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -169,7 +170,10 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.get_child(1).animation = "stay"
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+	reset_patrols_progress()
+	reset_drop_progress()
 	enable_drop_groups()
+	enable_patrol_groups()
 	
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
@@ -194,6 +198,33 @@ func _on_pause_continue_is_clicked():
 		
 func _on_pause_music_finished():
 	$PauseMusic.play()
+	
+func _on_cave_portal_body_entered(body):
+	if body.name == "Player":
+		$PortalSound.play()
+		await get_tree().create_timer(0.2).timeout
+		body.position.x = ($Portal2.position.x - 250)
+		body.position.y = ($Portal2.position.y - 70)
+	
+func disable_patrol_groups():
+	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+			member.set_process(false)
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.set_process(false)
+		
+func enable_patrol_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+				member.set_process(true)
+		for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			if !member.trigger_required:
+				member.set_process(true)
+				
+func reset_patrols_progress():
+	for member in get_tree().get_nodes_in_group("spike_on_patrol"):
+			member.get_parent().progress = 0
+	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
+			member.get_parent().progress = 0
 	
 func water_drop_animation(delta):
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):
@@ -246,6 +277,9 @@ func _on_bumper_4_player_hit_bumper():
 	
 func _on_bumper_5_player_hit_bumper():
 	$Player.player_hit_bumper($Bumper5.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
+func _on_bumper_platform_player_hit_bumper():
+	$Player.player_hit_bumper($Path2D7/PathFollow2D/Bumper6.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 	
 func display_advice():
 	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):

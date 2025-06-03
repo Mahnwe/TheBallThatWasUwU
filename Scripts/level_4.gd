@@ -8,7 +8,7 @@ var start_position_y = -1551
 var save_position_x = -3065
 var save_position_y = -1551
 
-var finish_position_x = -2230
+var finish_position_x = -2210
 var finish_position_y = -910
 
 var queue = preload("res://Ressources/Save_game.gd").new()
@@ -108,6 +108,7 @@ func handle_pause():
 			
 func _on_spike_spike_hit():
 	disable_patrol_groups()
+	disable_drop_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
