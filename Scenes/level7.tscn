@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=36 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -21,6 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="19_eknqy"]
 [ext_resource type="PackedScene" uid="uid://choon04ib41uv" path="res://Scenes/portal.tscn" id="20_dp041"]
 [ext_resource type="AudioStream" uid="uid://06ksrea8xsdh" path="res://Sound/Effects/TELEPORT.mp3" id="21_lfbfq"]
+[ext_resource type="PackedScene" uid="uid://d21ljnkx42qta" path="res://Scenes/water_platform.tscn" id="22_bv2tk"]
+[ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="23_fvo85"]
+[ext_resource type="PackedScene" uid="uid://cmqedy04unkxa" path="res://Scenes/coral_spike.tscn" id="25_i6juq"]
+[ext_resource type="PackedScene" uid="uid://cvbepjlli6baq" path="res://Scenes/sand_platform.tscn" id="25_p2rf6"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -337,9 +341,9 @@ position = Vector2(778, -1516)
 scale = Vector2(0.7684, 2.17912)
 
 [node name="MetalPlatform15" parent="." instance=ExtResource("3_h0p4h")]
-position = Vector2(604, -1805)
-rotation = -0.785398
-scale = Vector2(0.8884, 2.97912)
+position = Vector2(531, -1810)
+rotation = -0.872205
+scale = Vector2(0.50841, 2.46872)
 
 [node name="MetalPlatform16" parent="." instance=ExtResource("3_h0p4h")]
 position = Vector2(-1318, -1801)
@@ -418,7 +422,7 @@ position = Vector2(-566, 371)
 rotation = -0.538214
 
 [node name="platform2" parent="platform2" instance=ExtResource("15_54uab")]
-position = Vector2(-1129, 336)
+position = Vector2(-1126, 327.997)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_dp041")
@@ -524,6 +528,14 @@ scale = Vector2(0.432715, 0.334913)
 position = Vector2(-1329, -2528)
 scale = Vector2(0.4, 1.08)
 
+[node name="platform" parent="platform7" instance=ExtResource("15_54uab")]
+position = Vector2(222.5, -52.7777)
+scale = Vector2(0.670375, 0.808673)
+
+[node name="platform2" parent="platform7" instance=ExtResource("15_54uab")]
+position = Vector2(322.5, -95.3703)
+scale = Vector2(0.517218, 0.663232)
+
 [node name="Path2D5" type="Path2D" parent="."]
 curve = SubResource("Curve2D_fvo85")
 
@@ -553,16 +565,16 @@ position = Vector2(-1373, -2450)
 scale = Vector2(0.551025, 0.343793)
 
 [node name="Spike7" parent="." instance=ExtResource("14_42yhu")]
-position = Vector2(-1267, -2903)
+position = Vector2(-1258, -2875)
 rotation = -0.647698
 scale = Vector2(0.874966, 0.829988)
 
 [node name="Spike8" parent="." instance=ExtResource("14_42yhu")]
-position = Vector2(-1108, -2789)
+position = Vector2(-1108, -2761)
 scale = Vector2(0.811803, 0.468547)
 
 [node name="Path2D7" type="Path2D" parent="."]
-position = Vector2(71, 80)
+position = Vector2(71, 101)
 curve = SubResource("Curve2D_i6juq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
@@ -572,18 +584,29 @@ rotates = false
 [node name="platform" parent="Path2D7/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("15_54uab")]
 position = Vector2(75, -137)
 rotation = 1.5708
-scale = Vector2(0.353327, 0.692548)
+scale = Vector2(0.313347, 0.692548)
 sync_to_physics = false
 speed = 200
+
+[node name="platform14" parent="Path2D7/PathFollow2D/platform" instance=ExtResource("15_54uab")]
+position = Vector2(485.088, 170.385)
+rotation = -1.5708
+scale = Vector2(0.246193, 1.64364)
+sync_to_physics = false
 
 [node name="Bumper6" parent="Path2D7/PathFollow2D" instance=ExtResource("12_dk2oo")]
 position = Vector2(58, -10.0002)
 rotation = 0.820305
 scale = Vector2(0.848476, 0.956111)
 
-[node name="platform8" parent="." instance=ExtResource("15_54uab")]
-position = Vector2(-1207, -3013)
-scale = Vector2(0.264996, 0.781524)
+[node name="platform14" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(-1237, -2993)
+scale = Vector2(0.260129, 0.729349)
+
+[node name="Spike10" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(-636, -3059)
+rotation = 1.5708
+scale = Vector2(0.704676, 0.677392)
 
 [node name="platform9" parent="." instance=ExtResource("15_54uab")]
 position = Vector2(-2632, -3302)
@@ -613,7 +636,152 @@ position = Vector2(-269, -3245)
 scale = Vector2(0.631131, 0.519788)
 
 [node name="SavePoint2" parent="." instance=ExtResource("18_l0h5v")]
-position = Vector2(442, -3351)
+position = Vector2(442, -3342)
+scale = Vector2(0.606914, 0.639194)
+
+[node name="platform10" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(433, -3735)
+
+[node name="platform" parent="platform10" instance=ExtResource("15_54uab")]
+position = Vector2(639, 0)
+
+[node name="Wall3" parent="." instance=ExtResource("19_eknqy")]
+position = Vector2(1280, -3609)
+rotation = 1.5708
+scale = Vector2(1.55886, 1.6196)
+
+[node name="Wall" parent="Wall3" instance=ExtResource("19_eknqy")]
+position = Vector2(642.778, 161.151)
+rotation = 3.14159
+
+[node name="Water" parent="." instance=ExtResource("23_fvo85")]
+position = Vector2(1064, -2488)
+scale = Vector2(7.24, 4.01)
+
+[node name="WaterPlatform" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(523, -2066)
+scale = Vector2(2.76746, 2.49417)
+
+[node name="WaterPlatform" parent="WaterPlatform" instance=ExtResource("22_bv2tk")]
+position = Vector2(129.726, 0)
+
+[node name="WaterPlatform2" parent="WaterPlatform" instance=ExtResource("22_bv2tk")]
+position = Vector2(259.759, 0)
+
+[node name="WaterPlatform3" parent="WaterPlatform" instance=ExtResource("22_bv2tk")]
+position = Vector2(389.139, 0)
+
+[node name="WaterPlatform10" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(410, -2471)
+scale = Vector2(1.02903, 1.67933)
+
+[node name="WaterPlatform2" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1796, -2358)
+rotation = -1.5708
+scale = Vector2(4.21244, 2.61169)
+
+[node name="WaterPlatform" parent="WaterPlatform2" instance=ExtResource("22_bv2tk")]
+position = Vector2(129.853, -3.75849e-05)
+
+[node name="WaterPlatform3" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1003, -2623)
+scale = Vector2(1.65279, 1.78196)
+
+[node name="WaterPlatform" parent="WaterPlatform3" instance=ExtResource("22_bv2tk")]
+position = Vector2(-129.531, 0.000137007)
+
+[node name="WaterPlatform4" parent="WaterPlatform3" instance=ExtResource("22_bv2tk")]
+position = Vector2(-184.537, 94.2783)
+rotation = -1.5708
+scale = Vector2(1.18758, 1.12003)
+
+[node name="WaterPlatform11" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(448, -2117)
+scale = Vector2(1.60601, 1.57447)
+
+[node name="WaterPlatform" parent="WaterPlatform11" instance=ExtResource("22_bv2tk")]
+position = Vector2(-21.1705, -24.7702)
+scale = Vector2(0.701121, 1)
+
+[node name="WaterPlatform12" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1654, -2119)
+scale = Vector2(1.83452, 1.629)
+
+[node name="WaterPlatform5" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(956, -2255)
+rotation = -1.5708
+scale = Vector2(2.56715, 1.87572)
+
+[node name="WaterPlatform6" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1173, -2460)
+rotation = 1.5708
+scale = Vector2(2.61518, 1.7863)
+
+[node name="WaterPlatform4" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1271, -2326)
+scale = Vector2(1.2761, 1.43833)
+
+[node name="WaterPlatform7" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1690, -2499)
+scale = Vector2(1.2761, 1.43833)
+
+[node name="WaterPlatform8" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1275, -2703)
+scale = Vector2(1.3161, 1.43833)
+
+[node name="WaterPlatform" parent="WaterPlatform8" instance=ExtResource("22_bv2tk")]
+position = Vector2(-25.8338, -26.4195)
+scale = Vector2(0.603811, 1.0278)
+
+[node name="WaterPlatform9" parent="." instance=ExtResource("22_bv2tk")]
+position = Vector2(1695, -2785)
+scale = Vector2(1.16975, 1.3682)
+
+[node name="CoralSpike" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(710, -2676)
+scale = Vector2(0.865385, 0.866667)
+
+[node name="CoralSpike2" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(607, -2154)
+scale = Vector2(1.13192, 1.28536)
+
+[node name="CoralSpike3" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(961, -2439)
+scale = Vector2(0.633304, 0.633969)
+
+[node name="CoralSpike4" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(1241, -2141)
+scale = Vector2(1.11443, 1.19178)
+
+[node name="CoralSpike5" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(1704, -2201)
+scale = Vector2(1.22697, 1.35294)
+
+[node name="CoralSpike6" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(1241, -2511)
+rotation = 1.5708
+
+[node name="CoralSpike7" parent="." instance=ExtResource("25_i6juq")]
+position = Vector2(1685, -2712)
+rotation = 3.14159
+
+[node name="SandPlatform" parent="." instance=ExtResource("25_p2rf6")]
+position = Vector2(1443, -2910)
+scale = Vector2(0.345467, 0.222761)
+
+[node name="SandPlatform2" parent="." instance=ExtResource("25_p2rf6")]
+position = Vector2(1236, -3085)
+scale = Vector2(0.240194, 0.211443)
+
+[node name="SandPlatform3" parent="." instance=ExtResource("25_p2rf6")]
+position = Vector2(1828, -3151)
+scale = Vector2(0.574146, 0.304167)
+
+[node name="SandPlatform" parent="SandPlatform3" instance=ExtResource("25_p2rf6")]
+position = Vector2(292.608, 203.836)
+
+[node name="SavePoint3" parent="." instance=ExtResource("18_l0h5v")]
+position = Vector2(1904, -3206)
 scale = Vector2(0.606914, 0.639194)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
@@ -645,5 +813,14 @@ scale = Vector2(0.606914, 0.639194)
 [connection signal="spike_hit" from="Spike7" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike8" to="." method="_on_spike_spike_hit"]
 [connection signal="player_hit_bumper" from="Path2D7/PathFollow2D/Bumper6" to="." method="_on_bumper_platform_player_hit_bumper"]
+[connection signal="spike_hit" from="Spike10" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike9" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
+[connection signal="spike_hit" from="CoralSpike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike2" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike3" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike4" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike5" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike6" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="CoralSpike7" to="." method="_on_spike_spike_hit"]
+[connection signal="player_entered" from="SavePoint3" to="." method="_on_save_point_player_entered"]

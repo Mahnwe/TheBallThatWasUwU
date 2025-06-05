@@ -435,8 +435,8 @@ stream = ExtResource("26_kudgl")
 stream = ExtResource("27_qyjky")
 
 [node name="WaterSploch" type="AnimatedSprite2D" parent="."]
-position = Vector2(209, 217)
-scale = Vector2(1.25, 1.55)
+position = Vector2(212, 222)
+scale = Vector2(1, 1.175)
 sprite_frames = SubResource("SpriteFrames_nryhg")
 animation = &"sploch"
 

@@ -103,6 +103,7 @@ func toggle_pause():
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_drop_groups()
+	disable_patrol_groups()
 	pause_laser()
 	$Player.set_physics_process(false)
 	$Player/Pause.set_current_timer_when_paused($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
@@ -124,6 +125,7 @@ func untoggle_pause():
 	$PauseMusic.stop()
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_drop_groups()
+	enable_patrol_groups()
 	unpause_laser()
 	$Player.set_physics_process(true)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
@@ -191,6 +193,7 @@ func _on_pause_continue_is_clicked():
 		$Player.get_child(0).get_child(0).get_child(1).show()
 		$Player.set_physics_process(true)
 		enable_drop_groups()
+		enable_patrol_groups()
 		unpause_laser()
 		is_paused = false
 		$Player/Pause.is_paused = false
