@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_icw0h"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="19_4iku6"]
 [ext_resource type="PackedScene" uid="uid://ctsres127vwfw" path="res://Scenes/barrier.tscn" id="20_ctgch"]
-[ext_resource type="PackedScene" uid="uid://be1l83abc4nq8" path="res://Scenes/apple_tree.tscn" id="21_wx5k2"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="22_v2cqt"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="24_ctwib"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="25_kcefb"]
@@ -33,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_mf2hp"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_1alju"]
 [ext_resource type="PackedScene" uid="uid://dvk6tkjkq8bkx" path="res://Scenes/bumper.tscn" id="33_5v8i3"]
+[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="34_s5d5r"]
 [ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="34_tsss4"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
@@ -708,11 +708,8 @@ position = Vector2(49, 0)
 [node name="Barrier4" parent="Barrier" instance=ExtResource("20_ctgch")]
 position = Vector2(98, 0)
 
-[node name="AppleTree" parent="." instance=ExtResource("21_wx5k2")]
-position = Vector2(775, -2481)
-
-[node name="Rock1" parent="AppleTree" instance=ExtResource("22_v2cqt")]
-position = Vector2(-47, 88)
+[node name="Rock1" parent="." instance=ExtResource("22_v2cqt")]
+position = Vector2(728, -2393)
 scale = Vector2(0.76, 0.88)
 
 [node name="BranchesBush2" parent="." instance=ExtResource("18_icw0h")]
@@ -990,8 +987,8 @@ offset_bottom = 2221.0
 color = Color(6.73831e-06, 0.683953, 0.89999, 1)
 
 [node name="Palm2" parent="." instance=ExtResource("27_lrvx7")]
-position = Vector2(532, -740)
-scale = Vector2(0.4, 0.399999)
+position = Vector2(570, -774)
+scale = Vector2(0.602613, 0.728063)
 
 [node name="Barrel2" parent="." instance=ExtResource("28_gq5he")]
 position = Vector2(633, -730)
@@ -1000,8 +997,8 @@ position = Vector2(633, -730)
 position = Vector2(440, 0)
 
 [node name="Palm3" parent="." instance=ExtResource("27_lrvx7")]
-position = Vector2(1182, -740)
-scale = Vector2(0.4, 0.399999)
+position = Vector2(1189, -776)
+scale = Vector2(0.602613, 0.728063)
 
 [node name="Water" parent="." instance=ExtResource("29_bvghq")]
 position = Vector2(348, -639.469)
@@ -1059,6 +1056,13 @@ rotation = -0.785398
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(874, -1719)
 texture = ExtResource("34_tsss4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(756.313, -2533)
+scale = Vector2(1.7375, 1.57556)
+texture = ExtResource("34_s5d5r")
+flip_h = true
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

@@ -405,6 +405,7 @@ text = "Number of medals ="
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -420,6 +421,7 @@ text = "Number of bronze medal ="
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="HSplitContainer3" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -435,6 +437,7 @@ text = "Number of Silver medal ="
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="HSplitContainer4" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=55 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="42_s0a2a"]
 [ext_resource type="PackedScene" uid="uid://cjcrx6k82ajb6" path="res://Scenes/shrimp.tscn" id="43_650y6"]
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="44_vxmds"]
+[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="45_twoli"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -603,8 +604,8 @@ position = Vector2(-24.0193, -32.7425)
 scale = Vector2(0.356646, 0.187326)
 
 [node name="Spike2" parent="." instance=ExtResource("13_t8ogd")]
-position = Vector2(-3345, -205)
-scale = Vector2(0.508411, 0.344069)
+position = Vector2(-3345, -232)
+scale = Vector2(0.482051, 0.308886)
 
 [node name="Path2D2" type="Path2D" parent="."]
 curve = SubResource("Curve2D_3xjob")
@@ -705,12 +706,9 @@ position = Vector2(-1130, 120)
 rotation = 0.521293
 scale = Vector2(0.415841, 0.411915)
 
-[node name="BigTree" parent="." instance=ExtResource("32_2vg6q")]
+[node name="BranchesBush3" parent="." instance=ExtResource("31_3quvk")]
 z_index = 1
-position = Vector2(-3022, -452)
-
-[node name="BranchesBush" parent="BigTree" instance=ExtResource("31_3quvk")]
-position = Vector2(74, 117)
+position = Vector2(-2948, -335)
 
 [node name="LanternPole" parent="." instance=ExtResource("33_e4fbw")]
 position = Vector2(-2856, -370)
@@ -891,6 +889,11 @@ scale = Vector2(0.74, 0.78)
 
 [node name="Advice" parent="." instance=ExtResource("44_vxmds")]
 position = Vector2(-1805, -1100)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-3020, -473)
+scale = Vector2(1.815, 1.88333)
+texture = ExtResource("45_twoli")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

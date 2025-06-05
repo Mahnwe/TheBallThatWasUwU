@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=35 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="26_0uo4e"]
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="28_pmaet"]
 [ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="29_x7ktg"]
+[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="30_164vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -495,9 +496,6 @@ scale = Vector2(0.479996, 0.56)
 [node name="FinishUI" parent="Finish" instance=ExtResource("16_k2ysy")]
 visible = false
 
-[node name="Tree" parent="." instance=ExtResource("14_shu8y")]
-position = Vector2(392, -272)
-
 [node name="BerryBush2" parent="." instance=ExtResource("19_8uqwt")]
 position = Vector2(751, -234)
 
@@ -507,10 +505,6 @@ position = Vector2(-33, 10)
 [node name="BerryBush2" parent="BerryBush2" instance=ExtResource("19_8uqwt")]
 position = Vector2(35, 0)
 rotation = 0.690769
-
-[node name="Tree2" parent="." instance=ExtResource("14_shu8y")]
-position = Vector2(-1198, 76)
-flip_value = 1
 
 [node name="Rock4" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1153, 129)
@@ -821,6 +815,18 @@ scale = Vector2(0.626435, 0.567529)
 [node name="Spike44" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(78, -528)
 scale = Vector2(0.191316, 0.194199)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-1204, -17)
+scale = Vector2(1.97333, 2.095)
+texture = ExtResource("30_164vy")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(386, -349)
+scale = Vector2(1.63, 1.70722)
+texture = ExtResource("30_164vy")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

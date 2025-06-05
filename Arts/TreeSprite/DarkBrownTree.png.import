@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caonwcs6f3c4d"
-path="res://.godot/imported/TreeSprite3.png-ad1d17aab7644b6b260f077a45d7beba.ctex"
+uid="uid://ciib2c2njlm2x"
+path="res://.godot/imported/DarkBrownTree.png-dc17ef3582891a388101d407949cf6ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/TreeSprite/TreeSprite3.png"
-dest_files=["res://.godot/imported/TreeSprite3.png-ad1d17aab7644b6b260f077a45d7beba.ctex"]
+source_file="res://Arts/TreeSprite/DarkBrownTree.png"
+dest_files=["res://.godot/imported/DarkBrownTree.png-dc17ef3582891a388101d407949cf6ba.ctex"]
 
 [params]
 
