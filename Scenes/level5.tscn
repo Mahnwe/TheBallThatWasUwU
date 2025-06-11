@@ -167,8 +167,8 @@ offset_bottom = -374.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-793.5, -588)
-scale = Vector2(5.115, 2.19)
+position = Vector2(-793, -588)
+scale = Vector2(5.13, 2.19)
 
 [node name="platform2" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-979, -804)
@@ -300,8 +300,8 @@ offset_bottom = 145.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water2" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-0.500007, -313.5)
-scale = Vector2(2.065, 4.585)
+position = Vector2(-2.5, -313.5)
+scale = Vector2(2.085, 4.585)
 
 [node name="WaterPlatform8" parent="." instance=ExtResource("15_3nnrj")]
 position = Vector2(-26, 166)
@@ -433,8 +433,8 @@ offset_bottom = 516.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water3" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-2434.5, 312.92)
-scale = Vector2(3.965, 1.9908)
+position = Vector2(-2433.5, 312.92)
+scale = Vector2(3.975, 1.9908)
 
 [node name="Cannon2" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
 position = Vector2(-2773, 496)
@@ -484,8 +484,8 @@ rotation = -1.5708
 scale = Vector2(0.188052, 0.312453)
 
 [node name="Water4" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-1908, -157)
-scale = Vector2(5.21, 0.96)
+position = Vector2(-1905.5, -157)
+scale = Vector2(5.235, 0.96)
 
 [node name="ColorRect5" type="ColorRect" parent="."]
 z_index = -2
@@ -537,8 +537,8 @@ position = Vector2(-3257, -1388)
 position = Vector2(592, -2)
 
 [node name="Water5" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-2872, -804.5)
-scale = Vector2(3.4, 0.845)
+position = Vector2(-2871, -804.5)
+scale = Vector2(3.43, 0.845)
 
 [node name="platform12" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-3102, -975)

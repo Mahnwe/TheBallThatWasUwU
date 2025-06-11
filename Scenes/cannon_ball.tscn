@@ -11,7 +11,7 @@ z_index = 2
 script = ExtResource("1_se441")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0697421, 0.0773143)
+scale = Vector2(0.0655603, 0.079)
 texture = ExtResource("1_62hxd")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]

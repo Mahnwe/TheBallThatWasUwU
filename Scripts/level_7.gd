@@ -312,6 +312,15 @@ func _on_bumper_5_player_hit_bumper():
 func _on_bumper_platform_player_hit_bumper():
 	$Player.player_hit_bumper($Path2D7/PathFollow2D/Bumper6.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 	
+func _on_bumper_6_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper6.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
+func _on_bumper_7_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper7.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
+func _on_bumper_8_player_hit_bumper():
+	$Player.player_hit_bumper($Bumper8.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	
 func display_advice():
 	if !config.get_value("levels", "is_level_two_finished") or !config.get_value("levels", "is_level_three_finished"):
 		$Advice.show()
