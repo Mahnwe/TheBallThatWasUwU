@@ -297,7 +297,7 @@ func _on_wall_slide_timer_timeout():
 	if colliding_wall() and current_state != state.GROUNDED:
 		current_state = state.SLIDING
 		if !is_in_water:
-			wall_slide = gravity+100
+			wall_slide = gravity+130
 		else:
 			wall_slide = gravity+70
 

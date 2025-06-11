@@ -28,6 +28,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+run/main_run_args="--verbose"
+
 [global_group]
 
 music_group=""

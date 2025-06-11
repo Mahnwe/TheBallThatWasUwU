@@ -104,6 +104,7 @@ func toggle_pause():
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_drop_groups()
 	disable_patrol_groups()
+	disable_cannon_groups()
 	pause_laser()
 	$Player.set_physics_process(false)
 	$Player/Pause.set_current_timer_when_paused($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
@@ -126,6 +127,7 @@ func untoggle_pause():
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_drop_groups()
 	enable_patrol_groups()
+	enable_cannon_groups()
 	unpause_laser()
 	$Player.set_physics_process(true)
 	if $Player.position.x != start_position_x and $Player.position.y != start_position_y:
@@ -137,6 +139,7 @@ func untoggle_pause():
 func _on_spike_spike_hit():
 	disable_drop_groups()
 	disable_patrol_groups()
+	disable_cannon_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -176,6 +179,7 @@ func put_player_to_save_position_and_unpause_timer():
 	reset_drop_progress()
 	enable_drop_groups()
 	enable_patrol_groups()
+	enable_cannon_groups()
 	
 func _on_pause_continue_is_clicked():
 	if $Player.position.x != start_position_x:
@@ -194,10 +198,24 @@ func _on_pause_continue_is_clicked():
 		$Player.set_physics_process(true)
 		enable_drop_groups()
 		enable_patrol_groups()
+		enable_cannon_groups()
 		unpause_laser()
 		is_paused = false
 		$Player/Pause.is_paused = false
 		$Player/Pause.is_controller_focused = false
+		
+func _on_cannon_player_dead_by_cannon_ball():
+	disable_drop_groups()
+	disable_patrol_groups()
+	disable_cannon_groups()
+	display_dead_sprite_and_pause_timer_until_respawn("BOOM !")
+	await get_tree().create_timer(0.5).timeout;
+	if save_position_x == start_position_x:
+		call_deferred("restart_scene")
+	else:
+		put_player_to_save_position_and_unpause_timer()
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.set_process(true)
 		
 func _on_pause_music_finished():
 	$PauseMusic.play()
@@ -228,6 +246,16 @@ func reset_patrols_progress():
 			member.get_parent().progress = 0
 	for member in get_tree().get_nodes_in_group("platform_on_patrol"):
 			member.get_parent().progress = 0
+			
+func disable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.pause_cannon()
+		
+func enable_cannon_groups():
+	if(get_tree() != null):
+		for member in get_tree().get_nodes_in_group("cannon_group"):
+			member.unpause_cannon()
 	
 func water_drop_animation(delta):
 	for member in get_tree().get_nodes_in_group("waterdrop_group"):

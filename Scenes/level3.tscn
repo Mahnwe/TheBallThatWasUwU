@@ -282,12 +282,12 @@ rotation = 2.60756
 scale = Vector2(0.744915, 1)
 
 [node name="Wall9" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(-1119, -2.83151e-12)
+position = Vector2(-1205, -2.23856e-11)
 rotation = -1.5708
 scale = Vector2(2.28, 2.8)
 
 [node name="Wall10" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(2872, -762)
+position = Vector2(2951, -772)
 rotation = 1.5708
 scale = Vector2(2.28, 2.8)
 
@@ -474,46 +474,46 @@ position = Vector2(-28.6641, -45.8625)
 scale = Vector2(0.4, 0.279999)
 
 [node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("12_dyw7h")]
-position = Vector2(1703, -885)
+position = Vector2(1703, -882)
 flip_value = 1
 ball_speed = 10
 
 [node name="Cannon2" parent="." groups=["cannon_group"] instance=ExtResource("12_dyw7h")]
-position = Vector2(25, -883)
+position = Vector2(25, -882)
 is_going_left = true
 ball_speed = 10
 
 [node name="Wall24" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(-1072, -712)
-rotation = -1.44839
+position = Vector2(-1150, -733)
+rotation = -1.2196
 scale = Vector2(1, 1.97912)
 
 [node name="Wall25" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(2792, -1034)
-rotation = 1.44699
+position = Vector2(2757, -1078)
+rotation = 1.05934
 scale = Vector2(1, 2.2)
 
 [node name="Spike7" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(-942, -355)
+position = Vector2(-1028, -355)
 scale = Vector2(0.617924, 0.441128)
 
 [node name="Spike" parent="Spike7" instance=ExtResource("10_w0su0")]
-position = Vector2(394.871, -500.988)
+position = Vector2(545.375, -500.988)
 
 [node name="Spike2" parent="Spike7" instance=ExtResource("10_w0su0")]
-position = Vector2(3.23674, -1196.93)
+position = Vector2(87.3895, -1296.68)
 rotation = 0.167125
 scale = Vector2(1, 1.45338)
 
 [node name="Spike8" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(2595, -357)
+position = Vector2(2674, -367)
 scale = Vector2(0.617924, 0.441128)
 
 [node name="Spike" parent="Spike8" instance=ExtResource("10_w0su0")]
-position = Vector2(-419.145, -491.921)
+position = Vector2(-519.481, -491.921)
 
 [node name="Spike2" parent="Spike8" instance=ExtResource("10_w0su0")]
-position = Vector2(8.09176, -1140.26)
+position = Vector2(-21.038, -1122.12)
 rotation = -0.43635
 scale = Vector2(1.09737, 1.38133)
 skew = 0.288067
@@ -675,7 +675,7 @@ position = Vector2(779, -301)
 position = Vector2(168, 121)
 
 [node name="BranchesBush" parent="." instance=ExtResource("18_icw0h")]
-position = Vector2(-517, -869)
+position = Vector2(-517, -864)
 scale = Vector2(1.26733, 1.28)
 
 [node name="BranchesBush" parent="BranchesBush" instance=ExtResource("18_icw0h")]
@@ -864,14 +864,14 @@ rotation = -1.58919
 stream = ExtResource("25_kcefb")
 
 [node name="Palm" parent="." instance=ExtResource("27_lrvx7")]
-position = Vector2(-422, -945)
+position = Vector2(-422, -944)
 
 [node name="Palm" parent="Palm" instance=ExtResource("27_lrvx7")]
 position = Vector2(2575, 0)
 flip_value = 1
 
 [node name="Barrel" parent="." instance=ExtResource("28_gq5he")]
-position = Vector2(148, -869)
+position = Vector2(148, -866)
 
 [node name="Barrel2" parent="Barrel" instance=ExtResource("28_gq5he")]
 position = Vector2(60, 0)
@@ -889,8 +889,11 @@ position = Vector2(-62, 0)
 position = Vector2(-34, -62)
 
 [node name="SandPlatform3" parent="." instance=ExtResource("11_62yl8")]
-position = Vector2(852, -719)
-scale = Vector2(0.697359, 0.919999)
+position = Vector2(852, -677)
+scale = Vector2(0.697359, 0.440004)
+
+[node name="SandPlatform" parent="SandPlatform3" instance=ExtResource("11_62yl8")]
+position = Vector2(-8.75233e-05, -202.777)
 
 [node name="SandPlatform4" parent="." instance=ExtResource("11_62yl8")]
 position = Vector2(540, -657)
@@ -991,7 +994,7 @@ position = Vector2(570, -774)
 scale = Vector2(0.602613, 0.728063)
 
 [node name="Barrel2" parent="." instance=ExtResource("28_gq5he")]
-position = Vector2(633, -730)
+position = Vector2(633, -726)
 
 [node name="Barrel" parent="Barrel2" instance=ExtResource("28_gq5he")]
 position = Vector2(440, 0)
@@ -1038,11 +1041,11 @@ position = Vector2(573, 528)
 position = Vector2(1173, 522)
 
 [node name="Bumper3" parent="." instance=ExtResource("33_5v8i3")]
-position = Vector2(-889, -556)
+position = Vector2(-975, -556)
 rotation = 0.785398
 
 [node name="Bumper4" parent="." instance=ExtResource("33_5v8i3")]
-position = Vector2(2638, -556)
+position = Vector2(2717, -566)
 rotation = -0.785398
 
 [node name="Bumper5" parent="." instance=ExtResource("33_5v8i3")]
