@@ -1,0 +1,213 @@
+[gd_scene load_steps=8 format=3 uid="uid://tn1erw530dy1"]
+
+[ext_resource type="Script" uid="uid://7288l8jxxvht" path="res://Scripts/credits.gd" id="1_1bamb"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="1_r18jl"]
+[ext_resource type="Texture2D" uid="uid://dsofntdoj5unr" path="res://Arts/DevSprite/CreditHeartSprite.png" id="2_gryuy"]
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_uah1q"]
+[ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="3_ccovl"]
+[ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="5_xelri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uah1q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 3.0
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bamb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_uah1q")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 29.0
+offset_right = 1884.0
+offset_bottom = 161.0
+scale = Vector2(0.854649, 0.831512)
+theme_override_styles/focus = SubResource("StyleBoxFlat_uah1q")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="QuitButton"]
+position = Vector2(80.7348, 68.5498)
+scale = Vector2(0.805, 0.73)
+texture = ExtResource("3_ccovl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(425.25, 474.5)
+scale = Vector2(4.67567, 6.35526)
+texture = ExtResource("1_r18jl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(104.87, 0.0894118)
+texture = ExtResource("1_r18jl")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(217.84, 0.0894118)
+texture = ExtResource("1_r18jl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 53.5576)
+texture = ExtResource("1_r18jl")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(109.03, 53.9153)
+texture = ExtResource("1_r18jl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(225.208, 54.1284)
+texture = ExtResource("1_r18jl")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(930.5, 181.5)
+scale = Vector2(4.06081, 4.19737)
+texture = ExtResource("1_r18jl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 687.5
+offset_top = 50.5
+offset_right = 1372.5
+offset_bottom = 323.5
+scale = Vector2(0.706844, 0.731816)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+text = "Credits"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 0
+offset_left = 213.25
+offset_top = 349.5
+offset_right = 1791.25
+offset_bottom = 884.5
+theme_override_constants/separation = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="DevCredit" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "             Developer"
+
+[node name="DevLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "                     Manawé"
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MusicsCredit" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Musics and sound effects"
+
+[node name="MusicsLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "              DaFrenchPanda"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="AnimationCredit" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "            Animations"
+
+[node name="AnimationLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "            Manawé, Yossaan"
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HelpCredit" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "    Help, advices and tests"
+
+[node name="HelpLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Badda,  Yossaan,  Poire,  D4rkw3st,
+Seutimflo, DaFrenchPanda,  Givr_,
+                   SatanLaChips"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(163, 309)
+scale = Vector2(3.26, 2.9)
+texture = ExtResource("2_gryuy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(-1.84049, 210.69)
+texture = ExtResource("2_gryuy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(477.301, -1.37931)
+texture = ExtResource("2_gryuy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(488.957, 211.724)
+texture = ExtResource("2_gryuy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(159, 314)
+scale = Vector2(1.44, 1.4)
+texture = ExtResource("5_xelri")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-4.16661, 437.831)
+texture = ExtResource("5_xelri")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(1081.25, 0)
+texture = ExtResource("5_xelri")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(1106.25, 440)
+texture = ExtResource("5_xelri")
+
+[connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

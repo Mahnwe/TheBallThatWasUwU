@@ -144,7 +144,7 @@ func _on_level_4_button_gui_input(event):
 			$Level3Button.grab_focus()
 		elif event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$StatsButton.grab_focus()
+			$CreditsButton.grab_focus()
 			
 func _on_level_5_gui_input(event):
 	if $Level5Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
@@ -458,11 +458,14 @@ func _on_stats_button_pressed():
 	focus_close_stats_button()
 	$Stats.get_child(1).grab_focus()
 
-
 func _on_stats_visibility_changed():
 	if $Stats.visible == false:
 		focus_menu_buttons()
 		$StatsButton.grab_focus()
+		
+func _on_stats_button_mouse_exited():
+	$StatsButton.release_focus()
+	is_controller_focused = false
 		
 func focus_menu_buttons():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
@@ -473,18 +476,28 @@ func focus_menu_buttons():
 func focus_close_stats_button():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
 		member.focus_mode = FOCUS_NONE
-		$MusicSlider.focus_mode = FOCUS_NONE
+	$MusicSlider.focus_mode = FOCUS_NONE
 	$EffectSlider.focus_mode = FOCUS_NONE
-
-
+	
+func _on_credits_button_pressed():
+	$Credits.show()
+	focus_close_stats_button()
+	$Credits.get_child(1).grab_focus()
+	
+func _on_credits_button_mouse_exited():
+	$CreditsButton.release_focus()
+	is_controller_focused = false
+	
+func _on_credits_visibility_changed():
+	if $Credits.visible == false:
+		focus_menu_buttons()
+		$CreditsButton.grab_focus()
+	
+	
 func _on_quit_button_mouse_exited():
 	$QuitButton.release_focus()
 	is_controller_focused = false
-
-
-func _on_stats_button_mouse_exited():
-	$StatsButton.release_focus()
-	is_controller_focused = false
+	
 	
 func setup_quit_button_stylebox():
 	var new_stylebox = StyleBoxTexture.new()
@@ -538,13 +551,13 @@ func translate_text():
 	
 func change_font_size():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if member.name != "StatsButton":
+		if member.name != "StatsButton" and member.name != "CreditsButton":
 			member.add_theme_font_size_override("font_size", 16)
 	$Level7Button/Label.add_theme_font_size_override("font_size", 17)
 	
 func handle_buttons_child_visibility():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton":
+		if member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton" and member.name != "CreditsButton":
 			member.get_child(1).show()
 			if member.name != "Level7Button":
 				if member.get_child(2).is_chest_valid:
@@ -555,7 +568,7 @@ func handle_buttons_child_visibility():
 				if member.get_child(4).is_level_done:
 					member.get_child(4).show()
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if !member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton":
+		if !member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton" and member.name != "CreditsButton":
 			member.get_child(1).hide()
 			if member.name != "Level7Button":
 				member.get_child(2).hide()

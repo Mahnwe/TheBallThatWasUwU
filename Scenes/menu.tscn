@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=34 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://dmmixb0c26f0w" path="res://Arts/AbilitySprite/SpriteAbility-removebg-preview.png" id="17_ukqqs"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="18_danav"]
 [ext_resource type="PackedScene" uid="uid://c0lw132ttyu44" path="res://Scenes/stats.tscn" id="19_dldpb"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="23_h63v2"]
+[ext_resource type="PackedScene" uid="uid://tn1erw530dy1" path="res://Scenes/credits.tscn" id="24_l6llh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -59,6 +61,14 @@ border_color = Color(0.85098, 0, 0, 1)
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6llh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -275,10 +285,10 @@ offset_bottom = 841.0
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level5Button")
 focus_neighbor_top = NodePath("../Level3Button")
-focus_neighbor_right = NodePath("../Level3Button")
+focus_neighbor_right = NodePath("../CreditsButton")
 focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level5Button")
-focus_previous = NodePath("../Level3Button")
+focus_previous = NodePath("../CreditsButton")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
@@ -646,7 +656,7 @@ offset_bottom = 599.0
 focus_neighbor_left = NodePath("../Level3Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level1Button")
-focus_neighbor_bottom = NodePath("../Level3Button")
+focus_neighbor_bottom = NodePath("../CreditsButton")
 focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../Level3Button")
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
@@ -681,6 +691,43 @@ scale = Vector2(0.522351, 6.44424)
 [node name="platform" parent="Level7Platforms" instance=ExtResource("3_x4hsc")]
 position = Vector2(-562.644, -128.59)
 scale = Vector2(0.88378, 1)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1745, 964)
+scale = Vector2(1.48649, 1.77632)
+texture = ExtResource("23_h63v2")
+
+[node name="CreditsButton" type="Button" parent="." groups=["MenuButtons"]]
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 930.0
+offset_right = 1819.0
+offset_bottom = 996.0
+focus_neighbor_left = NodePath("../Level4Button")
+focus_neighbor_top = NodePath("../StatsButton")
+focus_neighbor_right = NodePath("../Level4Button")
+focus_neighbor_bottom = NodePath("../StatsButton")
+focus_next = NodePath("../Level4Button")
+focus_previous = NodePath("../StatsButton")
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_l6llh")
+text = "Credits"
+
+[node name="Sprite2D" type="Sprite2D" parent="CreditsButton"]
+z_index = -1
+position = Vector2(72, 33)
+scale = Vector2(0.285124, 0.413793)
+texture = ExtResource("7_272km")
+
+[node name="Credits" parent="." instance=ExtResource("24_l6llh")]
+visible = false
+z_index = 2
+layout_mode = 1
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
@@ -737,3 +784,7 @@ scale = Vector2(0.88378, 1)
 [connection signal="mouse_exited" from="StatsButton" to="." method="_on_stats_button_mouse_exited"]
 [connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
 [connection signal="visibility_changed" from="Stats" to="." method="_on_stats_visibility_changed"]
+[connection signal="focus_entered" from="CreditsButton" to="." method="_on_button_focus_entered"]
+[connection signal="mouse_exited" from="CreditsButton" to="." method="_on_credits_button_mouse_exited"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="visibility_changed" from="Credits" to="." method="_on_credits_visibility_changed"]
