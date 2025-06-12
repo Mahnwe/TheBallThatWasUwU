@@ -48,18 +48,18 @@ scale = Vector2(0.805, 0.73)
 texture = ExtResource("4_i6gfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(953, 137)
 scale = Vector2(2.9527, 3.08553)
 texture = ExtResource("3_wue6w")
 
-[node name="TitleLabel" type="Label" parent="Sprite2D"]
-offset_left = -58.7136
-offset_top = -39.1718
-offset_right = 61.2864
-offset_bottom = 29.8282
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 784.0
+offset_top = 20.0
+offset_right = 1265.0
+offset_bottom = 293.0
+scale = Vector2(0.706844, 0.731816)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 200
 text = "Stats"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -78,10 +78,12 @@ texture = ExtResource("3_wue6w")
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D2"]
 position = Vector2(119.705, 47.2857)
 texture = ExtResource("3_wue6w")
+flip_h = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite2D2"]
 position = Vector2(231.941, 0)
 texture = ExtResource("3_wue6w")
+flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D2"]
 position = Vector2(234.551, 49.007)
@@ -94,6 +96,7 @@ texture = ExtResource("3_wue6w")
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D2"]
 position = Vector2(308.959, 50.9249)
 texture = ExtResource("3_wue6w")
+flip_h = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0

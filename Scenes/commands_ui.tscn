@@ -299,6 +299,7 @@ texture = ExtResource("33_pq72j")
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(125.967, -1.48603)
 texture = ExtResource("33_pq72j")
+flip_h = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(241.754, -1.48604)
@@ -315,10 +316,12 @@ texture = ExtResource("33_pq72j")
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(248.743, 52.2235)
 texture = ExtResource("33_pq72j")
+flip_h = true
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(0.151946, 93.8324)
 texture = ExtResource("33_pq72j")
+flip_h = true
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(130.83, 95.743)
