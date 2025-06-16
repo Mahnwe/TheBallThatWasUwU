@@ -8,8 +8,8 @@ var start_position_y = -115
 var save_position_x = -152
 var save_position_y = -115
 
-var finish_position_x = -1570
-var finish_position_y = 5
+var finish_position_x = 2817
+var finish_position_y = -215
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 
@@ -41,6 +41,9 @@ func _ready():
 	$Player/Pause.get_child(3).hide()
 	$Player/Pause.get_child(4).hide()
 	$Player/Pause.get_child(5).hide()
+	$Finish/FinishUI.get_child(0).hide()
+	$Finish/FinishUI.get_child(1).hide()
+	$Finish/FinishUI.get_child(3).hide()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
@@ -216,6 +219,41 @@ func _on_cannon_player_dead_by_cannon_ball():
 		put_player_to_save_position_and_unpause_timer()
 		for member in get_tree().get_nodes_in_group("cannon_group"):
 			member.set_process(true)
+			
+func _on_finish_player_entered():
+	$Player.position.x = finish_position_x
+	$Player.position.y = finish_position_y
+	$Player.get_child(0).get_child(0).get_child(1).hide()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
+	queue.saveData()
+	if queue.current_medal >= config.get_value("medals", "level_seven_medal"):
+		config.set_value("medals", "level_seven_medal", queue.current_medal)
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
+	config.set_value("levels", "is_level_seven_finished", true)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
+	$Player.get_child(1).animation = "stay"
+	$Player.set_physics_process(false)
+	await get_tree().create_timer(1).timeout
+	$Finish/FinishUI.set_medal_sprite(queue.current_medal)
+	$Finish/FinishUI.show()
+	$Finish/FinishUI.get_child(0).show()
+	$Finish/FinishUI.get_child(1).show()
+	$Finish/FinishUI.get_child(3).show()
+	$Finish/FinishUI.get_child(0).get_child(0).grab_focus()
+	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
+	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
+	$Finish/FinishUI.is_UI_showing = true
+	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
+	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
+	var number_of_level_six_finished = stats_config.get_value("Stats", "level_seven_finished_number")
+	stats_config.set_value("Stats", "level_seven_finished_number", number_of_level_six_finished+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	save_medals_stats()
+	
+func _on_finish_ui_next_level_pressed():
+	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
+		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 		
 func _on_pause_music_finished():
 	$PauseMusic.play()
@@ -334,3 +372,24 @@ func translate_text():
 		
 	$TripleSign.get_child(1).text = translate_config.get_value("TranslationSign", "RunSign")
 	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "JumpSign")
+	
+func save_medals_stats():
+	if queue.current_medal != 0:
+		var medal_number = stats_config.get_value("Stats", "medal_number")
+		stats_config.set_value("Stats", "medal_number", medal_number+1)
+		if queue.current_medal == 1:
+			var bronze_medal_number = stats_config.get_value("Stats", "bronze_medal_number")
+			stats_config.set_value("Stats", "bronze_medal_number", bronze_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 2:
+			var silver_medal_number = stats_config.get_value("Stats", "silver_medal_number")
+			stats_config.set_value("Stats", "silver_medal_number", silver_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 3:
+			var gold_medal_number = stats_config.get_value("Stats", "gold_medal_number")
+			stats_config.set_value("Stats", "gold_medal_number", gold_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if queue.current_medal == 4:
+			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
+			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
+			stats_config.save("res://Ressources/PropertieFile/stats.cfg")

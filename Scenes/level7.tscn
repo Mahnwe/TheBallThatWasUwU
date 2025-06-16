@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=64 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -28,6 +28,24 @@
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="26_p2rf6"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="27_illwm"]
 [ext_resource type="PackedScene" uid="uid://dirhjvk3xk4re" path="res://Scenes/cannon.tscn" id="28_xyvxg"]
+[ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="29_4rxuj"]
+[ext_resource type="PackedScene" uid="uid://cl7gj22hnfxog" path="res://Scenes/finish_ui.tscn" id="30_r0few"]
+[ext_resource type="PackedScene" uid="uid://clxwqr7ghixcp" path="res://Scenes/filled_tube.tscn" id="31_a5fs8"]
+[ext_resource type="Texture2D" uid="uid://b3iibb0ip5buu" path="res://Arts/PipeSprite/PipeCornerInvert.png" id="32_8dojl"]
+[ext_resource type="Texture2D" uid="uid://bc1rpv5mkl14m" path="res://Arts/PipeSprite/PipeMiddle.png" id="33_ws3fi"]
+[ext_resource type="Texture2D" uid="uid://dwb52g4s16krl" path="res://Arts/PipeSprite/PipeMachinery.png" id="34_8dojl"]
+[ext_resource type="PackedScene" uid="uid://b3low4omymkyk" path="res://Scenes/tube_console.tscn" id="35_nkoaj"]
+[ext_resource type="PackedScene" uid="uid://cb1ke3vkx62tx" path="res://Scenes/ventilation.tscn" id="36_pd4b0"]
+[ext_resource type="Texture2D" uid="uid://cbmjd018b3u8x" path="res://Arts/TubeSprite/GazBottle.png" id="37_pd4b0"]
+[ext_resource type="Texture2D" uid="uid://babjfc7nhmycj" path="res://Arts/TubeSprite/LightningCloset.png" id="38_y8d3h"]
+[ext_resource type="PackedScene" uid="uid://sqq0aw1ppgq5" path="res://Scenes/tube.tscn" id="39_x4m77"]
+[ext_resource type="Texture2D" uid="uid://b6usifvesgxpx" path="res://Arts/CrystalSprite/PurpleCrystal.png" id="40_ryp18"]
+[ext_resource type="Texture2D" uid="uid://dqdxwbhyokt30" path="res://Arts/StalactiteSprite/StalactiteSprite.png" id="41_mywet"]
+[ext_resource type="PackedScene" uid="uid://dnpgamit7qywn" path="res://Scenes/water_drop.tscn" id="42_hd1de"]
+[ext_resource type="Texture2D" uid="uid://bhxseqaq3bms5" path="res://Arts/CrystalSprite/GreenCrystalSprite.png" id="43_mywet"]
+[ext_resource type="Texture2D" uid="uid://danihsy4mjs3o" path="res://Arts/CrystalSprite/BlueCrystal.png" id="44_2h0e0"]
+[ext_resource type="Texture2D" uid="uid://b7ykvqooe5xhe" path="res://Arts/StalactiteSprite/BrownStalactiteSprite.png" id="45_wibeg"]
+[ext_resource type="PackedScene" uid="uid://dt7djk3ywuucy" path="res://Scenes/bat.tscn" id="46_wibeg"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -89,12 +107,109 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_xyvxg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4610, -2290, 0, 0, 0, 0, 4763, -2292, 0, 0, 0, 0, 4953, -2290, 0, 0, 0, 0, 5155, -2292, 0, 0, 0, 0, 4610, -2290)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_jtw86"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5148, -2034, 0, 0, 0, 0, 4940, -2034, 0, 0, 0, 0, 4752, -2033, 0, 0, 0, 0, 4616, -2032, 0, 0, 0, 0, 5148, -2034)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_4rxuj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4640, -1771, 0, 0, 0, 0, 4766, -1773, 0, 0, 0, 0, 4949, -1772, 0, 0, 0, 0, 5137, -1771, 0, 0, 0, 0, 4640, -1771)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_r0few"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3668, -886, 0, 0, 0, 0, 3358, -880, 0, 0, 0, 0, 3037, -882, 0, 0, 0, 0, 2642, -882, 0, 0, 0, 0, 3668, -886)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_2h0e0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 333, -3158, 0, 0, 0, 0, 335, -3053, 0, 0, 0, 0, 336, -2960, 0, 0, 0, 0, 336, -2932)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_xtclw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2363, -3072, 0, 0, 0, 0, -2363, -3024, 0, 0, 0, 0, -2363, -2957, 0, 0, 0, 0, -2362, -2866)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_wibeg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 973, -3500, 0, 0, 0, 0, 972, -3325, 0, 0, 0, 0, 973, -3056, 0, 0, 0, 0, 972, -2892)
+}
+point_count = 4
+
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_c77lg")
 
 [node name="GameArea" parent="." instance=ExtResource("2_sr0ya")]
 position = Vector2(1717, -1629)
 scale = Vector2(13.8487, 12.6613)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -2590.0
+offset_top = -1829.0
+offset_right = 1171.0
+offset_bottom = 669.0
+color = Color(0.553269, 0.585908, 0.618709, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -2849.0
+offset_top = -3933.0
+offset_right = 332.0
+offset_bottom = -1812.0
+color = Color(0.427493, 0.427493, 0.427493, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 3171.0
+offset_right = 3961.0
+offset_bottom = 1047.0
+color = Color(0.427493, 0.427493, 0.427493, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = -20
+offset_left = 1107.0
+offset_top = -3929.0
+offset_right = 3937.0
+offset_bottom = -1407.0
+color = Color(6.73831e-06, 0.683953, 0.89999, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect3"]
+layout_mode = 0
+offset_left = -769.0
+offset_top = 1040.0
+offset_right = 670.0
+offset_bottom = 2133.0
+color = Color(6.73831e-06, 0.683953, 0.89999, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+z_index = -20
+offset_left = 3922.0
+offset_top = -3929.0
+offset_right = 6012.0
+offset_bottom = -1395.0
+color = Color(0.372549, 0.815686, 0.92549, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect4"]
+layout_mode = 0
+offset_left = -2753.0
+offset_top = 2529.0
+offset_right = 2082.0
+offset_bottom = 4587.0
+color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="MetalPlatform" parent="." instance=ExtResource("3_h0p4h")]
 position = Vector2(-56, 122)
@@ -210,7 +325,7 @@ speed = 350
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-749, -667)
+position = Vector2(-739, -667)
 rotation = -1.5708
 scale = Vector2(0.4, 1.2)
 texture = ExtResource("10_wypka")
@@ -498,13 +613,13 @@ position = Vector2(-2560, -2290)
 scale = Vector2(0.21528, 0.657784)
 
 [node name="platform12" parent="." instance=ExtResource("15_54uab")]
-position = Vector2(-2103, -2610)
-rotation = 2.78772
+position = Vector2(-2101, -2648)
+rotation = 2.91846
 scale = Vector2(0.608901, 0.800005)
 
 [node name="platform13" parent="platform12" instance=ExtResource("15_54uab")]
-position = Vector2(-324.662, 686.928)
-rotation = -1.11892
+position = Vector2(-229.112, 734.619)
+rotation = -1.2677
 scale = Vector2(1.00215, 1.28023)
 skew = -0.177775
 
@@ -1113,7 +1228,7 @@ position = Vector2(3990, -1708)
 scale = Vector2(0.606914, 0.639194)
 
 [node name="SandPlatform23" parent="." instance=ExtResource("25_p2rf6")]
-position = Vector2(4327, -1760)
+position = Vector2(4306, -1750)
 rotation = -0.453786
 scale = Vector2(1.08427, 0.388605)
 
@@ -1145,10 +1260,6 @@ scale = Vector2(0.476681, 1.14768)
 position = Vector2(3954, -2770)
 rotation = -0.723799
 scale = Vector2(0.797163, 1)
-
-[node name="platform18" parent="." instance=ExtResource("26_p2rf6")]
-position = Vector2(4378, -3166)
-scale = Vector2(0.535499, 1.21631)
 
 [node name="Bumper6" parent="." instance=ExtResource("12_dk2oo")]
 position = Vector2(4124, -2096)
@@ -1185,6 +1296,458 @@ scale = Vector2(0.500842, 0.45888)
 [node name="Spike18" parent="." instance=ExtResource("14_42yhu")]
 position = Vector2(4503, -2549)
 scale = Vector2(0.45718, 0.312295)
+
+[node name="platform18" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4378, -3166)
+scale = Vector2(0.615499, 1.21631)
+
+[node name="platform" parent="platform18" instance=ExtResource("26_p2rf6")]
+position = Vector2(627.452, 9.15527e-05)
+
+[node name="Wall7" parent="." instance=ExtResource("27_illwm")]
+position = Vector2(5396, -3081)
+rotation = 1.5708
+scale = Vector2(1.32, 2.84)
+
+[node name="Wall" parent="Wall7" instance=ExtResource("27_illwm")]
+position = Vector2(301.515, 0.000166555)
+
+[node name="Wall2" parent="Wall7" instance=ExtResource("27_illwm")]
+position = Vector2(563.637, 0.000160479)
+
+[node name="Wall3" parent="Wall7" instance=ExtResource("27_illwm")]
+position = Vector2(771.97, 0.000156246)
+
+[node name="Wall4" parent="Wall7" instance=ExtResource("27_illwm")]
+position = Vector2(1065.15, 0.00015029)
+
+[node name="platform22" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(5005, -2474)
+scale = Vector2(0.257293, 0.834142)
+
+[node name="platform" parent="platform22" instance=ExtResource("26_p2rf6")]
+position = Vector2(-1644.04, 280.528)
+
+[node name="platform2" parent="platform22" instance=ExtResource("26_p2rf6")]
+position = Vector2(7.77365, 591.027)
+
+[node name="platform3" parent="platform22" instance=ExtResource("26_p2rf6")]
+position = Vector2(-1647.93, 942.286)
+
+[node name="Path2D8" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xyvxg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D8"]
+position = Vector2(4610, -2290)
+rotation = -0.0130712
+rotates = false
+
+[node name="Spike" parent="Path2D8/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("14_42yhu")]
+position = Vector2(-19.6192, -29.2589)
+scale = Vector2(0.290993, 0.216898)
+speed = 400
+
+[node name="Path2D9" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jtw86")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D9"]
+position = Vector2(5148, -2034)
+rotation = 3.14159
+rotates = false
+
+[node name="Spike" parent="Path2D9/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("14_42yhu")]
+position = Vector2(-19, -32)
+scale = Vector2(0.290993, 0.216898)
+speed = 400
+
+[node name="Path2D10" type="Path2D" parent="."]
+position = Vector2(0, 23)
+curve = SubResource("Curve2D_4rxuj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D10"]
+position = Vector2(4640, -1771)
+rotation = -0.0158717
+rotates = false
+
+[node name="Spike" parent="Path2D10/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("14_42yhu")]
+position = Vector2(-21.537, -29.3455)
+scale = Vector2(0.290993, 0.216898)
+speed = 400
+
+[node name="Wall8" parent="." instance=ExtResource("27_illwm")]
+position = Vector2(4378, -1473)
+rotation = -1.5708
+scale = Vector2(1.32, 2.84)
+
+[node name="platform25" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4623, -1584)
+rotation = 0.626642
+scale = Vector2(0.515803, 1.11951)
+
+[node name="platform28" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4740, -1344)
+rotation = 2.26166
+scale = Vector2(0.653918, 1.11951)
+
+[node name="platform24" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4824, -1212)
+rotation = -0.392632
+scale = Vector2(0.523871, 1.21585)
+
+[node name="Wall9" parent="." instance=ExtResource("27_illwm")]
+position = Vector2(5072, -1145)
+rotation = 1.5708
+scale = Vector2(0.943519, 2.52)
+
+[node name="Wall" parent="Wall9" instance=ExtResource("27_illwm")]
+position = Vector2(258.607, -4.23237e-06)
+
+[node name="platform23" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4706, -925)
+scale = Vector2(0.279501, 0.618005)
+
+[node name="platform26" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4409, -703)
+scale = Vector2(0.706712, 1.12748)
+
+[node name="platform" parent="platform26" instance=ExtResource("26_p2rf6")]
+position = Vector2(-612.696, -1.47355e-05)
+
+[node name="platform27" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4452, -1091)
+rotation = 1.5708
+scale = Vector2(0.449933, 0.740667)
+
+[node name="platform29" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4125, -1014)
+rotation = 1.5708
+scale = Vector2(0.594812, 0.905893)
+
+[node name="platform30" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(3871, -1069)
+scale = Vector2(0.333865, 0.809362)
+
+[node name="Spike19" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(4281, -681)
+rotation = 1.5708
+scale = Vector2(0.720001, 0.800005)
+
+[node name="Spike" parent="Spike19" instance=ExtResource("14_42yhu")]
+position = Vector2(6.10044e-05, -279.998)
+
+[node name="Spike2" parent="Spike19" instance=ExtResource("14_42yhu")]
+position = Vector2(4.95042e-05, -556.247)
+
+[node name="Spike3" parent="Spike19" instance=ExtResource("14_42yhu")]
+position = Vector2(19.0476, -737.495)
+scale = Vector2(0.704057, 0.625049)
+
+[node name="platform31" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(4301, -979)
+rotation = 4.0772
+scale = Vector2(0.747456, 1)
+
+[node name="Spike20" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(5124, -1499)
+scale = Vector2(0.580566, 0.417786)
+
+[node name="Spike21" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(4025, -975)
+scale = Vector2(0.586532, 0.366205)
+
+[node name="Path2D11" type="Path2D" parent="."]
+position = Vector2(90, -12)
+curve = SubResource("Curve2D_r0few")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D11"]
+position = Vector2(3668, -886)
+rotation = 3.12224
+rotates = false
+
+[node name="platform" parent="Path2D11/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("26_p2rf6")]
+position = Vector2(91.4731, 79.7851)
+rotation = 3.16911
+scale = Vector2(0.257328, 0.746419)
+sync_to_physics = false
+speed = 250
+
+[node name="Spike22" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(3304, -1034)
+scale = Vector2(0.49846, 0.432048)
+
+[node name="Spike" parent="Spike22" instance=ExtResource("14_42yhu")]
+position = Vector2(-694.138, 0)
+
+[node name="platform32" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(2192, -1048)
+scale = Vector2(0.437628, 1.11909)
+
+[node name="platform33" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(1644, -669)
+rotation = -0.610865
+scale = Vector2(0.932902, 1.11909)
+
+[node name="platform34" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(1491, -646)
+rotation = 0.610865
+scale = Vector2(1.16318, 1.40897)
+
+[node name="platform35" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(1629, -1193)
+rotation = 1.5708
+scale = Vector2(1, 1.84)
+
+[node name="platform36" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(2461, -1287)
+rotation = 2.8755
+scale = Vector2(1.57914, 1.76007)
+
+[node name="platform37" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(3331, -888)
+scale = Vector2(1, 1.52)
+
+[node name="platform" parent="platform37" instance=ExtResource("26_p2rf6")]
+position = Vector2(-602, 0)
+
+[node name="platform2" parent="platform37" instance=ExtResource("26_p2rf6")]
+position = Vector2(-928, 0.657925)
+
+[node name="platform38" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(2550, -925)
+rotation = 1.5708
+scale = Vector2(0.245636, 0.767439)
+
+[node name="Spike23" parent="." instance=ExtResource("14_42yhu")]
+position = Vector2(2447, -957)
+scale = Vector2(0.758787, 0.464654)
+
+[node name="platform39" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(3081, -903)
+rotation = 1.5708
+scale = Vector2(0.199802, 0.752097)
+
+[node name="platform" parent="platform39" instance=ExtResource("26_p2rf6")]
+position = Vector2(-7.54768e-05, -460.047)
+
+[node name="platform40" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(2189, -116)
+rotation = 1.5708
+scale = Vector2(0.411833, 1.5487)
+
+[node name="platform41" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(2694, -182)
+scale = Vector2(0.627927, 1.15803)
+
+[node name="platform42" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(2018, 12)
+scale = Vector2(1.01472, 1.28927)
+
+[node name="platform" parent="platform42" instance=ExtResource("26_p2rf6")]
+position = Vector2(630.717, 24.8203)
+
+[node name="platform43" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(3168, 249)
+rotation = -1.5708
+scale = Vector2(1.4017, 2.13668)
+
+[node name="Finish" parent="." instance=ExtResource("29_4rxuj")]
+position = Vector2(2973, -155)
+scale = Vector2(0.479996, 0.56)
+
+[node name="FinishUI" parent="Finish" instance=ExtResource("30_r0few")]
+visible = false
+
+[node name="FilledTube" parent="." instance=ExtResource("31_a5fs8")]
+z_index = 3
+position = Vector2(228, -530)
+scale = Vector2(1.81699, 2.03676)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(135.025, -540)
+rotation = -1.5708
+scale = Vector2(0.688047, 0.797231)
+texture = ExtResource("10_wypka")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(79.8855, -32)
+texture = ExtResource("32_8dojl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(62.4448, -106)
+rotation = -1.5708
+scale = Vector2(0.688047, 1.03769)
+texture = ExtResource("32_8dojl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-206.257, -117.189)
+scale = Vector2(3.20006, 0.709931)
+texture = ExtResource("33_ws3fi")
+flip_v = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-425.869, -140.036)
+rotation = -3.14159
+scale = Vector2(1, 0.71571)
+texture = ExtResource("32_8dojl")
+flip_v = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-441.856, -370.361)
+rotation = 1.5708
+scale = Vector2(2.88063, 0.999205)
+texture = ExtResource("33_ws3fi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-473.856, -565.84)
+rotation = 1.5708
+scale = Vector2(0.862971, 1)
+texture = ExtResource("32_8dojl")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D4"]
+z_index = -4
+position = Vector2(-717.107, -579.716)
+scale = Vector2(2.81823, 0.895947)
+texture = ExtResource("33_ws3fi")
+flip_v = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(137, -465)
+texture = ExtResource("34_8dojl")
+
+[node name="TubeConsole" parent="." instance=ExtResource("35_nkoaj")]
+z_index = 3
+position = Vector2(335, -472)
+
+[node name="Ventilation" parent="." instance=ExtResource("36_pd4b0")]
+position = Vector2(-1260, -639)
+
+[node name="Ventilation2" parent="." instance=ExtResource("36_pd4b0")]
+position = Vector2(-861, -1817)
+
+[node name="Ventilation3" parent="." instance=ExtResource("36_pd4b0")]
+position = Vector2(122, -1824)
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(-1624, -954)
+rotation = 1.5708
+scale = Vector2(1.82, 1.54444)
+texture = ExtResource("37_pd4b0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D6"]
+position = Vector2(-41.2088, 2.12268e-06)
+texture = ExtResource("37_pd4b0")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-339, -1418)
+texture = ExtResource("38_y8d3h")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(503, -1033)
+scale = Vector2(1.78, 1.45556)
+texture = ExtResource("37_pd4b0")
+
+[node name="TubeConsole2" parent="." instance=ExtResource("35_nkoaj")]
+z_index = 3
+position = Vector2(-653, -1014)
+
+[node name="Tube" parent="." instance=ExtResource("39_x4m77")]
+z_index = 3
+position = Vector2(-552, -1072)
+scale = Vector2(1.81699, 2.03676)
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(184, -2398)
+scale = Vector2(2.94, 2.87)
+texture = ExtResource("40_ryp18")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(336, -3196)
+rotation = 3.14159
+texture = ExtResource("41_mywet")
+
+[node name="Path2D12" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2h0e0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D12"]
+position = Vector2(333, -3158)
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D12/PathFollow2D" instance=ExtResource("42_hd1de")]
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(-652, -2883.25)
+scale = Vector2(1.76923, 2.02272)
+texture = ExtResource("43_mywet")
+flip_v = true
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(-2466, -1870)
+rotation = -0.82529
+scale = Vector2(4.02, 4.7)
+texture = ExtResource("44_2h0e0")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(-2362, -3111)
+rotation = 3.14159
+texture = ExtResource("45_wibeg")
+
+[node name="Water5" parent="." instance=ExtResource("23_fvo85")]
+position = Vector2(-2369, -2774.58)
+scale = Vector2(1.47, 0.895797)
+
+[node name="Path2D13" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xtclw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D13"]
+position = Vector2(-2363, -3072)
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D13/PathFollow2D" instance=ExtResource("42_hd1de")]
+
+[node name="Bat" parent="." instance=ExtResource("46_wibeg")]
+position = Vector2(-963, -3323)
+collision_scale_y = 2
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+position = Vector2(-1798.75, -3115)
+scale = Vector2(2.51923, 2.9091)
+texture = ExtResource("43_mywet")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+position = Vector2(193, -3375)
+scale = Vector2(2.32, 2.42)
+texture = ExtResource("40_ryp18")
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+position = Vector2(969, -3539)
+texture = ExtResource("41_mywet")
+flip_v = true
+
+[node name="Path2D14" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wibeg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D14"]
+position = Vector2(973, -3500)
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D14/PathFollow2D" instance=ExtResource("42_hd1de")]
+
+[node name="Sprite2D17" type="Sprite2D" parent="."]
+position = Vector2(-488, -3010)
+rotation = 0.547789
+scale = Vector2(1.86, 1.78)
+texture = ExtResource("44_2h0e0")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
@@ -1244,3 +1807,17 @@ scale = Vector2(0.45718, 0.312295)
 [connection signal="spike_hit" from="Spike16" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike17" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike18" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D8/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D9/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Path2D10/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike19" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike19/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike19/Spike2" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike19/Spike3" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike20" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike21" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike22" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike22/Spike" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike23" to="." method="_on_spike_spike_hit"]
+[connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]

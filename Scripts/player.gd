@@ -112,6 +112,8 @@ func _dash():
 		var number_of_dashes = stats_config.get_value("Stats", "dash_number")
 		stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
 		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		if velocity.y > 0:
+			velocity.y = velocity.y / 2
 		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = false

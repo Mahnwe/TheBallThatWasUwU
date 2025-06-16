@@ -84,6 +84,7 @@ scale = Vector2(4.06081, 4.19737)
 texture = ExtResource("1_r18jl")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 687.5
 offset_top = 50.5
 offset_right = 1372.5
