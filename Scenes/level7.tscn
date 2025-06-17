@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=88 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -46,6 +46,25 @@
 [ext_resource type="Texture2D" uid="uid://danihsy4mjs3o" path="res://Arts/CrystalSprite/BlueCrystal.png" id="44_2h0e0"]
 [ext_resource type="Texture2D" uid="uid://b7ykvqooe5xhe" path="res://Arts/StalactiteSprite/BrownStalactiteSprite.png" id="45_wibeg"]
 [ext_resource type="PackedScene" uid="uid://dt7djk3ywuucy" path="res://Scenes/bat.tscn" id="46_wibeg"]
+[ext_resource type="PackedScene" uid="uid://h0s30ni3wk5f" path="res://Scenes/kelp.tscn" id="47_xtclw"]
+[ext_resource type="PackedScene" uid="uid://d3chk3dy1p8t7" path="res://Scenes/yellow_fish.tscn" id="48_iv2ns"]
+[ext_resource type="PackedScene" uid="uid://xddsf6ly1i6v" path="res://Scenes/fish.tscn" id="49_u5cjy"]
+[ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="50_m6ika"]
+[ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="51_w6cce"]
+[ext_resource type="PackedScene" uid="uid://cjcrx6k82ajb6" path="res://Scenes/shrimp.tscn" id="52_q2m6h"]
+[ext_resource type="PackedScene" uid="uid://cbnmtapo47fk2" path="res://Scenes/clams.tscn" id="53_w6cce"]
+[ext_resource type="Texture2D" uid="uid://dd61grju0cj10" path="res://Arts/PalmSprite/PalmSprite-removebg-preview.png" id="54_8jg1e"]
+[ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="55_6gfjr"]
+[ext_resource type="PackedScene" uid="uid://ndx4cg0d8fn8" path="res://Scenes/barrel.tscn" id="56_6gfjr"]
+[ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="57_5lfpo"]
+[ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="58_l8dvf"]
+[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="59_87leb"]
+[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="60_ndas8"]
+[ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="61_87leb"]
+[ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="61_x2e87"]
+[ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="63_x2e87"]
+[ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="64_l1prs"]
+[ext_resource type="PackedScene" uid="uid://ctsres127vwfw" path="res://Scenes/barrier.tscn" id="65_l1prs"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -143,11 +162,41 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Curve2D" id="Curve2D_w6cce"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1157, -3267, 0, 0, 0, 0, -1155, -3153, 0, 0, 0, 0, -1155, -3047, 0, 0, 0, 0, -1156, -2944)
+}
+point_count = 4
+
 [sub_resource type="Curve2D" id="Curve2D_wibeg"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 973, -3500, 0, 0, 0, 0, 972, -3325, 0, 0, 0, 0, 973, -3056, 0, 0, 0, 0, 972, -2892)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_u5cjy"]
+_data = {
+"points": PackedVector2Array(-8.76235, 50.8216, 8.76235, -50.8216, 1081, -2664, 0, 0, 0, 0, 1010, -2698, 24.8851, 2.45346, -24.8851, -2.45346, 915, -2670, 0, 0, 0, 0, 834, -2694, 23.3254, 2.96868, -23.3254, -2.96868, 762, -2746, 30.4579, -5.01206, -30.4579, 5.01206, 666, -2756, 0, 0, 0, 0, 580, -2729, 0, 0, 0, 0, 531, -2696, 17.3494, -6.55423, -17.3494, 6.55423, 480, -2663, 17.3494, 7.71086, -17.3494, -7.71086, 422, -2667, -2.6988, 19.6627, 2.6988, -19.6627, 366, -2719, -21.2049, 8.48195, 21.2049, -8.48195, 431, -2768, -29.3013, -8.48195, 29.3013, 8.48195, 526, -2774, -13.8796, -15.0362, 13.8796, 15.0362, 571, -2720, -31.229, -6.16869, 31.229, 6.16869, 627, -2650, -9.81383, 14.0198, 9.81383, -14.0198, 810, -2652, -12.9683, 12.9683, 12.9683, -12.9683, 837, -2684, -30.493, 0.350494, 30.493, -0.350494, 919, -2709, 0, 0, 0, 0, 1001, -2666, 0, 26.6375, 0, -26.6375, 1081, -2664)
+}
+point_count = 20
+
+[sub_resource type="Curve2D" id="Curve2D_b5xlu"]
+_data = {
+"points": PackedVector2Array(-1.50263, 60.1052, 1.50263, -60.1052, 1013, -2174, -23.7495, 6.36146, 23.7495, -6.36146, 1092, -2216, -44.5302, -0.848195, 44.5302, 0.848195, 1197, -2248, -22.4772, -1.69639, 22.4772, 1.69639, 1272, -2253, -19.0844, -2.96868, 19.0844, 2.96868, 1375, -2250, -18.6603, -15.2675, 18.6603, 15.2675, 1499, -2219, 0, 0, 0, 0, 1548, -2179, -28.8386, -6.36146, 28.8386, 6.36146, 1604, -2141, 0, 0, 0, 0, 1669, -2150, -19.0844, 13.9952, 19.0844, -13.9952, 1717, -2165, -0.848195, 18.6603, 0.848195, -18.6603, 1738, -2203, 0, 0, 0, 0, 1728, -2245, 28.8386, 11.8747, -28.8386, -11.8747, 1681, -2303, 18.2362, -5.93737, -18.2362, 5.93737, 1583, -2310, 12.7229, -7.63376, -12.7229, 7.63376, 1453, -2271, 0, 0, 0, 0, 1398, -2211, 8.60303, -10.5148, -8.60303, 10.5148, 1327, -2147, 27.0836, -5.41672, -27.0836, 5.41672, 1288, -2100, 12.108, 5.41672, -12.108, -5.41672, 1124, -2107, 24.7934, 7.51315, -24.7934, -7.51315, 1066, -2128, 2.25394, 52.592, -2.25394, -52.592, 1013, -2174)
+}
+point_count = 21
+
+[sub_resource type="Curve2D" id="Curve2D_l1prs"]
+_data = {
+"points": PackedVector2Array(-3.63636, 63.6364, 3.63636, -63.6364, 5101, -2747, 26.3636, 11.8182, -26.3636, -11.8182, 4973, -2835, 37.2727, -4.54545, -37.2727, 4.54545, 4837, -2874, 0, 0, 0, 0, 4711, -2864, 20.9091, -8.18182, -20.9091, 8.18182, 4604, -2845, 13.6364, 0, -13.6364, 0, 4479, -2796, 18.1818, -8.18182, -18.1818, 8.18182, 4333, -2767, 16.7649, -14.2812, -16.7649, 14.2812, 4237, -2733, 11.1766, -14.2812, -11.1766, 14.2812, 4187, -2668, -12.4184, -19.8695, 12.4184, 19.8695, 4171, -2606, -26.6996, -14.9021, 26.6996, 14.9021, 4206, -2542, -18.0067, 4.96737, 18.0067, -4.96737, 4264, -2503, -23.2225, 5.46411, 23.2225, -5.46411, 4325, -2500, 15.4545, -9.09091, -15.4545, 9.09091, 4398, -2531, -26.3636, 13.6364, 26.3636, -13.6364, 4513, -2612, -21.8182, 9.09091, 21.8182, -9.09091, 4614, -2647, -25.4545, 0.909091, 25.4545, -0.909091, 4735, -2660, 0, 0, 0, 0, 4843, -2642, -30, 0, 30, 0, 4957, -2627, -26.3636, 15.4545, 26.3636, -15.4545, 5054, -2651, 21.8182, 29.0909, -21.8182, -29.0909, 5101, -2747)
+}
+point_count = 21
+
+[sub_resource type="Curve2D" id="Curve2D_nvxkg"]
+_data = {
+"points": PackedVector2Array(-59.0909, -4.54545, 59.0909, 4.54545, 2162, -32, -36.3636, 7.27273, 36.3636, -7.27273, 2310, -69, -23.6364, -10.9091, 23.6364, 10.9091, 2453, -58, 0, 0, 0, 0, 2552, -16, -22.7273, -5.45455, 22.7273, 5.45455, 2659, 26, -22.7273, 3.63636, 22.7273, -3.63636, 2781, 53, 0, 0, 0, 0, 2903, 51, -26.5303, 11.2895, 26.5303, -11.2895, 3087, 53, -23.1434, 13.5474, 23.1434, -13.5474, 3143, 35, -9.03158, 15.8053, 9.03158, -15.8053, 3220, -39, -2.82237, 13.5474, 2.82237, -13.5474, 3259, -135, 7.51315, 41.6638, -7.51315, -41.6638, 3279, -233, 15.0263, 21.8564, -15.0263, -21.8564, 3245, -337, 37.5657, 19.8074, -37.5657, -19.8074, 3184, -426, 35.5167, 0, -35.5167, 0, 2901, -484, 0, 0, 0, 0, 2719, -460, 21.8182, -23.6364, -21.8182, 23.6364, 2582, -395, 31.8182, -10.9091, -31.8182, 10.9091, 2478, -325, 0, 0, 0, 0, 2375, -351, 27.2727, -10.9091, -27.2727, 10.9091, 2254, -359, 0, 0, 0, 0, 2170, -312, 10, -23.6364, -10, 23.6364, 2109, -237, 0, -18.1818, 0, 18.1818, 2093, -154, -9.09091, -10.9091, 9.09091, 10.9091, 2103, -88, -30.9091, -17.2727, 30.9091, 17.2727, 2162, -32)
+}
+point_count = 25
 
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_c77lg")
@@ -175,19 +224,20 @@ color = Color(0.427493, 0.427493, 0.427493, 1)
 [node name="ColorRect" type="ColorRect" parent="ColorRect2"]
 layout_mode = 0
 offset_left = 3171.0
-offset_right = 3961.0
+offset_right = 3966.0
 offset_bottom = 1047.0
 color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 z_index = -20
-offset_left = 1107.0
+offset_left = 1118.0
 offset_top = -3929.0
 offset_right = 3937.0
 offset_bottom = -1407.0
 color = Color(6.73831e-06, 0.683953, 0.89999, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect3"]
+z_index = -20
 layout_mode = 0
 offset_left = -769.0
 offset_top = 1040.0
@@ -206,7 +256,7 @@ color = Color(0.372549, 0.815686, 0.92549, 1)
 [node name="ColorRect" type="ColorRect" parent="ColorRect4"]
 layout_mode = 0
 offset_left = -2753.0
-offset_top = 2529.0
+offset_top = 2513.0
 offset_right = 2082.0
 offset_bottom = 4587.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
@@ -1007,7 +1057,7 @@ position = Vector2(2351, -3051)
 scale = Vector2(0.224886, 0.892968)
 
 [node name="SandPlatform7" parent="." instance=ExtResource("25_p2rf6")]
-position = Vector2(1957, -2516)
+position = Vector2(1957, -2543)
 scale = Vector2(0.439517, 0.372311)
 
 [node name="SandPlatform8" parent="." instance=ExtResource("25_p2rf6")]
@@ -1683,8 +1733,16 @@ loop = false
 
 [node name="Sprite2D11" type="Sprite2D" parent="."]
 position = Vector2(-652, -2883.25)
+rotation = -0.344634
 scale = Vector2(1.76923, 2.02272)
 texture = ExtResource("43_mywet")
+flip_v = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D11"]
+position = Vector2(-19.4583, -9.65498)
+rotation = 0.925025
+texture = ExtResource("43_mywet")
+flip_h = true
 flip_v = true
 
 [node name="Sprite2D12" type="Sprite2D" parent="."]
@@ -1716,6 +1774,26 @@ loop = false
 position = Vector2(-963, -3323)
 collision_scale_y = 2
 
+[node name="Bat2" parent="." instance=ExtResource("46_wibeg")]
+position = Vector2(425, -3205)
+collision_scale_y = 2
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+position = Vector2(-1154, -3307)
+texture = ExtResource("41_mywet")
+flip_h = true
+flip_v = true
+
+[node name="Path2D17" type="Path2D" parent="."]
+curve = SubResource("Curve2D_w6cce")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D17"]
+position = Vector2(-1157, -3267)
+rotates = false
+loop = false
+
+[node name="WaterDrop" parent="Path2D17/PathFollow2D" instance=ExtResource("42_hd1de")]
+
 [node name="Sprite2D14" type="Sprite2D" parent="."]
 position = Vector2(-1798.75, -3115)
 scale = Vector2(2.51923, 2.9091)
@@ -1727,6 +1805,7 @@ flip_v = true
 position = Vector2(193, -3375)
 scale = Vector2(2.32, 2.42)
 texture = ExtResource("40_ryp18")
+flip_h = true
 
 [node name="Sprite2D16" type="Sprite2D" parent="."]
 position = Vector2(969, -3539)
@@ -1748,6 +1827,305 @@ position = Vector2(-488, -3010)
 rotation = 0.547789
 scale = Vector2(1.86, 1.78)
 texture = ExtResource("44_2h0e0")
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+position = Vector2(-1765, -1877)
+texture = ExtResource("45_wibeg")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D18"]
+position = Vector2(-29.75, 14.25)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("45_wibeg")
+
+[node name="Kelp" parent="." instance=ExtResource("47_xtclw")]
+z_index = 3
+position = Vector2(991, -2683)
+scale = Vector2(1.03178, 0.967273)
+
+[node name="Kelp" parent="Kelp" instance=ExtResource("47_xtclw")]
+position = Vector2(46.1494, 0)
+is_flip = true
+
+[node name="Kelp2" parent="Kelp" instance=ExtResource("47_xtclw")]
+position = Vector2(-41.115, 0)
+
+[node name="Kelp2" parent="." instance=ExtResource("47_xtclw")]
+position = Vector2(383, -2219)
+is_flip = true
+
+[node name="Kelp" parent="Kelp2" instance=ExtResource("47_xtclw")]
+position = Vector2(49, 0)
+is_flip = true
+
+[node name="Kelp4" parent="." instance=ExtResource("47_xtclw")]
+z_index = 3
+position = Vector2(1047, -2151)
+scale = Vector2(1.18833, 1.21127)
+
+[node name="Kelp3" parent="." instance=ExtResource("47_xtclw")]
+position = Vector2(1502, -2140)
+scale = Vector2(1.13686, 1.10402)
+
+[node name="Path2D15" type="Path2D" parent="."]
+curve = SubResource("Curve2D_u5cjy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D15"]
+position = Vector2(1081, -2664)
+rotation = -1.40006
+
+[node name="YellowFish" parent="Path2D15/PathFollow2D" instance=ExtResource("48_iv2ns")]
+position = Vector2(0.000123024, 1.36495e-05)
+rotation = -0.16542
+scale = Vector2(0.362373, -0.295365)
+
+[node name="Path2D16" type="Path2D" parent="."]
+curve = SubResource("Curve2D_b5xlu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D16"]
+position = Vector2(1013, -2174)
+rotation = -1.5458
+
+[node name="Fish" parent="Path2D16/PathFollow2D" instance=ExtResource("49_u5cjy")]
+position = Vector2(-0.924655, 3.02406)
+scale = Vector2(0.701636, 0.81974)
+
+[node name="Rock2" parent="." instance=ExtResource("50_m6ika")]
+position = Vector2(913, -2102)
+scale = Vector2(0.81828, 0.855793)
+is_in_water = true
+
+[node name="Rock1" parent="." instance=ExtResource("51_w6cce")]
+position = Vector2(370, -2486)
+scale = Vector2(0.855055, 0.725398)
+is_in_water = true
+
+[node name="Shrimp" parent="." instance=ExtResource("52_q2m6h")]
+position = Vector2(679, -2101)
+
+[node name="Clams" parent="." instance=ExtResource("53_w6cce")]
+position = Vector2(1692, -2536)
+scale = Vector2(0.846667, 0.86)
+
+[node name="Shrimp2" parent="." instance=ExtResource("52_q2m6h")]
+position = Vector2(1342, -2100)
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+position = Vector2(1762, -3273)
+scale = Vector2(0.307312, 0.378803)
+texture = ExtResource("54_8jg1e")
+flip_h = true
+
+[node name="BerryBush" parent="." instance=ExtResource("55_6gfjr")]
+position = Vector2(1784, -3204)
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+position = Vector2(2748, -2981)
+scale = Vector2(0.343874, 0.353955)
+texture = ExtResource("54_8jg1e")
+
+[node name="Sprite2D22" type="Sprite2D" parent="."]
+position = Vector2(3523, -2450)
+scale = Vector2(0.403162, 0.504057)
+texture = ExtResource("54_8jg1e")
+flip_h = true
+
+[node name="Sprite2D23" type="Sprite2D" parent="."]
+position = Vector2(2578, -1793)
+scale = Vector2(0.379446, 0.473631)
+texture = ExtResource("54_8jg1e")
+
+[node name="BerryBush2" parent="." instance=ExtResource("55_6gfjr")]
+position = Vector2(3562, -2353)
+scale = Vector2(1.21714, 1.23307)
+
+[node name="BerryBush" parent="BerryBush2" instance=ExtResource("55_6gfjr")]
+position = Vector2(-68.1926, 0)
+
+[node name="Barrel" parent="." instance=ExtResource("56_6gfjr")]
+position = Vector2(3116, -2608)
+
+[node name="Barrel" parent="Barrel" instance=ExtResource("56_6gfjr")]
+position = Vector2(61, 0)
+
+[node name="Barrel2" parent="Barrel" instance=ExtResource("56_6gfjr")]
+position = Vector2(30, -62)
+
+[node name="Barrel2" parent="." instance=ExtResource("56_6gfjr")]
+position = Vector2(1982, -2275)
+
+[node name="Barrel3" parent="." instance=ExtResource("56_6gfjr")]
+position = Vector2(3761, -1719)
+
+[node name="Barrel" parent="Barrel3" instance=ExtResource("56_6gfjr")]
+position = Vector2(59, 0)
+
+[node name="Barrel2" parent="Barrel3" instance=ExtResource("56_6gfjr")]
+position = Vector2(29, -62)
+
+[node name="LanternPole" parent="." instance=ExtResource("57_5lfpo")]
+position = Vector2(1960, -2651)
+scale = Vector2(0.561289, 0.491363)
+
+[node name="LanternPole" parent="LanternPole" instance=ExtResource("57_5lfpo")]
+position = Vector2(1194.92, -1122.63)
+flip_value = 1
+
+[node name="Water6" parent="." instance=ExtResource("23_fvo85")]
+position = Vector2(3897, -2190)
+scale = Vector2(1.44, 1.0054)
+
+[node name="BerryBush3" parent="." instance=ExtResource("55_6gfjr")]
+position = Vector2(2521, -1709)
+
+[node name="BigTree" parent="." instance=ExtResource("58_l8dvf")]
+position = Vector2(2343, -1103)
+flip_value = 1
+
+[node name="BranchesBush" parent="BigTree" instance=ExtResource("61_87leb")]
+position = Vector2(-38, 121)
+flip_value = 1
+
+[node name="LanternPole" parent="BigTree" instance=ExtResource("57_5lfpo")]
+position = Vector2(99, 80)
+scale = Vector2(0.589143, 0.490856)
+
+[node name="Sprite2D24" type="Sprite2D" parent="."]
+position = Vector2(4730, -2731)
+scale = Vector2(1.42667, 1.7)
+texture = ExtResource("59_87leb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D24"]
+position = Vector2(-3.50481, -1.17644)
+scale = Vector2(0.69626, 0.570591)
+texture = ExtResource("60_ndas8")
+
+[node name="BranchesBush" parent="." instance=ExtResource("61_87leb")]
+position = Vector2(5082, -2430)
+scale = Vector2(0.856136, 0.878003)
+
+[node name="BranchesBush" parent="BranchesBush" instance=ExtResource("61_87leb")]
+position = Vector2(42.0494, -1.13895)
+flip_value = 1
+
+[node name="Path2D18" type="Path2D" parent="."]
+curve = SubResource("Curve2D_l1prs")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D18"]
+position = Vector2(5101, -2747)
+rotation = -1.51372
+
+[node name="Bird" parent="Path2D18/PathFollow2D" instance=ExtResource("61_x2e87")]
+position = Vector2(-0.998487, 0.0571437)
+rotation = -0.202196
+scale = Vector2(0.574228, -0.599361)
+
+[node name="BerryBush4" parent="." instance=ExtResource("55_6gfjr")]
+position = Vector2(4766, -2598)
+
+[node name="Rock3" parent="." instance=ExtResource("63_x2e87")]
+position = Vector2(4630, -1652)
+scale = Vector2(0.506838, 0.504225)
+
+[node name="Tree" parent="." instance=ExtResource("64_l1prs")]
+position = Vector2(4001, -1087)
+
+[node name="Rock1" parent="Tree" instance=ExtResource("51_w6cce")]
+position = Vector2(-36, 73)
+
+[node name="BranchesBush2" parent="." instance=ExtResource("61_87leb")]
+position = Vector2(4811, -911)
+scale = Vector2(1.39001, 1.42)
+
+[node name="Sprite2D25" type="Sprite2D" parent="."]
+position = Vector2(2387, -95)
+scale = Vector2(2.25333, 2.32778)
+texture = ExtResource("59_87leb")
+flip_h = true
+
+[node name="BranchesBush" parent="Sprite2D25" instance=ExtResource("61_87leb")]
+position = Vector2(46.1539, 73.8902)
+scale = Vector2(0.636507, 0.643103)
+flip_value = 1
+
+[node name="BranchesBush" parent="Sprite2D25/BranchesBush" instance=ExtResource("61_87leb")]
+position = Vector2(46.0167, 5.09645e-06)
+
+[node name="LanternPole" parent="Sprite2D25" instance=ExtResource("57_5lfpo")]
+position = Vector2(-67.8994, 60.1432)
+scale = Vector2(0.246504, 0.223658)
+flip_value = 1
+
+[node name="BigTree2" parent="." instance=ExtResource("58_l8dvf")]
+z_index = 1
+position = Vector2(3225, -12)
+scale = Vector2(1.13601, 1.11125)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BigTree2"]
+position = Vector2(9.68304, 66.5918)
+texture = ExtResource("60_ndas8")
+
+[node name="BerryBush5" parent="." instance=ExtResource("55_6gfjr")]
+position = Vector2(2823, 120)
+scale = Vector2(1.25518, 1.35476)
+
+[node name="BerryBush" parent="BerryBush5" instance=ExtResource("55_6gfjr")]
+position = Vector2(50.192, -5.63156e-06)
+flip_value = 1
+
+[node name="BerryBush2" parent="BerryBush5" instance=ExtResource("55_6gfjr")]
+position = Vector2(103.571, -5.63156e-06)
+
+[node name="BerryBush3" parent="BerryBush5" instance=ExtResource("55_6gfjr")]
+position = Vector2(157.747, -5.63156e-06)
+flip_value = 1
+
+[node name="BerryBush4" parent="BerryBush5" instance=ExtResource("55_6gfjr")]
+position = Vector2(214.312, -5.63156e-06)
+
+[node name="Barrier" parent="." instance=ExtResource("65_l1prs")]
+z_index = -1
+position = Vector2(2793, 122)
+scale = Vector2(1.05382, 1.08491)
+
+[node name="Barrier2" parent="." instance=ExtResource("65_l1prs")]
+z_index = 3
+position = Vector2(2850, 122)
+scale = Vector2(1.05382, 1.08491)
+
+[node name="Barrier" parent="Barrier2" instance=ExtResource("65_l1prs")]
+position = Vector2(63.5785, 0)
+
+[node name="Barrier2" parent="Barrier2" instance=ExtResource("65_l1prs")]
+position = Vector2(127.157, 0)
+
+[node name="Barrier3" parent="Barrier2" instance=ExtResource("65_l1prs")]
+position = Vector2(190.736, 0)
+
+[node name="Barrier4" parent="Barrier2" instance=ExtResource("65_l1prs")]
+position = Vector2(255.263, 0)
+
+[node name="Rock4" parent="." instance=ExtResource("50_m6ika")]
+position = Vector2(2311, 88)
+flip_value = 1
+
+[node name="Path2D19" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nvxkg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D19"]
+position = Vector2(2162, -32)
+rotation = 0.076772
+
+[node name="Bird" parent="Path2D19/PathFollow2D" instance=ExtResource("61_x2e87")]
+position = Vector2(-0.0767097, -0.997059)
+scale = Vector2(0.673651, 0.635053)
+
+[node name="Tree2" parent="." instance=ExtResource("64_l1prs")]
+position = Vector2(3216, -2913)
+flip_value = 1
+
+[node name="BranchesBush3" parent="." instance=ExtResource("61_87leb")]
+position = Vector2(3615, -2805)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
