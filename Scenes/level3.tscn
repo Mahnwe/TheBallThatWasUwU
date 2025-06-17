@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=49 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="17_tta53"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_icw0h"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="19_4iku6"]
+[ext_resource type="Texture2D" uid="uid://buk7of3tf38ht" path="res://Arts/BushSprite/SandBush.png" id="19_s5d5r"]
 [ext_resource type="PackedScene" uid="uid://ctsres127vwfw" path="res://Scenes/barrier.tscn" id="20_ctgch"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="22_v2cqt"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="24_ctwib"]
@@ -674,20 +675,53 @@ position = Vector2(779, -301)
 [node name="BerryBush" parent="BigTree" instance=ExtResource("17_tta53")]
 position = Vector2(168, 121)
 
-[node name="BranchesBush" parent="." instance=ExtResource("18_icw0h")]
-position = Vector2(-517, -864)
-scale = Vector2(1.26733, 1.28)
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-517.658, -867)
+scale = Vector2(1.29367, 1.4)
+texture = ExtResource("19_s5d5r")
 
-[node name="BranchesBush" parent="BranchesBush" instance=ExtResource("18_icw0h")]
-position = Vector2(2187.27, 0)
-flip_value = 1
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(32.2018, 0)
+texture = ExtResource("19_s5d5r")
 
-[node name="BranchesBush2" parent="BranchesBush" instance=ExtResource("18_icw0h")]
-position = Vector2(31.5624, 0)
-flip_value = 1
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(2148.67, 0)
+texture = ExtResource("19_s5d5r")
+flip_h = true
 
-[node name="BranchesBush3" parent="BranchesBush" instance=ExtResource("18_icw0h")]
-position = Vector2(2148.61, 3.90625)
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(2106.93, 0)
+texture = ExtResource("19_s5d5r")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-584, -1337)
+scale = Vector2(1.5, 1.7)
+texture = ExtResource("19_s5d5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(1934.67, 0)
+texture = ExtResource("19_s5d5r")
+flip_h = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(431, -722)
+scale = Vector2(1.01, 1.21)
+texture = ExtResource("19_s5d5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D5"]
+position = Vector2(837.621, 0)
+texture = ExtResource("19_s5d5r")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D5"]
+position = Vector2(36.6336, 0)
+texture = ExtResource("19_s5d5r")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D5"]
+position = Vector2(802.968, 0)
+texture = ExtResource("19_s5d5r")
 
 [node name="Tree" parent="." instance=ExtResource("19_4iku6")]
 position = Vector2(637, 1139)

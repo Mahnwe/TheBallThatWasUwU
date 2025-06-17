@@ -737,9 +737,9 @@ scale = Vector2(1, 0.773392)
 position = Vector2(-2485, -1779)
 rotation = -1.5708
 beam_x_scale = 2.0
-charge_timer = 2.0
+charge_timer = 3.0
 beam_timer = 2.0
-wait_timer = 1.5
+wait_timer = 2.0
 
 [node name="LaserBase5" parent="." groups=["laser_group"] instance=ExtResource("18_gh5wq")]
 position = Vector2(-3092, -1898)
@@ -897,7 +897,7 @@ rotates = false
 
 [node name="MetalPlatform" parent="Path2D11/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("4_achdq")]
 position = Vector2(0, 1)
-scale = Vector2(0.210614, 0.363636)
+scale = Vector2(0.250614, 0.363636)
 sync_to_physics = false
 trigger_required = true
 
