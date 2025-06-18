@@ -32,12 +32,17 @@ shape = SubResource("RectangleShape2D_c2iqv")
 
 [node name="SavedLabel" type="Label" parent="."]
 z_index = 2
-offset_left = -280.0
-offset_top = -226.0
-offset_right = -240.0
-offset_bottom = -203.0
-scale = Vector2(2.92, 1.28)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = -210.0
+offset_top = -269.0
+offset_right = -170.0
+offset_bottom = -214.0
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
 
 [node name="SaveSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("3_ogtmp")

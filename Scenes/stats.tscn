@@ -35,10 +35,11 @@ grow_vertical = 2
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1698.0
+offset_left = 1742.0
 offset_top = 30.0
-offset_right = 1856.0
+offset_right = 1900.0
 offset_bottom = 162.0
+scale = Vector2(0.758055, 0.789724)
 theme_override_styles/focus = SubResource("StyleBoxFlat_i6gfd")
 flat = true
 
@@ -49,23 +50,27 @@ texture = ExtResource("4_i6gfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(953, 137)
-scale = Vector2(2.9527, 3.08553)
+scale = Vector2(2.79764, 2.91182)
 texture = ExtResource("3_wue6w")
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 784.0
-offset_top = 20.0
-offset_right = 1265.0
-offset_bottom = 293.0
+offset_left = 805.0
+offset_top = 34.0
+offset_right = 1286.0
+offset_bottom = 307.0
 scale = Vector2(0.706844, 0.731816)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-theme_override_font_sizes/font_size = 200
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 170
 text = "Stats"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(330, 433)
-scale = Vector2(4.08108, 7)
+position = Vector2(363.824, 358.617)
+scale = Vector2(3.82195, 4.91098)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
@@ -91,21 +96,40 @@ position = Vector2(234.551, 49.007)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(307.027, 0.291747)
+position = Vector2(309.759, 0.28824)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(308.959, 50.9249)
+position = Vector2(312.858, 50.8748)
+texture = ExtResource("3_wue6w")
+flip_h = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(0.123946, 81.5451)
+texture = ExtResource("3_wue6w")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(128.044, 81.7082)
+texture = ExtResource("3_wue6w")
+flip_h = true
+
+[node name="Sprite2D10" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(248.278, 81.7082)
+texture = ExtResource("3_wue6w")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(315.961, 83.1725)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
-offset_left = 167.062
-offset_top = 285.5
-offset_right = 1175.06
-offset_bottom = 863.5
-theme_override_constants/separation = 100
+offset_left = 186.824
+offset_top = 268.367
+offset_right = 1194.82
+offset_bottom = 846.367
+scale = Vector2(0.947485, 0.943702)
+theme_override_constants/separation = 110
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -118,12 +142,17 @@ theme_override_constants/separation = 25
 [node name="JumpsLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of jumps    ="
 
 [node name="JumpNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -134,12 +163,17 @@ theme_override_constants/separation = 25
 [node name="DashLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of dashes    ="
 
 [node name="DashNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -150,12 +184,17 @@ theme_override_constants/separation = 25
 [node name="DeathsLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer9"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of deaths    ="
 
 [node name="DeathNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer9"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -166,12 +205,17 @@ theme_override_constants/separation = 25
 [node name="DeathSpike" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of spike death  ="
 
 [node name="DeathSpikeNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -182,12 +226,17 @@ theme_override_constants/separation = 25
 [node name="CannonDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of cannon death   ="
 
 [node name="DeathCannonNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -198,12 +247,17 @@ theme_override_constants/separation = 25
 [node name="CoralDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of coral death   ="
 
 [node name="DeathCoralNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -214,12 +268,17 @@ theme_override_constants/separation = 25
 [node name="AcidDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of acid death   ="
 
 [node name="DeathAcidNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -230,12 +289,17 @@ theme_override_constants/separation = 25
 [node name="LaserDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer7"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of laser death   ="
 
 [node name="DeathLaserNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer7"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -246,12 +310,17 @@ theme_override_constants/separation = 25
 [node name="ChestsLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of chest found   ="
 
 [node name="ChestNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -266,12 +335,17 @@ theme_override_constants/separation = 25
 [node name="LevelFinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of level finished  ="
 
 [node name="LevelNumber" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -282,12 +356,17 @@ theme_override_constants/separation = 25
 [node name="Level1FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level one finished   ="
 
 [node name="Level1Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -298,12 +377,17 @@ theme_override_constants/separation = 25
 [node name="Level2FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level two finished   ="
 
 [node name="Level2Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -314,12 +398,17 @@ theme_override_constants/separation = 25
 [node name="Level3FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level three finished   ="
 
 [node name="Level3Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -330,12 +419,17 @@ theme_override_constants/separation = 25
 [node name="Level4FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level four finished   ="
 
 [node name="Level4Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -346,12 +440,17 @@ theme_override_constants/separation = 25
 [node name="Level5FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level five finished   ="
 
 [node name="Level5Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -362,12 +461,17 @@ theme_override_constants/separation = 25
 [node name="Level6FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer7"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level six finished   ="
 
 [node name="Level6Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer7"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -378,21 +482,27 @@ theme_override_constants/separation = 25
 [node name="Level7FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Times level seven finished   ="
 
 [node name="Level7Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 1297.0
-offset_top = 401.0
-offset_right = 1727.0
-offset_bottom = 811.0
+offset_left = 1302.0
+offset_top = 383.0
+offset_right = 1732.0
+offset_bottom = 793.0
+scale = Vector2(0.947485, 0.943702)
 theme_override_constants/separation = 50
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer2"]
@@ -402,12 +512,17 @@ theme_override_constants/separation = 25
 [node name="MedalNumberLabel" type="Label" parent="VBoxContainer2/HSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of medals ="
 
 [node name="MedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -418,12 +533,17 @@ theme_override_constants/separation = 25
 [node name="BronzeMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of bronze medal ="
 
 [node name="BronzeMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -434,12 +554,17 @@ theme_override_constants/separation = 25
 [node name="SilverMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of Silver medal ="
 
 [node name="SilverMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -450,12 +575,17 @@ theme_override_constants/separation = 25
 [node name="GoldMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of gold medal ="
 
 [node name="GoldMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -466,12 +596,17 @@ theme_override_constants/separation = 25
 [node name="DevMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
 text = "Number of dev medal ="
 
 [node name="DevMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "0"
 

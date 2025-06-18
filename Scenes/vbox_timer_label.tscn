@@ -15,31 +15,43 @@ script = ExtResource("1_s6oky")
 [node name="TimerRankDev" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank1" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank2" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank3" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank4" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank5" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -59,8 +71,12 @@ texture = ExtResource("4_fxi3u")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(168, 161)
-scale = Vector2(4.05068, 6.23684)
+position = Vector2(168, 71.5001)
+scale = Vector2(4.05068, 3.88158)
+texture = ExtResource("5_yc4nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(0, 44.6983)
 texture = ExtResource("5_yc4nk")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]

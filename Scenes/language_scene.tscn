@@ -44,18 +44,22 @@ scale = Vector2(0.198333, 0.229333)
 texture = ExtResource("4_mcjyt")
 
 [node name="Cloud" type="Sprite2D" parent="LanguageScene"]
-position = Vector2(956, 406)
-scale = Vector2(2.69257, 2.8421)
+position = Vector2(971, 387)
+scale = Vector2(2.88007, 3.15789)
 texture = ExtResource("5_sih3h")
 
 [node name="Title" type="Label" parent="LanguageScene"]
 layout_mode = 0
-offset_left = 813.0
-offset_top = 355.0
-offset_right = 1096.0
-offset_bottom = 431.0
+offset_left = 805.0
+offset_top = 324.0
+offset_right = 1140.0
+offset_bottom = 414.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-theme_override_font_sizes/font_size = 55
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 65
 text = "Languages"
 
 [node name="FrButton" type="Button" parent="LanguageScene" groups=["language_buttons"]]

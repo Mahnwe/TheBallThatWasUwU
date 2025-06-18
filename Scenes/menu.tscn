@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=35 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
 [ext_resource type="Texture2D" uid="uid://oyny4a5maq08" path="res://Arts/BackgroundSprite/BackgroundButton.png" id="7_272km"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
+[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="9_ocger"]
 [ext_resource type="PackedScene" uid="uid://cr47sovtmwvxp" path="res://Scenes/top_time.tscn" id="10_vv7ov"]
 [ext_resource type="Texture2D" uid="uid://bdfulll6h4t4b" path="res://Arts/ChestSprite/ValidChestSprite.png" id="11_d77ms"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="11_p1e1o"]
@@ -111,11 +112,11 @@ scale = Vector2(1.3641, 1.35729)
 texture = ExtResource("4_qktq1")
 
 [node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
-position = Vector2(528, 54.875)
+position = Vector2(134, 55)
+flip_value = 1
 
 [node name="BranchesBush" parent="platform/BranchesBush" instance=ExtResource("5_ok2nw")]
-position = Vector2(-36.7925, 0.115741)
-flip_value = 1
+position = Vector2(356.604, 2.68221e-07)
 
 [node name="Rock1" parent="platform" instance=ExtResource("4_pwi5b")]
 position = Vector2(235, 68)
@@ -125,6 +126,10 @@ position = Vector2(177, -65)
 
 [node name="Tree" parent="platform" instance=ExtResource("6_ilarj")]
 position = Vector2(603, 0.875)
+
+[node name="Sprite2D2" type="Sprite2D" parent="platform"]
+position = Vector2(189, -34)
+texture = ExtResource("9_ocger")
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(714, 471)
@@ -197,6 +202,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Level 2"
@@ -456,11 +462,15 @@ offset_bottom = 39.6902
 [node name="Label" type="Label" parent="Level7Button"]
 layout_mode = 1
 offset_left = 3.83142
-offset_top = -32.4298
+offset_top = -31.4618
 offset_right = 114.832
-offset_bottom = -4.42985
+offset_bottom = -3.46181
 scale = Vector2(0.587489, 0.792687)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 20
 text = "Secret level"
 
@@ -519,11 +529,15 @@ flat = true
 [node name="QuitLabel" type="Label" parent="QuitButton"]
 layout_mode = 1
 offset_left = -50.0
-offset_top = -6.25
+offset_top = -18.75
 offset_right = 77.0001
-offset_bottom = 28.75
+offset_bottom = 16.25
 scale = Vector2(8.49967, 4.83334)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 25
 text = "Quit game"
 horizontal_alignment = 1
@@ -538,12 +552,16 @@ stream = ExtResource("13_owrtn")
 
 [node name="MusicLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 127.0
+offset_left = 116.0
 offset_top = 39.0
-offset_right = 226.0
+offset_right = 215.0
 offset_bottom = 81.0
 scale = Vector2(0.968542, 0.955579)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "Musics"
 horizontal_alignment = 1
@@ -574,6 +592,10 @@ offset_right = 288.0
 offset_bottom = 165.0
 scale = Vector2(0.949514, 0.903602)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 30
 text = "Sound effects"
 horizontal_alignment = 1
@@ -597,7 +619,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_yyec
 max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(118, 988)
+position = Vector2(108.5, 1000.56)
 scale = Vector2(0.6875, 0.633929)
 texture = ExtResource("14_45jmy")
 
@@ -606,23 +628,28 @@ offset_left = -127.273
 offset_top = 53.2391
 offset_right = 257.727
 offset_bottom = 122.239
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 35
 text = "Manawé Games"
 
 [node name="BubbleTooltip" parent="." instance=ExtResource("16_gkf7k")]
-position = Vector2(291, 875)
+position = Vector2(281.5, 887.563)
 scale = Vector2(3.3875, 2.735)
 bubble_message = "This game is easier with a controller"
 
 [node name="AbilityIcon" type="Sprite2D" parent="."]
-position = Vector2(995, 486)
-scale = Vector2(0.0870042, 0.0817395)
+position = Vector2(992, 482)
+scale = Vector2(0.0985682, 0.0882286)
 texture = ExtResource("17_ukqqs")
 
 [node name="AbilityIcon2" type="Sprite2D" parent="."]
-position = Vector2(1349, 486)
-scale = Vector2(0.0870042, 0.0817395)
+position = Vector2(1349, 483)
+scale = Vector2(0.0985682, 0.0882286)
 texture = ExtResource("17_ukqqs")
 
 [node name="MusicMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]

@@ -40,6 +40,10 @@ offset_top = -265.0
 offset_right = 62.0
 offset_bottom = -152.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 40
 text = "   NEW
 ABILITY"
