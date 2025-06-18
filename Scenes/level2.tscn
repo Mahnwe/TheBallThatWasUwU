@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=53 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" uid="uid://dumtc4alnw10m" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -32,6 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="31_u1na6"]
 [ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="32_se7y5"]
 [ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="32_uvwjj"]
+[ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="33_5mqgo"]
+[ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="34_d87oc"]
+[ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="35_6y803"]
 
 [sub_resource type="Curve2D" id="Curve2D_awxt8"]
 _data = {
@@ -835,6 +838,30 @@ z_index = -1
 position = Vector2(-3626, 254)
 scale = Vector2(1.61333, 1.66222)
 texture = ExtResource("32_uvwjj")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(171, 499)
+texture = ExtResource("33_5mqgo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-1327, 425)
+texture = ExtResource("34_d87oc")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(-3416, 378)
+texture = ExtResource("35_6y803")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(-1253, 1022)
+texture = ExtResource("33_5mqgo")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(-3764, 578)
+texture = ExtResource("34_d87oc")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(-2668, 939)
+texture = ExtResource("35_6y803")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
