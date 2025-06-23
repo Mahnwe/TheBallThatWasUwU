@@ -372,6 +372,7 @@ func translate_text():
 		
 	$TripleSign.get_child(1).text = translate_config.get_value("TranslationSign", "RunSign")
 	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "JumpSign")
+	$Advice.set_bubble_message(translate_config.get_value("TranslationAdvice", "AbilitiesAdvice"))
 	
 func save_medals_stats():
 	if queue.current_medal != 0:

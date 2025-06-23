@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=43 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="31_p68j0"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="32_c4ifa"]
 [ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="33_daeh6"]
+[ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="34_c4ifa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -48,6 +49,18 @@ _data = {
 "points": PackedVector2Array(-12, -78, 12, 78, -1184, 15, 0, 0, 0, 0, -998, -8, -21, 9, 21, -9, -844, -48, 0, 0, 0, 0, -712, -115, -26.4463, 14.876, 26.4463, -14.876, -531, -187, 0, 0, 0, 0, -397, -209, -13.2231, 13.2231, 13.2231, -13.2231, -283, -229, 0, 0, 0, 0, -212, -290, -14.876, 14.876, 14.876, -14.876, -162, -348, 0, 0, 0, 0, -34, -429, 0, 0, 0, 0, 80, -459, 0, 0, 0, 0, 229, -470, -48.7603, 27.2727, 48.7603, -27.2727, 324, -480, 0, 0, 0, 0, 392, -543, 0, 0, 0, 0, 443, -596, -26.4463, 14.876, 26.4463, -14.876, 507, -649, 63.6364, 25.6198, -63.6364, -25.6198, 516, -735, 28.0992, -4.95868, -28.0992, 4.95868, 351, -702, 0, 0, 0, 0, 242, -625, 0, 0, 0, 0, 157, -556, 57.8512, 23.9669, -57.8512, -23.9669, -7, -509, 0, 0, 0, 0, -116, -543, 0, 0, 0, 0, -216, -549, 17.3554, -11.5702, -17.3554, 11.5702, -315, -544, 0, 0, 0, 0, -403, -487, 31, -17, -31, 17, -530, -412, 0, 0, 0, 0, -626, -400, 0, 0, 0, 0, -718, -392, 19, -31, -19, 31, -838, -345, 0, 0, 0, 0, -886, -285, 0, 0, 0, 0, -939, -215, 42, 0, -42, 0, -1022, -98, -18, -66, 18, 66, -1184, 15)
 }
 point_count = 33
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ifa"]
+size = Vector2(100, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daeh6"]
+size = Vector2(187, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr50b"]
+size = Vector2(101, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nstho"]
+size = Vector2(309.016, 131.315)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -112,8 +125,8 @@ position = Vector2(-1566, 382)
 scale = Vector2(0.75735, 0.922252)
 
 [node name="TripleSign2" parent="." instance=ExtResource("5_vflxv")]
-position = Vector2(35, 354)
-scale = Vector2(0.240006, 0.32)
+position = Vector2(29, 340)
+scale = Vector2(0.280006, 0.32)
 
 [node name="Sprite2D2" type="Sprite2D" parent="TripleSign2"]
 position = Vector2(174.996, -106.25)
@@ -343,12 +356,12 @@ rotation = -1.5708
 scale = Vector2(3.44, 1.68)
 
 [node name="platform19" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-2088, 271)
-scale = Vector2(0.12, 1)
+position = Vector2(-2227, 297)
+scale = Vector2(0.284501, 0.832189)
 
 [node name="Spike23" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(-2434, 98)
-scale = Vector2(0.400001, 0.359999)
+position = Vector2(-2417, 106)
+scale = Vector2(0.382267, 0.305806)
 
 [node name="Wall11" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-1074, 895)
@@ -390,10 +403,6 @@ scale = Vector2(1.2, 1)
 [node name="Wall16" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(-2226, 401)
 rotation = 1.5708
-
-[node name="platform20" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-2229, 348)
-scale = Vector2(0.08, 1)
 
 [node name="Spike26" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-2474, 333)
@@ -858,6 +867,48 @@ position = Vector2(-2498, 393)
 texture = ExtResource("32_c4ifa")
 flip_h = true
 
+[node name="Advice" parent="." instance=ExtResource("34_c4ifa")]
+position = Vector2(-638, 337)
+scale = Vector2(0.897808, 0.876995)
+
+[node name="EnemiesAdviceTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesAdviceTrigger"]
+position = Vector2(-810, 441.5)
+shape = SubResource("RectangleShape2D_c4ifa")
+
+[node name="WalljumpAdviceTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WalljumpAdviceTrigger"]
+position = Vector2(320.5, 304)
+shape = SubResource("RectangleShape2D_daeh6")
+
+[node name="Advice2" parent="." instance=ExtResource("34_c4ifa")]
+position = Vector2(407, 127)
+scale = Vector2(0.941063, 0.918098)
+
+[node name="SlideAdviceTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlideAdviceTrigger"]
+position = Vector2(-892.5, -774)
+shape = SubResource("RectangleShape2D_dr50b")
+
+[node name="Advice3" parent="." instance=ExtResource("34_c4ifa")]
+position = Vector2(-1326, -516)
+scale = Vector2(0.94381, 0.897767)
+
+[node name="JumpAdviceTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpAdviceTrigger"]
+position = Vector2(-1675.47, -14.5327)
+rotation = 0.608945
+shape = SubResource("RectangleShape2D_nstho")
+
+[node name="Advice4" parent="." instance=ExtResource("34_c4ifa")]
+z_index = 1
+position = Vector2(-1964, -190)
+scale = Vector2(0.905329, 0.887448)
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
@@ -914,3 +965,7 @@ flip_h = true
 [connection signal="spike_hit" from="Spike42" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike43" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike44" to="." method="_on_spike_spike_hit"]
+[connection signal="body_entered" from="EnemiesAdviceTrigger" to="." method="_on_enemies_advice_trigger_body_entered"]
+[connection signal="body_entered" from="WalljumpAdviceTrigger" to="." method="_on_walljump_advice_trigger_body_entered"]
+[connection signal="body_entered" from="SlideAdviceTrigger" to="." method="_on_slide_advice_trigger_body_entered"]
+[connection signal="body_entered" from="JumpAdviceTrigger" to="." method="_on_jump_advice_trigger_body_entered"]

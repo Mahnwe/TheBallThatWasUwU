@@ -278,6 +278,10 @@ func translate_text():
 	$TripleSign.get_child(3).text = translate_config.get_value("TranslationSign", "DeadSign")
 	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "HardSign")
 	$TripleSign2.get_child(3).text = translate_config.get_value("TranslationSign", "EasySign")
+	$Advice.set_bubble_message(translate_config.get_value("TranslationAdvice", "EnemiesAdvice"))
+	$Advice2.set_bubble_message(translate_config.get_value("TranslationAdvice", "WalljumpAdvice"))
+	$Advice3.set_bubble_message(translate_config.get_value("TranslationAdvice", "SlidejumpAdvice"))
+	$Advice4.set_bubble_message(translate_config.get_value("TranslationAdvice", "JumpAdvice"))
 	
 	
 func save_medals_stats():
@@ -300,3 +304,23 @@ func save_medals_stats():
 			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
 			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func _on_enemies_advice_trigger_body_entered(body):
+	if body.name == "Player":
+		$Advice.show()
+
+
+func _on_walljump_advice_trigger_body_entered(body):
+	if body.name == "Player":
+		$Advice2.show()
+
+
+func _on_slide_advice_trigger_body_entered(body):
+	if body.name == "Player":
+		$Advice3.show()
+
+
+func _on_jump_advice_trigger_body_entered(body):
+	if body.name == "Player":
+		$Advice4.show()

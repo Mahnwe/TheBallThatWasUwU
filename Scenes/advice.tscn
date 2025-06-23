@@ -9,10 +9,11 @@ visible = false
 script = ExtResource("1_wip7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.723429, 0.741286)
 texture = ExtResource("1_7rxit")
 
-[node name="BubbleTooltip" parent="Sprite2D" instance=ExtResource("2_wip7c")]
-position = Vector2(164, -104)
+[node name="BubbleTooltip" parent="." instance=ExtResource("2_wip7c")]
+position = Vector2(157, -94)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
