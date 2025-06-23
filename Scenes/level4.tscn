@@ -993,8 +993,8 @@ collision_scale_x = 2
 collision_scale_y = 2
 
 [node name="Advice" parent="." instance=ExtResource("35_crdxt")]
-position = Vector2(-2918, -1615)
-scale = Vector2(0.957046, 0.973857)
+position = Vector2(-2908, -1589)
+scale = Vector2(0.7, 0.694)
 
 [node name="Sprite2D25" type="Sprite2D" parent="."]
 position = Vector2(-1419, -788)

@@ -620,7 +620,7 @@ max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(108.5, 1000.56)
-scale = Vector2(0.6875, 0.633929)
+scale = Vector2(0.679763, 0.633929)
 texture = ExtResource("14_45jmy")
 
 [node name="Label" type="Label" parent="Logo"]

@@ -1385,7 +1385,8 @@ scale = Vector2(0.106972, 0.118572)
 texture = ExtResource("32_0v3qi")
 
 [node name="Advice" parent="." instance=ExtResource("33_0v3qi")]
-position = Vector2(-2132, -455)
+position = Vector2(-2124, -428)
+scale = Vector2(0.7, 0.694)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

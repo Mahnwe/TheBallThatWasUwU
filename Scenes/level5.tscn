@@ -164,7 +164,7 @@ offset_left = -1303.0
 offset_top = -804.0
 offset_right = -281.0
 offset_bottom = -374.0
-color = Color(0, 0.651925, 0.918168, 1)
+color = Color(0.00392157, 0.219608, 0.890196, 1)
 
 [node name="Water" parent="." instance=ExtResource("12_2be2h")]
 position = Vector2(-793, -588)
@@ -817,7 +817,7 @@ offset_left = -4166.0
 offset_top = -1789.0
 offset_right = 1033.0
 offset_bottom = 869.0
-color = Color(0.372549, 0.815686, 0.92549, 1)
+color = Color(0.333333, 0.815686, 1, 1)
 
 [node name="Path2D7" type="Path2D" parent="."]
 curve = SubResource("Curve2D_birjf")
@@ -888,7 +888,8 @@ position = Vector2(-2237, -63)
 scale = Vector2(0.74, 0.78)
 
 [node name="Advice" parent="." instance=ExtResource("44_vxmds")]
-position = Vector2(-1805, -1100)
+position = Vector2(-1796, -1073)
+scale = Vector2(0.7, 0.694)
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 position = Vector2(-3020, -473)

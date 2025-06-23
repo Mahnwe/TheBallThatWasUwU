@@ -440,7 +440,8 @@ position = Vector2(-553, -101.515)
 scale = Vector2(2.04, 0.772727)
 
 [node name="Advice" parent="." instance=ExtResource("13_u17fo")]
-position = Vector2(4, -178)
+position = Vector2(33, -150)
+scale = Vector2(0.7, 0.694)
 
 [node name="Bumper4" parent="." instance=ExtResource("12_dk2oo")]
 position = Vector2(728, -225)
@@ -2302,6 +2303,14 @@ flip_h = true
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D33"]
 position = Vector2(-2061, 2285)
 texture = ExtResource("70_1mybm")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D33"]
+position = Vector2(-1559, 1405)
+texture = ExtResource("70_1mybm")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D33"]
+position = Vector2(-1335, -659)
+texture = ExtResource("68_nqkuh")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
