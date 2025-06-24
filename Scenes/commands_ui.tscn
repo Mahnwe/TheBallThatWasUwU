@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cp0mu2e8kcon"]
+[gd_scene load_steps=38 format=3 uid="uid://cp0mu2e8kcon"]
 
 [ext_resource type="Script" uid="uid://bxymd3lpn7qw7" path="res://Scripts/commands_ui.gd" id="1_in6he"]
 [ext_resource type="Texture2D" uid="uid://cea44i1yw26q1" path="res://Arts/KeyboardControls/Qkey-removebg-preview.png" id="2_apncb"]
@@ -30,9 +30,20 @@
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="32_k81pc"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="33_cep7v"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="33_pq72j"]
+[ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="34_6hhsa"]
 [ext_resource type="Texture2D" uid="uid://d2tdp336bis5j" path="res://Arts/ControllerControls/Square-removebg-preview.png" id="34_k6euw"]
 [ext_resource type="Texture2D" uid="uid://cmof2sbw6pjjp" path="res://Arts/ControllerControls/XButton-removebg-preview.png" id="35_dq218"]
+[ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="35_rxlji"]
+[ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="36_3uy3i"]
 [ext_resource type="Texture2D" uid="uid://b2x3glmt64vks" path="res://Arts/ControllerControls/YSwitch-removebg-preview.png" id="36_jtqtl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxlji"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
 
 [node name="CommandsUI" type="Control"]
 z_index = 2
@@ -366,3 +377,43 @@ texture = ExtResource("33_pq72j")
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(249.807, 94.8939)
 texture = ExtResource("33_pq72j")
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 14.0
+offset_right = 151.0
+offset_bottom = 102.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_rxlji")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CloseButton"]
+position = Vector2(49, 46)
+scale = Vector2(0.495, 0.505)
+texture = ExtResource("34_6hhsa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloseButton"]
+position = Vector2(20, 99)
+scale = Vector2(0.181818, 0.175676)
+texture = ExtResource("35_rxlji")
+
+[node name="Sprite2D" type="Sprite2D" parent="CloseButton/Sprite2D2"]
+position = Vector2(165, -8.82149e-05)
+scale = Vector2(0.271359, 0.308684)
+texture = ExtResource("36_3uy3i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloseButton/Sprite2D2"]
+position = Vector2(319, -5.69237)
+scale = Vector2(0.59322, 0.598143)
+texture = ExtResource("24_4woxk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="focus_entered" from="CloseButton" to="." method="_on_close_button_focus_entered"]
+[connection signal="focus_exited" from="CloseButton" to="." method="_on_close_button_focus_exited"]
+[connection signal="gui_input" from="CloseButton" to="." method="_on_close_button_gui_input"]
+[connection signal="mouse_entered" from="CloseButton" to="." method="_on_close_button_mouse_entered"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

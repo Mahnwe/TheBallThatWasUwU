@@ -49,7 +49,7 @@ scale = Vector2(0.805, 0.73)
 texture = ExtResource("4_i6gfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(953, 137)
+position = Vector2(946, 141)
 scale = Vector2(2.79764, 2.91182)
 texture = ExtResource("3_wue6w")
 
@@ -69,12 +69,12 @@ theme_override_font_sizes/font_size = 170
 text = "Stats"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(363.824, 358.617)
+position = Vector2(331.824, 358.617)
 scale = Vector2(3.82195, 4.91098)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(103.756, 0.254464)
+position = Vector2(107.491, 0.329313)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2"]
@@ -82,25 +82,25 @@ position = Vector2(2.21655e-06, 47.5505)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(119.705, 47.2857)
+position = Vector2(123.44, 47.3605)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(231.941, 0)
+position = Vector2(239.361, -0.0779379)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(234.551, 49.007)
+position = Vector2(241.971, 48.9291)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(309.759, 0.28824)
+position = Vector2(322.826, 0.329316)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(312.858, 50.8748)
+position = Vector2(325.925, 50.9159)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
@@ -109,27 +109,27 @@ position = Vector2(0.123946, 81.5451)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(128.044, 81.7082)
+position = Vector2(131.779, 81.7831)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(248.278, 81.7082)
+position = Vector2(255.698, 81.6303)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(315.961, 83.1725)
+position = Vector2(329.028, 83.2136)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
-offset_left = 186.824
-offset_top = 268.367
-offset_right = 1194.82
-offset_bottom = 846.367
+offset_left = 144.824
+offset_top = 267.617
+offset_right = 1162.82
+offset_bottom = 845.617
 scale = Vector2(0.947485, 0.943702)
-theme_override_constants/separation = 110
+theme_override_constants/separation = 80
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -498,10 +498,10 @@ text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 1302.0
-offset_top = 383.0
-offset_right = 1732.0
-offset_bottom = 793.0
+offset_left = 1239.0
+offset_top = 382.25
+offset_right = 1669.0
+offset_bottom = 792.25
 scale = Vector2(0.947485, 0.943702)
 theme_override_constants/separation = 50
 
@@ -557,7 +557,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 30
-text = "Number of Silver medal ="
+text = "Number of silver medal ="
 
 [node name="SilverMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer3"]
 layout_mode = 2

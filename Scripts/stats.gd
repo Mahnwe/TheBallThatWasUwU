@@ -68,8 +68,10 @@ func translate_text():
 	var translate_config = ConfigFile.new()
 	if properties_config.get_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+		$VBoxContainer2.position.x = 1300.0
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		$VBoxContainer2.position.x = 1239.0
 		
 	$HSplitContainer/VBoxContainer/HSplitContainer/JumpsLabel.text = translate_config.get_value("TranslationStats", "Jumps")
 	$HSplitContainer/VBoxContainer/HSplitContainer2/DashLabel.text = translate_config.get_value("TranslationStats", "Dash")

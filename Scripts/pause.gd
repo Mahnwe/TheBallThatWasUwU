@@ -24,8 +24,9 @@ func _ready():
 	$SoundLayer/MusicSlider.editable = false
 	$SoundLayer/EffectSlider.editable = false
 	set_sliders_value_with_config()
-	focus_pause_buttons()
 	set_volume()
+	for member in get_tree().get_nodes_in_group("pause_buttons"):
+		member.focus_mode = FOCUS_ALL
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -33,21 +34,10 @@ func _process(_delta):
 	if !is_paused and Input.is_action_just_pressed("close_commands"):
 		pass
 	if is_paused and Input.is_action_just_pressed("close_commands"):
-		if is_commands_display:
-			focus_pause_buttons()
-			close_command_panel()
-		elif !is_commands_display:
-			focus_close_command_button()
+		if !is_commands_display:
 			open_commands_panel()
-	if is_commands_display and Input.is_action_just_pressed("restart_save"):
-		focus_pause_buttons()
-		close_command_panel()
-	if Input.is_action_just_pressed("menu_when_finish") and is_commands_display:
-		focus_pause_buttons()
-		close_command_panel()
-	if is_commands_display:
-		$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
-		$CommandsUI/CloseButton.grab_focus()
+		else:
+			pass
 		
 	wait_for_focus()
 	
@@ -148,19 +138,7 @@ func set_volume():
 
 func _on_command_pressed():
 	if !is_commands_display:
-		focus_close_command_button()
 		open_commands_panel()
-		
-func close_command_panel():
-	$ReturnLayer.visible = true
-	$ContinueLayer.visible = true
-	$CommandLayer.visible = true
-	$SoundLayer.visible = true
-	$CanvasLayer.visible = true
-	$CanvasLayer2.visible = true
-	$CommandsUI.hide()
-	is_commands_display = false
-	$ContinueLayer/Continue.grab_focus()
 	
 func open_commands_panel():
 	$ReturnLayer.visible = false
@@ -170,57 +148,22 @@ func open_commands_panel():
 	$CanvasLayer.visible = false
 	$CanvasLayer2.visible = false
 	for member in get_tree().get_nodes_in_group("pause_buttons"):
-			member.release_focus()
-	$CommandsUI.show()
+		member.release_focus()
+		member.focus_mode = FOCUS_NONE
 	is_commands_display = true
+	$CommandsUI.show()
 	
-
-
-func _on_close_button_pressed():
-	if $CommandsUI.visible == true:
-		focus_pause_buttons()
-		close_command_panel()
-		$CommandsUI/CloseButton.release_focus()
-
-
-func _on_close_button_gui_input(event):
-	if $CommandsUI/CloseButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
-		is_controller_focused = true
-		if event.is_action_pressed("ui_left"):
-			accept_event() # prevent the normal focus-stuff from happening
-			$CommandsUI/CloseButton.grab_focus()
-		elif event.is_action_pressed("ui_up"):
-			accept_event()
-			$CommandsUI/CloseButton.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
-			accept_event() # prevent the normal focus-stuff from happening
-			$CommandsUI/CloseButton.grab_focus() 
-
-
-func _on_close_button_mouse_entered():
-	if $CommandsUI/CloseButton.is_hovered():
-		$CommandsUI/CloseButton.grab_focus() 
-		is_controller_focused = true
-	
-func focus_pause_buttons():
-	$ReturnLayer/ReturnToMenu.focus_mode = FOCUS_ALL
-	$ContinueLayer/Continue.focus_mode = FOCUS_ALL
-	$CommandLayer/Command.focus_mode = FOCUS_ALL
-	$SoundLayer/MusicSlider.focus_mode = FOCUS_ALL
-	$SoundLayer/EffectSlider.focus_mode = FOCUS_ALL
-	$SoundLayer/MusicMuteButton.focus_mode = FOCUS_ALL
-	$SoundLayer/SoundMuteButton.focus_mode = FOCUS_ALL
-	$CommandsUI/CloseButton.focus_mode = FOCUS_NONE
-	
-func focus_close_command_button():
-	$ReturnLayer/ReturnToMenu.focus_mode = FOCUS_NONE
-	$ContinueLayer/Continue.focus_mode = FOCUS_NONE
-	$CommandLayer/Command.focus_mode = FOCUS_NONE
-	$SoundLayer/MusicSlider.focus_mode = FOCUS_NONE
-	$SoundLayer/EffectSlider.focus_mode = FOCUS_NONE
-	$SoundLayer/MusicMuteButton.focus_mode = FOCUS_NONE
-	$SoundLayer/SoundMuteButton.focus_mode = FOCUS_NONE
-	$CommandsUI/CloseButton.focus_mode = FOCUS_ALL
+func _on_commands_ui_commands_closed():
+	for member in get_tree().get_nodes_in_group("pause_buttons"):
+		member.focus_mode = FOCUS_ALL
+	$ReturnLayer.visible = true
+	$ContinueLayer.visible = true
+	$CommandLayer.visible = true
+	$SoundLayer.visible = true
+	$CanvasLayer.visible = true
+	$CanvasLayer2.visible = true
+	is_commands_display = false
+	$ContinueLayer/Continue.grab_focus()
 	
 func set_current_timer_when_paused(player_timer):
 	$CanvasLayer/PlayerTimerCloud/Label.text = _format_seconds(player_timer)

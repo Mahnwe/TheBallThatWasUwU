@@ -1251,12 +1251,12 @@ scale = Vector2(2.39286, 1.42857)
 [node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("28_xyvxg")]
 position = Vector2(3120, -1655)
 is_going_left = true
-ball_speed = 7
+ball_speed = 6
 
 [node name="Cannon4" parent="." groups=["cannon_group"] instance=ExtResource("28_xyvxg")]
 position = Vector2(3207, -1655)
 flip_value = 1
-ball_speed = 7
+ball_speed = 6
 
 [node name="SandPlatform22" parent="." instance=ExtResource("25_p2rf6")]
 position = Vector2(2851, -1633)
@@ -1470,7 +1470,7 @@ scale = Vector2(0.706712, 1.12748)
 position = Vector2(-612.696, -1.47355e-05)
 
 [node name="platform27" parent="." instance=ExtResource("26_p2rf6")]
-position = Vector2(4452, -1091)
+position = Vector2(4452, -1112)
 rotation = 1.5708
 scale = Vector2(0.449933, 0.740667)
 

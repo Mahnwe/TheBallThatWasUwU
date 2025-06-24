@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 #@export
 var speed = 400
+var acceleration = 50
 var wall_pushback = 500
 
 #@export
@@ -113,7 +114,7 @@ func _dash():
 		stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
 		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		if velocity.y > 0:
-			velocity.y = velocity.y / 2
+			velocity.y = velocity.y / 4
 		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = false
@@ -218,7 +219,18 @@ func check_for_player_movement():
 	# 	return -1 if left, +1 if right, 0 if both or neither
 	if current_state != state.AIRBORNE:
 		horizontal_direction = Input.get_axis("move_left","move_right")
-		velocity.x = speed * horizontal_direction
+		if horizontal_direction > 0:
+			velocity.x = min(velocity.x + acceleration, speed)
+			if velocity.x > speed:
+				velocity.x = speed
+			print(velocity.x)
+		if horizontal_direction < 0:
+			velocity.x = max(velocity.x - acceleration, -speed)
+			if velocity.x < -speed:
+				velocity.x = -speed
+			print(velocity.x)
+		if horizontal_direction == 0.0:
+			velocity.x = lerp(velocity.x, 0.0, 1.0)
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 		$Raycast.scale.x = -1
@@ -234,7 +246,7 @@ func check_animation_if_on_wall():
 			wall_slide = gravity+70
 		number_of_jumps = 0
 		can_dash = true
-		velocity.y = 0
+		velocity.y = velocity.y / 2
 		current_state = state.SLIDING
 		velocity.y = wall_slide
 		$AnimatedSprite2D.animation = "slide"

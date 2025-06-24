@@ -37,6 +37,7 @@ func _ready():
 		$Chest.chest_already_picked()
 	set_volume()
 	translate_text()
+	set_tutorial_advices()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
 	$Player/Pause.hide()
 	$Player/Pause.get_child(0).hide()
@@ -324,3 +325,8 @@ func _on_slide_advice_trigger_body_entered(body):
 func _on_jump_advice_trigger_body_entered(body):
 	if body.name == "Player":
 		$Advice4.show()
+		
+func set_tutorial_advices():
+	for member in get_tree().get_nodes_in_group("tutorial_advice"):
+		if config.get_value("levels", "is_level_one_finished"):
+			member.monitoring = false
