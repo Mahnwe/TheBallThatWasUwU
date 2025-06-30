@@ -4,11 +4,15 @@ var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var translate_file
+
 var level_number=0
+var is_trigger
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	is_trigger = false
+	translate_text()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,12 +39,14 @@ func save_level_chest_picked():
 
 
 func _on_area_2d_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !is_trigger:
+		is_trigger = true
 		var current_chest_number = config.get_value("Chests", "chestNumber")
 		var new_chest_number = current_chest_number+1
 		config.set_value("Chests", "chestNumber", new_chest_number)
 		config.save("res://Ressources/PropertieFile/properties.cfg")
 		save_level_chest_picked()
+		$Label.show()
 		for n in 6:
 			self.hide()
 			await get_tree().create_timer(0.2).timeout;
@@ -50,3 +56,11 @@ func _on_area_2d_body_entered(body):
 	
 func chest_already_picked():
 	queue_free()
+	
+func translate_text():
+	var translate_config = ConfigFile.new()
+	if config.get_value("Languages", "is_english"):
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+	else:
+		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+	$Label.text = translate_config.get_value("TranslationChest", "ChestLabel")

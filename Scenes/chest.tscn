@@ -19,4 +19,20 @@ texture = ExtResource("1_cjfl1")
 position = Vector2(-1.7053e-13, 7.05882)
 shape = SubResource("RectangleShape2D_cjfl1")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 212.0
+offset_bottom = 35.0
+scale = Vector2(0.182232, 0.198978)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "Chest found"
+
 [connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

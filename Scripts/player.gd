@@ -115,7 +115,7 @@ func _dash():
 		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		if velocity.y > 0:
 			velocity.y = velocity.y / 4
-		if velocity.x > 0 and Input.is_action_just_pressed("dash"):
+		if Input.is_action_pressed("move_right") and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = false
 			$Raycast.scale.x = 1
@@ -126,7 +126,7 @@ func _dash():
 			$AnimatedSprite2D.play()
 			dash_cooldown_timer.start(0.5)
 			await $AnimatedSprite2D.animation_finished
-		if velocity.x < 0 and Input.is_action_just_pressed("dash"):
+		if Input.is_action_pressed("move_left") and Input.is_action_just_pressed("dash"):
 			$AnimatedSprite2D.animation = "dash"
 			$AnimatedSprite2D.flip_h = true
 			$Raycast.scale.x = -1
@@ -223,12 +223,10 @@ func check_for_player_movement():
 			velocity.x = min(velocity.x + acceleration, speed)
 			if velocity.x > speed:
 				velocity.x = speed
-			print(velocity.x)
 		if horizontal_direction < 0:
 			velocity.x = max(velocity.x - acceleration, -speed)
 			if velocity.x < -speed:
 				velocity.x = -speed
-			print(velocity.x)
 		if horizontal_direction == 0.0:
 			velocity.x = lerp(velocity.x, 0.0, 1.0)
 	if velocity.x < 0:
