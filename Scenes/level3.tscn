@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=54 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="36_06tg8"]
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="37_fgdcu"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="38_ueeha"]
+[ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="39_8dwqx"]
+[ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="40_nk116"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -1131,6 +1133,42 @@ flip_h = true
 [node name="Sprite2D8" type="Sprite2D" parent="."]
 position = Vector2(713, 1207)
 texture = ExtResource("38_ueeha")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(283, -988)
+scale = Vector2(1.4, 1.7)
+texture = ExtResource("39_8dwqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D9"]
+position = Vector2(0, -37.0588)
+texture = ExtResource("39_8dwqx")
+flip_h = true
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1452, -991)
+scale = Vector2(1.5, 1.875)
+texture = ExtResource("39_8dwqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D10"]
+position = Vector2(0, -37.8666)
+texture = ExtResource("39_8dwqx")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1475, -130)
+scale = Vector2(1.425, 1.36)
+texture = ExtResource("40_nk116")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(256, -129)
+scale = Vector2(1.425, 1.36)
+texture = ExtResource("40_nk116")
+flip_h = true
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=95 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -70,6 +70,8 @@
 [ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="68_nqkuh"]
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="69_1mybm"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="70_1mybm"]
+[ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="71_u3dgk"]
+[ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="72_vj0yr"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -1679,12 +1681,15 @@ z_index = 3
 position = Vector2(335, -472)
 
 [node name="Ventilation" parent="." instance=ExtResource("36_pd4b0")]
+z_index = -1
 position = Vector2(-1260, -639)
 
 [node name="Ventilation2" parent="." instance=ExtResource("36_pd4b0")]
+z_index = -1
 position = Vector2(-861, -1817)
 
 [node name="Ventilation3" parent="." instance=ExtResource("36_pd4b0")]
+z_index = -1
 position = Vector2(122, -1824)
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
@@ -2310,6 +2315,39 @@ texture = ExtResource("70_1mybm")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D33"]
 position = Vector2(-1335, -659)
+texture = ExtResource("68_nqkuh")
+
+[node name="Sprite2D34" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1478, -545)
+scale = Vector2(1.48333, 1.475)
+texture = ExtResource("71_u3dgk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D34"]
+position = Vector2(1.39535, -39.2857)
+texture = ExtResource("71_u3dgk")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D34"]
+position = Vector2(0.697674, -77.1429)
+texture = ExtResource("71_u3dgk")
+flip_h = true
+
+[node name="Sprite2D35" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(4854, -2546)
+scale = Vector2(1.45, 1.3)
+texture = ExtResource("72_vj0yr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D35"]
+z_index = 1
+position = Vector2(-69.6552, 730)
+scale = Vector2(0.810345, 0.838462)
+texture = ExtResource("72_vj0yr")
+
+[node name="Sprite2D36" type="Sprite2D" parent="."]
+position = Vector2(2632, -785)
 texture = ExtResource("68_nqkuh")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

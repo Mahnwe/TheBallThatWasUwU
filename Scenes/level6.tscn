@@ -1146,8 +1146,9 @@ position = Vector2(1483.95, -126.575)
 position = Vector2(-2348, 886)
 scale = Vector2(2.79114, 1.42613)
 beam_x_scale = 3.0
-charge_timer = 2.0
+charge_timer = 3.0
 beam_timer = 2.0
+wait_timer = 1.0
 
 [node name="Acid9" parent="." instance=ExtResource("13_tw4yl")]
 position = Vector2(-1710, 943)
@@ -1342,18 +1343,22 @@ position = Vector2(-1183, 490)
 texture = ExtResource("29_enw33")
 
 [node name="Ventilation" parent="." instance=ExtResource("30_omhh0")]
+z_index = -1
 position = Vector2(-2740, -2359)
 scale = Vector2(1.06813, 1.28315)
 
 [node name="Ventilation2" parent="." instance=ExtResource("30_omhh0")]
+z_index = -1
 position = Vector2(-5074, -2257)
 scale = Vector2(1.06813, 1.28315)
 
 [node name="Ventilation3" parent="." instance=ExtResource("30_omhh0")]
+z_index = -1
 position = Vector2(-5423, -557)
 scale = Vector2(1.06813, 1.28315)
 
 [node name="Ventilation4" parent="." instance=ExtResource("30_omhh0")]
+z_index = -1
 position = Vector2(-2420, -85)
 scale = Vector2(1.06813, 1.28315)
 
@@ -1443,6 +1448,7 @@ scale = Vector2(0.7, 0.694)
 [connection signal="spike_hit" from="Spike12" to="." method="_on_spike_spike_hit"]
 [connection signal="acid_hit" from="Acid8" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
+[connection signal="laser_touched_player" from="LaserBase12" to="." method="_on_spike_spike_hit"]
 [connection signal="acid_hit" from="Acid9" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]

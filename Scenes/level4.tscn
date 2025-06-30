@@ -1014,6 +1014,10 @@ position = Vector2(-3662, -627)
 texture = ExtResource("36_hxlu0")
 flip_h = true
 
+[node name="Bat4" parent="." instance=ExtResource("34_wpjc4")]
+position = Vector2(-2162, -664)
+collision_scale_y = 2
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
