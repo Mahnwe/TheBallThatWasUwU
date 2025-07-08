@@ -29,13 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://b2qahpahlymyk" path="res://Scenes/water.tscn" id="26_0uo4e"]
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="28_pmaet"]
 [ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="29_x7ktg"]
-[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="30_164vy"]
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="31_p68j0"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="32_c4ifa"]
 [ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="33_daeh6"]
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="34_c4ifa"]
 [ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="35_daeh6"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="36_dr50b"]
+[ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="36_nstho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -602,7 +602,7 @@ scale = Vector2(0.783977, 3.59772)
 skew = 0.870174
 
 [node name="WoodenPlank6" parent="." instance=ExtResource("20_fheu7")]
-position = Vector2(563, -566)
+position = Vector2(564, -567)
 rotation = 1.5708
 scale = Vector2(0.133782, 0.344161)
 
@@ -830,18 +830,6 @@ scale = Vector2(0.626435, 0.567529)
 position = Vector2(78, -528)
 scale = Vector2(0.191316, 0.194199)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-1204, -17)
-scale = Vector2(1.97333, 2.095)
-texture = ExtResource("30_164vy")
-flip_h = true
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(386, -349)
-scale = Vector2(1.63, 1.70722)
-texture = ExtResource("30_164vy")
-
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 position = Vector2(405, 139)
 texture = ExtResource("31_p68j0")
@@ -943,6 +931,16 @@ texture = ExtResource("35_daeh6")
 position = Vector2(0, -34.5455)
 texture = ExtResource("35_daeh6")
 flip_h = true
+
+[node name="DarkBrownTree" parent="." instance=ExtResource("36_nstho")]
+position = Vector2(-1202, -20)
+scale = Vector2(1.91333, 2.09444)
+flip_h = true
+
+[node name="DarkBrownTree2" parent="." instance=ExtResource("36_nstho")]
+z_index = -1
+position = Vector2(385, -349)
+scale = Vector2(1.78, 1.68333)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

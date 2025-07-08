@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=96 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -60,7 +60,6 @@
 [ext_resource type="Texture2D" uid="uid://buk7of3tf38ht" path="res://Arts/BushSprite/SandBush.png" id="56_nvxkg"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="57_5lfpo"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="58_l8dvf"]
-[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="59_87leb"]
 [ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="60_ndas8"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="61_87leb"]
 [ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="61_x2e87"]
@@ -71,7 +70,9 @@
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="69_1mybm"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="70_1mybm"]
 [ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="71_u3dgk"]
+[ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="72_u3dgk"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="72_vj0yr"]
+[ext_resource type="Texture2D" uid="uid://be672cieh88q2" path="res://Arts/SpriteWoodenPlank/WoodenPlank-removebg-preview.png" id="73_vj0yr"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -2136,21 +2137,6 @@ flip_value = 1
 position = Vector2(99, 80)
 scale = Vector2(0.589143, 0.490856)
 
-[node name="Sprite2D24" type="Sprite2D" parent="."]
-position = Vector2(4730, -2731)
-scale = Vector2(1.42667, 1.7)
-texture = ExtResource("59_87leb")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D24"]
-position = Vector2(-3.50481, -1.17644)
-scale = Vector2(0.69626, 0.570591)
-texture = ExtResource("60_ndas8")
-
-[node name="LanternPole" parent="Sprite2D24" instance=ExtResource("57_5lfpo")]
-position = Vector2(-67.9905, 58.8235)
-scale = Vector2(0.301491, 0.243444)
-flip_value = 1
-
 [node name="BranchesBush" parent="." instance=ExtResource("61_87leb")]
 position = Vector2(5082, -2430)
 scale = Vector2(0.856136, 0.878003)
@@ -2187,25 +2173,6 @@ position = Vector2(-36, 73)
 [node name="BranchesBush2" parent="." instance=ExtResource("61_87leb")]
 position = Vector2(4811, -911)
 scale = Vector2(1.39001, 1.42)
-
-[node name="Sprite2D25" type="Sprite2D" parent="."]
-position = Vector2(2387, -95)
-scale = Vector2(2.25333, 2.32778)
-texture = ExtResource("59_87leb")
-flip_h = true
-
-[node name="BranchesBush" parent="Sprite2D25" instance=ExtResource("61_87leb")]
-position = Vector2(46.1539, 73.8902)
-scale = Vector2(0.636507, 0.643103)
-flip_value = 1
-
-[node name="BranchesBush" parent="Sprite2D25/BranchesBush" instance=ExtResource("61_87leb")]
-position = Vector2(46.0167, 5.09645e-06)
-
-[node name="LanternPole" parent="Sprite2D25" instance=ExtResource("57_5lfpo")]
-position = Vector2(-67.8994, 60.1432)
-scale = Vector2(0.246504, 0.223658)
-flip_value = 1
 
 [node name="BigTree2" parent="." instance=ExtResource("58_l8dvf")]
 z_index = 1
@@ -2257,7 +2224,7 @@ position = Vector2(190.736, 0)
 position = Vector2(255.263, 0)
 
 [node name="Rock4" parent="." instance=ExtResource("50_m6ika")]
-position = Vector2(2311, 88)
+position = Vector2(2311, 89)
 flip_value = 1
 
 [node name="Path2D19" type="Path2D" parent="."]
@@ -2349,6 +2316,75 @@ texture = ExtResource("72_vj0yr")
 [node name="Sprite2D36" type="Sprite2D" parent="."]
 position = Vector2(2632, -785)
 texture = ExtResource("68_nqkuh")
+
+[node name="DarkBrownTree" parent="." instance=ExtResource("72_u3dgk")]
+z_index = -1
+position = Vector2(4727, -2728)
+scale = Vector2(1.40667, 1.69444)
+
+[node name="Sprite2D" type="Sprite2D" parent="DarkBrownTree"]
+position = Vector2(-1.42163, -2.95081)
+scale = Vector2(0.706161, 0.572462)
+texture = ExtResource("60_ndas8")
+
+[node name="LanternPole" parent="DarkBrownTree" instance=ExtResource("57_5lfpo")]
+position = Vector2(-66.8245, 57.246)
+scale = Vector2(0.305778, 0.244242)
+flip_value = 1
+
+[node name="DarkBrownTree2" parent="." instance=ExtResource("72_u3dgk")]
+position = Vector2(2388, -88)
+scale = Vector2(2.12, 2.3)
+flip_h = true
+
+[node name="BranchesBush4" parent="DarkBrownTree2" instance=ExtResource("61_87leb")]
+position = Vector2(50.0002, 74.7827)
+scale = Vector2(0.676538, 0.650871)
+flip_value = 1
+
+[node name="BranchesBush" parent="DarkBrownTree2/BranchesBush4" instance=ExtResource("61_87leb")]
+position = Vector2(46.0167, 5.09645e-06)
+
+[node name="LanternPole3" parent="DarkBrownTree2" instance=ExtResource("57_5lfpo")]
+position = Vector2(-71.2262, 60.8696)
+scale = Vector2(0.262007, 0.226359)
+flip_value = 1
+
+[node name="Sprite2D24" type="Sprite2D" parent="."]
+position = Vector2(5170, -2932.63)
+scale = Vector2(0.0878137, 0.219242)
+texture = ExtResource("73_vj0yr")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Sprite2D24"]
+position = Vector2(-888.242, -298.187)
+rotation = 1.5708
+scale = Vector2(0.400533, 2.32153)
+texture = ExtResource("73_vj0yr")
+
+[node name="Sprite2D37" type="Sprite2D" parent="Sprite2D24"]
+position = Vector2(-819.914, -6.2711)
+rotation = -0.41261
+scale = Vector2(0.736902, 2.72683)
+skew = -0.806897
+texture = ExtResource("73_vj0yr")
+
+[node name="Sprite2D25" type="Sprite2D" parent="."]
+position = Vector2(2433, -798.125)
+scale = Vector2(0.145161, 0.317954)
+texture = ExtResource("73_vj0yr")
+
+[node name="Sprite2D37" type="Sprite2D" parent="Sprite2D25"]
+position = Vector2(-785.334, -270.086)
+rotation = 1.5708
+scale = Vector2(0.456548, 2.19035)
+texture = ExtResource("73_vj0yr")
+
+[node name="Sprite2D38" type="Sprite2D" parent="Sprite2D25"]
+position = Vector2(-750.891, 28.6991)
+rotation = -0.478943
+scale = Vector2(0.717576, 2.41136)
+skew = -0.701319
+texture = ExtResource("73_vj0yr")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

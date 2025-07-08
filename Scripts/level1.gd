@@ -133,7 +133,7 @@ func _on_finish_player_entered():
 	config.save("res://Ressources/PropertieFile/properties.cfg")
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	$Finish/FinishUI.is_UI_showing = true
 	$Finish/FinishUI.set_medal_sprite(queue.current_medal)
 	$Finish/FinishUI.show()

@@ -33,13 +33,13 @@
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_mf2hp"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_1alju"]
 [ext_resource type="PackedScene" uid="uid://dvk6tkjkq8bkx" path="res://Scenes/bumper.tscn" id="33_5v8i3"]
-[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="34_s5d5r"]
 [ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="34_tsss4"]
 [ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="36_06tg8"]
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="37_fgdcu"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="38_ueeha"]
 [ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="39_8dwqx"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="40_nk116"]
+[ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="40_y3gnq"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -1105,13 +1105,6 @@ rotation = -0.785398
 position = Vector2(874, -1719)
 texture = ExtResource("34_tsss4")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(756.313, -2533)
-scale = Vector2(1.7375, 1.57556)
-texture = ExtResource("34_s5d5r")
-flip_h = true
-
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 position = Vector2(661, -1961)
 texture = ExtResource("36_06tg8")
@@ -1168,6 +1161,12 @@ z_index = 1
 position = Vector2(256, -129)
 scale = Vector2(1.425, 1.36)
 texture = ExtResource("40_nk116")
+flip_h = true
+
+[node name="DarkBrownTree" parent="." instance=ExtResource("40_y3gnq")]
+z_index = -1
+position = Vector2(754, -2533)
+scale = Vector2(1.695, 1.62222)
 flip_h = true
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

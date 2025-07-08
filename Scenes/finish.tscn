@@ -1,13 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://dss5xj26b0dfl"]
+[gd_scene load_steps=12 format=3 uid="uid://dss5xj26b0dfl"]
 
 [ext_resource type="Script" uid="uid://bpd3ekag5uccm" path="res://Scripts/finish.gd" id="1_srp80"]
 [ext_resource type="Texture2D" uid="uid://sa1yhgwcbfj0" path="res://Arts/FinishLaneSprite/FinishSprite-Photoroom-removebg-preview.png" id="2_51c3p"]
+[ext_resource type="Texture2D" uid="uid://b5jirdp8nhyw7" path="res://Arts/ConfettiSprite/ConfettiSprite.png" id="3_avoxp"]
+[ext_resource type="Texture2D" uid="uid://ukajbbn8bjgm" path="res://Arts/ConfettiSprite/ConfettiSprite2.png" id="4_ogsmx"]
+[ext_resource type="Texture2D" uid="uid://dwooiixln5ts5" path="res://Arts/ConfettiSprite/ConfettiSprite3.png" id="5_knqtp"]
+[ext_resource type="Texture2D" uid="uid://fdkj552a66f8" path="res://Arts/ConfettiSprite/ConfettiSprite4.png" id="6_hm6to"]
+[ext_resource type="Texture2D" uid="uid://dh23av5ray56y" path="res://Arts/ConfettiSprite/ConfettiSprite5.png" id="7_oetvt"]
+[ext_resource type="Texture2D" uid="uid://bw4awvugbciu5" path="res://Arts/ConfettiSprite/ConfettiSprite6.png" id="8_fmqho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gw35"]
 size = Vector2(351, 239)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exy7e"]
 size = Vector2(355, 242)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oglnc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_avoxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ogsmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_knqtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hm6to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oetvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fmqho")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Finish" type="StaticBody2D"]
 script = ExtResource("1_srp80")
@@ -47,4 +79,10 @@ scale = Vector2(4.12, 1.72)
 theme_override_font_sizes/font_size = 20
 text = "Well Done !"
 
+[node name="ConfettiSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -21)
+scale = Vector2(2.16, 2.03571)
+sprite_frames = SubResource("SpriteFrames_oglnc")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="ConfettiSprite" to="." method="_on_confetti_sprite_animation_finished"]

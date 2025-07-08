@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://s6ol1ia83o2n"]
+
+[ext_resource type="Texture2D" uid="uid://ciib2c2njlm2x" path="res://Arts/TreeSprite/DarkBrownTree.png" id="1_yw551"]
+[ext_resource type="Texture2D" uid="uid://dof7klkqnyq4t" path="res://Arts/TreeSprite/DarkBrownTree2.png" id="2_j0g0x"]
+[ext_resource type="Texture2D" uid="uid://vrmvb60qkqaf" path="res://Arts/TreeSprite/DarkBrownTree3.png" id="3_pxyq2"]
+[ext_resource type="Script" uid="uid://k3c5b0ym0c6v" path="res://Scripts/dark_brown_tree.gd" id="4_3drt0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kf3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yw551")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j0g0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pxyq2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DarkBrownTree" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_6kf3d")
+script = ExtResource("4_3drt0")
