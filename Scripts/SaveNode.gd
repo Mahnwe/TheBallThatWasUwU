@@ -12,6 +12,8 @@ var translate_file
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_already_active = false
+	translate_text()
+	$SavedLabel.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,9 +26,9 @@ func _on_save_area_body_entered(body):
 		is_already_active = true
 		$SaveSound.play()
 		player_entered.emit()
-		translate_text()
+		$SavedLabel.show()
 		await get_tree().create_timer(2).timeout
-		$SavedLabel.text = ""
+		$SavedLabel.hide()
 		
 func translate_text():
 	var translate_config = ConfigFile.new()

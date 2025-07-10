@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=47 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="3_vhjlp"]
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="5_vflxv"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="6_mp22g"]
+[ext_resource type="Texture2D" uid="uid://f8ll7vsc7kj6" path="res://Arts/BackgroundSprite/BackgroundParalaxTest.png" id="7_nstho"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="7_v154u"]
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="8_p4bhf"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_3dyia"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="10_8ng8k"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="10_8nv0h"]
@@ -91,6 +93,41 @@ offset_top = -671.561
 offset_right = 1186.74
 offset_bottom = 408.439
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
+scroll_scale = Vector2(0.05, 0.01)
+scroll_offset = Vector2(908, 597)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
+scale = Vector2(2.558, 2.1825)
+texture = ExtResource("7_nstho")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(-499.027, -0.0698649)
+texture = ExtResource("7_nstho")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(498.118, -0.0698649)
+texture = ExtResource("7_nstho")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+offset_left = -749.0
+offset_top = -215.0
+offset_right = 748.0
+offset_bottom = -148.0
+color = Color(0.478431, 0.815686, 0.890196, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+material = ExtResource("8_p4bhf")
+offset_left = -1914.0
+offset_top = -477.0
+offset_right = 1923.0
+offset_bottom = 341.0
+
 [node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1148, 424)
 rotation = -0.790385
@@ -146,8 +183,8 @@ position = Vector2(437, -643)
 scale = Vector2(0.579818, 0.616465)
 
 [node name="platform2" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-867, 365)
-scale = Vector2(0.159997, 1.76)
+position = Vector2(-867, 422)
+scale = Vector2(0.159997, 1.04)
 
 [node name="SavePoint2" parent="." instance=ExtResource("9_3dyia")]
 position = Vector2(-1241, 138)
@@ -478,8 +515,8 @@ position = Vector2(-1000, 555)
 scale = Vector2(0.16, 1)
 
 [node name="platform27" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(151, 179)
-scale = Vector2(0.280001, 2.56)
+position = Vector2(151, 242)
+scale = Vector2(0.280001, 1.76)
 
 [node name="Spike35" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(127, 319)
@@ -652,14 +689,6 @@ scale = Vector2(0.442856, 3.57149)
 position = Vector2(-952, -795)
 scale = Vector2(0.160002, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -20
-offset_left = -3195.0
-offset_top = -1322.0
-offset_right = 1282.0
-offset_bottom = 1312.0
-color = Color(0.372549, 0.815686, 0.92549, 1)
-
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
 z_index = -25
@@ -756,8 +785,8 @@ rotation = -1.5708
 scale = Vector2(0.384603, 0.750432)
 
 [node name="platform32" parent="." instance=ExtResource("7_v154u")]
-position = Vector2(-899, 504)
-scale = Vector2(0.147373, 1.24157)
+position = Vector2(-899, 519)
+scale = Vector2(0.147373, 0.961568)
 
 [node name="platform34" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(-1344, 797)
@@ -939,7 +968,7 @@ flip_h = true
 
 [node name="DarkBrownTree2" parent="." instance=ExtResource("36_nstho")]
 z_index = -1
-position = Vector2(385, -349)
+position = Vector2(385, -343)
 scale = Vector2(1.78, 1.68333)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

@@ -1366,6 +1366,9 @@ scale = Vector2(1.06813, 1.28315)
 position = Vector2(-3031, 194)
 scale = Vector2(0.649138, 0.93339)
 
+[node name="MetalPlatform" parent="MetalPlatform35" instance=ExtResource("4_achdq")]
+position = Vector2(357.397, -53.5682)
+
 [node name="MetalPlatform36" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-6035, -992)
 scale = Vector2(0.455087, 0.731707)

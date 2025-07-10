@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=57 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" uid="uid://dumtc4alnw10m" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="5_35jiw"]
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="5_dhyc2"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="6_llnkw"]
+[ext_resource type="Texture2D" uid="uid://dte4e18r6po8j" path="res://Arts/BackgroundSprite/ParalaxBackgroundLvl2.png" id="6_suqxw"]
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="7_fpxdy"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="7_p1dv8"]
 [ext_resource type="PackedScene" uid="uid://i4jemvk3v54m" path="res://Scenes/ability.tscn" id="9_of3vt"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="10_bv661"]
@@ -144,13 +146,14 @@ point_count = 31
 script = ExtResource("1_f151f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -25
 offset_left = -5347.0
 offset_top = -564.0
 offset_right = -1123.0
 offset_bottom = 2071.0
 scale = Vector2(1.56, 0.84)
-color = Color(0.215686, 0.780392, 0.894118, 1)
+color = Color(0.425008, 0.873212, 0.975093, 1)
 
 [node name="GameArea" parent="." instance=ExtResource("2_3pu7n")]
 position = Vector2(-2083, 427)
@@ -171,6 +174,34 @@ offset_left = -733.259
 offset_top = -671.561
 offset_right = -733.259
 offset_bottom = -671.561
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
+scroll_scale = Vector2(0.09, 0.01)
+scroll_offset = Vector2(1089, 511)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
+scale = Vector2(2.684, 2.76)
+texture = ExtResource("6_suqxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(-499.233, 0)
+texture = ExtResource("6_suqxw")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(501.15, 0)
+texture = ExtResource("6_suqxw")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+material = ExtResource("7_fpxdy")
+offset_left = -2012.0
+offset_top = -421.0
+offset_right = 2017.0
+offset_bottom = 429.0
 
 [node name="platform" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-37, 657)
