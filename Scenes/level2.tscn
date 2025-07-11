@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="5_dhyc2"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="6_llnkw"]
 [ext_resource type="Texture2D" uid="uid://dte4e18r6po8j" path="res://Arts/BackgroundSprite/ParalaxBackgroundLvl2.png" id="6_suqxw"]
-[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="7_fpxdy"]
+[ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="7_fpxdy"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="7_p1dv8"]
 [ext_resource type="PackedScene" uid="uid://i4jemvk3v54m" path="res://Scenes/ability.tscn" id="9_of3vt"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="10_bv661"]
@@ -478,7 +478,7 @@ rotates = false
 [node name="Spike" parent="SpikeVerticalPatrol3/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p1dv8")]
 position = Vector2(-19, -38)
 scale = Vector2(0.28, 0.28)
-speed = 250
+speed = 150
 
 [node name="SpikePatrol5" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jpfjc")

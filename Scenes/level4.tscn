@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=57 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" uid="uid://cwp4b2qowta5v" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="3_cxj1m"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="4_3b0rq"]
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="5_j2588"]
+[ext_resource type="Texture2D" uid="uid://gt50noqclilp" path="res://Arts/BackgroundSprite/BackgroundParalaxLvl4.png" id="6_iihm0"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="6_sti7m"]
+[ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="7_0jb0a"]
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="7_p558y"]
 [ext_resource type="PackedScene" uid="uid://choon04ib41uv" path="res://Scenes/portal.tscn" id="8_cv4mv"]
 [ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="9_ujhmm"]
@@ -33,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://dlxsux07t7u1r" path="res://Arts/TreeSprite/TreeSprite2-removebg-preview.png" id="30_wtu3i"]
 [ext_resource type="Texture2D" uid="uid://dqbhvl4vr5wop" path="res://Arts/BushSprite/BranchesBushSprite-removebg-preview.png" id="31_k2kct"]
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="33_gnnhw"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="34_8c33d"]
 [ext_resource type="PackedScene" uid="uid://dt7djk3ywuucy" path="res://Scenes/bat.tscn" id="34_wpjc4"]
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="35_crdxt"]
 [ext_resource type="Texture2D" uid="uid://b6ya43smikoo8" path="res://Arts/FlowersSprite/RedMushroom.png" id="36_hxlu0"]
@@ -87,7 +90,7 @@ point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_6c4f5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -3009, -125, 0, 0, 0, 0, -3009, -253, 0, 0, 0, 0, -3009, -330, 0, 0, 0, 0, -3009, -408, 0, 0, 0, 0, -3009, -479, 0, 0, 0, 0, -3009, -168, 0, 0, 0, 0, -3009, -125)
+"points": PackedVector2Array(0, 0, 0, 0, -3009, -125, 0, 0, 0, 0, -3009, -253, 0, 0, 0, 0, -3009, -330, 0, 0, 0, 0, -3009, -408, 0, 0, 0, 0, -3011, -529, 0, 0, 0, 0, -3009, -168, 0, 0, 0, 0, -3009, -125)
 }
 point_count = 7
 
@@ -155,6 +158,34 @@ offset_left = -733.259
 offset_top = -671.561
 offset_right = -733.259
 offset_bottom = -671.561
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
+scroll_scale = Vector2(0.09, 0.01)
+scroll_offset = Vector2(939, 549)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
+scale = Vector2(1.842, 1.8)
+texture = ExtResource("6_iihm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(-494.571, 0)
+texture = ExtResource("6_iihm0")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(496.743, 0)
+texture = ExtResource("6_iihm0")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+material = ExtResource("7_0jb0a")
+offset_left = -1364.0
+offset_top = -445.0
+offset_right = 1375.0
+offset_bottom = 445.0
 
 [node name="platform5" parent="." instance=ExtResource("4_3b0rq")]
 position = Vector2(-2682, -1453)
@@ -547,6 +578,7 @@ rotates = false
 [node name="Spike" parent="Path2D8/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p558y")]
 position = Vector2(-34, -36)
 scale = Vector2(0.398133, 0.2002)
+speed = 200
 
 [node name="Path2D9" type="Path2D" parent="."]
 curve = SubResource("Curve2D_x0reo")
@@ -941,10 +973,10 @@ speed = 400
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -3172.0
+offset_left = -3168.0
 offset_top = -2605.0
 offset_right = -1897.0
-offset_bottom = -1371.0
+offset_bottom = -1377.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
@@ -954,7 +986,48 @@ offset_right = 2582.0
 offset_bottom = 1116.0
 color = Color(0.372549, 0.815686, 0.92549, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(240.5, 215)
+scale = Vector2(1.9527, 2.05263)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(54.5398, 275.744)
+scale = Vector2(0.58045, 0.567307)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(402.903, 44.3334)
+scale = Vector2(0.870242, 0.807693)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(1018.97, -10.9616)
+scale = Vector2(1.15744, 1.14744)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(792.619, 151.513)
+scale = Vector2(0.856401, 0.705129)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(1019.36, 300.59)
+scale = Vector2(0.579584, 0.583333)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(322.374, 247.487)
+scale = Vector2(0.461938, 0.519231)
+texture = ExtResource("34_8c33d")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(133.597, 133.244)
+scale = Vector2(0.364187, 0.48077)
+texture = ExtResource("34_8c33d")
+
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 z_index = -20
 offset_left = -6716.0
 offset_top = -2568.0

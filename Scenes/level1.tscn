@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bo7nw1yq804xk" path="res://Scenes/spike.tscn" id="6_mp22g"]
 [ext_resource type="Texture2D" uid="uid://f8ll7vsc7kj6" path="res://Arts/BackgroundSprite/BackgroundParalaxTest.png" id="7_nstho"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="7_v154u"]
-[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="8_p4bhf"]
+[ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="8_p4bhf"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_3dyia"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="10_8ng8k"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="10_8nv0h"]
@@ -98,10 +98,10 @@ follow_viewport_enabled = true
 
 [node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
 scroll_scale = Vector2(0.05, 0.01)
-scroll_offset = Vector2(908, 597)
+scroll_offset = Vector2(908, 610)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
-scale = Vector2(2.558, 2.1825)
+scale = Vector2(2.558, 2.20125)
 texture = ExtResource("7_nstho")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
@@ -124,9 +124,9 @@ color = Color(0.478431, 0.815686, 0.890196, 1)
 [node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
 material = ExtResource("8_p4bhf")
 offset_left = -1914.0
-offset_top = -477.0
-offset_right = 1923.0
-offset_bottom = 341.0
+offset_top = -472.0
+offset_right = 1918.0
+offset_bottom = 334.0
 
 [node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1148, 424)

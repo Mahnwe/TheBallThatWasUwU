@@ -346,7 +346,7 @@ script = ExtResource("1_24gvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(214, 189)
-zoom = Vector2(1.35, 1.35)
+zoom = Vector2(1.4, 1.4)
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
