@@ -330,3 +330,12 @@ func set_tutorial_advices():
 	for member in get_tree().get_nodes_in_group("tutorial_advice"):
 		if config.get_value("levels", "is_level_one_finished"):
 			member.monitoring = false
+
+
+func _on_chest_chest_triggered():
+	config.set_value("Chests", $Chest.properties_key, true)
+	var current_chest_number = config.get_value("Chests", "chestNumber")
+	var new_chest_number = current_chest_number+1
+	config.set_value("Chests", "chestNumber", new_chest_number)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
+	print("Properties saved")

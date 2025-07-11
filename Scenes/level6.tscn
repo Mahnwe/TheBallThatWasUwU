@@ -354,18 +354,21 @@ position = Vector2(55.0361, 28.4766)
 scale = Vector2(0.677752, 0.577149)
 
 [node name="Sprite2D8" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-4516.23, -1000.17)
 rotation = -1.5708
 scale = Vector2(0.29414, 0.805407)
 texture = ExtResource("10_k6lm4")
 
 [node name="Sprite2D9" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-4290.23, -1001.17)
 rotation = -1.5708
 scale = Vector2(0.29414, 0.805407)
 texture = ExtResource("10_k6lm4")
 
 [node name="Sprite2D13" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-4036, -1001)
 rotation = -1.5708
 scale = Vector2(0.29414, 0.805407)
@@ -423,6 +426,7 @@ scale = Vector2(1, 0.446428)
 texture = ExtResource("9_tw4yl")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-4643.7, -844.64)
 rotation = 1.5708
 scale = Vector2(1.99578, 1.25926)
@@ -1414,6 +1418,7 @@ scale = Vector2(0.7, 0.694)
 [connection signal="drop_touched" from="Path2D5/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
 [connection signal="drop_touched" from="Path2D9/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
 [connection signal="acid_hit" from="Acid3" to="." method="_on_spike_spike_hit"]
+[connection signal="chest_triggered" from="Chest" to="." method="_on_chest_chest_triggered"]
 [connection signal="drop_touched" from="Path2D7/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
 [connection signal="drop_touched" from="Path2D8/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]
 [connection signal="drop_touched" from="Path2D10/PathFollow2D/AcidDrop" to="." method="_on_spike_spike_hit"]

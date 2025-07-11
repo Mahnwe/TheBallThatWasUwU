@@ -1017,6 +1017,7 @@ scale = Vector2(1.78, 1.68333)
 [connection signal="body_entered" from="TriggerDeadWayMusic" to="." method="_on_trigger_dead_way_music_body_entered"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="body_entered" from="TriggerLevelMusic" to="." method="_on_trigger_level_music_body_entered"]
+[connection signal="chest_triggered" from="Chest" to="." method="_on_chest_chest_triggered"]
 [connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike14" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike24" to="." method="_on_spike_spike_hit"]

@@ -365,3 +365,12 @@ func save_medals_stats():
 			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
 			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func _on_chest_chest_triggered():
+	config.set_value("Chests", $Chest.properties_key, true)
+	var current_chest_number = config.get_value("Chests", "chestNumber")
+	var new_chest_number = current_chest_number+1
+	config.set_value("Chests", "chestNumber", new_chest_number)
+	config.save("res://Ressources/PropertieFile/properties.cfg")
+	print("Properties saved")

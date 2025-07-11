@@ -7,7 +7,9 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 var translate_file
 
 var level_number=0
+var properties_key
 var is_trigger
+signal chest_triggered
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,32 +23,33 @@ func _process(_delta):
 	
 func set_level_number(number_from_level):
 	level_number = number_from_level
+	set_properties_key()
+	print(level_number)
 	
-func save_level_chest_picked():
+func set_properties_key():
 	if level_number == 1:
-		config.set_value("Chests", "level_one_chest", true)
+		properties_key = "level_one_chest"
+		print("level 1 chest saved")
 	if level_number == 2:
-		config.set_value("Chests", "level_two_chest", true)
+		properties_key = "level_two_chest"
+		print("level 2 chest saved")
 	if level_number == 3:
-		config.set_value("Chests", "level_three_chest", true)
+		properties_key = "level_three_chest"
+		print("level 3 chest saved")
 	if level_number == 4:
-		config.set_value("Chests", "level_four_chest", true)
+		properties_key = "level_four_chest"
 	if level_number == 5:
-		config.set_value("Chests", "level_five_chest", true)
+		properties_key = "level_five_chest"
 	if level_number == 6:
-		config.set_value("Chests", "level_six_chest", true)
-	config.save("res://Ressources/PropertieFile/properties.cfg")
+		properties_key = "level_six_chest"
 
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player" and !is_trigger:
+		print("Enter trigger")
 		is_trigger = true
-		var current_chest_number = config.get_value("Chests", "chestNumber")
-		var new_chest_number = current_chest_number+1
-		config.set_value("Chests", "chestNumber", new_chest_number)
-		config.save("res://Ressources/PropertieFile/properties.cfg")
-		save_level_chest_picked()
 		$Label.show()
+		chest_triggered.emit()
 		for n in 6:
 			self.hide()
 			await get_tree().create_timer(0.2).timeout;

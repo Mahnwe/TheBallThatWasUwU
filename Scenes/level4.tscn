@@ -867,7 +867,7 @@ position = Vector2(-2292, -222)
 scale = Vector2(0.35722, 0.553788)
 
 [node name="Chest" parent="." instance=ExtResource("33_gnnhw")]
-position = Vector2(-2159, -206)
+position = Vector2(-2159, -207)
 scale = Vector2(2.53154, 2.66816)
 
 [node name="platform31" parent="." instance=ExtResource("9_ujhmm")]
@@ -1127,6 +1127,7 @@ collision_scale_y = 2
 [connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]
 [connection signal="body_entered" from="HWayPortal" to="." method="_on_h_way_portal_body_entered"]
 [connection signal="body_entered" from="VWayPortal" to="." method="_on_v_way_portal_body_entered"]
+[connection signal="chest_triggered" from="Chest" to="." method="_on_chest_chest_triggered"]
 [connection signal="spike_hit" from="Spike3" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike5" to="." method="_on_spike_spike_hit"]

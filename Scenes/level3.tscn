@@ -1240,6 +1240,7 @@ flip_h = true
 [connection signal="spike_hit" from="Spike16" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike16/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
+[connection signal="chest_triggered" from="Chest" to="." method="_on_chest_chest_triggered"]
 [connection signal="spike_hit" from="Spike17" to="." method="_on_spike_spike_hit"]
 [connection signal="player_hit_bumper" from="Bumper" to="." method="_on_bumper_player_hit_bumper"]
 [connection signal="player_hit_bumper" from="Bumper2" to="." method="_on_bumper_2_player_hit_bumper"]

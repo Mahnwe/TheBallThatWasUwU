@@ -928,4 +928,5 @@ scale = Vector2(1.80667, 1.86667)
 [connection signal="spike_hit" from="Path2D3/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Path2D4/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike12" to="." method="_on_spike_spike_hit"]
+[connection signal="chest_triggered" from="Chest" to="." method="_on_chest_chest_triggered"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
