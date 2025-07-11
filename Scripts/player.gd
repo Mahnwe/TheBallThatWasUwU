@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+var stats_config= ConfigFile.new()
+var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
+
+var config = ConfigFile.new()
+# Load data from a file.
+var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
+
 #@export
 var speed = 400
 var acceleration = 50
@@ -36,12 +43,8 @@ var player_try_buffer_jump
 var is_in_water
 var has_grounded
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
-var config = ConfigFile.new()
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
+signal player_jumped
+signal player_dashed
 
 func _ready():
 	number_of_jumps = 0
@@ -81,9 +84,6 @@ func jump():
 		$JumpSound.play()
 	else:
 		$JumpSound2.play()
-	var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
-	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 	velocity.y = jump_force
 	$JustJumpTimer.start()
 	number_of_jumps += 1
@@ -105,14 +105,12 @@ func jump():
 		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
+	player_jumped.emit()
 	
 func _dash():
 	horizontal_direction = Input.get_axis("move_left","move_right")
 	if can_dash and have_dash_ability and horizontal_direction != 0 and dash_cooldown_timer.time_left == 0:
 		$DashSound.play()
-		var number_of_dashes = stats_config.get_value("Stats", "dash_number")
-		stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
-		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		if velocity.y > 0:
 			velocity.y = velocity.y / 4
 		if Input.is_action_pressed("move_right") and Input.is_action_just_pressed("dash"):
@@ -137,6 +135,7 @@ func _dash():
 			$AnimatedSprite2D.play()
 			dash_cooldown_timer.start(0.5)
 			await $AnimatedSprite2D.animation_finished
+		player_dashed.emit()
 	
 	
 func check_if_player_is_not_on_floor():
@@ -202,9 +201,6 @@ func check_if_player_is_on_wall():
 	check_animation_if_on_wall()
 	var wall_normal = get_wall_normal()
 	if colliding_wall() and Input.is_action_just_pressed("jump"):
-		var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
-		stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
-		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 		$JumpSound.play()
 		number_of_jumps += 1
 		velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
@@ -213,6 +209,7 @@ func check_if_player_is_on_wall():
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
+		player_jumped.emit()
 			
 func check_for_player_movement():
 	# Horizontal movements

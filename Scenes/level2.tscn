@@ -929,6 +929,8 @@ scale = Vector2(1.41667, 1.57222)
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
+[connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
+[connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="spike_hit" from="SpikePatrol1/PathFollow2D/Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Ability" to="." method="_on_ability_player_entered"]

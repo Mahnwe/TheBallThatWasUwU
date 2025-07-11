@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_cjfl1")
 
 [node name="Label" type="Label" parent="."]
 visible = false
+z_index = 5
 offset_left = -22.0
 offset_top = -20.0
 offset_right = 212.0

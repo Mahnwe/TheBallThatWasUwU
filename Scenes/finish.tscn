@@ -72,6 +72,7 @@ position = Vector2(-3.5, -2)
 shape = SubResource("RectangleShape2D_exy7e")
 
 [node name="WellDoneLabel" type="Label" parent="."]
+z_index = 5
 offset_left = -230.0
 offset_top = -233.0
 offset_right = -68.0

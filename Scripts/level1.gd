@@ -333,9 +333,20 @@ func set_tutorial_advices():
 
 
 func _on_chest_chest_triggered():
-	config.set_value("Chests", $Chest.properties_key, true)
+	config.set_value("Chests", "level_one_chest", true)
 	var current_chest_number = config.get_value("Chests", "chestNumber")
 	var new_chest_number = current_chest_number+1
 	config.set_value("Chests", "chestNumber", new_chest_number)
 	config.save("res://Ressources/PropertieFile/properties.cfg")
-	print("Properties saved")
+
+
+func _on_player_player_jumped():
+	var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
+	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func _on_player_player_dashed():
+	var number_of_dashes = stats_config.get_value("Stats", "dash_number")
+	stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")

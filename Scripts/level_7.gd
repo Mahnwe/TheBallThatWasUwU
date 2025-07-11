@@ -234,7 +234,7 @@ func _on_finish_player_entered():
 	config.save("res://Ressources/PropertieFile/properties.cfg")
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.0).timeout
 	$Finish/FinishUI.set_medal_sprite(queue.current_medal)
 	$Finish/FinishUI.show()
 	$Finish/FinishUI.get_child(0).show()
@@ -394,3 +394,15 @@ func save_medals_stats():
 			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
 			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+			
+			
+func _on_player_player_jumped():
+	var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
+	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func _on_player_player_dashed():
+	var number_of_dashes = stats_config.get_value("Stats", "dash_number")
+	stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")

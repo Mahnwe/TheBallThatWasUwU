@@ -23,30 +23,10 @@ func _process(_delta):
 	
 func set_level_number(number_from_level):
 	level_number = number_from_level
-	set_properties_key()
-	print(level_number)
-	
-func set_properties_key():
-	if level_number == 1:
-		properties_key = "level_one_chest"
-		print("level 1 chest saved")
-	if level_number == 2:
-		properties_key = "level_two_chest"
-		print("level 2 chest saved")
-	if level_number == 3:
-		properties_key = "level_three_chest"
-		print("level 3 chest saved")
-	if level_number == 4:
-		properties_key = "level_four_chest"
-	if level_number == 5:
-		properties_key = "level_five_chest"
-	if level_number == 6:
-		properties_key = "level_six_chest"
 
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player" and !is_trigger:
-		print("Enter trigger")
 		is_trigger = true
 		$Label.show()
 		chest_triggered.emit()
