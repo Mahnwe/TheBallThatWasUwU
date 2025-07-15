@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=57 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="5_r3v26"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_kfex5"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="7_myi0h"]
+[ext_resource type="Texture2D" uid="uid://dl06o7ymmb2j6" path="res://Arts/BackgroundSprite/BackgroundParalaxLvl5.png" id="7_rybjh"]
+[ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="8_au1pt"]
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="8_oneui"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="9_olh6r"]
 [ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="10_bs3iy"]
@@ -128,6 +130,42 @@ offset_left = -733.259
 offset_top = -671.561
 offset_right = -733.259
 offset_bottom = -671.561
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
+scroll_scale = Vector2(0.05, 0.01)
+scroll_offset = Vector2(687, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
+position = Vector2(147, 56)
+scale = Vector2(2.0585, 1.64331)
+texture = ExtResource("7_rybjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(-494.527, 0)
+texture = ExtResource("7_rybjh")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(498.827, 0)
+texture = ExtResource("7_rybjh")
+flip_h = true
+
+[node name="ColorRect2" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+offset_left = -1384.0
+offset_top = -359.0
+offset_right = 1690.0
+offset_bottom = 465.0
+color = Color(0.201527, 0.201527, 0.201527, 0.235294)
+
+[node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+material = ExtResource("8_au1pt")
+offset_left = -1387.0
+offset_top = -353.0
+offset_right = 1691.0
+offset_bottom = 468.0
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_myi0h")
@@ -286,6 +324,10 @@ position = Vector2(583.088, 9.9894e-06)
 position = Vector2(-686, 41)
 scale = Vector2(0.640002, 1.32)
 
+[node name="platform" parent="platform5" instance=ExtResource("3_b23ve")]
+position = Vector2(-579.686, 11.3636)
+scale = Vector2(0.924354, 0.92827)
+
 [node name="Wall4" parent="." instance=ExtResource("14_yl5hm")]
 position = Vector2(-444, 173)
 rotation = -1.5708
@@ -293,10 +335,10 @@ scale = Vector2(1.56, 3.16)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 z_index = -2
-offset_left = -202.0
-offset_top = -766.0
-offset_right = 189.0
-offset_bottom = 145.0
+offset_left = -252.0
+offset_top = -768.0
+offset_right = 201.0
+offset_bottom = 206.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water2" parent="." instance=ExtResource("12_2be2h")]
@@ -304,6 +346,7 @@ position = Vector2(-7.99999, -313.5)
 scale = Vector2(2.14, 4.585)
 
 [node name="WaterPlatform8" parent="." instance=ExtResource("15_3nnrj")]
+z_index = 1
 position = Vector2(-26, 166)
 scale = Vector2(3.5248, 2.34612)
 
@@ -403,7 +446,7 @@ position = Vector2(-1486.76, 50.7254)
 [node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
 position = Vector2(-1616, 130)
 flip_value = 1
-ball_speed = 10
+ball_speed = 8
 
 [node name="SandPlatform2" parent="." instance=ExtResource("24_uva61")]
 position = Vector2(-2433, 567)
@@ -427,7 +470,7 @@ scale = Vector2(0.960371, 0.549455)
 [node name="ColorRect4" type="ColorRect" parent="."]
 z_index = -2
 offset_left = -2830.0
-offset_top = 122.0
+offset_top = 117.0
 offset_right = -2036.0
 offset_bottom = 516.0
 color = Color(0.196078, 0.67451, 1, 1)
@@ -495,8 +538,8 @@ scale = Vector2(0.87398, 1.14986)
 z_index = -2
 offset_left = -2424.0
 offset_top = -251.0
-offset_right = -1386.0
-offset_bottom = -38.0
+offset_right = -1329.0
+offset_bottom = -2.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Wall7" parent="." instance=ExtResource("10_bs3iy")]
@@ -539,6 +582,14 @@ position = Vector2(-3257, -1388)
 
 [node name="platform" parent="platform11" instance=ExtResource("3_b23ve")]
 position = Vector2(592, -2)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -3219.0
+offset_top = -887.0
+offset_right = -2521.0
+offset_bottom = -678.0
+color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water5" parent="." instance=ExtResource("12_2be2h")]
 position = Vector2(-2871, -804.5)
@@ -814,14 +865,6 @@ position = Vector2(-48, 59)
 [node name="Chest" parent="." instance=ExtResource("39_fkoau")]
 position = Vector2(-1788, -402)
 scale = Vector2(2.53154, 2.66816)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -20
-offset_left = -4166.0
-offset_top = -1789.0
-offset_right = 1033.0
-offset_bottom = 869.0
-color = Color(0.203922, 0.768627, 1, 1)
 
 [node name="Path2D7" type="Path2D" parent="."]
 curve = SubResource("Curve2D_birjf")

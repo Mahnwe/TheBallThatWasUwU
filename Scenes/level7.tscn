@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=107 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://csgwqsc62crjo" path="res://Scenes/start_area.tscn" id="4_wypka"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="5_rnbej"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_dk2oo"]
+[ext_resource type="PackedScene" uid="uid://cmgvyne3gc2fi" path="res://Scenes/paralax_manager.tscn" id="7_fuy54"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="7_u17fo"]
 [ext_resource type="PackedScene" uid="uid://bnm882gqmu7xl" path="res://Scenes/acid.tscn" id="8_sr0ya"]
 [ext_resource type="PackedScene" uid="uid://dga2fe53ycg0g" path="res://Scenes/laser_base.tscn" id="9_h0p4h"]
@@ -206,68 +207,42 @@ _data = {
 }
 point_count = 25
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mswl2"]
+size = Vector2(374, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuy54"]
+size = Vector2(376, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwiai"]
+size = Vector2(30, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhjl"]
+size = Vector2(38, 303)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nxg2"]
+size = Vector2(482, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcrls"]
+size = Vector2(41, 394)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6qtv"]
+size = Vector2(46, 394)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwxtt"]
+size = Vector2(416, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bughj"]
+size = Vector2(75, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlaxr"]
+size = Vector2(487, 61)
+
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_c77lg")
 
 [node name="GameArea" parent="." instance=ExtResource("2_sr0ya")]
 position = Vector2(1717, -1629)
 scale = Vector2(13.8487, 12.6613)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -20
-offset_left = -2590.0
-offset_top = -1829.0
-offset_right = 1171.0
-offset_bottom = 669.0
-color = Color(0.553269, 0.585908, 0.618709, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-z_index = -20
-offset_left = -2849.0
-offset_top = -3933.0
-offset_right = 332.0
-offset_bottom = -1812.0
-color = Color(0.427493, 0.427493, 0.427493, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
-layout_mode = 0
-offset_left = 3171.0
-offset_right = 3966.0
-offset_bottom = 1047.0
-color = Color(0.427493, 0.427493, 0.427493, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-z_index = -20
-offset_left = 1118.0
-offset_top = -3929.0
-offset_right = 3937.0
-offset_bottom = -1407.0
-color = Color(6.73831e-06, 0.683953, 0.89999, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect3"]
-z_index = -20
-layout_mode = 0
-offset_left = -769.0
-offset_top = 1040.0
-offset_right = 670.0
-offset_bottom = 2133.0
-color = Color(6.73831e-06, 0.683953, 0.89999, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-z_index = -20
-offset_left = 3922.0
-offset_top = -3929.0
-offset_right = 6012.0
-offset_bottom = -1395.0
-color = Color(0.372549, 0.815686, 0.92549, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect4"]
-layout_mode = 0
-offset_left = -2753.0
-offset_top = 2513.0
-offset_right = 2082.0
-offset_bottom = 4587.0
-color = Color(0.372549, 0.815686, 0.92549, 1)
 
 [node name="MetalPlatform" parent="." instance=ExtResource("3_h0p4h")]
 position = Vector2(-56, 122)
@@ -303,6 +278,9 @@ offset_left = -733.259
 offset_top = -671.561
 offset_right = -733.259
 offset_bottom = -671.561
+
+[node name="ParalaxManager" parent="Player" instance=ExtResource("7_fuy54")]
+position = Vector2(1529.25, 1490.1)
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_u17fo")
@@ -549,6 +527,13 @@ position = Vector2(-2.6226e-05, -82.6318)
 
 [node name="platform3" parent="platform" instance=ExtResource("15_54uab")]
 position = Vector2(1103.9, -84.9704)
+
+[node name="platform44" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(-548, -2132)
+scale = Vector2(0.140188, 0.540657)
+
+[node name="platform" parent="platform44" instance=ExtResource("15_54uab")]
+position = Vector2(2032.98, -1.84982)
 
 [node name="Spike3" parent="." instance=ExtResource("14_42yhu")]
 position = Vector2(-1129, -1355)
@@ -835,7 +820,7 @@ scale = Vector2(0.606914, 0.639194)
 position = Vector2(433, -3735)
 
 [node name="platform" parent="platform10" instance=ExtResource("15_54uab")]
-position = Vector2(639, 0)
+position = Vector2(636, 0)
 
 [node name="Wall3" parent="." instance=ExtResource("19_eknqy")]
 position = Vector2(1280, -3609)
@@ -845,6 +830,14 @@ scale = Vector2(1.55886, 1.6196)
 [node name="Wall" parent="Wall3" instance=ExtResource("19_eknqy")]
 position = Vector2(642.778, 161.151)
 rotation = 3.14159
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 342.0
+offset_top = -2882.0
+offset_right = 1781.0
+offset_bottom = -2023.0
+color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water" parent="." instance=ExtResource("23_fvo85")]
 position = Vector2(1064, -2488)
@@ -866,6 +859,13 @@ position = Vector2(389.139, 0)
 [node name="WaterPlatform10" parent="." instance=ExtResource("22_bv2tk")]
 position = Vector2(410, -2471)
 scale = Vector2(1.02903, 1.67933)
+
+[node name="platform45" parent="." instance=ExtResource("26_p2rf6")]
+position = Vector2(1920, -2762)
+rotation = 1.5708
+
+[node name="platform" parent="platform45" instance=ExtResource("26_p2rf6")]
+position = Vector2(-403, 0)
 
 [node name="WaterPlatform2" parent="." instance=ExtResource("22_bv2tk")]
 position = Vector2(1796, -2358)
@@ -1043,6 +1043,14 @@ scale = Vector2(0.526179, 0.343406)
 [node name="SandPlatform" parent="SandPlatform4" instance=ExtResource("25_p2rf6")]
 position = Vector2(-0.000463987, 165.752)
 
+[node name="ColorRect6" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 2170.0
+offset_top = -2894.0
+offset_right = 2726.0
+offset_bottom = -2799.0
+color = Color(0, 0.651925, 0.918168, 1)
+
 [node name="Water2" parent="." instance=ExtResource("23_fvo85")]
 position = Vector2(2446.04, -2846.5)
 scale = Vector2(2.74043, 0.485)
@@ -1130,6 +1138,14 @@ position = Vector2(0, 154.137)
 [node name="SandPlatform2" parent="SandPlatform12" instance=ExtResource("25_p2rf6")]
 position = Vector2(0, 354.099)
 
+[node name="ColorRect7" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 2455.0
+offset_top = -2248.0
+offset_right = 3354.0
+offset_bottom = -2074.0
+color = Color(0, 0.651925, 0.918168, 1)
+
 [node name="Water3" parent="." instance=ExtResource("23_fvo85")]
 position = Vector2(2903, -2165)
 scale = Vector2(4.495, 0.850399)
@@ -1203,6 +1219,14 @@ scale = Vector2(1, 1.14991)
 
 [node name="SandPlatform2" parent="SandPlatform19" instance=ExtResource("25_p2rf6")]
 position = Vector2(0, 424.843)
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 2642.0
+offset_top = -1646.0
+offset_right = 3737.0
+offset_bottom = -1419.0
+color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water4" parent="." instance=ExtResource("23_fvo85")]
 position = Vector2(3186.38, -1538)
@@ -2057,6 +2081,14 @@ position = Vector2(-1.78163, 93.6173)
 scale = Vector2(1.53333, 2.29094)
 texture = ExtResource("56_nvxkg")
 
+[node name="ColorRect8" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 3751.0
+offset_top = -2288.0
+offset_right = 4035.0
+offset_bottom = -2091.0
+color = Color(0, 0.651925, 0.918168, 1)
+
 [node name="Water6" parent="." instance=ExtResource("23_fvo85")]
 position = Vector2(3897, -2190)
 scale = Vector2(1.44, 1.0054)
@@ -2386,6 +2418,58 @@ scale = Vector2(0.717576, 2.41136)
 skew = -0.701319
 texture = ExtResource("73_vj0yr")
 
+[node name="LaboBackgroundTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaboBackgroundTrigger"]
+position = Vector2(-356, -2019)
+shape = SubResource("RectangleShape2D_mswl2")
+
+[node name="CaveBackgroundTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveBackgroundTrigger"]
+position = Vector2(-356, -2175)
+shape = SubResource("RectangleShape2D_fuy54")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CaveBackgroundTrigger"]
+position = Vector2(268, -3447)
+shape = SubResource("RectangleShape2D_hwiai")
+
+[node name="WaterBackgroundTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBackgroundTrigger"]
+position = Vector2(718, -3424.5)
+shape = SubResource("RectangleShape2D_2lhjl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WaterBackgroundTrigger"]
+position = Vector2(1434, -3134)
+shape = SubResource("RectangleShape2D_1nxg2")
+
+[node name="BeachBackgroundTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeachBackgroundTrigger"]
+position = Vector2(1694.5, -3379)
+shape = SubResource("RectangleShape2D_fcrls")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BeachBackgroundTrigger"]
+position = Vector2(3749, -1864)
+shape = SubResource("RectangleShape2D_t6qtv")
+
+[node name="ForestBackgroundTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForestBackgroundTrigger"]
+position = Vector2(4338, -1938)
+shape = SubResource("RectangleShape2D_jwxtt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ForestBackgroundTrigger"]
+position = Vector2(4854.5, -1206.5)
+shape = SubResource("RectangleShape2D_bughj")
+
+[node name="MountainBackgroundTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MountainBackgroundTrigger"]
+position = Vector2(4634.5, -899.5)
+shape = SubResource("RectangleShape2D_rlaxr")
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
@@ -2460,3 +2544,9 @@ texture = ExtResource("73_vj0yr")
 [connection signal="spike_hit" from="Spike23" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]
+[connection signal="body_entered" from="LaboBackgroundTrigger" to="." method="_on_labo_background_trigger_body_entered"]
+[connection signal="body_entered" from="CaveBackgroundTrigger" to="." method="_on_cave_background_trigger_body_entered"]
+[connection signal="body_entered" from="WaterBackgroundTrigger" to="." method="_on_water_background_trigger_body_entered"]
+[connection signal="body_entered" from="BeachBackgroundTrigger" to="." method="_on_beach_background_trigger_body_entered"]
+[connection signal="body_entered" from="ForestBackgroundTrigger" to="." method="_on_forest_background_trigger_body_entered"]
+[connection signal="body_entered" from="MountainBackgroundTrigger" to="." method="_on_mountain_background_trigger_body_entered"]

@@ -121,6 +121,13 @@ offset_right = 748.0
 offset_bottom = -148.0
 color = Color(0.478431, 0.815686, 0.890196, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+offset_left = -1918.0
+offset_top = -475.0
+offset_right = 1916.0
+offset_bottom = 340.0
+color = Color(0.201527, 0.201527, 0.201527, 0.235294)
+
 [node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
 material = ExtResource("8_p4bhf")
 offset_left = -1914.0
@@ -209,7 +216,7 @@ position = Vector2(100, 81)
 scale = Vector2(0.72, 1)
 
 [node name="Wall2" parent="." instance=ExtResource("10_8ng8k")]
-position = Vector2(-1664, 500)
+position = Vector2(-1664, 520)
 rotation = -1.5708
 scale = Vector2(1, 1.88)
 

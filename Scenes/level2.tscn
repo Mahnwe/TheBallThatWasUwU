@@ -179,7 +179,7 @@ offset_bottom = -671.561
 follow_viewport_enabled = true
 
 [node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
-scroll_scale = Vector2(0.09, 0.01)
+scroll_scale = Vector2(0.05, 0.01)
 scroll_offset = Vector2(1089, 511)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
@@ -195,6 +195,13 @@ flip_h = true
 position = Vector2(501.15, 0)
 texture = ExtResource("6_suqxw")
 flip_h = true
+
+[node name="ColorRect2" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+offset_left = -2012.0
+offset_top = -427.0
+offset_right = 2017.0
+offset_bottom = 420.0
+color = Color(0.201527, 0.201527, 0.201527, 0.235294)
 
 [node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
 material = ExtResource("7_fpxdy")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmgvyne3gc2fi"]
+
+[ext_resource type="Script" uid="uid://d0vujq01klv1p" path="res://Scripts/paralax_manager.gd" id="1_uup4h"]
+[ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="3_ctaqk"]
+
+[node name="ParalaxManager" type="Node2D"]
+script = ExtResource("1_uup4h")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0.05, 0.01)
+scroll_offset = Vector2(976, 516)
+
+[node name="CenterBackground" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+scale = Vector2(2.0585, 1.64331)
+
+[node name="LeftBackground" type="Sprite2D" parent="ParallaxBackground/Parallax2D/CenterBackground"]
+position = Vector2(-498.907, 0)
+flip_h = true
+
+[node name="RightBackground" type="Sprite2D" parent="ParallaxBackground/Parallax2D/CenterBackground"]
+position = Vector2(499.393, 0)
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Parallax2D"]
+offset_left = -1543.0
+offset_top = -522.0
+offset_right = 1544.0
+offset_bottom = 567.0
+color = Color(0.201527, 0.201527, 0.201527, 0.235294)
+
+[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground/Parallax2D"]
+material = ExtResource("3_ctaqk")
+offset_left = -1541.0
+offset_top = -510.0
+offset_right = 1544.0
+offset_bottom = 573.0

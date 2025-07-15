@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dll3pfso18mlo"]
+[gd_scene load_steps=53 format=3 uid="uid://dll3pfso18mlo"]
 
 [ext_resource type="Script" uid="uid://cngnw08xxshdu" path="res://Scripts/level_6.gd" id="1_enqk4"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_eguui"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bub4744m7a6ma" path="res://Scenes/metal_platform.tscn" id="4_achdq"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="5_0vxl1"]
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_ypqhe"]
+[ext_resource type="Texture2D" uid="uid://dbh7rmpsv6f8n" path="res://Arts/BackgroundSprite/BackgroudParalaxLvl6.png" id="7_6pmiu"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="7_tw4yl"]
+[ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="8_riqwx"]
 [ext_resource type="PackedScene" uid="uid://sqq0aw1ppgq5" path="res://Scenes/tube.tscn" id="8_ypqhe"]
 [ext_resource type="PackedScene" uid="uid://clxwqr7ghixcp" path="res://Scenes/filled_tube.tscn" id="9_4hpso"]
 [ext_resource type="Texture2D" uid="uid://dwb52g4s16krl" path="res://Arts/PipeSprite/PipeMachinery.png" id="9_tw4yl"]
@@ -138,6 +140,7 @@ position = Vector2(-3436, -922)
 scale = Vector2(11.385, 11.6374)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -20
 offset_left = -6859.0
 offset_top = -2986.0
@@ -172,6 +175,41 @@ offset_left = -733.259
 offset_top = -671.561
 offset_right = -733.259
 offset_bottom = -671.561
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
+scroll_scale = Vector2(0.05, 0.01)
+scroll_offset = Vector2(924, 556)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
+scale = Vector2(2.0585, 1.64331)
+texture = ExtResource("7_6pmiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(-496.964, 0)
+texture = ExtResource("7_6pmiu")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
+position = Vector2(492.592, 0)
+texture = ExtResource("7_6pmiu")
+flip_h = true
+
+[node name="ColorRect2" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+offset_left = -1529.0
+offset_top = -408.0
+offset_right = 1520.0
+offset_bottom = 416.0
+color = Color(0.201527, 0.201527, 0.201527, 0.235294)
+
+[node name="ColorRect" type="ColorRect" parent="Player/ParallaxBackground/Parallax2D"]
+material = ExtResource("8_riqwx")
+offset_left = -1538.0
+offset_top = -414.0
+offset_right = 1530.0
+offset_bottom = 410.0
 
 [node name="MetalPlatform2" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-1721, -175)

@@ -406,3 +406,33 @@ func _on_player_player_dashed():
 	var number_of_dashes = stats_config.get_value("Stats", "dash_number")
 	stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func _on_cave_background_trigger_body_entered(body):
+	if body.name == "Player":
+		$Player/ParalaxManager.change_background($Player/ParalaxManager.level_4_texture)
+
+
+func _on_water_background_trigger_body_entered(body):
+	if body.name == "Player":
+		$Player/ParalaxManager.change_background($Player/ParalaxManager.level_5_texture)
+
+
+func _on_labo_background_trigger_body_entered(body):
+	if body.name == "Player":
+		$Player/ParalaxManager.change_background($Player/ParalaxManager.level_6_texture)
+
+
+func _on_beach_background_trigger_body_entered(body):
+	if body.name == "Player":
+		$Player/ParalaxManager.change_background($Player/ParalaxManager.level_3_texture)
+
+
+func _on_forest_background_trigger_body_entered(body):
+	if body.name == "Player":
+		$Player/ParalaxManager.change_background($Player/ParalaxManager.level_2_texture)
+
+
+func _on_mountain_background_trigger_body_entered(body):
+	if body.name == "Player":
+		$Player/ParalaxManager.change_background($Player/ParalaxManager.level_1_texture)
