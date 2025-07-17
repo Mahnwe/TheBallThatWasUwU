@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5khh4ff2btix"]
+
+[ext_resource type="Script" uid="uid://bwxdbibha2p62" path="res://Scripts/window_mode_controller.gd" id="1_ayt40"]
+[ext_resource type="Texture2D" uid="uid://crus5ufx3d3jf" path="res://Arts/CloudButtonSprite/WindowModeSprite.png" id="1_p6350"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_48avc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48avc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayt40"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[node name="WindowModeButton" type="Button"]
+offset_right = 83.0
+offset_bottom = 60.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_48avc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ayt40")
+script = ExtResource("1_ayt40")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(39, 30)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_p6350")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -3.0
+offset_top = 57.0
+offset_right = 194.0
+offset_bottom = 112.0
+scale = Vector2(0.429207, 0.465251)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 40
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(39, 41)
+scale = Vector2(1.09459, 1.55921)
+texture = ExtResource("2_48avc")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

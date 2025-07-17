@@ -7,6 +7,7 @@ var properties_config = ConfigFile.new()
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 func _ready():
+	setup_window_mod()
 	$FrButton.grab_focus()
 	
 	
@@ -39,3 +40,18 @@ func _on_fr_button_focus_entered():
 
 func _on_en_button_focus_entered():
 	$ButtonSound.play()
+	
+	
+func setup_window_mod():
+	if properties_config.get_value("WindowMod", "is_fullscreen"):
+		var player_viewport = get_viewport().size
+		DisplayServer.window_set_size(player_viewport)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		properties_config.set_value("WindowMod", "is_fullscreen", true)
+	else:
+		DisplayServer.window_set_size(Vector2i(1280,720))
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		properties_config.set_value("WindowMod", "is_fullscreen", false)
+	properties_config.save("res://Ressources/PropertieFile/properties.cfg")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=36 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c0lw132ttyu44" path="res://Scenes/stats.tscn" id="19_dldpb"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="23_h63v2"]
 [ext_resource type="PackedScene" uid="uid://tn1erw530dy1" path="res://Scenes/credits.tscn" id="24_l6llh"]
+[ext_resource type="PackedScene" uid="uid://c5khh4ff2btix" path="res://Scenes/window_mode_controller.tscn" id="26_i37ye"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -72,11 +73,12 @@ border_width_bottom = 2
 border_color = Color(0.85098, 0, 0, 1)
 
 [node name="Menu" type="Control"]
-custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ltdc4")
@@ -460,11 +462,12 @@ offset_right = -3.44827
 offset_bottom = 39.6902
 
 [node name="Label" type="Label" parent="Level7Button"]
+visible = false
 layout_mode = 1
 offset_left = 3.83142
-offset_top = -31.4618
+offset_top = -29.0416
 offset_right = 114.832
-offset_bottom = -3.46181
+offset_bottom = -1.04165
 scale = Vector2(0.587489, 0.792687)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -519,7 +522,7 @@ offset_top = 33.0
 offset_right = 2786.0
 offset_bottom = 748.0
 scale = Vector2(0.12, 0.16)
-focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_left = NodePath("../WindowModeButton")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
@@ -576,9 +579,9 @@ offset_bottom = 112.0
 scale = Vector2(0.968542, 1.37603)
 focus_neighbor_left = NodePath("../MusicMuteButton")
 focus_neighbor_top = NodePath("../EffectSlider")
-focus_neighbor_right = NodePath("../EffectSlider")
+focus_neighbor_right = NodePath("../WindowModeButton")
 focus_neighbor_bottom = NodePath("../EffectSlider")
-focus_next = NodePath("../EffectSlider")
+focus_next = NodePath("../WindowModeButton")
 focus_previous = NodePath("../MusicMuteButton")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_osuf5")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_j0ro0")
@@ -610,7 +613,7 @@ offset_bottom = 197.0
 scale = Vector2(0.949514, 1.30119)
 focus_neighbor_left = NodePath("../SoundMuteButton")
 focus_neighbor_top = NodePath("../MusicSlider")
-focus_neighbor_right = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../WindowModeButton")
 focus_neighbor_bottom = NodePath("../Level1Button")
 focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../SoundMuteButton")
@@ -756,6 +759,18 @@ visible = false
 z_index = 2
 layout_mode = 1
 
+[node name="WindowModeButton" parent="." instance=ExtResource("26_i37ye")]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 16.0
+offset_right = 444.0
+offset_bottom = 75.0
+scale = Vector2(1.23433, 1.14805)
+focus_neighbor_left = NodePath("../MusicSlider")
+focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../Level1Button")
+
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="mouse_exited" from="Level1Button" to="." method="_on_level_1_button_mouse_exited"]
@@ -781,7 +796,10 @@ layout_mode = 1
 [connection signal="mouse_exited" from="Level6Button" to="." method="_on_level_6_button_mouse_exited"]
 [connection signal="pressed" from="Level6Button" to="." method="_on_level_6_button_pressed"]
 [connection signal="focus_entered" from="Level7Button" to="." method="_on_button_focus_entered"]
+[connection signal="focus_entered" from="Level7Button" to="." method="_on_level_7_button_focus_entered"]
+[connection signal="focus_exited" from="Level7Button" to="." method="_on_level_7_button_focus_exited"]
 [connection signal="gui_input" from="Level7Button" to="." method="_on_level_7_button_gui_input"]
+[connection signal="mouse_entered" from="Level7Button" to="." method="_on_level_7_button_mouse_entered"]
 [connection signal="mouse_exited" from="Level7Button" to="." method="_on_level_7_button_mouse_exited"]
 [connection signal="pressed" from="Level7Button" to="." method="_on_level_7_button_pressed"]
 [connection signal="focus_entered" from="QuitButton" to="." method="_on_quit_button_focus_entered"]
@@ -815,3 +833,5 @@ layout_mode = 1
 [connection signal="mouse_exited" from="CreditsButton" to="." method="_on_credits_button_mouse_exited"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="visibility_changed" from="Credits" to="." method="_on_credits_visibility_changed"]
+[connection signal="focus_entered" from="WindowModeButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="WindowModeButton" to="." method="_on_window_mode_button_pressed"]

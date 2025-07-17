@@ -185,12 +185,12 @@ func _on_level_7_button_gui_input(event):
 func _on_quit_button_gui_input(event):
 	if $QuitButton.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
 		is_controller_focused = true
-		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
+		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down"):
 			accept_event() # prevent the normal focus-stuff from happening
 			$Level1Button.grab_focus()
-		elif event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
+		elif event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$Level1Button.grab_focus()
+			$WindowModeButton.grab_focus()
 			
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
@@ -514,9 +514,14 @@ func check_level7_button_visibility():
 		$Level7Platforms.hide()
 		$Level1Button.focus_neighbor_left = "../EffectSlider"
 
+func _on_level_7_button_mouse_entered():
+	$Level7Button.grab_focus()
+	is_controller_focused = true
+	$Level7Button/Label.show()
 
 func _on_level_7_button_mouse_exited():
 	$Level7Button.release_focus()
+	$Level7Button/Label.hide()
 	is_controller_focused = false
 
 
@@ -582,3 +587,30 @@ func check_for_ability_icons():
 		$AbilityIcon.hide()
 	if properties_config.get_value("levels", "is_level_three_finished"):
 		$AbilityIcon2.hide()
+
+
+func _on_level_7_button_focus_entered():
+	$Level7Button/Label.show()
+
+
+func _on_level_7_button_focus_exited():
+	$Level7Button/Label.hide()
+
+
+func _on_window_mode_button_pressed():
+	if properties_config.get_value("WindowMod", "is_fullscreen"):
+		$WindowModeButton.get_child(1).text = $WindowModeButton.windowed_label
+		DisplayServer.window_set_size(Vector2i(1280,720))
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		properties_config.set_value("WindowMod", "is_fullscreen", false)
+		print("Window mod going windowed")
+	else:
+		$WindowModeButton.get_child(1).text = $WindowModeButton.fullscreen_label
+		var player_viewport = get_viewport().size
+		DisplayServer.window_set_size(player_viewport)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		properties_config.set_value("WindowMod", "is_fullscreen", true)
+		print("Window mode going fullscreen")
+	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
