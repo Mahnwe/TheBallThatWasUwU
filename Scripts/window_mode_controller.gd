@@ -33,21 +33,18 @@ func translate_text():
 
 
 func _on_focus_entered():
-	self.flat = false
+	self.grab_focus()
 	$Label.visible = true
 
-
 func _on_focus_exited():
+	self.release_focus()
 	$Label.visible = false
-	self.flat = true
 
 func _on_mouse_entered():
 	self.grab_focus()
-	self.flat = false
 	$Label.visible = true
 
 
 func _on_mouse_exited():
 	self.release_focus()
 	$Label.visible = false
-	self.flat = true

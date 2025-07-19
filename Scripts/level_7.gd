@@ -348,7 +348,7 @@ func _on_bumper_5_player_hit_bumper():
 	$Player.player_hit_bumper($Bumper5.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 	
 func _on_bumper_platform_player_hit_bumper():
-	$Player.player_hit_bumper($Path2D7/PathFollow2D/Bumper6.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
+	$Player.player_hit_bumper($Bumper9.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)
 	
 func _on_bumper_6_player_hit_bumper():
 	$Player.player_hit_bumper($Bumper6.get_rotation_degrees(), $Player.velocity_y_bumper_check, $Player.velocity_x_bumper_check)

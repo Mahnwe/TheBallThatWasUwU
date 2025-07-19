@@ -13,7 +13,7 @@ func _ready():
 	if (properties_config.get_value("levels", "is_level_two_finished")):
 		player_have_dash = true
 	translate_text()
-	$Dash.hide()
+	$VBoxContainer/Dash.hide()
 	$Keyboard1/DashK1.hide()
 	$Keyboard2/DashK2.hide()
 	$Controller/DashC.hide()
@@ -29,8 +29,10 @@ func _process(_delta):
 			close_commands()
 		if Input.is_action_just_pressed("menu_when_finish") and $Timer.time_left == 0.0:
 			close_commands()
+		if Input.is_action_just_pressed("jump") and $Timer.time_left == 0.0:
+			close_commands()
 	if player_have_dash:
-		$Dash.show()
+		$VBoxContainer/Dash.show()
 		$Keyboard1/DashK1.show()
 		$Keyboard2/DashK2.show()
 		$Controller/DashC.show()
@@ -71,12 +73,13 @@ func translate_text():
 		$Keyboard1.text = translate_config.get_value("TranslationCommands", "Righty")
 		$Keyboard2.text = translate_config.get_value("TranslationCommands", "Lefty")
 		$Controller.text = translate_config.get_value("TranslationCommands", "Controller")
-		$Movements.text = translate_config.get_value("TranslationCommands", "Movements")
-		$Jump.text = translate_config.get_value("TranslationCommands", "Jump")
-		$RestartSave.text = translate_config.get_value("TranslationCommands", "RestartSave")
-		$RestartLevel.text = translate_config.get_value("TranslationCommands", "RestartLevel")
-		$Pause.text = translate_config.get_value("TranslationCommands", "Pause")
-		$Dash.text = translate_config.get_value("TranslationCommands", "Dash")
+		$VBoxContainer/Movements.text = translate_config.get_value("TranslationCommands", "Movements")
+		$VBoxContainer/Jump.text = translate_config.get_value("TranslationCommands", "Jump")
+		$VBoxContainer/RestartSave.text = translate_config.get_value("TranslationCommands", "RestartSave")
+		$VBoxContainer/RestartLevel.text = translate_config.get_value("TranslationCommands", "RestartLevel")
+		$VBoxContainer/Pause.text = translate_config.get_value("TranslationCommands", "Pause")
+		$VBoxContainer/Dash.text = translate_config.get_value("TranslationCommands", "Dash")
+		$VBoxContainer.position.x -= 40
 
 
 func _on_visibility_changed():

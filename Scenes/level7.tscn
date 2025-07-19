@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=106 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -117,21 +117,15 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_fvo85"]
+[sub_resource type="Curve2D" id="Curve2D_fuy54"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1529, -2412, 0, 0, 0, 0, -1798, -2414, 0, 0, 0, 0, -2018, -2415, 0, 0, 0, 0, -2230, -2414, 0, 0, 0, 0, -1529, -2412)
+"points": PackedVector2Array(0, 0, 0, 0, -612, 105, 0, 0, 0, 0, -274, 106, 0, 0, 0, 0, -74, 105, 0, 0, 0, 0, 154, 104, 0, 0, 0, 0, -612, 106)
 }
 point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_t6ltw"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1877, -2636, 0, 0, 0, 0, -1877, -2470, 0, 0, 0, 0, -1877, -2328, 0, 0, 0, 0, -1878, -2227, 0, 0, 0, 0, -1877, -2636)
-}
-point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_i6juq"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2193, -2884, 0, 0, 0, 0, -1887, -2882, 0, 0, 0, 0, -1679, -2882, 0, 0, 0, 0, -1496, -2883, 0, 0, 0, 0, -2193, -2884)
 }
 point_count = 5
 
@@ -658,15 +652,14 @@ position = Vector2(-2560, -2290)
 scale = Vector2(0.21528, 0.657784)
 
 [node name="platform12" parent="." instance=ExtResource("15_54uab")]
-position = Vector2(-2101, -2648)
-rotation = 2.91846
+position = Vector2(-2132, -2588)
+rotation = 3.14159
 scale = Vector2(0.608901, 0.800005)
 
-[node name="platform13" parent="platform12" instance=ExtResource("15_54uab")]
-position = Vector2(-229.112, 734.619)
-rotation = -1.2677
-scale = Vector2(1.00215, 1.28023)
-skew = -0.177775
+[node name="platform47" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(-2098, -3177)
+rotation = 1.5708
+scale = Vector2(0.688901, 0.800005)
 
 [node name="Wall2" parent="." instance=ExtResource("19_eknqy")]
 position = Vector2(-2696, -1790)
@@ -701,6 +694,7 @@ rotates = false
 [node name="Spike" parent="Path2D4/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("14_42yhu")]
 position = Vector2(-33, -46)
 scale = Vector2(0.432715, 0.334913)
+speed = 250
 
 [node name="platform7" parent="." instance=ExtResource("15_54uab")]
 position = Vector2(-1329, -2528)
@@ -715,15 +709,18 @@ position = Vector2(322.5, -95.3703)
 scale = Vector2(0.517218, 0.663232)
 
 [node name="Path2D5" type="Path2D" parent="."]
-curve = SubResource("Curve2D_fvo85")
+position = Vector2(-1654, -2496)
+curve = SubResource("Curve2D_fuy54")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
-position = Vector2(-1529, -2412)
+position = Vector2(-612, 105)
+rotation = 0.00134998
 rotates = false
 
-[node name="platform" parent="Path2D5/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("15_54uab")]
-position = Vector2(-125, -84)
-scale = Vector2(0.310295, 0.751068)
+[node name="platform47" parent="Path2D5/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("15_54uab")]
+position = Vector2(-107.094, -69.8554)
+rotation = -0.00134998
+scale = Vector2(0.277461, 0.613057)
 sync_to_physics = false
 speed = 250
 
@@ -737,6 +734,7 @@ rotates = false
 [node name="Spike" parent="Path2D6/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("14_42yhu")]
 position = Vector2(-33, -43)
 scale = Vector2(0.432715, 0.334913)
+speed = 250
 
 [node name="Spike6" parent="." instance=ExtResource("14_42yhu")]
 position = Vector2(-1373, -2450)
@@ -751,29 +749,25 @@ scale = Vector2(0.874966, 0.829988)
 position = Vector2(-1108, -2761)
 scale = Vector2(0.811803, 0.468547)
 
-[node name="Path2D7" type="Path2D" parent="."]
-position = Vector2(71, 101)
-curve = SubResource("Curve2D_i6juq")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
-position = Vector2(-2193, -2884)
-rotates = false
-
-[node name="platform" parent="Path2D7/PathFollow2D" groups=["platform_on_patrol"] instance=ExtResource("15_54uab")]
-position = Vector2(75, -137)
+[node name="platform46" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(-1483, -2920)
 rotation = 1.5708
 scale = Vector2(0.313347, 0.692548)
 sync_to_physics = false
 speed = 200
 
-[node name="platform14" parent="Path2D7/PathFollow2D/platform" instance=ExtResource("15_54uab")]
+[node name="platform14" parent="platform46" instance=ExtResource("15_54uab")]
 position = Vector2(485.088, 170.385)
 rotation = -1.5708
 scale = Vector2(0.246193, 1.64364)
 sync_to_physics = false
 
-[node name="Bumper6" parent="Path2D7/PathFollow2D" instance=ExtResource("12_dk2oo")]
-position = Vector2(58, -10.0002)
+[node name="platform48" parent="." instance=ExtResource("15_54uab")]
+position = Vector2(-1745, -2963)
+scale = Vector2(0.313347, 0.692548)
+
+[node name="Bumper9" parent="." instance=ExtResource("12_dk2oo")]
+position = Vector2(-1500, -2793)
 rotation = 0.820305
 scale = Vector2(0.848476, 0.956111)
 
@@ -1754,16 +1748,18 @@ scale = Vector2(2.94, 2.87)
 texture = ExtResource("40_ryp18")
 
 [node name="Sprite2D32" type="Sprite2D" parent="."]
-position = Vector2(-598, -2346)
+position = Vector2(-928, -2346)
 scale = Vector2(1.045, 1.11)
 texture = ExtResource("41_mp7j5")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D32"]
-position = Vector2(-633.493, -115.315)
+[node name="Sprite2D37" type="Sprite2D" parent="."]
+position = Vector2(-1260, -2474)
+scale = Vector2(1.045, 1.11)
 texture = ExtResource("41_mp7j5")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D32"]
-position = Vector2(885.167, -896.396)
+[node name="Sprite2D38" type="Sprite2D" parent="."]
+position = Vector2(326.999, -3341)
+scale = Vector2(1.045, 1.11)
 texture = ExtResource("41_mp7j5")
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
@@ -2501,7 +2497,7 @@ shape = SubResource("RectangleShape2D_rlaxr")
 [connection signal="spike_hit" from="Spike6" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike7" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike8" to="." method="_on_spike_spike_hit"]
-[connection signal="player_hit_bumper" from="Path2D7/PathFollow2D/Bumper6" to="." method="_on_bumper_platform_player_hit_bumper"]
+[connection signal="player_hit_bumper" from="Bumper9" to="." method="_on_bumper_platform_player_hit_bumper"]
 [connection signal="spike_hit" from="Spike10" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike9" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
