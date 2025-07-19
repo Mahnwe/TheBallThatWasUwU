@@ -28,12 +28,9 @@ script = ExtResource("1_1bamb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = ExtResource("2_uah1q")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1080.0
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
@@ -106,22 +103,25 @@ texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(930.5, 181.5)
-scale = Vector2(3.94521, 3.9616)
+z_index = 1
+position = Vector2(936, 183)
+scale = Vector2(3.62463, 3.55317)
 texture = ExtResource("1_r18jl")
 
 [node name="Label" type="Label" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 717.0
-offset_top = 74.0
-offset_right = 1402.0
-offset_bottom = 347.0
-scale = Vector2(0.706844, 0.731816)
+offset_left = 744.0
+offset_top = 93.0
+offset_right = 1429.0
+offset_bottom = 366.0
+scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 170
 text = "Credits"
 

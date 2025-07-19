@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=45 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -35,6 +35,61 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.85098, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i37ye"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbv25"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nakb8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pde1v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_747ic"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0760"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvy56"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0, 0, 1)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuf5"]
@@ -64,7 +119,23 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48g0d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.85098, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6llh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygxe1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -99,8 +170,9 @@ offset_bottom = 226.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.00551701, 0.00573812, 0.00551702, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 70
 text = "The ball that was fast 
            and UwU"
@@ -159,8 +231,8 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i37ye")
 text = "Level 1"
-alignment = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Level1Button"]
 z_index = -1
@@ -207,6 +279,7 @@ theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbv25")
 text = "Level 2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level2Button"]
@@ -255,6 +328,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nakb8")
 text = "Level 3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level3Button"]
@@ -303,6 +377,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pde1v")
 text = "Level 4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level4Button"]
@@ -351,6 +426,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_747ic")
 text = "Level 5"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level5Button"]
@@ -399,6 +475,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x0760")
 text = "Level 6"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level6Button"]
@@ -445,6 +522,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lvy56")
 text = "Level 7"
 
 [node name="Sprite2D" type="Sprite2D" parent="Level7Button"]
@@ -634,8 +712,8 @@ offset_bottom = 122.239
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 35
 text = "Manawé Games"
@@ -695,6 +773,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48g0d")
 text = "Stats"
 
 [node name="Sprite2D" type="Sprite2D" parent="StatsButton"]
@@ -746,6 +825,7 @@ theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_l6llh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ygxe1")
 text = "Credits"
 
 [node name="Sprite2D" type="Sprite2D" parent="CreditsButton"]
@@ -761,11 +841,11 @@ layout_mode = 1
 
 [node name="WindowModeButton" parent="." instance=ExtResource("26_i37ye")]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 16.0
-offset_right = 444.0
-offset_bottom = 75.0
-scale = Vector2(1.23433, 1.14805)
+offset_left = 368.0
+offset_top = 12.0
+offset_right = 446.0
+offset_bottom = 71.0
+scale = Vector2(1.2875, 1.18051)
 focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../QuitButton")
@@ -795,8 +875,8 @@ focus_neighbor_bottom = NodePath("../Level1Button")
 [connection signal="gui_input" from="Level6Button" to="." method="_on_level_6_button_gui_input"]
 [connection signal="mouse_exited" from="Level6Button" to="." method="_on_level_6_button_mouse_exited"]
 [connection signal="pressed" from="Level6Button" to="." method="_on_level_6_button_pressed"]
-[connection signal="focus_entered" from="Level7Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_entered" from="Level7Button" to="." method="_on_level_7_button_focus_entered"]
+[connection signal="focus_entered" from="Level7Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_exited" from="Level7Button" to="." method="_on_level_7_button_focus_exited"]
 [connection signal="gui_input" from="Level7Button" to="." method="_on_level_7_button_gui_input"]
 [connection signal="mouse_entered" from="Level7Button" to="." method="_on_level_7_button_mouse_entered"]
