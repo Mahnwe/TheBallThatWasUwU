@@ -13,7 +13,7 @@ var translate_file
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	translate_text()
+	translate_text(properties_config.get_value("Languages", "is_english"))
 	set_up_stats_with_file()
 	$QuitButton.grab_focus()
 
@@ -64,9 +64,9 @@ func _on_quit_button_gui_input(event):
 			accept_event() # prevent the normal focus-stuff from happening
 			$QuitButton.grab_focus()
 			
-func translate_text():
+func translate_text(is_english):
 	var translate_config = ConfigFile.new()
-	if properties_config.get_value("Languages", "is_english"):
+	if is_english:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 		$VBoxContainer2.position.x = 1300.0
 	else:

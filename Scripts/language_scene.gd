@@ -8,6 +8,7 @@ var properties_file = properties_config.load("res://Ressources/PropertieFile/pro
 
 func _ready():
 	setup_window_mod()
+	check_is_language_selected()
 	$FrButton.grab_focus()
 	
 	
@@ -24,12 +25,14 @@ func wait_for_focus():
 
 func _on_fr_button_pressed():
 	properties_config.set_value("Languages", "is_english", false)
+	properties_config.set_value("Launch", "is_first_launch", false)
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 
 func _on_en_button_pressed():
 	properties_config.set_value("Languages", "is_english", true)
+	properties_config.set_value("Launch", "is_first_launch", false)
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
@@ -55,3 +58,10 @@ func setup_window_mod():
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		properties_config.set_value("WindowMod", "is_fullscreen", false)
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+	
+func check_is_language_selected():
+	if !properties_config.get_value("Launch", "is_first_launch"):
+		call_deferred("go_to_menu")
+	
+func go_to_menu():
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtomr5j2ets5j"
-path="res://.godot/imported/BackgroundLVL2Sprite.png-8e3cebdf255946dd7f6cbddf0af8fda6.ctex"
+uid="uid://bv0kdlon7yjqo"
+path="res://.godot/imported/LanguageBackgroundSprite.png-4eb6e6fc42575dba84ce7ed10b69a5ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/BackgroundSprite/BackgroundLVL2Sprite.png"
-dest_files=["res://.godot/imported/BackgroundLVL2Sprite.png-8e3cebdf255946dd7f6cbddf0af8fda6.ctex"]
+source_file="res://Arts/BackgroundSprite/LanguageBackgroundSprite.png"
+dest_files=["res://.godot/imported/LanguageBackgroundSprite.png-4eb6e6fc42575dba84ce7ed10b69a5ba.ctex"]
 
 [params]
 

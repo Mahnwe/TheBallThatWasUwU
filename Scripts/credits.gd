@@ -8,7 +8,7 @@ var properties_file = properties_config.load("res://Ressources/PropertieFile/pro
 var translate_file
 
 func _ready():
-	translate_text()
+	translate_text(properties_config.get_value("Languages", "is_english"))
 	$QuitButton.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,9 +31,9 @@ func _on_quit_button_gui_input(event):
 			accept_event() # prevent the normal focus-stuff from happening
 			$QuitButton.grab_focus()
 			
-func translate_text():
+func translate_text(is_english):
 	var translate_config = ConfigFile.new()
-	if properties_config.get_value("Languages", "is_english"):
+	if is_english:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")

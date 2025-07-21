@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=46 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="23_h63v2"]
 [ext_resource type="PackedScene" uid="uid://tn1erw530dy1" path="res://Scenes/credits.tscn" id="24_l6llh"]
 [ext_resource type="PackedScene" uid="uid://c5khh4ff2btix" path="res://Scenes/window_mode_controller.tscn" id="26_i37ye"]
+[ext_resource type="PackedScene" uid="uid://dey70a6y3lk0k" path="res://Scenes/language_button.tscn" id="27_jbv25"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -600,7 +601,7 @@ offset_top = 33.0
 offset_right = 2786.0
 offset_bottom = 748.0
 scale = Vector2(0.12, 0.16)
-focus_neighbor_left = NodePath("../WindowModeButton")
+focus_neighbor_left = NodePath("../LanguageButton")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
@@ -848,8 +849,20 @@ offset_bottom = 71.0
 scale = Vector2(1.2875, 1.18051)
 focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../Level1Button")
-focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../LanguageButton")
 focus_neighbor_bottom = NodePath("../Level1Button")
+
+[node name="LanguageButton" parent="." instance=ExtResource("27_jbv25")]
+layout_mode = 0
+offset_left = 1564.0
+offset_top = 14.0
+offset_right = 1814.0
+offset_bottom = 164.0
+scale = Vector2(0.539902, 0.52658)
+focus_neighbor_left = NodePath("../WindowModeButton")
+focus_neighbor_top = NodePath("../Level3Button")
+focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../Level3Button")
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
@@ -915,3 +928,5 @@ focus_neighbor_bottom = NodePath("../Level1Button")
 [connection signal="visibility_changed" from="Credits" to="." method="_on_credits_visibility_changed"]
 [connection signal="focus_entered" from="WindowModeButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="WindowModeButton" to="." method="_on_window_mode_button_pressed"]
+[connection signal="focus_entered" from="LanguageButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="LanguageButton" to="." method="_on_language_button_pressed"]

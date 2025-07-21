@@ -34,8 +34,6 @@ func _ready():
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
 	change_bubble_message()
-	properties_config.set_value("Launch", "is_first_launch", false)
-	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -187,10 +185,10 @@ func _on_quit_button_gui_input(event):
 		is_controller_focused = true
 		if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$Level1Button.grab_focus()
+			$StatsButton.grab_focus()
 		elif event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
 			accept_event() # prevent the normal focus-stuff from happening
-			$WindowModeButton.grab_focus()
+			$LanguageButton.grab_focus()
 			
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
@@ -538,7 +536,7 @@ func translate_text():
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
-		change_font_size()
+	change_font_size(properties_config.get_value("Languages", "is_english"))
 		
 	$QuitButton/QuitLabel.text = translate_config.get_value("TranslationMenu", "QuitButton")
 	$StatsButton.text = translate_config.get_value("TranslationMenu", "StatsButton")
@@ -554,11 +552,17 @@ func translate_text():
 	$Level7Button/Label.text = translate_config.get_value("TranslationMenu", "LevelSevenLabel")
 	
 	
-func change_font_size():
-	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if member.name != "StatsButton" and member.name != "CreditsButton":
-			member.add_theme_font_size_override("font_size", 16)
-	$Level7Button/Label.add_theme_font_size_override("font_size", 17)
+func change_font_size(is_english):
+	if is_english:
+		for member in get_tree().get_nodes_in_group("MenuButtons"):
+			if member.name != "StatsButton" and member.name != "CreditsButton":
+				member.add_theme_font_size_override("font_size", 20)
+		$Level7Button/Label.add_theme_font_size_override("font_size", 20)
+	else:
+		for member in get_tree().get_nodes_in_group("MenuButtons"):
+			if member.name != "StatsButton" and member.name != "CreditsButton":
+				member.add_theme_font_size_override("font_size", 16)
+		$Level7Button/Label.add_theme_font_size_override("font_size", 17)
 	
 func handle_buttons_child_visibility():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
@@ -604,7 +608,6 @@ func _on_window_mode_button_pressed():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		properties_config.set_value("WindowMod", "is_fullscreen", false)
-		print("Window mod going windowed")
 	else:
 		$WindowModeButton.get_child(1).text = $WindowModeButton.fullscreen_label
 		var player_viewport = get_viewport().size
@@ -612,5 +615,17 @@ func _on_window_mode_button_pressed():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 		properties_config.set_value("WindowMod", "is_fullscreen", true)
-		print("Window mode going fullscreen")
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+
+
+func _on_language_button_pressed():
+	if properties_config.get_value("Languages", "is_english"):
+		properties_config.set_value("Languages", "is_english", false)
+	else:
+		properties_config.set_value("Languages", "is_english", true)
+	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+	$LanguageButton.change_language_flag(properties_config.get_value("Languages", "is_english"))
+	translate_text()
+	change_bubble_message()
+	$Stats.translate_text(properties_config.get_value("Languages", "is_english"))
+	$Credits.translate_text(properties_config.get_value("Languages", "is_english"))

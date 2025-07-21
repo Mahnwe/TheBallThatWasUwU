@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dodwmgxcdh7ld"]
+[gd_scene load_steps=55 format=3 uid="uid://dodwmgxcdh7ld"]
 
 [ext_resource type="Script" uid="uid://dumtc4alnw10m" path="res://Scripts/Level2.gd" id="1_f151f"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3pu7n"]
@@ -24,8 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="20_4t8ex"]
 [ext_resource type="PackedScene" uid="uid://bha08grmcxwnd" path="res://Scenes/rock2.tscn" id="21_euypa"]
 [ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="22_yvjp8"]
-[ext_resource type="Texture2D" uid="uid://dy816tof24l76" path="res://Arts/BackgroundSprite/BackgroundLVL2Sprite-removebg-preview.png" id="23_b45am"]
-[ext_resource type="Texture2D" uid="uid://bwxd85ux41v40" path="res://Arts/BackgroundSprite/SkyBackgroundLVL2-removebg-preview.png" id="24_w34bd"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="25_vxvct"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="26_vfmhc"]
 [ext_resource type="AudioStream" uid="uid://g23as811441j" path="res://Sound/Musics/Project Manawe_LEVEL 2.mp3" id="27_w3haq"]
@@ -144,16 +142,6 @@ point_count = 31
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_f151f")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = -25
-offset_left = -5347.0
-offset_top = -564.0
-offset_right = -1123.0
-offset_bottom = 2071.0
-scale = Vector2(1.56, 0.84)
-color = Color(0.425008, 0.873212, 0.975093, 1)
 
 [node name="GameArea" parent="." instance=ExtResource("2_3pu7n")]
 position = Vector2(-2083, 427)
@@ -757,45 +745,6 @@ position = Vector2(237, 493)
 [node name="BigTree2" parent="." instance=ExtResource("16_3v757")]
 position = Vector2(-2140, 874)
 scale = Vector2(1.2, 1.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-z_index = -20
-position = Vector2(-419.853, 732.498)
-scale = Vector2(4.72676, 2.38181)
-texture = ExtResource("23_b45am")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-z_index = -20
-position = Vector2(-13.9942, -436.432)
-scale = Vector2(1, 0.778229)
-texture = ExtResource("24_w34bd")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
-z_index = -20
-position = Vector2(-2761.8, 730.748)
-scale = Vector2(4.79999, 2.38686)
-texture = ExtResource("23_b45am")
-flip_h = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
-z_index = -1
-position = Vector2(14.9515, -400.48)
-texture = ExtResource("24_w34bd")
-flip_h = true
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-visible = false
-z_index = -20
-position = Vector2(-4878, 733)
-scale = Vector2(4.72676, 2.38181)
-texture = ExtResource("23_b45am")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
-z_index = -1
-position = Vector2(0, -299.352)
-texture = ExtResource("24_w34bd")
 
 [node name="LanternPole" parent="." instance=ExtResource("25_vxvct")]
 position = Vector2(-793, 513)

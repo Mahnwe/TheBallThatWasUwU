@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dey70a6y3lk0k"]
+
+[ext_resource type="Script" uid="uid://bk2161xoqpres" path="res://Scripts/language_button.gd" id="1_hj7yq"]
+[ext_resource type="Texture2D" uid="uid://cywfj8wckdw1t" path="res://Arts/FlagsSprite/FrenchFlag.png" id="1_ycjas"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_oeh3p"]
+[ext_resource type="Texture2D" uid="uid://c7577pausvcq5" path="res://Arts/FlagsSprite/Flag_of_the_United_Kingdom.png" id="3_gk6ae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj7yq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.85098, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk6ae"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.85098, 0, 0, 1)
+
+[node name="LanguageButton" type="Button"]
+offset_right = 250.0
+offset_bottom = 150.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_hj7yq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gk6ae")
+flat = true
+script = ExtResource("1_hj7yq")
+
+[node name="French" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(125, 75)
+scale = Vector2(1.6, 1.55556)
+texture = ExtResource("1_ycjas")
+
+[node name="English" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(125, 75)
+scale = Vector2(0.16, 0.186667)
+texture = ExtResource("3_gk6ae")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(119, 78)
+scale = Vector2(2.53716, 3.23026)
+texture = ExtResource("2_oeh3p")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
