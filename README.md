@@ -1,16 +1,23 @@
 -- Learning Godot project --
 
-Classic platformer/runner 2D in GDScript
-Every design asset is handmade, thanks Yossaan for helping with animations 
-Musics are made by Da French Panda
-
-6 levels(In progress) with time ranks
+Classic platformer/runner 2D in GDScript.
 
 
-![Godot Engine Screenshot 2025 03 31 - 18 26 18 12](https://github.com/user-attachments/assets/9ed4bd73-495b-4780-9c72-9870b1706f81)
+Every design asset is handmade, thanks Yossaan for helping with animations.
 
 
-![Godot Engine Screenshot 2025 03 31 - 18 26 28 60](https://github.com/user-attachments/assets/05cd97f4-7c32-4da2-8274-8aa8ff7e3031)
+Musics are made by Da French Panda.
 
 
-![Godot Engine Screenshot 2025 03 31 - 18 26 39 00](https://github.com/user-attachments/assets/ccb5b5c3-a6b5-4c7f-9e39-dbc208212139)
+6 levels with time ranks, medals, stats tracking.
+
+
+Languages available : English, French.
+
+
+
+<img width="1916" height="1078" alt="Godot Engine Screenshot 2025 07 22 - 13 08 24 17" src="https://github.com/user-attachments/assets/faac2546-1961-4b52-9f30-39ef02ee33e9" />
+
+<img width="1916" height="1078" alt="Godot Engine Screenshot 2025 07 11 - 14 29 22 52" src="https://github.com/user-attachments/assets/53aff9a0-9cfe-4467-90cc-c0711604ec8b" />
+
+<img width="1916" height="1078" alt="Godot Engine Screenshot 2025 07 22 - 13 08 49 18" src="https://github.com/user-attachments/assets/b61f1eb0-44dd-4b53-9683-55ae1c14c1ed" />
