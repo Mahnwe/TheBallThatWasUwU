@@ -29,6 +29,7 @@ func _on_area_2d_body_entered(body):
 		player_entered.emit()
 		$BubbleTooltip.show()
 		$Label2.hide()
+		$Sprite2D2.hide()
 		for n in 6:
 			$Sprite2D.hide()
 			await get_tree().create_timer(0.2).timeout;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=26 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="12_nirwk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="12_r111m"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="16_mkub3"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="19_mkub3"]
 
@@ -341,9 +342,9 @@ theme_override_font_sizes/font_size = 30
 
 [node name="PauseLabel" type="Label" parent="CanvasLayer2"]
 z_index = 2
-offset_left = 769.0
+offset_left = 748.0
 offset_top = 128.0
-offset_right = 1238.0
+offset_right = 1272.0
 offset_bottom = 333.0
 scale = Vector2(0.725781, 0.821826)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
@@ -352,13 +353,14 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 150
 text = "PAUSE"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/PauseLabel"]
 z_index = -1
-position = Vector2(231.919, 117.239)
-scale = Vector2(4.08481, 4.24646)
+position = Vector2(253.52, 100.386)
+scale = Vector2(4.45001, 4.53099)
 texture = ExtResource("2_h85by")
 
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]

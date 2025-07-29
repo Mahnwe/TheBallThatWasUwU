@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://7qfwpggjf11t"]
+[gd_scene load_steps=8 format=3 uid="uid://7qfwpggjf11t"]
 
 [ext_resource type="Script" uid="uid://f8rg5bmw2l7" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
 [ext_resource type="Texture2D" uid="uid://bo382jwr13x5w" path="res://Arts/SpritesMemoryCard/SpritePositionMemoryCard-removebg-preview.png" id="2_sqixw"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_c8mnp"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_hxhin"]
 [ext_resource type="AudioStream" uid="uid://bgou8b4pket55" path="res://Sound/Effects/SAVE.mp3" id="3_ogtmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elg4p"]
@@ -33,9 +34,9 @@ shape = SubResource("RectangleShape2D_c2iqv")
 
 [node name="SavedLabel" type="Label" parent="."]
 z_index = 2
-offset_left = -213.0
+offset_left = -222.0
 offset_top = -292.0
-offset_right = -173.0
+offset_right = -182.0
 offset_bottom = -237.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -43,11 +44,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_hxhin")
 theme_override_font_sizes/font_size = 40
 
 [node name="Sprite2D" type="Sprite2D" parent="SavedLabel"]
 z_index = -1
-position = Vector2(127, 30)
+position = Vector2(135, 30)
 scale = Vector2(2.33784, 1.80263)
 texture = ExtResource("3_c8mnp")
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://csgwqsc62crjo"]
+[gd_scene load_steps=6 format=3 uid="uid://csgwqsc62crjo"]
 
 [ext_resource type="Script" uid="uid://bewlegceg6qvm" path="res://Scripts/start_area.gd" id="1_my26t"]
 [ext_resource type="Texture2D" uid="uid://billn103ew6nh" path="res://Arts/StartLaneSprite/StartSprite-Photoroom.png" id="2_nwjmj"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_mk1jx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4srfq"]
 size = Vector2(264, 174)
@@ -18,12 +19,13 @@ scale = Vector2(0.303204, 0.287338)
 texture = ExtResource("2_nwjmj")
 
 [node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -314.97
-offset_top = -294.079
-offset_right = -210.97
-offset_bottom = -239.079
-scale = Vector2(6.10958, 4.2991)
+offset_left = -344.652
+offset_top = -262.757
+offset_right = -224.652
+offset_bottom = -207.757
+scale = Vector2(5.73646, 3.94484)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mk1jx")
 theme_override_font_sizes/font_size = 35
 text = "START"
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=46 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=47 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_nakb8"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="3_x4hsc"]
 [ext_resource type="PackedScene" uid="uid://das30qvpbu28b" path="res://Scenes/rock1.tscn" id="4_pwi5b"]
@@ -164,9 +165,9 @@ texture = ExtResource("2_p71ma")
 [node name="MenuTitle" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 657.0
+offset_left = 603.0
 offset_top = 31.0
-offset_right = 1394.0
+offset_right = 1403.0
 offset_bottom = 226.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.00551701, 0.00573812, 0.00551702, 1)
@@ -174,9 +175,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_nakb8")
 theme_override_font_sizes/font_size = 70
 text = "The ball that was fast 
-           and UwU"
+                 and UwU"
 
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(640, 274)
@@ -706,16 +708,17 @@ scale = Vector2(0.679763, 0.633929)
 texture = ExtResource("14_45jmy")
 
 [node name="Label" type="Label" parent="Logo"]
-offset_left = -127.273
-offset_top = 53.2391
-offset_right = 257.727
-offset_bottom = 122.239
+offset_left = -131.664
+offset_top = 52.7504
+offset_right = 253.336
+offset_bottom = 121.75
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_nakb8")
 theme_override_font_sizes/font_size = 35
 text = "Manawé Games"
 

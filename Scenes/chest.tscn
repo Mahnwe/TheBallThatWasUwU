@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://diohp78ekckkx"]
+[gd_scene load_steps=6 format=3 uid="uid://diohp78ekckkx"]
 
 [ext_resource type="Texture2D" uid="uid://c5bwd8ikb5ryi" path="res://Arts/ChestSprite/ChestSprite.png" id="1_cjfl1"]
 [ext_resource type="Script" uid="uid://baavm5lm7hqhh" path="res://Scripts/chest.gd" id="2_bagqn"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_bagqn"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_pmguq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjfl1"]
 size = Vector2(35, 24.1176)
@@ -23,24 +24,25 @@ shape = SubResource("RectangleShape2D_cjfl1")
 [node name="Label" type="Label" parent="."]
 visible = false
 z_index = 2
-offset_left = -21.0
+offset_left = -20.0
 offset_top = -23.0
-offset_right = 213.0
+offset_right = 238.0
 offset_bottom = 32.0
-scale = Vector2(0.182232, 0.198978)
+scale = Vector2(0.15639, 0.182426)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_pmguq")
 theme_override_font_sizes/font_size = 40
 text = "Chest found"
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]
 z_index = -1
-position = Vector2(115.238, 30.1541)
-scale = Vector2(1.88142, 1.17578)
+position = Vector2(127.886, 27.4084)
+scale = Vector2(2.2359, 1.48942)
 texture = ExtResource("3_bagqn")
 
 [connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

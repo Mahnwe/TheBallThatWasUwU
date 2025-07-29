@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0lw132ttyu44"]
+[gd_scene load_steps=7 format=3 uid="uid://c0lw132ttyu44"]
 
 [ext_resource type="Script" uid="uid://verjiu4qydxm" path="res://Scripts/stats.gd" id="1_lwp2e"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_i6gfd"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_wue6w"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="4_i6gfd"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="5_wue6w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6gfd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -54,17 +55,18 @@ texture = ExtResource("3_wue6w")
 [node name="TitleLabel" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 798.0
-offset_top = 34.0
-offset_right = 1279.0
-offset_bottom = 307.0
-scale = Vector2(0.706844, 0.731816)
+offset_left = 787.0
+offset_top = 64.0
+offset_right = 1292.0
+offset_bottom = 337.0
+scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_wue6w")
 theme_override_font_sizes/font_size = 170
 text = "Stats"
 

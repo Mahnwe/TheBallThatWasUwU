@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=67 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://c0jbcsa0gmonp" path="res://Arts/DropSprite/DropSprite4.png" id="41_rtt7p"]
 [ext_resource type="Texture2D" uid="uid://cwtl8eb7834x2" path="res://Arts/DropSprite/DropSprite3.png" id="42_dkr12"]
 [ext_resource type="Texture2D" uid="uid://dmrjr1d12uoal" path="res://Arts/DropSprite/DropSprite2.png" id="43_52a8e"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="46_n1x1j"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="50_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://cxkkbn1xea4nv" path="res://Arts/DustPlayerSprite/DustJump1.png" id="51_m376e"]
 [ext_resource type="Texture2D" uid="uid://ce7sr558738sy" path="res://Arts/DustPlayerSprite/DustJumpNew1.png" id="53_lisdf"]
@@ -422,12 +423,14 @@ target_position = Vector2(30, 0)
 
 [node name="DeadLabel" type="Label" parent="."]
 z_index = 1
-offset_left = 164.0
+offset_left = 160.0
 offset_top = 131.0
-offset_right = 204.0
-offset_bottom = 154.0
+offset_right = 200.0
+offset_bottom = 155.0
 scale = Vector2(1.46086, 1.32)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("46_n1x1j")
+theme_override_font_sizes/font_size = 20
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("25_wcpjr")

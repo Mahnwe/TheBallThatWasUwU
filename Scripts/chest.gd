@@ -46,4 +46,11 @@ func translate_text():
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+	change_font_size(config.get_value("Languages", "is_english"))
 	$Label.text = translate_config.get_value("TranslationChest", "ChestLabel")
+	
+func change_font_size(is_english):
+	if is_english:
+		$Label.add_theme_font_size_override("font_size", 40)
+	else:
+		$Label.add_theme_font_size_override("font_size", 37)

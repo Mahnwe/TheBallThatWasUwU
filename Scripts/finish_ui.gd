@@ -119,8 +119,11 @@ func translate_text():
 	var translate_config = ConfigFile.new()
 	if config.get_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+		$CanvasLayer3/TimerPresentation.position.x = 786.0
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		$CanvasLayer3/TimerPresentation.position.x = 747.0
+		
 		change_font_size()
 		
 	$CanvasLayer3/TimerPresentation.text = translate_config.get_value("TranslationFinish", "PlayerTimer")

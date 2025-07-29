@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://tn1erw530dy1"]
+[gd_scene load_steps=9 format=3 uid="uid://tn1erw530dy1"]
 
 [ext_resource type="Script" uid="uid://7288l8jxxvht" path="res://Scripts/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="1_r18jl"]
 [ext_resource type="Texture2D" uid="uid://dsofntdoj5unr" path="res://Arts/DevSprite/CreditHeartSprite.png" id="2_gryuy"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_uah1q"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="3_ccovl"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="5_7emq5"]
 [ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="5_xelri"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uah1q"]
@@ -111,10 +112,10 @@ texture = ExtResource("1_r18jl")
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 744.0
-offset_top = 93.0
-offset_right = 1429.0
-offset_bottom = 366.0
+offset_left = 722.0
+offset_top = 103.0
+offset_right = 1407.0
+offset_bottom = 376.0
 scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -122,22 +123,23 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 170
 text = "Credits"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
-offset_left = 232.61
-offset_top = 349.355
-offset_right = 1810.61
-offset_bottom = 884.355
+offset_left = 241.0
+offset_top = 349.0
+offset_right = 1819.0
+offset_bottom = 884.0
 scale = Vector2(0.971534, 0.94383)
-theme_override_constants/separation = 200
+theme_override_constants/separation = 180
 dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 120
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -151,8 +153,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_font_sizes/font_size = 50
-text = "             Developer"
+theme_override_fonts/font = ExtResource("5_7emq5")
+theme_override_font_sizes/font_size = 55
+text = "              Developer"
 
 [node name="DevLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
@@ -174,8 +177,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 50
-text = "Musics and sound effects"
+text = "Musics, sound effects"
 
 [node name="MusicsLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
 layout_mode = 2
@@ -187,7 +191,7 @@ text = "                        Pani"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 120
 
 [node name="VSplitContainer3" type="VSplitContainer" parent="HSplitContainer/VBoxContainer2"]
 layout_mode = 2
@@ -201,8 +205,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 50
-text = "            Animations"
+text = "                   Animations"
 
 [node name="AnimationLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
 layout_mode = 2
@@ -210,7 +215,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "            Manawé, Yossaan"
+text = "                Manawé, Yossaan"
 
 [node name="VSplitContainer2" type="VSplitContainer" parent="HSplitContainer/VBoxContainer2"]
 layout_mode = 2
@@ -224,6 +229,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 50
 text = "    Help, advices and tests"
 
@@ -233,9 +239,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 40
-text = "    Badda,  Pani,  Poire,  D4rkw3st,
-        Seutimflo, Yossaan,  Givr_,
-                    SatanLaChips"
+text = "     Badda,  Pani,  Poire,  D4rkw3st,
+         Seutimflo, Yossaan,  Givr_,
+                     SatanLaChips"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(170, 285)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://cp0mu2e8kcon"]
+[gd_scene load_steps=39 format=3 uid="uid://cp0mu2e8kcon"]
 
 [ext_resource type="Script" uid="uid://bxymd3lpn7qw7" path="res://Scripts/commands_ui.gd" id="1_in6he"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="2_3uy3i"]
 [ext_resource type="Texture2D" uid="uid://cea44i1yw26q1" path="res://Arts/KeyboardControls/Qkey-removebg-preview.png" id="2_apncb"]
 [ext_resource type="Texture2D" uid="uid://bnnl3n15x2t5l" path="res://Arts/KeyboardControls/Dkey-removebg-preview.png" id="3_uafni"]
 [ext_resource type="Texture2D" uid="uid://c32h8q26o4uyd" path="res://Arts/KeyboardControls/Zkey-removebg-preview.png" id="4_04nmc"]
@@ -66,11 +67,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 25
 text = "Righty"
 
 [node name="MovementK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(22.3153, 124)
+position = Vector2(26.6306, 124)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("2_apncb")
 
@@ -79,7 +81,7 @@ position = Vector2(233.684, 0)
 texture = ExtResource("3_uafni")
 
 [node name="JumpK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(-11, 212)
+position = Vector2(-6.68469, 212)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("4_04nmc")
 
@@ -88,22 +90,22 @@ position = Vector2(426.474, 0)
 texture = ExtResource("5_gv5bw")
 
 [node name="RestartSaveK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(43.3153, 305.621)
+position = Vector2(47.6306, 305.621)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("6_1sqgb")
 
 [node name="RestartLevelK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(44.3153, 392.123)
+position = Vector2(48.6306, 392.123)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("7_nffs6")
 
 [node name="MenuK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(41.3153, 487.114)
+position = Vector2(45.6306, 487.114)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("9_x7xfw")
 
 [node name="DashK1" type="Sprite2D" parent="Keyboard1"]
-position = Vector2(42.3153, 576.527)
+position = Vector2(46.6306, 576.527)
 scale = Vector2(0.225806, 0.231829)
 texture = ExtResource("10_rd156")
 
@@ -119,11 +121,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 25
 text = "Lefty"
 
 [node name="MovementK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(14.4864, 124.553)
+position = Vector2(16.9729, 124.553)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("11_4pkt2")
 
@@ -132,7 +135,7 @@ position = Vector2(239.526, 0)
 texture = ExtResource("12_sunxo")
 
 [node name="JumpK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(-19, 214)
+position = Vector2(-16.5135, 214)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("13_l6bwp")
 
@@ -141,22 +144,22 @@ position = Vector2(438.158, 0)
 texture = ExtResource("5_gv5bw")
 
 [node name="RestartSaveK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(35.4864, 306.174)
+position = Vector2(37.9729, 306.174)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("14_qa38p")
 
 [node name="RestartLevelK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(34.4864, 393.676)
+position = Vector2(36.9729, 393.676)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("15_q0fr3")
 
 [node name="MenuK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(33.4864, 490.667)
+position = Vector2(35.9729, 490.667)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("17_15w8q")
 
 [node name="DashK2" type="Sprite2D" parent="Keyboard2"]
-position = Vector2(32.4864, 579.08)
+position = Vector2(34.9729, 579.08)
 scale = Vector2(0.106836, 0.114542)
 texture = ExtResource("18_0xvtq")
 
@@ -173,16 +176,17 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 25
 text = "Controller"
 
 [node name="MovementsC" type="Sprite2D" parent="Controller"]
-position = Vector2(62.6307, 122.165)
+position = Vector2(66.3761, 122.165)
 scale = Vector2(0.242022, 0.240701)
 texture = ExtResource("19_jgwf3")
 
 [node name="JumpC" type="Sprite2D" parent="Controller"]
-position = Vector2(11.5998, 215.078)
+position = Vector2(15.3452, 215.078)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("20_lg78q")
 
@@ -196,7 +200,7 @@ scale = Vector2(1.90387, 2.17465)
 texture = ExtResource("22_5so20")
 
 [node name="RestartSaveC" type="Sprite2D" parent="Controller"]
-position = Vector2(7.85443, 311.98)
+position = Vector2(11.5998, 311.98)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("23_7oxx0")
 
@@ -210,7 +214,7 @@ scale = Vector2(1.90147, 1.86019)
 texture = ExtResource("25_khoyl")
 
 [node name="RestartLevelC" type="Sprite2D" parent="Controller"]
-position = Vector2(5.04543, 403.219)
+position = Vector2(8.79082, 403.219)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("26_7pc8d")
 
@@ -224,7 +228,7 @@ scale = Vector2(1.95228, 2.25446)
 texture = ExtResource("28_f6ipp")
 
 [node name="MenuC" type="Sprite2D" parent="Controller"]
-position = Vector2(5.04543, 502.179)
+position = Vector2(8.79082, 502.179)
 scale = Vector2(0.320987, 0.35793)
 texture = ExtResource("31_pbdu2")
 
@@ -239,7 +243,7 @@ scale = Vector2(0.533265, 0.539161)
 texture = ExtResource("32_k81pc")
 
 [node name="DashC" type="Sprite2D" parent="Controller"]
-position = Vector2(4.10903, 598.481)
+position = Vector2(7.85442, 598.481)
 scale = Vector2(0.171171, 0.192982)
 texture = ExtResource("34_k6euw")
 
@@ -254,12 +258,12 @@ texture = ExtResource("36_jtqtl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 167.0
-offset_right = 185.0
-offset_bottom = 685.0
+offset_left = 56.0
+offset_top = 172.0
+offset_right = 198.0
+offset_bottom = 690.0
 scale = Vector2(1.21958, 1.03935)
-theme_override_constants/separation = 60
+theme_override_constants/separation = 62
 
 [node name="Movements" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -268,6 +272,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 20
 text = "Movements"
 horizontal_alignment = 1
@@ -279,6 +284,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 20
 text = "Jump"
 horizontal_alignment = 1
@@ -290,6 +296,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 20
 text = "Restart Save"
 horizontal_alignment = 1
@@ -301,6 +308,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 20
 text = "Restart Level"
 horizontal_alignment = 1
@@ -312,6 +320,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 20
 text = "Pause"
 horizontal_alignment = 1
@@ -323,6 +332,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_3uy3i")
 theme_override_font_sizes/font_size = 20
 text = "Dash"
 horizontal_alignment = 1

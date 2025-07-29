@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://i4jemvk3v54m"]
+[gd_scene load_steps=8 format=3 uid="uid://i4jemvk3v54m"]
 
 [ext_resource type="Script" uid="uid://c7tpqyun8dcqy" path="res://Scripts/ability.gd" id="1_vfgwr"]
 [ext_resource type="AudioStream" uid="uid://dojptb2rgjdfi" path="res://Sound/Effects/ABILITY.wav" id="2_q1yff"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_bnj6u"]
 [ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="3_cwa40"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_xtx7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4eu1f"]
 size = Vector2(92, 266)
@@ -34,19 +36,25 @@ position = Vector2(164, -24)
 position = Vector2(-162, -18.5)
 shape = SubResource("RectangleShape2D_84xg5")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2.99998, -211.5)
+scale = Vector2(1.91892, 2.25)
+texture = ExtResource("3_xtx7y")
+
 [node name="Label2" type="Label" parent="."]
-offset_left = -83.0
-offset_top = -265.0
-offset_right = 62.0
-offset_bottom = -152.0
+offset_left = -111.0
+offset_top = -270.0
+offset_right = 111.0
+offset_bottom = -157.0
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_bnj6u")
 theme_override_font_sizes/font_size = 40
-text = "   NEW
-ABILITY"
+text = "         NEW
+    ABILITY"
 
 [node name="AbilitySound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("2_q1yff")

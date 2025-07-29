@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dss5xj26b0dfl"]
+[gd_scene load_steps=14 format=3 uid="uid://dss5xj26b0dfl"]
 
 [ext_resource type="Script" uid="uid://bpd3ekag5uccm" path="res://Scripts/finish.gd" id="1_srp80"]
 [ext_resource type="Texture2D" uid="uid://sa1yhgwcbfj0" path="res://Arts/FinishLaneSprite/FinishSprite-Photoroom-removebg-preview.png" id="2_51c3p"]
 [ext_resource type="Texture2D" uid="uid://b5jirdp8nhyw7" path="res://Arts/ConfettiSprite/ConfettiSprite.png" id="3_avoxp"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_knqtp"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_ogsmx"]
 [ext_resource type="Texture2D" uid="uid://ukajbbn8bjgm" path="res://Arts/ConfettiSprite/ConfettiSprite2.png" id="4_ogsmx"]
 [ext_resource type="Texture2D" uid="uid://dwooiixln5ts5" path="res://Arts/ConfettiSprite/ConfettiSprite3.png" id="5_knqtp"]
@@ -51,12 +52,13 @@ scale = Vector2(0.589858, 0.574822)
 texture = ExtResource("2_51c3p")
 
 [node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -227.173
-offset_top = -210.5
-offset_right = 30.8266
-offset_bottom = -100.5
-scale = Vector2(1.74594, 1.48711)
+offset_left = -232.259
+offset_top = -187.884
+offset_right = 54.7407
+offset_bottom = -77.8842
+scale = Vector2(1.59463, 1.3366)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_knqtp")
 theme_override_font_sizes/font_size = 80
 text = "FINISH"
 
@@ -73,18 +75,19 @@ shape = SubResource("RectangleShape2D_exy7e")
 
 [node name="WellDoneLabel" type="Label" parent="."]
 z_index = 2
-offset_left = -230.0
-offset_top = -233.0
-offset_right = -68.0
-offset_bottom = -191.0
+offset_left = -227.0
+offset_top = -240.0
+offset_right = -63.0
+offset_bottom = -198.0
 scale = Vector2(2.71863, 1.51639)
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_knqtp")
 theme_override_font_sizes/font_size = 30
 text = "Well Done !"
 
 [node name="Sprite2D" type="Sprite2D" parent="WellDoneLabel"]
 z_index = -3
-position = Vector2(79.6506, 24.2196)
+position = Vector2(80.1874, 23.7406)
 scale = Vector2(1.28754, 1.53899)
 texture = ExtResource("3_ogsmx")
 
