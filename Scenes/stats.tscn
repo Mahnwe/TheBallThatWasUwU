@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0lw132ttyu44"]
+[gd_scene load_steps=8 format=3 uid="uid://c0lw132ttyu44"]
 
 [ext_resource type="Script" uid="uid://verjiu4qydxm" path="res://Scripts/stats.gd" id="1_lwp2e"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_i6gfd"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_wue6w"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="4_i6gfd"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="5_wue6w"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="6_qetgw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6gfd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -107,35 +108,35 @@ texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(0.123946, 81.5451)
+position = Vector2(7.74935e-05, 87.3553)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(131.779, 81.7831)
+position = Vector2(131.655, 87.5933)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(255.698, 81.6303)
+position = Vector2(252.273, 87.4333)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(329.028, 83.2136)
+position = Vector2(328.904, 89.0238)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
-offset_left = 144.824
-offset_top = 267.617
-offset_right = 1162.82
-offset_bottom = 845.617
+offset_left = 145.0
+offset_top = 282.0
+offset_right = 1163.0
+offset_bottom = 860.0
 scale = Vector2(0.947485, 0.943702)
-theme_override_constants/separation = 80
+theme_override_constants/separation = 90
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 34
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -146,7 +147,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of jumps    ="
 
 [node name="JumpNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer"]
@@ -167,7 +169,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of dashes    ="
 
 [node name="DashNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer2"]
@@ -188,7 +191,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of deaths    ="
 
 [node name="DeathNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer9"]
@@ -209,7 +213,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of spike death  ="
 
 [node name="DeathSpikeNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer3"]
@@ -230,7 +235,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of cannon death   ="
 
 [node name="DeathCannonNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer4"]
@@ -251,7 +257,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of coral death   ="
 
 [node name="DeathCoralNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer5"]
@@ -272,7 +279,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of acid death   ="
 
 [node name="DeathAcidNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer6"]
@@ -293,31 +301,11 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of laser death   ="
 
 [node name="DeathLaserNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer7"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_font_sizes/font_size = 30
-text = "0"
-
-[node name="HSplitContainer8" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="ChestsLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer8"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
-text = "Number of chest found   ="
-
-[node name="ChestNumber" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -339,7 +327,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of level finished  ="
 
 [node name="LevelNumber" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer"]
@@ -360,7 +349,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level one finished   ="
 
 [node name="Level1Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer2"]
@@ -381,7 +371,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level two finished   ="
 
 [node name="Level2Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer3"]
@@ -402,7 +393,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level three finished   ="
 
 [node name="Level3Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer4"]
@@ -423,7 +415,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level four finished   ="
 
 [node name="Level4Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer5"]
@@ -444,7 +437,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level five finished   ="
 
 [node name="Level5Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer6"]
@@ -465,7 +459,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level six finished   ="
 
 [node name="Level6Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer7"]
@@ -486,7 +481,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Times level seven finished   ="
 
 [node name="Level7Number" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer8"]
@@ -500,10 +496,10 @@ text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 1239.0
-offset_top = 382.25
-offset_right = 1669.0
-offset_bottom = 792.25
+offset_left = 1239.18
+offset_top = 319.383
+offset_right = 1669.18
+offset_bottom = 821.383
 scale = Vector2(0.947485, 0.943702)
 theme_override_constants/separation = 50
 
@@ -516,7 +512,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of medals ="
 
 [node name="MedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer"]
@@ -537,7 +534,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of bronze medal ="
 
 [node name="BronzeMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer2"]
@@ -558,7 +556,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of silver medal ="
 
 [node name="SilverMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer3"]
@@ -579,7 +578,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of gold medal ="
 
 [node name="GoldMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer4"]
@@ -600,10 +600,33 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
 text = "Number of dev medal ="
 
 [node name="DevMedalNumber" type="Label" parent="VBoxContainer2/HSplitContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="HSplitContainer8" type="HSplitContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="ChestsLabel" type="Label" parent="VBoxContainer2/HSplitContainer8"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
+text = "Number of chest found   ="
+
+[node name="ChestNumber" type="Label" parent="VBoxContainer2/HSplitContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

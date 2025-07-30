@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2k7febsvejjl"]
+[gd_scene load_steps=8 format=3 uid="uid://b2k7febsvejjl"]
 
 [ext_resource type="Script" uid="uid://bxytrggckgrx3" path="res://Scripts/VboxTimerLabel.gd" id="1_s6oky"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="2_75ox4"]
 [ext_resource type="Texture2D" uid="uid://d0ffotplbx7kk" path="res://Arts/MedalSprite/GoldMedal.png" id="2_eo47u"]
 [ext_resource type="Texture2D" uid="uid://b3xwkjossotye" path="res://Arts/MedalSprite/SilverMedal.png" id="3_kx2cu"]
 [ext_resource type="Texture2D" uid="uid://v70dg745brn8" path="res://Arts/MedalSprite/BronzeMedal.png" id="4_fxi3u"]
@@ -17,6 +18,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank1" type="Label" parent="."]
@@ -24,6 +26,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank2" type="Label" parent="."]
@@ -31,6 +34,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank3" type="Label" parent="."]
@@ -38,6 +42,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank4" type="Label" parent="."]
@@ -45,6 +50,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="TimerRank5" type="Label" parent="."]
@@ -52,6 +58,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

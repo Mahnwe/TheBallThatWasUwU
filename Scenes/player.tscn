@@ -370,6 +370,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("46_n1x1j")
 theme_override_font_sizes/font_size = 40
 text = "Pause"
 
@@ -408,7 +409,7 @@ visibility_layer = 2
 position = Vector2(212.5, 232)
 scale = Vector2(1.14, 2.2)
 sprite_frames = SubResource("SpriteFrames_b2da6")
-animation = &"walk"
+animation = &"stay"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2

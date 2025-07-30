@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw6qi4cdcr5sk"]
+[gd_scene load_steps=4 format=3 uid="uid://cw6qi4cdcr5sk"]
 
 [ext_resource type="Script" uid="uid://ce3iuxsw8u7c0" path="res://Scripts/triple_sign.gd" id="1_csn5d"]
 [ext_resource type="Texture2D" uid="uid://dykfivl8b1kj8" path="res://Arts/SpritesSigns/RealSpriteSign-removebg-preview.png" id="1_kyshg"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="3_xm2hx"]
 
 [node name="TripleSign" type="StaticBody2D"]
 z_index = -1
@@ -13,22 +14,25 @@ scale = Vector2(0.893305, 1.11303)
 texture = ExtResource("1_kyshg")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -112.0
+offset_left = -105.0
 offset_top = -230.0
-offset_right = -42.0
+offset_right = -35.0
 offset_bottom = -207.0
-scale = Vector2(3.56, 1.4)
+scale = Vector2(3.56, 1.76)
+theme_override_fonts/font = ExtResource("3_xm2hx")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -105.0
 offset_top = -127.0
 offset_right = -31.0
 offset_bottom = -104.0
-scale = Vector2(3.32, 1.32)
+scale = Vector2(3.32, 1.76)
+theme_override_fonts/font = ExtResource("3_xm2hx")
 
 [node name="Label3" type="Label" parent="."]
-offset_left = -112.0
-offset_top = -22.0
-offset_right = 3.0
-offset_bottom = 0.999998
-scale = Vector2(3.36, 1.4)
+offset_left = -105.0
+offset_top = -30.0
+offset_right = -28.0
+offset_bottom = -7.0
+scale = Vector2(3.32, 1.8)
+theme_override_fonts/font = ExtResource("3_xm2hx")

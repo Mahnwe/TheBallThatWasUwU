@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cl7gj22hnfxog"]
+[gd_scene load_steps=17 format=3 uid="uid://cl7gj22hnfxog"]
 
 [ext_resource type="Script" uid="uid://bvt5htruxyltu" path="res://Scripts/finish_ui.gd" id="1_8cftm"]
 [ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="2_fgywl"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="11_p5o4v"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="12_qmenm"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="13_rf1vx"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="14_7wqes"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -37,11 +38,10 @@ script = ExtResource("1_8cftm")
 
 [node name="FinishNextLevelButton" type="Button" parent="CanvasLayer" groups=["finish_button"]]
 z_index = 2
-offset_left = 1233.0
+offset_left = 1283.0
 offset_top = 664.0
-offset_right = 1394.0
+offset_right = 1627.0
 offset_bottom = 760.0
-scale = Vector2(2.86223, 1.61957)
 focus_neighbor_left = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_top = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_right = NodePath("../../CanvasLayer2/FinishMenuButton")
@@ -55,14 +55,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("13_rf1vx")
+theme_override_font_sizes/font_size = 65
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Next level"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
-position = Vector2(20.5851, 164.145)
-scale = Vector2(0.0811181, 0.177951)
+position = Vector2(-0.999989, 219)
+scale = Vector2(0.228447, 0.256484)
 texture = ExtResource("2_fgywl")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
@@ -85,8 +86,8 @@ texture = ExtResource("6_uhy2h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
 z_index = -1
-position = Vector2(81.7179, 54.63)
-scale = Vector2(1.49133, 2.67751)
+position = Vector2(164, 55)
+scale = Vector2(4.34459, 4.30263)
 texture = ExtResource("7_qv8jw")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -97,7 +98,6 @@ offset_left = 178.0
 offset_top = 656.0
 offset_right = 339.0
 offset_bottom = 752.0
-scale = Vector2(3.06747, 1.8102)
 focus_neighbor_left = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_top = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_right = NodePath("../../CanvasLayer/FinishNextLevelButton")
@@ -111,15 +111,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("13_rf1vx")
+theme_override_font_sizes/font_size = 65
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Return to menu
 "
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
-position = Vector2(25.2875, 146.916)
-scale = Vector2(0.0393632, 0.0713727)
+position = Vector2(106, 230)
+scale = Vector2(0.128979, 0.127208)
 texture = ExtResource("7_m8y2d")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D"]
@@ -137,8 +138,8 @@ texture = ExtResource("10_a00tp")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
 z_index = -1
-position = Vector2(78.0303, 49.0587)
-scale = Vector2(1.38039, 2.30391)
+position = Vector2(264, 55)
+scale = Vector2(4.34459, 4.30263)
 texture = ExtResource("7_qv8jw")
 
 [node name="Blur" type="ColorRect" parent="."]
@@ -190,6 +191,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("14_7wqes")
 theme_override_font_sizes/font_size = 75
 
 [node name="MedalSprite" type="Sprite2D" parent="CanvasLayer3"]

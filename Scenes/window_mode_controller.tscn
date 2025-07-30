@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5khh4ff2btix"]
+[gd_scene load_steps=7 format=3 uid="uid://c5khh4ff2btix"]
 
 [ext_resource type="Script" uid="uid://bwxdbibha2p62" path="res://Scripts/window_mode_controller.gd" id="1_ayt40"]
 [ext_resource type="Texture2D" uid="uid://crus5ufx3d3jf" path="res://Arts/CloudButtonSprite/WindowModeSprite.png" id="1_p6350"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_48avc"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="3_16w8i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48avc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -46,6 +47,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_16w8i")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
