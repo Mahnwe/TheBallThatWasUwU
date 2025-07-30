@@ -10,6 +10,8 @@ var is_controller_focused = false
 var properties_config = ConfigFile.new()
 # Load data from a file.
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
+
+var translate_config = ConfigFile.new()
 var translate_file
 
 var chestNumber
@@ -276,12 +278,6 @@ func _on_button_focus_entered():
 	$ButtonSound.play()
 	
 func change_bubble_message():
-	var translate_config = ConfigFile.new()
-	if properties_config.get_value("Languages", "is_english"):
-		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
-	else:
-		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
-		
 	bubble_message_reset = false
 	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FirstAdvice")
 	await get_tree().create_timer(5.0).timeout
@@ -531,7 +527,6 @@ func _on_sound_mute_button_mouse_exited():
 	$SoundMuteButton.release_focus()
 	
 func translate_text():
-	var translate_config = ConfigFile.new()
 	if properties_config.get_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
@@ -629,3 +624,4 @@ func _on_language_button_pressed():
 	change_bubble_message()
 	$Stats.translate_text(properties_config.get_value("Languages", "is_english"))
 	$Credits.translate_text(properties_config.get_value("Languages", "is_english"))
+	$WindowModeButton.translate_text(properties_config.get_value("Languages", "is_english"))

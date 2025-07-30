@@ -32,7 +32,7 @@ func set_up_stats_with_file():
 	$HSplitContainer/VBoxContainer/HSplitContainer5/DeathCoralNumber.text = str(stats_config.get_value("Stats", "coral_death_number"))
 	$HSplitContainer/VBoxContainer/HSplitContainer6/DeathAcidNumber.text = str(stats_config.get_value("Stats", "acid_death_number"))
 	$HSplitContainer/VBoxContainer/HSplitContainer7/DeathLaserNumber.text = str(stats_config.get_value("Stats", "laser_death_number"))
-	$HSplitContainer/VBoxContainer/HSplitContainer8/ChestNumber.text = str(properties_config.get_value("Chests", "chestNumber"))
+	$VBoxContainer2/HSplitContainer8/ChestNumber.text = str(properties_config.get_value("Chests", "chestNumber"))
 	$HSplitContainer/VBoxContainer3/HSplitContainer/LevelNumber.text = str(stats_config.get_value("Stats", "finished_level_number"))
 	$HSplitContainer/VBoxContainer3/HSplitContainer2/Level1Number.text = str(stats_config.get_value("Stats", "level_one_finished_number"))
 	$HSplitContainer/VBoxContainer3/HSplitContainer3/Level2Number.text = str(stats_config.get_value("Stats", "level_two_finished_number"))
@@ -81,7 +81,7 @@ func translate_text(is_english):
 	$HSplitContainer/VBoxContainer/HSplitContainer5/CoralDeath.text = translate_config.get_value("TranslationStats", "CoralDeath")
 	$HSplitContainer/VBoxContainer/HSplitContainer6/AcidDeath.text = translate_config.get_value("TranslationStats", "AcidDeath")
 	$HSplitContainer/VBoxContainer/HSplitContainer7/LaserDeath.text = translate_config.get_value("TranslationStats", "LaserDeath")
-	$HSplitContainer/VBoxContainer/HSplitContainer8/ChestsLabel.text = translate_config.get_value("TranslationStats", "Chests")
+	$VBoxContainer2/HSplitContainer8/ChestsLabel.text = translate_config.get_value("TranslationStats", "Chests")
 		
 	$HSplitContainer/VBoxContainer3/HSplitContainer/LevelFinishedLabel.text = translate_config.get_value("TranslationStats", "LevelFinished")
 	$HSplitContainer/VBoxContainer3/HSplitContainer2/Level1FinishedLabel.text = translate_config.get_value("TranslationStats", "Level1Finished")

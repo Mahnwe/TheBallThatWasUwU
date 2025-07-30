@@ -12,24 +12,27 @@ var fullscreen_label
 var windowed_label
 
 func _ready():
-	translate_text()
-	if properties_config.get_value("WindowMod", "is_fullscreen"):
-		$Label.text = fullscreen_label
-	else:
-		$Label.text = windowed_label
+	translate_text(properties_config.get_value("Languages", "is_english"))
 	self.flat = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 	
-func translate_text():
-	if properties_config.get_value("Languages", "is_english"):
+func translate_text(is_english):
+	if is_english:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 	fullscreen_label = translate_config.get_value("TranslationWindowMod", "Fullscreen")
 	windowed_label = translate_config.get_value("TranslationWindowMod", "Windowed")
+	setup_label()
+	
+func setup_label():
+	if properties_config.get_value("WindowMod", "is_fullscreen"):
+		$Label.text = fullscreen_label
+	else:
+		$Label.text = windowed_label
 
 
 func _on_focus_entered():
