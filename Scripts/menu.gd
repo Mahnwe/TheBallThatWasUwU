@@ -86,7 +86,6 @@ func _on_level_1_button_gui_input(event):
 			if $Level7Button.visible == false:
 				$EffectSlider.grab_focus()
 			else:
-				print("pouet")
 				$Level7Button.grab_focus()
 		elif event.is_action_pressed("ui_down"):
 			accept_event() # prevent the normal focus-stuff from happening

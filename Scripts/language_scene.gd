@@ -57,11 +57,16 @@ func setup_window_mod():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		properties_config.set_value("WindowMod", "is_fullscreen", false)
+		check_max_log_files()
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 	
 func check_is_language_selected():
 	if !properties_config.get_value("Launch", "is_first_launch"):
 		call_deferred("go_to_menu")
+		
+func check_max_log_files():
+	if ProjectSettings.get_setting("debug/file_logging/max_log_files") != 5:
+		ProjectSettings.set_setting("debug/file_logging/max_log_files", 5)
 	
 func go_to_menu():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")

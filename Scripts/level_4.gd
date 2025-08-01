@@ -409,7 +409,6 @@ func translate_text():
 	$TripleSign2.get_child(1).text = translate_config.get_value("TranslationSign", "FinishSign")
 	$TripleSign2.get_child(2).text = translate_config.get_value("TranslationSign", "BewareSign")
 	$TripleSign2.get_child(3).text = translate_config.get_value("TranslationSign", "GapSign")
-	print(translate_config.get_value("TranslationAdvice", "AbilitiesAdvice"))
 	$Advice.set_bubble_message(translate_config.get_value("TranslationAdvice", "AbilitiesAdvice"))
 	
 func display_advice():

@@ -9,9 +9,22 @@ func _ready():
 func _process(_delta):
 	pass
 
+func _on_area_2d_body_shape_exited(_body_rid, body, body_shape_index, _local_shape_index):
+	if body.name == "Player" and body_shape_index == 1:
+		body.is_in_water = false
+		self.self_modulate.a = 1.0
+		body.speed = 400
+		body.wall_slide = body.gravity+70
+		body.gravity = 30
+		body.jump_force = -690
+		body.wall_pushback = 500
+		body.dash_speed = 800
+		body.velocity_y_max = 600
+		body.z_index = 2
 
-func _on_area_2d_body_entered(body):
-	if body.name == "Player":
+
+func _on_area_2d_body_shape_entered(_body_rid, body, body_shape_index, _local_shape_index):
+	if body.name == "Player" and !body.is_in_water and body_shape_index == 1:
 		body.start_sploch_animation()
 		body.is_in_water = true
 		self.self_modulate.a = 0.5
@@ -25,17 +38,3 @@ func _on_area_2d_body_entered(body):
 		body.dash_speed = 400
 		body.velocity_y_max = 300
 		body.z_index = 0
-
-
-func _on_area_2d_body_exited(body):
-	if body.name == "Player":
-		body.is_in_water = false
-		self.self_modulate.a = 1.0
-		body.speed = 400
-		body.wall_slide = body.gravity+70
-		body.gravity = 30
-		body.jump_force = -690
-		body.wall_pushback = 500
-		body.dash_speed = 800
-		body.velocity_y_max = 600
-		body.z_index = 2

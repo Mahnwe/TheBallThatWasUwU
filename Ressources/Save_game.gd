@@ -21,6 +21,8 @@ enum medal {NOMEDAL,BRONZE,SILVER,GOLD,DEV}
 var current_medal
 
 func sort_ascending(player_timer):
+	if player_timer > file_data[5]:
+		current_medal = medal.NOMEDAL
 	if player_timer < file_data[5] && player_timer > file_data[4]:
 		file_data[5] = player_timer
 		current_medal = medal.NOMEDAL

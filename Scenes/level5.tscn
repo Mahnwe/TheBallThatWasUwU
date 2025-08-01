@@ -449,19 +449,19 @@ flip_value = 1
 ball_speed = 8
 
 [node name="SandPlatform2" parent="." instance=ExtResource("24_uva61")]
-position = Vector2(-2433, 567)
+position = Vector2(-2427, 567)
 rotation = 3.14159
-scale = Vector2(1.46761, 0.518093)
+scale = Vector2(1.50761, 0.518093)
 
 [node name="SandPlatform3" parent="SandPlatform2" instance=ExtResource("24_uva61")]
-position = Vector2(-303.896, 422.704)
+position = Vector2(-284.557, 422.702)
 rotation = -1.5708
-scale = Vector2(1.44151, 0.330289)
+scale = Vector2(1.44151, 0.253083)
 
 [node name="SandPlatform" parent="SandPlatform2" instance=ExtResource("24_uva61")]
-position = Vector2(303.896, 422.704)
+position = Vector2(293.842, 422.706)
 rotation = 1.5708
-scale = Vector2(1.44151, 0.330289)
+scale = Vector2(1.44151, 0.253083)
 
 [node name="SandPlatform3" parent="." instance=ExtResource("24_uva61")]
 position = Vector2(-3088, 131)
@@ -551,6 +551,10 @@ scale = Vector2(0.68, 1)
 position = Vector2(-139.702, 733)
 rotation = -1.5708
 
+[node name="platform17" parent="." instance=ExtResource("11_y1yvh")]
+position = Vector2(-1628, -285)
+scale = Vector2(0.0861553, 0.227582)
+
 [node name="platform8" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-2504, -679)
 scale = Vector2(0.52, 1.16)
@@ -612,7 +616,7 @@ position = Vector2(-2368, 328)
 rotation = 1.5708
 
 [node name="WaterPlatform15" parent="." instance=ExtResource("15_3nnrj")]
-position = Vector2(-2756, 399)
+position = Vector2(-2758, 399.098)
 scale = Vector2(1.10874, 1.3096)
 
 [node name="WaterPlatform16" parent="." instance=ExtResource("15_3nnrj")]
@@ -631,11 +635,11 @@ scale = Vector2(0.479996, 0.56)
 visible = false
 
 [node name="Clams" parent="." instance=ExtResource("28_f1b3o")]
-position = Vector2(-2756.72, 354.439)
+position = Vector2(-2758.72, 354.537)
 scale = Vector2(0.94075, 0.891709)
 
 [node name="Bubbles" parent="." instance=ExtResource("29_w1fmi")]
-position = Vector2(-2756, 338)
+position = Vector2(-2758, 338.098)
 scale = Vector2(0.731767, 0.749274)
 
 [node name="Kelp6" parent="." instance=ExtResource("17_ajufk")]
@@ -891,7 +895,7 @@ scale = Vector2(0.453305, 0.48782)
 speed = 90
 
 [node name="WaterPlatform19" parent="." instance=ExtResource("15_3nnrj")]
-position = Vector2(-2778, 178)
+position = Vector2(-2780, 178)
 scale = Vector2(0.76, 1.08)
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
