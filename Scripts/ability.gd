@@ -2,6 +2,9 @@ extends StaticBody2D
 
 signal player_entered
 @export var sprite_id = 0
+
+var is_trigger
+
 var properties_config = ConfigFile.new()
 
 # Load data from a file.
@@ -11,6 +14,7 @@ var translate_file
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	is_trigger = false
 	translate_text()
 	if sprite_id == 0:
 		$Sprite2D.texture = load("res://Arts/AbilitySprite/DashAbilitySprite-removebg-preview.png")
@@ -25,7 +29,9 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		$AbilitySound.play()
+		if !is_trigger:
+			$AbilitySound.play()
+			is_trigger = true
 		player_entered.emit()
 		$BubbleTooltip.show()
 		$Label2.hide()

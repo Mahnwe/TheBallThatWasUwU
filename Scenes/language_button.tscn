@@ -11,7 +11,7 @@ border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk6ae"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -19,7 +19,7 @@ border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [node name="LanguageButton" type="Button"]
 offset_right = 250.0

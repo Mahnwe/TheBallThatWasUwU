@@ -22,7 +22,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [node name="FinishUI" type="Control"]
 z_index = 2
@@ -38,31 +38,31 @@ script = ExtResource("1_8cftm")
 
 [node name="FinishNextLevelButton" type="Button" parent="CanvasLayer" groups=["finish_button"]]
 z_index = 2
-offset_left = 1283.0
-offset_top = 664.0
-offset_right = 1627.0
-offset_bottom = 760.0
+offset_left = 1221.0
+offset_top = 621.0
+offset_right = 1685.0
+offset_bottom = 802.0
 focus_neighbor_left = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_top = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_right = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_bottom = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_next = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_previous = NodePath("../../CanvasLayer2/FinishMenuButton")
-theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("13_rf1vx")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Next level"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
-position = Vector2(-0.999989, 219)
+position = Vector2(61, 262)
 scale = Vector2(0.228447, 0.256484)
 texture = ExtResource("2_fgywl")
 
@@ -86,7 +86,7 @@ texture = ExtResource("6_uhy2h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
 z_index = -1
-position = Vector2(164, 55)
+position = Vector2(226, 98)
 scale = Vector2(4.34459, 4.30263)
 texture = ExtResource("7_qv8jw")
 
@@ -95,31 +95,31 @@ texture = ExtResource("7_qv8jw")
 [node name="FinishMenuButton" type="Button" parent="CanvasLayer2" groups=["finish_button"]]
 z_index = 2
 offset_left = 178.0
-offset_top = 656.0
-offset_right = 339.0
-offset_bottom = 752.0
+offset_top = 619.0
+offset_right = 717.0
+offset_bottom = 800.0
 focus_neighbor_left = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_top = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_right = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_bottom = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_next = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_previous = NodePath("../../CanvasLayer/FinishNextLevelButton")
-theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("13_rf1vx")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Return to menu
 "
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
-position = Vector2(106, 230)
+position = Vector2(106, 267)
 scale = Vector2(0.128979, 0.127208)
 texture = ExtResource("7_m8y2d")
 
@@ -138,8 +138,8 @@ texture = ExtResource("10_a00tp")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
 z_index = -1
-position = Vector2(264, 55)
-scale = Vector2(4.34459, 4.30263)
+position = Vector2(264, 93)
+scale = Vector2(4.34459, 4.44737)
 texture = ExtResource("7_qv8jw")
 
 [node name="Blur" type="ColorRect" parent="."]
@@ -168,7 +168,7 @@ offset_top = 115.0
 offset_right = 1205.0
 offset_bottom = 218.0
 scale = Vector2(0.73561, 0.788935)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -186,7 +186,7 @@ offset_top = 212.0
 offset_right = 857.0
 offset_bottom = 315.0
 scale = Vector2(0.73561, 0.788935)
-theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1

@@ -11,7 +11,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayt40"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -42,7 +42,7 @@ offset_top = 57.0
 offset_right = 193.0
 offset_bottom = 112.0
 scale = Vector2(0.429207, 0.465251)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1

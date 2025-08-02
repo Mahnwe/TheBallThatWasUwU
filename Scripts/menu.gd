@@ -204,7 +204,7 @@ func _on_quit_button_pressed():
 
 
 func _on_quit_button_focus_entered():
-	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#FF0000"))
+	$QuitButton/QuitLabel.add_theme_color_override("font_color", Color("#d10709"))
 	$ButtonSound.play()
 
 

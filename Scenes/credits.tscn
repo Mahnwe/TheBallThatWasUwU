@@ -15,7 +15,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 expand_margin_top = 5.0
 expand_margin_bottom = 3.0
 
@@ -106,26 +106,26 @@ flip_h = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(936, 183)
-scale = Vector2(3.62463, 3.55317)
+position = Vector2(920.111, 210.01)
+scale = Vector2(3.32583, 3.2108)
 texture = ExtResource("1_r18jl")
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 722.0
-offset_top = 103.0
-offset_right = 1407.0
-offset_bottom = 376.0
+offset_left = 728.223
+offset_top = 143.02
+offset_right = 1413.22
+offset_bottom = 416.02
 scale = Vector2(0.641169, 0.645645)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_7emq5")
-theme_override_font_sizes/font_size = 170
+theme_override_font_sizes/font_size = 150
 text = "Credits"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -149,7 +149,7 @@ dragging_enabled = false
 
 [node name="DevCredit" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -160,7 +160,7 @@ text = "              Developer"
 
 [node name="DevLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_803yc")
@@ -174,7 +174,7 @@ dragging_enabled = false
 
 [node name="MusicsCredit" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -185,7 +185,7 @@ text = "Musics, sound effects"
 
 [node name="MusicsLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_803yc")
@@ -203,7 +203,7 @@ dragging_enabled = false
 
 [node name="AnimationCredit" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -214,7 +214,7 @@ text = "                   Animations"
 
 [node name="AnimationLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_803yc")
@@ -228,7 +228,7 @@ dragging_enabled = false
 
 [node name="HelpCredit" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -239,7 +239,7 @@ text = "    Help, advices and tests"
 
 [node name="HelpLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_803yc")

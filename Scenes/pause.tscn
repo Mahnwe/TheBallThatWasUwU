@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=29 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -27,7 +27,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
 
@@ -39,7 +39,7 @@ modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0ro0"]
 texture = SubResource("CanvasTexture_gfb3x")
-modulate_color = Color(0.81, 0.1, 0.1, 1)
+modulate_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77ms"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -47,10 +47,26 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ricp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isk47"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [node name="Pause" type="Control"]
 z_index = 5
@@ -65,15 +81,15 @@ script = ExtResource("1_03lrq")
 [node name="ReturnLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ReturnLayer"]
-position = Vector2(1556.5, 806)
+position = Vector2(1556.5, 865)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="ReturnToMenu" type="Button" parent="ReturnLayer" groups=["pause_buttons"]]
 offset_left = 1331.0
-offset_top = 717.0
+offset_top = 776.0
 offset_right = 1628.0
-offset_bottom = 814.0
+offset_bottom = 873.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_top = NodePath("../../ContinueLayer/Continue")
@@ -81,12 +97,12 @@ focus_neighbor_right = NodePath("../../CommandLayer/Command")
 focus_neighbor_bottom = NodePath("../../CommandLayer/Command")
 focus_next = NodePath("../../CommandLayer/Command")
 focus_previous = NodePath("../../ContinueLayer/Continue")
-theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 30
@@ -118,15 +134,15 @@ texture = ExtResource("1_t2voc")
 [node name="ContinueLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ContinueLayer"]
-position = Vector2(951.5, 599)
+position = Vector2(951.5, 658)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="Continue" type="Button" parent="ContinueLayer" groups=["pause_buttons"]]
 offset_left = 727.0
-offset_top = 521.0
+offset_top = 580.0
 offset_right = 1021.0
-offset_bottom = 606.0
+offset_bottom = 665.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../CommandLayer/Command")
 focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
@@ -134,12 +150,12 @@ focus_neighbor_right = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_bottom = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_next = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_previous = NodePath("../../CommandLayer/Command")
-theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 30
@@ -185,15 +201,15 @@ scale = Vector2(12.1928, 7.48612)
 color = Color(0.0923971, 0.0923971, 0.092397, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="CommandLayer"]
-position = Vector2(361.5, 808)
+position = Vector2(361.5, 867)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
 [node name="Command" type="Button" parent="CommandLayer" groups=["pause_buttons"]]
 offset_left = 128.0
-offset_top = 726.0
+offset_top = 785.0
 offset_right = 422.0
-offset_bottom = 815.0
+offset_bottom = 874.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
@@ -201,12 +217,12 @@ focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
 focus_next = NodePath("../../ContinueLayer/Continue")
 focus_previous = NodePath("../../ReturnLayer/ReturnToMenu")
-theme_override_colors/font_hover_pressed_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.85098, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 30
@@ -234,16 +250,16 @@ texture = ExtResource("13_6ho6x")
 [node name="SoundLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SoundLayer"]
-position = Vector2(310, 208.25)
+position = Vector2(276, 194.25)
 scale = Vector2(3.05405, 3.92763)
 texture = ExtResource("2_h85by")
 
 [node name="MusicSliderLabel" type="Label" parent="SoundLayer"]
-offset_left = 254.0
-offset_top = 96.0
-offset_right = 353.0
-offset_bottom = 138.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 220.0
+offset_top = 81.9999
+offset_right = 319.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -254,10 +270,10 @@ text = "Musics"
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicSlider" type="HSlider" parent="SoundLayer"]
-offset_left = 204.0
-offset_top = 136.5
-offset_right = 454.0
-offset_bottom = 171.5
+offset_left = 170.0
+offset_top = 122.5
+offset_right = 420.0
+offset_bottom = 157.5
 scale = Vector2(1, 1.44)
 focus_neighbor_left = NodePath("../MusicMuteButton")
 focus_neighbor_top = NodePath("../EffectSlider")
@@ -269,11 +285,11 @@ max_value = 5.0
 metadata/_edit_use_anchors_ = true
 
 [node name="EffectSliderLabel" type="Label" parent="SoundLayer"]
-offset_left = 239.0
-offset_top = 201.5
-offset_right = 422.0
-offset_bottom = 243.5
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 187.5
+offset_right = 388.0
+offset_bottom = 229.5
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -284,10 +300,10 @@ text = "Sound effect"
 metadata/_edit_use_anchors_ = true
 
 [node name="EffectSlider" type="HSlider" parent="SoundLayer"]
-offset_left = 209.0
-offset_top = 241.5
-offset_right = 459.0
-offset_bottom = 276.5
+offset_left = 175.0
+offset_top = 227.5
+offset_right = 425.0
+offset_bottom = 262.5
 scale = Vector2(1, 1.44)
 focus_neighbor_left = NodePath("../SoundMuteButton")
 focus_neighbor_top = NodePath("../MusicSlider")
@@ -299,35 +315,37 @@ max_value = 5.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
-offset_left = 144.0
-offset_top = 136.5
-offset_right = 192.0
-offset_bottom = 184.5
+offset_left = 110.0
+offset_top = 122.5
+offset_right = 158.0
+offset_bottom = 170.5
 focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_right = NodePath("../MusicSlider")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ricp")
 metadata/_edit_use_anchors_ = true
 
 [node name="SoundMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
-offset_left = 149.0
-offset_top = 241.5
-offset_right = 197.0
-offset_bottom = 289.5
+offset_left = 115.0
+offset_top = 227.5
+offset_right = 163.0
+offset_bottom = 275.5
 focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_right = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
+theme_override_styles/hover = SubResource("StyleBoxFlat_isk47")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerTimerCloud" type="Sprite2D" parent="CanvasLayer"]
 z_index = 2
-position = Vector2(1462.88, 262.905)
-scale = Vector2(2.08277, 2.34461)
+position = Vector2(1477, 211)
+scale = Vector2(1.92871, 2.17863)
 texture = ExtResource("2_h85by")
 
 [node name="Label" type="Label" parent="CanvasLayer/PlayerTimerCloud"]
@@ -336,7 +354,7 @@ offset_top = -21.285
 offset_right = -16.5977
 offset_bottom = 20.715
 scale = Vector2(0.87275, 0.931522)
-theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -344,29 +362,30 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("16_isk47")
 theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="PauseLabel" type="Label" parent="CanvasLayer2"]
 z_index = 2
-offset_left = 781.0
-offset_top = 128.0
-offset_right = 1248.0
-offset_bottom = 283.0
-scale = Vector2(0.725781, 0.821826)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+offset_left = 796.0
+offset_top = 208.0
+offset_right = 1263.0
+offset_bottom = 363.0
+scale = Vector2(0.686926, 0.763704)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("16_mkub3")
-theme_override_font_sizes/font_size = 130
+theme_override_font_sizes/font_size = 120
 text = "PAUSE"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/PauseLabel"]
 z_index = -1
-position = Vector2(219.074, 86.393)
+position = Vector2(211.085, 82.4927)
 scale = Vector2(4.45001, 4.53099)
 texture = ExtResource("2_h85by")
 

@@ -369,7 +369,7 @@ offset_top = 916.0
 offset_right = 1877.0
 offset_bottom = 971.0
 scale = Vector2(0.938255, 1.08326)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -433,7 +433,7 @@ offset_top = 131.0
 offset_right = 200.0
 offset_bottom = 155.0
 scale = Vector2(1.46086, 1.32)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_fonts/font = ExtResource("46_n1x1j")
 theme_override_font_sizes/font_size = 20
 

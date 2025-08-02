@@ -14,7 +14,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 6
 border_width_bottom = 5
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcjyt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -22,7 +22,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 6
 border_width_bottom = 5
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0hyc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -30,7 +30,7 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 6
 border_width_bottom = 5
-border_color = Color(0.85098, 0, 0, 1)
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -72,7 +72,7 @@ offset_top = 332.0
 offset_right = 1175.0
 offset_bottom = 422.0
 scale = Vector2(0.93719, 1.13992)
-theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
