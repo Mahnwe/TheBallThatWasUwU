@@ -15,13 +15,15 @@ func _process(_delta):
 	pass
 	
 func _on_focus_entered():
-	self.grab_focus()
+	if self.focus_mode == FOCUS_ALL:
+		self.grab_focus()
 
 func _on_focus_exited():
 	self.release_focus()
 
 func _on_mouse_entered():
-	self.grab_focus()
+	if self.focus_mode == FOCUS_ALL:
+		self.grab_focus()
 
 
 func _on_mouse_exited():

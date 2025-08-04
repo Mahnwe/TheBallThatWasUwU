@@ -81,11 +81,11 @@ position = Vector2(107.491, 0.329313)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(2.21655e-06, 47.5505)
+position = Vector2(8.20647e-05, 50.4855)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(123.44, 47.3605)
+position = Vector2(123.44, 50.2955)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
@@ -95,7 +95,7 @@ texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(241.971, 48.9291)
+position = Vector2(241.971, 51.8641)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D2"]
@@ -103,25 +103,25 @@ position = Vector2(322.826, 0.329316)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(325.925, 50.9159)
+position = Vector2(325.925, 53.8509)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(7.74935e-05, 87.3553)
+position = Vector2(7.74935e-05, 92.6496)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(131.655, 87.5933)
+position = Vector2(131.655, 92.8876)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(252.273, 87.4333)
+position = Vector2(252.273, 92.7276)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(328.904, 89.0238)
+position = Vector2(328.904, 94.3181)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
@@ -136,7 +136,7 @@ theme_override_constants/separation = 90
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 34
+theme_override_constants/separation = 37
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -316,7 +316,7 @@ text = "0"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 34
+theme_override_constants/separation = 37
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2

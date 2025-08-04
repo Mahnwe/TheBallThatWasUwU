@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4g2vd7jaacyr"]
+
+[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="1_6lv5s"]
+[ext_resource type="Texture2D" uid="uid://64do0pecvri5" path="res://Arts/BugSprite/BugSprite2.png" id="2_aiyty"]
+[ext_resource type="Texture2D" uid="uid://nrqlst7037sa" path="res://Arts/BugSprite/BugSprite3.png" id="3_b1snn"]
+[ext_resource type="Texture2D" uid="uid://b4fdl3lnq6ql7" path="res://Arts/BugSprite/BugSprite4.png" id="4_o37m6"]
+[ext_resource type="Script" uid="uid://b3k3p823jpsev" path="res://Scripts/bug.gd" id="5_aiyty"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cty3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6lv5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aiyty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b1snn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o37m6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bug" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cty3t")
+script = ExtResource("5_aiyty")

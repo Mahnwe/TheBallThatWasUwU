@@ -49,7 +49,7 @@ func _process(_delta):
 		
 func wait_for_focus():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if member.is_hovered():
+		if member.is_hovered() and member.focus_mode == FOCUS_ALL:
 			member.grab_focus()
 			is_controller_focused = true
 
@@ -286,6 +286,8 @@ func change_bubble_message():
 	await get_tree().create_timer(5.0).timeout
 	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FourthAdvice")
 	await get_tree().create_timer(5.0).timeout
+	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FifthAdvice")
+	await get_tree().create_timer(5.0).timeout
 	bubble_message_reset = true
 		
 
@@ -465,12 +467,16 @@ func focus_menu_buttons():
 		member.focus_mode = FOCUS_ALL
 	$MusicSlider.focus_mode = FOCUS_ALL
 	$EffectSlider.focus_mode = FOCUS_ALL
+	$WindowModeButton.focus_mode = FOCUS_ALL
+	$LanguageButton.focus_mode = FOCUS_ALL
 	
 func focus_close_stats_button():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
 		member.focus_mode = FOCUS_NONE
 	$MusicSlider.focus_mode = FOCUS_NONE
 	$EffectSlider.focus_mode = FOCUS_NONE
+	$WindowModeButton.focus_mode = FOCUS_NONE
+	$LanguageButton.focus_mode = FOCUS_NONE
 	
 func _on_credits_button_pressed():
 	$Credits.show()
@@ -596,20 +602,21 @@ func _on_level_7_button_focus_exited():
 
 
 func _on_window_mode_button_pressed():
-	if properties_config.get_value("WindowMod", "is_fullscreen"):
-		$WindowModeButton.get_child(1).text = $WindowModeButton.windowed_label
-		DisplayServer.window_set_size(Vector2i(1280,720))
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-		properties_config.set_value("WindowMod", "is_fullscreen", false)
-	else:
-		$WindowModeButton.get_child(1).text = $WindowModeButton.fullscreen_label
-		var player_viewport = get_viewport().size
-		DisplayServer.window_set_size(player_viewport)
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
-		properties_config.set_value("WindowMod", "is_fullscreen", true)
-	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+	if $WindowModeButton.focus_mode == FOCUS_ALL:
+		if properties_config.get_value("WindowMod", "is_fullscreen"):
+			$WindowModeButton.get_child(1).text = $WindowModeButton.windowed_label
+			DisplayServer.window_set_size(Vector2i(1280,720))
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+			properties_config.set_value("WindowMod", "is_fullscreen", false)
+		else:
+			$WindowModeButton.get_child(1).text = $WindowModeButton.fullscreen_label
+			var player_viewport = get_viewport().size
+			DisplayServer.window_set_size(player_viewport)
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+			properties_config.set_value("WindowMod", "is_fullscreen", true)
+		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 
 
 func _on_language_button_pressed():

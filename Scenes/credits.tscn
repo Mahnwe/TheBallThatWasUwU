@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://tn1erw530dy1"]
+[gd_scene load_steps=11 format=3 uid="uid://tn1erw530dy1"]
 
 [ext_resource type="Script" uid="uid://7288l8jxxvht" path="res://Scripts/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="1_r18jl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="3_ccovl"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="5_7emq5"]
 [ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="5_xelri"]
+[ext_resource type="Texture2D" uid="uid://c8ga2v1atuxdc" path="res://Arts/BackgroundSprite/BrownBackgroundButtonSprite.png" id="6_1wbrc"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="6_803yc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uah1q"]
@@ -69,38 +70,38 @@ texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(0, 53.5576)
+position = Vector2(-3.1023, 53.5458)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(109.03, 53.9153)
+position = Vector2(105.928, 53.9035)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(225.208, 54.1284)
+position = Vector2(227.699, 54.1543)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(287.925, 55.4207)
+position = Vector2(290.416, 55.4466)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(0.0942139, 76.67)
+position = Vector2(0.187362, 81.625)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(104.668, 76.2872)
+position = Vector2(104.761, 81.2422)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(188.881, 77.0529)
+position = Vector2(188.974, 82.0079)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(289.936, 74.7557)
+position = Vector2(290.029, 79.7107)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
@@ -129,22 +130,23 @@ theme_override_font_sizes/font_size = 150
 text = "Credits"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 241.0
-offset_top = 349.0
+offset_top = 360.0
 offset_right = 1819.0
-offset_bottom = 884.0
+offset_bottom = 919.0
 scale = Vector2(0.971534, 0.94383)
 theme_override_constants/separation = 180
 dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 120
+theme_override_constants/separation = 135
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 45
 dragging_enabled = false
 
 [node name="DevCredit" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
@@ -158,6 +160,12 @@ theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 55
 text = "              Developer"
 
+[node name="Sprite2D" type="Sprite2D" parent="HSplitContainer/VBoxContainer/VSplitContainer/DevCredit"]
+z_index = -1
+position = Vector2(293.351, 29.666)
+scale = Vector2(0.699, 0.342)
+texture = ExtResource("6_1wbrc")
+
 [node name="DevLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
@@ -169,7 +177,7 @@ text = "                             Manawé"
 
 [node name="VSplitContainer3" type="VSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 45
 dragging_enabled = false
 
 [node name="MusicsCredit" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
@@ -183,6 +191,12 @@ theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 50
 text = "Musics, sound effects"
 
+[node name="Sprite2D" type="Sprite2D" parent="HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit"]
+z_index = -1
+position = Vector2(287.175, 28.1992)
+scale = Vector2(1.15, 0.343815)
+texture = ExtResource("6_1wbrc")
+
 [node name="MusicsLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
@@ -194,11 +208,11 @@ text = "                                   Pani"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 120
+theme_override_constants/separation = 135
 
 [node name="VSplitContainer3" type="VSplitContainer" parent="HSplitContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 45
 dragging_enabled = false
 
 [node name="AnimationCredit" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
@@ -212,6 +226,12 @@ theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 50
 text = "                   Animations"
 
+[node name="Sprite2D" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/VSplitContainer3/AnimationCredit"]
+z_index = -1
+position = Vector2(320.56, 29.6664)
+scale = Vector2(0.699, 0.342)
+texture = ExtResource("6_1wbrc")
+
 [node name="AnimationLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
@@ -223,7 +243,7 @@ text = "                        Manawé, Yossaan"
 
 [node name="VSplitContainer2" type="VSplitContainer" parent="HSplitContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 45
 dragging_enabled = false
 
 [node name="HelpCredit" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
@@ -236,6 +256,12 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 50
 text = "    Help, advices and tests"
+
+[node name="Sprite2D" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/VSplitContainer2/HelpCredit"]
+z_index = -1
+position = Vector2(341.146, 33.733)
+scale = Vector2(1.14998, 0.333712)
+texture = ExtResource("6_1wbrc")
 
 [node name="HelpLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
 layout_mode = 2
@@ -254,7 +280,7 @@ scale = Vector2(3.1672, 2.73711)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(-1.89442, 229.074)
+position = Vector2(-1.78075, 237.999)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
@@ -262,7 +288,7 @@ position = Vector2(482.129, -1.46139)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(489.076, 229.074)
+position = Vector2(489.19, 237.999)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
@@ -271,7 +297,7 @@ scale = Vector2(1.39901, 1.32136)
 texture = ExtResource("5_xelri")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
-position = Vector2(-4.28877, 476.024)
+position = Vector2(-4.03145, 494.512)
 texture = ExtResource("5_xelri")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4"]
@@ -279,7 +305,7 @@ position = Vector2(1092.2, -4.54079)
 texture = ExtResource("5_xelri")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D4"]
-position = Vector2(1106.5, 475.267)
+position = Vector2(1106.76, 493.755)
 texture = ExtResource("5_xelri")
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]

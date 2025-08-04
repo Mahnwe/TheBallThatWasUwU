@@ -36,16 +36,18 @@ func setup_label():
 
 
 func _on_focus_entered():
-	self.grab_focus()
-	$Label.visible = true
+	if self.focus_mode == FOCUS_ALL:
+		self.grab_focus()
+		$Label.visible = true
 
 func _on_focus_exited():
 	self.release_focus()
 	$Label.visible = false
 
 func _on_mouse_entered():
-	self.grab_focus()
-	$Label.visible = true
+	if self.focus_mode == FOCUS_ALL:
+		self.grab_focus()
+		$Label.visible = true
 
 
 func _on_mouse_exited():

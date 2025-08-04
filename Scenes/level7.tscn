@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=108 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -61,7 +61,6 @@
 [ext_resource type="Texture2D" uid="uid://buk7of3tf38ht" path="res://Arts/BushSprite/SandBush.png" id="56_nvxkg"]
 [ext_resource type="PackedScene" uid="uid://ckh3u5c14ylpi" path="res://Scenes/lantern_pole.tscn" id="57_5lfpo"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="58_l8dvf"]
-[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="60_ndas8"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="61_87leb"]
 [ext_resource type="PackedScene" uid="uid://b1w3kix6wrxai" path="res://Scenes/bird.tscn" id="61_x2e87"]
 [ext_resource type="PackedScene" uid="uid://biohd7firpiow" path="res://Scenes/rock_3.tscn" id="63_x2e87"]
@@ -74,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="72_u3dgk"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="72_vj0yr"]
 [ext_resource type="Texture2D" uid="uid://be672cieh88q2" path="res://Arts/SpriteWoodenPlank/WoodenPlank-removebg-preview.png" id="73_vj0yr"]
+[ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="74_2lhjl"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -195,11 +195,23 @@ _data = {
 }
 point_count = 21
 
+[sub_resource type="Curve2D" id="Curve2D_mswl2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -9.68311, 134.083, 0, 0, 0, 0, -0.880371, 122.385, 0, 0, 0, 0, 9.68286, 111.586, 0, 0, 0, 0, 17.6055, 99.8875, 0, 0, 0, 0, 21.1265, 88.189, 0, 0, 0, 0, 22.887, 71.991, 0, 0, 0, 0, 24.6477, 55.793, 0, 0, 0, 0, 22.887, 41.3948, 0, 0, 0, 0, 17.6055, 27.8965, 0, 0, 0, 0, 16.7251, 12.5984, 0, 0, 0, 0, 17.6055, 1.79978, 0, 0, 0, 0, 17.6055, -10.7986, 0, 0, 0, 0, 19.366, -22.4972, 0, 0, 0, 0, 24.6477, -35.0956, 0, 0, 0, 0, 19.366, -46.7942, 0, 0, 0, 0, 8.80273, -53.9933, 0, 0, 0, 0, -3.52124, -53.9933, 0, 0, 0, 0, -3.52124, -44.0945, 0, 0, 0, 0, -7.04224, -35.9955, 0, 0, 0, 0, -7.04224, -24.297, 0, 0, 0, 0, -2.64087, 0.899887, 0, 0, 0, 0, -1.7605, 14.3982, 0, 0, 0, 0, -8.80273, 33.2958, 0, 0, 0, 0, -8.80273, 56.6929, 0, 0, 0, 0, -6.16187, 75.5906, 0, 0, 0, 0, -3.52124, 89.0889, 0, 0, 0, 0, -0.880371, 95.3881, 0, 0, 0, 0, 18.4856, 115.186, 0, 0, 0, 0, 28.1687, 122.385, 0, 0, 0, 0, 32.5701, 128.684, 0, 0, 0, 0, 22.0068, 135.883, 0, 0, 0, 0, 13.2041, 130.484, 0, 0, 0, 0, -1.7605, 130.484, 0, 0, 0, 0, -9.68311, 134.083)
+}
+point_count = 34
+
 [sub_resource type="Curve2D" id="Curve2D_nvxkg"]
 _data = {
 "points": PackedVector2Array(-59.0909, -4.54545, 59.0909, 4.54545, 2162, -32, -36.3636, 7.27273, 36.3636, -7.27273, 2310, -69, -23.6364, -10.9091, 23.6364, 10.9091, 2453, -58, 0, 0, 0, 0, 2552, -16, -22.7273, -5.45455, 22.7273, 5.45455, 2659, 26, -22.7273, 3.63636, 22.7273, -3.63636, 2781, 53, 0, 0, 0, 0, 2903, 51, -26.5303, 11.2895, 26.5303, -11.2895, 3087, 53, -23.1434, 13.5474, 23.1434, -13.5474, 3143, 35, -9.03158, 15.8053, 9.03158, -15.8053, 3220, -39, -2.82237, 13.5474, 2.82237, -13.5474, 3259, -135, 7.51315, 41.6638, -7.51315, -41.6638, 3279, -233, 15.0263, 21.8564, -15.0263, -21.8564, 3245, -337, 37.5657, 19.8074, -37.5657, -19.8074, 3184, -426, 35.5167, 0, -35.5167, 0, 2901, -484, 0, 0, 0, 0, 2719, -460, 21.8182, -23.6364, -21.8182, 23.6364, 2582, -395, 31.8182, -10.9091, -31.8182, 10.9091, 2478, -325, 0, 0, 0, 0, 2375, -351, 27.2727, -10.9091, -27.2727, 10.9091, 2254, -359, 0, 0, 0, 0, 2170, -312, 10, -23.6364, -10, 23.6364, 2109, -237, 0, -18.1818, 0, 18.1818, 2093, -154, -9.09091, -10.9091, 9.09091, 10.9091, 2103, -88, -30.9091, -17.2727, 30.9091, 17.2727, 2162, -32)
 }
 point_count = 25
+
+[sub_resource type="Curve2D" id="Curve2D_2lhjl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -30.5686, 83.8035, 0, 0, 0, 0, -17.7725, 81.4429, 0, 0, 0, 0, -7.10913, 76.7216, 0, 0, 0, 0, 2.13257, 68.4592, 0, 0, 0, 0, 3.55444, 54.2952, 0, 0, 0, 0, 2.13257, 40.7214, 0, 0, 0, 0, 0.710938, 33.0493, 0, 0, 0, 0, 2.13257, 25.9673, 0, 0, 0, 0, 5.68726, 20.6558, 0, 0, 0, 0, 4.97632, 12.9836, 0, 0, 0, 0, 0.710938, 3.54102, 0, 0, 0, 0, 4.97632, -3.54102, 0, 0, 0, 0, 5.68726, -11.8033, 0, 0, 0, 0, 4.26538, -19.4755, 0, 0, 0, 0, 1.42188, -27.1476, 0, 0, 0, 0, -1.42188, -33.0493, 0, 0, 0, 0, -2.84351, -36.5902, 0, 0, 0, 0, -4.97632, -27.7378, 0, 0, 0, 0, -7.10913, -23.0165, 0, 0, 0, 0, -8.53076, -18.2952, 0, 0, 0, 0, -9.95264, -10.6229, 0, 0, 0, 0, -9.95264, -4.72131, 0, 0, 0, 0, -9.2417, 1.77051, 0, 0, 0, 0, -9.2417, 7.08203, 0, 0, 0, 0, -7.10913, 11.8033, 0, 0, 0, 0, -5.68726, 17.705, 0, 0, 0, 0, -4.97632, 21.246, 0, 0, 0, 0, -10.6636, 29.5083, 0, 0, 0, 0, -12.0852, 36.5902, 0, 0, 0, 0, -11.3745, 45.4427, 0, 0, 0, 0, -8.53076, 56.0657, 0, 0, 0, 0, -6.39819, 65.5084, 0, 0, 0, 0, -2.84351, 77.3116, 0, 0, 0, 0, -6.39819, 81.4429, 0, 0, 0, 0, -15.6399, 84.9839, 0, 0, 0, 0, -30.5686, 83.8035)
+}
+point_count = 36
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mswl2"]
 size = Vector2(374, 20)
@@ -2208,9 +2220,17 @@ z_index = 1
 position = Vector2(3225, -12)
 scale = Vector2(1.13601, 1.11125)
 
-[node name="Sprite2D2" type="Sprite2D" parent="BigTree2"]
-position = Vector2(9.68304, 66.5918)
-texture = ExtResource("60_ndas8")
+[node name="Path2D" type="Path2D" parent="BigTree2"]
+curve = SubResource("Curve2D_mswl2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BigTree2/Path2D"]
+position = Vector2(-9.68311, 134.083)
+rotation = -0.92572
+
+[node name="Bug" parent="BigTree2/Path2D/PathFollow2D" instance=ExtResource("74_2lhjl")]
+rotation = 1.4399
+scale = Vector2(0.725029, 0.673721)
+speed = 10
 
 [node name="BerryBush5" parent="." instance=ExtResource("55_6gfjr")]
 position = Vector2(2823, 120)
@@ -2351,15 +2371,22 @@ z_index = -1
 position = Vector2(4727, -2728)
 scale = Vector2(1.40667, 1.69444)
 
-[node name="Sprite2D" type="Sprite2D" parent="DarkBrownTree"]
-position = Vector2(-1.42163, -2.95081)
-scale = Vector2(0.706161, 0.572462)
-texture = ExtResource("60_ndas8")
-
 [node name="LanternPole" parent="DarkBrownTree" instance=ExtResource("57_5lfpo")]
 position = Vector2(-66.8245, 57.246)
 scale = Vector2(0.305778, 0.244242)
 flip_value = 1
+
+[node name="Path2D" type="Path2D" parent="DarkBrownTree"]
+curve = SubResource("Curve2D_2lhjl")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="DarkBrownTree/Path2D"]
+position = Vector2(-30.5686, 83.8035)
+rotation = -0.182426
+
+[node name="Bug" parent="DarkBrownTree/Path2D/PathFollow2D" instance=ExtResource("74_2lhjl")]
+rotation = 1.4399
+scale = Vector2(0.485078, 0.437583)
+speed = 12
 
 [node name="DarkBrownTree2" parent="." instance=ExtResource("72_u3dgk")]
 position = Vector2(2388, -88)

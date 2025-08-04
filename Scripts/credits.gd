@@ -35,8 +35,12 @@ func translate_text(is_english):
 	var translate_config = ConfigFile.new()
 	if is_english:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
+		$HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit/Sprite2D.scale.x = 1.079
+		$HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit/Sprite2D.position.x = 287.175
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
+		$HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit/Sprite2D.scale.x = 1.220
+		$HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit/Sprite2D.position.x = 330
 		
 	$HSplitContainer/VBoxContainer/VSplitContainer/DevCredit.text = translate_config.get_value("TranslationCredits", "DevCredit")
 	$HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit.text = translate_config.get_value("TranslationCredits", "SoundCredit")

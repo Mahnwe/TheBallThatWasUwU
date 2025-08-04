@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=58 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -43,10 +43,10 @@
 [ext_resource type="PackedScene" uid="uid://diohp78ekckkx" path="res://Scenes/chest.tscn" id="39_fkoau"]
 [ext_resource type="PackedScene" uid="uid://xddsf6ly1i6v" path="res://Scenes/fish.tscn" id="40_k4k0d"]
 [ext_resource type="PackedScene" uid="uid://d3chk3dy1p8t7" path="res://Scenes/yellow_fish.tscn" id="41_birjf"]
-[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="42_s0a2a"]
 [ext_resource type="PackedScene" uid="uid://cjcrx6k82ajb6" path="res://Scenes/shrimp.tscn" id="43_650y6"]
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="44_vxmds"]
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="45_twoli"]
+[ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="47_au1pt"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -101,6 +101,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1995, -396, 0, 0, 0, 0, -1994, -361, 0, 0, 0, 0, -1994, -320, 0, 0, 0, 0, -1993, -287, 0, 0, 0, 0, -1993, -257)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_383j6"]
+_data = {
+"points": PackedVector2Array(-10.8815, -9.10085, 10.8815, 9.10085, -1567, -1058, 0, 0, 0, 0, -1559, -1046, 0, 0, 0, 0, -1557, -1038, 0, 0, 0, 0, -1562, -1022, 0, 0, 0, 0, -1568, -994, 0, 0, 0, 0, -1581, -970, 0, 0, 0, 0, -1587, -953, 0, 0, 0, 0, -1584, -924, 0, 0, 0, 0, -1586, -898, 0, 0, 0, 0, -1585, -881, -6.24303, -6.68896, 6.24303, 6.68896, -1579, -875, -5.29364, 1.57339, 5.29364, -1.57339, -1561, -870, 5.35637, 8.94596, -5.35637, -8.94596, -1548, -882, 3.36336, 7.91378, -3.36336, -7.91378, -1558, -897, 0, 0, 0, 0, -1564, -906, 0, 0, 0, 0, -1564, -924, 0, 0, 0, 0, -1559, -941, 0.593534, 11.0793, -0.593534, -11.0793, -1555, -955, 5.53965, 5.73749, -5.53965, -5.73749, -1563, -972, 3.5612, 9.49654, -3.5612, -9.49654, -1583, -990, 0, 0, 0, 0, -1583, -1017, 0, 0, 0, 0, -1589, -1030, 0, 0, 0, 0, -1588, -1041, 0, 0, 0, 0, -1584, -1052, 0, 0, 0, 0, -1567, -1058)
+}
+point_count = 25
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_11ckk")
@@ -920,11 +926,6 @@ speed = 125
 position = Vector2(-2889, -329)
 scale = Vector2(0.606914, 0.639194)
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(-1557, -1044)
-scale = Vector2(0.66, 0.74)
-texture = ExtResource("42_s0a2a")
-
 [node name="Shrimp" parent="." instance=ExtResource("43_650y6")]
 z_index = 1
 position = Vector2(-488, -385)
@@ -945,6 +946,17 @@ scale = Vector2(0.7, 0.694)
 [node name="DarkBrownTree" parent="." instance=ExtResource("45_twoli")]
 position = Vector2(-3020, -475)
 scale = Vector2(1.80667, 1.86667)
+
+[node name="Path2D10" type="Path2D" parent="."]
+curve = SubResource("Curve2D_383j6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D10"]
+position = Vector2(-1567, -1058)
+rotation = 0.696522
+
+[node name="Bug" parent="Path2D10/PathFollow2D" instance=ExtResource("47_au1pt")]
+rotation = 1.5708
+speed = 18
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

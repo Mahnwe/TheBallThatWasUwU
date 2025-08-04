@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=57 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -35,13 +35,13 @@
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="31_mf2hp"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="32_1alju"]
 [ext_resource type="PackedScene" uid="uid://dvk6tkjkq8bkx" path="res://Scenes/bumper.tscn" id="33_5v8i3"]
-[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="34_tsss4"]
 [ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="36_06tg8"]
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="37_fgdcu"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="38_ueeha"]
 [ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="39_8dwqx"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="40_nk116"]
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="40_y3gnq"]
+[ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="42_wljwr"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -96,6 +96,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 521, -1341, 0, 0, 0, 0, 522, -1289, 0, 0, 0, 0, 522, -1230, 0, 0, 0, 0, 521, -1183, 0, 0, 0, 0, 522, -1135, 0, 0, 0, 0, 524, -1079, 0, 0, 0, 0, 524, -1010, 0, 0, 0, 0, 521, -1341)
 }
 point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_4kqy4"]
+_data = {
+"points": PackedVector2Array(30.1109, 3.81688, -30.1109, -3.81688, 889, -1695, 6.78556, 7.20966, -6.78556, -7.20966, 864, -1716, 0, 0, 0, 0, 848, -1747, 0, 0, 0, 0, 845, -1785, 0, 0, 0, 0, 839, -1811, -5.01206, 10.0241, 5.01206, -10.0241, 843, -1837, 0.385543, 11.5663, -0.385543, -11.5663, 849, -1856, 0, 0, 0, 0, 847, -1899, 0, 0, 0, 0, 845, -1921, -4.24098, 3.08435, 4.24098, -3.08435, 851, -1936, -5.3976, -1.54217, 5.3976, 1.54217, 870, -1944, 0.385543, -6.93978, -0.385543, 6.93978, 884, -1931, 0, 0, 0, 0, 882, -1909, 0, 0, 0, 0, 876, -1887, 0, 0, 0, 0, 874, -1865, 0, 0, 0, 0, 876, -1832, 0.289664, -9.26926, -0.289664, 9.26926, 890, -1790, 0, -6.36146, 0, 6.36146, 880, -1749, 0, 0, 0, 0, 893, -1718, 0, 0, 0, 0, 889, -1695)
+}
+point_count = 20
 
 [sub_resource type="Curve2D" id="Curve2D_2r2mc"]
 _data = {
@@ -829,6 +835,19 @@ position = Vector2(854, -1869)
 scale = Vector2(1.48, 1.36)
 flip_value = 1
 
+[node name="Path2D6" type="Path2D" parent="BigTree2"]
+position = Vector2(-591.892, 1374.26)
+scale = Vector2(0.675676, 0.735294)
+curve = SubResource("Curve2D_4kqy4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BigTree2/Path2D6"]
+position = Vector2(889, -1695)
+rotation = -3.0155
+
+[node name="Bug" parent="BigTree2/Path2D6/PathFollow2D" instance=ExtResource("42_wljwr")]
+rotation = 1.7017
+speed = 15
+
 [node name="BranchesBush" parent="BigTree2" instance=ExtResource("18_icw0h")]
 position = Vector2(64.1892, 113.971)
 
@@ -1130,10 +1149,6 @@ rotation = 0.785398
 [node name="Bumper6" parent="." instance=ExtResource("33_5v8i3")]
 position = Vector2(2596, -1483)
 rotation = -0.785398
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(874, -1719)
-texture = ExtResource("34_tsss4")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 position = Vector2(661, -1961)

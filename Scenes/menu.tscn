@@ -130,6 +130,7 @@ border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
+border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
@@ -376,6 +377,7 @@ z_index = -1
 position = Vector2(37.999, 17.9843)
 scale = Vector2(0.12792, 0.112094)
 texture = ExtResource("12_747ic")
+flip_h = true
 
 [node name="TopTime" parent="Level2Button" instance=ExtResource("10_vv7ov")]
 visible = false
@@ -428,6 +430,7 @@ z_index = -1
 position = Vector2(37.931, 17.9695)
 scale = Vector2(0.128154, 0.112192)
 texture = ExtResource("12_747ic")
+flip_v = true
 
 [node name="TopTime" parent="Level3Button" instance=ExtResource("10_vv7ov")]
 visible = false
@@ -480,6 +483,8 @@ z_index = -1
 position = Vector2(37.931, 17.909)
 scale = Vector2(0.128154, 0.112192)
 texture = ExtResource("12_747ic")
+flip_h = true
+flip_v = true
 
 [node name="TopTime" parent="Level4Button" instance=ExtResource("10_vv7ov")]
 visible = false
@@ -532,6 +537,7 @@ z_index = -1
 position = Vector2(37.931, 17.909)
 scale = Vector2(0.128154, 0.112192)
 texture = ExtResource("12_747ic")
+flip_h = true
 
 [node name="TopTime" parent="Level5Button" instance=ExtResource("10_vv7ov")]
 visible = false
@@ -584,6 +590,7 @@ z_index = -1
 position = Vector2(37.9311, 17.909)
 scale = Vector2(0.128154, 0.112192)
 texture = ExtResource("12_747ic")
+flip_v = true
 
 [node name="TopTime" parent="Level6Button" instance=ExtResource("10_vv7ov")]
 visible = false
@@ -634,6 +641,8 @@ z_index = -1
 position = Vector2(38.1226, 18.151)
 scale = Vector2(0.127494, 0.110589)
 texture = ExtResource("12_747ic")
+flip_h = true
+flip_v = true
 
 [node name="TopTime" parent="Level7Button" instance=ExtResource("10_vv7ov")]
 visible = false
@@ -956,6 +965,7 @@ z_index = -1
 position = Vector2(72, 33)
 scale = Vector2(0.241379, 0.205298)
 texture = ExtResource("12_747ic")
+flip_v = true
 
 [node name="Credits" parent="." instance=ExtResource("24_l6llh")]
 visible = false
