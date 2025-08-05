@@ -1,0 +1,156 @@
+[gd_scene load_steps=27 format=3 uid="uid://dgnpkopm8mt4a"]
+
+[ext_resource type="Script" uid="uid://eo22u8o03een" path="res://Scripts/loading_screen.gd" id="1_0t5xw"]
+[ext_resource type="Texture2D" uid="uid://bv0kdlon7yjqo" path="res://Arts/BackgroundSprite/LanguageBackgroundSprite.png" id="2_nfm0g"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="3_gg6tb"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="4_7cftd"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="4_lcj3d"]
+[ext_resource type="Texture2D" uid="uid://d1cvn2onurkat" path="res://Arts/UwUBallSpriteWalk/UwUStayInAir.png" id="5_lcj3d"]
+[ext_resource type="Texture2D" uid="uid://bmqo3tt8fxuy2" path="res://Arts/UwUBallSpriteWalk/UwUWalk2.png" id="6_pk4wp"]
+[ext_resource type="Texture2D" uid="uid://dkqs7s22pt0vm" path="res://Arts/UwUBallSpriteWalk/UwUWalk3.png" id="7_5wtk5"]
+[ext_resource type="Texture2D" uid="uid://js0boqwsreig" path="res://Arts/UwUBallSpriteWalk/UwUWalk4.png" id="8_v06br"]
+[ext_resource type="Texture2D" uid="uid://ccywwiurvesv0" path="res://Arts/UwUBallSpriteWalk/UwUWalk5.png" id="9_qai5x"]
+[ext_resource type="Texture2D" uid="uid://bicbwprqwlcnk" path="res://Arts/UwUBallSpriteWalk/UwUWalk6.png" id="10_423im"]
+[ext_resource type="Texture2D" uid="uid://cqrb1opu725su" path="res://Arts/UwUBallSpriteWalk/UwUWalk7.png" id="11_4w48g"]
+[ext_resource type="Texture2D" uid="uid://cjh2lftygpcrx" path="res://Arts/UwUBallSpriteWalk/UwUWalk8.png" id="12_uhlji"]
+[ext_resource type="Texture2D" uid="uid://behyfdj4prv3x" path="res://Arts/UwUBallSpriteWalk/UwUWalk9.png" id="13_xkt4k"]
+[ext_resource type="Texture2D" uid="uid://box7voovwqttl" path="res://Arts/UwUBallSpriteWalk/UwUWalk10.png" id="14_2o1lh"]
+[ext_resource type="Texture2D" uid="uid://dlnqow1yj3b82" path="res://Arts/UwUBallSpriteWalk/UwUWalk11.png" id="15_cecjl"]
+[ext_resource type="Texture2D" uid="uid://b8w8cwbeotfcv" path="res://Arts/UwUBallSpriteWalk/UwUWalk12.png" id="16_xto1u"]
+[ext_resource type="Texture2D" uid="uid://ui8t8j561mw4" path="res://Arts/UwUBallSpriteWalk/UwUWalk13.png" id="17_gu70n"]
+[ext_resource type="Texture2D" uid="uid://cpskpjjabtm8j" path="res://Arts/UwUBallSpriteWalk/UwUWalk14.png" id="18_mk6tx"]
+[ext_resource type="Texture2D" uid="uid://bqiewg0odwubb" path="res://Arts/UwUBallSpriteWalk/UwUWalk15.png" id="19_kpaq8"]
+[ext_resource type="Texture2D" uid="uid://dv7coxl3p327a" path="res://Arts/UwUBallSpriteWalk/UwUWalk16.png" id="20_myux2"]
+[ext_resource type="Texture2D" uid="uid://bhgkwr0k7au6p" path="res://Arts/UwUBallSpriteWalk/UwUWalk17.png" id="21_1t0pw"]
+[ext_resource type="Texture2D" uid="uid://bfgc63o4poo8k" path="res://Arts/UwUBallSpriteWalk/UwUWalk18.png" id="22_xmjel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cftd"]
+bg_color = Color(0.887038, 0.939834, 0.924944, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg6tb"]
+bg_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uj1tb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lcj3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pk4wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5wtk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v06br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qai5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_423im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4w48g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uhlji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xkt4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2o1lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cecjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xto1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gu70n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mk6tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kpaq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_myux2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1t0pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xmjel")
+}],
+"loop": true,
+"name": &"Loading",
+"speed": 20.0
+}]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0t5xw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.5, 541.5)
+scale = Vector2(2.00521, 2.01667)
+texture = ExtResource("2_nfm0g")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 708.0
+offset_right = 1373.0
+offset_bottom = 763.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gg6tb")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/background = SubResource("StyleBoxFlat_7cftd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gg6tb")
+step = 1.0
+rounded = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 818.0
+offset_top = 270.0
+offset_right = 1051.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_fonts/font = ExtResource("4_lcj3d")
+theme_override_font_sizes/font_size = 50
+text = "Loading..."
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(945, 310.5)
+scale = Vector2(3.25676, 3.25)
+texture = ExtResource("4_7cftd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(939, 604.625)
+scale = Vector2(2.36, 2.455)
+sprite_frames = SubResource("SpriteFrames_uj1tb")
+animation = &"Loading"
+
+[node name="LoadingTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="LoadingTimer" to="." method="_on_loading_timer_timeout"]

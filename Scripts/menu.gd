@@ -16,6 +16,14 @@ var translate_file
 
 var chestNumber
 
+const LEVEL_1 : String = "res://Scenes/level1.tscn"
+const LEVEL_2 : String = "res://Scenes/level2.tscn"
+const LEVEL_3 : String = "res://Scenes/level3.tscn"
+const LEVEL_4 : String = "res://Scenes/level4.tscn"
+const LEVEL_5 : String = "res://Scenes/level5.tscn"
+const LEVEL_6 : String = "res://Scenes/level6.tscn"
+const LEVEL_7 : String = "res://Scenes/level7.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	translate_text()
@@ -31,6 +39,7 @@ func _ready():
 	set_volume()
 	setup_quit_button_stylebox()
 	chestNumber = properties_config.get_value("Chests", "chestNumber")
+	$LoadingScreen.hide()
 	check_level7_button_visibility()
 	check_for_ability_icons()
 	$Level1Button.grab_focus()
@@ -39,8 +48,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if bubble_message_reset:
-		change_bubble_message()
 	wait_for_focus()
 	if Input.is_action_just_pressed("quit_game"):
 		queue_free()
@@ -55,25 +62,32 @@ func wait_for_focus():
 
 
 func _on_level_1_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level1.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_1)
 
 func _on_level_2_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level2.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_2)
 
 func _on_level_3_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level3.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_3)
 	
 func _on_level_4_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level4.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_4)
 	
 func _on_level_5_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level5.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_5)
 	
 func _on_level_6_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level6.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_6)
 	
 func _on_level_7_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level7.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(LEVEL_7)
 
 func _on_level_1_button_gui_input(event):
 	if $Level1Button.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
@@ -277,20 +291,18 @@ func _on_button_focus_entered():
 	$ButtonSound.play()
 	
 func change_bubble_message():
-	bubble_message_reset = false
-	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FirstAdvice")
-	await get_tree().create_timer(5.0).timeout
-	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "SecondAdvice")
-	await get_tree().create_timer(5.0).timeout
-	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "ThirdAdvice")
-	await get_tree().create_timer(5.0).timeout
-	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FourthAdvice")
-	await get_tree().create_timer(5.0).timeout
-	$BubbleTooltip.get_child(0).text = translate_config.get_value("TranslationAdvice", "FifthAdvice")
-	await get_tree().create_timer(5.0).timeout
-	bubble_message_reset = true
-		
-
+	match $BubbleTooltip.message_number:
+		0: 
+			$BubbleTooltip.change_message(translate_config.get_value("TranslationAdvice", "FirstAdvice"))
+		1:
+			$BubbleTooltip.change_message(translate_config.get_value("TranslationAdvice", "SecondAdvice"))
+		2:
+			$BubbleTooltip.change_message(translate_config.get_value("TranslationAdvice", "ThirdAdvice"))
+		3:
+			$BubbleTooltip.change_message(translate_config.get_value("TranslationAdvice", "FourthAdvice"))
+		4:
+			$BubbleTooltip.change_message(translate_config.get_value("TranslationAdvice", "FifthAdvice"))
+	$BubbleMessageTimer.start()
 
 func _on_music_slider_value_changed(value):
 	if !$MusicMuteButton.is_mute:
@@ -627,7 +639,18 @@ func _on_language_button_pressed():
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 	$LanguageButton.change_language_flag(properties_config.get_value("Languages", "is_english"))
 	translate_text()
+	$BubbleMessageTimer.stop()
+	$BubbleTooltip.message_number = 0
 	change_bubble_message()
 	$Stats.translate_text(properties_config.get_value("Languages", "is_english"))
 	$Credits.translate_text(properties_config.get_value("Languages", "is_english"))
 	$WindowModeButton.translate_text(properties_config.get_value("Languages", "is_english"))
+	$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+
+
+func _on_bubble_message_timer_timeout():
+	change_bubble_message()
+
+
+func _on_loading_screen_scene_loaded(path):
+	get_tree().change_scene_to_file(path)

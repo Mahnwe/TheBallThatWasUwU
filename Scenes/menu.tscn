@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=59 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://tn1erw530dy1" path="res://Scenes/credits.tscn" id="24_l6llh"]
 [ext_resource type="PackedScene" uid="uid://c5khh4ff2btix" path="res://Scenes/window_mode_controller.tscn" id="26_i37ye"]
 [ext_resource type="PackedScene" uid="uid://dey70a6y3lk0k" path="res://Scenes/language_button.tscn" id="27_jbv25"]
+[ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="30_747ic"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dr7d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -352,9 +353,9 @@ scale = Vector2(0.31073, 0.383927)
 z_index = 2
 layout_mode = 0
 offset_left = 895.0
-offset_top = 505.875
+offset_top = 502.875
 offset_right = 971.0
-offset_bottom = 541.875
+offset_bottom = 538.875
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../QuitButton")
@@ -403,9 +404,9 @@ scale = Vector2(0.31073, 0.383927)
 z_index = 2
 layout_mode = 0
 offset_left = 1247.0
-offset_top = 506.0
+offset_top = 502.875
 offset_right = 1323.0
-offset_bottom = 542.0
+offset_bottom = 538.875
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../QuitButton")
@@ -456,9 +457,9 @@ scale = Vector2(0.31073, 0.383927)
 z_index = 2
 layout_mode = 0
 offset_left = 1249.0
-offset_top = 805.0
+offset_top = 807.0
 offset_right = 1325.0
-offset_bottom = 841.0
+offset_bottom = 843.0
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level5Button")
 focus_neighbor_top = NodePath("../Level3Button")
@@ -996,6 +997,14 @@ focus_neighbor_top = NodePath("../Level3Button")
 focus_neighbor_right = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../Level3Button")
 
+[node name="BubbleMessageTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="LoadingScreen" parent="." instance=ExtResource("30_747ic")]
+z_index = 3
+layout_mode = 1
+
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]
 [connection signal="mouse_exited" from="Level1Button" to="." method="_on_level_1_button_mouse_exited"]
@@ -1062,3 +1071,5 @@ focus_neighbor_bottom = NodePath("../Level3Button")
 [connection signal="pressed" from="WindowModeButton" to="." method="_on_window_mode_button_pressed"]
 [connection signal="focus_entered" from="LanguageButton" to="." method="_on_button_focus_entered"]
 [connection signal="pressed" from="LanguageButton" to="." method="_on_language_button_pressed"]
+[connection signal="timeout" from="BubbleMessageTimer" to="." method="_on_bubble_message_timer_timeout"]
+[connection signal="scene_loaded" from="LoadingScreen" to="." method="_on_loading_screen_scene_loaded"]

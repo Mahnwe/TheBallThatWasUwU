@@ -1,5 +1,7 @@
 extends Control
 
+const MENU_SCENE : String = "res://Scenes/menu.tscn"
+
 var is_controller_focused = false
 var properties_config = ConfigFile.new()
 
@@ -8,6 +10,7 @@ var properties_file = properties_config.load("res://Ressources/PropertieFile/pro
 
 func _ready():
 	setup_window_mod()
+	$LoadingScreen.hide()
 	check_is_language_selected()
 	$FrButton.grab_focus()
 	
@@ -27,14 +30,16 @@ func _on_fr_button_pressed():
 	properties_config.set_value("Languages", "is_english", false)
 	properties_config.set_value("Launch", "is_first_launch", false)
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+	go_to_menu()
 
 
 func _on_en_button_pressed():
 	properties_config.set_value("Languages", "is_english", true)
 	properties_config.set_value("Launch", "is_first_launch", false)
 	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+	go_to_menu()
 
 
 func _on_fr_button_focus_entered():
@@ -69,4 +74,8 @@ func check_max_log_files():
 		ProjectSettings.set_setting("debug/file_logging/max_log_files", 5)
 	
 func go_to_menu():
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	$LoadingScreen.show()
+	$LoadingScreen.load(MENU_SCENE)
+
+func _on_loading_screen_scene_loaded(path):
+	get_tree().change_scene_to_file(path)

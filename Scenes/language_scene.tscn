@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8xvas0md65yk"]
+[gd_scene load_steps=12 format=3 uid="uid://b8xvas0md65yk"]
 
 [ext_resource type="Script" uid="uid://bhp7m2lbln0pg" path="res://Scripts/language_scene.gd" id="1_s0hyc"]
 [ext_resource type="Texture2D" uid="uid://bv0kdlon7yjqo" path="res://Arts/BackgroundSprite/LanguageBackgroundSprite.png" id="2_s0hyc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="5_sih3h"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="6_iktbb"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="7_iktbb"]
+[ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="8_mcjyt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iktbb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -118,7 +119,11 @@ flat = true
 stream = ExtResource("7_iktbb")
 volume_db = -10.852
 
+[node name="LoadingScreen" parent="LanguageScene" instance=ExtResource("8_mcjyt")]
+layout_mode = 1
+
 [connection signal="focus_entered" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_focus_entered"]
 [connection signal="pressed" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_pressed"]
 [connection signal="focus_entered" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_focus_entered"]
 [connection signal="pressed" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_pressed"]
+[connection signal="scene_loaded" from="LanguageScene/LoadingScreen" to="LanguageScene" method="_on_loading_screen_scene_loaded"]
