@@ -671,8 +671,8 @@ scale = Vector2(0.28, 0.200001)
 speed = 220
 
 [node name="Finish" parent="." instance=ExtResource("11_bscno")]
-z_index = 1
-position = Vector2(-4693, 329)
+z_index = 2
+position = Vector2(-4693, 331)
 scale = Vector2(0.479996, 0.56)
 
 [node name="FinishUI" parent="Finish" instance=ExtResource("13_6rccf")]
@@ -889,7 +889,7 @@ curve = SubResource("Curve2D_uv1om")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
 position = Vector2(-2142, 1010)
-rotation = 0.109452
+rotation = 0.109451
 
 [node name="Bug" parent="Path2D2/PathFollow2D" instance=ExtResource("37_fpxdy")]
 rotation = 1.5708

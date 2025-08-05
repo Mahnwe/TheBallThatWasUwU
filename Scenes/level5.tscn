@@ -757,7 +757,7 @@ scale = Vector2(0.693589, 0.84445)
 position = Vector2(0, -28)
 
 [node name="CoralSpike12" parent="." instance=ExtResource("16_r1un4")]
-position = Vector2(-2643, -773)
+position = Vector2(-2609, -773)
 
 [node name="Palm" parent="." instance=ExtResource("30_au55g")]
 position = Vector2(-805, -23)

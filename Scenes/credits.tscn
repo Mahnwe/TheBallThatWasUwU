@@ -51,7 +51,7 @@ scale = Vector2(0.805, 0.73)
 texture = ExtResource("3_ccovl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(392.985, 431.355)
+position = Vector2(392.729, 392.355)
 scale = Vector2(3.8648, 4.93027)
 texture = ExtResource("1_r18jl")
 
@@ -65,59 +65,59 @@ position = Vector2(217.84, 0.0894118)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(283.4, 0.0957062)
+position = Vector2(287.988, 0.130821)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(-3.1023, 53.5458)
+position = Vector2(-6.65851, 52.1259)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(105.928, 53.9035)
+position = Vector2(105.993, 52.5547)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(227.699, 54.1543)
+position = Vector2(227.764, 52.8055)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(290.416, 55.4466)
+position = Vector2(290.123, 54.1542)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(0.187362, 81.625)
+position = Vector2(-7.43475, 106.687)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(104.761, 81.2422)
+position = Vector2(104.9, 106.261)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(188.974, 82.0079)
+position = Vector2(189.113, 107.027)
 texture = ExtResource("1_r18jl")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(290.029, 79.7107)
+position = Vector2(293.486, 104.659)
 texture = ExtResource("1_r18jl")
 flip_h = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(920.111, 210.01)
+position = Vector2(919.855, 171.01)
 scale = Vector2(3.32583, 3.2108)
 texture = ExtResource("1_r18jl")
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 728.223
-offset_top = 143.02
-offset_right = 1413.22
-offset_bottom = 416.02
+offset_left = 727.967
+offset_top = 104.02
+offset_right = 1412.96
+offset_bottom = 377.02
 scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -132,12 +132,12 @@ text = "Credits"
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 241.0
-offset_top = 360.0
-offset_right = 1819.0
-offset_bottom = 919.0
+offset_left = 240.744
+offset_top = 321.0
+offset_right = 1818.74
+offset_bottom = 880.0
 scale = Vector2(0.971534, 0.94383)
-theme_override_constants/separation = 180
+theme_override_constants/separation = 190
 dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
@@ -196,6 +196,7 @@ z_index = -1
 position = Vector2(287.175, 28.1992)
 scale = Vector2(1.15, 0.343815)
 texture = ExtResource("6_1wbrc")
+flip_v = true
 
 [node name="MusicsLabel" type="Label" parent="HSplitContainer/VBoxContainer/VSplitContainer3"]
 layout_mode = 2
@@ -231,6 +232,8 @@ z_index = -1
 position = Vector2(320.56, 29.6664)
 scale = Vector2(0.699, 0.342)
 texture = ExtResource("6_1wbrc")
+flip_h = true
+flip_v = true
 
 [node name="AnimationLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer3"]
 layout_mode = 2
@@ -262,6 +265,7 @@ z_index = -1
 position = Vector2(341.146, 33.733)
 scale = Vector2(1.14998, 0.333712)
 texture = ExtResource("6_1wbrc")
+flip_h = true
 
 [node name="HelpLabel" type="Label" parent="HSplitContainer/VBoxContainer2/VSplitContainer2"]
 layout_mode = 2
@@ -275,38 +279,60 @@ text = "           Badda,  Pani,  Poire,  D4rkw3st,
                               SatanLaChips"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(170, 285)
-scale = Vector2(3.1672, 2.73711)
+position = Vector2(169.744, 246)
+scale = Vector2(3.01488, 2.63747)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(-1.78075, 237.999)
+position = Vector2(-6.63376, 270.287)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(482.129, -1.46139)
+position = Vector2(515.112, -1.51661)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D3"]
-position = Vector2(489.19, 237.999)
+position = Vector2(519.755, 268.77)
 texture = ExtResource("2_gryuy")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(167, 287)
+position = Vector2(166.744, 248)
 scale = Vector2(1.39901, 1.32136)
 texture = ExtResource("5_xelri")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
-position = Vector2(-4.03145, 494.512)
+position = Vector2(-15.7254, 538.743)
 texture = ExtResource("5_xelri")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4"]
-position = Vector2(1092.2, -4.54079)
+position = Vector2(1107.21, -4.54077)
 texture = ExtResource("5_xelri")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D4"]
-position = Vector2(1106.76, 493.755)
+position = Vector2(1122.22, 535.716)
 texture = ExtResource("5_xelri")
+
+[node name="GeneralThanksLabel" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 467.0
+offset_top = 954.0
+offset_right = 1708.0
+offset_bottom = 1020.0
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_7emq5")
+theme_override_font_sizes/font_size = 45
+text = "A huge thanks to everyone who played !"
+
+[node name="Sprite2D" type="Sprite2D" parent="GeneralThanksLabel"]
+z_index = -1
+position = Vector2(461, 26.5)
+scale = Vector2(1.73793, 0.387417)
+texture = ExtResource("6_1wbrc")
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

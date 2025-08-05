@@ -298,19 +298,20 @@ func save_medals_stats():
 	if queue.current_medal != 0:
 		var medal_number = stats_config.get_value("Stats", "medal_number")
 		stats_config.set_value("Stats", "medal_number", medal_number+1)
-		if queue.current_medal == 1:
+	match queue.current_medal:
+		1:
 			var bronze_medal_number = stats_config.get_value("Stats", "bronze_medal_number")
 			stats_config.set_value("Stats", "bronze_medal_number", bronze_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
-		if queue.current_medal == 2:
+		2:
 			var silver_medal_number = stats_config.get_value("Stats", "silver_medal_number")
 			stats_config.set_value("Stats", "silver_medal_number", silver_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
-		if queue.current_medal == 3:
+		3:
 			var gold_medal_number = stats_config.get_value("Stats", "gold_medal_number")
 			stats_config.set_value("Stats", "gold_medal_number", gold_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
-		if queue.current_medal == 4:
+		4:
 			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
 			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
 			stats_config.save("res://Ressources/PropertieFile/stats.cfg")

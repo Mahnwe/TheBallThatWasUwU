@@ -110,6 +110,7 @@ flip_h = true
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D2"]
 position = Vector2(7.74935e-05, 92.6496)
 texture = ExtResource("3_wue6w")
+flip_h = true
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D2"]
 position = Vector2(131.655, 92.8876)
@@ -132,7 +133,7 @@ offset_top = 282.0
 offset_right = 1163.0
 offset_bottom = 860.0
 scale = Vector2(0.947485, 0.943702)
-theme_override_constants/separation = 90
+theme_override_constants/separation = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -157,6 +158,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -179,6 +181,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -201,6 +204,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -223,6 +227,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -245,6 +250,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -267,6 +273,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -289,6 +296,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -311,6 +319,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -337,6 +346,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -359,6 +369,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -381,6 +392,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -403,6 +415,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -425,6 +438,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -447,6 +461,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -469,6 +484,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -491,6 +507,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -522,6 +539,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -544,6 +562,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -566,6 +585,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -588,6 +608,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -610,6 +631,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
@@ -632,6 +654,7 @@ theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
 

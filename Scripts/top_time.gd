@@ -39,43 +39,43 @@ func _process(_delta):
 func check_medal():
 	if (self.get_parent().name == "Level1Button"):
 		var medal_check = properties_config.get_value("medals", "level_one_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level2Button"):
 		var medal_check = properties_config.get_value("medals", "level_two_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level3Button"):
 		var medal_check = properties_config.get_value("medals", "level_three_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level4Button"):
 		var medal_check = properties_config.get_value("medals", "level_four_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level5Button"):
 		var medal_check = properties_config.get_value("medals", "level_five_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level6Button"):
 		var medal_check = properties_config.get_value("medals", "level_six_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level7Button"):
 		var medal_check = properties_config.get_value("medals", "level_seven_medal")
-		if medal_check == 4:
+		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()

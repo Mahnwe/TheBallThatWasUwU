@@ -46,3 +46,4 @@ func translate_text(is_english):
 	$HSplitContainer/VBoxContainer/VSplitContainer3/MusicsCredit.text = translate_config.get_value("TranslationCredits", "SoundCredit")
 	$HSplitContainer/VBoxContainer2/VSplitContainer3/AnimationCredit.text = translate_config.get_value("TranslationCredits", "AnimationCredit")
 	$HSplitContainer/VBoxContainer2/VSplitContainer2/HelpCredit.text = translate_config.get_value("TranslationCredits", "HelpCredit")
+	$GeneralThanksLabel.text = translate_config.get_value("TranslationCredits", "GeneralThanks")

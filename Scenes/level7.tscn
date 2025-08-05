@@ -427,7 +427,7 @@ position = Vector2(-553, -101.515)
 scale = Vector2(2.04, 0.772727)
 
 [node name="Advice" parent="." instance=ExtResource("13_u17fo")]
-z_index = 2
+z_index = 4
 position = Vector2(-34, -150)
 scale = Vector2(0.7, 0.694)
 
@@ -2225,7 +2225,7 @@ curve = SubResource("Curve2D_mswl2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BigTree2/Path2D"]
 position = Vector2(-9.68311, 134.083)
-rotation = -0.92572
+rotation = -0.925697
 
 [node name="Bug" parent="BigTree2/Path2D/PathFollow2D" instance=ExtResource("74_2lhjl")]
 rotation = 1.4399
@@ -2381,7 +2381,7 @@ curve = SubResource("Curve2D_2lhjl")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="DarkBrownTree/Path2D"]
 position = Vector2(-30.5686, 83.8035)
-rotation = -0.182426
+rotation = -0.182427
 
 [node name="Bug" parent="DarkBrownTree/Path2D/PathFollow2D" instance=ExtResource("74_2lhjl")]
 rotation = 1.4399
