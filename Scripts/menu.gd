@@ -61,30 +61,37 @@ func wait_for_focus():
 
 
 func _on_level_1_button_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_1)
 
 func _on_level_2_button_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_2)
 
 func _on_level_3_button_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_3)
 	
 func _on_level_4_button_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_4)
 	
 func _on_level_5_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_5)
 	
 func _on_level_6_button_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_6)
 	
 func _on_level_7_button_pressed():
+	focus_close_stats_button()
 	$LoadingScreen.show()
 	$LoadingScreen.load(LEVEL_7)
 

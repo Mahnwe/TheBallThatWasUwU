@@ -38,6 +38,11 @@ func _process(_delta):
 			open_commands_panel()
 		else:
 			pass
+	for member in get_tree().get_nodes_in_group("pause_buttons"):
+			if member.has_focus():
+				member.add_theme_color_override("font_outline_color", Color("#131313"))
+			else:
+				member.add_theme_color_override("font_outline_color", Color("#ffffff"))
 		
 	wait_for_focus()
 	

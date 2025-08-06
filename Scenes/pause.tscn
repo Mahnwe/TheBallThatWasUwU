@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=30 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
 [ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="2_g1xuu"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_h85by"]
+[ext_resource type="Texture2D" uid="uid://c8ga2v1atuxdc" path="res://Arts/BackgroundSprite/BrownBackgroundButtonSprite.png" id="3_5ricp"]
 [ext_resource type="Texture2D" uid="uid://dd5gsplolw7pp" path="res://Arts/ControllerControls/ShareXbox-removebg-preview.png" id="3_xjpr8"]
 [ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="4_6cx23"]
 [ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="5_d1asp"]
@@ -85,11 +86,21 @@ position = Vector2(1556.5, 865)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
+[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/Sprite2D"]
+position = Vector2(2.02185, -1.42649)
+scale = Vector2(0.205439, 0.11492)
+texture = ExtResource("3_5ricp")
+
 [node name="ReturnToMenu" type="Button" parent="ReturnLayer" groups=["pause_buttons"]]
+anchors_preset = -1
+anchor_left = 0.00572917
+anchor_top = 0.0185185
+anchor_right = 0.0161458
+anchor_bottom = 0.0231481
 offset_left = 1331.0
 offset_top = 776.0
-offset_right = 1628.0
-offset_bottom = 873.0
+offset_right = 1596.0
+offset_bottom = 845.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_top = NodePath("../../ContinueLayer/Continue")
@@ -99,7 +110,7 @@ focus_next = NodePath("../../CommandLayer/Command")
 focus_previous = NodePath("../../ContinueLayer/Continue")
 theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
@@ -114,7 +125,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ReturnButtonsTooltip" type="Sprite2D" parent="ReturnLayer/ReturnToMenu"]
 visible = false
 z_index = 5
-position = Vector2(128.846, 147.093)
+position = Vector2(117.949, 123.256)
 scale = Vector2(0.401559, 0.345806)
 texture = ExtResource("2_g1xuu")
 
@@ -138,11 +149,18 @@ position = Vector2(951.5, 658)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Sprite2D"]
+scale = Vector2(0.205439, 0.11492)
+texture = ExtResource("3_5ricp")
+
 [node name="Continue" type="Button" parent="ContinueLayer" groups=["pause_buttons"]]
-offset_left = 727.0
-offset_top = 580.0
-offset_right = 1021.0
-offset_bottom = 665.0
+anchors_preset = -1
+anchor_right = 0.0677083
+anchor_bottom = 0.0268519
+offset_left = 729.0
+offset_top = 594.0
+offset_right = 885.0
+offset_bottom = 639.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../CommandLayer/Command")
 focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
@@ -152,7 +170,7 @@ focus_next = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_previous = NodePath("../../CommandLayer/Command")
 theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
@@ -166,7 +184,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ContinueButtonsTooltip" type="Sprite2D" parent="ContinueLayer/Continue"]
 visible = false
-position = Vector2(61.5385, 144.186)
+position = Vector2(55.7692, 120.349)
 scale = Vector2(0.135343, 0.161549)
 texture = ExtResource("5_d1asp")
 
@@ -205,11 +223,18 @@ position = Vector2(361.5, 867)
 scale = Vector2(3.70946, 3.57895)
 texture = ExtResource("2_h85by")
 
+[node name="Sprite2D" type="Sprite2D" parent="CommandLayer/Sprite2D"]
+scale = Vector2(0.205439, 0.11492)
+texture = ExtResource("3_5ricp")
+
 [node name="Command" type="Button" parent="CommandLayer" groups=["pause_buttons"]]
-offset_left = 128.0
-offset_top = 785.0
-offset_right = 422.0
-offset_bottom = 874.0
+anchors_preset = -1
+anchor_right = 0.0541667
+anchor_bottom = 0.0277778
+offset_left = 138.0
+offset_top = 803.0
+offset_right = 320.0
+offset_bottom = 848.0
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_top = NodePath("../../SoundLayer/EffectSlider")
@@ -219,7 +244,7 @@ focus_next = NodePath("../../ContinueLayer/Continue")
 focus_previous = NodePath("../../ReturnLayer/ReturnToMenu")
 theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
@@ -232,8 +257,7 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="CommandButtonsTooltip" type="Sprite2D" parent="CommandLayer/Command"]
-visible = false
-position = Vector2(70.5128, 140.698)
+position = Vector2(67.9487, 113.372)
 scale = Vector2(0.188382, 0.19501)
 texture = ExtResource("11_felfj")
 
@@ -407,10 +431,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2943.0
+offset_left = -1307.0
 offset_top = -1064.0
-offset_right = 3061.0
-offset_bottom = 2762.0
+offset_right = 1793.0
+offset_bottom = 1093.0
 grow_horizontal = 2
 grow_vertical = 2
 

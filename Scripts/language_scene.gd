@@ -73,6 +73,8 @@ func check_max_log_files():
 		ProjectSettings.set_setting("debug/file_logging/max_log_files", 5)
 	
 func go_to_menu():
+	for member in get_tree().get_nodes_in_group("language_buttons"):
+		member.focus_mode = FOCUS_NONE
 	$LoadingScreen.show()
 	$LoadingScreen.load(MENU_SCENE)
 
