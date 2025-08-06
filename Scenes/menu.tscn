@@ -934,7 +934,7 @@ scale = Vector2(0.88378, 1)
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(1745, 964)
-scale = Vector2(1.48649, 1.77632)
+scale = Vector2(1.48649, 1.81579)
 texture = ExtResource("23_h63v2")
 
 [node name="CreditsButton" type="Button" parent="." groups=["MenuButtons"]]
@@ -1002,6 +1002,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="LoadingScreen" parent="." instance=ExtResource("30_747ic")]
+visible = false
 z_index = 3
 layout_mode = 1
 

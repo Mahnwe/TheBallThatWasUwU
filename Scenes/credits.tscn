@@ -37,11 +37,11 @@ offset_bottom = 1080.0
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1740.0
-offset_top = 29.0
-offset_right = 1898.0
-offset_bottom = 161.0
-scale = Vector2(0.776259, 0.751202)
+offset_left = 1761.0
+offset_top = 25.0
+offset_right = 1919.0
+offset_bottom = 157.0
+scale = Vector2(0.71813, 0.709984)
 theme_override_styles/focus = SubResource("StyleBoxFlat_uah1q")
 flat = true
 
@@ -114,10 +114,10 @@ texture = ExtResource("1_r18jl")
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 727.967
-offset_top = 104.02
-offset_right = 1412.96
-offset_bottom = 377.02
+offset_left = 728.0
+offset_top = 104.0
+offset_right = 1349.0
+offset_bottom = 287.0
 scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -276,7 +276,7 @@ theme_override_fonts/font = ExtResource("6_803yc")
 theme_override_font_sizes/font_size = 40
 text = "           Badda,  Pani,  Poire,  D4rkw3st,
                   Seutimflo, Yossaan,  Givr_,
-                              SatanLaChips"
+                      SatanLaChips, Gammi"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(169.744, 246)
@@ -317,7 +317,7 @@ z_index = 1
 layout_mode = 0
 offset_left = 467.0
 offset_top = 954.0
-offset_right = 1708.0
+offset_right = 1404.0
 offset_bottom = 1020.0
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

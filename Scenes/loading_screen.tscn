@@ -34,6 +34,11 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg6tb"]
 bg_color = Color(0.819608, 0.027451, 0.0352941, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uj1tb"]
 animations = [{
@@ -129,9 +134,9 @@ rounded = true
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 818.0
+offset_left = 820.0
 offset_top = 270.0
-offset_right = 1051.0
+offset_right = 1080.0
 offset_bottom = 339.0
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_fonts/font = ExtResource("4_lcj3d")
@@ -139,7 +144,7 @@ theme_override_font_sizes/font_size = 50
 text = "Loading..."
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(945, 310.5)
+position = Vector2(947, 310.5)
 scale = Vector2(3.25676, 3.25)
 texture = ExtResource("4_7cftd")
 

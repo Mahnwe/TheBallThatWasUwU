@@ -11,6 +11,7 @@
 [node name="VboxTimerLabel" type="VBoxContainer"]
 offset_right = 267.0
 offset_bottom = 314.0
+theme_override_constants/separation = 6
 script = ExtResource("1_s6oky")
 
 [node name="TimerRankDev" type="Label" parent="."]
@@ -62,17 +63,17 @@ theme_override_fonts/font = ExtResource("2_75ox4")
 theme_override_font_sizes/font_size = 35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-38, 77)
+position = Vector2(-38, 75)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("2_eo47u")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-38, 132)
+position = Vector2(-38, 126)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("3_kx2cu")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-38, 186)
+position = Vector2(-38, 177)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("4_fxi3u")
 
@@ -87,6 +88,6 @@ position = Vector2(0, 44.6983)
 texture = ExtResource("5_yc4nk")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(-37, 24)
+position = Vector2(-37, 23)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("6_tgrf8")

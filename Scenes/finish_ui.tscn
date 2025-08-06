@@ -38,10 +38,11 @@ script = ExtResource("1_8cftm")
 
 [node name="FinishNextLevelButton" type="Button" parent="CanvasLayer" groups=["finish_button"]]
 z_index = 2
-offset_left = 1221.0
-offset_top = 621.0
-offset_right = 1685.0
-offset_bottom = 802.0
+offset_left = 1189.0
+offset_top = 633.0
+offset_right = 1653.0
+offset_bottom = 814.0
+scale = Vector2(0.957441, 0.934446)
 focus_neighbor_left = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_top = NodePath("../../CanvasLayer2/FinishMenuButton")
 focus_neighbor_right = NodePath("../../CanvasLayer2/FinishMenuButton")
@@ -94,10 +95,11 @@ texture = ExtResource("7_qv8jw")
 
 [node name="FinishMenuButton" type="Button" parent="CanvasLayer2" groups=["finish_button"]]
 z_index = 2
-offset_left = 178.0
-offset_top = 619.0
-offset_right = 717.0
-offset_bottom = 800.0
+offset_left = 237.0
+offset_top = 628.0
+offset_right = 776.0
+offset_bottom = 809.0
+scale = Vector2(0.957441, 0.934446)
 focus_neighbor_left = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_top = NodePath("../../CanvasLayer/FinishNextLevelButton")
 focus_neighbor_right = NodePath("../../CanvasLayer/FinishNextLevelButton")

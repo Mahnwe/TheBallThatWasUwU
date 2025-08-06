@@ -10,7 +10,6 @@ var properties_file = properties_config.load("res://Ressources/PropertieFile/pro
 
 func _ready():
 	setup_window_mod()
-	$LoadingScreen.hide()
 	check_is_language_selected()
 	$FrButton.grab_focus()
 	

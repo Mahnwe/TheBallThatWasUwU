@@ -39,7 +39,6 @@ func _ready():
 	set_volume()
 	setup_quit_button_stylebox()
 	chestNumber = properties_config.get_value("Chests", "chestNumber")
-	$LoadingScreen.hide()
 	check_level7_button_visibility()
 	check_for_ability_icons()
 	$Level1Button.grab_focus()

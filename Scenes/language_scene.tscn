@@ -120,6 +120,7 @@ stream = ExtResource("7_iktbb")
 volume_db = -10.852
 
 [node name="LoadingScreen" parent="LanguageScene" instance=ExtResource("8_mcjyt")]
+visible = false
 layout_mode = 1
 
 [connection signal="focus_entered" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_focus_entered"]
