@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=69 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -9,9 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="4_qktq1"]
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="5_ok2nw"]
 [ext_resource type="PackedScene" uid="uid://be8h04flewf2h" path="res://Scenes/tree.tscn" id="6_ilarj"]
+[ext_resource type="Texture2D" uid="uid://cj7nlee07b522" path="res://Arts/UwUBallSprite/UwUIdle1.png" id="6_lvy56"]
+[ext_resource type="Texture2D" uid="uid://dycpb6kyp34ry" path="res://Arts/UwUBallSprite/UwUIdle2.png" id="7_48g0d"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
-[ext_resource type="Texture2D" uid="uid://byylbubfqoidr" path="res://Arts/BugSprite/BugSprite.png" id="9_ocger"]
 [ext_resource type="PackedScene" uid="uid://cr47sovtmwvxp" path="res://Scenes/top_time.tscn" id="10_vv7ov"]
+[ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="11_4dr7d"]
 [ext_resource type="Texture2D" uid="uid://bdfulll6h4t4b" path="res://Arts/ChestSprite/ValidChestSprite.png" id="11_d77ms"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="11_p1e1o"]
 [ext_resource type="Script" uid="uid://cat0vjr1aycp1" path="res://Scripts/chest_validator.gd" id="12_3p34a"]
@@ -30,6 +32,38 @@
 [ext_resource type="PackedScene" uid="uid://c5khh4ff2btix" path="res://Scenes/window_mode_controller.tscn" id="26_i37ye"]
 [ext_resource type="PackedScene" uid="uid://dey70a6y3lk0k" path="res://Scenes/language_button.tscn" id="27_jbv25"]
 [ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="30_747ic"]
+[ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="33_flyo0"]
+[ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="34_4dr7d"]
+[ext_resource type="Texture2D" uid="uid://dj52qyvynsxxo" path="res://Arts/FlowersSprite/BlueFlower.png" id="35_8cy2d"]
+[ext_resource type="Texture2D" uid="uid://b6ya43smikoo8" path="res://Arts/FlowersSprite/RedMushroom.png" id="36_lx18h"]
+[ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="37_mucp4"]
+[ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="38_4dr7d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygxe1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qktq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lvy56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_48g0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qktq1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_flyo0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 13, 131, 0, 0, 0, 0, 22, 115, 0, 0, 0, 0, 27, 93, 0, 0, 0, 0, 26, 72, 0, 0, 0, 0, 23, 51, 0, 0, 0, 0, 19, 31, 0, 0, 0, 0, 18, 10, 0, 0, 0, 0, 15, -15, 11.2969, 0.297287, -11.2969, -0.297287, 7, -31, 0, 0, 0, 0, -1, -19, 0, 0, 0, 0, -3, 6, 0, 0, 0, 0, -10, 22, 0, 0, 0, 0, -12, 31, 0, 0, 0, 0, -9, 47, 0, 0, 0, 0, -5, 58, 0, 0, 0, 0, -3, 74, 0, 0, 0, 0, -3, 90, 0, 0, 0, 0, -7, 106, 0, 0, 0, 0, -2, 122, 0, 0, 0, 0, 4, 129, 0, 0, 0, 0, 13, 131)
+}
+point_count = 21
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dr7d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -266,10 +300,11 @@ text = "The ball that was fast
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(640, 274)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform"]
+[node name="BallSprite" type="AnimatedSprite2D" parent="platform"]
 position = Vector2(366, 55)
-scale = Vector2(1.3641, 1.35729)
-texture = ExtResource("4_qktq1")
+scale = Vector2(1.36, 1.36)
+sprite_frames = SubResource("SpriteFrames_ygxe1")
+animation = &"Idle"
 
 [node name="BranchesBush" parent="platform" instance=ExtResource("5_ok2nw")]
 position = Vector2(134, 55)
@@ -282,14 +317,22 @@ position = Vector2(356.604, 2.68221e-07)
 position = Vector2(235, 68)
 
 [node name="BigTree" parent="platform" instance=ExtResource("3_rsj3o")]
-position = Vector2(177, -65)
+position = Vector2(177, -63)
+
+[node name="Path2D" type="Path2D" parent="platform/BigTree"]
+curve = SubResource("Curve2D_flyo0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="platform/BigTree/Path2D"]
+position = Vector2(13, 131)
+rotation = -1.05841
+
+[node name="Bug" parent="platform/BigTree/Path2D/PathFollow2D" instance=ExtResource("11_4dr7d")]
+rotation = 1.5708
+scale = Vector2(0.610509, 0.619536)
+speed = 20
 
 [node name="Tree" parent="platform" instance=ExtResource("6_ilarj")]
 position = Vector2(603, 0.875)
-
-[node name="Sprite2D2" type="Sprite2D" parent="platform"]
-position = Vector2(189, -34)
-texture = ExtResource("9_ocger")
 
 [node name="platform2" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(714, 471)
@@ -616,9 +659,9 @@ scale = Vector2(0.31073, 0.383927)
 [node name="Level7Button" type="Button" parent="." groups=["MenuButtons"]]
 z_index = 2
 layout_mode = 0
-offset_left = 99.0
+offset_left = 101.0
 offset_top = 428.0
-offset_right = 175.0
+offset_right = 177.0
 offset_bottom = 464.0
 scale = Vector2(2.61, 2.066)
 focus_neighbor_left = NodePath("../Level1Button")
@@ -818,21 +861,21 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_yyec
 max_value = 5.0
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(108.067, 992.56)
+position = Vector2(109.067, 998.56)
 scale = Vector2(0.679763, 0.633929)
 texture = ExtResource("14_45jmy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Logo"]
 z_index = -1
-position = Vector2(7.99289, 85.8778)
-scale = Vector2(0.530104, 0.19849)
+position = Vector2(16.0835, 89.8207)
+scale = Vector2(0.593513, 0.224604)
 texture = ExtResource("12_747ic")
 
 [node name="Label" type="Label" parent="Logo"]
-offset_left = -131.298
-offset_top = 63.7934
-offset_right = 253.702
-offset_bottom = 132.793
+offset_left = -142.795
+offset_top = 65.3697
+offset_right = 174.205
+offset_bottom = 113.37
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -840,21 +883,21 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_nakb8")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 40
 text = "Manawé Games"
 
 [node name="BubbleTooltip" parent="." instance=ExtResource("16_gkf7k")]
-position = Vector2(281.067, 879.563)
+position = Vector2(282.067, 885.563)
 scale = Vector2(3.3875, 2.735)
 bubble_message = "This game is easier with a controller"
 
 [node name="AbilityIcon" type="Sprite2D" parent="."]
-position = Vector2(992, 482)
+position = Vector2(992.375, 481.219)
 scale = Vector2(0.0985682, 0.0882286)
 texture = ExtResource("17_ukqqs")
 
 [node name="AbilityIcon2" type="Sprite2D" parent="."]
-position = Vector2(1349, 483)
+position = Vector2(1349.38, 482.219)
 scale = Vector2(0.0985682, 0.0882286)
 texture = ExtResource("17_ukqqs")
 
@@ -919,7 +962,7 @@ layout_mode = 1
 
 [node name="Level7Platforms" parent="." instance=ExtResource("3_x4hsc")]
 z_index = 0
-position = Vector2(398, 479)
+position = Vector2(400, 479)
 scale = Vector2(0.195505, 0.622132)
 
 [node name="Wall2" parent="Level7Platforms" instance=ExtResource("8_ar47r")]
@@ -1005,6 +1048,43 @@ one_shot = true
 visible = false
 z_index = 3
 layout_mode = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1190, 504)
+texture = ExtResource("33_flyo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-344, 303)
+texture = ExtResource("34_4dr7d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-417, 0)
+texture = ExtResource("35_8cy2d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(26, 305)
+texture = ExtResource("36_lx18h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D4"]
+z_index = 1
+position = Vector2(337, 288)
+scale = Vector2(1.53333, 2)
+texture = ExtResource("37_mucp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4/Sprite2D4"]
+position = Vector2(0, -36.5)
+texture = ExtResource("37_mucp4")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4/Sprite2D4"]
+position = Vector2(0, -72.5)
+texture = ExtResource("37_mucp4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D4"]
+z_index = 1
+position = Vector2(-762, -32)
+scale = Vector2(1.2, 1.1)
+texture = ExtResource("38_4dr7d")
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]

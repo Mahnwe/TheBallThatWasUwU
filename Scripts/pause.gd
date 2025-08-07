@@ -365,6 +365,13 @@ func _on_effect_slider_mouse_entered():
 	$SoundLayer/EffectSlider.add_theme_stylebox_override("grabber_area", new_stylebox)
 	$SoundLayer/EffectSliderLabel.add_theme_color_override("font_color", Color("#d90000"))
 	
+func _on_music_mute_button_mouse_exited():
+	$SoundLayer/MusicMuteButton.release_focus()
+	
+func _on_sound_mute_button_mouse_exited():
+	$SoundLayer/SoundMuteButton.release_focus()
+	
+	
 func _format_seconds(time : float) -> String:
 	var minutes := time / 60
 	var seconds := fmod(time, 60)

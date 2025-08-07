@@ -39,11 +39,13 @@ func _ready():
 	set_volume()
 	setup_quit_button_stylebox()
 	chestNumber = properties_config.get_value("Chests", "chestNumber")
+	$Level7Button/Label.hide()
 	check_level7_button_visibility()
 	check_for_ability_icons()
 	$Level1Button.grab_focus()
 	$MenuMusic.play()
 	change_bubble_message()
+	$platform/BallSprite.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -525,10 +527,12 @@ func check_level7_button_visibility():
 	if chestNumber >= 6:
 		$Level7Button.show()
 		$Level7Platforms.show()
+		$Sprite2D4/Sprite2D5.show()
 		$Level1Button.focus_neighbor_left = "../Level7Button"
 	else:
 		$Level7Button.hide()
 		$Level7Platforms.hide()
+		$Sprite2D4/Sprite2D5.hide()
 		$Level1Button.focus_neighbor_left = "../EffectSlider"
 
 func _on_level_7_button_mouse_entered():

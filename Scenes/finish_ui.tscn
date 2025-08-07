@@ -64,8 +64,9 @@ text = "Next level"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
-position = Vector2(98.1782, 242.925)
-scale = Vector2(0.228447, 0.256484)
+visible = false
+position = Vector2(99.2229, 241.855)
+scale = Vector2(0.225439, 0.246598)
 texture = ExtResource("2_fgywl")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
@@ -73,8 +74,8 @@ position = Vector2(334.109, 0)
 texture = ExtResource("3_yfqki")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
-position = Vector2(783.885, 21.6128)
-scale = Vector2(3.70815, 4.31446)
+position = Vector2(726.003, -0.704733)
+scale = Vector2(3.5172, 3.99607)
 texture = ExtResource("4_6ltl3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D/Sprite2D2"]
@@ -126,8 +127,9 @@ text = "Return to menu
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
-position = Vector2(105.489, 255.766)
-scale = Vector2(0.128979, 0.127208)
+visible = false
+position = Vector2(138.912, 246.135)
+scale = Vector2(0.100996, 0.101116)
 texture = ExtResource("7_m8y2d")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D"]
