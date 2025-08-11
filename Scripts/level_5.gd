@@ -81,8 +81,10 @@ func _process(delta):
 		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
+		saving_time_played()
 		get_tree().change_scene_to_file("res://Scenes/level6.tscn")
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
+		saving_time_played()
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
 func handle_pause():
@@ -101,6 +103,7 @@ func handle_pause():
 			untoggle_pause()
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
+			saving_time_played()
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 			
 			
@@ -298,6 +301,7 @@ func set_volume():
 
 func _on_finish_ui_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
+		saving_time_played()
 		get_tree().change_scene_to_file("res://Scenes/level6.tscn")
 
 func _on_portal_body_entered(body):
@@ -385,3 +389,14 @@ func _on_player_player_dashed():
 	var number_of_dashes = stats_config.get_value("Stats", "dash_number")
 	stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func saving_time_played():
+	var time_already_played = stats_config.get_value("Stats", "time_played")
+	var time_elapsed_to_save = time_already_played + $TimeControl.time_elapsed
+	stats_config.set_value("Stats", "time_played", time_elapsed_to_save)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+
+
+func _on_pause_return_to_menu_is_clicked():
+	saving_time_played()

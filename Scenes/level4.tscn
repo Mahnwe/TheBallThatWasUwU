@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dd7p5q35wxgff"]
+[gd_scene load_steps=58 format=3 uid="uid://dd7p5q35wxgff"]
 
 [ext_resource type="Script" uid="uid://cwp4b2qowta5v" path="res://Scripts/level_4.gd" id="1_aw8g7"]
 [ext_resource type="PackedScene" uid="uid://c26rjdt07ubrq" path="res://Scenes/player.tscn" id="2_wulbk"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://dt7djk3ywuucy" path="res://Scenes/bat.tscn" id="34_wpjc4"]
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="35_crdxt"]
 [ext_resource type="Texture2D" uid="uid://b6ya43smikoo8" path="res://Arts/FlowersSprite/RedMushroom.png" id="36_hxlu0"]
+[ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="40_wn2go"]
 
 [sub_resource type="Curve2D" id="Curve2D_wok5w"]
 _data = {
@@ -1098,11 +1099,14 @@ flip_h = true
 position = Vector2(-2162, -664)
 collision_scale_y = 2
 
+[node name="TimeControl" parent="." instance=ExtResource("40_wn2go")]
+
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
+[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
 [connection signal="body_entered" from="Portal1" to="." method="_on_portal_1_body_entered"]

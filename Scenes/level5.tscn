@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=59 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="44_vxmds"]
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="45_twoli"]
 [ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="47_au1pt"]
+[ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="48_383j6"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -958,11 +959,14 @@ rotation = 0.696522
 rotation = 1.5708
 speed = 18
 
+[node name="TimeControl" parent="." instance=ExtResource("48_383j6")]
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
+[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike" to="." method="_on_spike_spike_hit"]

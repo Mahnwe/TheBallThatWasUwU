@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=70 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ya43smikoo8" path="res://Arts/FlowersSprite/RedMushroom.png" id="36_lx18h"]
 [ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="37_mucp4"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="38_4dr7d"]
+[ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="39_8cy2d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ygxe1"]
 animations = [{
@@ -1085,6 +1086,8 @@ z_index = 1
 position = Vector2(-762, -32)
 scale = Vector2(1.2, 1.1)
 texture = ExtResource("38_4dr7d")
+
+[node name="TimeControl" parent="." instance=ExtResource("39_8cy2d")]
 
 [connection signal="focus_entered" from="Level1Button" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="Level1Button" to="." method="_on_level_1_button_gui_input"]

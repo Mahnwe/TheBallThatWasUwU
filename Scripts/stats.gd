@@ -1,6 +1,5 @@
 extends Control
 
-
 var stats_config= ConfigFile.new()
 var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 
@@ -46,6 +45,7 @@ func set_up_stats_with_file():
 	$VBoxContainer2/HSplitContainer3/SilverMedalNumber.text = str(stats_config.get_value("Stats", "silver_medal_number"))
 	$VBoxContainer2/HSplitContainer4/GoldMedalNumber.text = str(stats_config.get_value("Stats", "gold_medal_number"))
 	$VBoxContainer2/HSplitContainer5/DevMedalNumber.text = str(stats_config.get_value("Stats", "dev_medal_number"))
+	$VBoxContainer2/HSplitContainer6/TimePlayedNumber.text = $TimeControl._format_seconds(stats_config.get_value("Stats", "time_played"))
 
 
 func _on_quit_button_pressed():
@@ -91,9 +91,10 @@ func translate_text(is_english):
 	$HSplitContainer/VBoxContainer3/HSplitContainer6/Level5FinishedLabel.text = translate_config.get_value("TranslationStats", "Level5Finished")
 	$HSplitContainer/VBoxContainer3/HSplitContainer7/Level6FinishedLabel.text = translate_config.get_value("TranslationStats", "Level6Finished")
 	$HSplitContainer/VBoxContainer3/HSplitContainer8/Level7FinishedLabel.text = translate_config.get_value("TranslationStats", "Level7Finished")
+	
 	$VBoxContainer2/HSplitContainer/MedalNumberLabel.text = translate_config.get_value("TranslationStats", "NumberOfMedal")
 	$VBoxContainer2/HSplitContainer2/BronzeMedalLabel.text = translate_config.get_value("TranslationStats", "NumberOfBronzeMedal")
 	$VBoxContainer2/HSplitContainer3/SilverMedalLabel.text = translate_config.get_value("TranslationStats", "NumberOfSilverMedal")
 	$VBoxContainer2/HSplitContainer4/GoldMedalLabel.text = translate_config.get_value("TranslationStats", "NumberOfGoldMedal")
 	$VBoxContainer2/HSplitContainer5/DevMedalLabel.text = translate_config.get_value("TranslationStats", "NumberOfDevMedal")
-	
+	$VBoxContainer2/HSplitContainer6/TimePlayedLabel.text = translate_config.get_value("TranslationStats", "TimePlayed")

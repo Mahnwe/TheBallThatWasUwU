@@ -2,6 +2,7 @@ extends Control
 
 var is_controller_focused
 signal continue_is_clicked
+signal return_to_menu_is_clicked
 @export var is_commands_display = false
 @export var is_paused = false
 
@@ -55,6 +56,7 @@ func wait_for_focus():
 
 func _on_return_to_menu_pressed():
 	if !is_commands_display:
+		return_to_menu_is_clicked.emit()
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	else:
 		pass

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b14uqg5nr7ncf"]
+
+[ext_resource type="Script" uid="uid://cmhb7uesrd3jq" path="res://Scripts/time_played.gd" id="1_6ggux"]
+
+[node name="TimeControl" type="Node"]
+script = ExtResource("1_6ggux")

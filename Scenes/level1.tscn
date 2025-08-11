@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=48 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dd5gc4llbugdi" path="res://Arts/FlowersSprite/PurpleIvy.png" id="35_daeh6"]
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="36_dr50b"]
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="36_nstho"]
+[ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="39_tfirt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
 size = Vector2(107, 19)
@@ -970,11 +971,14 @@ z_index = -1
 position = Vector2(385, -343)
 scale = Vector2(1.78, 1.68333)
 
+[node name="TimeControl" parent="." instance=ExtResource("39_tfirt")]
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
+[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
 [connection signal="set_up_sign_label" from="TripleSign" to="." method="_on_triple_sign_set_up_sign_label"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]

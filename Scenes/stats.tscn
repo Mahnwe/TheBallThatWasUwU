@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0lw132ttyu44"]
+[gd_scene load_steps=9 format=3 uid="uid://c0lw132ttyu44"]
 
 [ext_resource type="Script" uid="uid://verjiu4qydxm" path="res://Scripts/stats.gd" id="1_lwp2e"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_i6gfd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="4_i6gfd"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="5_wue6w"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="6_qetgw"]
+[ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="7_lhacb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6gfd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -513,12 +514,12 @@ text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 1239.18
-offset_top = 319.383
-offset_right = 1669.18
-offset_bottom = 821.383
+offset_left = 1239.0
+offset_top = 315.0
+offset_right = 1669.0
+offset_bottom = 842.0
 scale = Vector2(0.947485, 0.943702)
-theme_override_constants/separation = 50
+theme_override_constants/separation = 40
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -657,6 +658,31 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
 text = "0"
+
+[node name="HSplitContainer6" type="HSplitContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TimePlayedLabel" type="Label" parent="VBoxContainer2/HSplitContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 31
+text = "Play time ="
+
+[node name="TimePlayedNumber" type="Label" parent="VBoxContainer2/HSplitContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_qetgw")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="TimeControl" parent="." instance=ExtResource("7_lhacb")]
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

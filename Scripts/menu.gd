@@ -5,14 +5,17 @@ var music_slider_stylebox
 var effect_slider_stylebox
 
 var stats_ui_display = false
-
 var is_controller_focused = false
+
 var properties_config = ConfigFile.new()
 # Load data from a file.
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_config = ConfigFile.new()
 var translate_file
+
+var stats_config= ConfigFile.new()
+var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 
 var chestNumber
 
@@ -221,6 +224,7 @@ func set_volume():
 
 
 func _on_quit_button_pressed():
+	saving_time_played()
 	queue_free()
 	get_tree().quit()
 
@@ -469,6 +473,8 @@ func _on_effect_slider_focus_exited():
 
 
 func _on_stats_button_pressed():
+	saving_time_played()
+	$Stats.set_up_stats_with_file()
 	$Stats.show()
 	focus_close_stats_button()
 	$Stats.get_child(1).grab_focus()
@@ -663,4 +669,12 @@ func _on_bubble_message_timer_timeout():
 
 
 func _on_loading_screen_scene_loaded(path):
+	saving_time_played()
 	get_tree().change_scene_to_file(path)
+
+func saving_time_played():
+	var time_already_played = stats_config.get_value("Stats", "time_played")
+	var time_elapsed_to_save = time_already_played + $TimeControl.time_elapsed
+	stats_config.set_value("Stats", "time_played", time_elapsed_to_save)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	$TimeControl.time_elapsed = 0.0
