@@ -291,6 +291,7 @@ func _on_pause_music_finished():
 	$PauseMusic.play()
 		
 func restart_scene():
+	saving_time_played()
 	get_tree().reload_current_scene()
 	
 func set_volume():
@@ -399,4 +400,8 @@ func saving_time_played():
 
 
 func _on_pause_return_to_menu_is_clicked():
+	saving_time_played()
+
+
+func _on_finish_ui_return_to_menu_pressed():
 	saving_time_played()

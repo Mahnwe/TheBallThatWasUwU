@@ -680,7 +680,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/font = ExtResource("6_qetgw")
 theme_override_font_sizes/font_size = 30
-text = "0"
+text = "00h00m00s"
 
 [node name="TimeControl" parent="." instance=ExtResource("7_lhacb")]
 

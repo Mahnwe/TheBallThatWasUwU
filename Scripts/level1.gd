@@ -106,6 +106,7 @@ func handle_pause():
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 			
 func restart_scene():
+	saving_time_played()
 	get_tree().reload_current_scene()
 	
 			
@@ -364,4 +365,8 @@ func saving_time_played():
 
 
 func _on_pause_return_to_menu_is_clicked():
+	saving_time_played()
+
+
+func _on_finish_ui_return_to_menu_pressed():
 	saving_time_played()

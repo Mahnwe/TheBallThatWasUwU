@@ -30,10 +30,6 @@ const LEVEL_7 : String = "res://Scenes/level7.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	translate_text()
-	if properties_config.get_value("Launch", "is_first_launch"):
-		properties_config.set_value("musicVolume","is_music_mute", false)
-		properties_config.set_value("effectVolume","is_effect_mute", false)
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
 	music_slider_stylebox = $MusicSlider.get_theme_stylebox("grabber_area")
 	effect_slider_stylebox = $EffectSlider.get_theme_stylebox("grabber_area")
 	$MusicSlider.editable = false

@@ -124,7 +124,11 @@ visible = false
 layout_mode = 1
 
 [connection signal="focus_entered" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_focus_entered"]
+[connection signal="mouse_entered" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_mouse_entered"]
+[connection signal="mouse_exited" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_mouse_exited"]
 [connection signal="pressed" from="LanguageScene/FrButton" to="LanguageScene" method="_on_fr_button_pressed"]
 [connection signal="focus_entered" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_focus_entered"]
+[connection signal="mouse_entered" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_mouse_entered"]
+[connection signal="mouse_exited" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_mouse_exited"]
 [connection signal="pressed" from="LanguageScene/EnButton" to="LanguageScene" method="_on_en_button_pressed"]
 [connection signal="scene_loaded" from="LanguageScene/LoadingScreen" to="LanguageScene" method="_on_loading_screen_scene_loaded"]

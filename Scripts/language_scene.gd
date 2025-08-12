@@ -10,21 +10,15 @@ var properties_file = properties_config.load("res://Ressources/PropertieFile/pro
 
 func _ready():
 	setup_window_mod()
+	for member in get_tree().get_nodes_in_group("language_buttons"):
+		member.focus_mode = FOCUS_ALL
 	check_is_language_selected()
 	$FrButton.grab_focus()
 	
 	
 func _process(_delta):
-	wait_for_focus()
+	pass
 	
-
-func wait_for_focus():
-	for member in get_tree().get_nodes_in_group("language_buttons"):
-		if member.is_hovered():
-			member.grab_focus()
-			is_controller_focused = true
-
-
 func _on_fr_button_pressed():
 	properties_config.set_value("Languages", "is_english", false)
 	properties_config.set_value("Launch", "is_first_launch", false)
@@ -80,3 +74,17 @@ func go_to_menu():
 
 func _on_loading_screen_scene_loaded(path):
 	get_tree().change_scene_to_file(path)
+
+
+func _on_fr_button_mouse_entered():
+	$FrButton.grab_focus()
+	
+func _on_fr_button_mouse_exited():
+	$FrButton.release_focus()
+
+func _on_en_button_mouse_entered():
+	$EnButton.grab_focus()
+
+
+func _on_en_button_mouse_exited():
+	$EnButton.release_focus()

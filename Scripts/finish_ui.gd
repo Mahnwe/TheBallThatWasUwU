@@ -1,6 +1,7 @@
 extends Control
 
 signal next_level_pressed
+signal return_to_menu_pressed
 @export var is_UI_showing = false
 var is_controller_focused
 
@@ -62,6 +63,7 @@ func _on_next_level_mouse_exited():
 
 
 func _on_menu_pressed():
+	return_to_menu_pressed.emit()
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 
