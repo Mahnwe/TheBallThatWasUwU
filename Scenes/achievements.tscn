@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=3 uid="uid://c374x86lfx3c4"]
+
+[ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="1_7xtne"]
+[ext_resource type="Script" uid="uid://brincxwg6kccx" path="res://Scripts/achievements.gd" id="1_g04om"]
+[ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_frbbq"]
+[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_3m5au"]
+[ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="4_uik63"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m5au"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 3.0
+
+[node name="Achievements" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g04om")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("1_7xtne")
+layout_mode = 0
+offset_left = -15.0
+offset_top = -13.0
+offset_right = 1935.0
+offset_bottom = 1090.0
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1744.0
+offset_top = 43.0
+offset_right = 1902.0
+offset_bottom = 175.0
+scale = Vector2(0.71813, 0.709984)
+theme_override_styles/focus = SubResource("StyleBoxFlat_3m5au")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="QuitButton"]
+position = Vector2(80.7653, 66.1987)
+scale = Vector2(0.805, 0.73)
+texture = ExtResource("4_uik63")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(310, 403)
+scale = Vector2(3.82195, 4.91098)
+texture = ExtResource("2_frbbq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(109.892, -4.27613)
+texture = ExtResource("2_frbbq")
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(231.034, 0)
+texture = ExtResource("2_frbbq")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(334.123, 0)
+texture = ExtResource("2_frbbq")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 49.6846)
+texture = ExtResource("2_frbbq")
+flip_h = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(117.218, 51.5172)
+texture = ExtResource("2_frbbq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(232.865, 50.2955)
+texture = ExtResource("2_frbbq")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(338.047, 50.2955)
+texture = ExtResource("2_frbbq")
+flip_v = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 98.5547)
+texture = ExtResource("2_frbbq")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(118.788, 100.795)
+texture = ExtResource("2_frbbq")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(238.36, 101.202)
+texture = ExtResource("2_frbbq")
+flip_h = true
+
+[node name="Sprite2D11" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(338.309, 103.034)
+texture = ExtResource("2_frbbq")
+
+[node name="Title" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 656.0
+offset_top = 121.0
+offset_right = 1565.0
+offset_bottom = 304.0
+scale = Vector2(0.641169, 0.645645)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_3m5au")
+theme_override_font_sizes/font_size = 120
+text = "Achievements"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(938.5, 174)
+scale = Vector2(4.93919, 3.89474)
+texture = ExtResource("2_frbbq")
+
+[connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

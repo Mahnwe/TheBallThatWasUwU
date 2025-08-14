@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=73 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://tn1erw530dy1" path="res://Scenes/credits.tscn" id="24_l6llh"]
 [ext_resource type="PackedScene" uid="uid://c5khh4ff2btix" path="res://Scenes/window_mode_controller.tscn" id="26_i37ye"]
 [ext_resource type="PackedScene" uid="uid://dey70a6y3lk0k" path="res://Scenes/language_button.tscn" id="27_jbv25"]
+[ext_resource type="PackedScene" uid="uid://c374x86lfx3c4" path="res://Scenes/achievements.tscn" id="29_lx18h"]
 [ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="30_747ic"]
 [ext_resource type="Texture2D" uid="uid://c63pw88ubuhaq" path="res://Arts/FlowersSprite/WhiteFlower.png" id="33_flyo0"]
 [ext_resource type="Texture2D" uid="uid://c1cmu0nv6k12p" path="res://Arts/FlowersSprite/RedFlower.png" id="34_4dr7d"]
@@ -240,6 +241,22 @@ border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48g0d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sm67"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg0t0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 4
 border_width_top = 4
@@ -759,9 +776,9 @@ offset_right = 2786.0
 offset_bottom = 748.0
 scale = Vector2(0.12, 0.16)
 focus_neighbor_left = NodePath("../LanguageButton")
-focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_top = NodePath("../AchievementsButton")
 focus_neighbor_right = NodePath("../Level1Button")
-focus_neighbor_bottom = NodePath("../Level1Button")
+focus_neighbor_bottom = NodePath("../AchievementsButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0idt7")
 flat = true
@@ -928,12 +945,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ki2a1")
 
 [node name="StatsButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
-offset_left = 1735.0
-offset_top = 526.0
-offset_right = 1879.0
-offset_bottom = 592.0
+offset_left = 1736.0
+offset_top = 534.0
+offset_right = 1880.0
+offset_bottom = 600.0
 focus_neighbor_left = NodePath("../Level3Button")
-focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_top = NodePath("../AchievementsButton")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../CreditsButton")
 focus_next = NodePath("../Level1Button")
@@ -980,6 +997,45 @@ z_index = -1
 position = Vector2(1745, 964)
 scale = Vector2(1.48649, 1.81579)
 texture = ExtResource("23_h63v2")
+
+[node name="AchievementsButton" type="Button" parent="." groups=["MenuButtons"]]
+layout_mode = 0
+offset_left = 1709.0
+offset_top = 405.0
+offset_right = 1900.0
+offset_bottom = 475.0
+focus_neighbor_left = NodePath("../Level3Button")
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../Level3Button")
+focus_neighbor_bottom = NodePath("../StatsButton")
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_fonts/font = ExtResource("18_pde1v")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/focus = SubResource("StyleBoxFlat_0sm67")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg0t0")
+text = "Achievements"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AchievementsButton"]
+z_index = -1
+position = Vector2(95.0001, 35)
+scale = Vector2(0.318966, 0.21192)
+texture = ExtResource("12_747ic")
+
+[node name="Sprite2D2" type="Sprite2D" parent="AchievementsButton"]
+z_index = -2
+position = Vector2(93.5, 37.5)
+scale = Vector2(1.69595, 1.98684)
+texture = ExtResource("23_h63v2")
+
+[node name="Achievements" parent="." instance=ExtResource("29_lx18h")]
+visible = false
+z_index = 2
+layout_mode = 1
 
 [node name="CreditsButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
@@ -1147,6 +1203,10 @@ texture = ExtResource("38_4dr7d")
 [connection signal="mouse_exited" from="StatsButton" to="." method="_on_stats_button_mouse_exited"]
 [connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
 [connection signal="visibility_changed" from="Stats" to="." method="_on_stats_visibility_changed"]
+[connection signal="focus_entered" from="AchievementsButton" to="." method="_on_button_focus_entered"]
+[connection signal="mouse_exited" from="AchievementsButton" to="." method="_on_achievements_button_mouse_exited"]
+[connection signal="pressed" from="AchievementsButton" to="." method="_on_achievements_button_pressed"]
+[connection signal="visibility_changed" from="Achievements" to="." method="_on_achievements_visibility_changed"]
 [connection signal="focus_entered" from="CreditsButton" to="." method="_on_button_focus_entered"]
 [connection signal="mouse_exited" from="CreditsButton" to="." method="_on_credits_button_mouse_exited"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]

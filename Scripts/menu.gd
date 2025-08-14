@@ -469,11 +469,12 @@ func _on_effect_slider_focus_exited():
 
 
 func _on_stats_button_pressed():
-	saving_time_played()
-	$Stats.set_up_stats_with_file()
-	$Stats.show()
-	focus_close_stats_button()
-	$Stats.get_child(1).grab_focus()
+	if $StatsButton.focus_mode == FOCUS_ALL:
+		focus_close_stats_button()
+		saving_time_played()
+		$Stats.set_up_stats_with_file()
+		$Stats.show()
+		$Stats.get_child(1).grab_focus()
 
 func _on_stats_visibility_changed():
 	if $Stats.visible == false:
@@ -501,9 +502,10 @@ func focus_close_stats_button():
 	$LanguageButton.focus_mode = FOCUS_NONE
 	
 func _on_credits_button_pressed():
-	$Credits.show()
-	focus_close_stats_button()
-	$Credits.get_child(1).grab_focus()
+	if $CreditsButton.focus_mode == FOCUS_ALL:
+		focus_close_stats_button()
+		$Credits.show()
+		$Credits.get_child(1).grab_focus()
 	
 func _on_credits_button_mouse_exited():
 	$CreditsButton.release_focus()
@@ -564,6 +566,7 @@ func translate_text():
 		
 	$QuitButton/QuitLabel.text = translate_config.get_value("TranslationMenu", "QuitButton")
 	$StatsButton.text = translate_config.get_value("TranslationMenu", "StatsButton")
+	$AchievementsButton.text = translate_config.get_value("TranslationMenu", "AchievementsButton")
 	$MusicLabel.text = translate_config.get_value("TranslationMenu", "MusicLabel")
 	$EffectLabel.text = translate_config.get_value("TranslationMenu", "EffectLabel")
 	$Level1Button.text = translate_config.get_value("TranslationMenu", "LevelOne")
@@ -579,18 +582,20 @@ func translate_text():
 func change_font_size(is_english):
 	if is_english:
 		for member in get_tree().get_nodes_in_group("MenuButtons"):
-			if member.name != "StatsButton" and member.name != "CreditsButton":
+			if member.name != "StatsButton" and member.name != "CreditsButton" and member.name != "AchievementsButton":
 				member.add_theme_font_size_override("font_size", 20)
 		$Level7Button/Label.add_theme_font_size_override("font_size", 20)
+		$AchievementsButton.add_theme_font_size_override("font_size", 27)
 	else:
 		for member in get_tree().get_nodes_in_group("MenuButtons"):
-			if member.name != "StatsButton" and member.name != "CreditsButton":
+			if member.name != "StatsButton" and member.name != "CreditsButton" and member.name != "AchievementsButton":
 				member.add_theme_font_size_override("font_size", 16)
 		$Level7Button/Label.add_theme_font_size_override("font_size", 17)
+		$AchievementsButton.add_theme_font_size_override("font_size", 32)
 	
 func handle_buttons_child_visibility():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton" and member.name != "CreditsButton":
+		if member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton" and member.name != "CreditsButton" and member.name != "AchievementsButton":
 			member.get_child(1).show()
 			if member.name != "Level7Button":
 				if member.get_child(2).is_chest_valid:
@@ -601,7 +606,7 @@ func handle_buttons_child_visibility():
 				if member.get_child(4).is_level_done:
 					member.get_child(4).show()
 	for member in get_tree().get_nodes_in_group("MenuButtons"):
-		if !member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton" and member.name != "CreditsButton":
+		if !member.has_focus() and member.name != "QuitButton" and member.name != "StatsButton" and member.name != "MusicMuteButton" and member.name != "SoundMuteButton" and member.name != "CreditsButton" and member.name != "AchievementsButton":
 			member.get_child(1).hide()
 			if member.name != "Level7Button":
 				member.get_child(2).hide()
@@ -644,20 +649,22 @@ func _on_window_mode_button_pressed():
 
 
 func _on_language_button_pressed():
-	if properties_config.get_value("Languages", "is_english"):
-		properties_config.set_value("Languages", "is_english", false)
-	else:
-		properties_config.set_value("Languages", "is_english", true)
-	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-	$LanguageButton.change_language_flag(properties_config.get_value("Languages", "is_english"))
-	translate_text()
-	$BubbleMessageTimer.stop()
-	$BubbleTooltip.message_number = 0
-	change_bubble_message()
-	$Stats.translate_text(properties_config.get_value("Languages", "is_english"))
-	$Credits.translate_text(properties_config.get_value("Languages", "is_english"))
-	$WindowModeButton.translate_text(properties_config.get_value("Languages", "is_english"))
-	$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+	if $LanguageButton.focus_mode == FOCUS_ALL:
+		if properties_config.get_value("Languages", "is_english"):
+			properties_config.set_value("Languages", "is_english", false)
+		else:
+			properties_config.set_value("Languages", "is_english", true)
+		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+		$LanguageButton.change_language_flag(properties_config.get_value("Languages", "is_english"))
+		translate_text()
+		$BubbleMessageTimer.stop()
+		$BubbleTooltip.message_number = 0
+		change_bubble_message()
+		$Stats.translate_text(properties_config.get_value("Languages", "is_english"))
+		$Credits.translate_text(properties_config.get_value("Languages", "is_english"))
+		$WindowModeButton.translate_text(properties_config.get_value("Languages", "is_english"))
+		$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+		$Achievements.translate_text(properties_config.get_value("Languages", "is_english"))
 
 
 func _on_bubble_message_timer_timeout():
@@ -674,3 +681,21 @@ func saving_time_played():
 	stats_config.set_value("Stats", "time_played", time_elapsed_to_save)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 	$TimeControl.time_elapsed = 0.0
+
+
+func _on_achievements_button_mouse_exited():
+	$AchievementsButton.release_focus()
+	is_controller_focused = false
+
+
+func _on_achievements_button_pressed():
+	if $AchievementsButton.focus_mode == FOCUS_ALL:
+		focus_close_stats_button()
+		$Achievements.show()
+		$Achievements.get_child(1).grab_focus()
+
+
+func _on_achievements_visibility_changed():
+	if $Achievements.visible == false:
+		focus_menu_buttons()
+		$AchievementsButton.grab_focus()

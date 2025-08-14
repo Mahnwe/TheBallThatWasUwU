@@ -9,10 +9,12 @@ var properties_config = ConfigFile.new()
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 func _ready():
+	for member in get_tree().get_nodes_in_group("language_buttons"):
+		member.focus_mode = FOCUS_NONE
 	setup_window_mod()
+	check_is_language_selected()
 	for member in get_tree().get_nodes_in_group("language_buttons"):
 		member.focus_mode = FOCUS_ALL
-	check_is_language_selected()
 	$FrButton.grab_focus()
 	
 	
@@ -77,13 +79,15 @@ func _on_loading_screen_scene_loaded(path):
 
 
 func _on_fr_button_mouse_entered():
-	$FrButton.grab_focus()
+	if $FrButton.focus_mode == FOCUS_ALL:
+		$FrButton.grab_focus()
 	
 func _on_fr_button_mouse_exited():
 	$FrButton.release_focus()
 
 func _on_en_button_mouse_entered():
-	$EnButton.grab_focus()
+	if $EnButton.focus_mode == FOCUS_ALL:
+		$EnButton.grab_focus()
 
 
 func _on_en_button_mouse_exited():
