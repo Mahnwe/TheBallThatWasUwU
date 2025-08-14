@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c374x86lfx3c4"]
+[gd_scene load_steps=9 format=3 uid="uid://c374x86lfx3c4"]
 
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="1_7xtne"]
 [ext_resource type="Script" uid="uid://brincxwg6kccx" path="res://Scripts/achievements.gd" id="1_g04om"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_frbbq"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_3m5au"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="4_uik63"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="6_38hx6"]
+[ext_resource type="Texture2D" uid="uid://bdlbx2soinpgk" path="res://Arts/CloudButtonSprite/Validate.png" id="6_bcp42"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m5au"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -49,8 +51,8 @@ scale = Vector2(0.805, 0.73)
 texture = ExtResource("4_uik63")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(310, 403)
-scale = Vector2(3.82195, 4.91098)
+position = Vector2(323, 401)
+scale = Vector2(3.7826, 4.86338)
 texture = ExtResource("2_frbbq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
@@ -129,6 +131,236 @@ text = "Achievements"
 position = Vector2(938.5, 174)
 scale = Vector2(4.93919, 3.89474)
 texture = ExtResource("2_frbbq")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+offset_left = 395.0
+offset_top = 323.0
+offset_right = 1936.0
+offset_bottom = 1024.0
+theme_override_constants/separation = 400
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Level1Achievement" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Finish level 1"
+
+[node name="Level1Validate" type="Sprite2D" parent="HSplitContainer/VBoxContainer/HSplitContainer" groups=["validate_group"]]
+position = Vector2(-50, 24)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="AllLevelsAchievement" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Finish all levels"
+
+[node name="AllLevelsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer/HSplitContainer2" groups=["validate_group"]]
+position = Vector2(-52, 21)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="SecretLevelAchievement" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Finish secret level"
+
+[node name="SecretLevelValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer/HSplitContainer3" groups=["validate_group"]]
+position = Vector2(-51, 23)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="OneMedalAchievement" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Obtain one medal"
+
+[node name="OneMedalValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer/HSplitContainer4" groups=["validate_group"]]
+position = Vector2(-50, 21)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer5" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="AllLevelsMedalAchievements" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Get a medal for each level"
+
+[node name="AllLevelsMedalValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer/HSplitContainer5" groups=["validate_group"]]
+position = Vector2(-50, 21)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer6" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="DevMedalAchievement" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Obtain a dev medal"
+
+[node name="DevMedalValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer/HSplitContainer6" groups=["validate_group"]]
+position = Vector2(-49, 18)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="JumpsAchievement" type="Label" parent="HSplitContainer/VBoxContainer2/HSplitContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Jump 500 times"
+
+[node name="JumpsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer2" groups=["validate_group"]]
+position = Vector2(-54, 24)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="DashesAchievement" type="Label" parent="HSplitContainer/VBoxContainer2/HSplitContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Dash 200 times"
+
+[node name="DashesValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer3" groups=["validate_group"]]
+position = Vector2(-55, 23)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="DeathAchievement" type="Label" parent="HSplitContainer/VBoxContainer2/HSplitContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Die 100 times"
+
+[node name="DeathValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer4" groups=["validate_group"]]
+position = Vector2(-55, 23)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer5" type="HSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="ChestsAchievement" type="Label" parent="HSplitContainer/VBoxContainer2/HSplitContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Find all treasure chests"
+
+[node name="ChestsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer5" groups=["validate_group"]]
+position = Vector2(-55, 21)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer6" type="HSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TimePlayedSucces" type="Label" parent="HSplitContainer/VBoxContainer2/HSplitContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Play 30 minutes"
+
+[node name="TimePlayedValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer6" groups=["validate_group"]]
+position = Vector2(-53, 21)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="AllAchievements" type="Label" parent="HSplitContainer/VBoxContainer2/HSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_38hx6")
+theme_override_font_sizes/font_size = 35
+text = "Get all achievements"
+
+[node name="AllAchievementsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer"]
+position = Vector2(-51, 25)
+scale = Vector2(1.32, 1.16)
+texture = ExtResource("6_bcp42")
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

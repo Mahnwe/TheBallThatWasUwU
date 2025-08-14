@@ -691,6 +691,7 @@ func _on_achievements_button_mouse_exited():
 func _on_achievements_button_pressed():
 	if $AchievementsButton.focus_mode == FOCUS_ALL:
 		focus_close_stats_button()
+		$Achievements.check_for_all_achievements()
 		$Achievements.show()
 		$Achievements.get_child(1).grab_focus()
 
