@@ -450,7 +450,7 @@ scale = Vector2(1.76319, 1.35929)
 [node name="SandPlatform2" parent="SandPlatform" instance=ExtResource("24_uva61")]
 position = Vector2(-1486.76, 50.7254)
 
-[node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
+[node name="Cannon" parent="." instance=ExtResource("25_ucunx")]
 position = Vector2(-1616, 130)
 flip_value = 1
 ball_speed = 8
@@ -486,7 +486,7 @@ color = Color(0.196078, 0.67451, 1, 1)
 position = Vector2(-2433.5, 312.92)
 scale = Vector2(3.975, 1.9908)
 
-[node name="Cannon2" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
+[node name="Cannon2" parent="." instance=ExtResource("25_ucunx")]
 position = Vector2(-2773, 496)
 flip_value = 1
 ball_speed = 5
@@ -710,7 +710,7 @@ scale = Vector2(0.588239, 1)
 position = Vector2(-1865, -425)
 scale = Vector2(0.219633, 0.582615)
 
-[node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("25_ucunx")]
+[node name="Cannon3" parent="." instance=ExtResource("25_ucunx")]
 position = Vector2(-2119, -555)
 flip_value = 1
 ball_speed = 8

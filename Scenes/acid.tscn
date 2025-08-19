@@ -25,7 +25,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ip7l1"]
 size = Vector2(198.662, 198.559)
 
-[node name="Acid" type="AnimatedSprite2D"]
+[node name="Acid" type="AnimatedSprite2D" groups=["acid_group"]]
 scale = Vector2(0.513436, 0.221597)
 sprite_frames = SubResource("SpriteFrames_v6lxx")
 animation = &"AcidLive"
@@ -36,7 +36,6 @@ position = Vector2(23.372, 36.1016)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-23.372, -36.1016)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ip7l1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1114,7 +1114,7 @@ position = Vector2(2402.32, 0)
 [node name="SandPlatform5" parent="SandPlatform9" instance=ExtResource("25_p2rf6")]
 position = Vector2(2936.17, 49.3483)
 
-[node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("28_xyvxg")]
+[node name="Cannon" parent="." instance=ExtResource("28_xyvxg")]
 position = Vector2(3004, -2648)
 is_going_left = true
 ball_speed = 10
@@ -1183,7 +1183,7 @@ position = Vector2(0, 139.283)
 position = Vector2(2059, -2205)
 scale = Vector2(0.368237, 0.38896)
 
-[node name="Cannon2" parent="." groups=["cannon_group"] instance=ExtResource("28_xyvxg")]
+[node name="Cannon2" parent="." instance=ExtResource("28_xyvxg")]
 position = Vector2(2066, -2291)
 flip_value = 1
 ball_speed = 10
@@ -1283,12 +1283,12 @@ scale = Vector2(1.94915, 1.42593)
 position = Vector2(0, 131)
 scale = Vector2(2.39286, 1.42857)
 
-[node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("28_xyvxg")]
+[node name="Cannon3" parent="." instance=ExtResource("28_xyvxg")]
 position = Vector2(3120, -1655)
 is_going_left = true
 ball_speed = 6
 
-[node name="Cannon4" parent="." groups=["cannon_group"] instance=ExtResource("28_xyvxg")]
+[node name="Cannon4" parent="." instance=ExtResource("28_xyvxg")]
 position = Vector2(3207, -1655)
 flip_value = 1
 ball_speed = 6

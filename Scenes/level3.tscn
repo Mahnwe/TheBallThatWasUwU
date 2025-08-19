@@ -524,12 +524,12 @@ rotation = -0.0294033
 position = Vector2(-28.6641, -45.8625)
 scale = Vector2(0.4, 0.279999)
 
-[node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("12_dyw7h")]
+[node name="Cannon" parent="." instance=ExtResource("12_dyw7h")]
 position = Vector2(1703, -882)
 flip_value = 1
 ball_speed = 10
 
-[node name="Cannon2" parent="." groups=["cannon_group"] instance=ExtResource("12_dyw7h")]
+[node name="Cannon2" parent="." instance=ExtResource("12_dyw7h")]
 position = Vector2(25, -882)
 is_going_left = true
 ball_speed = 10
@@ -641,12 +641,12 @@ rotation = -1.6027
 position = Vector2(-37.1832, -26.1994)
 scale = Vector2(0.515997, 0.183866)
 
-[node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("12_dyw7h")]
+[node name="Cannon3" parent="." instance=ExtResource("12_dyw7h")]
 position = Vector2(1445, -838)
 is_going_left = true
 ball_speed = 5
 
-[node name="Cannon4" parent="." groups=["cannon_group"] instance=ExtResource("12_dyw7h")]
+[node name="Cannon4" parent="." instance=ExtResource("12_dyw7h")]
 position = Vector2(286, -838)
 flip_value = 1
 ball_speed = 5

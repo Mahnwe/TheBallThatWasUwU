@@ -115,7 +115,7 @@ func check_for_last_achievements():
 	for member in get_tree().get_nodes_in_group("validate_group"):
 		if member.texture == validate_texture:
 			number_of_achievements_unlock += 1
-	if number_of_achievements_unlock == 6:
+	if number_of_achievements_unlock == 11:
 		$HSplitContainer/VBoxContainer2/HSplitContainer/AllAchievementsValidate.texture = validate_texture
 	else:
 		$HSplitContainer/VBoxContainer2/HSplitContainer/AllAchievementsValidate.texture = unvalidate_texture
@@ -128,10 +128,12 @@ func translate_text(is_english):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 		$Title.add_theme_font_size_override("font_size", 120)
 		$Title.position = Vector2(656, 121)
+		$HSplitContainer.add_theme_constant_override("separation", 400.0)
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 		$Title.add_theme_font_size_override("font_size", 140)
 		$Title.position = Vector2(770, 111)
+		$HSplitContainer.add_theme_constant_override("separation", 300.0)
 		
 	$Title.text = translate_config.get_value("TranslationAchievements", "TitleAchievements")
 	$HSplitContainer/VBoxContainer/HSplitContainer/Level1Achievement.text = translate_config.get_value("TranslationAchievements", "Level1Achievement")

@@ -36,7 +36,7 @@ radius = 5.0
 radius = 5.0
 height = 16.0
 
-[node name="CoralSpike" type="StaticBody2D" groups=["spike_group"]]
+[node name="CoralSpike" type="StaticBody2D" groups=["coral_spike_group"]]
 script = ExtResource("1_uxneo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

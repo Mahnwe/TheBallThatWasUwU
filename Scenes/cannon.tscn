@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dl1lswymp2d7b" path="res://Scripts/Cannon.gd" id="1_8xnsj"]
 [ext_resource type="Texture2D" uid="uid://cfm6230iffbcn" path="res://Arts/CanonSprite/CanonSprite-removebg-preview.png" id="2_vs4g6"]
 
-[node name="Cannon" type="Node2D"]
+[node name="Cannon" type="Node2D" groups=["cannon_group"]]
 script = ExtResource("1_8xnsj")
 is_going_left = false
 

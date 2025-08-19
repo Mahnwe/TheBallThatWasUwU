@@ -471,17 +471,17 @@ position = Vector2(-4089, -1083)
 position = Vector2(-2958, -68)
 scale = Vector2(0.329639, 0.667853)
 
-[node name="Cannon" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
+[node name="Cannon" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-4719, 781)
 flip_value = 1
 ball_speed = 10
 
-[node name="Cannon2" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
+[node name="Cannon2" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-4182, 494)
 is_going_left = true
 ball_speed = 10
 
-[node name="Cannon3" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
+[node name="Cannon3" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-4773, 199)
 flip_value = 1
 ball_speed = 7
@@ -527,17 +527,17 @@ rotates = false
 position = Vector2(-18.3331, -26.4745)
 scale = Vector2(0.266282, 0.192662)
 
-[node name="Cannon4" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
+[node name="Cannon4" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-3941, -1506)
 flip_value = 1
 ball_speed = 8
 
-[node name="Cannon5" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
+[node name="Cannon5" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-3321, -1260)
 is_going_left = true
 ball_speed = 8
 
-[node name="Cannon6" parent="." groups=["cannon_group"] instance=ExtResource("20_lku4j")]
+[node name="Cannon6" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-3953, -1034)
 flip_value = 1
 ball_speed = 8

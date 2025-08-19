@@ -135,6 +135,7 @@ offset_right = 1163.0
 offset_bottom = 860.0
 scale = Vector2(0.947485, 0.943702)
 theme_override_constants/separation = 100
+dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -143,6 +144,7 @@ theme_override_constants/separation = 37
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="JumpsLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
@@ -166,6 +168,7 @@ text = "0"
 [node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="DashLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer2"]
 layout_mode = 2
@@ -189,6 +192,7 @@ text = "0"
 [node name="HSplitContainer9" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="DeathsLabel" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer9"]
 layout_mode = 2
@@ -212,6 +216,7 @@ text = "0"
 [node name="HSplitContainer3" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="DeathSpike" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer3"]
 layout_mode = 2
@@ -235,6 +240,7 @@ text = "0"
 [node name="HSplitContainer4" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="CannonDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer4"]
 layout_mode = 2
@@ -258,6 +264,7 @@ text = "0"
 [node name="HSplitContainer5" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="CoralDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer5"]
 layout_mode = 2
@@ -281,6 +288,7 @@ text = "0"
 [node name="HSplitContainer6" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="AcidDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer6"]
 layout_mode = 2
@@ -304,6 +312,7 @@ text = "0"
 [node name="HSplitContainer7" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="LaserDeath" type="Label" parent="HSplitContainer/VBoxContainer/HSplitContainer7"]
 layout_mode = 2
@@ -331,6 +340,7 @@ theme_override_constants/separation = 37
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="LevelFinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer"]
 layout_mode = 2
@@ -354,6 +364,7 @@ text = "0"
 [node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level1FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer2"]
 layout_mode = 2
@@ -377,6 +388,7 @@ text = "0"
 [node name="HSplitContainer3" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level2FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer3"]
 layout_mode = 2
@@ -400,6 +412,7 @@ text = "0"
 [node name="HSplitContainer4" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level3FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer4"]
 layout_mode = 2
@@ -423,6 +436,7 @@ text = "0"
 [node name="HSplitContainer5" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level4FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer5"]
 layout_mode = 2
@@ -446,6 +460,7 @@ text = "0"
 [node name="HSplitContainer6" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level5FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer6"]
 layout_mode = 2
@@ -469,6 +484,7 @@ text = "0"
 [node name="HSplitContainer7" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level6FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer7"]
 layout_mode = 2
@@ -492,6 +508,7 @@ text = "0"
 [node name="HSplitContainer8" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="Level7FinishedLabel" type="Label" parent="HSplitContainer/VBoxContainer3/HSplitContainer8"]
 layout_mode = 2
@@ -524,6 +541,7 @@ theme_override_constants/separation = 40
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="MedalNumberLabel" type="Label" parent="VBoxContainer2/HSplitContainer"]
 layout_mode = 2
@@ -547,6 +565,7 @@ text = "0"
 [node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="BronzeMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer2"]
 layout_mode = 2
@@ -570,6 +589,7 @@ text = "0"
 [node name="HSplitContainer3" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="SilverMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer3"]
 layout_mode = 2
@@ -593,6 +613,7 @@ text = "0"
 [node name="HSplitContainer4" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="GoldMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer4"]
 layout_mode = 2
@@ -616,6 +637,7 @@ text = "0"
 [node name="HSplitContainer5" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="DevMedalLabel" type="Label" parent="VBoxContainer2/HSplitContainer5"]
 layout_mode = 2
@@ -639,6 +661,7 @@ text = "0"
 [node name="HSplitContainer8" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="ChestsLabel" type="Label" parent="VBoxContainer2/HSplitContainer8"]
 layout_mode = 2
@@ -662,6 +685,7 @@ text = "0"
 [node name="HSplitContainer6" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 25
+dragging_enabled = false
 
 [node name="TimePlayedLabel" type="Label" parent="VBoxContainer2/HSplitContainer6"]
 layout_mode = 2
