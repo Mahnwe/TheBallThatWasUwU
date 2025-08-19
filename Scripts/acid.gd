@@ -16,9 +16,5 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		var number_of_death = stats_config.get_value("Stats", "death_number")
-		stats_config.set_value("Stats", "death_number", number_of_death+1)
-		var number_of_acid_death = stats_config.get_value("Stats", "acid_death_number")
-		stats_config.set_value("Stats", "acid_death_number", number_of_acid_death+1)
-		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		body.player_killer_name = "Acid"
 		acid_hit.emit()

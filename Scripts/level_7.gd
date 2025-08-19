@@ -154,6 +154,7 @@ func _on_spike_spike_hit():
 	disable_patrol_groups()
 	disable_cannon_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
+	save_deaths_stat()
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
@@ -454,6 +455,27 @@ func saving_time_played():
 	var time_already_played = stats_config.get_value("Stats", "time_played")
 	var time_elapsed_to_save = time_already_played + $TimeControl.time_elapsed
 	stats_config.set_value("Stats", "time_played", time_elapsed_to_save)
+	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	
+func save_deaths_stat():
+	var number_of_death = stats_config.get_value("Stats", "death_number")
+	stats_config.set_value("Stats", "death_number", number_of_death+1)
+	match ($Player.player_killer_name):
+		"Spike":
+			var number_of_spike_death = stats_config.get_value("Stats", "spike_death_number")
+			stats_config.set_value("Stats", "spike_death_number", number_of_spike_death+1)
+		"Cannon":
+			var number_of_cannon_death = stats_config.get_value("Stats", "cannon_death_number")
+			stats_config.set_value("Stats", "cannon_death_number", number_of_cannon_death+1)
+		"Acid":
+			var number_of_acid_death = stats_config.get_value("Stats", "acid_death_number")
+			stats_config.set_value("Stats", "acid_death_number", number_of_acid_death+1)
+		"Coral Spike":
+			var number_of_coral_death = stats_config.get_value("Stats", "coral_death_number")
+			stats_config.set_value("Stats", "coral_death_number", number_of_coral_death+1)
+		"Laser":
+			var number_of_laser_death = stats_config.get_value("Stats", "laser_death_number")
+			stats_config.set_value("Stats", "laser_death_number", number_of_laser_death+1)
 	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
 
 

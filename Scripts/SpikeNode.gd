@@ -16,11 +16,7 @@ func _process(delta):
 
 func _on_spike_area_body_entered(body):
 	if body.name == "Player":
-		var number_of_death = stats_config.get_value("Stats", "death_number")
-		stats_config.set_value("Stats", "death_number", number_of_death+1)
-		var number_of_spike_death = stats_config.get_value("Stats", "spike_death_number")
-		stats_config.set_value("Stats", "spike_death_number", number_of_spike_death+1)
-		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		body.player_killer_name = "Spike"
 		spike_hit.emit()
 		
 func _patrol(delta):

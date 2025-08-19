@@ -72,11 +72,7 @@ func _on_charge_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		var number_of_death = stats_config.get_value("Stats", "death_number")
-		stats_config.set_value("Stats", "death_number", number_of_death+1)
-		var number_of_laser_death = stats_config.get_value("Stats", "laser_death_number")
-		stats_config.set_value("Stats", "laser_death_number", number_of_laser_death+1)
-		stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+		body.player_killer_name = "Laser"
 		laser_touched_player.emit()
 
 

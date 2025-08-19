@@ -7,6 +7,8 @@ var config = ConfigFile.new()
 # Load data from a file.
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
+var player_killer_name = ""
+
 #@export
 var speed = 400
 var acceleration = 50
