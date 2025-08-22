@@ -1,8 +1,5 @@
 extends StaticBody2D
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
 signal spike_hit
 var parent_name
 @export var speed = 300

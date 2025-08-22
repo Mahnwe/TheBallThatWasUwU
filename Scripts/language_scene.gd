@@ -9,6 +9,7 @@ var properties_config = ConfigFile.new()
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 func _ready():
+	set_volume()
 	for member in get_tree().get_nodes_in_group("language_buttons"):
 		member.focus_mode = FOCUS_NONE
 	setup_window_mod()
@@ -20,6 +21,12 @@ func _ready():
 	
 func _process(_delta):
 	pass
+	
+func set_volume():
+	for member in get_tree().get_nodes_in_group("music_group"):
+		member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
 	
 func _on_fr_button_pressed():
 	properties_config.set_value("Languages", "is_english", false)

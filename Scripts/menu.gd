@@ -50,7 +50,7 @@ func _ready():
 func _process(_delta):
 	wait_for_focus()
 	if Input.is_action_just_pressed("quit_game"):
-		queue_free()
+		self.queue_free()
 		get_tree().quit()
 	handle_buttons_child_visibility()
 		
@@ -221,7 +221,7 @@ func set_volume():
 
 func _on_quit_button_pressed():
 	saving_time_played()
-	queue_free()
+	self.queue_free()
 	get_tree().quit()
 
 

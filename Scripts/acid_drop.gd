@@ -1,8 +1,5 @@
 extends Node2D
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
 var drop_exploded
 signal drop_touched
 @export var speed = 200

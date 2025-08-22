@@ -1,8 +1,5 @@
 extends Sprite2D
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
 var is_paused
 
 @export var beam_x_scale = 0.0
