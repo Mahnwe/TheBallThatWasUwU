@@ -1,16 +1,24 @@
 extends Node2D
 
+var properties_config = ConfigFile.new()
+# Load data from a file.
+var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
+
 var cannon_ball = preload("res://Scenes/cannon_ball.tscn")
+
 @export var is_going_left = true
+
 var cannon_ball_inst
 var cannon_ball_has_touch_player
 signal player_dead_by_cannon_ball
+
 @export var flip_value = 0
 @export var ball_speed = 0
 @export var is_in_water = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_volume()
 	if is_in_water:
 		$Sprite2D.self_modulate.a = 0.5
 	if flip_value != 0:
@@ -29,6 +37,7 @@ func _process(_delta):
 func shoot_cannon_ball():
 	cannon_ball_inst = cannon_ball.instantiate()
 	add_child(cannon_ball_inst)
+	$CannonSound.play()
 	cannon_ball_inst.ball_speed = ball_speed
 	cannon_ball_inst.cannon_ball_touch_object.connect(on_cannon_ball_exploding)
 	if is_going_left:
@@ -61,3 +70,7 @@ func unpause_cannon():
 	set_process(true)
 	if(self.get_child(1) != null):
 		self.get_child(1).set_process(true)
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")

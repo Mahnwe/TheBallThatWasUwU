@@ -1,9 +1,14 @@
 extends Node2D
 
+var properties_config = ConfigFile.new()
+# Load data from a file.
+var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
+
 var is_trigger
 signal player_hit_bumper
 
 func _ready():
+	set_volume()
 	is_trigger = false
 	
 func _process(_delta):
@@ -14,6 +19,7 @@ func _on_bumper_trigger_body_entered(body):
 		if !is_trigger:
 			body.is_on_bumper = true
 			$AnimatedSprite2D.play()
+			$BumpSound.play()
 			is_trigger = true
 			player_hit_bumper.emit()
 
@@ -40,3 +46,7 @@ func set_x_check_velocity(body):
 		body.velocity_x_bumper_check = body.speed * 1
 	elif body.velocity.x > 0.0:
 		body.velocity_x_bumper_check = body.speed * -1
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")

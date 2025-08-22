@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=60 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -43,6 +43,8 @@
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="40_y3gnq"]
 [ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="42_wljwr"]
 [ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="43_4kqy4"]
+[ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="44_y6f5s"]
+[ext_resource type="AudioStream" uid="uid://6xooaq2m07s0" path="res://Sound/Musics/Level1Music.mp3" id="45_jkt7a"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -965,6 +967,7 @@ rotation = -1.58919
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("25_kcefb")
+volume_db = -5.0
 
 [node name="Palm" parent="." instance=ExtResource("27_lrvx7")]
 position = Vector2(-422, -944)
@@ -1216,6 +1219,14 @@ scale = Vector2(1.695, 1.62222)
 flip_h = true
 
 [node name="TimeControl" parent="." instance=ExtResource("43_4kqy4")]
+
+[node name="DeadSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("44_y6f5s")
+volume_db = 5.0
+
+[node name="Level3Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
+stream = ExtResource("45_jkt7a")
+volume_db = -5.0
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

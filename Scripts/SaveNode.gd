@@ -11,6 +11,7 @@ var translate_file
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_volume()
 	is_already_active = false
 	translate_text()
 	$SavedLabel.hide()
@@ -37,3 +38,7 @@ func translate_text():
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 	$SavedLabel.text = translate_config.get_value("TranslationSave", "PositionSave")
+	
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = config.get_value("effectVolume","effectVolumeSet")

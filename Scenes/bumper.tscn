@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvk6tkjkq8bkx"]
+[gd_scene load_steps=16 format=3 uid="uid://dvk6tkjkq8bkx"]
 
 [ext_resource type="Script" uid="uid://djneplonxahdr" path="res://Scripts/bumper.gd" id="1_3eik2"]
 [ext_resource type="Texture2D" uid="uid://pxpgytpc2lxc" path="res://Arts/BumperSprite/BumperSprite1.png" id="1_kx533"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ds0lctfqrq2jq" path="res://Arts/BumperSprite/BumperSprite4.png" id="4_fdc5w"]
 [ext_resource type="Texture2D" uid="uid://cw52mctrfleus" path="res://Arts/BumperSprite/BumperSprite5.png" id="5_qjlrq"]
 [ext_resource type="Texture2D" uid="uid://7q6ctteino3c" path="res://Arts/BumperSprite/BumperSprite6.png" id="6_it6au"]
+[ext_resource type="AudioStream" uid="uid://u63wp3l438y6" path="res://Sound/Effects/BumperSound.wav" id="8_52k27"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eik2"]
 height = 98.0
@@ -104,6 +105,10 @@ shape = SubResource("RectangleShape2D_fdc5w")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="VelocityReturnArea"]
 position = Vector2(56.5, -38)
 shape = SubResource("RectangleShape2D_qjlrq")
+
+[node name="BumpSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("8_52k27")
+volume_db = -7.138
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="BumperTrigger" to="." method="_on_bumper_trigger_body_entered"]

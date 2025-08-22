@@ -112,6 +112,7 @@ func restart_scene():
 			
 func _on_spike_spike_hit():
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
+	$DeadSound.play()
 	save_deaths_stat()
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -168,10 +169,10 @@ func display_dead_sprite_and_pause_timer_until_respawn(message):
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	
 func put_player_to_save_position_and_unpause_timer():
-	$Player.set_physics_process(true)
+	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(4).text = ""
 	$Player.get_child(1).animation = "stay"
-	$Player.position = Vector2(save_position_x,save_position_y)
+	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 
 

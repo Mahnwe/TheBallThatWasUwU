@@ -1,7 +1,8 @@
 extends Node2D
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
+var properties_config = ConfigFile.new()
+# Load data from a file.
+var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 signal cannon_ball_touch_object
 var is_ball_explode
@@ -13,6 +14,7 @@ var ball_speed = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_volume()
 	if get_parent().is_in_water:
 		$Sprite2D.self_modulate.a = 0.5
 	is_ball_explode = false
@@ -30,13 +32,18 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	set_process(false)
-	body.set_physics_process(false)
-	$Sprite2D.texture = load("res://Arts/CanonSprite/ExplosionSprite-removebg-preview.png")
-	await get_tree().create_timer(0.25).timeout
-	is_ball_explode = true
-	if body.name == "Player":
+	$Explosion.play()
+	if body.name == "Player" and !is_ball_explode:
+		body.set_physics_process(false)
 		body.player_killer_name = "Cannon"
 		has_touch_player = true
 	else:
 		has_touch_player = false
+	$Sprite2D.texture = load("res://Arts/CanonSprite/ExplosionSprite-removebg-preview.png")
+	await get_tree().create_timer(0.25).timeout
+	is_ball_explode = true
 	cannon_ball_touch_object.emit()
+	
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")

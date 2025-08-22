@@ -48,6 +48,7 @@ func _ready():
 	is_paused = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	display_advice()
+	$Level7Music.play()
 	
 	
 func _process(delta):
@@ -113,6 +114,7 @@ func toggle_pause():
 	$Player/Pause.get_child(4).show()
 	$Player/Pause.get_child(5).show()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
+	$Level7Music.stream_paused = true
 	$PauseMusic.play()
 	$Player.get_child(0).get_child(0).get_child(1).hide()
 	disable_drop_groups()
@@ -137,6 +139,7 @@ func untoggle_pause():
 	$Player/Pause.get_child(5).hide()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	$PauseMusic.stop()
+	$Level7Music.stream_paused = false
 	$Player.get_child(0).get_child(0).get_child(1).show()
 	enable_drop_groups()
 	enable_patrol_groups()
@@ -154,6 +157,7 @@ func _on_spike_spike_hit():
 	disable_patrol_groups()
 	disable_cannon_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
+	$DeadSound.play()
 	save_deaths_stat()
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
@@ -185,10 +189,10 @@ func display_dead_sprite_and_pause_timer_until_respawn(message):
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	
 func put_player_to_save_position_and_unpause_timer():
-	$Player.set_physics_process(true)
+	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(4).text = ""
 	$Player.get_child(1).animation = "stay"
-	$Player.position = Vector2(save_position_x,save_position_y)
+	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	reset_patrols_progress()
 	reset_drop_progress()
@@ -201,6 +205,7 @@ func _on_pause_continue_is_clicked():
 		untoggle_pause()
 	elif $Player.position.x == start_position_x:
 		$PauseMusic.stop()
+		$Level7Music.stream_paused = false
 		$Player/Pause.hide()
 		$Player/Pause.get_child(0).hide()
 		$Player/Pause.get_child(1).hide()

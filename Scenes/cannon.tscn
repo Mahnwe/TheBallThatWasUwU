@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dirhjvk3xk4re"]
+[gd_scene load_steps=4 format=3 uid="uid://dirhjvk3xk4re"]
 
 [ext_resource type="Script" uid="uid://dl1lswymp2d7b" path="res://Scripts/Cannon.gd" id="1_8xnsj"]
 [ext_resource type="Texture2D" uid="uid://cfm6230iffbcn" path="res://Arts/CanonSprite/CanonSprite-removebg-preview.png" id="2_vs4g6"]
+[ext_resource type="AudioStream" uid="uid://bbdleh1w6l77i" path="res://Sound/Effects/CannonShootSound.wav" id="3_3uv2y"]
 
 [node name="Cannon" type="Node2D" groups=["cannon_group"]]
 script = ExtResource("1_8xnsj")
@@ -10,3 +11,8 @@ is_going_left = false
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.214521, 0.237226)
 texture = ExtResource("2_vs4g6")
+
+[node name="CannonSound" type="AudioStreamPlayer2D" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("3_3uv2y")
+volume_db = 24.0
+max_distance = 1000.0
