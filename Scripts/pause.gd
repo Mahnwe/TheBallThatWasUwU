@@ -31,6 +31,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if is_paused:
+		title_animation()
 	display_tooltip_when_button_focus()
 	if !is_paused and Input.is_action_just_pressed("close_commands"):
 		pass
@@ -394,3 +396,15 @@ func translate_text():
 	$ReturnLayer/ReturnToMenu.text = translate_config.get_value("TranslationPause", "MenuButton")
 	$ContinueLayer/Continue.text = translate_config.get_value("TranslationPause", "ContinueButton")
 	$CommandLayer/Command.text = translate_config.get_value("TranslationPause", "CommandsButton")
+	
+func title_animation():
+	if $CanvasLayer2/PauseLabel.scale <= Vector2(0.688,0.765):
+		var move_tween = get_tree().create_tween()
+		var grow_tween = get_tree().create_tween()
+		move_tween.tween_property($CanvasLayer2/PauseLabel, "position", Vector2(793.0,139.0), 1.0)
+		grow_tween.tween_property($CanvasLayer2/PauseLabel, "scale", Vector2(0.717,0.794), 1.0)
+	if $CanvasLayer2/PauseLabel.scale == Vector2(0.717,0.794):
+		var move_tween = get_tree().create_tween()
+		var shrink_tween = get_tree().create_tween()
+		move_tween.tween_property($CanvasLayer2/PauseLabel, "position", Vector2(800.0,142.0), 1.0)
+		shrink_tween.tween_property($CanvasLayer2/PauseLabel, "scale", Vector2(0.687,0.764), 1.0)

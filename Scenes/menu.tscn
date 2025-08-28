@@ -297,23 +297,28 @@ position = Vector2(969.25, 543)
 scale = Vector2(1.03047, 1.02963)
 texture = ExtResource("2_p71ma")
 
-[node name="MenuTitle" type="Label" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="."]
 z_index = 2
-layout_mode = 0
-offset_left = 603.0
-offset_top = 31.0
-offset_right = 1403.0
-offset_bottom = 226.0
-theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_shadow_color = Color(0.00551701, 0.00573812, 0.00551702, 1)
+layout_mode = 1
+offset_left = 617.0
+offset_top = 13.0
+offset_right = 1417.0
+offset_bottom = 208.0
+theme_override_colors/default_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("3_nakb8")
-theme_override_font_sizes/font_size = 70
-text = "The ball that was fast 
-                 and UwU"
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/normal_font = ExtResource("3_nakb8")
+theme_override_font_sizes/normal_font_size = 70
+text = "The ball that was fast
+and UwU"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="platform" parent="." instance=ExtResource("3_x4hsc")]
 position = Vector2(640, 274)

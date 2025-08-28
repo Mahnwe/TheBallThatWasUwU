@@ -23,6 +23,7 @@ func _ready():
 	
 	
 func _process(_delta):
+	title_animation()
 	if Input.is_action_just_pressed("restart_save"):
 		self.hide()
 		
@@ -148,3 +149,16 @@ func translate_text(is_english):
 	$HSplitContainer/VBoxContainer2/HSplitContainer5/ChestsAchievement.text = translate_config.get_value("TranslationAchievements", "ChestsAchievement")
 	$HSplitContainer/VBoxContainer2/HSplitContainer6/TimePlayedSucces.text = translate_config.get_value("TranslationAchievements", "TimeAchievement")
 	$HSplitContainer/VBoxContainer2/HSplitContainer/AllAchievements.text = translate_config.get_value("TranslationAchievements", "AllAchievements")
+	
+	
+func title_animation():
+	if $Title.scale <= Vector2(0.642,0.647):
+		var move_tween = get_tree().create_tween()
+		var grow_tween = get_tree().create_tween()
+		move_tween.tween_property($Title, "position", Vector2(640.0,115.0), 1.0)
+		grow_tween.tween_property($Title, "scale", Vector2(0.672,0.677), 1.0)
+	if $Title.scale == Vector2(0.672,0.677):
+		var move_tween = get_tree().create_tween()
+		var shrink_tween = get_tree().create_tween()
+		move_tween.tween_property($Title, "position", Vector2(656.0,121.0), 1.0)
+		shrink_tween.tween_property($Title, "scale", Vector2(0.642,0.647), 1.0)

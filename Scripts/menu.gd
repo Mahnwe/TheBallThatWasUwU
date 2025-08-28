@@ -48,6 +48,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	title_animation()
 	wait_for_focus()
 	if Input.is_action_just_pressed("quit_game"):
 		self.queue_free()
@@ -700,3 +701,22 @@ func _on_achievements_visibility_changed():
 	if $Achievements.visible == false:
 		focus_menu_buttons()
 		$AchievementsButton.grab_focus()
+		
+func title_animation():
+	var number_of_charac = $MenuTitle.get_total_character_count()
+	if $MenuTitle.visible_ratio == 0.0:
+		for i in number_of_charac:
+			$MenuTitle.visible_characters = i
+			$MenuTitle.visible_ratio += 0.1
+			await get_tree().create_timer(0.1).timeout
+		
+	if $MenuTitle.scale == Vector2(1.0,1.0):
+		var move_tween = get_tree().create_tween()
+		var grow_tween = get_tree().create_tween()
+		move_tween.tween_property($MenuTitle, "position", Vector2(600.0,11.0), 1.0)
+		grow_tween.tween_property($MenuTitle, "scale", Vector2(1.03,1.03), 1.0)
+	if $MenuTitle.scale == Vector2(1.03,1.03):
+		var move_tween = get_tree().create_tween()
+		var shrink_tween = get_tree().create_tween()
+		move_tween.tween_property($MenuTitle, "position", Vector2(617.0,13.0), 1.0)
+		shrink_tween.tween_property($MenuTitle, "scale", Vector2(1.0,1.0), 1.0)

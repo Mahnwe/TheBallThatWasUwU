@@ -13,6 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	title_animation()
 	if Input.is_action_just_pressed("restart_save"):
 		self.hide()
 		
@@ -49,3 +50,15 @@ func translate_text(is_english):
 	$HSplitContainer/VBoxContainer2/VSplitContainer3/AnimationCredit.text = translate_config.get_value("TranslationCredits", "AnimationCredit")
 	$HSplitContainer/VBoxContainer2/VSplitContainer2/HelpCredit.text = translate_config.get_value("TranslationCredits", "HelpCredit")
 	$GeneralThanksLabel.text = translate_config.get_value("TranslationCredits", "GeneralThanks")
+	
+func title_animation():
+	if $Label.scale <= Vector2(0.642,0.647):
+		var move_tween = get_tree().create_tween()
+		var grow_tween = get_tree().create_tween()
+		move_tween.tween_property($Label, "position", Vector2(725.0,101.0), 1.0)
+		grow_tween.tween_property($Label, "scale", Vector2(0.672,0.677), 1.0)
+	if $Label.scale == Vector2(0.672,0.677):
+		var move_tween = get_tree().create_tween()
+		var shrink_tween = get_tree().create_tween()
+		move_tween.tween_property($Label, "position", Vector2(728.0,104.0), 1.0)
+		shrink_tween.tween_property($Label, "scale", Vector2(0.642,0.647), 1.0)

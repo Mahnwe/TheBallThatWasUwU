@@ -406,10 +406,10 @@ theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 110
 text = "PAUSE"
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/PauseLabel"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
 z_index = -1
-position = Vector2(188.371, 72.3495)
-scale = Vector2(4.14307, 4.26407)
+position = Vector2(929.397, 197.254)
+scale = Vector2(2.84598, 3.25649)
 texture = ExtResource("2_h85by")
 
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]

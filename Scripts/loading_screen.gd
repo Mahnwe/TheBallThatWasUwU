@@ -24,6 +24,7 @@ func _process(delta: float):
 	if not path:
 		return
 		
+	title_animation()
 	$AnimatedSprite2D.play()
 	var progress = []
 	var status = ResourceLoader.load_threaded_get_status(path, progress)
@@ -60,3 +61,15 @@ func translate_text(is_english):
 
 func _on_loading_timer_timeout():
 	scene_loaded.emit(path)
+	
+func title_animation():
+	if $Label.scale == Vector2(1.0,1.0):
+		var move_tween = get_tree().create_tween()
+		var grow_tween = get_tree().create_tween()
+		move_tween.tween_property($Label, "position", Vector2(800.0,265.0), 1.0)
+		grow_tween.tween_property($Label, "scale", Vector2(1.15,1.15), 1.0)
+	if $Label.scale == Vector2(1.15,1.15):
+		var move_tween = get_tree().create_tween()
+		var shrink_tween = get_tree().create_tween()
+		move_tween.tween_property($Label, "position", Vector2(820.0,270.0), 1.0)
+		shrink_tween.tween_property($Label, "scale", Vector2(1.0,1.0), 1.0)

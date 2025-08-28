@@ -62,8 +62,8 @@ scale = Vector2(0.198333, 0.229333)
 texture = ExtResource("4_mcjyt")
 
 [node name="Cloud" type="Sprite2D" parent="LanguageScene"]
-position = Vector2(971, 387)
-scale = Vector2(2.88007, 3.15789)
+position = Vector2(969.5, 385)
+scale = Vector2(3.02027, 3.21052)
 texture = ExtResource("5_sih3h")
 
 [node name="Title" type="Label" parent="LanguageScene"]
