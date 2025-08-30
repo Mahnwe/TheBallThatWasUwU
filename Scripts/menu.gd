@@ -322,7 +322,7 @@ func _on_music_slider_value_changed(value):
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
 			1.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", -20)
+				properties_config.set_value("musicVolume","musicVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
 			2.0:
@@ -353,15 +353,15 @@ func _on_effect_slider_value_changed(value):
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
 			1.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -40)
+				properties_config.set_value("effectVolume","effectVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
 			2.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -30)
+				properties_config.set_value("effectVolume","effectVolumeSet", -20)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
 			3.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -20)
+				properties_config.set_value("effectVolume","effectVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
 			4.0:
@@ -414,7 +414,7 @@ func _on_sound_mute_button_pressed():
 		$EffectSlider.editable = true
 		properties_config.set_value("effectVolume","is_effect_mute", false)
 		properties_config.set_value("effectVolume","effectVolumeSet", -20)
-		properties_config.set_value("effectSliderValue","sliderEffectValue", 3.0)
+		properties_config.set_value("effectSliderValue","sliderEffectValue", 2.0)
 		$EffectSlider.value = properties_config.get_value("effectSliderValue","sliderEffectValue")
 		for member in get_tree().get_nodes_in_group("sound_effect_group"):
 			member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")

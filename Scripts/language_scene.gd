@@ -104,10 +104,14 @@ func title_animation():
 	if $Title.scale <= Vector2(0.938,1.15):
 		var move_tween = get_tree().create_tween()
 		var grow_tween = get_tree().create_tween()
+		grow_tween.bind_node(self)
+		move_tween.bind_node(self)
 		move_tween.tween_property($Title, "position", Vector2(795.0,329.0), 1.0)
 		grow_tween.tween_property($Title, "scale", Vector2(0.968,1.20), 1.0)
 	if $Title.scale == Vector2(0.968,1.20):
 		var move_tween = get_tree().create_tween()
 		var shrink_tween = get_tree().create_tween()
+		move_tween.bind_node(self)
+		shrink_tween.bind_node(self)
 		move_tween.tween_property($Title, "position", Vector2(800.0,332.0), 1.0)
 		shrink_tween.tween_property($Title, "scale", Vector2(0.938,1.15), 1.0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=48 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://dd6m23uhhgmfy" path="res://Scenes/branches_bush.tscn" id="18_ebilh"]
 [ext_resource type="PackedScene" uid="uid://e0nrigj8kq3x" path="res://Scenes/berry_bush.tscn" id="19_8uqwt"]
 [ext_resource type="PackedScene" uid="uid://d1i4adf8kr3mh" path="res://Scenes/wooden_plank.tscn" id="20_fheu7"]
-[ext_resource type="Texture2D" uid="uid://u2luvsnkt20j" path="res://Arts/BackgroundSprite/NewBackgroundSprite.png" id="21_ocefe"]
 [ext_resource type="PackedScene" uid="uid://6evsxx3ik4ta" path="res://Scenes/warning_sign.tscn" id="22_yjmq3"]
 [ext_resource type="AudioStream" uid="uid://6xooaq2m07s0" path="res://Sound/Musics/Level1Music.mp3" id="23_c437v"]
 [ext_resource type="AudioStream" uid="uid://crdwni6w5i6a8" path="res://Sound/Musics/Level1DeadWayMusic.mp3" id="24_yla18"]
@@ -729,13 +728,6 @@ shape = SubResource("RectangleShape2D_kffpy")
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("25_wl8uo")
 volume_db = -5.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-z_index = -2
-position = Vector2(-419, -50)
-scale = Vector2(5.03365, 2.89851)
-texture = ExtResource("21_ocefe")
 
 [node name="TriggerLevelMusic" type="Area2D" parent="."]
 
