@@ -2506,7 +2506,7 @@ volume_db = 5.0
 
 [node name="Level7Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("77_hwiai")
-volume_db = -5.0
+volume_db = -10.0
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
