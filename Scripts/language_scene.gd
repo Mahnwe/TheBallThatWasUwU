@@ -82,6 +82,7 @@ func go_to_menu():
 	$LoadingScreen.load(MENU_SCENE)
 
 func _on_loading_screen_scene_loaded(path):
+	self.queue_free()
 	get_tree().change_scene_to_file(path)
 
 

@@ -50,10 +50,20 @@ func _ready():
 func _process(_delta):
 	title_animation()
 	wait_for_focus()
-	if Input.is_action_just_pressed("quit_game"):
-		self.queue_free()
-		get_tree().quit()
+	check_quit_button()
 	handle_buttons_child_visibility()
+	
+func check_quit_button():
+	if Input.is_action_just_pressed("quit_game"):
+		if $Achievements.visible:
+			$Achievements.hide()
+		elif $Credits.visible:
+			$Credits.hide()
+		elif $Stats.visible:
+			$Stats.hide()
+		else:
+			self.queue_free()
+			get_tree().quit()
 		
 func wait_for_focus():
 	for member in get_tree().get_nodes_in_group("MenuButtons"):

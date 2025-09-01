@@ -11,8 +11,8 @@ func _process(delta):
 	time_elapsed += delta
 	
 func _format_seconds(time : float) -> String:
-	var hours := time / 3600
-	var minutes := time / 60
+	var hours := int(time / 3600)
+	var minutes := int(time / 60) % 60
 	var seconds := fmod(time, 60)
 
 	return "%02dh:%02dm:%02ds" % [hours, minutes, seconds]

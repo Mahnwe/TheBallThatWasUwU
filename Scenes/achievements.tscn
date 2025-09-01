@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c374x86lfx3c4"]
+[gd_scene load_steps=22 format=3 uid="uid://c374x86lfx3c4"]
 
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="1_7xtne"]
 [ext_resource type="Script" uid="uid://brincxwg6kccx" path="res://Scripts/achievements.gd" id="1_g04om"]
@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://d0ffotplbx7kk" path="res://Arts/MedalSprite/GoldMedal.png" id="12_ihs1y"]
 [ext_resource type="Texture2D" uid="uid://b3xwkjossotye" path="res://Arts/MedalSprite/SilverMedal.png" id="13_6dtim"]
 [ext_resource type="Texture2D" uid="uid://dehv2snsg73rn" path="res://Arts/MedalSprite/DevMedal.png" id="14_223aj"]
+[ext_resource type="Texture2D" uid="uid://rgqdfa3t4pbr" path="res://Arts/AbilitySprite/DoubleJumpAbilitySprite-removebg-preview.png" id="15_223aj"]
+[ext_resource type="Texture2D" uid="uid://drkgw4lpxvc8f" path="res://Arts/AbilitySprite/DashAbilitySprite-removebg-preview.png" id="16_jdr4g"]
+[ext_resource type="Texture2D" uid="uid://pgbtaggf63co" path="res://Arts/UwUBallSprite/UwUDead.png" id="17_uv35e"]
+[ext_resource type="Texture2D" uid="uid://c5bwd8ikb5ryi" path="res://Arts/ChestSprite/ChestSprite.png" id="18_uv35e"]
+[ext_resource type="Texture2D" uid="uid://cmw23lnas38nr" path="res://Arts/AchievementsSprites/TimeAchievement.png" id="19_8p4bk"]
+[ext_resource type="Texture2D" uid="uid://dglckqiulw2sh" path="res://Arts/AchievementsSprites/CupAchievement.png" id="20_8p4bk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m5au"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -344,6 +350,11 @@ theme_override_fonts/font = ExtResource("6_38hx6")
 theme_override_font_sizes/font_size = 35
 text = "Jump 500 times"
 
+[node name="JumpSprite" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer2/JumpsAchievement"]
+position = Vector2(370.188, 22.3125)
+scale = Vector2(0.1754, 0.177005)
+texture = ExtResource("15_223aj")
+
 [node name="JumpsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer2" groups=["validate_group"]]
 position = Vector2(-54, 24)
 scale = Vector2(1.32, 1.16)
@@ -362,6 +373,11 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_38hx6")
 theme_override_font_sizes/font_size = 35
 text = "Dash 200 times"
+
+[node name="DashSprite" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer3/DashesAchievement"]
+position = Vector2(373, 25)
+scale = Vector2(0.1754, 0.177005)
+texture = ExtResource("16_jdr4g")
 
 [node name="DashesValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer3" groups=["validate_group"]]
 position = Vector2(-55, 23)
@@ -382,6 +398,11 @@ theme_override_fonts/font = ExtResource("6_38hx6")
 theme_override_font_sizes/font_size = 35
 text = "Die 100 times"
 
+[node name="DeathSprite" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer4/DeathAchievement"]
+position = Vector2(314, 23)
+scale = Vector2(1.56, 1.46)
+texture = ExtResource("17_uv35e")
+
 [node name="DeathValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer4" groups=["validate_group"]]
 position = Vector2(-55, 23)
 scale = Vector2(1.32, 1.16)
@@ -401,6 +422,11 @@ theme_override_fonts/font = ExtResource("6_38hx6")
 theme_override_font_sizes/font_size = 35
 text = "Find all treasure chests"
 
+[node name="ChestSprite" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer5/ChestsAchievement"]
+position = Vector2(438, 23)
+scale = Vector2(1.5, 1.53)
+texture = ExtResource("18_uv35e")
+
 [node name="ChestsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer5" groups=["validate_group"]]
 position = Vector2(-55, 21)
 scale = Vector2(1.32, 1.16)
@@ -419,6 +445,11 @@ theme_override_fonts/font = ExtResource("6_38hx6")
 theme_override_font_sizes/font_size = 35
 text = "Play 30 minutes"
 
+[node name="TimeSprite" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer6/TimePlayedSucces"]
+position = Vector2(339, 17)
+scale = Vector2(1.6375, 1.4)
+texture = ExtResource("19_8p4bk")
+
 [node name="TimePlayedValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer6" groups=["validate_group"]]
 position = Vector2(-53, 21)
 scale = Vector2(1.32, 1.16)
@@ -436,6 +467,11 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_38hx6")
 theme_override_font_sizes/font_size = 35
 text = "Get all the achievements"
+
+[node name="CupSprite" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer/AllAchievements"]
+position = Vector2(453, 20)
+scale = Vector2(1.6375, 1.4)
+texture = ExtResource("20_8p4bk")
 
 [node name="AllAchievementsValidate" type="Sprite2D" parent="HSplitContainer/VBoxContainer2/HSplitContainer"]
 position = Vector2(-51, 25)
