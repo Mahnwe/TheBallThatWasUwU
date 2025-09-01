@@ -114,9 +114,9 @@ texture = ExtResource("1_r18jl")
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 728.0
+offset_left = 741.0
 offset_top = 104.0
-offset_right = 1349.0
+offset_right = 1362.0
 offset_bottom = 287.0
 scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
@@ -126,7 +126,7 @@ theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_7emq5")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 140
 text = "Credits"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -315,9 +315,9 @@ texture = ExtResource("5_xelri")
 [node name="GeneralThanksLabel" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 494.0
+offset_left = 480.0
 offset_top = 946.0
-offset_right = 1431.0
+offset_right = 1417.0
 offset_bottom = 1012.0
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

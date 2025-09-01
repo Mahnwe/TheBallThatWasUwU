@@ -16,6 +16,7 @@ var properties_config = ConfigFile.new()
 var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_file
+var actualize_lang_propertie
 
 func _ready():
 	translate_text(properties_config.get_value("Languages", "is_english"))
@@ -56,6 +57,7 @@ func translate_text(is_english):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 		$Label.position.x = 770.0
 		
+	actualize_lang_propertie = is_english
 	$Label.text = translate_config.get_value("TranslationLoading", "LoadingScreen")
 
 
@@ -68,12 +70,18 @@ func title_animation():
 		var grow_tween = get_tree().create_tween()
 		move_tween.bind_node(self)
 		grow_tween.bind_node(self)
-		move_tween.tween_property($Label, "position", Vector2(800.0,265.0), 1.0)
+		if actualize_lang_propertie:
+			move_tween.tween_property($Label, "position", Vector2(800.0,265.0), 1.0)
+		else:
+			move_tween.tween_property($Label, "position", Vector2(740.0,268.0), 1.0)
 		grow_tween.tween_property($Label, "scale", Vector2(1.15,1.15), 1.0)
 	if $Label.scale == Vector2(1.15,1.15):
 		var move_tween = get_tree().create_tween()
 		var shrink_tween = get_tree().create_tween()
 		move_tween.bind_node(self)
 		shrink_tween.bind_node(self)
-		move_tween.tween_property($Label, "position", Vector2(820.0,270.0), 1.0)
+		if actualize_lang_propertie:
+			move_tween.tween_property($Label, "position", Vector2(820.0,270.0), 1.0)
+		else:
+			move_tween.tween_property($Label, "position", Vector2(745.0,270.0), 1.0)
 		shrink_tween.tween_property($Label, "scale", Vector2(1.0,1.0), 1.0)

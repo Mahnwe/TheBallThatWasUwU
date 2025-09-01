@@ -15,6 +15,7 @@ var properties_file = properties_config.load("res://Ressources/PropertieFile/pro
 var translate_file
 
 var number_of_achievements_unlock
+var actualize_lang_propertie
 
 func _ready():
 	translate_text(properties_config.get_value("Languages", "is_english"))
@@ -23,9 +24,10 @@ func _ready():
 	
 	
 func _process(_delta):
-	title_animation()
-	if Input.is_action_just_pressed("restart_save"):
-		self.hide()
+	if self.visible:
+		title_animation()
+		if Input.is_action_just_pressed("restart_save"):
+			self.hide()
 		
 func _on_quit_button_pressed():
 	self.hide()
@@ -129,13 +131,14 @@ func translate_text(is_english):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 		$Title.add_theme_font_size_override("font_size", 120)
 		$Title.position = Vector2(656, 121)
-		$HSplitContainer.add_theme_constant_override("separation", 400.0)
+		$HSplitContainer.add_theme_constant_override("separation", 480.0)
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 		$Title.add_theme_font_size_override("font_size", 140)
 		$Title.position = Vector2(770, 111)
-		$HSplitContainer.add_theme_constant_override("separation", 300.0)
+		$HSplitContainer.add_theme_constant_override("separation", 420.0)
 		
+	actualize_lang_propertie = is_english
 	$Title.text = translate_config.get_value("TranslationAchievements", "TitleAchievements")
 	$HSplitContainer/VBoxContainer/HSplitContainer/Level1Achievement.text = translate_config.get_value("TranslationAchievements", "Level1Achievement")
 	$HSplitContainer/VBoxContainer/HSplitContainer2/AllLevelsAchievement.text = translate_config.get_value("TranslationAchievements", "AllLevelsAchievement")
@@ -155,10 +158,16 @@ func title_animation():
 	if $Title.scale <= Vector2(0.642,0.647):
 		var move_tween = get_tree().create_tween()
 		var grow_tween = get_tree().create_tween()
-		move_tween.tween_property($Title, "position", Vector2(640.0,115.0), 1.0)
+		if actualize_lang_propertie:
+			move_tween.tween_property($Title, "position", Vector2(640.0,114.0), 1.0)
+		else:
+			move_tween.tween_property($Title, "position", Vector2(755.0,114.0), 1.0)
 		grow_tween.tween_property($Title, "scale", Vector2(0.672,0.677), 1.0)
 	if $Title.scale == Vector2(0.672,0.677):
 		var move_tween = get_tree().create_tween()
 		var shrink_tween = get_tree().create_tween()
-		move_tween.tween_property($Title, "position", Vector2(656.0,121.0), 1.0)
+		if actualize_lang_propertie:
+			move_tween.tween_property($Title, "position", Vector2(656.0,114.0), 1.0)
+		else:
+			move_tween.tween_property($Title, "position", Vector2(760.0,114.0), 1.0)
 		shrink_tween.tween_property($Title, "scale", Vector2(0.642,0.647), 1.0)

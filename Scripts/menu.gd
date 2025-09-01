@@ -703,12 +703,12 @@ func _on_achievements_visibility_changed():
 		$AchievementsButton.grab_focus()
 		
 func title_animation():
-	var number_of_charac = $MenuTitle.get_total_character_count()
 	if $MenuTitle.visible_ratio == 0.0:
+		var number_of_charac = $MenuTitle.get_total_character_count()
 		for i in number_of_charac:
 			$MenuTitle.visible_characters = i
 			$MenuTitle.visible_ratio += 0.1
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(0.07).timeout
 		
 	if $MenuTitle.scale == Vector2(1.0,1.0):
 		var move_tween = get_tree().create_tween()

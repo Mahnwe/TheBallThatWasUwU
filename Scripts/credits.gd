@@ -13,9 +13,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	title_animation()
-	if Input.is_action_just_pressed("restart_save"):
-		self.hide()
+	if self.visible:
+		title_animation()
+		if Input.is_action_just_pressed("restart_save"):
+			self.hide()
 		
 func _on_quit_button_pressed():
 	self.hide()
@@ -55,10 +56,10 @@ func title_animation():
 	if $Label.scale <= Vector2(0.642,0.647):
 		var move_tween = get_tree().create_tween()
 		var grow_tween = get_tree().create_tween()
-		move_tween.tween_property($Label, "position", Vector2(725.0,101.0), 1.0)
+		move_tween.tween_property($Label, "position", Vector2(735.0,101.0), 1.0)
 		grow_tween.tween_property($Label, "scale", Vector2(0.672,0.677), 1.0)
 	if $Label.scale == Vector2(0.672,0.677):
 		var move_tween = get_tree().create_tween()
 		var shrink_tween = get_tree().create_tween()
-		move_tween.tween_property($Label, "position", Vector2(728.0,104.0), 1.0)
+		move_tween.tween_property($Label, "position", Vector2(741.0,104.0), 1.0)
 		shrink_tween.tween_property($Label, "scale", Vector2(0.642,0.647), 1.0)

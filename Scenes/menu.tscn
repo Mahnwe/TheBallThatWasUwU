@@ -1,7 +1,7 @@
 [gd_scene load_steps=73 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
-[ext_resource type="Texture2D" uid="uid://qjfxd16xxyt7" path="res://Arts/BackgroundSprite/AsePriteBackgroundMenu.png" id="2_p71ma"]
+[ext_resource type="Texture2D" uid="uid://biyeoaxq7npbr" path="res://Arts/BackgroundSprite/MenuBackgroundSprite.png" id="2_lx18h"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_nakb8"]
 [ext_resource type="PackedScene" uid="uid://uwfcx0dtb2bc" path="res://Scenes/big_tree.tscn" id="3_rsj3o"]
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="3_x4hsc"]
@@ -295,7 +295,7 @@ script = ExtResource("1_ltdc4")
 z_index = -5
 position = Vector2(969.25, 543)
 scale = Vector2(1.03047, 1.02963)
-texture = ExtResource("2_p71ma")
+texture = ExtResource("2_lx18h")
 
 [node name="MenuTitle" type="RichTextLabel" parent="."]
 z_index = 2
