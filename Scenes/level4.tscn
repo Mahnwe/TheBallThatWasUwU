@@ -1106,7 +1106,6 @@ collision_scale_y = 2
 
 [node name="DeadSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("41_mwl31")
-volume_db = 5.0
 
 [node name="Level4Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("42_gplmi")

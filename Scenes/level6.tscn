@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://we3djq1fuccm" path="res://Scenes/advice.tscn" id="33_0v3qi"]
 [ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="36_f4112"]
 [ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="37_onc6r"]
-[ext_resource type="AudioStream" uid="uid://g23as811441j" path="res://Sound/Musics/Project Manawe_LEVEL 2.mp3" id="38_ra3mp"]
+[ext_resource type="AudioStream" uid="uid://ba86vuqfxr02r" path="res://Sound/Musics/Level6Music.mp3" id="38_ra3mp"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkip3"]
 _data = {
@@ -1446,11 +1446,9 @@ scale = Vector2(0.7, 0.694)
 
 [node name="DeadSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("37_onc6r")
-volume_db = 5.0
 
 [node name="Level6Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("38_ra3mp")
-volume_db = -5.0
 parameters/looping = true
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

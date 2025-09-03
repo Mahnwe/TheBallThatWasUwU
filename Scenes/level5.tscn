@@ -49,7 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="47_au1pt"]
 [ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="48_383j6"]
 [ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="49_usy5n"]
-[ext_resource type="AudioStream" uid="uid://6xooaq2m07s0" path="res://Sound/Musics/Level1Music.mp3" id="50_sjali"]
+[ext_resource type="AudioStream" uid="uid://uxm0t36aas2f" path="res://Sound/Musics/Level5Music.mp3" id="50_sjali"]
 
 [sub_resource type="Curve2D" id="Curve2D_jdew5"]
 _data = {
@@ -966,11 +966,9 @@ speed = 18
 
 [node name="DeadSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("49_usy5n")
-volume_db = 5.0
 
 [node name="Level5Music" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("50_sjali")
-volume_db = -5.0
 parameters/looping = true
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]

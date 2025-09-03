@@ -1144,7 +1144,7 @@ texture = ExtResource("37_mucp4")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D4"]
 z_index = 1
-position = Vector2(-762, -32)
+position = Vector2(-781, -32)
 scale = Vector2(1.2, 1.1)
 texture = ExtResource("38_4dr7d")
 
