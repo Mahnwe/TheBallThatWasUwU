@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dga2fe53ycg0g"]
+[gd_scene load_steps=15 format=3 uid="uid://dga2fe53ycg0g"]
 
 [ext_resource type="Texture2D" uid="uid://cfs408tvgmsdf" path="res://Arts/LaserSprite/LaserBase.png" id="1_yw8sb"]
 [ext_resource type="Script" uid="uid://hdo2rmhqfdbv" path="res://Scripts/laser_base.gd" id="2_6wvei"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ersel2k4f6xs" path="res://Arts/LaserSprite/LaserCharge/LaserCharge5.png" id="4_okyeh"]
 [ext_resource type="Texture2D" uid="uid://dytqis821eehi" path="res://Arts/LaserSprite/LaserBeam/LaserBeam.png" id="5_okyeh"]
 [ext_resource type="Texture2D" uid="uid://cvcpfctqwlns1" path="res://Arts/LaserSprite/LaserBeam/LaserBeam2.png" id="6_d57bf"]
+[ext_resource type="AudioStream" uid="uid://d2y03kaw12woj" path="res://Sound/Effects/LaserEffect.wav" id="10_okyeh"]
+[ext_resource type="AudioStream" uid="uid://c7ypwvxdf3npb" path="res://Sound/Effects/LaserCharge.wav" id="11_d57bf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yth28"]
 animations = [{
@@ -89,7 +91,17 @@ one_shot = true
 [node name="WaitTimer" type="Timer" parent="." groups=["laser_timer"]]
 one_shot = true
 
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("10_okyeh")
+max_distance = 600.0
+
+[node name="LaserChargeSound" type="AudioStreamPlayer2D" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("11_d57bf")
+max_distance = 600.0
+
 [connection signal="body_entered" from="LaserBeam/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]
 [connection signal="timeout" from="BeamTimer" to="." method="_on_beam_timer_timeout"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="finished" from="LaserSound" to="." method="_on_laser_sound_finished"]
+[connection signal="finished" from="LaserChargeSound" to="." method="_on_laser_charge_sound_finished"]

@@ -1,5 +1,9 @@
 extends Sprite2D
 
+var properties_config = ConfigFile.new()
+# Load data from a file.
+var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
+
 var is_paused
 
 @export var beam_x_scale = 0.0
@@ -12,6 +16,7 @@ signal laser_touched_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_volume()
 	is_paused = false
 	setup_laser_beam()
 	$LaserBeam/Area2D.monitorable = false
@@ -51,20 +56,24 @@ func final_charge_trigger():
 		$LaserCharge.play()
 
 func _on_beam_timer_timeout():
+	$LaserSound.stop()
 	$ChargeTimer.start()
 	$LaserBeam/Area2D.monitoring = false
 	$LaserBeam.visible = false
 	$LaserCharge.visible = true
 	$LaserCharge.animation = "laser_charge"
 	$LaserCharge.play()
+	$LaserChargeSound.play()
 
 func _on_charge_timer_timeout():
+	$LaserChargeSound.stop()
 	$BeamTimer.start()
 	$LaserCharge.visible = false
 	$LaserBeam.visible = true
 	$LaserBeam/Area2D/CollisionShape2D.disabled = false
 	$LaserBeam/Area2D.monitoring = true
 	$LaserBeam.play()
+	$LaserSound.play()
 
 
 func _on_area_2d_body_entered(body):
@@ -75,3 +84,17 @@ func _on_area_2d_body_entered(body):
 
 func _on_wait_timer_timeout():
 	first_charge_beam()
+
+
+func _on_laser_sound_finished():
+	if $BeamTimer.time_left != 0.0:
+		$LaserSound.play()
+
+
+func _on_laser_charge_sound_finished():
+	if $ChargeTimer.time_left != 0.0:
+		$LaserChargeSound.play()
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")

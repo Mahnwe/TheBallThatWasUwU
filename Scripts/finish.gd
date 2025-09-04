@@ -10,6 +10,7 @@ var translate_file
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_volume()
 	translate_text()
 	$WellDoneLabel.hide()
 	$ConfettiSprite.hide()
@@ -26,6 +27,7 @@ func _on_area_2d_body_entered(body):
 		$WellDoneLabel.show()
 		$ConfettiSprite.show()
 		$ConfettiSprite.play()
+		$FinishSound.play()
 
 
 func _on_confetti_sprite_animation_finished():
@@ -39,3 +41,7 @@ func translate_text():
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
 		
 	$WellDoneLabel.text = translate_config.get_value("TranslationFinish", "WellDonePlayer")
+	
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
