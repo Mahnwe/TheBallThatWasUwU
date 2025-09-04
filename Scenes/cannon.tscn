@@ -14,5 +14,5 @@ texture = ExtResource("2_vs4g6")
 
 [node name="CannonSound" type="AudioStreamPlayer2D" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("3_3uv2y")
-volume_db = 24.0
-max_distance = 1000.0
+volume_db = 20.0
+max_distance = 800.0

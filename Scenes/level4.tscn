@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ya43smikoo8" path="res://Arts/FlowersSprite/RedMushroom.png" id="36_hxlu0"]
 [ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="40_wn2go"]
 [ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="41_mwl31"]
-[ext_resource type="AudioStream" uid="uid://g23as811441j" path="res://Sound/Musics/Project Manawe_LEVEL 2.mp3" id="42_gplmi"]
+[ext_resource type="AudioStream" uid="uid://kdlgpodrw73k" path="res://Sound/Musics/Level4Music.mp3" id="42_gplmi"]
 
 [sub_resource type="Curve2D" id="Curve2D_wok5w"]
 _data = {
@@ -984,7 +984,7 @@ speed = 400
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
-offset_left = -3168.0
+offset_left = -3158.0
 offset_top = -2605.0
 offset_right = -1897.0
 offset_bottom = -1377.0
