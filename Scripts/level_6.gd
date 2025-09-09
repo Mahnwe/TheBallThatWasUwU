@@ -84,13 +84,21 @@ func _on_spike_spike_hit():
 	disable_patrol_groups()
 	disable_drop_groups()
 	display_dead_sprite_and_pause_timer_until_respawn("OH NO !")
-	$DeadSound.play()
+	play_dead_sound()
 	save_deaths_stat()
 	await get_tree().create_timer(1.0).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
 	else:
 		put_player_to_save_position_and_unpause_timer()
+		
+func play_dead_sound():
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	if random.randf() >= 0.50:
+		$DeadSound.play()
+	else:
+		$DeadSound2.play()
 	
 func restart_scene():
 	saving_time_played()
@@ -107,9 +115,11 @@ func _on_save_point_player_entered():
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
 		saving_time_played()
+		self.queue_free()
 		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		saving_time_played()
+		self.queue_free()
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
 func handle_pause():
@@ -129,6 +139,7 @@ func handle_pause():
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			saving_time_played()
+			self.queue_free()
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 			
 func toggle_pause():
@@ -227,6 +238,7 @@ func _on_pause_continue_is_clicked():
 func _on_finish_ui_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		saving_time_played()
+		self.queue_free()
 		get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 			
 func _on_pause_music_finished():

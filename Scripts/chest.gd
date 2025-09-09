@@ -13,6 +13,7 @@ signal chest_triggered
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_volume()
 	is_trigger = false
 	translate_text()
 
@@ -27,9 +28,11 @@ func set_level_number(number_from_level):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player" and !is_trigger:
+		set_volume()
 		is_trigger = true
 		$Label.show()
 		chest_triggered.emit()
+		$ChestSound.play()
 		for n in 6:
 			self.hide()
 			await get_tree().create_timer(0.2).timeout;
@@ -54,3 +57,8 @@ func change_font_size(is_english):
 		$Label.add_theme_font_size_override("font_size", 40)
 	else:
 		$Label.add_theme_font_size_override("font_size", 37)
+		
+		
+func set_volume():
+	for member in get_tree().get_nodes_in_group("sound_effect_group"):
+		member.volume_db = config.get_value("effectVolume","effectVolumeSet")

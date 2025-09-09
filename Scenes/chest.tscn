@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://diohp78ekckkx"]
+[gd_scene load_steps=7 format=3 uid="uid://diohp78ekckkx"]
 
 [ext_resource type="Texture2D" uid="uid://c5bwd8ikb5ryi" path="res://Arts/ChestSprite/ChestSprite.png" id="1_cjfl1"]
 [ext_resource type="Script" uid="uid://baavm5lm7hqhh" path="res://Scripts/chest.gd" id="2_bagqn"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_bagqn"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_pmguq"]
+[ext_resource type="AudioStream" uid="uid://dc1qsupua5m3k" path="res://Sound/Effects/ChestSound.wav" id="5_dq33m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjfl1"]
 size = Vector2(35, 24.1176)
@@ -44,5 +45,8 @@ z_index = -1
 position = Vector2(127.886, 27.4084)
 scale = Vector2(2.2359, 1.48942)
 texture = ExtResource("3_bagqn")
+
+[node name="ChestSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("5_dq33m")
 
 [connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

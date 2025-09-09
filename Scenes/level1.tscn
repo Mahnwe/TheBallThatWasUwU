@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=49 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dtfubdgtfxrc0" path="res://Arts/FlowersSprite/GreenLeafIvy.png" id="36_dr50b"]
 [ext_resource type="PackedScene" uid="uid://s6ol1ia83o2n" path="res://Scenes/dark_brown_tree.tscn" id="36_nstho"]
 [ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="39_tfirt"]
+[ext_resource type="AudioStream" uid="uid://2fd78ekwbdbf" path="res://Sound/Effects/DeathSound2.wav" id="40_8wyvm"]
 [ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="40_mwr0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dphvp"]
@@ -971,6 +972,9 @@ scale = Vector2(1.78, 1.68333)
 
 [node name="DeadSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("40_mwr0o")
+
+[node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("40_8wyvm")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
