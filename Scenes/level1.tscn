@@ -850,6 +850,7 @@ position = Vector2(-1184, 15)
 rotation = 1.41815
 
 [node name="Bird" parent="Path2D/PathFollow2D" instance=ExtResource("29_x7ktg")]
+z_index = 1
 position = Vector2(5.70215, 8.97136)
 scale = Vector2(0.626435, 0.567529)
 

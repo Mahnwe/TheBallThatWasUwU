@@ -50,7 +50,7 @@ texture = ExtResource("4_i6gfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(946, 141)
+position = Vector2(946, 154.649)
 scale = Vector2(2.79764, 2.91182)
 texture = ExtResource("3_wue6w")
 
@@ -58,9 +58,9 @@ texture = ExtResource("3_wue6w")
 z_index = 1
 layout_mode = 0
 offset_left = 812.0
-offset_top = 80.0
+offset_top = 93.6492
 offset_right = 1278.0
-offset_bottom = 272.0
+offset_bottom = 285.649
 scale = Vector2(0.641169, 0.645645)
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -73,7 +73,7 @@ theme_override_font_sizes/font_size = 140
 text = "Stats"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(331.824, 358.617)
+position = Vector2(331.824, 372.266)
 scale = Vector2(3.82195, 4.91098)
 texture = ExtResource("3_wue6w")
 
@@ -130,9 +130,9 @@ flip_h = true
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
 offset_left = 145.0
-offset_top = 282.0
+offset_top = 295.649
 offset_right = 1163.0
-offset_bottom = 860.0
+offset_bottom = 882.649
 scale = Vector2(0.947485, 0.943702)
 theme_override_constants/separation = 100
 dragging_enabled = false
@@ -532,9 +532,9 @@ text = "0"
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 1239.0
-offset_top = 315.0
+offset_top = 328.649
 offset_right = 1669.0
-offset_bottom = 842.0
+offset_bottom = 855.649
 scale = Vector2(0.947485, 0.943702)
 theme_override_constants/separation = 40
 

@@ -33,9 +33,13 @@ func _process(_delta):
 	if is_paused:
 		for member in get_tree().get_nodes_in_group("laser_timer"):
 			member.set_paused(true)
+		$LaserSound.stream_paused = true
+		$LaserChargeSound.stream_paused = true
 	else:
 		for member in get_tree().get_nodes_in_group("laser_timer"):
 			member.set_paused(false)
+		$LaserSound.stream_paused = false
+		$LaserChargeSound.stream_paused = false
 	
 func setup_laser_beam():
 	if beam_x_scale != 0.0:
@@ -49,6 +53,7 @@ func first_charge_beam():
 	$ChargeTimer.start()
 	$LaserCharge.visible = true
 	$LaserCharge.play()
+	$LaserChargeSound.play()
 	
 func final_charge_trigger():
 	if $ChargeTimer.time_left <= 1.5:

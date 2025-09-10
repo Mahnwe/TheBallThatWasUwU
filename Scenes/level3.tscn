@@ -144,7 +144,7 @@ position = Vector2(-697, 1263)
 scale = Vector2(0.720001, 1)
 
 [node name="StartArea" parent="." instance=ExtResource("3_e4wth")]
-position = Vector2(-462, 1268)
+position = Vector2(-462, 1272)
 scale = Vector2(0.627, 0.8)
 
 [node name="Player" parent="." instance=ExtResource("4_p835d")]
