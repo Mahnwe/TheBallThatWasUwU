@@ -1231,6 +1231,10 @@ parameters/looping = true
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("46_pd7tp")
 
+[node name="RestartSaveTimer" type="Timer" parent="."]
+
+[node name="RestartLevelTimer" type="Timer" parent="."]
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
@@ -1291,3 +1295,5 @@ stream = ExtResource("46_pd7tp")
 [connection signal="player_hit_bumper" from="Bumper4" to="." method="_on_bumper_4_player_hit_bumper"]
 [connection signal="player_hit_bumper" from="Bumper5" to="." method="_on_bumper_5_player_hit_bumper"]
 [connection signal="player_hit_bumper" from="Bumper6" to="." method="_on_bumper_6_player_hit_bumper"]
+[connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
+[connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

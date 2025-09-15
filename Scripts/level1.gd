@@ -25,8 +25,6 @@ var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_file
 
-var is_restart_save_holding = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.is_level_1 = true

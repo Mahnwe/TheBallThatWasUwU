@@ -504,7 +504,7 @@ charge_timer = 3.0
 beam_timer = 2.0
 
 [node name="MetalPlatform14" parent="." instance=ExtResource("3_h0p4h")]
-position = Vector2(778, -1516)
+position = Vector2(777, -1516)
 scale = Vector2(0.7684, 2.17912)
 
 [node name="MetalPlatform15" parent="." instance=ExtResource("3_h0p4h")]
@@ -2512,6 +2512,10 @@ parameters/looping = true
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("78_1nxg2")
 
+[node name="RestartSaveTimer" type="Timer" parent="."]
+
+[node name="RestartLevelTimer" type="Timer" parent="."]
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
@@ -2594,3 +2598,5 @@ stream = ExtResource("78_1nxg2")
 [connection signal="body_entered" from="BeachBackgroundTrigger" to="." method="_on_beach_background_trigger_body_entered"]
 [connection signal="body_entered" from="ForestBackgroundTrigger" to="." method="_on_forest_background_trigger_body_entered"]
 [connection signal="body_entered" from="MountainBackgroundTrigger" to="." method="_on_mountain_background_trigger_body_entered"]
+[connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
+[connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

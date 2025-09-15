@@ -76,7 +76,9 @@ func translate_text():
 		$VBoxContainer/Movements.text = translate_config.get_value("TranslationCommands", "Movements")
 		$VBoxContainer/Jump.text = translate_config.get_value("TranslationCommands", "Jump")
 		$VBoxContainer/RestartSave.text = translate_config.get_value("TranslationCommands", "RestartSave")
+		$VBoxContainer/RestartSave/Label.text = translate_config.get_value("TranslationCommands", "HoldingButton")
 		$VBoxContainer/RestartLevel.text = translate_config.get_value("TranslationCommands", "RestartLevel")
+		$VBoxContainer/RestartLevel/Label.text = translate_config.get_value("TranslationCommands", "HoldingButton")
 		$VBoxContainer/Pause.text = translate_config.get_value("TranslationCommands", "Pause")
 		$VBoxContainer/Dash.text = translate_config.get_value("TranslationCommands", "Dash")
 		$VBoxContainer.position.x -= 40
