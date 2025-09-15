@@ -1,5 +1,8 @@
 extends Node2D
 
+const MENU_SCENE : String = "res://Scenes/menu.tscn"
+const LEVEL_3_SCENE : String = "res://Scenes/level3.tscn"
+
 var is_paused
 
 var start_position_x = -11
@@ -82,12 +85,12 @@ func _process(_delta):
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
 		saving_time_played()
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/level3.tscn")
+		$Finish/FinishUI.get_child(5).get_child(0).show()
+		$Finish/FinishUI.get_child(5).get_child(0).load(LEVEL_3_SCENE)
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		saving_time_played()
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+		$Player/Pause.get_child(9).get_child(0).show()
+		$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 	
 	
 func handle_pause():
@@ -107,8 +110,8 @@ func handle_pause():
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			saving_time_played()
-			self.queue_free()
-			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+			$Player/Pause.get_child(9).get_child(0).show()
+			$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 	
 	
 func restart_scene():
@@ -302,8 +305,8 @@ func _on_pause_music_finished():
 func _on_finish_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		saving_time_played()
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/level3.tscn")
+		$Finish/FinishUI.get_child(5).get_child(0).show()
+		$Finish/FinishUI.get_child(5).get_child(0).load(LEVEL_3_SCENE)
 		
 func translate_text():
 	var translate_config = ConfigFile.new()
@@ -385,7 +388,11 @@ func save_deaths_stat():
 
 func _on_pause_return_to_menu_is_clicked():
 	saving_time_played()
+	$Player/Pause.get_child(9).get_child(0).show()
+	$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 
 
 func _on_finish_ui_return_to_menu_pressed():
 	saving_time_played()
+	$Finish/FinishUI.get_child(5).get_child(0).show()
+	$Finish/FinishUI.get_child(5).get_child(0).load(MENU_SCENE)

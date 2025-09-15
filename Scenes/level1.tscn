@@ -977,6 +977,12 @@ stream = ExtResource("40_mwr0o")
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("40_8wyvm")
 
+[node name="RestartSaveTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RestartLevelTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
@@ -1041,3 +1047,5 @@ stream = ExtResource("40_8wyvm")
 [connection signal="body_entered" from="WalljumpAdviceTrigger" to="." method="_on_walljump_advice_trigger_body_entered"]
 [connection signal="body_entered" from="SlideAdviceTrigger" to="." method="_on_slide_advice_trigger_body_entered"]
 [connection signal="body_entered" from="JumpAdviceTrigger" to="." method="_on_jump_advice_trigger_body_entered"]
+[connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
+[connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

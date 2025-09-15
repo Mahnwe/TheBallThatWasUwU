@@ -1,5 +1,7 @@
 extends Control
 
+const MENU_SCENE : String = "res://Scenes/menu.tscn"
+
 var is_controller_focused
 signal continue_is_clicked
 signal return_to_menu_is_clicked
@@ -59,7 +61,6 @@ func wait_for_focus():
 func _on_return_to_menu_pressed():
 	if !is_commands_display:
 		return_to_menu_is_clicked.emit()
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	else:
 		pass
 
@@ -408,3 +409,16 @@ func title_animation():
 		var shrink_tween = get_tree().create_tween()
 		move_tween.tween_property($CanvasLayer2/PauseLabel, "position", Vector2(800.0,142.0), 1.0)
 		shrink_tween.tween_property($CanvasLayer2/PauseLabel, "scale", Vector2(0.687,0.764), 1.0)
+		
+func _on_loading_screen_scene_loaded(path):
+	get_tree().change_scene_to_file(path)
+
+
+func _on_loading_screen_visibility_changed():
+	for member in get_tree().get_nodes_in_group("pause_buttons"):
+		member.release_focus()
+		member.focus_mode = FOCUS_NONE
+	$SoundLayer/MusicMuteButton.focus_mode = FOCUS_NONE
+	$SoundLayer/MusicSlider.focus_mode = FOCUS_NONE
+	$SoundLayer/SoundMuteButton.focus_mode = FOCUS_NONE
+	$SoundLayer/EffectSlider.focus_mode = FOCUS_NONE

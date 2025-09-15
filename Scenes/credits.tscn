@@ -276,7 +276,8 @@ theme_override_fonts/font = ExtResource("6_803yc")
 theme_override_font_sizes/font_size = 40
 text = "           Badda,  Pani,  Poire,  D4rkw3st,
                   Seutimflo, Yossaan,  Givr_,
-                      SatanLaChips, Gammi"
+                      SatanLaChips, Gammi,
+                               L'Absol (3 pixels)"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(169.744, 246)

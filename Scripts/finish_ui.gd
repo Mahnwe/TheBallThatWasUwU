@@ -64,7 +64,6 @@ func _on_next_level_mouse_exited():
 
 func _on_menu_pressed():
 	return_to_menu_pressed.emit()
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 
 func _on_menu_mouse_exited():
@@ -151,4 +150,14 @@ func set_medal_sprite(current_medal):
 		$CanvasLayer3/MedalSprite.texture = gold_texture
 	if current_medal == 4:
 		$CanvasLayer3/MedalSprite.texture = dev_texture
+		
+func _on_loading_screen_scene_loaded(path):
+	get_tree().change_scene_to_file(path)
 	
+
+
+func _on_loading_screen_visibility_changed():
+	for member in get_tree().get_nodes_in_group("finish_button"):
+		member.release_focus()
+		member.focus_mode = FOCUS_NONE
+		

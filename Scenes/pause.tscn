@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=31 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -21,6 +21,7 @@
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="16_mkub3"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="16_w6h82"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="19_mkub3"]
+[ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="22_j5iqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -437,6 +438,12 @@ offset_bottom = 1093.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="CanvasLayer3" instance=ExtResource("22_j5iqd")]
+visible = false
+z_index = 20
+
 [connection signal="focus_entered" from="ReturnLayer/ReturnToMenu" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_gui_input"]
 [connection signal="mouse_exited" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_mouse_exited"]
@@ -468,3 +475,5 @@ grow_vertical = 2
 [connection signal="mouse_exited" from="SoundLayer/SoundMuteButton" to="." method="_on_sound_mute_button_mouse_exited"]
 [connection signal="pressed" from="SoundLayer/SoundMuteButton" to="." method="_on_sound_mute_button_pressed"]
 [connection signal="commands_closed" from="CommandsUI" to="." method="_on_commands_ui_commands_closed"]
+[connection signal="scene_loaded" from="CanvasLayer3/LoadingScreen" to="." method="_on_loading_screen_scene_loaded"]
+[connection signal="visibility_changed" from="CanvasLayer3/LoadingScreen" to="." method="_on_loading_screen_visibility_changed"]

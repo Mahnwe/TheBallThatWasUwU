@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cl7gj22hnfxog"]
+[gd_scene load_steps=19 format=3 uid="uid://cl7gj22hnfxog"]
 
 [ext_resource type="Script" uid="uid://bvt5htruxyltu" path="res://Scripts/finish_ui.gd" id="1_8cftm"]
 [ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="2_fgywl"]
@@ -16,6 +16,7 @@
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="12_qmenm"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="13_rf1vx"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="14_7wqes"]
+[ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="17_anvi6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -215,6 +216,12 @@ scale = Vector2(1.5, 1.5)
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("11_p5o4v")
 
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="CanvasLayer4" instance=ExtResource("17_anvi6")]
+visible = false
+z_index = 5
+
 [connection signal="focus_entered" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_mouse_entered"]
@@ -225,3 +232,5 @@ stream = ExtResource("11_p5o4v")
 [connection signal="mouse_entered" from="CanvasLayer2/FinishMenuButton" to="." method="_on_finish_menu_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/FinishMenuButton" to="." method="_on_menu_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/FinishMenuButton" to="." method="_on_menu_pressed"]
+[connection signal="scene_loaded" from="CanvasLayer4/LoadingScreen" to="." method="_on_loading_screen_scene_loaded"]
+[connection signal="visibility_changed" from="CanvasLayer4/LoadingScreen" to="." method="_on_loading_screen_visibility_changed"]

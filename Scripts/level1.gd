@@ -1,5 +1,8 @@
 extends Node2D
 
+const MENU_SCENE : String = "res://Scenes/menu.tscn"
+const LEVEL_2_SCENE : String = "res://Scenes/level2.tscn"
+
 var is_paused
 
 var start_position_x = -1512
@@ -21,6 +24,8 @@ var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_file
+
+var is_restart_save_holding = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -56,36 +61,34 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x == start_position_x and $Player.position.x != finish_position_x and !is_paused:
-		restart_scene()
-	if !is_paused and Input.is_action_just_pressed("restart_save") and save_position_x != start_position_x and $Player.position.x != finish_position_x and !is_paused:
-		$Player.set_physics_process(false)
-		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
-		$Player.position.x = save_position_x
-		$Player.position.y = save_position_y
-		$Player.set_physics_process(true)
-		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
-		
-	if Input.is_action_just_pressed("restart_level") and $Player.position.x != finish_position_x and !is_paused:
-		restart_scene()
-		save_position_x = start_position_x
-		save_position_y = start_position_y
+	check_for_buttons_holding()
 		
 	if is_paused:
 		$Player/Pause.is_paused = true
 		is_paused = true
 	handle_pause()
 	handle_player_actions_when_level_finished()
+	
+func check_for_buttons_holding():
+	if $Player.position.x != finish_position_x and !is_paused:
+		if Input.is_action_just_pressed("restart_save") and $RestartSaveTimer.time_left == 0.0:
+			$RestartSaveTimer.start(1.0)
+		if Input.is_action_just_released("restart_save") and $RestartSaveTimer.time_left != 0.0:
+			$RestartSaveTimer.stop()
+		if Input.is_action_just_pressed("restart_level") and $RestartLevelTimer.time_left == 0.0:
+			$RestartLevelTimer.start(1.0)
+		if Input.is_action_just_released("restart_level") and $RestartLevelTimer.time_left != 0.0:
+			$RestartLevelTimer.stop()
 		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
 		saving_time_played()
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/level2.tscn")
+		$Finish/FinishUI.get_child(5).get_child(0).show()
+		$Finish/FinishUI.get_child(5).get_child(0).load(LEVEL_2_SCENE)
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("menu_when_finish"):
 		saving_time_played()
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+		$Player/Pause.get_child(9).get_child(0).show()
+		$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 
 	
 func handle_pause():
@@ -105,8 +108,8 @@ func handle_pause():
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
 			is_paused = false
 			saving_time_played()
-			self.queue_free()
-			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+			$Player/Pause.get_child(9).get_child(0).show()
+			$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 			
 func restart_scene():
 	saving_time_played()
@@ -282,8 +285,8 @@ func _on_trigger_level_music_body_entered(body):
 func _on_finish_next_level_pressed():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y:
 		saving_time_played()
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/level2.tscn")
+		$Finish/FinishUI.get_child(5).get_child(0).show()
+		$Finish/FinishUI.get_child(5).get_child(0).load(LEVEL_2_SCENE)
 		
 func translate_text():
 	var translate_config = ConfigFile.new()
@@ -400,7 +403,29 @@ func save_deaths_stat():
 
 func _on_pause_return_to_menu_is_clicked():
 	saving_time_played()
+	$Player/Pause.get_child(9).get_child(0).show()
+	$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 
 
 func _on_finish_ui_return_to_menu_pressed():
 	saving_time_played()
+	$Finish/FinishUI.get_child(5).get_child(0).show()
+	$Finish/FinishUI.get_child(5).get_child(0).load(MENU_SCENE)
+
+
+func _on_restart_save_timer_timeout():
+	if save_position_x == start_position_x:
+		restart_scene()
+	else:
+		$Player.set_physics_process(false)
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+		$Player.position.x = save_position_x
+		$Player.position.y = save_position_y
+		$Player.set_physics_process(true)
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+
+
+func _on_restart_level_timer_timeout():
+	restart_scene()
+	save_position_x = start_position_x
+	save_position_y = start_position_y
