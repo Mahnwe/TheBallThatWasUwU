@@ -134,7 +134,7 @@ offset_top = 295.649
 offset_right = 1163.0
 offset_bottom = 882.649
 scale = Vector2(0.947485, 0.943702)
-theme_override_constants/separation = 100
+theme_override_constants/separation = 130
 dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
@@ -530,7 +530,7 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 1239.0
 offset_top = 328.649
 offset_right = 1669.0

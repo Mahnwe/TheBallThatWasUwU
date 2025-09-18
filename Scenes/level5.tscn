@@ -886,7 +886,7 @@ curve = SubResource("Curve2D_birjf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
 position = Vector2(-1277, -424)
-rotation = -0.115982
+rotation = -0.11598198
 
 [node name="Fish" parent="Path2D7/PathFollow2D" instance=ExtResource("40_k4k0d")]
 position = Vector2(0.646075, 3.09557)
@@ -898,7 +898,7 @@ curve = SubResource("Curve2D_s0a2a")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D8"]
 position = Vector2(-2397, -181)
-rotation = 0.224235
+rotation = 0.22423474
 
 [node name="YellowFish" parent="Path2D8/PathFollow2D" instance=ExtResource("41_birjf")]
 position = Vector2(1.19743, 0.752581)
@@ -957,7 +957,7 @@ curve = SubResource("Curve2D_383j6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D10"]
 position = Vector2(-1567, -1058)
-rotation = 0.696522
+rotation = 0.6965221
 
 [node name="Bug" parent="Path2D10/PathFollow2D" instance=ExtResource("47_au1pt")]
 rotation = 1.5708

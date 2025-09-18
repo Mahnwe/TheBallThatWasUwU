@@ -90,10 +90,10 @@ scale = Vector2(0.717345, 0.442253)
 [node name="Pause" parent="Player" instance=ExtResource("2_6xvap")]
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -733.259
+offset_left = -733.25946
 offset_top = -671.561
-offset_right = 1186.74
-offset_bottom = 408.439
+offset_right = 1186.7405
+offset_bottom = 408.43903
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 follow_viewport_enabled = true
@@ -847,7 +847,7 @@ curve = SubResource("Curve2D_x7ktg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-1184, 15)
-rotation = 1.41815
+rotation = 1.418147
 
 [node name="Bird" parent="Path2D/PathFollow2D" instance=ExtResource("29_x7ktg")]
 z_index = 1

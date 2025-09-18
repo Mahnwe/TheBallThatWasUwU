@@ -43,6 +43,14 @@ modulate_color = Color(0, 0, 0, 1)
 texture = SubResource("CanvasTexture_gfb3x")
 modulate_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ricp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77ms"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
@@ -53,14 +61,6 @@ border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ricp"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isk47"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -76,6 +76,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_03lrq")
@@ -102,6 +104,8 @@ offset_left = 1322.0
 offset_top = 735.0
 offset_right = 1587.0
 offset_bottom = 804.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.56, 1.72)
 focus_neighbor_left = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_top = NodePath("../../ContinueLayer/Continue")
@@ -109,12 +113,12 @@ focus_neighbor_right = NodePath("../../CommandLayer/Command")
 focus_neighbor_bottom = NodePath("../../CommandLayer/Command")
 focus_next = NodePath("../../CommandLayer/Command")
 focus_previous = NodePath("../../ContinueLayer/Continue")
-theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 30
@@ -168,12 +172,12 @@ focus_neighbor_right = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_neighbor_bottom = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_next = NodePath("../../ReturnLayer/ReturnToMenu")
 focus_previous = NodePath("../../CommandLayer/Command")
-theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 30
@@ -241,12 +245,12 @@ focus_neighbor_right = NodePath("../../ContinueLayer/Continue")
 focus_neighbor_bottom = NodePath("../../ContinueLayer/Continue")
 focus_next = NodePath("../../ContinueLayer/Continue")
 focus_previous = NodePath("../../ReturnLayer/ReturnToMenu")
-theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("16_mkub3")
 theme_override_font_sizes/font_size = 30
@@ -347,8 +351,8 @@ focus_neighbor_left = NodePath("../MusicSlider")
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_right = NodePath("../MusicSlider")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ricp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 metadata/_edit_use_anchors_ = true
 
 [node name="SoundMuteButton" parent="SoundLayer" groups=["pause_buttons"] instance=ExtResource("19_mkub3")]
@@ -360,8 +364,8 @@ focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_right = NodePath("../EffectSlider")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 theme_override_styles/hover = SubResource("StyleBoxFlat_isk47")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -416,6 +420,7 @@ texture = ExtResource("2_h85by")
 [node name="CommandsUI" parent="." instance=ExtResource("10_3eqxx")]
 visible = false
 z_index = 20
+layout_mode = 0
 offset_left = 13.0
 offset_top = 16.0
 offset_right = 1933.0

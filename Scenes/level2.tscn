@@ -342,7 +342,7 @@ curve = SubResource("Curve2D_to7d3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spikepatrol2"]
 position = Vector2(-1265, 487)
-rotation = 1.5708
+rotation = 1.5707964
 
 [node name="Spike" parent="Spikepatrol2/PathFollow2D" groups=["spike_on_patrol"] instance=ExtResource("7_p1dv8")]
 position = Vector2(47, -34)
@@ -811,7 +811,7 @@ curve = SubResource("Curve2D_se7y5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(319, 643)
-rotation = -2.22563
+rotation = -2.2256272
 
 [node name="Bird" parent="Path2D/PathFollow2D" instance=ExtResource("31_u1na6")]
 position = Vector2(-1.76468, -7.40847)
@@ -895,7 +895,7 @@ curve = SubResource("Curve2D_uv1om")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
 position = Vector2(-2142, 1010)
-rotation = 0.109451
+rotation = 0.109451175
 
 [node name="Bug" parent="Path2D2/PathFollow2D" instance=ExtResource("37_fpxdy")]
 rotation = 1.5708

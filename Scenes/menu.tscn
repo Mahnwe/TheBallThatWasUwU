@@ -67,14 +67,6 @@ _data = {
 }
 point_count = 21
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dr7d"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.819608, 0.027451, 0.0352941, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i37ye"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
@@ -83,7 +75,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cy2d"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dr7d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -99,7 +91,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx18h"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cy2d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -115,7 +107,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucp4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx18h"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -131,7 +123,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3l5l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucp4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -147,7 +139,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpa3c"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3l5l"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -163,7 +155,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui7cl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpa3c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -179,12 +171,12 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui7cl"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0idt7"]
@@ -193,6 +185,14 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qbksh"]
@@ -213,6 +213,14 @@ modulate_color = Color(0.81, 0.1, 0.1, 1)
 texture = SubResource("CanvasTexture_rtmt2")
 modulate_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flyo0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77ms"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
@@ -223,14 +231,6 @@ border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flyo0"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki2a1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -248,14 +248,6 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sm67"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.819608, 0.027451, 0.0352941, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg0t0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 4
@@ -264,7 +256,7 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6llh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sm67"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 4
 border_width_top = 4
@@ -278,6 +270,14 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6llh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
 [node name="Menu" type="Control"]
@@ -307,10 +307,10 @@ offset_bottom = 208.0
 theme_override_colors/default_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
 theme_override_fonts/normal_font = ExtResource("3_nakb8")
 theme_override_font_sizes/normal_font_size = 70
 text = "The ball that was fast
@@ -347,7 +347,7 @@ curve = SubResource("Curve2D_flyo0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="platform/BigTree/Path2D"]
 position = Vector2(13, 131)
-rotation = -1.05841
+rotation = -1.0584068
 
 [node name="Bug" parent="platform/BigTree/Path2D/PathFollow2D" instance=ExtResource("11_4dr7d")]
 rotation = 1.5708
@@ -377,15 +377,15 @@ focus_neighbor_left = NodePath("../EffectSlider")
 focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level6Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_4dr7d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i37ye")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4dr7d")
 text = "Level 1"
 flat = true
 
@@ -427,15 +427,15 @@ focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level5Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_8cy2d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jbv25")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8cy2d")
 text = "Level 2"
 flat = true
 
@@ -480,15 +480,15 @@ focus_neighbor_right = NodePath("../StatsButton")
 focus_neighbor_bottom = NodePath("../Level4Button")
 focus_next = NodePath("../Level4Button")
 focus_previous = NodePath("../Level2Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_lx18h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nakb8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lx18h")
 text = "Level 3"
 flat = true
 
@@ -533,15 +533,15 @@ focus_neighbor_right = NodePath("../CreditsButton")
 focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level5Button")
 focus_previous = NodePath("../CreditsButton")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_mucp4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pde1v")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mucp4")
 text = "Level 4"
 flat = true
 
@@ -587,15 +587,15 @@ focus_neighbor_right = NodePath("../Level4Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level6Button")
 focus_previous = NodePath("../Level4Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_v3l5l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_747ic")
+theme_override_styles/focus = SubResource("StyleBoxFlat_v3l5l")
 text = "Level 5"
 flat = true
 
@@ -640,15 +640,15 @@ focus_neighbor_right = NodePath("../Level5Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
 focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../Level5Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_qpa3c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x0760")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qpa3c")
 text = "Level 6"
 flat = true
 
@@ -691,15 +691,15 @@ focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../EffectSlider")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../Level1Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ui7cl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lvy56")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ui7cl")
 text = "Level 7"
 flat = true
 
@@ -784,8 +784,8 @@ focus_neighbor_left = NodePath("../LanguageButton")
 focus_neighbor_top = NodePath("../AchievementsButton")
 focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../AchievementsButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0idt7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 flat = true
 
 [node name="QuitLabel" type="Label" parent="QuitButton"]
@@ -933,8 +933,8 @@ offset_bottom = 130.0
 scale = Vector2(0.753219, 0.79469)
 focus_neighbor_top = NodePath("../SoundMuteButton")
 focus_neighbor_bottom = NodePath("../SoundMuteButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 theme_override_styles/hover = SubResource("StyleBoxFlat_flyo0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 
 [node name="SoundMuteButton" parent="." groups=["MenuButtons"] instance=ExtResource("18_danav")]
 layout_mode = 0
@@ -945,8 +945,8 @@ offset_bottom = 215.0
 scale = Vector2(0.738421, 0.751464)
 focus_neighbor_top = NodePath("../MusicMuteButton")
 focus_neighbor_bottom = NodePath("../MusicMuteButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ki2a1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d77ms")
 
 [node name="StatsButton" type="Button" parent="." groups=["MenuButtons"]]
 layout_mode = 0
@@ -960,15 +960,15 @@ focus_neighbor_right = NodePath("../Level1Button")
 focus_neighbor_bottom = NodePath("../CreditsButton")
 focus_next = NodePath("../Level1Button")
 focus_previous = NodePath("../Level3Button")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48g0d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dldpb")
 text = "Stats"
 flat = true
 
@@ -1013,15 +1013,15 @@ focus_neighbor_left = NodePath("../Level3Button")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../StatsButton")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxFlat_0sm67")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mg0t0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0sm67")
 text = "Achievements"
 flat = true
 
@@ -1054,15 +1054,15 @@ focus_neighbor_right = NodePath("../Level4Button")
 focus_neighbor_bottom = NodePath("../StatsButton")
 focus_next = NodePath("../Level4Button")
 focus_previous = NodePath("../StatsButton")
-theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
-theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 theme_override_colors/font_focus_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_colors/font_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_color = Color(0.999776, 0.906107, 0.890712, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.999776, 0.906107, 0.890712, 1)
 theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxFlat_l6llh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ygxe1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l6llh")
 text = "Credits"
 flat = true
 
@@ -1174,8 +1174,8 @@ texture = ExtResource("38_4dr7d")
 [connection signal="gui_input" from="Level6Button" to="." method="_on_level_6_button_gui_input"]
 [connection signal="mouse_exited" from="Level6Button" to="." method="_on_level_6_button_mouse_exited"]
 [connection signal="pressed" from="Level6Button" to="." method="_on_level_6_button_pressed"]
-[connection signal="focus_entered" from="Level7Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_entered" from="Level7Button" to="." method="_on_level_7_button_focus_entered"]
+[connection signal="focus_entered" from="Level7Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_exited" from="Level7Button" to="." method="_on_level_7_button_focus_exited"]
 [connection signal="gui_input" from="Level7Button" to="." method="_on_level_7_button_gui_input"]
 [connection signal="mouse_entered" from="Level7Button" to="." method="_on_level_7_button_mouse_entered"]

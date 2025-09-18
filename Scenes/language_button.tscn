@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_oeh3p"]
 [ext_resource type="Texture2D" uid="uid://c7577pausvcq5" path="res://Arts/FlagsSprite/Flag_of_the_United_Kingdom.png" id="3_gk6ae"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj7yq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk6ae"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
 border_width_top = 10
@@ -13,7 +13,7 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk6ae"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj7yq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
 border_width_top = 10
@@ -24,8 +24,8 @@ border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 [node name="LanguageButton" type="Button"]
 offset_right = 250.0
 offset_bottom = 150.0
-theme_override_styles/focus = SubResource("StyleBoxFlat_hj7yq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gk6ae")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hj7yq")
 flat = true
 script = ExtResource("1_hj7yq")
 

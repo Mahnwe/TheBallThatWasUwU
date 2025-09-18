@@ -5,14 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_48avc"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="3_16w8i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48avc"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.819608, 0.027451, 0.0352941, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayt40"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
@@ -21,17 +13,25 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.85098, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48avc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.819608, 0.027451, 0.0352941, 1)
+
 [node name="WindowModeButton" type="Button"]
 offset_right = 83.0
 offset_bottom = 61.0
-theme_override_styles/focus = SubResource("StyleBoxFlat_48avc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ayt40")
+theme_override_styles/focus = SubResource("StyleBoxFlat_48avc")
 flat = true
 script = ExtResource("1_ayt40")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(39, 30)
-scale = Vector2(0.95, 0.95)
+scale = Vector2(0.9250001, 0.95)
 texture = ExtResource("1_p6350")
 
 [node name="Label" type="Label" parent="."]

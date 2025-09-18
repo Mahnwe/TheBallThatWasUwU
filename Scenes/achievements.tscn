@@ -146,7 +146,7 @@ scale = Vector2(4.93919, 3.89474)
 texture = ExtResource("2_frbbq")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 308.0
 offset_top = 323.0
 offset_right = 1849.0

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="7_iktbb"]
 [ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="8_mcjyt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iktbb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcjyt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
 border_width_top = 5
@@ -17,7 +17,7 @@ border_width_right = 6
 border_width_bottom = 5
 border_color = Color(0.819608, 0.027451, 0.0352941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcjyt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iktbb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
 border_width_top = 5
@@ -95,8 +95,8 @@ focus_neighbor_right = NodePath("../EnButton")
 focus_neighbor_bottom = NodePath("../EnButton")
 focus_next = NodePath("../EnButton")
 focus_previous = NodePath("../EnButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_iktbb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mcjyt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iktbb")
 flat = true
 
 [node name="EnButton" type="Button" parent="LanguageScene" groups=["language_buttons"]]
@@ -111,8 +111,8 @@ focus_neighbor_right = NodePath("../FrButton")
 focus_neighbor_bottom = NodePath("../FrButton")
 focus_next = NodePath("../FrButton")
 focus_previous = NodePath("../FrButton")
-theme_override_styles/focus = SubResource("StyleBoxFlat_iktbb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s0hyc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iktbb")
 flat = true
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="LanguageScene"]
