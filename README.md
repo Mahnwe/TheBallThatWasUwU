@@ -1,18 +1,60 @@
--- Learning Godot project --
+*English*
 
-Classic platformer/runner 2D in GDScript.
+--Learning Godot project--
+
+Classic platformer/runner 2D in GDScript
+
+Every design asset is homemade, thanks Yossaan for helping with animations
+
+Thanks Pani for musics and sound effects
+
+And thanks everyone who gived a little help
+
+6 levels with time ranks, medals, stats tracking and achievements
+
+Languages available : English, French
 
 
-Every design asset is handmade, thanks Yossaan for helping with animations.
+
+If you encounter problems and/or bugs you can send me a copy of this directory ->
+
+Windows :  %APPDATA%\Godot\app_userdata\TheBallThatWasUwU\logs
+
+Linux :  ~/.local/share/godot/app_userdata/TheBallThatWasUwU/logs
+
+Mac : ~/Library/Application Support/Godot/app_userdata/TheBallThatWasUwU/logs
 
 
-Musics are made by Da French Panda.
+------------------------------
 
 
-6 levels with time ranks, medals, stats tracking and achievements.
+*Français*
+
+--Projet d'apprentissage de Godot--
+
+Classique plateformer/runner 2D en GDScript
+
+Chaque élément de design visuel ou sonore est fait maison, merci Yossaan pour l'aide sur les animations
+
+Merci Pani pour les musiques et les effets sonores
+
+Et merci à tous ceux qui ont donné un coup de pouce
+
+6 niveaux avec classement des chronos, médailles, suivi de stats et succès
+
+Langages : Anglais, Français
 
 
-Languages available : English, French.
+
+Si vous rencontrez des problèmes et/ou des bugs vous pouvez m'envoyez une copie de ce dossier ->
+
+Windows :  %APPDATA%\Godot\app_userdata\TheBallThatWasUwU\logs
+
+Linux :  ~/.local/share/godot/app_userdata/TheBallThatWasUwU/logs
+
+Mac : ~/Library/Application Support/Godot/app_userdata/TheBallThatWasUwU/logs
+
+
 
 
 
