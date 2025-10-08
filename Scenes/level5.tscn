@@ -538,8 +538,8 @@ rotation = -1.5708
 scale = Vector2(0.188052, 0.312453)
 
 [node name="Water4" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-1905.5, -157)
-scale = Vector2(5.235, 0.96)
+position = Vector2(-1908.5, -157)
+scale = Vector2(5.265001, 0.96)
 
 [node name="WaterPlatform20" parent="." instance=ExtResource("15_3nnrj")]
 position = Vector2(-1393, -199)
@@ -547,9 +547,9 @@ scale = Vector2(0.87398, 1.14986)
 
 [node name="ColorRect5" type="ColorRect" parent="."]
 z_index = -2
-offset_left = -2424.0
+offset_left = -2435.0
 offset_top = -251.0
-offset_right = -1329.0
+offset_right = -1371.0
 offset_bottom = -2.0
 color = Color(0, 0.651925, 0.918168, 1)
 

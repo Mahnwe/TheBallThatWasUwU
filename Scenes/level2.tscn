@@ -299,6 +299,7 @@ speed = 200
 [node name="Ability" parent="." instance=ExtResource("9_of3vt")]
 position = Vector2(295, 476)
 scale = Vector2(0.510017, 0.512665)
+time_ability = 12
 
 [node name="platform3" parent="." instance=ExtResource("2_ja3c0")]
 position = Vector2(-1079, 469)

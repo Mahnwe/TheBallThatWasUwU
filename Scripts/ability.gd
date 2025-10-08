@@ -4,6 +4,7 @@ signal player_entered
 @export var sprite_id = 0
 
 var is_trigger
+@export var time_ability = 9
 
 var properties_config = ConfigFile.new()
 
@@ -36,7 +37,7 @@ func _on_area_2d_body_entered(body):
 		$BubbleTooltip.show()
 		$Label2.hide()
 		$Sprite2D2.hide()
-		for n in 6:
+		for n in time_ability:
 			$Sprite2D.hide()
 			await get_tree().create_timer(0.2).timeout;
 			$Sprite2D.show()
