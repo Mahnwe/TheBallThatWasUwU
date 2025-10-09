@@ -302,6 +302,7 @@ func translate_text():
 	$Advice2.set_bubble_message(translate_config.get_value("TranslationAdvice", "WalljumpAdvice"))
 	$Advice3.set_bubble_message(translate_config.get_value("TranslationAdvice", "SlidejumpAdvice"))
 	$Advice4.set_bubble_message(translate_config.get_value("TranslationAdvice", "JumpAdvice"))
+	$Advice5.set_bubble_message(translate_config.get_value("TranslationAdvice", "SaveAdvice"))
 	
 	
 func save_medals_stats():
@@ -328,23 +329,27 @@ func save_medals_stats():
 
 
 func _on_enemies_advice_trigger_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !$Advice.is_triggered:
 		$Advice.show()
 
 
 func _on_walljump_advice_trigger_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !$Advice2.is_triggered:
 		$Advice2.show()
 
 
 func _on_slide_advice_trigger_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !$Advice3.is_triggered:
 		$Advice3.show()
 
 
 func _on_jump_advice_trigger_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !$Advice4.is_triggered:
 		$Advice4.show()
+		
+func _on_save_advice_trigger_body_entered(body):
+	if body.name == "Player" and !$Advice5.is_triggered:
+		$Advice5.show()
 		
 func set_tutorial_advices():
 	for member in get_tree().get_nodes_in_group("tutorial_advice"):

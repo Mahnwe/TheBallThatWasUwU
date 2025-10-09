@@ -25,7 +25,7 @@ func _on_area_2d_body_shape_exited(_body_rid, body, body_shape_index, _local_sha
 
 func _on_area_2d_body_shape_entered(_body_rid, body, body_shape_index, _local_shape_index):
 	if body.name == "Player" and !body.is_in_water and body_shape_index == 1:
-		body.start_sploch_animation()
+		trigger_water_sound_and_animation(body)
 		body.is_in_water = true
 		self.self_modulate.a = 0.5
 		body.speed = 200
@@ -38,3 +38,8 @@ func _on_area_2d_body_shape_entered(_body_rid, body, body_shape_index, _local_sh
 		body.dash_speed = 400
 		body.velocity_y_max = 300
 		body.z_index = 0
+		
+func trigger_water_sound_and_animation(body):
+	if $WaterSound.finished:
+		$WaterSound.play()
+	body.start_sploch_animation()

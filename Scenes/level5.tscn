@@ -549,8 +549,8 @@ scale = Vector2(0.87398, 1.14986)
 z_index = -2
 offset_left = -2435.0
 offset_top = -251.0
-offset_right = -1371.0
-offset_bottom = -2.0
+offset_right = -1330.0
+offset_bottom = -46.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Wall7" parent="." instance=ExtResource("10_bs3iy")]

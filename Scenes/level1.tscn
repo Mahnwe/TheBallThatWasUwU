@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=50 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -67,6 +67,9 @@ size = Vector2(101, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nstho"]
 size = Vector2(177, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwr0o"]
+size = Vector2(91, 135)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_viwub")
@@ -251,6 +254,17 @@ scale = Vector2(0.422071, 0.6)
 position = Vector2(-12, 272)
 rotation = -1.5708
 scale = Vector2(2.72, 1.92)
+
+[node name="Sprite2D12" type="Sprite2D" parent="Wall3"]
+position = Vector2(53.67628, 77.08361)
+rotation = 1.5707989
+scale = Vector2(0.5989584, 0.6525736)
+texture = ExtResource("35_daeh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall3/Sprite2D12"]
+position = Vector2(0, -34.5455)
+texture = ExtResource("35_daeh6")
+flip_h = true
 
 [node name="Wall4" parent="." instance=ExtResource("10_8ng8k")]
 position = Vector2(394, -228)
@@ -902,8 +916,8 @@ position = Vector2(320.5, 304)
 shape = SubResource("RectangleShape2D_daeh6")
 
 [node name="Advice2" parent="." instance=ExtResource("34_c4ifa")]
-position = Vector2(407, 127)
-scale = Vector2(0.941063, 0.918098)
+position = Vector2(409, 129)
+scale = Vector2(0.897808, 0.876995)
 
 [node name="SlideAdviceTrigger" type="Area2D" parent="." groups=["tutorial_advice"]]
 
@@ -912,8 +926,8 @@ position = Vector2(-892.5, -774)
 shape = SubResource("RectangleShape2D_dr50b")
 
 [node name="Advice3" parent="." instance=ExtResource("34_c4ifa")]
-position = Vector2(-1326, -516)
-scale = Vector2(0.94381, 0.897767)
+position = Vector2(-1313, -514)
+scale = Vector2(0.897808, 0.876995)
 
 [node name="JumpAdviceTrigger" type="Area2D" parent="." groups=["tutorial_advice"]]
 
@@ -922,9 +936,20 @@ position = Vector2(-146.5, 393.5)
 shape = SubResource("RectangleShape2D_nstho")
 
 [node name="Advice4" parent="." instance=ExtResource("34_c4ifa")]
-z_index = 2
-position = Vector2(44, 223)
-scale = Vector2(0.905329, 0.887448)
+z_index = 1
+position = Vector2(44, 224)
+scale = Vector2(0.897808, 0.876995)
+
+[node name="SaveAdviceTrigger" type="Area2D" parent="."]
+position = Vector2(-96, -660)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveAdviceTrigger"]
+position = Vector2(489.5, -30.5)
+shape = SubResource("RectangleShape2D_mwr0o")
+
+[node name="Advice5" parent="." instance=ExtResource("34_c4ifa")]
+position = Vector2(-95, -654)
+scale = Vector2(0.897808, 0.876995)
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
 z_index = 1
@@ -946,17 +971,6 @@ flip_v = true
 z_index = 1
 position = Vector2(-950, -690)
 texture = ExtResource("36_dr50b")
-flip_h = true
-
-[node name="Sprite2D12" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(136, 126)
-scale = Vector2(1.15, 1.775)
-texture = ExtResource("35_daeh6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D12"]
-position = Vector2(0, -34.5455)
-texture = ExtResource("35_daeh6")
 flip_h = true
 
 [node name="DarkBrownTree" parent="." instance=ExtResource("36_nstho")]
@@ -1047,5 +1061,6 @@ one_shot = true
 [connection signal="body_entered" from="WalljumpAdviceTrigger" to="." method="_on_walljump_advice_trigger_body_entered"]
 [connection signal="body_entered" from="SlideAdviceTrigger" to="." method="_on_slide_advice_trigger_body_entered"]
 [connection signal="body_entered" from="JumpAdviceTrigger" to="." method="_on_jump_advice_trigger_body_entered"]
+[connection signal="body_entered" from="SaveAdviceTrigger" to="." method="_on_save_advice_trigger_body_entered"]
 [connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
 [connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2qahpahlymyk"]
+[gd_scene load_steps=8 format=3 uid="uid://b2qahpahlymyk"]
 
 [ext_resource type="Texture2D" uid="uid://cco33aapjsj85" path="res://Arts/WaterSprite/WaterSpriteAnimation.png" id="1_bccf6"]
 [ext_resource type="Script" uid="uid://nco5yxrcaqux" path="res://Scripts/water.gd" id="2_g4o76"]
 [ext_resource type="Texture2D" uid="uid://duegrq61l7lr6" path="res://Arts/WaterSprite/WaterSpriteAnimation2.png" id="2_sillh"]
 [ext_resource type="Texture2D" uid="uid://bgcv8ox0ymw34" path="res://Arts/WaterSprite/WaterSpriteAnimation3.png" id="3_v3at0"]
+[ext_resource type="AudioStream" uid="uid://ctr3rcds31dnq" path="res://Sound/Effects/WaterSplash.mp3" id="5_rqihb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3p4re"]
 animations = [{
@@ -35,6 +36,9 @@ script = ExtResource("2_g4o76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_1jlby")
+
+[node name="WaterSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("5_rqihb")
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

@@ -1,7 +1,9 @@
 extends Node2D
 
+var is_triggered
+
 func _ready():
-	pass
+	is_triggered = false
 	
 func _process(_delta):
 	if self.visible and $Timer.wait_time == 0.0:
@@ -15,5 +17,6 @@ func set_bubble_message(message):
 	$BubbleTooltip.get_child(0).text = message
 
 func _on_visibility_changed():
+	is_triggered = true
 	$Timer.start()
 	

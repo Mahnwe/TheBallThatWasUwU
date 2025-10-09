@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(get_parent().progress_ratio == 0):
+	if get_parent().progress_ratio == 0:
 		drop_exploded = false
 		$AnimatedSprite2D.animation = "WaterDrop"
 		get_parent().progress += speed * delta
@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func check_for_explosion_animation():
-	if(get_parent().progress_ratio == 1):
+	if get_parent().progress_ratio == 1:
 		$AnimatedSprite2D.animation = "DropExplosion"
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
