@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dsf4rx4g4smam"]
+[gd_scene load_steps=51 format=3 uid="uid://dsf4rx4g4smam"]
 
 [ext_resource type="Script" uid="uid://c5cclfd442iw7" path="res://Scripts/level1.gd" id="1_viwub"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_3iif7"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dwvnkbkl3fw0d" path="res://Scenes/platform.tscn" id="7_v154u"]
 [ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="8_p4bhf"]
 [ext_resource type="PackedScene" uid="uid://7qfwpggjf11t" path="res://Scenes/save_point.tscn" id="9_3dyia"]
+[ext_resource type="PackedScene" uid="uid://bddptp8jgbmec" path="res://Scenes/reset_bar.tscn" id="9_8wyvm"]
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="10_8ng8k"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="10_8nv0h"]
 [ext_resource type="PackedScene" uid="uid://dss5xj26b0dfl" path="res://Scenes/finish.tscn" id="11_r8tlj"]
@@ -139,6 +140,13 @@ offset_left = -1914.0
 offset_top = -472.0
 offset_right = 1918.0
 offset_bottom = 334.0
+
+[node name="ResetBar" parent="Player" instance=ExtResource("9_8wyvm")]
+offset_left = 153.34323
+offset_top = 137.9301
+offset_right = 153.34323
+offset_bottom = 137.9301
+scale = Vector2(0.37027487, 0.5613228)
 
 [node name="Rock1" parent="." instance=ExtResource("14_ec3q2")]
 position = Vector2(-1148, 424)
@@ -901,7 +909,7 @@ flip_h = true
 
 [node name="Advice" parent="." instance=ExtResource("34_c4ifa")]
 position = Vector2(-638, 337)
-scale = Vector2(0.897808, 0.876995)
+scale = Vector2(0.76296425, 0.7415743)
 
 [node name="EnemiesAdviceTrigger" type="Area2D" parent="." groups=["tutorial_advice"]]
 
@@ -917,7 +925,7 @@ shape = SubResource("RectangleShape2D_daeh6")
 
 [node name="Advice2" parent="." instance=ExtResource("34_c4ifa")]
 position = Vector2(409, 129)
-scale = Vector2(0.897808, 0.876995)
+scale = Vector2(0.76296425, 0.7415743)
 
 [node name="SlideAdviceTrigger" type="Area2D" parent="." groups=["tutorial_advice"]]
 
@@ -926,8 +934,8 @@ position = Vector2(-892.5, -774)
 shape = SubResource("RectangleShape2D_dr50b")
 
 [node name="Advice3" parent="." instance=ExtResource("34_c4ifa")]
-position = Vector2(-1313, -514)
-scale = Vector2(0.897808, 0.876995)
+position = Vector2(-1272, -504)
+scale = Vector2(0.76296425, 0.7415743)
 
 [node name="JumpAdviceTrigger" type="Area2D" parent="." groups=["tutorial_advice"]]
 
@@ -937,8 +945,8 @@ shape = SubResource("RectangleShape2D_nstho")
 
 [node name="Advice4" parent="." instance=ExtResource("34_c4ifa")]
 z_index = 1
-position = Vector2(44, 224)
-scale = Vector2(0.897808, 0.876995)
+position = Vector2(43, 229.00002)
+scale = Vector2(0.76296425, 0.7415743)
 
 [node name="SaveAdviceTrigger" type="Area2D" parent="."]
 position = Vector2(-96, -660)
@@ -948,8 +956,8 @@ position = Vector2(489.5, -30.5)
 shape = SubResource("RectangleShape2D_mwr0o")
 
 [node name="Advice5" parent="." instance=ExtResource("34_c4ifa")]
-position = Vector2(-95, -654)
-scale = Vector2(0.897808, 0.876995)
+position = Vector2(-93, -650.00006)
+scale = Vector2(0.76296425, 0.7415743)
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
 z_index = 1
@@ -991,20 +999,15 @@ stream = ExtResource("40_mwr0o")
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("40_8wyvm")
 
-[node name="RestartSaveTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="RestartLevelTimer" type="Timer" parent="."]
-one_shot = true
-
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
+[connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
-[connection signal="set_up_sign_label" from="TripleSign2" to="." method="_on_triple_sign_2_set_up_sign_label"]
 [connection signal="player_entered" from="SavePoint" to="." method="_on_save_point_player_entered"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
 [connection signal="spike_hit" from="Spike2" to="." method="_on_spike_spike_hit"]
@@ -1062,5 +1065,3 @@ one_shot = true
 [connection signal="body_entered" from="SlideAdviceTrigger" to="." method="_on_slide_advice_trigger_body_entered"]
 [connection signal="body_entered" from="JumpAdviceTrigger" to="." method="_on_jump_advice_trigger_body_entered"]
 [connection signal="body_entered" from="SaveAdviceTrigger" to="." method="_on_save_advice_trigger_body_entered"]
-[connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
-[connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

@@ -70,14 +70,14 @@ func _process(_delta):
 	
 func check_for_buttons_holding():
 	if $Player.position.x != finish_position_x and !is_paused:
-		if Input.is_action_just_pressed("restart_save") and $RestartSaveTimer.time_left == 0.0:
-			$RestartSaveTimer.start(1.0)
-		if Input.is_action_just_released("restart_save") and $RestartSaveTimer.time_left != 0.0:
-			$RestartSaveTimer.stop()
-		if Input.is_action_just_pressed("restart_level") and $RestartLevelTimer.time_left == 0.0:
-			$RestartLevelTimer.start(1.0)
-		if Input.is_action_just_released("restart_level") and $RestartLevelTimer.time_left != 0.0:
-			$RestartLevelTimer.stop()
+		if Input.is_action_just_pressed("restart_save"):
+			$Player/ResetBar.is_reset_save_pressed = true
+		if Input.is_action_just_released("restart_save"):
+			$Player/ResetBar.is_reset_save_pressed = false
+		if Input.is_action_just_pressed("restart_level"):
+			$Player/ResetBar.is_reset_level_pressed = true
+		if Input.is_action_just_released("restart_level"):
+			$Player/ResetBar.is_reset_level_pressed = false
 		
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
@@ -395,7 +395,7 @@ func _on_finish_ui_return_to_menu_pressed():
 	$Finish/FinishUI.get_child(5).get_child(0).load(MENU_SCENE)
 
 
-func _on_restart_save_timer_timeout():
+func _on_reset_bar_reset_save_progress_finished():
 	if save_position_x == start_position_x:
 		restart_scene()
 	else:
@@ -408,7 +408,7 @@ func _on_restart_save_timer_timeout():
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 
 
-func _on_restart_level_timer_timeout():
+func _on_reset_bar_reset_level_progress_finished():
 	restart_scene()
 	save_position_x = start_position_x
 	save_position_y = start_position_y

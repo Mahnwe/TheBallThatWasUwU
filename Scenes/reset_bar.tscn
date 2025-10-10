@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bddptp8jgbmec"]
+
+[ext_resource type="Texture2D" uid="uid://b6qc0hdp4qh1a" path="res://Arts/ProgressBarSprite/ProgresBarUnder.png" id="1_5qmhd"]
+[ext_resource type="Script" uid="uid://jdi0kiuuytgf" path="res://Scripts/reset_bar.gd" id="1_t2yve"]
+[ext_resource type="Texture2D" uid="uid://dbs2twvifvgki" path="res://Arts/ProgressBarSprite/ProgresBarOver.png" id="2_t2yve"]
+
+[node name="ResetBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2yve")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 4
+texture_under = ExtResource("1_5qmhd")
+texture_over = ExtResource("2_t2yve")
+texture_progress = ExtResource("1_5qmhd")
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0.819608, 0.027451, 0.0352941, 1)

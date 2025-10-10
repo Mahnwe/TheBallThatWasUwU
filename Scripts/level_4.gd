@@ -73,14 +73,14 @@ func _process(delta):
 	
 func check_for_buttons_holding():
 	if $Player.position.x != finish_position_x and !is_paused:
-		if Input.is_action_just_pressed("restart_save") and $RestartSaveTimer.time_left == 0.0:
-			$RestartSaveTimer.start(1.0)
-		if Input.is_action_just_released("restart_save") and $RestartSaveTimer.time_left != 0.0:
-			$RestartSaveTimer.stop()
-		if Input.is_action_just_pressed("restart_level") and $RestartLevelTimer.time_left == 0.0:
-			$RestartLevelTimer.start(1.0)
-		if Input.is_action_just_released("restart_level") and $RestartLevelTimer.time_left != 0.0:
-			$RestartLevelTimer.stop()
+		if Input.is_action_just_pressed("restart_save"):
+			$Player/ResetBar.is_reset_save_pressed = true
+		if Input.is_action_just_released("restart_save"):
+			$Player/ResetBar.is_reset_save_pressed = false
+		if Input.is_action_just_pressed("restart_level"):
+			$Player/ResetBar.is_reset_level_pressed = true
+		if Input.is_action_just_released("restart_level"):
+			$Player/ResetBar.is_reset_level_pressed = false
 		
 		
 func handle_player_actions_when_level_finished():
@@ -537,6 +537,25 @@ func _on_restart_save_timer_timeout():
 
 
 func _on_restart_level_timer_timeout():
+	restart_scene()
+	save_position_x = start_position_x
+	save_position_y = start_position_y
+
+
+func _on_reset_bar_reset_save_progress_finished():
+	if save_position_x == start_position_x:
+		restart_scene()
+	else:
+		$Player.set_physics_process(false)
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
+		$Player.position.x = save_position_x
+		$Player.position.y = save_position_y
+		reset_patrols_progress()
+		$Player.set_physics_process(true)
+		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
+
+
+func _on_reset_bar_reset_level_progress_finished():
 	restart_scene()
 	save_position_x = start_position_x
 	save_position_y = start_position_y

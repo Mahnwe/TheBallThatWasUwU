@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cestyssnso4cy"]
+[gd_scene load_steps=63 format=3 uid="uid://cestyssnso4cy"]
 
 [ext_resource type="Script" uid="uid://6ujdaxsghe61" path="res://Scripts/level_5.gd" id="1_11ckk"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_dd0d8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dl06o7ymmb2j6" path="res://Arts/BackgroundSprite/BackgroundParalaxLvl5.png" id="7_rybjh"]
 [ext_resource type="Material" uid="uid://bd2igr8jps3lo" path="res://Ressources/Material/BackgroundBlur.tres" id="8_au1pt"]
 [ext_resource type="PackedScene" uid="uid://cw6qi4cdcr5sk" path="res://Scenes/triple_sign.tscn" id="8_oneui"]
+[ext_resource type="PackedScene" uid="uid://bddptp8jgbmec" path="res://Scenes/reset_bar.tscn" id="9_hi5n7"]
 [ext_resource type="Texture2D" uid="uid://sxo4l8c4oxat" path="res://Arts/SpritesSigns/SpriteArrowSign-removebg-preview.png" id="9_olh6r"]
 [ext_resource type="PackedScene" uid="uid://dbw0bo2bhp0uc" path="res://Scenes/rock_wall.tscn" id="10_bs3iy"]
 [ext_resource type="PackedScene" uid="uid://bmjeaxwj54rxk" path="res://Scenes/rock_platform.tscn" id="11_y1yvh"]
@@ -176,6 +177,13 @@ offset_left = -1387.0
 offset_top = -353.0
 offset_right = 1691.0
 offset_bottom = 468.0
+
+[node name="ResetBar" parent="Player" instance=ExtResource("9_hi5n7")]
+offset_left = 153.34323
+offset_top = 137.9301
+offset_right = 153.34323
+offset_bottom = 137.9301
+scale = Vector2(0.37027487, 0.5613228)
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_myi0h")
@@ -975,16 +983,14 @@ parameters/looping = true
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("51_7177s")
 
-[node name="RestartSaveTimer" type="Timer" parent="."]
-
-[node name="RestartLevelTimer" type="Timer" parent="."]
-
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
+[connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="CoralSpike" to="." method="_on_spike_spike_hit"]
@@ -1014,5 +1020,3 @@ stream = ExtResource("51_7177s")
 [connection signal="spike_hit" from="CoralSpike12" to="." method="_on_spike_spike_hit"]
 [connection signal="chest_triggered" from="Chest" to="." method="_on_chest_chest_triggered"]
 [connection signal="player_entered" from="SavePoint2" to="." method="_on_save_point_player_entered"]
-[connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
-[connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

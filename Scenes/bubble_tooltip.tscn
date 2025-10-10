@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://blbv025dudnar" path="res://Arts/MessageBubble/TooltipMessageSprite.png" id="1_muu63"]
 [ext_resource type="Script" uid="uid://b2nbd0x0yyaxd" path="res://Scripts/bubble_tooltip.gd" id="2_isg8o"]
-[ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_xhisf"]
+[ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="3_xhisf"]
 
 [node name="BubbleTooltip" type="Sprite2D"]
 scale = Vector2(2.77, 2.32667)

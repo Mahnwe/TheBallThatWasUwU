@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=113 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bbctegcfntwoe" path="res://Scenes/pause.tscn" id="6_dk2oo"]
 [ext_resource type="PackedScene" uid="uid://cmgvyne3gc2fi" path="res://Scenes/paralax_manager.tscn" id="7_fuy54"]
 [ext_resource type="AudioStream" uid="uid://bhhey4go1rtwq" path="res://Sound/Musics/PauseMusic.wav" id="7_u17fo"]
+[ext_resource type="PackedScene" uid="uid://bddptp8jgbmec" path="res://Scenes/reset_bar.tscn" id="8_fcrls"]
 [ext_resource type="PackedScene" uid="uid://bnm882gqmu7xl" path="res://Scenes/acid.tscn" id="8_sr0ya"]
 [ext_resource type="PackedScene" uid="uid://dga2fe53ycg0g" path="res://Scenes/laser_base.tscn" id="9_h0p4h"]
 [ext_resource type="Texture2D" uid="uid://b43xkm2jug01j" path="res://Arts/PipeSprite/PipeBase.png" id="10_wypka"]
@@ -291,6 +292,13 @@ offset_bottom = -671.561
 
 [node name="ParalaxManager" parent="Player" instance=ExtResource("7_fuy54")]
 position = Vector2(1529.25, 1490.1)
+
+[node name="ResetBar" parent="Player" instance=ExtResource("8_fcrls")]
+offset_left = 153.34323
+offset_top = 137.9301
+offset_right = 153.34323
+offset_bottom = 137.9301
+scale = Vector2(0.37027487, 0.5613228)
 
 [node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["music_group"]]
 stream = ExtResource("7_u17fo")
@@ -2522,6 +2530,8 @@ stream = ExtResource("78_1nxg2")
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
 [connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
+[connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
 [connection signal="acid_hit" from="Acid" to="." method="_on_spike_spike_hit"]
 [connection signal="laser_touched_player" from="LaserBase" to="." method="_on_spike_spike_hit"]
