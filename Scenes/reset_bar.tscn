@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bddptp8jgbmec"]
+[gd_scene load_steps=5 format=3 uid="uid://bddptp8jgbmec"]
 
 [ext_resource type="Texture2D" uid="uid://b6qc0hdp4qh1a" path="res://Arts/ProgressBarSprite/ProgresBarUnder.png" id="1_5qmhd"]
 [ext_resource type="Script" uid="uid://jdi0kiuuytgf" path="res://Scripts/reset_bar.gd" id="1_t2yve"]
 [ext_resource type="Texture2D" uid="uid://dbs2twvifvgki" path="res://Arts/ProgressBarSprite/ProgresBarOver.png" id="2_t2yve"]
+[ext_resource type="AudioStream" uid="uid://4betrabsotjd" path="res://Sound/Effects/ResetSound.mp3" id="4_54yt7"]
 
 [node name="ResetBar" type="Control"]
 layout_mode = 3
@@ -23,3 +24,8 @@ texture_over = ExtResource("2_t2yve")
 texture_progress = ExtResource("1_5qmhd")
 tint_over = Color(0, 0, 0, 1)
 tint_progress = Color(0.819608, 0.027451, 0.0352941, 1)
+
+[node name="ResetSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
+stream = ExtResource("4_54yt7")
+
+[connection signal="value_changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

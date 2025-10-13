@@ -948,7 +948,7 @@ z_index = 1
 position = Vector2(43, 229.00002)
 scale = Vector2(0.76296425, 0.7415743)
 
-[node name="SaveAdviceTrigger" type="Area2D" parent="."]
+[node name="SaveAdviceTrigger" type="Area2D" parent="." groups=["tutorial_advice"]]
 position = Vector2(-96, -660)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaveAdviceTrigger"]

@@ -22,6 +22,7 @@ var config = ConfigFile.new()
 var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_file
+var player_is_hit
 
 var queue = preload("res://Ressources/Save_game.gd").new()
 
@@ -53,6 +54,7 @@ func _ready():
 	$Finish/FinishUI.get_child(3).hide()
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).hide()
 	is_paused = false
+	player_is_hit = false
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	if $Player.can_double_jump:
 		$Ability.queue_free()
@@ -66,11 +68,14 @@ func _process(_delta):
 	if is_paused:
 		$Player/Pause.is_paused = true
 		is_paused = true
+	if player_is_hit or is_paused:
+		$Player/ResetBar.is_reset_save_pressed = false
+		$Player/ResetBar.is_reset_level_pressed = false
 	handle_pause()
 	handle_player_actions_when_level_finished()
 	
 func check_for_buttons_holding():
-	if $Player.position.x != finish_position_x and !is_paused:
+	if $Player.position.x != finish_position_x and !is_paused and !player_is_hit:
 		if Input.is_action_just_pressed("restart_save"):
 			$Player/ResetBar.is_reset_save_pressed = true
 		if Input.is_action_just_released("restart_save"):
@@ -163,6 +168,7 @@ func play_dead_sound():
 		
 func display_dead_sprite_and_pause_timer_until_respawn(message):
 	$Player.set_physics_process(false)
+	player_is_hit = true
 	$Player.velocity.x = 0
 	$Player.velocity.y = 0
 	$Player.get_child(1).animation = "dead"
@@ -173,6 +179,7 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.position = Vector2(save_position_x,save_position_y)
 	$Player.get_child(4).text = ""
 	$Player.get_child(1).animation = "stay"
+	player_is_hit = false
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	reset_patrols_progress()
