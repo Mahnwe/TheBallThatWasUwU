@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tn1erw530dy1"]
+[gd_scene load_steps=12 format=3 uid="uid://tn1erw530dy1"]
 
 [ext_resource type="Script" uid="uid://7288l8jxxvht" path="res://Scripts/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="1_r18jl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ckhbbnrn5wut4" path="res://Arts/UwUBallSprite/UwUStay.png" id="5_xelri"]
 [ext_resource type="Texture2D" uid="uid://c8ga2v1atuxdc" path="res://Arts/BackgroundSprite/BrownBackgroundButtonSprite.png" id="6_1wbrc"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="6_803yc"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="10_j6nef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uah1q"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -328,6 +329,8 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("5_7emq5")
 theme_override_font_sizes/font_size = 45
 text = "A huge thanks to everyone who played !"
+
+[node name="SaveManager" parent="." instance=ExtResource("10_j6nef")]
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

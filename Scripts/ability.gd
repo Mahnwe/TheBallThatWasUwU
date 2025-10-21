@@ -6,11 +6,6 @@ signal player_entered
 var is_trigger
 @export var time_ability = 9
 
-var properties_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 
 # Called when the node enters the scene tree for the first time.
@@ -46,7 +41,7 @@ func _on_area_2d_body_entered(body):
 		
 func translate_text():
 	var translate_config = ConfigFile.new()
-	if properties_config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")

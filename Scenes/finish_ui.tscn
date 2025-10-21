@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cl7gj22hnfxog"]
+[gd_scene load_steps=20 format=3 uid="uid://cl7gj22hnfxog"]
 
 [ext_resource type="Script" uid="uid://bvt5htruxyltu" path="res://Scripts/finish_ui.gd" id="1_8cftm"]
 [ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="2_fgywl"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="13_rf1vx"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="14_7wqes"]
 [ext_resource type="PackedScene" uid="uid://dgnpkopm8mt4a" path="res://Scenes/loading_screen.tscn" id="17_anvi6"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="18_iaoqw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dldpb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -221,6 +222,8 @@ stream = ExtResource("11_p5o4v")
 [node name="LoadingScreen" parent="CanvasLayer4" instance=ExtResource("17_anvi6")]
 visible = false
 z_index = 5
+
+[node name="SaveManager" parent="." instance=ExtResource("18_iaoqw")]
 
 [connection signal="focus_entered" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="CanvasLayer/FinishNextLevelButton" to="." method="_on_finish_next_level_button_gui_input"]

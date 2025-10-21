@@ -3,22 +3,13 @@ extends Control
 var validate_texture = preload("res://Arts/CloudButtonSprite/Validate.png")
 var unvalidate_texture = preload("res://Arts/CloudButtonSprite/Unvalidate.png")
 
-
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
-var properties_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 
 var number_of_achievements_unlock
 var actualize_lang_propertie
 
 func _ready():
-	translate_text(properties_config.get_value("Languages", "is_english"))
+	translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 	check_for_all_achievements()
 	$QuitButton.grab_focus()
 	
@@ -55,21 +46,21 @@ func check_for_all_achievements():
 	
 	
 func check_for_levels_achievements():
-	if properties_config.get_value("levels", "is_level_one_finished"):
+	if $SaveManager.get_properties_value("levels", "is_level_one_finished"):
 		$HSplitContainer/VBoxContainer/HSplitContainer/Level1Validate.texture = validate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer/Level1Achievement/Level1Sprite.show()
 	else:
 		$HSplitContainer/VBoxContainer/HSplitContainer/Level1Validate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer/Level1Achievement/Level1Sprite.hide()
 		
-	if properties_config.get_value("levels", "is_level_one_finished") and properties_config.get_value("levels", "is_level_two_finished") and properties_config.get_value("levels", "is_level_three_finished") and properties_config.get_value("levels", "is_level_four_finished") and properties_config.get_value("levels", "is_level_five_finished") and properties_config.get_value("levels", "is_level_six_finished"):
+	if $SaveManager.get_properties_value("levels", "is_level_one_finished") and $SaveManager.get_properties_value("levels", "is_level_two_finished") and $SaveManager.get_properties_value("levels", "is_level_three_finished") and $SaveManager.get_properties_value("levels", "is_level_four_finished") and $SaveManager.get_properties_value("levels", "is_level_five_finished") and $SaveManager.get_properties_value("levels", "is_level_six_finished"):
 		$HSplitContainer/VBoxContainer/HSplitContainer2/AllLevelsValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer2/AllLevelsAchievement/AllLevelsSprite.show()
 	else:
 		$HSplitContainer/VBoxContainer/HSplitContainer2/AllLevelsValidate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer2/AllLevelsAchievement/AllLevelsSprite.hide()
 		
-	if properties_config.get_value("levels", "is_level_seven_finished"):
+	if $SaveManager.get_properties_value("levels", "is_level_seven_finished"):
 		$HSplitContainer/VBoxContainer/HSplitContainer3/SecretLevelValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer3/SecretLevelAchievement/SecretLevelSprite.show()
 	else:
@@ -77,21 +68,21 @@ func check_for_levels_achievements():
 		$HSplitContainer/VBoxContainer/HSplitContainer3/SecretLevelAchievement/SecretLevelSprite.hide()
 		
 func check_for_medals_achievements():
-	if stats_config.get_value("Stats", "medal_number") >= 1:
+	if $SaveManager.get_stats_value("Stats", "medal_number") >= 1:
 		$HSplitContainer/VBoxContainer/HSplitContainer4/OneMedalValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer4/OneMedalAchievement/OneMedalSprite.show()
 	else:
 		$HSplitContainer/VBoxContainer/HSplitContainer4/OneMedalValidate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer4/OneMedalAchievement/OneMedalSprite.hide()
 		
-	if properties_config.get_value("medals", "level_one_medal") >= 1 and properties_config.get_value("medals", "level_two_medal") >= 1 and properties_config.get_value("medals", "level_three_medal") >= 1 and properties_config.get_value("medals", "level_four_medal") >= 1 and properties_config.get_value("medals", "level_five_medal") >= 1 and properties_config.get_value("medals", "level_six_medal") >= 1:
+	if $SaveManager.get_properties_value("medals", "level_one_medal") >= 1 and $SaveManager.get_properties_value("medals", "level_two_medal") >= 1 and $SaveManager.get_properties_value("medals", "level_three_medal") >= 1 and $SaveManager.get_properties_value("medals", "level_four_medal") >= 1 and $SaveManager.get_properties_value("medals", "level_five_medal") >= 1 and $SaveManager.get_properties_value("medals", "level_six_medal") >= 1:
 		$HSplitContainer/VBoxContainer/HSplitContainer5/AllLevelsMedalValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer5/AllLevelsMedalAchievements/AllMedalSprite.show()
 	else:
 		$HSplitContainer/VBoxContainer/HSplitContainer5/AllLevelsMedalValidate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer5/AllLevelsMedalAchievements/AllMedalSprite.hide()
 		
-	if stats_config.get_value("Stats", "dev_medal_number") >= 1:
+	if $SaveManager.get_stats_value("Stats", "dev_medal_number") >= 1:
 		$HSplitContainer/VBoxContainer/HSplitContainer6/DevMedalValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer/HSplitContainer6/DevMedalAchievement/DevMedalSprite.show()
 	else:
@@ -99,21 +90,21 @@ func check_for_medals_achievements():
 		$HSplitContainer/VBoxContainer/HSplitContainer6/DevMedalAchievement/DevMedalSprite.hide()
 		
 func check_for_action_achievements():
-	if stats_config.get_value("Stats", "jump_number") >= 500:
+	if $SaveManager.get_stats_value("Stats", "jump_number") >= 500:
 		$HSplitContainer/VBoxContainer2/HSplitContainer2/JumpsValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer2/JumpsAchievement/JumpSprite.show()
 	else:
 		$HSplitContainer/VBoxContainer2/HSplitContainer2/JumpsValidate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer2/JumpsAchievement/JumpSprite.hide()
 		
-	if stats_config.get_value("Stats", "dash_number") >= 200:
+	if $SaveManager.get_stats_value("Stats", "dash_number") >= 200:
 		$HSplitContainer/VBoxContainer2/HSplitContainer3/DashesValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer3/DashesAchievement/DashSprite.show()
 	else:
 		$HSplitContainer/VBoxContainer2/HSplitContainer3/DashesValidate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer3/DashesAchievement/DashSprite.hide()
 	
-	if stats_config.get_value("Stats", "death_number") >= 100:
+	if $SaveManager.get_stats_value("Stats", "death_number") >= 100:
 		$HSplitContainer/VBoxContainer2/HSplitContainer4/DeathValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer4/DeathAchievement/DeathSprite.show()
 	else:
@@ -121,14 +112,14 @@ func check_for_action_achievements():
 		$HSplitContainer/VBoxContainer2/HSplitContainer4/DeathAchievement/DeathSprite.hide()
 		
 func check_for_particular_achievements():
-	if properties_config.get_value("Chests", "chestNumber") >= 6:
+	if $SaveManager.get_properties_value("Chests", "chestNumber") >= 6:
 		$HSplitContainer/VBoxContainer2/HSplitContainer5/ChestsValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer5/ChestsAchievement/ChestSprite.show()
 	else: 
 		$HSplitContainer/VBoxContainer2/HSplitContainer5/ChestsValidate.texture = unvalidate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer5/ChestsAchievement/ChestSprite.hide()
 		
-	if stats_config.get_value("Stats", "time_played") >= 1800:
+	if $SaveManager.get_stats_value("Stats", "time_played") >= 1800:
 		$HSplitContainer/VBoxContainer2/HSplitContainer6/TimePlayedValidate.texture = validate_texture
 		$HSplitContainer/VBoxContainer2/HSplitContainer6/TimePlayedSucces/TimeSprite.show()
 	else:

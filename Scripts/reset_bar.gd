@@ -1,9 +1,5 @@
 extends Control
 
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 signal reset_save_progress_finished
 var is_reset_save_pressed
 
@@ -50,7 +46,7 @@ func set_reset_level_progress_value(value):
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 
 
 func _on_texture_progress_bar_value_changed(value):

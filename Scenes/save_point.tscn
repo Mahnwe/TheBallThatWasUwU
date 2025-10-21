@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://7qfwpggjf11t"]
+[gd_scene load_steps=9 format=3 uid="uid://7qfwpggjf11t"]
 
 [ext_resource type="Script" uid="uid://f8rg5bmw2l7" path="res://Scripts/SaveNode.gd" id="1_mpj8v"]
 [ext_resource type="Texture2D" uid="uid://bo382jwr13x5w" path="res://Arts/SpritesMemoryCard/SpritePositionMemoryCard-removebg-preview.png" id="2_sqixw"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="3_c8mnp"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="3_hxhin"]
 [ext_resource type="AudioStream" uid="uid://bgou8b4pket55" path="res://Sound/Effects/SAVE.mp3" id="3_ogtmp"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="6_u6je2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elg4p"]
 size = Vector2(154, 212)
@@ -56,5 +57,7 @@ texture = ExtResource("3_c8mnp")
 [node name="SaveSound" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("3_ogtmp")
 volume_db = -3.586
+
+[node name="SaveManager" parent="." instance=ExtResource("6_u6je2")]
 
 [connection signal="body_entered" from="SaveArea" to="." method="_on_save_area_body_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5khh4ff2btix"]
+[gd_scene load_steps=8 format=3 uid="uid://c5khh4ff2btix"]
 
 [ext_resource type="Script" uid="uid://bwxdbibha2p62" path="res://Scripts/window_mode_controller.gd" id="1_ayt40"]
 [ext_resource type="Texture2D" uid="uid://crus5ufx3d3jf" path="res://Arts/CloudButtonSprite/WindowModeSprite.png" id="1_p6350"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_48avc"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="3_16w8i"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="5_4kgxr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayt40"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -56,6 +57,8 @@ z_index = -1
 position = Vector2(39, 41.5)
 scale = Vector2(1.10811, 1.59211)
 texture = ExtResource("2_48avc")
+
+[node name="SaveManager" parent="." instance=ExtResource("5_4kgxr")]
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

@@ -1,9 +1,5 @@
 extends Sprite2D
 
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var is_paused
 
 @export var beam_x_scale = 0.0
@@ -102,4 +98,4 @@ func _on_laser_charge_sound_finished():
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")

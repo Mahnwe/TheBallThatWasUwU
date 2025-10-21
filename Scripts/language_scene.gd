@@ -3,10 +3,6 @@ extends Control
 const MENU_SCENE : String = "res://Scenes/menu.tscn"
 
 var is_controller_focused = false
-var properties_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 func _ready():
 	set_volume()
@@ -24,23 +20,23 @@ func _process(_delta):
 	
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
-		member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 	
 func _on_fr_button_pressed():
-	properties_config.set_value("Languages", "is_english", false)
-	properties_config.set_value("Launch", "is_first_launch", false)
-	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-	$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+	$SaveManager.save_properties_value("Languages", "is_english", false)
+	$SaveManager.save_properties_value("Launch", "is_first_launch", false)
+	
+	$LoadingScreen.translate_text($SaveManager.get_properties_value("Languages","is_english"))
 	go_to_menu()
 
 
 func _on_en_button_pressed():
-	properties_config.set_value("Languages", "is_english", true)
-	properties_config.set_value("Launch", "is_first_launch", false)
-	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-	$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
+	$SaveManager.save_properties_value("Languages", "is_english", true)
+	$SaveManager.save_properties_value("Launch", "is_first_launch", false)
+	
+	$LoadingScreen.translate_text($SaveManager.get_properties_value("Languages","is_english"))
 	go_to_menu()
 
 
@@ -53,21 +49,20 @@ func _on_en_button_focus_entered():
 	
 	
 func setup_window_mod():
-	if properties_config.get_value("WindowMod", "is_fullscreen"):
+	if $SaveManager.get_properties_value("WindowMod","is_fullscreen"):
 		var player_viewport = get_viewport().size
 		DisplayServer.window_set_size(player_viewport)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
-		properties_config.set_value("WindowMod", "is_fullscreen", true)
+		$SaveManager.save_properties_value("WindowMod","is_fullscreen", true)
 	else:
 		DisplayServer.window_set_size(Vector2i(1280,720))
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-		properties_config.set_value("WindowMod", "is_fullscreen", false)
-	properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+		$SaveManager.save_properties_value("WindowMod","is_fullscreen", false)
 	
 func check_is_language_selected():
-	if !properties_config.get_value("Launch", "is_first_launch"):
+	if !$SaveManager.get_properties_value("Launch","is_first_launch"):
 		call_deferred("go_to_menu")
 		
 	

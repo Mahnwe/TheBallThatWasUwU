@@ -5,11 +5,6 @@ signal return_to_menu_pressed
 @export var is_UI_showing = false
 var is_controller_focused
 
-var config = ConfigFile.new()
-
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 
 var bronze_texture = load("res://Arts/MedalSprite/BronzeMedal.png")
@@ -123,7 +118,7 @@ func _on_finish_menu_button_mouse_entered():
 	
 func translate_text():
 	var translate_config = ConfigFile.new()
-	if config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 		$CanvasLayer3/TimerPresentation.position.x = 786.0
 	else:

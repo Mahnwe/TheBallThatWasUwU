@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr47sovtmwvxp"]
+[gd_scene load_steps=7 format=3 uid="uid://cr47sovtmwvxp"]
 
 [ext_resource type="Script" uid="uid://bm2otun8v5cm7" path="res://Scripts/top_time.gd" id="1_arqek"]
 [ext_resource type="Texture2D" uid="uid://d0ffotplbx7kk" path="res://Arts/MedalSprite/GoldMedal.png" id="2_3fovc"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_cui77"]
 [ext_resource type="Texture2D" uid="uid://b3xwkjossotye" path="res://Arts/MedalSprite/SilverMedal.png" id="3_uvmet"]
 [ext_resource type="Texture2D" uid="uid://v70dg745brn8" path="res://Arts/MedalSprite/BronzeMedal.png" id="4_460ux"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="6_xg2r3"]
 
 [node name="TopTime" type="Control"]
 layout_mode = 3
@@ -69,3 +70,5 @@ theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
+
+[node name="SaveManager" parent="." instance=ExtResource("6_xg2r3")]

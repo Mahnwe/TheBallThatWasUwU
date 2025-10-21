@@ -1,6 +1,8 @@
 extends Control
 
 signal scene_loaded(path: String)
+const MENU_SCENE : String = "res://Scenes/menu.tscn"
+const LANGUAGE_SCENE : String = "res://Scenes/language_scene.tscn"
 
 @onready var progress_bar = $ProgressBar
 
@@ -10,16 +12,12 @@ var path: String
 ## Actual progress value; we move towards towards this
 var progress_value := 0.0
 
-var properties_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 var actualize_lang_propertie
 
 func _ready():
-	translate_text(properties_config.get_value("Languages", "is_english"))
+	translate_text($SaveManager.get_properties_value("Languages", "is_english"))
+	#check_is_language_selected()
 
 func _process(delta: float):
 	if not path:
@@ -41,6 +39,28 @@ func _process(delta: float):
 		# "done" loading :)
 		if progress_bar.value >= 99 and $LoadingTimer.time_left == 0.0:
 			$LoadingTimer.start()
+			
+#func check_is_language_selected():
+	#if !$SaveManager.get_properties_value("Launch","is_first_launch"):
+		#call_deferred("go_to_menu")
+	#else:
+		#call_deferred("go_to_language")
+		#
+	#
+#func go_to_menu():
+	#for member in get_tree().get_nodes_in_group("language_buttons"):
+		#member.focus_mode = FOCUS_NONE
+	#show()
+	#self.load(MENU_SCENE)
+	#get_tree().change_scene_to_file(MENU_SCENE)
+#
+#func go_to_language():
+	#for member in get_tree().get_nodes_in_group("language_buttons"):
+		#member.focus_mode = FOCUS_NONE
+	#show()
+	#self.load(LANGUAGE_SCENE)
+	#get_tree().change_scene_to_file(LANGUAGE_SCENE)
+	
 			
 ## Load the scene at the given path.
 ## When this is finished loading, the "scene_loaded" signal will be emitted.

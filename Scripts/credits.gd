@@ -1,14 +1,9 @@
 extends Control
 
-var properties_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 
 func _ready():
-	translate_text(properties_config.get_value("Languages", "is_english"))
+	translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 	$QuitButton.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,10 +1,5 @@
 extends Button
-
-var properties_config = ConfigFile.new()
 var translate_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 
 var translate_file
 
@@ -12,7 +7,7 @@ var fullscreen_label
 var windowed_label
 
 func _ready():
-	translate_text(properties_config.get_value("Languages", "is_english"))
+	translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 	self.flat = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,7 +24,7 @@ func translate_text(is_english):
 	setup_label()
 	
 func setup_label():
-	if properties_config.get_value("WindowMod", "is_fullscreen"):
+	if $SaveManager.get_properties_value("WindowMod", "is_fullscreen"):
 		$Label.text = fullscreen_label
 	else:
 		$Label.text = windowed_label

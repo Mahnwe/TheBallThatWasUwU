@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dirhjvk3xk4re"]
+[gd_scene load_steps=5 format=3 uid="uid://dirhjvk3xk4re"]
 
 [ext_resource type="Script" uid="uid://dl1lswymp2d7b" path="res://Scripts/Cannon.gd" id="1_8xnsj"]
 [ext_resource type="Texture2D" uid="uid://cfm6230iffbcn" path="res://Arts/CanonSprite/CanonSprite-removebg-preview.png" id="2_vs4g6"]
 [ext_resource type="AudioStream" uid="uid://bbdleh1w6l77i" path="res://Sound/Effects/CannonShootSound.wav" id="3_3uv2y"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="4_ognwi"]
 
 [node name="Cannon" type="Node2D" groups=["cannon_group"]]
 script = ExtResource("1_8xnsj")
@@ -16,3 +17,5 @@ texture = ExtResource("2_vs4g6")
 stream = ExtResource("3_3uv2y")
 volume_db = 20.0
 max_distance = 800.0
+
+[node name="SaveManager" parent="." instance=ExtResource("4_ognwi")]

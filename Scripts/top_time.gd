@@ -22,10 +22,6 @@ var level7_file = FileAccess.open("Ressources/timer_rank_data_level7.json", File
 
 var file_data: Array = [timer_rank_1, timer_rank_2, timer_rank_3, timer_rank_4, timer_rank_5, timer_rank_6]
 
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_level_selected()
@@ -38,43 +34,44 @@ func _process(_delta):
 	
 func check_medal():
 	if (self.get_parent().name == "Level1Button"):
-		var medal_check = properties_config.get_value("medals", "level_one_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_one_medal")
+		print($SaveManager.get_properties_value("medals", "level_one_medal"))
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level2Button"):
-		var medal_check = properties_config.get_value("medals", "level_two_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_two_medal")
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level3Button"):
-		var medal_check = properties_config.get_value("medals", "level_three_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_three_medal")
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level4Button"):
-		var medal_check = properties_config.get_value("medals", "level_four_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_four_medal")
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level5Button"):
-		var medal_check = properties_config.get_value("medals", "level_five_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_five_medal")
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level6Button"):
-		var medal_check = properties_config.get_value("medals", "level_six_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_six_medal")
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:
 			set_gold_medal_board()
 	if (self.get_parent().name == "Level7Button"):
-		var medal_check = properties_config.get_value("medals", "level_seven_medal")
+		var medal_check = $SaveManager.get_properties_value("medals", "level_seven_medal")
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:

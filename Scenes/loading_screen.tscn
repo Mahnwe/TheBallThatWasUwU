@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgnpkopm8mt4a"]
+[gd_scene load_steps=28 format=3 uid="uid://dgnpkopm8mt4a"]
 
 [ext_resource type="Script" uid="uid://eo22u8o03een" path="res://Scripts/loading_screen.gd" id="1_0t5xw"]
 [ext_resource type="Texture2D" uid="uid://ddjo4pe6pcjft" path="res://Arts/BackgroundSprite/LoadingBackground.png" id="2_7cftd"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dv7coxl3p327a" path="res://Arts/UwUBallSpriteWalk/UwUWalk16.png" id="20_myux2"]
 [ext_resource type="Texture2D" uid="uid://bhgkwr0k7au6p" path="res://Arts/UwUBallSpriteWalk/UwUWalk17.png" id="21_1t0pw"]
 [ext_resource type="Texture2D" uid="uid://bfgc63o4poo8k" path="res://Arts/UwUBallSpriteWalk/UwUWalk18.png" id="22_xmjel"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="24_lcj3d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cftd"]
 bg_color = Color(0.887038, 0.939834, 0.924944, 1)
@@ -157,5 +158,7 @@ animation = &"Loading"
 [node name="LoadingTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="SaveManager" parent="." instance=ExtResource("24_lcj3d")]
 
 [connection signal="timeout" from="LoadingTimer" to="." method="_on_loading_timer_timeout"]

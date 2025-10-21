@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dey70a6y3lk0k"]
+[gd_scene load_steps=8 format=3 uid="uid://dey70a6y3lk0k"]
 
 [ext_resource type="Script" uid="uid://bk2161xoqpres" path="res://Scripts/language_button.gd" id="1_hj7yq"]
 [ext_resource type="Texture2D" uid="uid://cywfj8wckdw1t" path="res://Arts/FlagsSprite/FrenchFlag.png" id="1_ycjas"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_oeh3p"]
 [ext_resource type="Texture2D" uid="uid://c7577pausvcq5" path="res://Arts/FlagsSprite/Flag_of_the_United_Kingdom.png" id="3_gk6ae"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="5_gk6ae"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk6ae"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -46,6 +47,8 @@ z_index = -1
 position = Vector2(119, 78)
 scale = Vector2(2.53716, 3.23026)
 texture = ExtResource("2_oeh3p")
+
+[node name="SaveManager" parent="." instance=ExtResource("5_gk6ae")]
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

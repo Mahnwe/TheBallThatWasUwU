@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://0vsghibpq11b"]
+[gd_scene load_steps=6 format=3 uid="uid://0vsghibpq11b"]
 
 [ext_resource type="Texture2D" uid="uid://cdlxs6rpwff0m" path="res://Arts/CanonSprite/CanonBallSprite-removebg-preview.png" id="1_62hxd"]
 [ext_resource type="Script" uid="uid://dv3erqiah5bge" path="res://Scripts/cannon_ball.gd" id="1_se441"]
 [ext_resource type="AudioStream" uid="uid://d3r0x0g81x4kb" path="res://Sound/Effects/CannonBallSound.wav" id="3_j3o8p"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="4_0vp37"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o56lr"]
 radius = 202.076
@@ -25,5 +26,7 @@ shape = SubResource("CircleShape2D_o56lr")
 stream = ExtResource("3_j3o8p")
 volume_db = 10.0
 max_distance = 500.0
+
+[node name="SaveManager" parent="." instance=ExtResource("4_0vp37")]
 
 [connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

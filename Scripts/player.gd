@@ -1,12 +1,5 @@
 extends CharacterBody2D
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
-var config = ConfigFile.new()
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var player_killer_name = ""
 
 #@export
@@ -60,10 +53,10 @@ func _ready():
 	can_double_jump = false
 	dash_cooldown_timer.one_shot = true
 	self.add_child(dash_cooldown_timer)
-	if(config.get_value("levels", "is_level_two_finished")):
+	if($SaveManager.get_properties_value("levels", "is_level_two_finished")):
 		can_dash = true
 		have_dash_ability = true
-	if(config.get_value("levels", "is_level_three_finished")):
+	if($SaveManager.get_properties_value("levels", "is_level_three_finished")):
 		can_double_jump = true
 
 func _physics_process(_delta):

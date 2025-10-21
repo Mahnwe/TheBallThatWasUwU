@@ -1,9 +1,5 @@
 extends Node2D
 
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var cannon_ball = preload("res://Scenes/cannon_ball.tscn")
 
 @export var is_going_left = true
@@ -73,4 +69,4 @@ func unpause_cannon():
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")

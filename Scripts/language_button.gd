@@ -1,14 +1,9 @@
 extends Button
 
-var properties_config = ConfigFile.new()
-
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var actual_select_language
 
 func _ready():
-	change_language_flag(properties_config.get_value("Languages", "is_english"))
+	change_language_flag($SaveManager.get_properties_value("Languages", "is_english"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

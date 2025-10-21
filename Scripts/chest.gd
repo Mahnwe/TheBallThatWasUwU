@@ -1,9 +1,5 @@
 extends Node2D
 
-var config = ConfigFile.new()
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 
 var level_number=0
@@ -45,11 +41,11 @@ func chest_already_picked():
 	
 func translate_text():
 	var translate_config = ConfigFile.new()
-	if config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
-	change_font_size(config.get_value("Languages", "is_english"))
+	change_font_size($SaveManager.get_properties_value("Languages", "is_english"))
 	$Label.text = translate_config.get_value("TranslationChest", "ChestLabel")
 	
 func change_font_size(is_english):
@@ -61,4 +57,4 @@ func change_font_size(is_english):
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")

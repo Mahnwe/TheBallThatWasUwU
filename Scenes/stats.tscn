@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0lw132ttyu44"]
+[gd_scene load_steps=10 format=3 uid="uid://c0lw132ttyu44"]
 
 [ext_resource type="Script" uid="uid://verjiu4qydxm" path="res://Scripts/stats.gd" id="1_lwp2e"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="2_i6gfd"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="5_wue6w"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="6_qetgw"]
 [ext_resource type="PackedScene" uid="uid://b14uqg5nr7ncf" path="res://Scenes/time_control.tscn" id="7_lhacb"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="8_orybf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6gfd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -82,11 +83,11 @@ position = Vector2(107.491, 0.329313)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(8.20647e-05, 50.4855)
+position = Vector2(8.20647e-05, 50.964226)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(123.44, 50.2955)
+position = Vector2(123.44, 50.774227)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
@@ -96,7 +97,7 @@ texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(241.971, 51.8641)
+position = Vector2(241.971, 52.342827)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D2"]
@@ -104,26 +105,26 @@ position = Vector2(322.826, 0.329316)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(325.925, 53.8509)
+position = Vector2(325.925, 54.329624)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(7.74935e-05, 92.6496)
+position = Vector2(7.74935e-05, 99.44069)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(131.655, 92.8876)
+position = Vector2(131.655, 99.678696)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(252.273, 92.7276)
+position = Vector2(252.273, 99.51869)
 texture = ExtResource("3_wue6w")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(328.904, 94.3181)
+position = Vector2(328.904, 101.10919)
 texture = ExtResource("3_wue6w")
 flip_h = true
 
@@ -139,7 +140,7 @@ dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 37
+theme_override_constants/separation = 45
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -335,7 +336,7 @@ text = "0"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-theme_override_constants/separation = 37
+theme_override_constants/separation = 45
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VBoxContainer3"]
 layout_mode = 2
@@ -532,11 +533,11 @@ text = "0"
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1239.0
-offset_top = 328.649
+offset_top = 338.0
 offset_right = 1669.0
-offset_bottom = 855.649
+offset_bottom = 895.0
 scale = Vector2(0.947485, 0.943702)
-theme_override_constants/separation = 40
+theme_override_constants/separation = 45
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -707,6 +708,8 @@ theme_override_font_sizes/font_size = 30
 text = "00h00m00s"
 
 [node name="TimeControl" parent="." instance=ExtResource("7_lhacb")]
+
+[node name="SaveManager" parent="." instance=ExtResource("8_orybf")]
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

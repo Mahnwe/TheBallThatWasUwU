@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cp0mu2e8kcon"]
+[gd_scene load_steps=40 format=3 uid="uid://cp0mu2e8kcon"]
 
 [ext_resource type="Script" uid="uid://bxymd3lpn7qw7" path="res://Scripts/commands_ui.gd" id="1_in6he"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="2_3uy3i"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="35_rxlji"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="36_3uy3i"]
 [ext_resource type="Texture2D" uid="uid://b2x3glmt64vks" path="res://Arts/ControllerControls/YSwitch-removebg-preview.png" id="36_jtqtl"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="38_b8qwf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxlji"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -455,6 +456,8 @@ texture = ExtResource("24_4woxk")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="SaveManager" parent="." instance=ExtResource("38_b8qwf")]
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="focus_entered" from="CloseButton" to="." method="_on_close_button_focus_entered"]

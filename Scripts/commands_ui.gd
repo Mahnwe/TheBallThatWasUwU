@@ -2,15 +2,12 @@ extends Control
 
 var player_have_dash
 var is_displaying = false
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
 var translate_file
 signal commands_closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if (properties_config.get_value("levels", "is_level_two_finished")):
+	if ($SaveManager.get_properties_value("levels", "is_level_two_finished")):
 		player_have_dash = true
 	translate_text()
 	$VBoxContainer/Dash.hide()
@@ -66,7 +63,7 @@ func close_commands():
 		
 func translate_text():
 	var translate_config = ConfigFile.new()
-	if properties_config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")

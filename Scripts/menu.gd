@@ -7,15 +7,8 @@ var effect_slider_stylebox
 var stats_ui_display = false
 var is_controller_focused = false
 
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_config = ConfigFile.new()
 var translate_file
-
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
 
 var chestNumber
 
@@ -37,7 +30,7 @@ func _ready():
 	set_sliders_value_with_config()
 	set_volume()
 	setup_quit_button_stylebox()
-	chestNumber = properties_config.get_value("Chests", "chestNumber")
+	chestNumber = $SaveManager.get_properties_value("Chests","chestNumber")
 	$Level7Button/Label.hide()
 	check_level7_button_visibility()
 	check_for_ability_icons()
@@ -225,9 +218,9 @@ func _on_quit_button_gui_input(event):
 			
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
-		member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 
 
 func _on_quit_button_pressed():
@@ -325,117 +318,110 @@ func change_bubble_message():
 
 func _on_music_slider_value_changed(value):
 	if !$MusicMuteButton.is_mute:
-		properties_config.set_value("musicSliderValue","sliderMusicValue", value)
+		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", value)
 		match value:
 			0.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", -50)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -50)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			1.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", -25)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			2.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", -15)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			3.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", -10)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -10)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			4.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", -5)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -5)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			5.0:
-				properties_config.set_value("musicVolume","musicVolumeSet", 0)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", 0)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 
 
 func _on_effect_slider_value_changed(value):
 	if !$SoundMuteButton.is_mute:
-		properties_config.set_value("effectSliderValue","sliderEffectValue", value)
+		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", value)
 		match value:
 			0.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -50)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -50)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			1.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -25)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			2.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -20)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -20)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			3.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -15)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			4.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -10)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -10)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			5.0:
-				properties_config.set_value("effectVolume","effectVolumeSet", -5)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -5)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 
 
 func _on_music_mute_button_pressed():
 	if !$MusicMuteButton.is_mute:
 		$MusicMuteButton.is_mute = true
 		$MusicSlider.editable = false
-		properties_config.set_value("musicVolume","musicVolumeSet", -50)
-		properties_config.set_value("musicVolume","is_music_mute", true)
-		properties_config.set_value("musicSliderValue","sliderMusicValue", 0.0)
-		$MusicSlider.value = properties_config.get_value("musicSliderValue","sliderMusicValue")
+		$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -50)
+		$SaveManager.save_properties_value("musicVolume","is_music_mute", true)
+		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", 0.0)
+		$MusicSlider.value = $SaveManager.get_properties_value("musicSliderValue","sliderMusicValue")
 		for member in get_tree().get_nodes_in_group("music_group"):
-			member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-		
+			member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 	else:
 		$MusicMuteButton.is_mute = false
 		$MusicSlider.editable = true
-		properties_config.set_value("musicVolume","is_music_mute", false)
-		properties_config.set_value("musicVolume","musicVolumeSet", -10)
-		properties_config.set_value("musicSliderValue","sliderMusicValue", 3.0)
-		$MusicSlider.value = properties_config.get_value("musicSliderValue","sliderMusicValue")
+		$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -10)
+		$SaveManager.save_properties_value("musicVolume","is_music_mute", false)
+		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", 3.0)
+		$MusicSlider.value = $SaveManager.get_properties_value("musicSliderValue","sliderMusicValue")
 		for member in get_tree().get_nodes_in_group("music_group"):
-			member.volume_db = properties_config.get_value("musicVolume","musicVolumeSet")
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 
 func _on_sound_mute_button_pressed():
 	if !$SoundMuteButton.is_mute:
 		$SoundMuteButton.is_mute = true
 		$EffectSlider.editable = false
-		properties_config.set_value("effectVolume","effectVolumeSet", -50)
-		properties_config.set_value("effectVolume","is_effect_mute", true)
-		properties_config.set_value("effectSliderValue","sliderEffectValue", 0.0)
-		$EffectSlider.value = properties_config.get_value("effectSliderValue","sliderEffectValue")
+		$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -50)
+		$SaveManager.save_properties_value("effectVolume","is_effect_mute", true)
+		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", 0.0)
+		$EffectSlider.value = $SaveManager.get_properties_value("effectSliderValue","sliderEffectValue")
 		for member in get_tree().get_nodes_in_group("sound_effect_group"):
-			member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 	else:
 		$SoundMuteButton.is_mute = false
 		$EffectSlider.editable = true
-		properties_config.set_value("effectVolume","is_effect_mute", false)
-		properties_config.set_value("effectVolume","effectVolumeSet", -20)
-		properties_config.set_value("effectSliderValue","sliderEffectValue", 2.0)
-		$EffectSlider.value = properties_config.get_value("effectSliderValue","sliderEffectValue")
+		$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -20)
+		$SaveManager.save_properties_value("effectVolume","is_effect_mute", false)
+		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", 2.0)
+		$EffectSlider.value = $SaveManager.get_properties_value("effectSliderValue","sliderEffectValue")
 		for member in get_tree().get_nodes_in_group("sound_effect_group"):
-			member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			
 func set_sliders_value_with_config():
-	$MusicSlider.value = properties_config.get_value("musicSliderValue","sliderMusicValue")
-	$EffectSlider.value = properties_config.get_value("effectSliderValue","sliderEffectValue")
-	if properties_config.get_value("musicVolume","is_music_mute"):
+	$MusicSlider.value = $SaveManager.get_properties_value("musicSliderValue","sliderMusicValue")
+	$EffectSlider.value = $SaveManager.get_properties_value("effectSliderValue","sliderEffectValue")
+	if $SaveManager.get_properties_value("musicVolume","is_music_mute"):
 		$MusicMuteButton.is_mute = true
-	if properties_config.get_value("effectVolume","is_effect_mute"):
+	if $SaveManager.get_properties_value("effectVolume","is_effect_mute"):
 		$SoundMuteButton.is_mute = true
 
 func _on_music_slider_gui_input(event):
@@ -569,11 +555,11 @@ func _on_sound_mute_button_mouse_exited():
 	$SoundMuteButton.release_focus()
 	
 func translate_text():
-	if properties_config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
-	change_font_size(properties_config.get_value("Languages", "is_english"))
+	change_font_size($SaveManager.get_properties_value("Languages", "is_english"))
 		
 	$QuitButton/QuitLabel.text = translate_config.get_value("TranslationMenu", "QuitButton")
 	$StatsButton.text = translate_config.get_value("TranslationMenu", "StatsButton")
@@ -627,9 +613,9 @@ func handle_buttons_child_visibility():
 				member.get_child(4).hide()
 
 func check_for_ability_icons():
-	if properties_config.get_value("levels", "is_level_two_finished"):
+	if $SaveManager.get_properties_value("levels", "is_level_two_finished"):
 		$AbilityIcon.hide()
-	if properties_config.get_value("levels", "is_level_three_finished"):
+	if $SaveManager.get_properties_value("levels", "is_level_three_finished"):
 		$AbilityIcon2.hide()
 
 
@@ -643,39 +629,37 @@ func _on_level_7_button_focus_exited():
 
 func _on_window_mode_button_pressed():
 	if $WindowModeButton.focus_mode == FOCUS_ALL:
-		if properties_config.get_value("WindowMod", "is_fullscreen"):
+		if $SaveManager.get_properties_value("WindowMod", "is_fullscreen"):
 			$WindowModeButton.get_child(1).text = $WindowModeButton.windowed_label
 			DisplayServer.window_set_size(Vector2i(1280,720))
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-			properties_config.set_value("WindowMod", "is_fullscreen", false)
+			$SaveManager.save_properties_value("WindowMod", "is_fullscreen", false)
 		else:
 			$WindowModeButton.get_child(1).text = $WindowModeButton.fullscreen_label
 			var player_viewport = get_viewport().size
 			DisplayServer.window_set_size(player_viewport)
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
-			properties_config.set_value("WindowMod", "is_fullscreen", true)
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
+			$SaveManager.save_properties_value("WindowMod", "is_fullscreen", true)
 
 
 func _on_language_button_pressed():
 	if $LanguageButton.focus_mode == FOCUS_ALL:
-		if properties_config.get_value("Languages", "is_english"):
-			properties_config.set_value("Languages", "is_english", false)
+		if $SaveManager.get_properties_value("Languages", "is_english"):
+			$SaveManager.save_properties_value("Languages", "is_english", false)
 		else:
-			properties_config.set_value("Languages", "is_english", true)
-		properties_config.save("res://Ressources/PropertieFile/properties.cfg")
-		$LanguageButton.change_language_flag(properties_config.get_value("Languages", "is_english"))
+			$SaveManager.save_properties_value("Languages", "is_english", true)
+		$LanguageButton.change_language_flag($SaveManager.get_properties_value("Languages", "is_english"))
 		translate_text()
 		$BubbleMessageTimer.stop()
 		$BubbleTooltip.message_number = 0
 		change_bubble_message()
-		$Stats.translate_text(properties_config.get_value("Languages", "is_english"))
-		$Credits.translate_text(properties_config.get_value("Languages", "is_english"))
-		$WindowModeButton.translate_text(properties_config.get_value("Languages", "is_english"))
-		$LoadingScreen.translate_text(properties_config.get_value("Languages", "is_english"))
-		$Achievements.translate_text(properties_config.get_value("Languages", "is_english"))
+		$Stats.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
+		$Credits.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
+		$WindowModeButton.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
+		$LoadingScreen.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
+		$Achievements.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 
 
 func _on_bubble_message_timer_timeout():
@@ -687,10 +671,9 @@ func _on_loading_screen_scene_loaded(path):
 	get_tree().change_scene_to_file(path)
 
 func saving_time_played():
-	var time_already_played = stats_config.get_value("Stats", "time_played")
+	var time_already_played = $SaveManager.get_stats_value("Stats", "time_played")
 	var time_elapsed_to_save = time_already_played + $TimeControl.time_elapsed
-	stats_config.set_value("Stats", "time_played", time_elapsed_to_save)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	$SaveManager.save_stats_value("Stats", "time_played", time_elapsed_to_save)
 	$TimeControl.time_elapsed = 0.0
 
 

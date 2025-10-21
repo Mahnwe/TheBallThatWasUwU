@@ -11,11 +11,6 @@ signal return_to_menu_is_clicked
 var music_slider_stylebox
 var effect_slider_stylebox
 
-var config = ConfigFile.new()
-
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 
 
@@ -141,9 +136,9 @@ func display_tooltip_when_button_focus():
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
-		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 
 
 func _on_command_pressed():
@@ -179,11 +174,11 @@ func set_current_timer_when_paused(player_timer):
 	$CanvasLayer/PlayerTimerCloud/Label.text = _format_seconds(player_timer)
 	
 func set_sliders_value_with_config():
-	$SoundLayer/MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
-	$SoundLayer/EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
-	if config.get_value("musicVolume","is_music_mute"):
+	$SoundLayer/MusicSlider.value = $SaveManager.get_properties_value("musicSliderValue","sliderMusicValue")
+	$SoundLayer/EffectSlider.value = $SaveManager.get_properties_value("effectSliderValue","sliderEffectValue")
+	if $SaveManager.get_properties_value("musicVolume","is_music_mute"):
 		$SoundLayer/MusicMuteButton.is_mute = true
-	if config.get_value("effectVolume","is_effect_mute"):
+	if $SaveManager.get_properties_value("effectVolume","is_effect_mute"):
 		$SoundLayer/SoundMuteButton.is_mute = true
 	
 func _on_music_slider_mouse_exited():
@@ -202,109 +197,103 @@ func _on_effect_slider_mouse_exited():
 	
 func _on_music_slider_value_changed(value):
 	if !$SoundLayer/MusicMuteButton.is_mute:
-		config.set_value("musicSliderValue","sliderMusicValue", value)
+		$SaveManager.get_properties_value("musicSliderValue","sliderMusicValue", value)
 		match value:
 			0.0:
-				config.set_value("musicVolume","musicVolumeSet", -50)
+				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -50)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			1.0:
-				config.set_value("musicVolume","musicVolumeSet", -25)
+				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			2.0:
-				config.set_value("musicVolume","musicVolumeSet", -15)
+				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			3.0:
-				config.set_value("musicVolume","musicVolumeSet", -10)
+				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -10)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			4.0:
-				config.set_value("musicVolume","musicVolumeSet", -5)
+				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -5)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			5.0:
-				config.set_value("musicVolume","musicVolumeSet", 0)
+				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", 0)
 				for member in get_tree().get_nodes_in_group("music_group"):
-					member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		config.save("res://Ressources/PropertieFile/properties.cfg")
+					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 
 
 func _on_effect_slider_value_changed(value):
 	if !$SoundLayer/SoundMuteButton.is_mute:
-		config.set_value("effectSliderValue","sliderEffectValue", value)
+		$SaveManager.get_properties_value("effectSliderValue","sliderEffectValue", value)
 		match value:
 			0.0:
-				config.set_value("effectVolume","effectVolumeSet", -50)
+				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -50)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			1.0:
-				config.set_value("effectVolume","effectVolumeSet", -25)
+				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			2.0:
-				config.set_value("effectVolume","effectVolumeSet", -20)
+				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -20)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			3.0:
-				config.set_value("effectVolume","effectVolumeSet", -15)
+				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			4.0:
-				config.set_value("effectVolume","effectVolumeSet", -10)
+				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -10)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			5.0:
-				config.set_value("effectVolume","effectVolumeSet", -5)
+				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -5)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
-					member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		config.save("res://Ressources/PropertieFile/properties.cfg")
+					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 		
 func _on_music_mute_button_pressed():
 	if !$SoundLayer/MusicMuteButton.is_mute:
 		$SoundLayer/MusicMuteButton.is_mute = true
 		$SoundLayer/MusicSlider.editable = false
-		config.set_value("musicVolume","musicVolumeSet", -50)
-		config.set_value("musicVolume","is_music_mute", true)
-		config.set_value("musicSliderValue","sliderMusicValue", 0.0)
-		$SoundLayer/MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
+		$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -50)
+		$SaveManager.save_properties_value("musicVolume","is_music_mute", true)
+		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", 0.0)
+		$SoundLayer/MusicSlider.value = $SaveManager.get_properties_value("musicSliderValue","sliderMusicValue")
 		for member in get_tree().get_nodes_in_group("music_group"):
-			member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 	else:
 		$SoundLayer/MusicMuteButton.is_mute = false
 		$SoundLayer/MusicSlider.editable = true
-		config.set_value("musicVolume","is_music_mute", false)
-		config.set_value("musicVolume","musicVolumeSet", -10)
-		config.set_value("musicSliderValue","sliderMusicValue", 3.0)
-		$SoundLayer/MusicSlider.value = config.get_value("musicSliderValue","sliderMusicValue")
+		$SaveManager.save_properties_value("musicVolume","is_music_mute", false)
+		$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -10)
+		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", 3.0)
+		$SoundLayer/MusicSlider.value = $SaveManager.get_properties_value("musicSliderValue","sliderMusicValue")
 		for member in get_tree().get_nodes_in_group("music_group"):
-			member.volume_db = config.get_value("musicVolume","musicVolumeSet")
-		config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 
 
 func _on_sound_mute_button_pressed():
 	if !$SoundLayer/SoundMuteButton.is_mute:
 		$SoundLayer/SoundMuteButton.is_mute = true
 		$SoundLayer/EffectSlider.editable = false
-		config.set_value("effectVolume","effectVolumeSet", -50)
-		config.set_value("effectVolume","is_effect_mute", true)
-		config.set_value("effectSliderValue","sliderEffectValue", 0.0)
-		$SoundLayer/EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
+		$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -50)
+		$SaveManager.save_properties_value("effectVolume","is_effect_mute", true)
+		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", 0.0)
+		$SoundLayer/EffectSlider.value = $SaveManager.get_properties_value("effectSliderValue","sliderEffectValue")
 		for member in get_tree().get_nodes_in_group("sound_effect_group"):
-			member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 	else:
 		$SoundLayer/SoundMuteButton.is_mute = false
 		$SoundLayer/EffectSlider.editable = true
-		config.set_value("effectVolume","is_effect_mute", false)
-		config.set_value("effectVolume","effectVolumeSet", -20)
-		config.set_value("effectSliderValue","sliderEffectValue", 2.0)
-		$SoundLayer/EffectSlider.value = config.get_value("effectSliderValue","sliderEffectValue")
+		$SaveManager.save_properties_value("effectVolume","is_effect_mute", false)
+		$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -20)
+		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", 2.0)
+		$SoundLayer/EffectSlider.value = $SaveManager.get_properties_value("effectSliderValue","sliderEffectValue")
 		for member in get_tree().get_nodes_in_group("sound_effect_group"):
-			member.volume_db = config.get_value("effectVolume","effectVolumeSet")
-		config.save("res://Ressources/PropertieFile/properties.cfg")
+			member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 		
 func _on_music_slider_gui_input(event):
 	if $SoundLayer/MusicSlider.has_focus() and event is InputEventKey or event is InputEventJoypadButton:
@@ -387,7 +376,7 @@ func _format_seconds(time : float) -> String:
 	
 func translate_text():
 	var translate_config = ConfigFile.new()
-	if config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")

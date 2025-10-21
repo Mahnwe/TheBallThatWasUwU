@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c374x86lfx3c4"]
+[gd_scene load_steps=23 format=3 uid="uid://c374x86lfx3c4"]
 
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="1_7xtne"]
 [ext_resource type="Script" uid="uid://brincxwg6kccx" path="res://Scripts/achievements.gd" id="1_g04om"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c5bwd8ikb5ryi" path="res://Arts/ChestSprite/ChestSprite.png" id="18_uv35e"]
 [ext_resource type="Texture2D" uid="uid://cmw23lnas38nr" path="res://Arts/AchievementsSprites/TimeAchievement.png" id="19_8p4bk"]
 [ext_resource type="Texture2D" uid="uid://dglckqiulw2sh" path="res://Arts/AchievementsSprites/CupAchievement.png" id="20_8p4bk"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="21_40rae"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m5au"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -477,6 +478,8 @@ texture = ExtResource("20_8p4bk")
 position = Vector2(-51, 25)
 scale = Vector2(1.32, 1.16)
 texture = ExtResource("6_bcp42")
+
+[node name="SaveManager" parent="." instance=ExtResource("21_40rae")]
 
 [connection signal="gui_input" from="QuitButton" to="." method="_on_quit_button_gui_input"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

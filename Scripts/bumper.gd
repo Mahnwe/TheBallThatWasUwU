@@ -1,9 +1,5 @@
 extends Node2D
 
-var properties_config = ConfigFile.new()
-# Load data from a file.
-var properties_file = properties_config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var is_trigger
 signal player_hit_bumper
 
@@ -49,4 +45,4 @@ func set_x_check_velocity(body):
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = properties_config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
