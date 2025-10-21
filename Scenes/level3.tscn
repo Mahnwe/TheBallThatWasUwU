@@ -369,7 +369,7 @@ rotation = 1.5708
 scale = Vector2(2.28, 2.8)
 
 [node name="Wall15" parent="." instance=ExtResource("8_tnmog")]
-position = Vector2(1723, -1324)
+position = Vector2(1724.5, -1325)
 rotation = 1.5708
 scale = Vector2(2.2, 3.64)
 
@@ -1115,8 +1115,8 @@ position = Vector2(348, -639.469)
 scale = Vector2(0.62, 0.465313)
 
 [node name="Water2" parent="Water" instance=ExtResource("29_bvghq")]
-position = Vector2(1645.86, -14.0364)
-scale = Vector2(1.25107, 1)
+position = Vector2(1647.4733, -14.0364)
+scale = Vector2(1.2672024, 1)
 
 [node name="platform11" parent="." instance=ExtResource("2_gdtbw")]
 position = Vector2(788, -2265)
@@ -1198,7 +1198,7 @@ flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(1452, -991)
+position = Vector2(1453.5, -992)
 scale = Vector2(1.5, 1.875)
 texture = ExtResource("39_8dwqx")
 

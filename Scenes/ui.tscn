@@ -17,10 +17,10 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = -189.0
-offset_top = -324.0
-offset_right = 10.0
-offset_bottom = -255.0
+offset_left = -211.49991
+offset_top = -352.99982
+offset_right = -4.4999084
+offset_bottom = -283.99982
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -41,6 +41,6 @@ offset_bottom = -66.0
 scale = Vector2(1.10709, 0.870471)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-77.2502, -287.5)
+position = Vector2(-99.75011, -316.49982)
 scale = Vector2(1.97635, 1.9079)
 texture = ExtResource("3_nf4gj")
