@@ -1,8 +1,6 @@
 extends Control
 
 signal scene_loaded(path: String)
-const MENU_SCENE : String = "res://Scenes/menu.tscn"
-const LANGUAGE_SCENE : String = "res://Scenes/language_scene.tscn"
 
 @onready var progress_bar = $ProgressBar
 
@@ -16,8 +14,8 @@ var translate_file
 var actualize_lang_propertie
 
 func _ready():
+	await $SaveManager.ready
 	translate_text($SaveManager.get_properties_value("Languages", "is_english"))
-	#check_is_language_selected()
 
 func _process(delta: float):
 	if not path:
@@ -39,27 +37,6 @@ func _process(delta: float):
 		# "done" loading :)
 		if progress_bar.value >= 99 and $LoadingTimer.time_left == 0.0:
 			$LoadingTimer.start()
-			
-#func check_is_language_selected():
-	#if !$SaveManager.get_properties_value("Launch","is_first_launch"):
-		#call_deferred("go_to_menu")
-	#else:
-		#call_deferred("go_to_language")
-		#
-	#
-#func go_to_menu():
-	#for member in get_tree().get_nodes_in_group("language_buttons"):
-		#member.focus_mode = FOCUS_NONE
-	#show()
-	#self.load(MENU_SCENE)
-	#get_tree().change_scene_to_file(MENU_SCENE)
-#
-#func go_to_language():
-	#for member in get_tree().get_nodes_in_group("language_buttons"):
-		#member.focus_mode = FOCUS_NONE
-	#show()
-	#self.load(LANGUAGE_SCENE)
-	#get_tree().change_scene_to_file(LANGUAGE_SCENE)
 	
 			
 ## Load the scene at the given path.
@@ -72,10 +49,10 @@ func translate_text(is_english):
 	var translate_config = ConfigFile.new()
 	if is_english:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
-		$Label.position.x = 818.0
+		$Label.position.x = 814.5
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
-		$Label.position.x = 770.0
+		$Label.position.x = 738.0
 		
 	actualize_lang_propertie = is_english
 	$Label.text = translate_config.get_value("TranslationLoading", "LoadingScreen")
@@ -90,10 +67,11 @@ func title_animation():
 		var grow_tween = get_tree().create_tween()
 		move_tween.bind_node(self)
 		grow_tween.bind_node(self)
+		print(actualize_lang_propertie)
 		if actualize_lang_propertie:
-			move_tween.tween_property($Label, "position", Vector2(800.0,265.0), 1.0)
+			move_tween.tween_property($Label, "position", Vector2(785.5,247.0), 1.0)
 		else:
-			move_tween.tween_property($Label, "position", Vector2(740.0,268.0), 1.0)
+			move_tween.tween_property($Label, "position", Vector2(730.0,247.0), 1.0)
 		grow_tween.tween_property($Label, "scale", Vector2(1.15,1.15), 1.0)
 	if $Label.scale == Vector2(1.15,1.15):
 		var move_tween = get_tree().create_tween()
@@ -101,7 +79,7 @@ func title_animation():
 		move_tween.bind_node(self)
 		shrink_tween.bind_node(self)
 		if actualize_lang_propertie:
-			move_tween.tween_property($Label, "position", Vector2(820.0,270.0), 1.0)
+			move_tween.tween_property($Label, "position", Vector2(814.0,253.0), 1.0)
 		else:
-			move_tween.tween_property($Label, "position", Vector2(745.0,270.0), 1.0)
+			move_tween.tween_property($Label, "position", Vector2(745.0,253.0), 1.0)
 		shrink_tween.tween_property($Label, "scale", Vector2(1.0,1.0), 1.0)

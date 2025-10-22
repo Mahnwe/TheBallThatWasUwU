@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://bqobn6ian8a0e"]
+[gd_scene load_steps=114 format=3 uid="uid://bqobn6ian8a0e"]
 
 [ext_resource type="Script" uid="uid://cvnvjxoe2m0db" path="res://Scripts/level_7.gd" id="1_c77lg"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_sr0ya"]
@@ -79,6 +79,7 @@
 [ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="76_mswl2"]
 [ext_resource type="AudioStream" uid="uid://ddj8rju24abis" path="res://Sound/Musics/Level7Music.mp3" id="77_hwiai"]
 [ext_resource type="AudioStream" uid="uid://2fd78ekwbdbf" path="res://Sound/Effects/DeathSound2.wav" id="78_1nxg2"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="80_t6qtv"]
 
 [sub_resource type="Curve2D" id="Curve2D_dk2oo"]
 _data = {
@@ -2520,9 +2521,7 @@ parameters/looping = true
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("78_1nxg2")
 
-[node name="RestartSaveTimer" type="Timer" parent="."]
-
-[node name="RestartLevelTimer" type="Timer" parent="."]
+[node name="SaveManager" parent="." instance=ExtResource("80_t6qtv")]
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]
@@ -2608,5 +2607,3 @@ stream = ExtResource("78_1nxg2")
 [connection signal="body_entered" from="BeachBackgroundTrigger" to="." method="_on_beach_background_trigger_body_entered"]
 [connection signal="body_entered" from="ForestBackgroundTrigger" to="." method="_on_forest_background_trigger_body_entered"]
 [connection signal="body_entered" from="MountainBackgroundTrigger" to="." method="_on_mountain_background_trigger_body_entered"]
-[connection signal="timeout" from="RestartSaveTimer" to="." method="_on_restart_save_timer_timeout"]
-[connection signal="timeout" from="RestartLevelTimer" to="." method="_on_restart_level_timer_timeout"]

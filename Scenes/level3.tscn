@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://du8k270ekmuxm"]
+[gd_scene load_steps=63 format=3 uid="uid://du8k270ekmuxm"]
 
 [ext_resource type="Script" uid="uid://4tg833cni0x6" path="res://Scripts/level_3.gd" id="1_1urae"]
 [ext_resource type="PackedScene" uid="uid://6gv7f8sbn6x" path="res://Scenes/game_area.tscn" id="2_es6jk"]
@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://26ofhmlstcrs" path="res://Sound/Effects/DeadSound.wav" id="44_y6f5s"]
 [ext_resource type="AudioStream" uid="uid://bsqrtp10p282p" path="res://Sound/Musics/Level3Music.mp3" id="45_jkt7a"]
 [ext_resource type="AudioStream" uid="uid://2fd78ekwbdbf" path="res://Sound/Effects/DeathSound2.wav" id="46_pd7tp"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="48_sdj7o"]
 
 [sub_resource type="Curve2D" id="Curve2D_5ndjq"]
 _data = {
@@ -1238,6 +1239,8 @@ parameters/looping = true
 
 [node name="DeadSound2" type="AudioStreamPlayer" parent="." groups=["sound_effect_group"]]
 stream = ExtResource("46_pd7tp")
+
+[node name="SaveManager" parent="." instance=ExtResource("48_sdj7o")]
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

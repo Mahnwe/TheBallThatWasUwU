@@ -51,88 +51,88 @@ func sort_ascending(player_timer):
 	
 func saveData():
 	if is_level_1:
-		var file = FileAccess.open("Ressources/timer_rank_data_level1.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level1.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 	if is_level_2:
-		var file = FileAccess.open("Ressources/timer_rank_data_level2.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level2.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 	if is_level_3:
-		var file = FileAccess.open("Ressources/timer_rank_data_level3.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level3.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 	if is_level_4:
-		var file = FileAccess.open("Ressources/timer_rank_data_level4.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level4.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 	if is_level_5:
-		var file = FileAccess.open("Ressources/timer_rank_data_level5.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level5.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 	if is_level_6:
-		var file = FileAccess.open("Ressources/timer_rank_data_level6.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level6.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 	if is_level_7:
-		var file = FileAccess.open("Ressources/timer_rank_data_level7.json", FileAccess.WRITE)
+		var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level7.json", FileAccess.WRITE)
 		file.store_line(JSON.stringify(file_data))
 
 func load():
 	if is_level_1:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level1.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level1.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level1.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level1.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
 	elif is_level_2:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level2.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level2.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level2.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level2.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
 	elif is_level_3:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level3.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level3.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level3.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level3.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
 	elif is_level_4:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level4.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level4.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level4.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level4.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
 	elif is_level_5:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level5.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level5.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level5.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level5.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
 	elif is_level_6:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level6.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level6.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level6.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level6.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data
 	elif is_level_7:
-		var check_if_file_empty = FileAccess.get_file_as_string("Ressources/timer_rank_data_level7.json")
+		var check_if_file_empty = FileAccess.get_file_as_string("user://Saves/RankSaves/timer_rank_data_level7.json")
 		if check_if_file_empty.is_empty():
 			saveData()
 			return
 		else:
-			var file = FileAccess.open("Ressources/timer_rank_data_level7.json", FileAccess.READ)
+			var file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level7.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			file_data = data

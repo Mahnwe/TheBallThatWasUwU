@@ -12,13 +12,13 @@ var timer_rank_4 := 0.0
 var timer_rank_5 := 0.0
 var timer_rank_6 := 0.0
 
-var level1_file = FileAccess.open("Ressources/timer_rank_data_level1.json", FileAccess.READ)
-var level2_file = FileAccess.open("Ressources/timer_rank_data_level2.json", FileAccess.READ)
-var level3_file = FileAccess.open("Ressources/timer_rank_data_level3.json", FileAccess.READ)
-var level4_file = FileAccess.open("Ressources/timer_rank_data_level4.json", FileAccess.READ)
-var level5_file = FileAccess.open("Ressources/timer_rank_data_level5.json", FileAccess.READ)
-var level6_file = FileAccess.open("Ressources/timer_rank_data_level6.json", FileAccess.READ)
-var level7_file = FileAccess.open("Ressources/timer_rank_data_level7.json", FileAccess.READ)
+var level1_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level1.json", FileAccess.READ)
+var level2_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level2.json", FileAccess.READ)
+var level3_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level3.json", FileAccess.READ)
+var level4_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level4.json", FileAccess.READ)
+var level5_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level5.json", FileAccess.READ)
+var level6_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level6.json", FileAccess.READ)
+var level7_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level7.json", FileAccess.READ)
 
 var file_data: Array = [timer_rank_1, timer_rank_2, timer_rank_3, timer_rank_4, timer_rank_5, timer_rank_6]
 

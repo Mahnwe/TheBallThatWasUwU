@@ -574,6 +574,7 @@ func translate_text():
 	$Level6Button.text = translate_config.get_value("TranslationMenu", "LevelSix")
 	$Level7Button.text = translate_config.get_value("TranslationMenu", "LevelSeven")
 	$Level7Button/Label.text = translate_config.get_value("TranslationMenu", "LevelSevenLabel")
+	$LoadingScreen.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 	
 	
 func change_font_size(is_english):

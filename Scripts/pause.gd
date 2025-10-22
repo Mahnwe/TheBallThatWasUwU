@@ -197,60 +197,60 @@ func _on_effect_slider_mouse_exited():
 	
 func _on_music_slider_value_changed(value):
 	if !$SoundLayer/MusicMuteButton.is_mute:
-		$SaveManager.get_properties_value("musicSliderValue","sliderMusicValue", value)
+		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", value)
 		match value:
 			0.0:
-				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -50)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -50)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			1.0:
-				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -25)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			2.0:
-				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -15)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			3.0:
-				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -10)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -10)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			4.0:
-				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", -5)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -5)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 			5.0:
-				$SaveManager.get_properties_value("musicVolume","musicVolumeSet", 0)
+				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", 0)
 				for member in get_tree().get_nodes_in_group("music_group"):
 					member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 
 
 func _on_effect_slider_value_changed(value):
 	if !$SoundLayer/SoundMuteButton.is_mute:
-		$SaveManager.get_properties_value("effectSliderValue","sliderEffectValue", value)
+		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", value)
 		match value:
 			0.0:
-				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -50)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -50)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			1.0:
-				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -25)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -25)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			2.0:
-				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -20)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -20)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			3.0:
-				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -15)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -15)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			4.0:
-				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -10)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -10)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 			5.0:
-				$SaveManager.get_properties_value("effectVolume","effectVolumeSet", -5)
+				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -5)
 				for member in get_tree().get_nodes_in_group("sound_effect_group"):
 					member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 		
@@ -386,6 +386,7 @@ func translate_text():
 	$ReturnLayer/ReturnToMenu.text = translate_config.get_value("TranslationPause", "MenuButton")
 	$ContinueLayer/Continue.text = translate_config.get_value("TranslationPause", "ContinueButton")
 	$CommandLayer/Command.text = translate_config.get_value("TranslationPause", "CommandsButton")
+	$CanvasLayer3/LoadingScreen.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 	
 func title_animation():
 	if $CanvasLayer2/PauseLabel.scale <= Vector2(0.688,0.765):

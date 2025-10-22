@@ -14,13 +14,6 @@ var save_position_y = 1212
 var finish_position_x = 690
 var finish_position_y = -1357
 
-var stats_config= ConfigFile.new()
-var stats_file = stats_config.load("res://Ressources/PropertieFile/stats.cfg")
-
-var config = ConfigFile.new()
-# Load data from a file.
-var config_file = config.load("res://Ressources/PropertieFile/properties.cfg")
-
 var translate_file
 var player_is_hit
 
@@ -37,7 +30,7 @@ func _ready():
 	queue.is_level_7 = false
 	queue.load()
 	$Chest.set_level_number(3)
-	if config.get_value("Chests", "level_three_chest"):
+	if $SaveManager.get_properties_value("Chests", "level_three_chest"):
 		$Chest.chest_already_picked()
 	set_volume()
 	translate_text()
@@ -209,11 +202,10 @@ func _on_finish_player_entered():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 	queue.sort_ascending($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	queue.saveData()
-	if queue.current_medal >= config.get_value("medals", "level_three_medal"):
-		config.set_value("medals", "level_three_medal", queue.current_medal)
+	if queue.current_medal >= $SaveManager.get_properties_value("medals", "level_three_medal"):
+		$SaveManager.save_properties_value("medals", "level_three_medal", queue.current_medal)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).instantiate(queue.file_data)
-	config.set_value("levels", "is_level_three_finished", true)
-	config.save("res://Ressources/PropertieFile/properties.cfg")
+	$SaveManager.save_properties_value("levels", "is_level_three_finished", true)
 	$Player.get_child(1).animation = "stay"
 	$Player.set_physics_process(false)
 	await get_tree().create_timer(2.0).timeout
@@ -226,11 +218,10 @@ func _on_finish_player_entered():
 	$Player.get_child(0).get_child(0).get_child(0).get_child(1).show()
 	$Finish/FinishUI._setup_timer_label_display($Player.get_child(0).get_child(0).get_child(0).get_child(0).time_elapsed)
 	$Finish/FinishUI.is_UI_showing = true
-	var number_of_level_finished = stats_config.get_value("Stats", "finished_level_number")
-	stats_config.set_value("Stats", "finished_level_number", number_of_level_finished+1)
-	var number_of_level_three_finished = stats_config.get_value("Stats", "level_three_finished_number")
-	stats_config.set_value("Stats", "level_three_finished_number", number_of_level_three_finished+1)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	var number_of_level_finished = $SaveManager.get_stats_value("Stats", "finished_level_number")
+	$SaveManager.save_stats_value("Stats", "finished_level_number", number_of_level_finished+1)
+	var number_of_level_three_finished = $SaveManager.get_stats_value("Stats", "level_three_finished_number")
+	$SaveManager.save_stats_value("Stats", "level_three_finished_number", number_of_level_three_finished+1)
 	save_medals_stats()
 
 
@@ -280,9 +271,9 @@ func _on_pause_continue_is_clicked():
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("music_group"):
-		member.volume_db = config.get_value("musicVolume","musicVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("musicVolume","musicVolumeSet")
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
-		member.volume_db = config.get_value("effectVolume","effectVolumeSet")
+		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
 		
 func toggle_pause():
 	$Player/Pause.show()
@@ -340,7 +331,7 @@ func _on_finish_next_level_pressed():
 		
 func translate_text():
 	var translate_config = ConfigFile.new()
-	if config.get_value("Languages", "is_english"):
+	if $SaveManager.get_properties_value("Languages", "is_english"):
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Eng_Translate.cfg")
 	else:
 		translate_file = translate_config.load("res://Ressources/TranslateFiles/Fr_Translate.cfg")
@@ -373,72 +364,63 @@ func _on_bumper_6_player_hit_bumper():
 	
 func save_medals_stats():
 	if queue.current_medal != 0:
-		var medal_number = stats_config.get_value("Stats", "medal_number")
-		stats_config.set_value("Stats", "medal_number", medal_number+1)
+		var medal_number = $SaveManager.get_stats_value("Stats", "medal_number")
+		$SaveManager.save_stats_value("Stats", "medal_number", medal_number+1)
 	match queue.current_medal:
 		1:
-			var bronze_medal_number = stats_config.get_value("Stats", "bronze_medal_number")
-			stats_config.set_value("Stats", "bronze_medal_number", bronze_medal_number+1)
-			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+			var bronze_medal_number = $SaveManager.get_stats_value("Stats", "bronze_medal_number")
+			$SaveManager.save_stats_value("Stats", "bronze_medal_number", bronze_medal_number+1)
 		2:
-			var silver_medal_number = stats_config.get_value("Stats", "silver_medal_number")
-			stats_config.set_value("Stats", "silver_medal_number", silver_medal_number+1)
-			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+			var silver_medal_number = $SaveManager.get_stats_value("Stats", "silver_medal_number")
+			$SaveManager.save_stats_value("Stats", "silver_medal_number", silver_medal_number+1)
 		3:
-			var gold_medal_number = stats_config.get_value("Stats", "gold_medal_number")
-			stats_config.set_value("Stats", "gold_medal_number", gold_medal_number+1)
-			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+			var gold_medal_number = $SaveManager.get_stats_value("Stats", "gold_medal_number")
+			$SaveManager.save_stats_value("Stats", "gold_medal_number", gold_medal_number+1)
 		4:
-			var dev_medal_number = stats_config.get_value("Stats", "dev_medal_number")
-			stats_config.set_value("Stats", "dev_medal_number", dev_medal_number+1)
-			stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+			var dev_medal_number = $SaveManager.get_stats_value("Stats", "dev_medal_number")
+			$SaveManager.save_stats_value("Stats", "dev_medal_number", dev_medal_number+1)
 
 
 func _on_chest_chest_triggered():
-	config.set_value("Chests", "level_three_chest", true)
-	var current_chest_number = config.get_value("Chests", "chestNumber")
+	$SaveManager.save_properties_value("Chests", "level_three_chest", true)
+	var current_chest_number = $SaveManager.get_properties_value("Chests", "chestNumber")
 	var new_chest_number = current_chest_number+1
-	config.set_value("Chests", "chestNumber", new_chest_number)
-	config.save("res://Ressources/PropertieFile/properties.cfg")
+	$SaveManager.save_properties_value("Chests", "chestNumber", new_chest_number)
 	
 func _on_player_player_jumped():
-	var number_of_jumps_in_stats = stats_config.get_value("Stats", "jump_number")
-	stats_config.set_value("Stats", "jump_number", number_of_jumps_in_stats+1)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	var number_of_jumps_in_stats = $SaveManager.get_stats_value("Stats", "jump_number")
+	$SaveManager.save_stats_value("Stats", "jump_number", number_of_jumps_in_stats+1)
 
 
 func _on_player_player_dashed():
-	var number_of_dashes = stats_config.get_value("Stats", "dash_number")
-	stats_config.set_value("Stats", "dash_number", number_of_dashes+1)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	var number_of_dashes = $SaveManager.get_stats_value("Stats", "dash_number")
+	$SaveManager.save_stats_value("Stats", "dash_number", number_of_dashes+1)
 
 
 func saving_time_played():
-	var time_already_played = stats_config.get_value("Stats", "time_played")
+	var time_already_played = $SaveManager.get_stats_value("Stats", "time_played")
 	var time_elapsed_to_save = time_already_played + $TimeControl.time_elapsed
-	stats_config.set_value("Stats", "time_played", time_elapsed_to_save)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+	$SaveManager.save_stats_value("Stats", "time_played", time_elapsed_to_save)
 	
 func save_deaths_stat():
-	var number_of_death = stats_config.get_value("Stats", "death_number")
-	stats_config.set_value("Stats", "death_number", number_of_death+1)
+	var number_of_death = $SaveManager.get_stats_value("Stats", "death_number")
+	$SaveManager.save_stats_value("Stats", "death_number", number_of_death+1)
 	match ($Player.player_killer_name):
 		"Spike":
-			var number_of_spike_death = stats_config.get_value("Stats", "spike_death_number")
-			stats_config.set_value("Stats", "spike_death_number", number_of_spike_death+1)
+			var number_of_spike_death = $SaveManager.get_stats_value("Stats", "spike_death_number")
+			$SaveManager.save_stats_value("Stats", "spike_death_number", number_of_spike_death+1)
 		"Cannon":
-			var number_of_cannon_death = stats_config.get_value("Stats", "cannon_death_number")
-			stats_config.set_value("Stats", "cannon_death_number", number_of_cannon_death+1)
+			var number_of_cannon_death = $SaveManager.get_stats_value("Stats", "cannon_death_number")
+			$SaveManager.save_stats_value("Stats", "cannon_death_number", number_of_cannon_death+1)
 		"Acid":
-			var number_of_acid_death = stats_config.get_value("Stats", "acid_death_number")
-			stats_config.set_value("Stats", "acid_death_number", number_of_acid_death+1)
+			var number_of_acid_death = $SaveManager.get_stats_value("Stats", "acid_death_number")
+			$SaveManager.save_stats_value("Stats", "acid_death_number", number_of_acid_death+1)
 		"Coral Spike":
-			var number_of_coral_death = stats_config.get_value("Stats", "coral_death_number")
-			stats_config.set_value("Stats", "coral_death_number", number_of_coral_death+1)
+			var number_of_coral_death = $SaveManager.get_stats_value("Stats", "coral_death_number")
+			$SaveManager.save_stats_value("Stats", "coral_death_number", number_of_coral_death+1)
 		"Laser":
-			var number_of_laser_death = stats_config.get_value("Stats", "laser_death_number")
-			stats_config.set_value("Stats", "laser_death_number", number_of_laser_death+1)
-	stats_config.save("res://Ressources/PropertieFile/stats.cfg")
+			var number_of_laser_death = $SaveManager.get_stats_value("Stats", "laser_death_number")
+			$SaveManager.save_stats_value("Stats", "laser_death_number", number_of_laser_death+1)
 
 
 func _on_pause_return_to_menu_is_clicked():

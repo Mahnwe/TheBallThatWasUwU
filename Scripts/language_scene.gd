@@ -69,6 +69,7 @@ func check_is_language_selected():
 func go_to_menu():
 	for member in get_tree().get_nodes_in_group("language_buttons"):
 		member.focus_mode = FOCUS_NONE
+	$LoadingScreen.translate_text($SaveManager.get_properties_value("Languages","is_english"))
 	$LoadingScreen.show()
 	$LoadingScreen.load(MENU_SCENE)
 

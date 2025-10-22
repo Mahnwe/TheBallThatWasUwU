@@ -135,18 +135,18 @@ rounded = true
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 820.0
-offset_top = 270.0
-offset_right = 1080.0
-offset_bottom = 339.0
+offset_left = 814.5001
+offset_top = 252.99998
+offset_right = 1074.5001
+offset_bottom = 322.0
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_fonts/font = ExtResource("4_lcj3d")
 theme_override_font_sizes/font_size = 50
 text = "Loading..."
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(947, 310.5)
-scale = Vector2(3.25676, 3.25)
+position = Vector2(942.5001, 288)
+scale = Vector2(3.7905416, 3.842105)
 texture = ExtResource("4_7cftd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
