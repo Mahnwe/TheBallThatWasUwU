@@ -169,10 +169,11 @@ scale = Vector2(0.717, 0.442)
 
 [node name="Pause" parent="Player" instance=ExtResource("5_35jiw")]
 visible = false
-offset_left = -733.259
-offset_top = -671.561
-offset_right = -733.259
-offset_bottom = -671.561
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -463.04047
+offset_top = -276.01807
+offset_right = 1456.9595
+offset_bottom = 803.98193
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 follow_viewport_enabled = true

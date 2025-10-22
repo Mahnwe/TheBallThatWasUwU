@@ -286,10 +286,11 @@ scale = Vector2(0.717345, 0.442253)
 
 [node name="Pause" parent="Player" instance=ExtResource("6_dk2oo")]
 visible = false
-offset_left = -733.259
-offset_top = -671.561
-offset_right = -733.259
-offset_bottom = -671.561
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -1006.4893
+offset_top = -549.45935
+offset_right = 913.5107
+offset_bottom = 530.54065
 
 [node name="ParalaxManager" parent="Player" instance=ExtResource("7_fuy54")]
 position = Vector2(1529.25, 1490.1)

@@ -67,7 +67,6 @@ func title_animation():
 		var grow_tween = get_tree().create_tween()
 		move_tween.bind_node(self)
 		grow_tween.bind_node(self)
-		print(actualize_lang_propertie)
 		if actualize_lang_propertie:
 			move_tween.tween_property($Label, "position", Vector2(785.5,247.0), 1.0)
 		else:

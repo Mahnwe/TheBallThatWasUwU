@@ -35,7 +35,6 @@ func _process(_delta):
 func check_medal():
 	if (self.get_parent().name == "Level1Button"):
 		var medal_check = $SaveManager.get_properties_value("medals", "level_one_medal")
-		print($SaveManager.get_properties_value("medals", "level_one_medal"))
 		if medal_check >= 2:
 			set_dev_medal_board()
 		else:

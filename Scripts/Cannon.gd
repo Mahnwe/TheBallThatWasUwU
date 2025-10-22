@@ -59,13 +59,13 @@ func remove_cannon_ball():
 	
 func pause_cannon():
 	set_process(false)
-	if(self.get_child(2) != null):
-		self.get_child(2).set_process(false)
+	if(self.get_child(3) != null):
+		self.get_child(3).set_process(false)
 	
 func unpause_cannon():
 	set_process(true)
-	if(self.get_child(2) != null):
-		self.get_child(2).set_process(true)
+	if(self.get_child(3) != null):
+		self.get_child(3).set_process(true)
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):

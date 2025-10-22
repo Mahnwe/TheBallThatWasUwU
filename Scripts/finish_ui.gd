@@ -130,6 +130,7 @@ func translate_text():
 	$CanvasLayer3/TimerPresentation.text = translate_config.get_value("TranslationFinish", "PlayerTimer")
 	$CanvasLayer/FinishNextLevelButton.text = translate_config.get_value("TranslationFinish", "NextLevelButton")
 	$CanvasLayer2/FinishMenuButton.text = translate_config.get_value("TranslationFinish", "ReturnButton")
+	$CanvasLayer4/LoadingScreen.translate_text($SaveManager.get_properties_value("Languages", "is_english"))
 	
 func change_font_size():
 	$CanvasLayer3/TimerPresentation.add_theme_font_size_override("font_size", 70)
