@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ebmg6jmbvqyo"
-path="res://.godot/imported/BackgroudParalaxLvl3.png-e88c47c17859ec3f72917be097544ab9.ctex"
+uid="uid://gfmm367cqurd"
+path="res://.godot/imported/CannonShootExplosion2.png-afe7f5dca9f1332a63a3e41e681f7b91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/BackgroundSprite/BackgroudParalaxLvl3.png"
-dest_files=["res://.godot/imported/BackgroudParalaxLvl3.png-e88c47c17859ec3f72917be097544ab9.ctex"]
+source_file="res://Arts/CanonSprite/CannonShootExplosion2.png"
+dest_files=["res://.godot/imported/CannonShootExplosion2.png-afe7f5dca9f1332a63a3e41e681f7b91.ctex"]
 
 [params]
 

@@ -167,20 +167,20 @@ follow_viewport_enabled = true
 
 [node name="Parallax2D" type="Parallax2D" parent="Player/ParallaxBackground"]
 scroll_scale = Vector2(0.05, 0.01)
-scroll_offset = Vector2(860, 463)
+scroll_offset = Vector2(860, 477)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D"]
-position = Vector2(-25, 32)
-scale = Vector2(1.7515, 1.724)
+position = Vector2(-25, 55)
+scale = Vector2(1.752, 1.684)
 texture = ExtResource("7_y3gnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
-position = Vector2(-497.668, 0.240154)
+position = Vector2(-497, 0.24)
 texture = ExtResource("7_y3gnq")
 flip_h = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player/ParallaxBackground/Parallax2D/Sprite2D"]
-position = Vector2(495.95, 0.240154)
+position = Vector2(495, 0.24)
 texture = ExtResource("7_y3gnq")
 flip_h = true
 

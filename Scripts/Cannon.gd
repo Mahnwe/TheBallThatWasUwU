@@ -15,6 +15,7 @@ signal player_dead_by_cannon_ball
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_volume()
+	$AnimatedSprite2D.hide()
 	if is_in_water:
 		$Sprite2D.self_modulate.a = 0.5
 	if flip_value != 0:
@@ -34,15 +35,18 @@ func shoot_cannon_ball():
 	cannon_ball_inst = cannon_ball.instantiate()
 	add_child(cannon_ball_inst)
 	$CannonSound.play()
+	$AnimatedSprite2D.show()
+	$AnimatedSprite2D.play()
 	cannon_ball_inst.ball_speed = ball_speed
 	cannon_ball_inst.cannon_ball_touch_object.connect(on_cannon_ball_exploding)
 	if is_going_left:
-		cannon_ball_inst.position.x = -61
-		cannon_ball_inst.position.y = -18
+		$AnimatedSprite2D.position = Vector2(-67, -17)
+		cannon_ball_inst.position = Vector2(-61,-18)
 		cannon_ball_inst.is_ball_going_left = true
 	else:
-		cannon_ball_inst.position.x = 61
-		cannon_ball_inst.position.y = -18
+		$AnimatedSprite2D.position = Vector2(67, -17)
+		$AnimatedSprite2D.rotation_degrees = 180.0
+		cannon_ball_inst.position = Vector2(61,-18)
 		cannon_ball_inst.is_ball_going_left = false
 		
 func on_cannon_ball_exploding():
@@ -59,14 +63,18 @@ func remove_cannon_ball():
 	
 func pause_cannon():
 	set_process(false)
-	if(self.get_child(3) != null):
-		self.get_child(3).set_process(false)
+	if(self.get_child(4) != null):
+		self.get_child(4).set_process(false)
 	
 func unpause_cannon():
 	set_process(true)
-	if(self.get_child(3) != null):
-		self.get_child(3).set_process(true)
+	if(self.get_child(4) != null):
+		self.get_child(4).set_process(true)
 		
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
 		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
+
+
+func _on_animated_sprite_2d_animation_finished():
+	$AnimatedSprite2D.hide()

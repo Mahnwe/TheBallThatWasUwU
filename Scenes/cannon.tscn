@@ -1,9 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://dirhjvk3xk4re"]
+[gd_scene load_steps=10 format=3 uid="uid://dirhjvk3xk4re"]
 
 [ext_resource type="Script" uid="uid://dl1lswymp2d7b" path="res://Scripts/Cannon.gd" id="1_8xnsj"]
 [ext_resource type="Texture2D" uid="uid://cfm6230iffbcn" path="res://Arts/CanonSprite/CanonSprite-removebg-preview.png" id="2_vs4g6"]
 [ext_resource type="AudioStream" uid="uid://bbdleh1w6l77i" path="res://Sound/Effects/CannonShootSound.wav" id="3_3uv2y"]
 [ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="4_ognwi"]
+[ext_resource type="Texture2D" uid="uid://dhlv7v1sul0k2" path="res://Arts/CanonSprite/CannonShootExplosion.png" id="5_vxj2g"]
+[ext_resource type="Texture2D" uid="uid://gfmm367cqurd" path="res://Arts/CanonSprite/CannonShootExplosion2.png" id="6_g8i8a"]
+[ext_resource type="Texture2D" uid="uid://cqfrx7yo12blv" path="res://Arts/CanonSprite/CannonShootExplosion3.png" id="7_t1e62"]
+[ext_resource type="Texture2D" uid="uid://b0lsaq3wglr58" path="res://Arts/CanonSprite/CannonShootExplosion4.png" id="8_vhcm6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6t7p5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vxj2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8i8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t1e62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vhcm6")
+}],
+"loop": false,
+"name": &"ExplosionShoot",
+"speed": 15.0
+}]
 
 [node name="Cannon" type="Node2D" groups=["cannon_group"]]
 script = ExtResource("1_8xnsj")
@@ -19,3 +43,11 @@ volume_db = 20.0
 max_distance = 800.0
 
 [node name="SaveManager" parent="." instance=ExtResource("4_ognwi")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(-67, -17)
+sprite_frames = SubResource("SpriteFrames_6t7p5")
+animation = &"ExplosionShoot"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

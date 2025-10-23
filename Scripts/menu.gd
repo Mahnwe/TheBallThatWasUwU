@@ -429,6 +429,8 @@ func _on_music_slider_gui_input(event):
 		is_controller_focused = true
 		if event.is_action_pressed("ui_accept"):
 			$MusicSlider.editable = true
+		if event.is_action_pressed("restart_save") and $MusicSlider.editable:
+			$MusicSlider.editable = false
 
 
 func _on_effect_slider_gui_input(event):
@@ -436,6 +438,9 @@ func _on_effect_slider_gui_input(event):
 		is_controller_focused = true
 		if event.is_action_pressed("ui_accept"):
 			$EffectSlider.editable = true
+		if event.is_action_pressed("restart_save") and $EffectSlider.editable:
+			$EffectSlider.editable = false
+			
 
 
 func _on_music_slider_focus_entered():
