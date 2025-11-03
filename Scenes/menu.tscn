@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bqcmrd3sgxvcs"]
+[gd_scene load_steps=73 format=3 uid="uid://bqcmrd3sgxvcs"]
 
 [ext_resource type="Script" uid="uid://cmjnkc3pwwe00" path="res://Scripts/menu.gd" id="1_ltdc4"]
 [ext_resource type="Texture2D" uid="uid://biyeoaxq7npbr" path="res://Arts/BackgroundSprite/MenuBackgroundSprite.png" id="2_lx18h"]
@@ -14,15 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://doy0e7jnl2886" path="res://Scenes/wall.tscn" id="8_ar47r"]
 [ext_resource type="PackedScene" uid="uid://cr47sovtmwvxp" path="res://Scenes/top_time.tscn" id="10_vv7ov"]
 [ext_resource type="PackedScene" uid="uid://b4g2vd7jaacyr" path="res://Scenes/bug.tscn" id="11_4dr7d"]
-[ext_resource type="Texture2D" uid="uid://bdfulll6h4t4b" path="res://Arts/ChestSprite/ValidChestSprite.png" id="11_d77ms"]
 [ext_resource type="Texture2D" uid="uid://cxpheb5gc4yxu" path="res://Arts/CrossCloseSprite/CloseButton.png" id="11_p1e1o"]
-[ext_resource type="Script" uid="uid://cat0vjr1aycp1" path="res://Scripts/chest_validator.gd" id="12_3p34a"]
 [ext_resource type="Texture2D" uid="uid://c8ga2v1atuxdc" path="res://Arts/BackgroundSprite/BrownBackgroundButtonSprite.png" id="12_747ic"]
 [ext_resource type="AudioStream" uid="uid://bf3f1t5hsvtmq" path="res://Sound/Musics/MenuMusic.mp3" id="12_m2qtk"]
 [ext_resource type="PackedScene" uid="uid://c07mapa63mxm2" path="res://Scenes/level_validator.tscn" id="13_h63v2"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="13_owrtn"]
 [ext_resource type="Texture2D" uid="uid://dppm116nblrv2" path="res://Arts/DevSprite/Dev-Lurk.png" id="14_45jmy"]
 [ext_resource type="PackedScene" uid="uid://dj8cpxrhnlvkp" path="res://Scenes/bubble_tooltip.tscn" id="16_gkf7k"]
+[ext_resource type="PackedScene" uid="uid://cjfnpqeq6m5x7" path="res://Scenes/chest_validator.tscn" id="16_v3l5l"]
 [ext_resource type="Texture2D" uid="uid://dmmixb0c26f0w" path="res://Arts/AbilitySprite/SpriteAbility-removebg-preview.png" id="17_ukqqs"]
 [ext_resource type="PackedScene" uid="uid://bpsfdngntxqhn" path="res://Scenes/mute_button.tscn" id="18_danav"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="18_pde1v"]
@@ -306,8 +305,8 @@ offset_top = 13.0
 offset_right = 1417.0
 offset_bottom = 208.0
 theme_override_colors/default_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.92941177)
+theme_override_colors/font_shadow_color = Color(0.05882353, 0.05882353, 0.05882353, 0.46666667)
 theme_override_constants/shadow_outline_size = 5
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
@@ -404,12 +403,10 @@ offset_top = 40.234
 offset_right = -4.59775
 offset_bottom = 40.234
 
-[node name="ChestValidator" type="Sprite2D" parent="Level1Button"]
+[node name="ChestValidator" parent="Level1Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(75.0966, -2.35959)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
-script = ExtResource("12_3p34a")
+position = Vector2(74.33036, -2.8436038)
+scale = Vector2(0.33060765, 0.46000388)
 
 [node name="LevelValidator" parent="Level1Button" instance=ExtResource("13_h63v2")]
 visible = false
@@ -455,12 +452,10 @@ offset_top = 39.8072
 offset_right = -4.99706
 offset_bottom = 39.8073
 
-[node name="ChestValidator" type="Sprite2D" parent="Level2Button"]
+[node name="ChestValidator" parent="Level2Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(75.0966, -2.35959)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
-script = ExtResource("12_3p34a")
+position = Vector2(74.33036, -2.8436038)
+scale = Vector2(0.33060765, 0.46000388)
 
 [node name="LevelValidator" parent="Level2Button" instance=ExtResource("13_h63v2")]
 visible = false
@@ -508,12 +503,10 @@ offset_top = 39.7508
 offset_right = -5.74712
 offset_bottom = 39.7507
 
-[node name="ChestValidator" type="Sprite2D" parent="Level3Button"]
+[node name="ChestValidator" parent="Level3Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(75.0966, -2.35959)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
-script = ExtResource("12_3p34a")
+position = Vector2(74.33036, -2.8436038)
+scale = Vector2(0.33060765, 0.46000388)
 
 [node name="LevelValidator" parent="Level3Button" instance=ExtResource("13_h63v2")]
 visible = false
@@ -562,12 +555,10 @@ offset_top = 39.6903
 offset_right = -4.98084
 offset_bottom = 39.6903
 
-[node name="ChestValidator" type="Sprite2D" parent="Level4Button"]
+[node name="ChestValidator" parent="Level4Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(75.0966, -2.35959)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
-script = ExtResource("12_3p34a")
+position = Vector2(74.33036, -2.8436038)
+scale = Vector2(0.33060765, 0.46000388)
 
 [node name="LevelValidator" parent="Level4Button" instance=ExtResource("13_h63v2")]
 visible = false
@@ -615,12 +606,10 @@ offset_top = 39.2062
 offset_right = -5.36399
 offset_bottom = 39.2062
 
-[node name="ChestValidator" type="Sprite2D" parent="Level5Button"]
+[node name="ChestValidator" parent="Level5Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(75.0966, -2.35959)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
-script = ExtResource("12_3p34a")
+position = Vector2(74.33036, -2.8436038)
+scale = Vector2(0.33060765, 0.46000388)
 
 [node name="LevelValidator" parent="Level5Button" instance=ExtResource("13_h63v2")]
 visible = false
@@ -668,12 +657,10 @@ offset_top = 38.7222
 offset_right = -3.06513
 offset_bottom = 38.7222
 
-[node name="ChestValidator" type="Sprite2D" parent="Level6Button"]
+[node name="ChestValidator" parent="Level6Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(75.0966, -2.35959)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
-script = ExtResource("12_3p34a")
+position = Vector2(74.33036, -2.8436038)
+scale = Vector2(0.33060765, 0.46000388)
 
 [node name="LevelValidator" parent="Level6Button" instance=ExtResource("13_h63v2")]
 visible = false
@@ -722,10 +709,10 @@ offset_bottom = 39.6902
 
 [node name="Label" type="Label" parent="Level7Button"]
 layout_mode = 1
-offset_left = 3.83142
-offset_top = -29.0416
-offset_right = 114.832
-offset_bottom = -1.04165
+offset_left = 8.045977
+offset_top = -23.233303
+offset_right = 119.046555
+offset_bottom = 4.7666454
 scale = Vector2(0.587489, 0.792687)
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -736,11 +723,10 @@ theme_override_fonts/font = ExtResource("18_pde1v")
 theme_override_font_sizes/font_size = 20
 text = "Secret level"
 
-[node name="ChestValidator" type="Sprite2D" parent="Level7Button"]
+[node name="ChestValidator" parent="Level7Button" instance=ExtResource("16_v3l5l")]
 visible = false
-position = Vector2(78.5441, 1.45208)
-scale = Vector2(0.295977, 0.462514)
-texture = ExtResource("11_d77ms")
+position = Vector2(75.09662, -1.8755798)
+scale = Vector2(0.30292964, 0.4393039)
 
 [node name="LevelValidator" parent="Level7Button" instance=ExtResource("13_h63v2")]
 visible = false

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjfnpqeq6m5x7"]
+
+[ext_resource type="Texture2D" uid="uid://bdfulll6h4t4b" path="res://Arts/ChestSprite/ValidChestSprite.png" id="1_bjcbh"]
+[ext_resource type="Script" uid="uid://cat0vjr1aycp1" path="res://Scripts/chest_validator.gd" id="2_c782p"]
+[ext_resource type="PackedScene" uid="uid://6ym6lk470ii" path="res://Scenes/save_manager.tscn" id="3_7u4kp"]
+
+[node name="ChestValidator" type="Sprite2D"]
+scale = Vector2(1, 1.1)
+texture = ExtResource("1_bjcbh")
+script = ExtResource("2_c782p")
+
+[node name="SaveManager" parent="." instance=ExtResource("3_7u4kp")]
