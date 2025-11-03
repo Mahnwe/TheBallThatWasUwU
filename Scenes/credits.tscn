@@ -206,7 +206,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("6_803yc")
 theme_override_font_sizes/font_size = 40
-text = "                                   Pani"
+text = "                        Pani, Manawé"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2

@@ -88,16 +88,10 @@ func jump():
 		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
-	if velocity.x > 0:
+	if velocity.x >= 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_h = false
 		$Raycast.scale.x = -1
-		$AnimatedSprite2D.play()
-		await $AnimatedSprite2D.animation_finished
-	if velocity.x == 0:
-		$AnimatedSprite2D.animation = "jump"
-		$AnimatedSprite2D.flip_h = false
-		$Raycast.scale.x = 1
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
 	player_jumped.emit()
@@ -164,13 +158,15 @@ func check_if_player_is_on_floor():
 		$SlideDustAnimRight.hide()
 		if !has_grounded and !colliding_wall():
 			$JumpDustAnim.show()
+			$AnimatedSprite2D.animation = "land"
 			$JumpDustAnim.play()
+			$AnimatedSprite2D.play()
 		can_dash = true
 		number_of_jumps = 0
-		if velocity.x == 0:
+		if velocity.x == 0 and velocity.y == 0 and has_grounded:
 			$AnimatedSprite2D.animation = "idle"
 			$AnimatedSprite2D.play()
-		if velocity.x != 0:
+		if velocity.x != 0 and has_grounded:
 			if velocity.x < 0:
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = true
@@ -339,6 +335,18 @@ func player_hit_bumper(bumper_rotation, velocity_y, velocity_x):
 			velocity = Vector2(-speed, velocity_y-50)
 	$JustBumpTimer.start()
 	current_state = state.AIRBORNE
+	if velocity.x < 0:
+		$AnimatedSprite2D.animation = "land"
+		$AnimatedSprite2D.flip_h = true
+		$Raycast.scale.x = 1
+		$AnimatedSprite2D.play()
+		await $AnimatedSprite2D.animation_finished
+	if velocity.x >= 0:
+		$AnimatedSprite2D.animation = "land"
+		$AnimatedSprite2D.flip_h = false
+		$Raycast.scale.x = -1
+		$AnimatedSprite2D.play()
+		await $AnimatedSprite2D.animation_finished
 
 
 func _on_just_bump_timer_timeout():

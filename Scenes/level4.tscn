@@ -544,17 +544,17 @@ scale = Vector2(0.266282, 0.192662)
 [node name="Cannon4" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-3941, -1506)
 flip_value = 1
-ball_speed = 8
+ball_speed = 10
 
 [node name="Cannon5" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-3321, -1260)
 is_going_left = true
-ball_speed = 8
+ball_speed = 10
 
 [node name="Cannon6" parent="." instance=ExtResource("20_lku4j")]
 position = Vector2(-3953, -1034)
 flip_value = 1
-ball_speed = 8
+ball_speed = 10
 
 [node name="SavePoint" parent="." instance=ExtResource("21_w7q8s")]
 position = Vector2(-4130, -1279)

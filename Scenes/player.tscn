@@ -146,6 +146,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("14_3dbbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8m8wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6kd6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8m8wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3dbbo")
+}],
+"loop": false,
+"name": &"land",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("27_6b312")
 }],
 "loop": true,
@@ -166,7 +186,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"stay_in_air",
-"speed": 5.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -414,7 +434,7 @@ visibility_layer = 2
 position = Vector2(212.5, 232)
 scale = Vector2(1.14, 2.2)
 sprite_frames = SubResource("SpriteFrames_b2da6")
-animation = &"stay"
+animation = &"stay_in_air"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2
