@@ -389,6 +389,7 @@ func _on_reset_bar_reset_save_progress_finished():
 	if save_position_x == start_position_x:
 		restart_scene()
 	else:
+		$Player/ResetBar.get_child(1).play()
 		$Player.set_physics_process(false)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x

@@ -47,8 +47,3 @@ func set_reset_level_progress_value(value):
 func set_volume():
 	for member in get_tree().get_nodes_in_group("sound_effect_group"):
 		member.volume_db = $SaveManager.get_properties_value("effectVolume","effectVolumeSet")
-
-
-func _on_texture_progress_bar_value_changed(value):
-	if value >= 90 and is_reset_level_pressed or is_reset_save_pressed:
-		$ResetSound.play()

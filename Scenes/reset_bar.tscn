@@ -30,5 +30,3 @@ tint_progress = Color(0.819608, 0.027451, 0.0352941, 1)
 stream = ExtResource("4_54yt7")
 
 [node name="SaveManager" parent="." instance=ExtResource("5_5vaio")]
-
-[connection signal="value_changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

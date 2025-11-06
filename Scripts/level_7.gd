@@ -243,6 +243,7 @@ func _on_cannon_player_dead_by_cannon_ball():
 	disable_cannon_groups()
 	play_dead_sound()
 	display_dead_sprite_and_pause_timer_until_respawn("BOOM !")
+	save_deaths_stat()
 	await get_tree().create_timer(0.5).timeout;
 	if save_position_x == start_position_x:
 		call_deferred("restart_scene")
@@ -505,6 +506,7 @@ func _on_reset_bar_reset_save_progress_finished():
 	if save_position_x == start_position_x:
 		restart_scene()
 	else:
+		$Player/ResetBar.get_child(1).play()
 		$Player.set_physics_process(false)
 		$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(false)
 		$Player.position.x = save_position_x

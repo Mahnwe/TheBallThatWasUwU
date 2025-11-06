@@ -434,7 +434,7 @@ visibility_layer = 2
 position = Vector2(212.5, 232)
 scale = Vector2(1.14, 2.2)
 sprite_frames = SubResource("SpriteFrames_b2da6")
-animation = &"stay_in_air"
+animation = &"stay"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2
