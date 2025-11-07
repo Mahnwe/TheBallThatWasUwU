@@ -23,6 +23,7 @@ func check_for_explosion_animation():
 		$AnimatedSprite2D.play()
 		await $AnimatedSprite2D.animation_finished
 		drop_exploded = true
+		$AnimatedSprite2D.animation = "AcidDrop"
 		var random = RandomNumberGenerator.new()
 		random.randomize()
 		$WaitTimer.start(random.randf())

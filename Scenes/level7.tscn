@@ -287,10 +287,10 @@ scale = Vector2(0.717345, 0.442253)
 [node name="Pause" parent="Player" instance=ExtResource("6_dk2oo")]
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -1006.4893
-offset_top = -549.45935
-offset_right = 913.5107
-offset_bottom = 530.54065
+offset_left = -733.2595
+offset_top = -671.56085
+offset_right = 1186.7405
+offset_bottom = 408.43915
 
 [node name="ParalaxManager" parent="Player" instance=ExtResource("7_fuy54")]
 position = Vector2(1529.25, 1490.1)
@@ -367,6 +367,7 @@ scale = Vector2(0.4, 1.2)
 texture = ExtResource("10_wypka")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
+position = Vector2(0, -0.000101725265)
 curve = SubResource("Curve2D_dk2oo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D/Path2D"]
@@ -388,6 +389,7 @@ scale = Vector2(0.4, 1.2)
 texture = ExtResource("10_wypka")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D2"]
+position = Vector2(0, -0.000101725265)
 curve = SubResource("Curve2D_rnbej")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D2/Path2D"]
@@ -409,6 +411,7 @@ scale = Vector2(0.4, 1.2)
 texture = ExtResource("10_wypka")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D3"]
+position = Vector2(0, -0.000101725265)
 curve = SubResource("Curve2D_u17fo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D3/Path2D"]
@@ -2529,7 +2532,7 @@ stream = ExtResource("78_1nxg2")
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
-[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="return_to_menu_held" from="Player/Pause" to="." method="_on_pause_return_to_menu_held"]
 [connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
 [connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]

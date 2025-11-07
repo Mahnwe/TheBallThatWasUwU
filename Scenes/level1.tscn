@@ -95,10 +95,10 @@ scale = Vector2(0.717345, 0.442253)
 [node name="Pause" parent="Player" instance=ExtResource("2_6xvap")]
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -733.25946
-offset_top = -671.561
+offset_left = -733.2595
+offset_top = -671.56085
 offset_right = 1186.7405
-offset_bottom = 408.43903
+offset_bottom = 408.43915
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 follow_viewport_enabled = true
@@ -285,10 +285,6 @@ position = Vector2(100, -75)
 rotation = -1.60125
 scale = Vector2(0.234579, 0.207198)
 
-[node name="Spike7" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(266, -240)
-scale = Vector2(0.288368, 0.185376)
-
 [node name="platform9" parent="." instance=ExtResource("7_v154u")]
 position = Vector2(58, -703)
 scale = Vector2(0.889274, 0.977378)
@@ -304,9 +300,9 @@ rotation = -1.5708
 scale = Vector2(0.920001, 1.87116)
 
 [node name="Spike8" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(761, -456)
+position = Vector2(779.99994, -443)
 rotation = -1.58013
-scale = Vector2(0.239631, 0.319999)
+scale = Vector2(0.239631, 0.1603823)
 
 [node name="Spike9" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(709, -966)
@@ -566,10 +562,6 @@ scale = Vector2(0.250571, 1.72)
 [node name="Spike36" parent="." instance=ExtResource("6_mp22g")]
 position = Vector2(-1869, 494)
 scale = Vector2(0.280002, 0.2)
-
-[node name="Spike37" parent="." instance=ExtResource("6_mp22g")]
-position = Vector2(639, -616)
-scale = Vector2(0.320001, 0.220453)
 
 [node name="Finish" parent="." instance=ExtResource("11_r8tlj")]
 z_index = 1
@@ -1007,7 +999,7 @@ stream = ExtResource("40_8wyvm")
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
-[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="return_to_menu_held" from="Player/Pause" to="." method="_on_pause_return_to_menu_held"]
 [connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
 [connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]
@@ -1017,7 +1009,6 @@ stream = ExtResource("40_8wyvm")
 [connection signal="spike_hit" from="Spike4" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike5" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike6" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Spike7" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike8" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike9" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike10" to="." method="_on_spike_spike_hit"]
@@ -1045,7 +1036,6 @@ stream = ExtResource("40_8wyvm")
 [connection signal="spike_hit" from="Spike34" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike35" to="." method="_on_spike_spike_hit"]
 [connection signal="spike_hit" from="Spike36" to="." method="_on_spike_spike_hit"]
-[connection signal="spike_hit" from="Spike37" to="." method="_on_spike_spike_hit"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_next_level_pressed"]
 [connection signal="return_to_menu_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_return_to_menu_pressed"]

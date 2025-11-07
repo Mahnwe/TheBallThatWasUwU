@@ -1,17 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://cl7gj22hnfxog"]
+[gd_scene load_steps=18 format=3 uid="uid://cl7gj22hnfxog"]
 
 [ext_resource type="Script" uid="uid://bvt5htruxyltu" path="res://Scripts/finish_ui.gd" id="1_8cftm"]
 [ext_resource type="Texture2D" uid="uid://dfyccu6jjdl6m" path="res://Arts/KeyboardControls/Fkey-removebg-preview.png" id="2_fgywl"]
 [ext_resource type="Texture2D" uid="uid://b2y8j40kibhyg" path="res://Arts/KeyboardControls/Jkey-removebg-preview.png" id="3_yfqki"]
 [ext_resource type="Texture2D" uid="uid://dktn1xtecq0uo" path="res://Arts/ControllerControls/RightButton-Photoroom.png" id="4_6ltl3"]
 [ext_resource type="Texture2D" uid="uid://bydkn62u3q4p1" path="res://Arts/ControllerControls/RightButtonPS5-removebg-preview.png" id="5_nugpk"]
-[ext_resource type="Texture2D" uid="uid://c4vdd0l6wp1fn" path="res://Arts/ControllerControls/RightButtonSwitch-removebg-preview.png" id="6_uhy2h"]
-[ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="7_m8y2d"]
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="7_qv8jw"]
 [ext_resource type="Texture2D" uid="uid://ci3ltgm0c8j2r" path="res://Arts/ControllerControls/ShareController-removebg-preview.png" id="8_iicse"]
-[ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="9_j43j2"]
 [ext_resource type="Texture2D" uid="uid://c8ga2v1atuxdc" path="res://Arts/BackgroundSprite/BrownBackgroundButtonSprite.png" id="9_q1i0j"]
-[ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="10_a00tp"]
+[ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="10_iaoqw"]
+[ext_resource type="Texture2D" uid="uid://dd5gsplolw7pp" path="res://Arts/ControllerControls/ShareXbox-removebg-preview.png" id="11_iaoqw"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="11_p5o4v"]
 [ext_resource type="Material" uid="uid://dqtxmq5k4o7yo" path="res://Ressources/Material/blur.tres" id="12_qmenm"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="13_rf1vx"]
@@ -67,27 +65,23 @@ flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton"]
 visible = false
-position = Vector2(99.2229, 241.855)
+position = Vector2(131.60088, 235.43369)
 scale = Vector2(0.225439, 0.246598)
 texture = ExtResource("2_fgywl")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
-position = Vector2(334.109, 0)
+position = Vector2(356.7377, -0.0002648722)
 texture = ExtResource("3_yfqki")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D"]
-position = Vector2(726.003, -0.704733)
+position = Vector2(755.1728, -0.00017309189)
 scale = Vector2(3.5172, 3.99607)
 texture = ExtResource("4_6ltl3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D/Sprite2D2"]
-position = Vector2(100.518, 0.490944)
+position = Vector2(118.55081, -1.54078e-05)
 scale = Vector2(0.743998, 0.784597)
 texture = ExtResource("5_nugpk")
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/FinishNextLevelButton/Sprite2D/Sprite2D2"]
-position = Vector2(215.771, 0)
-texture = ExtResource("6_uhy2h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
 z_index = -1
@@ -130,22 +124,19 @@ flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton"]
 visible = false
-position = Vector2(138.912, 246.135)
-scale = Vector2(0.100996, 0.101116)
-texture = ExtResource("7_m8y2d")
+position = Vector2(183.82335, 240.78438)
+scale = Vector2(0.24612507, 0.2883709)
+texture = ExtResource("10_iaoqw")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D"]
-position = Vector2(814.738, -37.5349)
-scale = Vector2(7.24169, 5.6773)
-texture = ExtResource("8_iicse")
+position = Vector2(386.1655, -3.7109547)
+scale = Vector2(2.1814973, 1.8583221)
+texture = ExtResource("11_iaoqw")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D/Sprite2D2"]
-position = Vector2(119.969, -0.0991861)
-texture = ExtResource("9_j43j2")
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2/FinishMenuButton/Sprite2D/Sprite2D2"]
-position = Vector2(242.752, -0.0991861)
-texture = ExtResource("10_a00tp")
+position = Vector2(151.73026, -1.9970136)
+scale = Vector2(1.0418975, 1.0172987)
+texture = ExtResource("8_iicse")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer2"]
 z_index = -1

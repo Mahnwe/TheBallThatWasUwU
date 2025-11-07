@@ -1,12 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://c26rjdt07ubrq"]
+[gd_scene load_steps=68 format=3 uid="uid://c26rjdt07ubrq"]
 
 [ext_resource type="Script" uid="uid://bwovfbd2j20uu" path="res://Scripts/player.gd" id="1_24gvc"]
 [ext_resource type="PackedScene" uid="uid://c5pqy18mxsyby" path="res://Scenes/ui.tscn" id="2_rhkkp"]
 [ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="3_ytwi2"]
 [ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="4_5dwnd"]
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="5_dqha1"]
-[ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="6_fuqpw"]
-[ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="7_dfmc8"]
+[ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="8_n1x1j"]
 [ext_resource type="Texture2D" uid="uid://px1fstycc233" path="res://Arts/UwUBallDash/UwUDash2.png" id="9_8xj1c"]
 [ext_resource type="Texture2D" uid="uid://dsitgya4nkb5a" path="res://Arts/UwUBallDash/UwUDash3.png" id="10_x744a"]
 [ext_resource type="Texture2D" uid="uid://pgbtaggf63co" path="res://Arts/UwUBallSprite/UwUDead.png" id="11_ni8x3"]
@@ -406,28 +405,23 @@ scale = Vector2(1.84003, 2.47263)
 texture = ExtResource("50_c1k8q")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands"]
-position = Vector2(116.073, 71.5432)
+position = Vector2(105.51497, 117.23871)
 scale = Vector2(0.351278, 0.383668)
 texture = ExtResource("3_ytwi2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
-position = Vector2(-148.747, -1.83167)
+position = Vector2(-3.0341158, -115.49222)
 texture = ExtResource("4_5dwnd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
-position = Vector2(-318.444, 5.4939)
+position = Vector2(-223.92354, -113.271515)
 scale = Vector2(0.571687, 0.511652)
 texture = ExtResource("5_dqha1")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
-position = Vector2(-37.8683, 126.334)
-scale = Vector2(0.506267, 0.496152)
-texture = ExtResource("6_fuqpw")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Camera2D/CanvasLayer/Commands/Sprite2D3"]
-position = Vector2(-287.176, 126.334)
-scale = Vector2(0.442988, 0.332983)
-texture = ExtResource("7_dfmc8")
+position = Vector2(-223.9237, 9.438964)
+scale = Vector2(0.24473636, 0.20835908)
+texture = ExtResource("8_n1x1j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2

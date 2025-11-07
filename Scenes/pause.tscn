@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bbctegcfntwoe"]
+[gd_scene load_steps=30 format=3 uid="uid://bbctegcfntwoe"]
 
 [ext_resource type="Script" uid="uid://c7i1btsy1tsf1" path="res://Scripts/pause.gd" id="1_03lrq"]
 [ext_resource type="Texture2D" uid="uid://dr713eli87kg0" path="res://Arts/KeyboardControls/EscapeKeyboard-removebg-preview.png" id="1_t2voc"]
@@ -6,16 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://o33afqm6if2x" path="res://Arts/CloudButtonSprite/CloudButton.png" id="2_h85by"]
 [ext_resource type="Texture2D" uid="uid://c8ga2v1atuxdc" path="res://Arts/BackgroundSprite/BrownBackgroundButtonSprite.png" id="3_5ricp"]
 [ext_resource type="Texture2D" uid="uid://dd5gsplolw7pp" path="res://Arts/ControllerControls/ShareXbox-removebg-preview.png" id="3_xjpr8"]
-[ext_resource type="Texture2D" uid="uid://c6p5gufsd8e34" path="res://Arts/ControllerControls/-SwitchController-removebg-preview.png" id="4_6cx23"]
 [ext_resource type="Texture2D" uid="uid://doposqf4xd8cw" path="res://Arts/KeyboardControls/Tabkey-removebg-preview.png" id="5_d1asp"]
-[ext_resource type="Texture2D" uid="uid://doifl1w5xb306" path="res://Arts/KeyboardControls/Circumflexkey-removebg-preview.png" id="6_3gj4a"]
 [ext_resource type="Texture2D" uid="uid://c83bhjcbi4555" path="res://Arts/ControllerControls/SelectController-removebg-preview.png" id="7_he205"]
 [ext_resource type="Texture2D" uid="uid://chi8fx5di1r7n" path="res://Arts/ControllerControls/Menu-removebg-preview.png" id="8_rgm4r"]
-[ext_resource type="Texture2D" uid="uid://bwv5alhg5rklv" path="res://Arts/ControllerControls/Switch+-removebg-preview.png" id="9_set0a"]
+[ext_resource type="PackedScene" uid="uid://bddptp8jgbmec" path="res://Scenes/reset_bar.tscn" id="9_dj5st"]
 [ext_resource type="PackedScene" uid="uid://cp0mu2e8kcon" path="res://Scenes/commands_ui.tscn" id="10_3eqxx"]
 [ext_resource type="Texture2D" uid="uid://dq7p41nue3lsr" path="res://Arts/KeyboardControls/Ckey-removebg-preview.png" id="11_felfj"]
-[ext_resource type="Texture2D" uid="uid://bifgwrqjt20is" path="res://Arts/KeyboardControls/Commakey-removebg-preview.png" id="12_nirwk"]
 [ext_resource type="AudioStream" uid="uid://bcvsiyte7tk2m" path="res://Sound/Effects/ButtonEffect.wav" id="12_r111m"]
+[ext_resource type="Texture2D" uid="uid://bk2wylmt7w0gm" path="res://Arts/ControllerControls/L1ButtonPS5-Photoroom.png" id="13_5ricp"]
 [ext_resource type="Texture2D" uid="uid://egs8r22onfmg" path="res://Arts/ControllerControls/LBbutton-removebg-preview.png" id="13_6ho6x"]
 [ext_resource type="FontFile" uid="uid://cdlokkgcw3yay" path="res://Ressources/Fonts/Cal_Sans/CalSans-Regular.ttf" id="16_isk47"]
 [ext_resource type="FontFile" uid="uid://choxg440w6043" path="res://Ressources/Fonts/Rubik_Bubbles/RubikBubbles-Regular.ttf" id="16_mkub3"]
@@ -129,23 +127,27 @@ flat = true
 
 [node name="ReturnButtonsTooltip" type="Sprite2D" parent="ReturnLayer/ReturnToMenu"]
 visible = false
-z_index = 5
-position = Vector2(122.436, 119.186)
-scale = Vector2(0.361033, 0.286455)
-texture = ExtResource("2_g1xuu")
-
-[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip"]
-position = Vector2(156.002, -0.407177)
-texture = ExtResource("3_xjpr8")
+position = Vector2(101.28206, 109.30232)
+scale = Vector2(0.132792, 0.138195)
+texture = ExtResource("5_d1asp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip"]
-position = Vector2(303.514, 2.62105)
-texture = ExtResource("4_6cx23")
+position = Vector2(690.3026, -16.82834)
+scale = Vector2(2.43545, 2.08033)
+texture = ExtResource("2_g1xuu")
 
-[node name="Sprite2D3" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip"]
-position = Vector2(-151.653, -1.68123)
-scale = Vector2(0.198088, 0.206318)
-texture = ExtResource("1_t2voc")
+[node name="Sprite2D" type="Sprite2D" parent="ReturnLayer/ReturnToMenu/ReturnButtonsTooltip/Sprite2D2"]
+position = Vector2(-122.8898, 10.111567)
+scale = Vector2(0.79448766, 0.78358877)
+texture = ExtResource("3_xjpr8")
+
+[node name="ResetBar" parent="ReturnLayer/ReturnToMenu" instance=ExtResource("9_dj5st")]
+layout_mode = 1
+offset_left = 256.41028
+offset_top = -2.9069786
+offset_right = 93.2052
+offset_bottom = 46.930298
+scale = Vector2(0.26963145, 0.23843594)
 
 [node name="ContinueLayer" type="CanvasLayer" parent="."]
 
@@ -188,28 +190,20 @@ flat = true
 
 [node name="ContinueButtonsTooltip" type="Sprite2D" parent="ContinueLayer/Continue"]
 visible = false
-position = Vector2(57.6923, 118.605)
-scale = Vector2(0.132792, 0.138195)
-texture = ExtResource("5_d1asp")
-
-[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip"]
-position = Vector2(412.936, -2.17391)
-scale = Vector2(0.81588, 0.81726)
-texture = ExtResource("6_3gj4a")
-
-[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip"]
-position = Vector2(759.098, -16.7662)
-scale = Vector2(2.43545, 2.08033)
+z_index = 5
+position = Vector2(198.71796, 109.88372)
+scale = Vector2(0.361033, 0.286455)
 texture = ExtResource("7_he205")
 
-[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip/Sprite2D2"]
-position = Vector2(145.18, 4.16473)
-scale = Vector2(0.466761, 0.50914)
+[node name="Sprite2D" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip"]
+position = Vector2(-150.92021, 8.11855)
+scale = Vector2(0.44387978, 0.44935682)
 texture = ExtResource("8_rgm4r")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip/Sprite2D2"]
-position = Vector2(273.346, 4.16475)
-texture = ExtResource("9_set0a")
+[node name="Sprite2D3" type="Sprite2D" parent="ContinueLayer/Continue/ContinueButtonsTooltip"]
+position = Vector2(-310.71808, 6.0889125)
+scale = Vector2(0.198088, 0.206318)
+texture = ExtResource("1_t2voc")
 
 [node name="CommandLayer" type="CanvasLayer" parent="."]
 
@@ -262,17 +256,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CommandButtonsTooltip" type="Sprite2D" parent="CommandLayer/Command"]
 visible = false
-position = Vector2(75, 112.791)
+position = Vector2(82.05129, 112.20932)
 scale = Vector2(0.173279, 0.183928)
 texture = ExtResource("11_felfj")
 
 [node name="Sprite2D" type="Sprite2D" parent="CommandLayer/Command/CommandButtonsTooltip"]
-position = Vector2(392.362, 2.40719)
-scale = Vector2(0.696075, 0.624683)
-texture = ExtResource("12_nirwk")
+position = Vector2(702.88306, -6.321974)
+scale = Vector2(4.650275, 3.0778131)
+texture = ExtResource("13_5ricp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CommandLayer/Command/CommandButtonsTooltip"]
-position = Vector2(811.679, -7.22157)
+position = Vector2(336.64404, 3.1610537)
 scale = Vector2(2.12367, 1.79211)
 texture = ExtResource("13_6ho6x")
 
@@ -452,10 +446,12 @@ z_index = 20
 
 [node name="SaveManager" parent="." instance=ExtResource("23_dj5st")]
 
+[connection signal="button_down" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_button_down"]
+[connection signal="button_up" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_button_up"]
 [connection signal="focus_entered" from="ReturnLayer/ReturnToMenu" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_gui_input"]
 [connection signal="mouse_exited" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_mouse_exited"]
-[connection signal="pressed" from="ReturnLayer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="return_menu_progress_finished" from="ReturnLayer/ReturnToMenu/ResetBar" to="." method="_on_reset_bar_return_menu_progress_finished"]
 [connection signal="focus_entered" from="ContinueLayer/Continue" to="." method="_on_button_focus_entered"]
 [connection signal="gui_input" from="ContinueLayer/Continue" to="." method="_on_continue_gui_input"]
 [connection signal="mouse_exited" from="ContinueLayer/Continue" to="." method="_on_continue_mouse_exited"]

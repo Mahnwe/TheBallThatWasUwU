@@ -4,7 +4,7 @@ const MENU_SCENE : String = "res://Scenes/menu.tscn"
 
 var is_controller_focused
 signal continue_is_clicked
-signal return_to_menu_is_clicked
+signal return_to_menu_held
 @export var is_commands_display = false
 @export var is_paused = false
 
@@ -30,6 +30,7 @@ func _ready():
 func _process(_delta):
 	if is_paused:
 		title_animation()
+		check_for_button_holding()
 	display_tooltip_when_button_focus()
 	if !is_paused and Input.is_action_just_pressed("close_commands"):
 		pass
@@ -52,10 +53,23 @@ func wait_for_focus():
 			if member.is_hovered():
 				member.grab_focus()
 				is_controller_focused = true
-
-func _on_return_to_menu_pressed():
+				
+func check_for_button_holding():
+	if is_paused and !is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
+		$ReturnLayer/ReturnToMenu/ResetBar.is_return_menu_pressed = true
+	if is_paused and !is_commands_display and Input.is_action_just_released("menu_when_finish"):
+		$ReturnLayer/ReturnToMenu/ResetBar.is_return_menu_pressed = false
+		
+func _on_return_to_menu_button_down():
 	if !is_commands_display:
-		return_to_menu_is_clicked.emit()
+		$ReturnLayer/ReturnToMenu/ResetBar.is_return_menu_pressed = true
+	else:
+		pass
+
+
+func _on_return_to_menu_button_up():
+	if !is_commands_display:
+		$ReturnLayer/ReturnToMenu/ResetBar.is_return_menu_pressed = false
 	else:
 		pass
 
@@ -198,6 +212,7 @@ func _on_effect_slider_mouse_exited():
 func _on_music_slider_value_changed(value):
 	if !$SoundLayer/MusicMuteButton.is_mute:
 		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", value)
+		$ButtonSound.play()
 		match value:
 			0.0:
 				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -50)
@@ -228,6 +243,7 @@ func _on_music_slider_value_changed(value):
 func _on_effect_slider_value_changed(value):
 	if !$SoundLayer/SoundMuteButton.is_mute:
 		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", value)
+		$ButtonSound.play()
 		match value:
 			0.0:
 				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -50)
@@ -412,3 +428,7 @@ func _on_loading_screen_visibility_changed():
 	$SoundLayer/MusicSlider.focus_mode = FOCUS_NONE
 	$SoundLayer/SoundMuteButton.focus_mode = FOCUS_NONE
 	$SoundLayer/EffectSlider.focus_mode = FOCUS_NONE
+
+
+func _on_reset_bar_return_menu_progress_finished():
+	return_to_menu_held.emit()

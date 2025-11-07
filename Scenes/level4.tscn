@@ -161,10 +161,10 @@ scale = Vector2(0.717345, 0.442253)
 [node name="Pause" parent="Player" instance=ExtResource("3_cxj1m")]
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -733.25964
-offset_top = -610.51025
-offset_right = 1186.7404
-offset_bottom = 469.48975
+offset_left = -733.2595
+offset_top = -671.56085
+offset_right = 1186.7405
+offset_bottom = 408.43915
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 follow_viewport_enabled = true
@@ -1133,7 +1133,7 @@ stream = ExtResource("43_yuy8s")
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
-[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="return_to_menu_held" from="Player/Pause" to="." method="_on_pause_return_to_menu_held"]
 [connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
 [connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="spike_hit" from="Spike" to="." method="_on_spike_spike_hit"]

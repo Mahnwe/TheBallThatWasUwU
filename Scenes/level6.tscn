@@ -178,10 +178,10 @@ scale = Vector2(0.717345, 0.442253)
 [node name="Pause" parent="Player" instance=ExtResource("6_ypqhe")]
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -854.5401
-offset_top = -639.9053
-offset_right = 1065.46
-offset_bottom = 440.09473
+offset_left = -733.2595
+offset_top = -671.56085
+offset_right = 1186.7405
+offset_bottom = 408.43915
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 follow_viewport_enabled = true
@@ -478,6 +478,16 @@ rotation = -1.5708
 scale = Vector2(1, 0.446428)
 texture = ExtResource("9_tw4yl")
 
+[node name="PipeMiddle" parent="Sprite2D3/Sprite2D13" instance=ExtResource("12_gh5wq")]
+visible = false
+position = Vector2(12.000264, 9.999824)
+rotation = 1.5707964
+scale = Vector2(0.39999998, 1)
+
+[node name="PipeMiddle" parent="Sprite2D3/Sprite2D13/PipeMiddle" instance=ExtResource("12_gh5wq")]
+position = Vector2(-85.00025, 12.00007)
+scale = Vector2(0.33335462, 1)
+
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-4643.7, -844.64)
@@ -577,7 +587,7 @@ position = Vector2(4.26758, 91.9834)
 shape = SubResource("RectangleShape2D_eboxf")
 
 [node name="Path2D4" type="Path2D" parent="."]
-position = Vector2(119, 6)
+position = Vector2(119, 10)
 curve = SubResource("Curve2D_eboxf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
@@ -593,7 +603,7 @@ scale = Vector2(1.2175, 1.40276)
 speed = 230
 
 [node name="Path2D5" type="Path2D" parent="."]
-position = Vector2(146, 6)
+position = Vector2(146, 10)
 curve = SubResource("Curve2D_h7yc4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
@@ -609,6 +619,7 @@ scale = Vector2(1.2175, 1.40276)
 speed = 230
 
 [node name="Path2D9" type="Path2D" parent="."]
+position = Vector2(0, 4)
 curve = SubResource("Curve2D_br5uj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D9"]
@@ -680,6 +691,16 @@ rotation = 3.14159
 position = Vector2(-4263, -1346)
 texture = ExtResource("9_tw4yl")
 
+[node name="PipeMiddle" parent="Sprite2D7" instance=ExtResource("12_gh5wq")]
+visible = false
+position = Vector2(-19, 8)
+rotation = 1.5707964
+scale = Vector2(0.35999024, 0.5200391)
+
+[node name="PipeMiddle" parent="Sprite2D7/PipeMiddle" instance=ExtResource("12_gh5wq")]
+position = Vector2(-83.3356, -13.460525)
+scale = Vector2(0.44453788, 1)
+
 [node name="MetalPlatform12" parent="." instance=ExtResource("4_achdq")]
 position = Vector2(-4668, -1648)
 scale = Vector2(1.31685, 2.44051)
@@ -713,7 +734,7 @@ position = Vector2(-5008, -837)
 scale = Vector2(2.53154, 2.66816)
 
 [node name="Path2D7" type="Path2D" parent="."]
-position = Vector2(-101, -4)
+position = Vector2(-101, -1)
 curve = SubResource("Curve2D_4hpso")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
@@ -729,7 +750,7 @@ scale = Vector2(1.2175, 1.40276)
 speed = 230
 
 [node name="Path2D8" type="Path2D" parent="."]
-position = Vector2(-161, -4)
+position = Vector2(-161, -1)
 curve = SubResource("Curve2D_tpddr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D8"]
@@ -745,6 +766,7 @@ scale = Vector2(1.2175, 1.40276)
 speed = 230
 
 [node name="Path2D10" type="Path2D" parent="."]
+position = Vector2(0, 3)
 curve = SubResource("Curve2D_jwaed")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D10"]
@@ -1026,7 +1048,7 @@ position = Vector2(-4529, -68)
 scale = Vector2(1.81699, 2.03676)
 
 [node name="Path2D12" type="Path2D" parent="."]
-position = Vector2(0.000976562, -28.1748)
+position = Vector2(-5.2386895e-10, -25.999996)
 curve = SubResource("Curve2D_ujibb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D12"]
@@ -1040,7 +1062,7 @@ rotation = -1.5708
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D13" type="Path2D" parent="."]
-position = Vector2(0.000976562, -28.1748)
+position = Vector2(-5.2386895e-10, -25.999996)
 curve = SubResource("Curve2D_dcbuv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D13"]
@@ -1053,7 +1075,7 @@ position = Vector2(0, 1)
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D14" type="Path2D" parent="."]
-position = Vector2(15.7735, -28.3488)
+position = Vector2(15.772524, -26.173996)
 curve = SubResource("Curve2D_enw33")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D14"]
@@ -1065,7 +1087,7 @@ loop = false
 scale = Vector2(1.2175, 1.40276)
 
 [node name="Path2D15" type="Path2D" parent="."]
-position = Vector2(24.7735, -27.3482)
+position = Vector2(24.772524, -25.173395)
 curve = SubResource("Curve2D_omhh0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D15"]
@@ -1441,13 +1463,17 @@ scale = Vector2(0.113332, 0.12655)
 texture = ExtResource("32_0v3qi")
 
 [node name="TripleSign2" parent="." instance=ExtResource("31_g7lwf")]
-position = Vector2(-3686, -906)
-scale = Vector2(0.4, 0.4)
+position = Vector2(-3712, -919.00006)
+scale = Vector2(0.4253988, 0.43999758)
 
 [node name="Sprite2D2" type="Sprite2D" parent="TripleSign2"]
 position = Vector2(177.5, -107.5)
 scale = Vector2(0.106972, 0.118572)
 texture = ExtResource("32_0v3qi")
+
+[node name="SavePoint3" parent="." instance=ExtResource("24_br5uj")]
+position = Vector2(-3601, -823.00006)
+scale = Vector2(0.606914, 0.639194)
 
 [node name="Advice" parent="." instance=ExtResource("33_0v3qi")]
 position = Vector2(-2124, -428)
@@ -1472,7 +1498,7 @@ stream = ExtResource("39_s831l")
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
-[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="return_to_menu_held" from="Player/Pause" to="." method="_on_pause_return_to_menu_held"]
 [connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
 [connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]
@@ -1533,3 +1559,4 @@ stream = ExtResource("39_s831l")
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
 [connection signal="next_level_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_next_level_pressed"]
 [connection signal="return_to_menu_pressed" from="Finish/FinishUI" to="." method="_on_finish_ui_return_to_menu_pressed"]
+[connection signal="player_entered" from="SavePoint3" to="." method="_on_save_point_player_entered"]

@@ -139,10 +139,10 @@ scale = Vector2(0.717345, 0.442253)
 [node name="Pause" parent="Player" instance=ExtResource("6_kfex5")]
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -610.5851
-offset_top = -425.096
-offset_right = 1309.4149
-offset_bottom = 654.904
+offset_left = -733.2595
+offset_top = -671.56085
+offset_right = 1186.7405
+offset_bottom = 408.43915
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 follow_viewport_enabled = true
@@ -595,30 +595,30 @@ rotation = 1.5708
 scale = Vector2(0.566504, 3.30965)
 
 [node name="platform10" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-3259, -804)
-scale = Vector2(1.08, 1)
+position = Vector2(-3307, -804)
+scale = Vector2(1.2, 1)
 
 [node name="platform" parent="platform10" instance=ExtResource("3_b23ve")]
-position = Vector2(123.148, -547)
+position = Vector2(124.16669, -547)
 rotation = 1.5708
 
 [node name="platform11" parent="." instance=ExtResource("3_b23ve")]
-position = Vector2(-3257, -1388)
+position = Vector2(-3307, -1388)
 
 [node name="platform" parent="platform11" instance=ExtResource("3_b23ve")]
-position = Vector2(592, -2)
+position = Vector2(623, -2)
 
 [node name="ColorRect6" type="ColorRect" parent="."]
 z_index = -2
-offset_left = -3219.0
+offset_left = -3266.0
 offset_top = -887.0
 offset_right = -2521.0
 offset_bottom = -678.0
 color = Color(0, 0.651925, 0.918168, 1)
 
 [node name="Water5" parent="." instance=ExtResource("12_2be2h")]
-position = Vector2(-2871, -804.5)
-scale = Vector2(3.43, 0.845)
+position = Vector2(-2893, -804.5)
+scale = Vector2(3.6499994, 0.845)
 
 [node name="platform12" parent="." instance=ExtResource("3_b23ve")]
 position = Vector2(-3102, -975)
@@ -770,6 +770,10 @@ scale = Vector2(0.693589, 0.84445)
 
 [node name="Bubbles" parent="WaterPlatform18/Clams2" instance=ExtResource("29_w1fmi")]
 position = Vector2(0, -28)
+
+[node name="WaterPlatform21" parent="." instance=ExtResource("15_3nnrj")]
+position = Vector2(-3214.0002, -833.00006)
+scale = Vector2(0.63983136, 0.9723943)
 
 [node name="CoralSpike12" parent="." instance=ExtResource("16_r1un4")]
 position = Vector2(-2609, -773)
@@ -992,7 +996,7 @@ stream = ExtResource("51_7177s")
 [connection signal="player_dashed" from="Player" to="." method="_on_player_player_dashed"]
 [connection signal="player_jumped" from="Player" to="." method="_on_player_player_jumped"]
 [connection signal="continue_is_clicked" from="Player/Pause" to="." method="_on_pause_continue_is_clicked"]
-[connection signal="return_to_menu_is_clicked" from="Player/Pause" to="." method="_on_pause_return_to_menu_is_clicked"]
+[connection signal="return_to_menu_held" from="Player/Pause" to="." method="_on_pause_return_to_menu_held"]
 [connection signal="reset_level_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_level_progress_finished"]
 [connection signal="reset_save_progress_finished" from="Player/ResetBar" to="." method="_on_reset_bar_reset_save_progress_finished"]
 [connection signal="finished" from="PauseMusic" to="." method="_on_pause_music_finished"]

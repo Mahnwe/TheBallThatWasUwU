@@ -88,11 +88,6 @@ func handle_pause():
 			untoggle_pause()
 		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("restart_save"):
 			untoggle_pause()
-		elif is_paused and !$Player/Pause.is_commands_display and Input.is_action_just_pressed("menu_when_finish"):
-			is_paused = false
-			saving_time_played()
-			$Player/Pause.get_child(9).get_child(0).show()
-			$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)
 			
 func handle_player_actions_when_level_finished():
 	if $Player.position.x == finish_position_x and $Player.position.y == finish_position_y and Input.is_action_just_pressed("next_level"):
@@ -520,3 +515,9 @@ func _on_reset_bar_reset_level_progress_finished():
 	restart_scene()
 	save_position_x = start_position_x
 	save_position_y = start_position_y
+
+
+func _on_pause_return_to_menu_held():
+	saving_time_played()
+	$Player/Pause.get_child(9).get_child(0).show()
+	$Player/Pause.get_child(9).get_child(0).load(MENU_SCENE)

@@ -6,6 +6,9 @@ var is_reset_save_pressed
 signal reset_level_progress_finished
 var is_reset_level_pressed
 
+signal return_menu_progress_finished
+var is_return_menu_pressed
+
 func _ready():
 	set_volume()
 	is_reset_save_pressed = false
@@ -13,14 +16,13 @@ func _ready():
 	
 	
 func _process(_delta):
-	if is_reset_save_pressed and !is_reset_level_pressed:
+	if is_reset_save_pressed and !is_reset_level_pressed and !is_return_menu_pressed:
 		set_reset_save_progress_value($TextureProgressBar.value + 2)
-	if is_reset_level_pressed and !is_reset_save_pressed:
+	if is_reset_level_pressed and !is_reset_save_pressed and !is_return_menu_pressed:
 		set_reset_level_progress_value($TextureProgressBar.value + 2)
-	if !is_reset_save_pressed and !is_reset_level_pressed:
-		$TextureProgressBar.value = 0
-		hide()
-	if !is_reset_level_pressed and !is_reset_save_pressed:
+	if is_return_menu_pressed and !is_reset_save_pressed and !is_reset_level_pressed:
+		set_return_menu_progress_value($TextureProgressBar.value + 2)
+	if !is_reset_save_pressed and !is_reset_level_pressed and !is_return_menu_pressed:
 		$TextureProgressBar.value = 0
 		hide()
 	
@@ -41,6 +43,16 @@ func set_reset_level_progress_value(value):
 	else:
 		reset_level_progress_finished.emit()
 		is_reset_level_pressed = false
+		$TextureProgressBar.value = 0
+		hide()
+		
+func set_return_menu_progress_value(value):
+	$TextureProgressBar.value = value
+	if value < 100:
+		show()
+	else:
+		return_menu_progress_finished.emit()
+		is_return_menu_pressed = false
 		$TextureProgressBar.value = 0
 		hide()
 		

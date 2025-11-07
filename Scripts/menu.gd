@@ -319,6 +319,7 @@ func change_bubble_message():
 func _on_music_slider_value_changed(value):
 	if !$MusicMuteButton.is_mute:
 		$SaveManager.save_properties_value("musicSliderValue","sliderMusicValue", value)
+		$ButtonSound.play()
 		match value:
 			0.0:
 				$SaveManager.save_properties_value("musicVolume","musicVolumeSet", -50)
@@ -349,6 +350,7 @@ func _on_music_slider_value_changed(value):
 func _on_effect_slider_value_changed(value):
 	if !$SoundMuteButton.is_mute:
 		$SaveManager.save_properties_value("effectSliderValue","sliderEffectValue", value)
+		$ButtonSound.play()
 		match value:
 			0.0:
 				$SaveManager.save_properties_value("effectVolume","effectVolumeSet", -50)
@@ -569,6 +571,7 @@ func translate_text():
 	$QuitButton/QuitLabel.text = translate_config.get_value("TranslationMenu", "QuitButton")
 	$StatsButton.text = translate_config.get_value("TranslationMenu", "StatsButton")
 	$AchievementsButton.text = translate_config.get_value("TranslationMenu", "AchievementsButton")
+	$CreditsButton.text = translate_config.get_value("TranslationMenu", "CreditsButton")
 	$MusicLabel.text = translate_config.get_value("TranslationMenu", "MusicLabel")
 	$EffectLabel.text = translate_config.get_value("TranslationMenu", "EffectLabel")
 	$Level1Button.text = translate_config.get_value("TranslationMenu", "LevelOne")
