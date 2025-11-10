@@ -14,15 +14,7 @@ And thanks everyone who gived a little help
 
 Languages available : English, French
 
-
-
-If you encounter problems and/or bugs you can send me a copy of this directory ->
-
-Windows :  %APPDATA%\Godot\app_userdata\TheBallThatWasFastAndUwU\logs
-
-Linux :  ~/.local/share/godot/app_userdata/TheBallThatWasFastAndUwU/logs
-
-Mac : ~/Library/Application Support/Godot/app_userdata/TheBallThatWasFastAndUwU/logs
+You can download the game here : https://mahnwe.itch.io/the-ball-that-was-fast-and-uwu
 
 
 ------------------------------
@@ -45,14 +37,7 @@ Et merci à tous ceux qui ont donné un coup de pouce
 Langages : Anglais, Français
 
 
-
-Si vous rencontrez des problèmes et/ou des bugs vous pouvez m'envoyez une copie de ce dossier ->
-
-Windows :  %APPDATA%\Godot\app_userdata\TheBallThatWasFastAndUwU\logs
-
-Linux :  ~/.local/share/godot/app_userdata/TheBallThatWasFastAndUwU/logs
-
-Mac : ~/Library/Application Support/Godot/app_userdata/TheBallThatWasFastAndUwU/logs
+Vous pouvez télécharger le jeu ici : https://mahnwe.itch.io/the-ball-that-was-fast-and-uwu
 
 
 
