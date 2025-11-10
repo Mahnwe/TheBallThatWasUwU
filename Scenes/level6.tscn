@@ -904,7 +904,8 @@ position = Vector2(80.138, 118.604)
 scale = Vector2(0.567122, 0.618748)
 
 [node name="SavePoint" parent="." instance=ExtResource("24_br5uj")]
-position = Vector2(-4103, -1968)
+z_index = -1
+position = Vector2(-5990.9995, -1068.0001)
 scale = Vector2(0.606914, 0.639194)
 
 [node name="Spike3" parent="." instance=ExtResource("17_25f8e")]
@@ -1044,8 +1045,12 @@ scale = Vector2(1.14062, 1)
 texture = ExtResource("9_tw4yl")
 
 [node name="Tube" parent="." instance=ExtResource("8_ypqhe")]
-position = Vector2(-4529, -68)
+position = Vector2(-4518.9995, -68.00001)
 scale = Vector2(1.81699, 2.03676)
+
+[node name="TubeConsole" parent="Tube" instance=ExtResource("19_br5uj")]
+position = Vector2(55.035812, 26.021723)
+scale = Vector2(0.677752, 0.577149)
 
 [node name="Path2D12" type="Path2D" parent="."]
 position = Vector2(-5.2386895e-10, -25.999996)
@@ -1190,7 +1195,8 @@ position = Vector2(-2999, 937)
 scale = Vector2(4.69172, 1.2458)
 
 [node name="SavePoint2" parent="." instance=ExtResource("24_br5uj")]
-position = Vector2(-4348, 10)
+z_index = 1
+position = Vector2(-4098, 750.00006)
 scale = Vector2(0.606914, 0.639194)
 
 [node name="MetalPlatform28" parent="." instance=ExtResource("4_achdq")]
@@ -1492,6 +1498,45 @@ parameters/looping = true
 stream = ExtResource("39_s831l")
 
 [node name="SaveManager" parent="." instance=ExtResource("41_rbf7n")]
+
+[node name="Tube3" parent="." instance=ExtResource("8_ypqhe")]
+position = Vector2(-4129, -2046)
+scale = Vector2(1.81699, 2.03676)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tube3"]
+position = Vector2(-57.237545, 31.913452)
+scale = Vector2(0.67198944, 0.5613718)
+texture = ExtResource("9_tw4yl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tube3/Sprite2D"]
+position = Vector2(-2.0748868, -67.52416)
+rotation = -1.5707964
+scale = Vector2(0.54599416, 0.80136544)
+texture = ExtResource("10_k6lm4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tube3/Sprite2D/Sprite2D"]
+position = Vector2(83.73325, -32.15933)
+scale = Vector2(1.2726134, 1)
+texture = ExtResource("27_ujibb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tube3/Sprite2D"]
+position = Vector2(-129.75296, -124.19324)
+scale = Vector2(0.80072784, 0.6935293)
+texture = ExtResource("12_q8la5")
+flip_v = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tube3/Sprite2D"]
+position = Vector2(-190.0084, -102.328156)
+rotation = 3.1415927
+scale = Vector2(0.6200943, 0.6891476)
+texture = ExtResource("27_ujibb")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Tube3/Sprite2D"]
+z_index = -1
+position = Vector2(-199.83662, 5.2476006)
+rotation = 1.5707964
+scale = Vector2(1, 0.6289377)
+texture = ExtResource("12_q8la5")
 
 [connection signal="player_exited_game_area" from="GameArea" to="." method="_on_game_area_player_exited_game_area"]
 [connection signal="player_exited_start_area" from="StartArea" to="." method="_on_start_area_player_exited_start_area"]

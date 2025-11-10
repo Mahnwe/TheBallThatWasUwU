@@ -140,7 +140,7 @@ func create_rank_files():
 		level_3_file.store_line(JSON.stringify(level_3_ranks))
 	
 	if !FileAccess.file_exists("user://RankSaves/timer_rank_data_level4.json"):
-		var level_4_ranks: Array = [17.568,27.420,35.653,42.236,53.458,61.826]
+		var level_4_ranks: Array = [17.568,24.420,31.653,39.236,48.458,57.826]
 		var level_4_file = FileAccess.open("user://Saves/RankSaves/timer_rank_data_level4.json", FileAccess.WRITE)
 		level_4_file.store_line(JSON.stringify(level_4_ranks))
 	

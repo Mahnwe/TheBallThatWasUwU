@@ -77,6 +77,37 @@ position = Vector2(-38, 177)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("4_fxi3u")
 
+[node name="Label" type="Label" parent="Sprite2D3"]
+offset_left = -18.181816
+offset_top = 28.409096
+offset_right = 27.272728
+offset_bottom = 93.409096
+scale = Vector2(1.0454566, 1)
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_shadow_color = Color(0.07683582, 0.07683582, 0.0768358, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_75ox4")
+theme_override_font_sizes/font_size = 50
+text = "4"
+
+[node name="Label2" type="Label" parent="Sprite2D3"]
+offset_left = -13.636364
+offset_top = 87.50001
+offset_right = 26.363636
+offset_bottom = 152.5
+theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_shadow_color = Color(0.07683582, 0.07683582, 0.0768358, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_75ox4")
+theme_override_font_sizes/font_size = 50
+text = "5"
+
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(168, 71.5001)

@@ -368,6 +368,7 @@ position = Vector2(89.8366, -88.1667)
 rotation = 1.5708
 scale = Vector2(0.255908, 0.763641)
 sync_to_physics = false
+speed = 180
 trigger_required = true
 
 [node name="HardPlatformTrigger" type="Area2D" parent="Path2D/PathFollow2D/HardRockMovingPlatform"]
@@ -412,6 +413,30 @@ scale = Vector2(1.56, 1.16)
 [node name="platform18" parent="." instance=ExtResource("9_ujhmm")]
 position = Vector2(-6154, -1323)
 scale = Vector2(0.516973, 0.888948)
+
+[node name="Spike8" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-5424, -876.00006)
+rotation = -1.5707964
+scale = Vector2(0.69053406, 0.84018683)
+
+[node name="Spike9" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-5182, -876.00006)
+rotation = -1.5707964
+scale = Vector2(0.69053406, 0.84018683)
+
+[node name="Spike10" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-4091.9995, -1544.0001)
+scale = Vector2(0.41722348, 0.3287662)
+
+[node name="Spike11" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-3613, -1281.9999)
+rotation = 1.5707964
+scale = Vector2(0.41722348, 0.3287662)
+
+[node name="Spike12" parent="." instance=ExtResource("7_p558y")]
+position = Vector2(-3607, -1053)
+rotation = 1.5707964
+scale = Vector2(0.41722348, 0.3287662)
 
 [node name="EasyPortal2" parent="." instance=ExtResource("8_cv4mv")]
 position = Vector2(-6072, -1324)
@@ -1144,6 +1169,11 @@ stream = ExtResource("43_yuy8s")
 [connection signal="body_entered" from="HardPortal" to="." method="_on_hard_portal_entered"]
 [connection signal="body_entered" from="EasyPortal" to="." method="_on_easy_portal_body_entered"]
 [connection signal="body_entered" from="Path2D/PathFollow2D/HardRockMovingPlatform/HardPlatformTrigger" to="." method="_on_hard_platform_trigger_body_entered"]
+[connection signal="spike_hit" from="Spike8" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike9" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike10" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike11" to="." method="_on_spike_spike_hit"]
+[connection signal="spike_hit" from="Spike12" to="." method="_on_spike_spike_hit"]
 [connection signal="body_entered" from="Path2D2/PathFollow2D/EasyRockPlatform/EasyPlatformTrigger" to="." method="_on_easy_platform_trigger_body_entered"]
 [connection signal="player_dead_by_cannon_ball" from="Cannon" to="." method="_on_cannon_player_dead_by_cannon_ball"]
 [connection signal="player_dead_by_cannon_ball" from="Cannon2" to="." method="_on_cannon_player_dead_by_cannon_ball"]

@@ -53,21 +53,27 @@ offset_bottom = 75.0
 [node name="Top1" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_colors/font_shadow_color = Color(0.07450981, 0.07450981, 0.07450981, 0.87058824)
+theme_override_colors/font_outline_color = Color(0.033853278, 0.033853278, 0.033853274, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 
 [node name="Top2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_shadow_color = Color(0.07450981, 0.07450981, 0.07450981, 0.87058824)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 
 [node name="Top3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.819608, 0.027451, 0.0352941, 1)
+theme_override_colors/font_shadow_color = Color(0.07450981, 0.07450981, 0.07450981, 0.87058824)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 
