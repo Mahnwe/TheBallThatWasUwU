@@ -207,6 +207,7 @@ func put_player_to_save_position_and_unpause_timer():
 	$Player.set_physics_process(true)
 	$Player.get_child(0).get_child(0).get_child(0).get_child(0).set_process(true)
 	enable_drop_groups()
+	enable_patrol_groups()
 	reset_metal_platform_patrol()
 	
 func _on_pause_continue_is_clicked():

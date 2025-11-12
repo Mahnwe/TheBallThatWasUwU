@@ -558,27 +558,27 @@ rotation = 1.05934
 scale = Vector2(1, 2.2)
 
 [node name="Spike7" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(-1028, -355)
+position = Vector2(-1028, -447)
 scale = Vector2(0.617924, 0.441128)
 
 [node name="Spike" parent="Spike7" instance=ExtResource("10_w0su0")]
 position = Vector2(545.375, -500.988)
 
 [node name="Spike2" parent="Spike7" instance=ExtResource("10_w0su0")]
-position = Vector2(87.3895, -1296.68)
+position = Vector2(77.67947, -1072.2511)
 rotation = 0.167125
 scale = Vector2(1, 1.45338)
 
 [node name="Spike8" parent="." instance=ExtResource("10_w0su0")]
-position = Vector2(2674, -367)
+position = Vector2(2674.0002, -471)
 scale = Vector2(0.617924, 0.441128)
 
 [node name="Spike" parent="Spike8" instance=ExtResource("10_w0su0")]
 position = Vector2(-519.481, -491.921)
 
 [node name="Spike2" parent="Spike8" instance=ExtResource("10_w0su0")]
-position = Vector2(-21.038, -1122.12)
-rotation = -0.43635
+position = Vector2(-77.68005, -954.3715)
+rotation = -0.57283014
 scale = Vector2(1.09737, 1.38133)
 skew = 0.288067
 

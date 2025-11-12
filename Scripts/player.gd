@@ -191,10 +191,20 @@ func check_if_player_is_on_wall():
 	# Wall-jump
 	check_animation_if_on_wall()
 	var wall_normal = get_wall_normal()
-	if colliding_wall() and Input.is_action_just_pressed("jump"):
+	if colliding_wall() and Input.is_action_just_pressed("jump") and !is_on_floor():
 		$JumpSound.play()
 		number_of_jumps += 1
 		velocity = Vector2(wall_pushback * wall_normal.x, jump_force)
+		current_state = state.AIRBORNE
+		$JustJumpTimer.start()
+		$AnimatedSprite2D.animation = "jump"
+		$AnimatedSprite2D.play()
+		await $AnimatedSprite2D.animation_finished
+		player_jumped.emit()
+	if colliding_wall() and Input.is_action_just_pressed("jump") and is_on_floor():
+		$JumpSound.play()
+		number_of_jumps += 1
+		velocity = Vector2(5 * wall_normal.x, jump_force)
 		current_state = state.AIRBORNE
 		$JustJumpTimer.start()
 		$AnimatedSprite2D.animation = "jump"
