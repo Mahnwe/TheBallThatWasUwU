@@ -538,14 +538,22 @@ position = Vector2(-28.6641, -45.8625)
 scale = Vector2(0.4, 0.279999)
 
 [node name="Cannon" parent="." instance=ExtResource("12_dyw7h")]
-position = Vector2(1703, -882)
+position = Vector2(1703, -911)
 flip_value = 1
 ball_speed = 10
 
+[node name="SandPlatform" parent="Cannon" instance=ExtResource("11_62yl8")]
+position = Vector2(0, 64.99999)
+scale = Vector2(0.24070022, 0.18828452)
+
 [node name="Cannon2" parent="." instance=ExtResource("12_dyw7h")]
-position = Vector2(25, -882)
+position = Vector2(25, -911)
 is_going_left = true
 ball_speed = 10
+
+[node name="SandPlatform" parent="Cannon2" instance=ExtResource("11_62yl8")]
+position = Vector2(0, 66.99999)
+scale = Vector2(0.24070022, 0.18828452)
 
 [node name="Wall24" parent="." instance=ExtResource("8_tnmog")]
 position = Vector2(-1150, -733)
